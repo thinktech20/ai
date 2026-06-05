@@ -1,0 +1,13 @@
+
+just now (<1s)
+11
+11
+Username:          labuser14530157_1775262721@vocareum.com
+Catalog Name:      dbacademy
+Schema Name:       labuser14530157_1775262721
+Working Directory: /Volumes/dbacademy/ops/labuser14530157_1775262721@vocareum_com
+Dataset Location:  NestedNamespace (news='/Volumes/dbacademy_news/v01', arxiv='/Volumes/dbacademy_arxiv/v01')
+
+=====
+
+https://github.com/mosaicml/llm-foundry/blob/main/scripts/eval/local_data/EVAL_GAUNTLET.md

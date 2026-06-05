@@ -1,0 +1,9 @@
+I’d like to share feedback for Madhurima Saxena, who is a contractor from Slalom and worked closely with me on our project. I served as the AWS Tech Lead and Solution Architect, and Madhurima and I collaborated on MVP 1 – Services Demand Generation (SDG) to build the AI-Powered Unit Risk Assessment Agent.
+Madhurima played a leading role in the Ad hoc Q&A component, which was a critical part of the solution. She helped design, architect and implement the Agentic AI approach with dynamic tool selection across multiple data sources and multi-step LLM-controlled iteration. Her contributions were key to shaping the technical direction and delivering this capability effectively.
+Later, she also took the initiative on the Field Service Report data pipeline design and implementation, including metadata creation and RAG retrieval chunking to improve LLM reasoning and citation accuracy.
+We had highly impactful design discussions and critical collaboration throughout the work. Madhurima consistently sought technical advice proactively, was willing to take on challenging work, and pushed through blockers effectively. Her communication skills are excellent, and she played an important role in helping the team overcome hurdles and gain support from cross-functional teams and leadership.
+
+Let me know if you have question of it.
+Regards,
+Taojian Feng
+AWS Proserve on GEV project

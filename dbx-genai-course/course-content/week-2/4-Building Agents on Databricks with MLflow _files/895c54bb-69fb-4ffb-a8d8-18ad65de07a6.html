@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0958)https://cloud.scorm.com/ScormEngineInterface/defaultui/player/modern.html?configuration=utV8CnklEC2Y9Vr7pl1JjvjXsb5MUvf_cU0hlRQgn4lcoCFhLJsAVoHz7M4h0rOTWTzIL2y0cHC9mbFk17gesN1Rzn9BOEuEouwtUJySiH2LQE42ExyAj2SgtPwppOu7hJ6keM0KvOjpTMwxHHdqFqs6eQ_DFdsIPo5m_uF0UwHpwNwWqqzAM3AxDH-WF3zJ8ejZ-2MjjT5gSETDg8jVCW1m_BbcBo4x2ZI1vNGxtlIfYyM1uy2dJMvoSZsHgyOhpOv_TLVPtsBopPvP7uwhFc5Kzdupe4Mcufw9aiU-Ua-iFCdattYoQT0J-71ZRz1V93OmFlLJb9RX6Wu64M9FK0bXReq7xmLca9ZPFEApr8mgQn3PsfIDceNREfsAJhKLHfulDM6l_Kdu&preventRightClick=false&cc=en_US&cache=22.36.473.382fbb4&playerConfUrl=j&package=n27QhcqJ4lIKgl-sqvP4p3CaKbBeged15zTBB8NCsqLRQCi-Tfvt43xIsgv2mJviLCX0p49K4MGpR_sHLgPcc9gEhPl07vbuaH_LBV6_LmwD-oMUJshjEzaZ&redirectUrl=https%3A%2F%2Fcloud.scorm.com%2FEngineWebServices%2FMessage.html&registration=Py7UoST4522h-dNDfM_900S2Irlqx31PwsuGGWC8gAteIXUmCkMa1Lbf8yWBaVQVh426sJsRxk0jkN_r-XsRPjUbq7WppQ1UMz7bEEXdR81kcUTvkTdnv8l1LLRmzKyL8EQ&tracking=true&forceReview=false&ts=20260405170230 -->
+<html lang="en-US" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>3.0 Lecture - Building Agents on Databricks with MLflow</title>
+
+    <link rel="stylesheet" href="./modern-min.css">
+</head>
+
+<body class="hideNavBar hideTitleBar hideLogo hideProgress hideDebug disableFlow hideClose hideFinish hideCourseStructure hidePrivacyPolicy">
+
+<div id="rscp-header">
+    <div class="rscp-header-row">
+        <div id="rscp-header-logo-container" class="rscp-header-cell" role="presentation" aria-hidden="true">
+            <img id="rscp-logo" title="Logo">
+        </div>
+        <div id="rscp-header-title-container" class="rscp-header-cell">
+            <span id="title" role="banner" aria-label="Course Title:3.0 Lecture - Building Agents on Databricks with MLflow">
+                <span id="courseTitleText" role="presentation" aria-hidden="true">3.0 Lecture - Building Agents on Databricks with MLflow</span>
+            </span>
+        </div>
+        <div id="rscp-header-menu-container" class="rscp-header-cell">
+            <div id="menu-container" role="navigation" aria-label="Player Controls">
+                <div id="rscp-progressbar" class="progress">
+                    <div id="progressImage" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" style="width: 0%;" aria-valuemax="1">
+                        <span id="progressText">0 / 1</span>
+                    </div>
+                </div>
+                <button id="toggleMenu" class="btn btn-default navbar-btn rscp-btn-responsive rscp-topMenuItem enabledTopMenuItem" role="presentation" title="Show Menu" style="visibility: hidden;">
+                    <span id="sidebar-icon" class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block glyphicon glyphicon-menu-hamburger" role="presentation"></span>
+                    <span id="sidebar-text" class="visible-lg-inline-block">Show Menu</span>
+                </button>
+
+                <button id="previous" class="btn btn-default navbar-btn rscp-btn-responsive rscp-topMenuItem disabledTopMenuItem" title="Previous" aria-label="Load Previous Content Item" disabled="">
+                    <span id="previous-icon" class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block glyphicon glyphicon-backward"></span>
+                    <span id="previous-text" class="visible-lg-inline-block">Previous</span>
+                </button>
+                <button id="next" class="btn btn-default navbar-btn rscp-btn-responsive rscp-topMenuItem disabledTopMenuItem" title="Next" aria-label="Load Next Content Item" disabled="">
+                    <span id="next-icon" class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block glyphicon glyphicon-forward"></span>
+                    <span id="next-text" class="visible-lg-inline-block">Next</span>
+                </button>
+                <button id="closeSco" class="btn btn-default navbar-btn rscp-btn-responsive rscp-topMenuItem enabledTopMenuItem" title="Close Item" aria-label="Close Current Content Item">
+                    <span id="close-icon" class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block glyphicon glyphicon-remove"></span>
+                    <span id="close-text" class="visible-lg-inline-block">Close Item</span>
+                </button>
+
+                <button id="viewDebug" class="btn btn-default navbar-btn rscp-btn-responsive rscp-topMenuItem enabledTopMenuItem" title="View Debug" aria-label="">
+                    <span id="viewDebug-icon" class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block glyphicon glyphicon-wrench"></span>
+                    <span id="viewDebug-text" class="visible-lg-inline-block">View Debug</span>
+                </button>
+                <span class="dropdown">
+                    <button id="returnToLmsNoDebug" class="btn btn-default navbar-btn rscp-btn-responsive rscp-topMenuItem enabledTopMenuItem" data-toggle="dropdown" title="Exit Without Saving Debug" aria-label="">
+                        <span id="returnToLmsNoDebug-icon" class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block glyphicon glyphicon-trash"></span>
+                        <span id="returnToLmsNoDebug-text" class="visible-lg-inline-block">Exit Without Saving Debug</span>
+                    </button>
+                    <button id="returnToLms" class="btn btn-default navbar-btn rscp-btn-responsive rscp-topMenuItem enabledTopMenuItem" data-toggle="dropdown" title="Return to LMS">
+                        <span id="exit-icon" class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block glyphicon glyphicon-home"></span>
+                        <span id="exit-text" class="visible-lg-inline-block">Return to LMS</span>
+                    </button>
+                    <ul id="returnToLmsMenu" class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="returnToLms">
+                        <li id="exit_dialog_suspend_li" role="presentation">
+                            <a href="https://cloud.scorm.com/ScormEngineInterface/defaultui/player/modern.html?configuration=utV8CnklEC2Y9Vr7pl1JjvjXsb5MUvf_cU0hlRQgn4lcoCFhLJsAVoHz7M4h0rOTWTzIL2y0cHC9mbFk17gesN1Rzn9BOEuEouwtUJySiH2LQE42ExyAj2SgtPwppOu7hJ6keM0KvOjpTMwxHHdqFqs6eQ_DFdsIPo5m_uF0UwHpwNwWqqzAM3AxDH-WF3zJ8ejZ-2MjjT5gSETDg8jVCW1m_BbcBo4x2ZI1vNGxtlIfYyM1uy2dJMvoSZsHgyOhpOv_TLVPtsBopPvP7uwhFc5Kzdupe4Mcufw9aiU-Ua-iFCdattYoQT0J-71ZRz1V93OmFlLJb9RX6Wu64M9FK0bXReq7xmLca9ZPFEApr8mgQn3PsfIDceNREfsAJhKLHfulDM6l_Kdu&amp;preventRightClick=false&amp;cc=en_US&amp;cache=22.36.473.382fbb4&amp;playerConfUrl=j&amp;package=n27QhcqJ4lIKgl-sqvP4p3CaKbBeged15zTBB8NCsqLRQCi-Tfvt43xIsgv2mJviLCX0p49K4MGpR_sHLgPcc9gEhPl07vbuaH_LBV6_LmwD-oMUJshjEzaZ&amp;redirectUrl=https%3A%2F%2Fcloud.scorm.com%2FEngineWebServices%2FMessage.html&amp;registration=Py7UoST4522h-dNDfM_900S2Irlqx31PwsuGGWC8gAteIXUmCkMa1Lbf8yWBaVQVh426sJsRxk0jkN_r-XsRPjUbq7WppQ1UMz7bEEXdR81kcUTvkTdnv8l1LLRmzKyL8EQ&amp;tracking=true&amp;forceReview=false&amp;ts=20260405170230#" id="exit_dialog_suspend" role="menuitem">Suspend All</a>
+                        </li>
+                        <li id="exit_dialog_exit_li" role="presentation">
+                            <a href="https://cloud.scorm.com/ScormEngineInterface/defaultui/player/modern.html?configuration=utV8CnklEC2Y9Vr7pl1JjvjXsb5MUvf_cU0hlRQgn4lcoCFhLJsAVoHz7M4h0rOTWTzIL2y0cHC9mbFk17gesN1Rzn9BOEuEouwtUJySiH2LQE42ExyAj2SgtPwppOu7hJ6keM0KvOjpTMwxHHdqFqs6eQ_DFdsIPo5m_uF0UwHpwNwWqqzAM3AxDH-WF3zJ8ejZ-2MjjT5gSETDg8jVCW1m_BbcBo4x2ZI1vNGxtlIfYyM1uy2dJMvoSZsHgyOhpOv_TLVPtsBopPvP7uwhFc5Kzdupe4Mcufw9aiU-Ua-iFCdattYoQT0J-71ZRz1V93OmFlLJb9RX6Wu64M9FK0bXReq7xmLca9ZPFEApr8mgQn3PsfIDceNREfsAJhKLHfulDM6l_Kdu&amp;preventRightClick=false&amp;cc=en_US&amp;cache=22.36.473.382fbb4&amp;playerConfUrl=j&amp;package=n27QhcqJ4lIKgl-sqvP4p3CaKbBeged15zTBB8NCsqLRQCi-Tfvt43xIsgv2mJviLCX0p49K4MGpR_sHLgPcc9gEhPl07vbuaH_LBV6_LmwD-oMUJshjEzaZ&amp;redirectUrl=https%3A%2F%2Fcloud.scorm.com%2FEngineWebServices%2FMessage.html&amp;registration=Py7UoST4522h-dNDfM_900S2Irlqx31PwsuGGWC8gAteIXUmCkMa1Lbf8yWBaVQVh426sJsRxk0jkN_r-XsRPjUbq7WppQ1UMz7bEEXdR81kcUTvkTdnv8l1LLRmzKyL8EQ&amp;tracking=true&amp;forceReview=false&amp;ts=20260405170230#" id="exit_dialog_exit" role="menuitem">Exit All</a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="rscp-sidebar" class="sr-only">
+            <h5 id="CourseMenuTitle">Course Menu</h5>
+            <ul id="MenuPlaceHolderDiv" class="menuplaceholder" role="navigation" aria-label="Course Menu"><li id="MenuItemORG-10" class="menuitem" title="3.0 Lecture - Building Agents on Databricks with MLflow" aria-level="1" role="heading" tabindex="-1" aria-disabled="true" aria-label="3.0 Lecture - Building Agents on Databricks with MLflow - Completion+Success status: Not Started"><span id="CompletionStatusImgORG-10" class="sidebar-completion-unknown" role="presentation" title="Not Started"></span><a id="MenuItemTextORG-10" class="disabledMenulink" role="presentation" title="Not Started" style="padding-left: 0px;">3.0 Lecture - Building Agents on Databricks with MLflow</a></li><li id="MenuItemITEM-11" class="menuitem" title="3.0 Lecture - Building Agents on Databricks with MLflow" aria-level="2" role="link" tabindex="-1" aria-disabled="true" aria-label="3.0 Lecture - Building Agents on Databricks with MLflow - Completion+Success status: Not Started"><span id="CompletionStatusImgITEM-11" class="sidebar-completion-unknown" role="presentation" title="Not Started"></span><a id="MenuItemTextITEM-11" class="activeMenulinkDisabled" role="presentation" title="Not Started" style="padding-left: 20px;">3.0 Lecture - Building Agents on Databricks with MLflow</a></li></ul>
+        </div>
+        <div id="rscp-main">
+            <div id="ContentDiv" role="region" aria-label="Learning Content">
+                <iframe allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" allow="autoplay" title="3.0 Lecture - Building Agents on Databricks with MLflow" id="ScormContent" name="ScormContent" src="./intermediate.html" style="height: 583px;"></iframe>
+            </div>
+            <div id="rscp-privacyPolicy">
+                <a id="rscp-privacyPolicy-link" target="_blank">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./player-modern-min.js"></script>
+<script>
+    ReadyThePlayer("modern", "382fbb4");
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,4 @@
+llm_endpoint_name: databricks-gpt-oss-20b
+vector_search:
+  index_name: dbacademy.labuser13994370_1775247757.docs_chunked_lab_index
+  num_results: 3

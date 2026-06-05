@@ -1,0 +1,23 @@
+# Phase 1 — minimal deps to run ingest → parse → chunk → embed → index → retrieve → generate locally.
+# Industry-standard libs so the same code patterns transfer to Databricks / prod.
+
+# ── Parsing ───────────────────────────────────────────────────────────
+pymupdf>=1.24                # fast text extractor (baseline)
+pdfplumber>=0.11             # better tables (Phase 2 comparison)
+
+# ── Chunking ──────────────────────────────────────────────────────────
+langchain-text-splitters>=0.3 # RecursiveCharacterTextSplitter etc. — most-cited reference impls
+tiktoken>=0.7                 # OpenAI tokenizer for accurate token counts
+
+# ── LLM / embeddings via LiteLLM gateway (OpenAI-compatible) ──────────
+openai>=1.40                  # SDK speaks to the gateway directly (base_url override)
+python-dotenv>=1.0            # load .env
+
+# ── Vector store (local) ──────────────────────────────────────────────
+faiss-cpu>=1.8                # standard local vector store for learning
+
+# ── Notebooks + utilities ─────────────────────────────────────────────
+jupyter>=1.0
+ipykernel>=6.29
+numpy>=1.26
+pandas>=2.2

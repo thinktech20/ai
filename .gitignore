@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+FSR/ESN-resolution/test-pdfs/
+FSR/chunking-fix/test-pdfs/
+FSR
+fsr-prod-ops
+implementation
+internal
+local-scratch
+poc
+pw_sdg_ai_ser_repo
+reference
+*.zip
+OSA

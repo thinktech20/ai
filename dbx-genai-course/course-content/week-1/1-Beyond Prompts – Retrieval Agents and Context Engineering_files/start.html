@@ -1,0 +1,16 @@
+
+<!-- saved from url=(0050)https://detect-3p-cookies.uplimit.io/complete.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+    <script>
+      if (window.parent) {
+        if (/thirdparty=yes/.test(document.cookie)) {
+          window.parent.postMessage("MM:3PCsupported", "*");
+        } else {
+          window.parent.postMessage("MM:3PCunsupported", "*");
+        }
+        document.cookie = "thirdparty=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+      }
+    </script>
+  
+
+</body></html>

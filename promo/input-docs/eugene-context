@@ -1,0 +1,2155 @@
+chatgpt
+
+madhurima:
+I need to prepare for 3 conversations - 1. With Eugene - context can be found at - Promo Talk Framing, so i have a 30 min conversation coming up with Eugene, Eugene is around 4 levels up, but infleuntial and the one who hired me, , i do not want to make like sounding only for promo, but a touch base with him, keeping it light, and also letting him know of the things i have been doing - 1, buiklding Ai agent in production, having good ahnds on the claude code, and using it in project, 3 planning to present int he architecture series for the lakehouse architecture i built at fruitco, and also databricks COE help which i did recenetly where they presented the churn idnidcator and databricks certification and gen ai course that i did for certification, make it smooth flow, do not sound like dumping of things... it should all make sense to him to make me a candidate for next promo, i also want to tell him, that with changing PLs so often from SJ to Erika, Rhea and Joshua and now now Eric coming in, I feel like the context and plan we do for next level gets lost, and its been around 4 years and I have all and many good recomemndations from leadership team at slalom and customers, and Joshua did mention teh same, that I have a good list of recos sometime back,,, so I will want to utilize my exp and work in slalom to reach to next level... 2. With Erika - take the context from "" chat, Erika is my manager's manager, there i want to talk about the concern of changing PLs and promo, tshe is in regular 1:1 with her 3. Madhurima:Eric Introduction - this has been setup by my current PL to introduce me to new to new PL - Eric this is an informal intro, I do not want to talk about my promo in this talk, but i want your help everywhere so that ultimately i reach to my goal of being principal
+
+chatgpt:
+Got it — this is exactly the kind of situation where tone + sequencing matters more than content. You already have strong material; we just need to make it land naturally.
+
+I’ll structure each conversation like a light narrative you can speak, not a script.
+
+1️⃣ Conversation with Eugene (30 min, senior + influential)
+🎯 Goal
+Reconnect (not “ask for promo”)
+Show trajectory → “I’m operating at next level”
+Subtly surface friction (PL changes)
+Leave him thinking: “she’s ready / we should support her”
+🧭 Flow (natural, conversational)
+1. Warm open (2–3 min)
+
+“Hey Eugene, really good to reconnect — it’s been a while. I wanted to use this time more as a touchpoint and share what I’ve been working on, and also get your perspective.”
+
+2. Anchor your growth (THIS is key — not a list, a story)
+
+👉 Frame it as a theme: “I’ve been leaning into building real AI systems in production”
+
+“Over the past year, I’ve really leaned into building AI systems that actually run in production — not just PoCs.”
+
+Then layer:
+
+Agentic app (anchor)
+
+“Recently I built an agentic AI application end-to-end — from orchestration to integrating enterprise data — which gave me strong exposure to what it takes to make these things production-ready.”
+
+Claude / tooling
+
+“I’ve also been getting hands-on with Claude Code and incorporating it into how we build — it’s been a big unlock in productivity and design thinking.”
+
+Architecture thought leadership
+
+“Separately, I’m planning to present in the architecture series — around a lakehouse architecture I built at FruitCo.”
+
+Org impact
+
+“And I recently supported the Databricks CoE effort — where we worked on things like churn indicators and helping shape adoption.”
+
+Learning mindset
+
+“Alongside that, I’ve been investing in certifications and GenAI learning to stay ahead of where things are going.”
+
+👉 Notice: no bullet dumping — everything tied to a single narrative: growth + impact
+
+3. Transition to intent (subtle, not promo ask)
+
+“At this point, I feel like I’m consistently operating across architecture, delivery, and thought leadership — and I want to make sure I’m channeling that in the right direction within Slalom.”
+
+4. Raise PL concern (calm, not complaining)
+
+“One thing I’ve been feeling a bit though — with frequent PL changes over time — is that the continuity of career planning sometimes gets lost.”
+
+“Each time I rebuild context, but the longer-term plan toward the next level doesn’t always carry through.”
+
+5. Position yourself (important — confidence, not frustration)
+
+“I’ve been here about 4 years now, and I’ve been fortunate to get strong feedback from both leadership and clients.”
+
+“Joshua had also mentioned earlier that there’s a solid set of recommendations supporting my growth.”
+
+“So I want to make sure I’m really using that momentum to move to the next level.”
+
+6. Ask for guidance (THIS is the “ask”)
+
+“From your perspective — what would you want to see from me to clearly position myself for the next level?”
+
+7. Close
+
+“Would really value your guidance on how to make that progression more intentional from here.”
+
+🔑 Key mindset
+You are not asking for promotion
+You are demonstrating readiness + asking for calibration
+Let him connect the dots
+2️⃣ Conversation with Erika (manager’s manager)
+🎯 Goal
+Be direct but composed
+Make her your sponsor
+Align on promotion path clarity
+🧭 Flow
+1. Start grounded
+
+“I wanted to talk about something I’ve been thinking about for a while — around growth and continuity.”
+
+2. Raise PL issue clearly
+
+“Over the past few years, I’ve had multiple PL changes — SJ, Erika, Rhea, Joshua, and now Eric.”
+
+“Each transition resets context, and I feel like the longer-term growth plan doesn’t always carry forward.”
+
+3. Anchor your performance
+
+“At the same time, I feel I’ve been consistently delivering — across architecture, GenAI work, and client impact.”
+
+4. State your intent (clear, no hesitation)
+
+“I want to make sure I’m on a clear path toward the next level — and that we’re aligned on what that looks like.”
+
+5. Ask specifically
+
+“Can we define:
+
+what the expectations are for me to get there
+and how we track progress consistently, even with org changes?”
+6. Optional (if tone allows)
+
+“I’d really value your support in ensuring that continuity — so the work I’m doing translates into progression.”
+
+🔑 Tone
+Calm, structured, not emotional
+This is a system problem, not a complaint
+3️⃣ Conversation with Madhurima / Eric intro
+🎯 Goal
+First impression: Principal energy
+No promo talk
+Establish:
+Ownership
+Clarity
+Thought leadership
+🧭 Flow
+1. Simple intro
+
+“Hi Eric, really looking forward to working together — happy to give a quick context on what I’ve been doing.”
+
+2. Your story (tight)
+
+“I’ve been working across data and GenAI architecture — recently focused on building agentic AI systems in production, and driving architecture decisions in client environments.”
+
+3. Add credibility
+
+“I also spend time contributing to broader initiatives — like architecture forums, CoE work, and helping shape how we approach platforms like Databricks.”
+
+4. Show how you work (this is key)
+
+“I typically like to operate at the intersection of:
+
+architecture
+hands-on delivery
+and enabling teams”
+5. Align with him
+
+“Would love to understand your expectations and how you like to work with your team — especially around ownership and impact.”
+
+6. Close
+
+“Excited to partner and drive meaningful outcomes together.”
+
+🔑 Hidden signal you’re sending
+You’re already behaving like a Principal
+You’re not “waiting to be managed”
+⚡ Final Cheat Sheet
+Conversation	What matters most
+Eugene	Narrative + visibility + guidance ask
+Erika	Clarity + structure + sponsorship
+Eric	First impression + leadership posture
+
+If you want, I can:
+
+Turn each into 1-minute crisp speaking version
+Or do a mock Q&A (what Eugene/Erika might ask + best responses)
+
+That’s usually the game changer.
+
+
+madhurima:
+yeah I do not want full 1 min speech, but its a 1:1 convesration meeting, so things should flow naturally, ad i should be able to talk about the things what i have planned for . also yeah some questions answer that i may expect during the convo will be helpful too.
+
+chatgpt:
+Perfect — this is exactly the right instinct.
+You don’t want a speech, you want conversation control.
+
+I’ll give you:
+
+How to flow naturally (anchor → expand → pause)
+What to say in moments (not scripts)
+Likely questions + sharp answers
+Recovery lines (if convo goes sideways)
+🧠 Core Technique (use in all 3 convos)
+
+Think in this pattern:
+
+Anchor → Expand → Pause → Let them engage
+
+Example:
+
+“Lately I’ve been focusing more on building AI systems in production…”
+→ (pause)
+→ If they lean in → expand
+→ If not → pivot
+
+This avoids sounding like a resume dump
+
+1️⃣ Eugene Conversation (most important)
+🎯 What you’re really doing
+Show trajectory
+Signal readiness
+Invite advocacy
+🔁 Natural Flow (how to talk, not script)
+When he says: “So what have you been up to?”
+
+👉 Start broad:
+
+“A big theme for me recently has been moving from conceptual AI work to actually building systems that run in production.”
+
+👉 Then expand based on interest:
+
+If he leans in:
+“For example, I built an agentic app end-to-end — orchestration, data integration, the whole flow — which was a great learning curve.”
+
+If still engaged:
+
+“I’ve also been using Claude Code pretty actively — it’s actually changed how I think about development and design.”
+
+👉 Then shift layer (don’t stay technical too long):
+
+“At the same time, I’ve been trying to contribute more at the architecture level — like presenting in the architecture series, and helping with Databricks CoE work.”
+
+👉 Then stop. Let him react.
+
+🧭 Transition moment (important)
+
+After some back and forth:
+
+“At this point, I feel like I’m operating across delivery, architecture, and org-level contributions — and I want to make sure I’m channeling that in the right direction.”
+
+⚠️ PL issue (how to say without sounding negative)
+
+“One thing I’ve been navigating though — with frequent PL changes — is that the longer-term growth plan sometimes doesn’t carry forward consistently.”
+
+👉 Then soften:
+
+“Everyone’s been supportive individually, but the continuity gets a bit fragmented.”
+
+🎯 Position yourself
+
+“I’ve been here ~4 years now, and I’ve had strong feedback from both leadership and clients — and I want to really build on that momentum.”
+
+💡 Ask (don’t skip this)
+
+“From your perspective — what would clearly differentiate someone at the next level?”
+
+🧠 Likely Questions + Answers
+❓ “What kind of work do you want to do next?”
+
+👉 Don’t say vague growth. Say this:
+
+“I want to continue building at the intersection of GenAI + architecture — but with more ownership across systems, not just components.”
+
+❓ “What do you think is missing today?”
+
+“Less about capability — more about making the progression structured and visible.”
+
+❓ “Why hasn’t this happened yet?”
+
+⚠️ Don’t blame org.
+
+“I think partly due to transitions — and partly because I haven’t been as explicit in driving that conversation earlier.”
+
+👉 This shows ownership (very important)
+
+❓ “Are you asking for promotion?”
+
+“I’m more trying to align on what it would take — and make sure I’m intentionally working toward it.”
+
+❓ “What are your strengths?”
+
+“I’m able to go from architecture to hands-on execution — and connect that to business outcomes.”
+
+🔁 If conversation goes flat
+
+Use this reset:
+
+“Curious — how do you typically see people successfully make that transition?”
+
+2️⃣ Erika Conversation (more direct)
+🎯 What you’re doing
+Turn her into sponsor
+Get clarity + structure
+🔁 Natural Flow
+Start simple:
+
+“I wanted to talk about growth and continuity — something I’ve been reflecting on.”
+
+Explain situation:
+
+“With multiple PL changes over time, I feel like each time I rebuild context — but the longer-term growth plan doesn’t always carry forward.”
+
+Anchor performance:
+
+“At the same time, I feel I’ve been consistently expanding scope — especially around GenAI and architecture work.”
+
+Ask clearly:
+
+“I want to make sure we define a clear path toward the next level — and how we track progress toward it.”
+
+🧠 Likely Questions
+❓ “What does next level mean to you?”
+
+“Owning larger architecture decisions end-to-end, influencing beyond immediate projects, and being recognized for that scope.”
+
+❓ “Where do you think you are today?”
+
+“I feel I’m already operating in parts of that scope — but it’s not consistently recognized or structured yet.”
+
+❓ “What do you need from me?”
+
+“Continuity and clarity — so that the work I’m doing translates into progression.”
+
+3️⃣ Eric Intro (no promo, but high signal)
+🎯 What you’re doing
+First impression = Principal energy
+Show how you think, not just what you did
+🔁 Flow
+When he asks about you:
+
+“I’ve been working across data and GenAI architecture — recently focused on building agentic AI systems in production environments.”
+
+Add depth:
+
+“I enjoy working across layers — from architecture decisions to actually building and enabling teams.”
+
+Then flip to him (this is key)
+
+“Would love to understand how you like to operate — especially around ownership and team structure.”
+🧠 Likely Questions
+❓ “What kind of work do you enjoy?”
+
+“Problems where I can combine architecture thinking with hands-on execution — especially in emerging areas like GenAI.”
+
+❓ “What are you looking for?”
+
+⚠️ Don’t say promotion
+
+“Opportunities to take on broader ownership and drive impact across systems.”
+
+❓ “How do you like to work?”
+
+“I like clarity in direction, but flexibility in execution — and I usually take ownership once the problem space is clear.”
+
+⚡ Small but Critical Tips
+1. Don’t over-explain
+
+Say less → let them pull more
+
+2. Use pauses
+
+After a strong sentence → stop
+Silence = power
+
+3. Don’t rush to promo
+
+Let them think it
+
+4. Energy matters more than words
+Calm
+Clear
+Forward-looking
+🔚 If you want next level prep
+
+I can simulate:
+
+“Eugene pushes back hard”
+“Erika gives vague answers”
+“Eric is very quiet”
+
+Those are the real scenarios that decide outcomes.
+
+madhurima:
+ - is this needed - or does it sound desperate... or threatening that i may leave
+
+ chatgpt:
+ Good instinct to question this — this is where people accidentally hurt their positioning.
+
+Short answer:
+
+👉 Do NOT include anything that sounds like “I might leave.”
+Even subtle hints can backfire at your level.
+
+🧠 Why it’s risky
+
+When you say (or imply):
+
+“I’ve been here 4 years…”
+“Things are getting lost…”
+“I want to make sure I progress…”
+
+It can either land as:
+
+✅ “She’s ready and thoughtful”
+❌ “She’s frustrated / might leave / pushing for promo”
+
+The difference is tone + framing
+
+⚖️ What to KEEP vs AVOID
+✅ KEEP (this is strong)
+Growth narrative
+Impact
+Desire for direction
+Asking for guidance
+⚠️ SOFTEN (don’t remove, just reframe)
+
+Instead of:
+
+“It’s been 4 years and I want to reach next level”
+
+Say:
+
+“I feel like I’ve built a strong foundation here, and I want to be intentional about the next phase of my growth.”
+
+👉 Same message, zero desperation
+
+❌ AVOID (completely)
+“I’m concerned about my progression”
+“Things are getting lost”
+“I haven’t been promoted yet”
+Any hint of:
+comparison
+timeline pressure
+frustration
+🔄 Best Version of Your Sensitive Point (PL changes)
+
+Instead of this (risky):
+
+“With so many PL changes, my growth plan gets lost”
+
+Say this (strong, mature):
+
+“One thing I’ve been thinking about is how to maintain continuity in growth conversations, especially as teams evolve — I want to make sure I’m being intentional about that.”
+
+👉 This does 3 things:
+
+No blame
+No complaint
+Shows ownership
+🎯 Golden Positioning
+
+You want Eugene / Erika to think:
+
+“She’s not complaining. She’s thinking like someone already at the next level.”
+
+🔑 Final Rule
+
+If a sentence makes you wonder:
+
+“Does this sound like I might leave?”
+
+👉 Don’t say it
+
+Instead ask:
+
+“Does this sound like someone who is invested and growing here?”
+
+💡 One-line mental filter before speaking
+
+“Am I sounding like I need something — or like I’m ready for something?”
+
+Always choose the second.
+
+If you want, I can:
+
+Rewrite your exact lines into safe vs risky versions
+Or do a live mock where I interrupt you like Eugene would
+
+That’s usually where this really clicks.
+
+madhurima:
+yeah can u rewrite again a afinal doc, for me to refer
+
+chatgpt:
+Got it — here’s your clean, final reference doc.
+This is not a script — it’s a conversation guide you can glance at before the call.
+
+🧭 CONVERSATION PLAYBOOK (FINAL)
+1️⃣ Eugene (30 min, senior / influential)
+🎯 Goal
+Reconnect
+Show growth trajectory
+Signal readiness (without asking)
+Get guidance
+🟢 OPEN (keep it light)
+
+“Hey Eugene, really good to reconnect — I wanted to use this time as a touchpoint and share what I’ve been working on, and also get your perspective.”
+
+🔵 YOUR STORY (anchor → expand → pause)
+Anchor
+
+“A big theme for me recently has been moving toward building AI systems that actually run in production.”
+
+Expand naturally (only 2–3 depending on flow)
+“I built an agentic AI app end-to-end — orchestration, data integration, full flow.”
+“I’ve been using Claude Code quite a bit — it’s changed how I approach development.”
+“I’m planning to present in the architecture series — around a lakehouse architecture I built.”
+“I also contributed to Databricks CoE work — around things like churn indicators and adoption.”
+
+👉 Stop and pause — let him react
+
+🟡 POSITIONING TRANSITION
+
+“At this point, I feel like I’m operating across delivery, architecture, and broader contributions — and I want to make sure I’m channeling that in the right direction.”
+
+🟠 CONTINUITY (safe version — no complaint)
+
+“One thing I’ve been thinking about is how to maintain continuity in growth conversations as teams evolve — I want to make sure I’m being intentional about that.”
+
+🔴 INTENT (subtle, confident)
+
+“I feel like I’ve built a strong foundation here, and I want to be thoughtful about the next phase of my growth.”
+
+🟣 ASK (this is key)
+
+“From your perspective, what would clearly differentiate someone at the next level?”
+
+🔁 BACKUP PROMPTS (if convo slows)
+“How do you typically see people make that transition successfully?”
+“Where do you see the biggest opportunities for someone like me?”
+⚠️ DO NOT SAY
+“I’ve been here 4 years…”
+“I haven’t been promoted…”
+“Things are getting lost…”
+2️⃣ Erika (manager’s manager)
+🎯 Goal
+Create clarity
+Get alignment on promotion path
+Make her your sponsor
+🟢 OPEN
+
+“I wanted to talk about something I’ve been reflecting on — around growth and continuity.”
+
+🔵 CONTEXT (clean, neutral)
+
+“With a few transitions over time, I’ve noticed that growth conversations sometimes reset — and I want to make sure I’m being intentional about maintaining continuity.”
+
+🟡 PERFORMANCE POSITIONING
+
+“At the same time, I feel I’ve been expanding my scope — especially across GenAI work, architecture, and client impact.”
+
+🔴 CLEAR INTENT
+
+“I want to make sure I’m on a clear path toward the next level — and that we’re aligned on what that looks like.”
+
+🟣 SPECIFIC ASK
+
+“Can we define:
+
+what expectations I should be targeting
+and how we track progress consistently?”
+🔁 FOLLOW-UP (if needed)
+
+“I’d really value your support in making that progression more structured.”
+
+⚠️ TONE
+Calm
+Structured
+Not emotional
+Not complaining
+3️⃣ Eric (new PL intro)
+🎯 Goal
+Strong first impression
+Show leadership mindset
+Build alignment (no promo talk)
+🟢 INTRO
+
+“Hi Eric, really looking forward to working together — happy to share a quick context on what I’ve been doing.”
+
+🔵 YOUR STORY (tight)
+
+“I’ve been working across data and GenAI architecture — recently focused on building agentic AI systems in production.”
+
+🟡 HOW YOU OPERATE (important)
+
+“I enjoy working across layers — from architecture decisions to hands-on execution and enabling teams.”
+
+🟣 ALIGN WITH HIM
+
+“Would love to understand how you like to work — especially around ownership and team structure.”
+
+🔁 CLOSE
+
+“Excited to partner and drive meaningful outcomes together.”
+
+🧠 COMMON QUESTIONS (USE THESE ANSWERS)
+❓ “What kind of work do you want?”
+
+“Work where I can combine architecture thinking with hands-on execution — especially in GenAI systems.”
+
+❓ “What’s your strength?”
+
+“Connecting architecture, execution, and business outcomes.”
+
+❓ “What’s next for you?”
+
+“Taking on broader ownership across systems and driving impact beyond individual components.”
+
+❓ “What do you need?”
+
+“Clarity and alignment — so I can be intentional about how I grow.”
+
+⚡ FINAL REMINDERS
+1. Don’t rush to say everything
+
+Let them pull more from you
+
+2. Pause after strong statements
+
+Silence = confidence
+
+3. No desperation signals
+
+Never sound like:
+
+waiting
+frustrated
+comparing
+4. Your energy should feel like:
+
+“I’m already operating at the next level — just aligning the system around it.”
+If you want, next step we can do:
+👉 Live mock (I play Eugene / Erika and push you a bit)
+That’s where this really locks in.
+
+madhurima:
+“I enjoy working across layers — from architecture decisions to hands-on execution and enabling teams.” - sounds too abstract, can you please use simple language everywhere, do not use complicvatated phrases
+
+chatgpt:
+Good catch — that line does sound a bit “consulting-y.” Let’s simplify everything so it sounds natural, real, and easy to say out loud.
+
+I’ll rewrite key parts in plain language.
+
+🔁 SIMPLE, NATURAL VERSION (FINAL)
+3️⃣ Eric (fixing your line first)
+❌ Before (too abstract)
+
+“I enjoy working across layers — from architecture decisions to hands-on execution and enabling teams.”
+
+✅ Better (simple + real)
+
+“I like being involved end-to-end — thinking through the design, building things out, and helping the team move forward.”
+
+👉 Alternative options (pick what feels natural to you):
+
+“I like figuring things out and then actually building them.”
+“I don’t like just designing — I like building and seeing it work.”
+“I enjoy owning things from idea to execution.”
+1️⃣ Eugene — simplified version
+🟢 OPEN
+
+“Hey Eugene, really good to reconnect — I just wanted to catch up, share what I’ve been working on, and get your thoughts.”
+
+🔵 YOUR STORY (simple, no jargon)
+Start
+
+“Lately I’ve been focusing more on building AI systems that actually run in production.”
+
+Then add (pick 2–3 naturally)
+“I built an agent-based app end-to-end, which was a great learning experience.”
+“I’ve been using Claude Code a lot — it’s been really helpful in how I build things.”
+“I’m planning to present in the architecture series — around a lakehouse project I worked on.”
+“I also helped out with some Databricks CoE work recently.”
+
+👉 Then pause
+
+🟡 TRANSITION
+
+“I feel like I’ve been growing a lot in the kind of work I’m doing, and I want to make sure I’m heading in the right direction.”
+
+🟠 CONTINUITY (simple, no corporate tone)
+
+“One thing I’ve noticed is that with team changes, sometimes these growth conversations don’t carry forward, so I want to be a bit more intentional about that.”
+
+🔴 INTENT
+
+“I feel like I’m ready to take on more responsibility and grow to the next level.”
+
+🟣 ASK
+“From your side, what do you think I should focus on to get there?”
+
+2️⃣ Erika — simplified
+🟢 OPEN
+
+“I wanted to talk about my growth and how I move forward from here.”
+
+🔵 CONTEXT
+
+“With a few team changes over time, I feel like the longer-term plan sometimes resets.”
+
+🟡 PERFORMANCE
+
+“At the same time, I feel like I’ve been taking on more — especially around GenAI and architecture work.”
+
+🔴 INTENT
+
+“I want to make sure I’m clearly working toward the next level.”
+
+🟣 ASK
+
+“Can we define what I should be aiming for, and how we track that?”
+
+🧠 SIMPLE ANSWERS (no jargon)
+❓ “What do you want to do next?”
+“Take on bigger ownership and drive things end-to-end.”
+
+❓ “What are you good at?”
+
+“I can take something from idea to working solution.”
+
+❓ “What do you need?”
+
+“Clarity on what to focus on so I can grow to the next level.”
+
+❓ “How do you like to work?”
+
+“I like understanding the problem clearly, then taking ownership and driving it.”
+
+⚡ Final check (very important)
+
+Before you say anything, ask yourself:
+
+👉 “Would I say this casually in a real conversation?”
+
+If it sounds like:
+
+a presentation ❌
+a performance review ❌
+a resume ❌
+
+Then simplify it.
+
+If you want, next step we can:
+👉 Do a live mock where I interrupt you and you respond naturally
+That’s the fastest way to get this fully internalized.
+
+madhurima:
+is taht all for a eugene 30 min convo, ithink i should ask him about other things, and alos say I could not attand the ecodex sessions, as was wrapped up with databricks and delivery using claude etc//// (Eugene has earlier invited me to codex sessions)
+
+chatgpt:
+You’re absolutely right — for a 30-min with Eugene, it shouldn’t feel like a “career check-in.”
+It should feel like a well-rounded conversation where:
+
+you share updates
+you show curiosity
+you reconnect personally
+and then lightly touch growth
+
+👉 Think: 60% conversation, 40% positioning
+
+🧭 UPDATED FLOW FOR EUGENE (30 MIN)
+⏱️ Rough split
+5 min → warm reconnect
+10–12 min → your updates (natural, not dump)
+10–12 min → his perspective + broader discussion
+3–5 min → light growth alignment
+🟢 1. OPEN (make it human, not transactional)
+
+“Hey Eugene, really good to reconnect — it’s been a while.”
+
+👉 Then immediately make it two-way:
+
+“How have things been on your side?”
+
+👉 Let him talk first (this is important — senior folks like this)
+
+🔵 2. BRIDGE + CODEX (VERY GOOD you brought this up)
+
+Say this early — it shows respect + ownership:
+
+“Also, I wanted to mention — you had invited me to the Codex sessions earlier, I couldn’t attend those because I was pretty deep in delivery work around Databricks and some AI work using Claude — but I’d definitely like to catch up on those.”
+
+👉 Why this works:
+
+Acknowledges invite
+Shows you were busy with valuable work
+Signals continued interest
+🔵 3. YOUR UPDATE (natural flow)
+
+“A big theme for me recently has been building AI systems that actually run in production.”
+Then layer in casually:
+
+“I built an agent-based app end-to-end…”
+“Been using Claude Code quite a bit…”
+“Helping with Databricks work…”
+“Planning to present in architecture series…”
+
+👉 Don’t list — sprinkle as conversation goes
+
+🟡 4. SHIFT TO HIM (this is what you were missing)
+
+Ask thoughtful questions:
+
+Good ones:
+“What are you seeing across teams right now in terms of GenAI adoption?”
+“Where do you think the biggest opportunities are for us in this space?”
+“What kind of work do you think will matter most in the next 6–12 months?”
+
+👉 This does 2 things:
+
+Makes convo balanced
+Shows strategic thinking
+🟠 5. LIGHT GROWTH TRANSITION (don’t make it heavy)
+
+After some discussion:
+
+“For me, I feel like I’ve been growing a lot in the kind of work I’m doing, and I want to make sure I’m heading in the right direction.”
+
+Then:
+
+“From your perspective, what should I focus on next?”
+
+👉 That’s enough. No long promo talk needed.
+
+🧠 OPTIONAL (only if it flows naturally)
+
+You can lightly add:
+
+“I also want to make sure I’m being intentional about how I grow, especially as teams evolve.”
+
+👉 That’s your PL point — softened
+🔴 6. CLOSE (important)
+
+“This was really helpful — I’d love to stay more connected going forward.”
+
+🧠 WHAT THIS SIGNALS TO HIM
+
+Without saying it directly, you’re showing:
+
+You’re doing real work
+You think beyond your project
+You’re invested in Slalom
+You’re ready for more
+
+👉 That’s exactly what triggers advocacy
+
+⚠️ WHAT TO AVOID
+Don’t spend >5–7 min talking only about yourself
+Don’t over-explain Codex absence
+Don’t jump too fast to growth/promo
+Don’t make it feel like an “ask meeting”
+💡 ONE LINER TO REMEMBER
+
+If you get nervous, just remember this:
+
+“Make it a conversation, not an update.”
+
+If you want, next I can:
+👉 simulate Eugene asking you tough or vague questions
+(he might — senior folks often do 😄)
+
+madhurma:
+but where in Eugen convo have you signalled about my promo help i need from him, i want to be explicit about it, its long time now, and i need to ask that
+
+chatgpt:
+This is a great question — and you’re right to push on this.
+
+👉 If you don’t make it explicit, Eugene may just think:
+
+“She’s doing well”
+…but not:
+“I should actively help her get promoted”
+
+So yes — you should ask, but the key is:
+👉 Be direct without sounding needy or frustrated
+
+🧭 HOW TO SIGNAL PROMO CLEARLY (WITHOUT RISK)
+
+You don’t need a long speech.
+You need one clean, confident moment.
+
+🎯 WHERE IT FITS IN THE FLOW
+
+After:
+
+you’ve had a good discussion
+you’ve shared your work
+you’ve asked him about trends
+
+👉 Then you insert this
+
+🟣 THE EXACT MOMENT
+
+“One thing I also wanted to talk about…”
+
+(pause — let it land)
+
+🔴 THE LINE (clear + confident)
+
+“I do want to be explicit — I’m aiming to move to the next level, and I’d really value your guidance and support in getting there.”
+
+🟡 THEN ADD CONTEXT (short, grounded)
+
+“I feel like I’ve been taking on that kind of work already, and I want to make sure I’m aligning it in the right way.”
+🟢 THEN HAND IT TO HIM
+
+“From your perspective, what would make that case really strong?”
+
+🧠 WHY THIS WORKS
+
+This does 3 powerful things:
+
+Clear ask
+→ no guessing
+Confidence (not desperation)
+→ “I’m ready”, not “please promote me”
+Invites him to sponsor you
+→ this is the real goal
+⚠️ WHAT YOU MUST NOT ADD AFTER THIS
+
+Don’t say:
+
+“It’s been a long time…”
+“I’ve been waiting…”
+“Others have been promoted…”
+
+👉 That instantly weakens you
+
+💬 IF YOU WANT A SLIGHTLY SOFTER VERSION
+
+If you want less direct:
+
+“I’m starting to think more seriously about moving to the next level, and I’d really value your guidance on how to get there.”
+
+🔁 IF HE RESPONDS POSITIVELY
+
+You follow with:
+
+“That’s helpful — I’d love to be intentional about working toward that.”
+🔁 IF HE IS VAGUE
+
+Push gently:
+
+“Would it help if I focused more on a certain type of work or visibility?”
+
+🔁 IF HE ASKS “WHY NOW?”
+
+Perfect opportunity:
+
+“I feel like my scope has grown a lot, and I want to make sure I’m progressing in line with that.”
+
+⚡ FINAL POSITIONING
+
+You’re not saying:
+
+“I want a promotion”
+
+You’re saying:
+
+“I’m ready — help me make it happen”
+
+🧠 ONE LINE TO REMEMBER
+
+If you forget everything, just say:
+
+“I want to be explicit — I’m aiming for the next level, and I’d value your guidance on how to get there.”
+
+That’s it. Clean. Strong. No risk.
+
+If you want, next we can:
+👉 practice how to say this naturally in your tone (not scripted)
+👉 or simulate Eugene pushing back (which is where most people lose confidence)
+
+madhurima:
+ok give me a final doc for all 3 meetings first let me copy that, and come back to you later, as i have some other work to finish
+
+Perfect — here’s your final, clean, simple, no-jargon reference doc for all 3 conversations.
+You can skim this right before each meeting.
+
+🧭 FINAL CONVERSATION GUIDE
+1️⃣ Eugene (30 min – senior, influential)
+🎯 Goal
+Reconnect
+Show what you’ve been doing
+Ask for clear promotion support
+Get his guidance
+🟢 OPEN (2–3 min)
+
+“Hey Eugene, really good to reconnect — how have things been on your side?”
+
+👉 Let him talk
+
+🔵 CODEX (acknowledge + explain briefly)
+
+“Also, you had invited me to the Codex sessions — I couldn’t attend because I was pretty deep in delivery work around Databricks and some AI work using Claude, but I’d like to catch up on those.”
+
+🔵 YOUR WORK (natural, no list)
+
+Start:
+
+“Lately I’ve been focusing more on building AI systems that actually run in production.”
+
+Then casually mention (2–3 max):
+
+“I built an agent-based app end-to-end…”
+“Been using Claude Code quite a bit…”
+“Planning to present in the architecture series…”
+“Helped with some Databricks CoE work…”
+
+👉 Pause, let him react
+
+🟡 ASK HIM (make it a conversation)
+“What are you seeing across teams right now in GenAI?”
+“Where do you think the biggest opportunities are?”
+“What kind of work will matter most in the next 6–12 months?”
+🔴 PROMO MOMENT (be clear, confident)
+
+“One thing I also wanted to talk about — I do want to be explicit. I’m aiming to move to the next level, and I’d really value your guidance and support in getting there.”
+
+Then:
+
+“I feel like I’ve been taking on that kind of work already, and I want to make sure I’m aligning it the right way.”
+
+Then ask:
+
+“From your perspective, what would make that case really strong?”
+
+🔁 IF NEEDED (light continuity mention)
+
+“I also want to be intentional about how I grow, especially as teams evolve.”
+
+🔚 CLOSE
+
+“This was really helpful — I’d love to stay more connected going forward.”
+
+⚠️ DO NOT SAY
+“It’s been 4 years…”
+“I’ve been waiting…”
+“Others are getting promoted…”
+2️⃣ Erika (manager’s manager)
+🎯 Goal
+Get clarity on promotion path
+Make her your sponsor
+Address continuity issue (calmly)
+
+🟢 OPEN
+
+“I wanted to talk about my growth and how I move forward from here.”
+
+🔵 CONTEXT (neutral)
+
+“With a few team changes over time, I feel like the longer-term plan sometimes resets.”
+
+🟡 YOUR WORK
+
+“At the same time, I feel like I’ve been taking on more — especially around GenAI and architecture work.”
+
+🔴 INTENT (clear)
+
+“I want to make sure I’m clearly working toward the next level.”
+
+🟣 ASK (specific)
+
+“Can we define:
+
+what I should be aiming for
+and how we track progress?”
+🔁 FOLLOW-UP
+
+“I’d really value your support in making that progression more structured.”
+
+⚠️ TONE
+Calm
+Direct
+No frustration
+No comparison
+3️⃣ Eric (new PL intro)
+🎯 Goal
+Strong first impression
+Show ownership mindset
+Build alignment (no promo talk)
+🟢 INTRO
+
+“Hi Eric, really looking forward to working together — happy to share a quick background.”
+
+🔵 YOUR STORY (simple)
+
+“I’ve been working on data and GenAI projects — recently focused on building AI systems that actually run in production.”
+
+🟡 HOW YOU WORK (simple, natural)
+
+“I like being involved end-to-end — thinking through the design, building things out, and helping things move forward.”
+
+🟣 ALIGN WITH HIM
+
+“Would love to understand how you like to work, and what you expect from your team.”
+
+🔁 CLOSE
+
+“Looking forward to working together and driving good outcomes.”
+
+🧠 SIMPLE ANSWERS (USE THESE)
+❓ What do you want next?
+
+“More ownership and bigger scope — driving things end-to-end.”
+
+❓ What are you good at?
+
+“Taking something from idea to a working solution.”
+
+❓ What do you need?
+
+“Clarity on what to focus on so I can grow to the next level.”
+
+❓ How do you work?
+
+“I like understanding the problem clearly, then taking ownership and driving it.”
+
+⚡ FINAL REMINDERS
+1. Don’t rush
+
+Let it be a conversation, not a speech
+
+2. Pause often
+
+Say something → stop → let them respond
+
+3. Keep it simple
+
+If it sounds complicated, simplify it
+
+4. Your mindset
+
+“I’m ready for the next level — I’m aligning others around it”
+
+When you’re back, we can:
+👉 do mock Q&A
+👉 or refine based on how each conversation actually goes 👍
+
+
+madhurima:
+for eugne talk you gave me this earlier - 🔴 PROMO MOMENT (be clear, confident) “One thing I also wanted to talk about — I do want to be explicit. I’m aiming to move to the next level, and I’d really value your guidance and support in getting there.” Then: “I feel like I’ve been taking on that kind of work already, and I want to make sure I’m aligning it the right way.” Then ask: “From your perspective, what would make that case really strong?” Can you add a bit of hint on PL changes from SJ to erica to Rhea to Joshua and then Eric now
+
+chatgpt:
+
+
+Yes — you can include that, and it’s actually powerful if done cleanly.
+
+The key is:
+👉 State it as context, not complaint
+👉 Show ownership, not frustration
+
+🔴 UPDATED PROMO MOMENT (FINAL – WITH PL CONTEXT)
+
+Use this flow exactly — it will land well:
+
+“One thing I also wanted to talk about — I do want to be explicit. I’m aiming to move to the next level, and I’d really value your guidance and support in getting there.”
+
+👉 Then add PL context smoothly:
+
+“One thing that’s been a bit challenging is that with a few changes over time — from SJ to Erika to Rhea to Joshua and now Eric — the longer-term growth conversations haven’t always carried through consistently.”
+
+👉 Immediately balance it (important):
+
+“Everyone has been supportive individually, but I want to make sure I’m being more intentional about how I move forward.”
+
+👉 Then reinforce your readiness:
+
+“I feel like I’ve been taking on that kind of work already, and I want to make sure I’m aligning it the right way.”
+
+👉 Then ask:
+
+“From your perspective, what would make that case really strong?”
+
+🧠 WHY THIS VERSION WORKS
+You acknowledge reality (PL changes)
+You don’t blame anyone
+You take ownership
+You stay forward-looking
+You still make a clear ask
+⚠️ DELIVERY TIP (very important)
+
+When you say the PL line:
+
+Say it matter-of-fact
+No emotional tone
+No over-explaining
+
+👉 Think: “just stating context”
+
+💡 EVEN SHORTER VERSION (if you want lighter tone)
+
+“With a few PL changes over time, I feel like the growth conversation hasn’t always carried forward consistently, so I want to be more intentional about it.”
+
+🔑 FINAL CHECK
+
+If it sounds like:
+
+“this is a problem” ❌
+Make it sound like:
+“this is context, here’s how I’m addressing it” ✅
+
+You’re in a very good position here — this version will come across as:
+👉 mature
+👉 self-aware
+👉 ready
+
+When you’re back, we can:
+👉 practice saying this naturally (so it doesn’t feel rehearsed)
+👉 or prep for how Eugene might respond to this specifically 👍
+
+
+madhurima:
+this sounds negative and looks like complaining about PL ...,. show it as my apprehension rather than complaining about PLs he will go to PLs
+
+chatgpt:
+Great catch — your instinct is right.
+You want this to sound like your concern / your ownership, not a complaint about PLs.
+
+Here’s a cleaner, safer version that keeps the message but removes any negativity 👇
+
+🔴 FINAL PROMO MOMENT (REFINED – NO NEGATIVITY)
+
+Start same:
+
+“One thing I also wanted to talk about — I do want to be explicit. I’m aiming to move to the next level, and I’d really value your guidance and support in getting there.”
+
+🟡 Then add your apprehension (not complaint)
+✅ Best version (recommended)
+
+“One thing I’ve been thinking about is making sure I’m being intentional about my growth, especially as teams and managers evolve over time.”
+
+✅ Slightly more specific (still safe)
+
+“With a few transitions over time, I just want to make sure I’m doing my part to keep the growth conversation consistent.”
+
+👉 Notice:
+
+No names
+No blame
+No “issue”
+Fully self-owned
+🟢 Then reinforce readiness
+
+“I feel like I’ve been taking on that kind of work already, and I want to make sure I’m aligning it the right way.”
+
+🟣 Then ask
+
+“From your perspective, what would make that case really strong?”
+
+🧠 WHY THIS VERSION IS BETTER
+Sounds like maturity, not frustration
+Doesn’t trigger him to “check with PLs”
+Keeps focus on you + growth
+Signals: “I’m proactive, not complaining”
+⚡ EVEN SIMPLER (if you want super natural)
+
+“I just want to make sure I’m being intentional about how I grow here.”
+
+🔑 FINAL RULE
+
+If a sentence could make him think:
+
+“Something is wrong in the team”
+
+👉 Don’t say it.
+
+Make it sound like:
+
+“She’s taking ownership of her growth”
+
+This version is clean, safe, and still gets your point across.
+
+When you’re back, we can:
+👉 practice how to say this naturally in your tone (that’s the real key)
+
+madhurima:
+in the “One thing I’ve been thinking about is making sure I’m being intentional about my growth, especially as teams and managers evolve over time.” can you add something like - our org is called Data & Ai, and I am sure what diffrentiates in terms of Org or capability people being tagged to AI vs Data. Since i have bene more working on AI engineering, is there a shift or hange that is needed from slalom perspective
+
+chatgpt:
+This is a very strong addition — it actually elevates you from “promo candidate” → “thinking like a Principal.”
+
+We just need to phrase it simply and safely, without sounding confused or critical of the org.
+
+🔴 FINAL LINE (CLEAN + NATURAL)
+
+Here’s the best version combining everything:
+
+“One thing I’ve been thinking about is making sure I’m being intentional about my growth, especially as teams and managers evolve over time.
+Also, since we’re structured as Data & AI, I’ve been doing more work on the AI engineering side recently, so I wanted to understand how that fits from a Slalom perspective — and if there’s anything I should be doing differently.”
+
+🧠 WHY THIS WORKS
+No complaint → you’re not pointing at PLs
+Shows awareness of org structure
+Positions you in AI (strategic area)
+Asks for guidance, not validation
+Sounds thoughtful, not confused
+💡 EVEN SHORTER VERSION (if you want lighter tone)
+
+“I also wanted to get your perspective — since I’ve been doing more AI-focused work lately, how does that fit within our Data & AI structure, and is there anything I should be doing differently?”
+
+🔁 HOW IT FLOWS IN CONVERSATION
+
+You can say:
+
+“I want to be explicit — I’m aiming for the next level…”
+→ (promo line)
+
+Then:
+
+“And I also want to make sure I’m being intentional about my growth…”
+→ (this line)
+
+👉 This makes it feel like:
+
+one continuous thought
+not a separate concern
+⚠️ WHAT TO AVOID
+
+Don’t say:
+
+“I’m not sure where I fit” ❌
+“There’s confusion in org” ❌
+“AI vs Data is unclear” ❌
+
+👉 Always keep it as:
+
+“I want to understand and align”
+
+🔑 FINAL FEEL
+
+You will come across as:
+
+thoughtful
+strategic
+self-driven
+already thinking at next level
+
+If you want later, we can:
+👉 tighten this into your exact speaking tone (like how you naturally talk)
+👉 or simulate Eugene reacting to this (he might go deeper here)
+
+madhurima:
+no no add that in ASK HIM (make it a conversation)
+
+chatgpt:
+
+Ah got it — you want this as part of the discussion with him, not in the promo statement.
+That’s actually even better 👍 — it keeps the promo clean and uses this as a smart, strategic question.
+
+🟡 UPDATED: ASK HIM (make it a conversation)
+
+Use this section like this:
+
+🟡 ASK HIM (natural flow)
+
+Start broad:
+
+“What are you seeing across teams right now in GenAI?”
+
+Then go a bit deeper:
+
+“Where do you think the biggest opportunities are for us in this space?”
+
+Then bring in your AI vs Data question (this is your addition):
+
+“Also, I wanted to get your perspective — since I’ve been doing more AI-focused work lately, how does that fit within our Data & AI structure, and is there anything I should be doing differently?”
+
+💡 Optional follow-up (if he engages)
+
+“Is there a different kind of visibility or positioning I should be thinking about?”
+
+🧠 WHY THIS PLACEMENT IS PERFECT
+Keeps promo ask clean and strong
+Shows you’re thinking about org + positioning
+Makes it a discussion, not a concern
+Signals: “I’m aligning myself with where the org is going”
+🔑 DELIVERY TIP
+
+Say this like you’re genuinely curious — not like:
+
+“I don’t understand org” ❌
+But like:
+“I want to align better” ✅
+⚡ FINAL FLOW (just so you see it clearly)
+Your work
+Ask him about GenAI trends
+Ask this AI vs Data question
+Then later → promo moment
+
+👉 This sequencing makes your promo ask much stronger
+
+You’ve now got a really strong, well-balanced conversation 👍
+
+madhurima:
+ok i had a chat with Eugene, here is the transcript (atatched)
+
+chatgpt:
+This was actually a very strong conversation — like genuinely good.
+I’ll break it down honestly and clearly so you know exactly where you stand and what to do next.
+
+🧠 1. BIG PICTURE: HOW YOU DID
+✅ What you did really well
+You built rapport naturally (travel convo → perfect)
+You explained your work clearly (no jargon overload)
+You asked a smart org question (AI vs Data) → this stood out
+You made the promo ask explicitly (this is huge)
+
+👉 Most people fail at at least 2 of these. You did all 4.
+
+🔴 2. YOUR PROMO MOMENT — HONEST FEEDBACK
+
+Here’s what you said:
+
+“I do want to be more explicit… aiming to move to next level… PLs have been changing… losing track…”
+
+⚖️ What worked
+You were clear ✅
+You asked for guidance ✅
+You didn’t sound aggressive ✅
+⚠️ What slightly weakened it
+
+This part:
+
+“PLs have been changing… I feel like I’m losing track…”
+
+👉 This came out a bit more negative than ideal
+
+Not terrible — but:
+
+It shifted focus to org issue
+Instead of keeping focus fully on your readiness
+BUT — here’s the important part 👇
+
+👉 Eugene did NOT react negatively
+
+Which means:
+
+You stayed within safe limits
+It did not hurt you
+🟢 3. EUGENE’S RESPONSE (THIS IS THE GOLD)
+
+This is the most important part of the whole convo.
+
+🔥 He said:
+1. “Finish readiness assessment and share with me”
+
+👉 This is direct engagement
+
+2. “Let’s set up time to review together”
+
+👉 This = he’s willing to invest time
+
+3. “Promotion is a visibility game”
+
+👉 This is insider advice
+
+4. “I want to put you in the forefront”
+
+👉 THIS IS HUGE
+
+5. “I want you to own this (agent delivery knowledge work)”
+
+👉 This is basically:
+
+“I want to create a platform for you”
+
+🧠 Translation (what he REALLY meant)
+
+He is saying:
+
+“You’re not far.
+But I need you to:
+
+show readiness clearly
+increase visibility
+lead something visible
+And I will help you.”
+🚨 4. THIS IS A BIG WIN
+
+Let me be very clear:
+
+👉 You got sponsorship signals
+
+Not guaranteed promo — but:
+
+He’s engaged
+He’s offering platform
+He’s giving next steps
+
+That’s exactly what you needed.
+
+🧭 5. WHAT YOU MUST DO NEXT (CRITICAL)
+
+This convo only matters if you execute next.
+
+🔴 Step 1: Finish Readiness Assessment (TOP PRIORITY)
+
+He explicitly said:
+
+“Finish it and send it to me”
+
+👉 This is now your #1 task
+
+Do it like this:
+
+Map Principal vs Senior Consultant
+Add your real examples
+Be concrete (projects, impact, influence)
+🟡 Step 2: Send it to Eugene (don’t wait)
+
+Message:
+
+“Hi Eugene, I’ve completed the readiness assessment we discussed — would love to review it with you when you have time.”
+
+👉 This keeps momentum
+
+🟢 Step 3: Lean into what he offered (VERY IMPORTANT)
+
+He gave you a golden opportunity:
+
+Own the “agent delivery / best practices” initiative
+
+👉 This is your visibility platform
+
+Do NOT treat this casually.
+
+What you should do:
+Start documenting:
+issues teams face (you already mentioned weekend fixes)
+best practices
+guardrails
+Create something simple:
+doc / repo / notes
+
+👉 Then go back to him:
+
+
+“I started putting some thoughts together on agent delivery best practices — would love your input”
+
+🔵 Step 4: Get into those connections
+
+He mentioned:
+
+Dave Messina
+Christian
+Chris Temple
+
+👉 These are visibility multipliers
+
+⚠️ 6. ONE THING TO IMPROVE NEXT TIME
+
+Your line:
+
+“I’ve been talking about this for 2–3 cycles…”
+
+👉 Avoid this going forward
+
+Better version:
+
+“I want to make sure I follow through on this now.”
+
+💡 7. YOUR CURRENT POSITION
+
+Based on this convo:
+
+👉 You are:
+
+Seen as growing strongly
+Seen as capable
+Not yet seen as fully visible at Principal level
+
+👉 Gap is:
+
+Visibility
+Ownership at org level
+🔥 8. FINAL TRUTH (important)
+
+You don’t need to:
+
+prove more capability
+work harder
+
+You need to:
+
+be seen at a broader level
+
+And Eugene just opened that door.
+
+🧭 9. SIMPLE ACTION PLAN
+
+Do just this:
+
+Finish readiness doc
+Send to Eugene
+Start agent best practices doc
+Follow up with him in 1–2 weeks
+⚡ FINAL TAKE
+
+👉 This was a high-quality conversation
+👉 You did 90% of it right
+👉 And most importantly:
+
+You got an entry into sponsorship
+
+When you’re ready, next we can:
+
+build your readiness doc (this is critical now)
+or draft your follow-up message to Eugene
+or structure your agent best practices initiative
+
+This is the moment to capitalize 👍
+
+madhurima:
+great! I will first prep the readiness doc with you
+
+chatgpt:
+Perfect — this is exactly the highest ROI thing you can do right now.
+
+We’ll make this:
+
+crisp (Eugene will actually read it)
+evidence-based (no fluff)
+positioned for Principal
+🧭 STEP 0: WHAT WE’RE BUILDING
+
+Not a long doc. Not an essay.
+
+👉 Think:
+
+“1–2 page sharp case: why I’m operating at next level”
+
+🧠 STRUCTURE (we’ll fill this together)
+
+We’ll use this exact structure:
+
+1️⃣ Target Role: Principal (or next level)
+
+One line:
+
+“I am targeting promotion to Principal and have assessed my readiness against expected capabilities.”
+
+2️⃣ Capability Areas (core section)
+
+We’ll use 4 buckets (simple + powerful):
+
+Delivery & Ownership
+Architecture & Technical Leadership
+Influence & Visibility
+People / Mentoring / Org Contribution
+
+For EACH:
+👉 We’ll write:
+
+Expectation (1 line)
+What you’ve done (bullet points)
+Gap (if any — small, honest)
+3️⃣ Summary (very important)
+
+“Based on the above, I believe I am operating at the next level in X areas and actively building in Y areas.”
+
+4️⃣ Ask
+
+“Looking for feedback on readiness and what would strengthen my case for the next cycle.”
+
+🟢 STEP 1: LET’S START (YOU FILL THIS)
+
+Answer these — quick bullets, don’t overthink:
+
+🔹 A. Delivery & Ownership
+
+Tell me:
+
+2–3 projects where you owned things end-to-end
+What decisions you made
+Any impact (speed, cost, quality, complexity)
+🔹 B. Architecture & Technical Leadership
+
+Tell me:
+
+Where you designed architecture (FruitCo lakehouse, current AI agent, etc.)
+Did you influence decisions? Push back? Propose better solutions?
+🔹 C. Influence & Visibility
+
+Tell me:
+
+Presentations (architecture series, client, internal)
+Senior stakeholders you interacted with
+Any cross-team work
+🔹 D. People / Mentoring
+
+Tell me:
+
+Did you guide juniors?
+Help teams adopt something (AI, Databricks, etc.)
+Any informal leadership
+🔹 E. Gaps (be honest but smart)
+
+Tell me:
+
+Where YOU think you’re not fully there yet
+(we’ll frame this positively)
+⚡ IMPORTANT
+
+Don’t try to write perfect sentences.
+
+👉 Just dump bullets like:
+
+“Built agent app end to end”
+“Worked with AWS ProServe + GE”
+“Presented architecture to client”
+
+I’ll convert it into sharp Principal-level language
+
+🔥 NEXT STEP
+
+Reply with your bullets for A–E.
+
+I’ll turn it into:
+👉 a polished readiness doc you can send to Eugene
+
+This is where we make it promotion-ready.
+
+madhurima
+i will take a break now, will come back to you later
+
+chatgpt:
+Sounds good — take a break 👍
+
+When you’re back, we’ll:
+
+turn your bullets into a tight readiness doc
+make it Principal-level (not just good, but compelling)
+and prep a clean follow-up to Eugene
+
+No rush — we’ll pick up right where we left off.
+
+
+madhurima:
+ok I m back. almost a month now, and I did not get back to Eugene. I need a few suggestions from you- 1. How should i approach him now - this is what i was planning to say, you can help refine looking at teh previous conversaton, - Hi Eugene, happy friday! I just wanted to let you know that I got really pulled into the production rollout, and was working like 10 hrs a day so could not get time to talk to you after our conversation. Now that we are getting into phase 2 of the project, I feel like I can get some time to spend at slalom related work and take us further from what we discussed. Also, I know yu asked me to share the template that I filled with joshua for promo process, since it was only midway, and now that Eric has shared a difefernt template, I will share once I fir things in there. Meanwhile, Iet me know if I can do anything to help start the AI thing we discused. ====== above message is a dump of my thoughts, not really a maesssage, you need to sahrpen it, and make it more effecttibve, remove all ambuiguity like "thing" etc with the proper pieces based ont the conversation with Eugene 1 month back
+
+
+chatgpt:
+This is actually a good situation — not bad at all.
+Because:
+
+you were genuinely busy in production rollout
+Eugene already showed interest in helping you
+and now you’re coming back with a more concrete direction
+
+The biggest improvement needed is:
+👉 remove apology/excuse energy
+👉 sound organized and intentional
+
+Right now your draft slightly sounds like:
+
+“Sorry I disappeared…”
+
+Instead, you want:
+
+“Production ramped up, now I’m re-engaging on the next steps we discussed.”
+
+That’s a very different energy.
+
+Here’s the refined version:
+Hi Eugene, happy Friday!
+
+The past few weeks got pretty intense with the production rollout, so I ended up spending most of my time deep in delivery work. Now that we’re moving into Phase 2, I finally have some space again to focus on the broader AI delivery and enablement ideas we discussed.
+
+I also wanted to follow up on the readiness assessment conversation. The version Joshua and I had started was only partially completed, and Eric recently shared an updated template/process, so I’m consolidating everything into that format before sharing it with you.
+
+In parallel, I’ve been thinking more about the AI-assisted delivery best practices discussion we had — especially around guardrails, reviewer patterns, and how teams should structure development when using agents in production workflows. I’d love to help drive some of that thinking forward from the delivery side.
+
+Let me know if there’s a good way for me to start contributing there, especially around the Codex / agent delivery enablement discussions.
+
+Why this version works:
+
+sounds calm and senior
+reminds him of the important discussion
+subtly re-establishes momentum
+reconnects to the visibility/platform he offered you
+does not sound guilty or apologetic
+
+Most importantly:
+👉 it transitions you from “person asking for promo” → “person helping shape AI delivery practices at Slalom”
+
+That’s the positioning you want now.
+
+madhurima:
+readiness assessment conversation - should we call it promo readiness or he will understand?
+
+chatgpt:
+Yes — you should make it more explicit.
+“Readiness assessment conversation” is a little vague after a month.
+
+But I would avoid saying:
+
+“promo readiness”
+
+because it can sound a bit transactional.
+
+Best balance is:
+
+“next-level readiness” ✅
+or “promotion readiness” ✅ (more direct, still okay)
+
+I’d recommend this wording:
+
+Hi Eugene, happy Friday!
+
+The past few weeks got pretty intense with the production rollout, so I ended up spending most of my time deep in delivery work. Now that we’re moving into Phase 2, I finally have some space again to focus on the broader AI delivery and enablement ideas we discussed.
+
+I also wanted to follow up on our conversation around next-level readiness. The version Joshua and I had started was only partially completed, and Eric recently shared an updated template/process, so I’m consolidating everything into that format before sharing it with you.
+
+In parallel, I’ve been thinking more about the AI-assisted delivery best practices discussion we had — especially around guardrails, reviewer patterns, and how teams should structure development when using agents in production workflows. I’d love to help drive some of that thinking forward from the delivery side.
+
+Let me know if there’s a good way for me to start contributing there, especially around the Codex / agent delivery enablement discussions.
+
+
+“Next-level readiness” is ideal because:
+
+Eugene will absolutely understand what you mean
+it sounds growth-oriented, not HR-oriented
+it aligns with the tone of your earlier conversation
+
+That phrasing is much more senior-level.
+
+chatgpt:
+do you think, I should make it more crisper, not sure hjow much time he will have
+
+Yes — for someone like Eugene, crisper is better.
+Right now the message is good, but slightly too “explaining.”
+
+You can make it tighter while still preserving:
+
+momentum
+ownership
+promo follow-up
+AI enablement connection
+
+This version is sharper and more executive:
+Hi Eugene, happy Friday!
+
+The last few weeks got pretty intense with the production rollout, so I was heads down in delivery work. Now that we’re moving into Phase 2, I finally have some space again to focus on the broader AI delivery and enablement discussions we had.
+
+I also wanted to follow up on the next-level readiness conversation. Joshua and I had only partially completed the earlier version, and Eric recently shared an updated template/process, so I’m consolidating everything into that format before sharing it with you.
+
+I’ve also been thinking more about the AI-assisted delivery best practices discussion we had — especially around guardrails and development patterns when using agents in production workflows. I’d love to help contribute there from the delivery side.
+
+Let me know if there’s a good next step for me to plug into those Codex / agent delivery discussions.
+
+This version:
+
+respects his time
+sounds more senior
+removes extra explanation
+keeps momentum alive
+subtly reminds him of the sponsorship discussion
+
+I would send this version.
+
+madhurima:
+from the delivery side. - not sure we can call it delivery , with Eugene, here in slalom its more about salom, delivery is related to project i m doing for which prod rollowut happened
+
+
+chatgpt:
+Yes — good catch again.
+“Delivery side” can accidentally sound like:
+
+“project execution only”
+
+But what Eugene was actually talking about was:
+
+broader engineering practices
+AI engineering enablement
+how Slalom teams should build with agents
+
+So you want language that sounds:
+
+broader
+more strategic
+more Slalom-wide
+
+This version fixes that nicely:
+
+Yes — good catch again.
+“Delivery side” can accidentally sound like:
+
+“project execution only”
+
+But what Eugene was actually talking about was:
+
+broader engineering practices
+AI engineering enablement
+how Slalom teams should build with agents
+
+So you want language that sounds:
+
+broader
+more strategic
+more Slalom-wide
+
+This version fixes that nicely:
+
+This now sounds:
+
+less project-focused
+more organization-focused
+more principal-level
+aligned with the conversation Eugene had with you
+
+Especially:
+
+“broader engineering and architecture perspective”
+
+That’s the right positioning now.
+
+madhurimaa:
+is this good to send:
+
+chatgpt:
+
+Yes — this is good to send.
+Actually, seeing it in Slack format, it reads much better than in isolation.
+
+A few observations:
+
+It sounds thoughtful, not needy ✅
+It reconnects naturally after the gap ✅
+It reminds him of the important topics ✅
+It subtly reactivates the sponsorship thread ✅
+Length is okay for Eugene because it’s structured into short paragraphs ✅
+
+I would NOT add more lines.
+If anything, I would do one tiny tightening pass to reduce repetition of:
+
+“broader AI delivery and enablement discussions”
+“broader engineering and architecture perspective”
+
+Right now both are slightly saying similar things.
+
+This would be the cleanest final version:
+
+Hi @Eugene Goei, happy Friday!
+
+The last few weeks got pretty intense with the production rollout, so I was heads down in project work. Now that we’re moving into Phase 2, I finally have some space again to focus on the AI delivery and enablement discussions we had.
+
+I also wanted to follow up on the next-level readiness conversation. Joshua and I had only partially completed the earlier version, and Eric recently shared an updated template/process, so I’m consolidating everything into that format before sharing it with you.
+
+I’ve also been thinking more about the AI-assisted engineering best practices discussion we had — especially around guardrails and development patterns when using agents in production workflows. I’d love to help contribute there and continue building on those ideas.
+
+Let me know if there’s a good next step for me to plug into those Codex / agent engineering discussions.
+
+That’s it. Send confidently.
+
+Do not add:
+
+apologies
+“sorry for delay”
+more explanation
+more promo discussion
+
+This message does exactly what it should:
+👉 reconnect
+👉 re-establish momentum
+👉 remind him of your value
+👉 reopen the collaboration thread
+
+Clean and senior.
+
+Madhurima:
+Eugene's reply - Thank you for the update @madhurima Saxena! Was out last Friday so just catching up -- would love to learn more about what you have done!
+
+looks like I will need to drive this, as I dont think Eugene prescribed anything, look at the attachment for slack message
+
+chatgpt:
+
+Honestly? This is still a positive signal.
+
+Don’t interpret:
+
+“would love to learn more about what you have done”
+
+as lack of interest.
+
+What actually happened is:
+
+your previous conversation was broad
+a month passed
+Eugene is busy
+he remembers the direction, but not the operational details
+now he’s giving you the opening to re-engage
+
+But you are correct about one thing:
+👉 you now need to drive this proactively
+
+And that’s actually normal at this level.
+
+Senior leaders rarely run the process for you.
+They:
+
+open doors
+provide sponsorship
+give opportunities
+
+👉 You have to convert that into momentum.
+
+🧠 What his reply REALLY means
+
+His response is:
+
+“Okay, I remember this conversation. Show me concrete progress.”
+
+That’s actually good.
+
+Because now you can move from:
+
+abstract ambition
+to:
+visible leadership material
+
+🟢 What you SHOULD do now
+
+Do NOT send another long Slack reply.
+
+Instead:
+👉 schedule a follow-up conversation.
+
+That is the correct move.
+
+🔥 Recommended next step
+
+Send something short like:
+Thanks Eugene! I’ll pull together the readiness material along with some of the patterns / learnings we’ve been seeing from the agent engineering work, and would love to walk you through it. I’ll grab some time on your calendar.
+
+That’s it.
+
+🧠 Why this is the right move
+
+This does 3 things:
+
+1. Shows ownership
+
+You are now driving it.
+
+2. Gives him a concrete reason to meet
+
+Not:
+
+“career discussion”
+
+But:
+
+“showing real AI engineering learnings + readiness”
+
+That’s much stronger.
+
+3. Transitions you into visible leadership
+
+This is the important shift.
+
+You are no longer:
+
+“asking for promotion”
+
+You are becoming:
+
+“someone shaping AI engineering practices internally”
+
+That’s Principal positioning.
+⚠️ Important mindset shift for you
+
+You’re still thinking:
+
+“Will Eugene help me?”
+
+The better frame is:
+
+“How do I create enough visibility and leadership material that sponsorship becomes easy?”
+
+That’s the game now.
+
+And Eugene already hinted at this:
+
+“promotion is a visibility game”
+
+🔴 MOST IMPORTANT THING NOW
+
+Before meeting him again, you need:
+
+readiness doc
+1–2 pages of AI engineering / agent delivery insights
+examples from production rollout
+concrete patterns / problems / recommendations
+
+THAT is what will elevate the conversation.
+
+Because then you’re not:
+
+“a person wanting growth”
+
+You’re:
+
+“a person bringing organizational value”
+
+Massive difference.
+
+🟢 Final verdict
+
+Your Slack exchange is good.
+No damage.
+No loss of momentum.
+
+But yes:
+👉 now YOU need to drive the next phase intentionally.
+
+And honestly?
+That’s exactly the behavior expected from someone trying to become Principal.
+
+madhurima:
+ok - can i reply with a short slack message to eugene that i will setup some time with him as i knowe it will take me some time to get - Before meeting him again, you need: readiness doc 1–2 pages of AI engineering / agent delivery insights examples from production rollout concrete patterns / problems / recommendations.
+
+chatgpt:
+Yes — definitely reply.
+Otherwise the thread feels “hanging.”
+
+But keep it:
+
+short
+action-oriented
+confident
+
+Don’t explain all the artifacts you’re preparing.
+Just imply that you’re pulling material together.
+
+Something like this is ideal:
+
+Yes — definitely reply.
+Otherwise the thread feels “hanging.”
+
+But keep it:
+
+short
+action-oriented
+confident
+
+Don’t explain all the artifacts you’re preparing.
+Just imply that you’re pulling material together.
+
+Something like this is ideal:
+
+This works really well because:
+
+it signals progress
+it sounds organized
+it creates expectation for the next meeting
+it subtly elevates your work into “organizational learnings”
+
+Most importantly:
+👉 it sounds like someone driving an initiative, not asking for attention.
+
+Madhurima:
+Shared and got a thumbs up from Eugene
