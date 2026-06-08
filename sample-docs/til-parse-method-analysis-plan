@@ -1,0 +1,121 @@
+TIL Parse Method Analysis Plan
+
+Scope window: 06/08 to 06/12
+Primary comparison: DS foundation parsing vs Databricks ai_parse_document
+
+1. Objective
+Evaluate parsing quality and runtime readiness using deterministic, reviewer-auditable metrics.
+
+2. Test set for gating
+Use 5-doc gate set to avoid overfitting to one file.
+1. 1603-R2
+2. 2284
+3. 1502-2R1
+4. 1937-R2
+5. 1945-R2
+
+Use the 25-doc pilot as secondary evidence after gate set evaluation.
+
+3. Core experiments
+1. Side-by-side parser diff
+Run both parsers on the same PDF and compare section-level output.
+Measure: section coverage, read-order breaks, table loss, noise ratio.
+
+2. Double-column reading order check
+Review dense-layout pages for column interleaving errors.
+Measure: sentence continuity error rate per page.
+
+3. Formula and fraction fidelity check
+Validate Combined Wet Time expression and key numeric thresholds.
+Measure: exact formula match and numeric preservation.
+
+4. Table capture fidelity check
+Validate compliance table, timing table, and wet inlet interval table.
+Measure: row completeness, column alignment, heading preservation, unit-value correctness.
+
+5. Boilerplate suppression experiment
+Compare raw vs cleaned outputs.
+Measure: token reduction and false-removal rate of meaningful content.
+
+6. Structured field stability test
+Repeat profile extraction 3 runs from same extracted text.
+Measure: variance of critical fields across runs.
+
+7. Evidence traceability check
+Verify source snippets for key profile fields.
+Measure: field-to-evidence coverage and evidence mismatch rate.
+
+8. Image-text usefulness check
+Evaluate whether image descriptions add signal or noise.
+Measure: useful image entries ratio and downstream impact.
+
+9. Markdown-first reviewability check
+Perform SME-style review on markdown artifacts.
+Measure: review time, clarity score, and missing-context count.
+
+10. JSON contract validation
+Validate extracted_document and profile_response against agreed schema.
+Measure: required-field pass rate, null handling, list-shape consistency.
+
+11. Confidence calibration check
+Compare model confidence against deterministic quality score.
+Measure: rank-order alignment only, not absolute trust.
+
+4. Deterministic scoring model
+Compute per-document quality score from deterministic metrics.
+
+Weights:
+1. Extraction completeness: 25%
+2. Structural fidelity: 25%
+3. Traceability: 20%
+4. Noise control: 15%
+5. Consistency: 15%
+
+Metric definitions:
+1. Extraction completeness
+Required sections found: purpose, compliance, timing, recommendations, references, thresholds.
+
+2. Structural fidelity
+Formula integrity, table preservation, and read-order correctness.
+
+3. Traceability
+Critical profile fields mapped to valid source snippets.
+
+4. Noise control
+Boilerplate plus OCR/vision gibberish ratio in final review artifact.
+
+5. Consistency
+Critical field stability across repeated runs.
+
+5. Quantitative acceptance gates
+Per-document gates:
+1. Extraction completeness >= 0.90
+2. Structural fidelity >= 0.90
+3. Traceability >= 0.90
+4. Noise score >= 0.75
+5. Consistency >= 0.95
+6. Formula fidelity for critical formulas = 1.00
+
+Gate-set decision (5 docs):
+1. At least 4 of 5 docs must pass all per-document gates
+2. No doc may fail formula fidelity
+3. Mean final quality score across gate set >= 0.88
+
+6. Confidence score policy
+Model confidence is non-gating and auxiliary.
+Use it only for calibration analysis against deterministic score.
+Do not use model confidence alone to approve parser readiness.
+
+7. Reproducibility controls
+Capture per run:
+1. Parser name and version
+2. Model name and version
+3. Prompt or template hash
+4. Input PDF checksum
+5. Run timestamp and run id
+
+8. Outputs to produce for review
+1. Per-doc comparison sheet (DS vs Databricks)
+2. Deterministic scorecard with pass/fail by metric
+3. Confidence calibration summary
+4. Recommendation note: parser choice and runtime hardening actions
