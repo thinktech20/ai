@@ -1,4 +1,4 @@
-#!/home/u560060992/dbx/ai-arch/.venv/bin/python
+#!/Users/home.asthana/02-madhu/git-tt/ai/.venv/bin/python
 import sys
 from numpy.f2py.f2py2e import main
 if __name__ == '__main__':

@@ -1,0 +1,180 @@
+GE Power
+POWER SER VICES ENGINEERING TIL 1603-R2
+PRODUCT SER VICE 12 FEBRUAR Y 2019
+Compliance Category -  C
+Timing Code -  5
+TECHNICAL INFORMA TION LETTER
+R0 EROSION AND W ATER INGESTION RECOMMENDA TIONS
+APPLICA TION
+All F-class gas turbines excluding 6F.01, 7F.04-200 and 7F.05.
+PURPOSE
+To advise operators of the inspection and maintenance considerations necessary to mitigate R0 erosion effects, and
+to inform them of a new online water wash (OnWW) system that reduces the rate of erosion in the principal area of
+concern.  Failure to properly monitor or repair R0 erosion could result in cracking of the R0 blades and risks of
+compressor damage.
+REASON FOR REVISION
+The reason for this revision is to improve the clarity of the recommendations regarding online water wash frequency and mold
+inspections for specific F-class compressor configurations.
+COMPLIANCE CA TEGOR Y
+M - MaintenanceIdentifies maintenance guidelines or best practices for reliable equipment operation.
+C - Compliance
+RequiredIdentifies the need for action to correct a condition that, if left uncorrected, may result in reduced
+equipment reliability or ef ficiency . Compliance may be required within a specific operating time.
+A - AlertFailure to comply with the TIL could result in equipment damage or facility damage. Compliance
+is mandated within a specific operating time.
+S - SafetyFailure to comply with this TIL could result in personal injury . Compliance is mandated within a
+specific operating time.
+TIMING CODE
+1Prior to Unit Startup / Prior to Continued Operation (forced outage condition)
+2At First Opportunity (next shutdown)
+3Prior to Operation of Af fected System
+4At First Exposure of Component
+5At Scheduled Component Part Repair or Replacement.
+6Next Scheduled Outage
+© 2019 General Electric Company
+The proprietary information published in this Technical Information Letter is offered to you by GE in considera tion of its ongoing sales and service
+relationship with your organization. However , since the operation of your plant involves many factors not within our knowledge, and since operation of the
+plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for
+liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this
+information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty , negligent, or is in other respects
+responsible for any alleged injury or damage sustained by your organization as a result of applying this informa tion. This Technical Information Letter
+contains proprietary information of General Electric Com pany and is furnished to its customer solely to assist that customer in the installation, testing,
+operation and/or maintenance  of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be
+disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.
+
+BACKGROUND DISCUSSION
+As the forward-most rotating blade in an F-class gas turbine compressor, the R0 (Rotor stage 0 blade) is the first to
+see airborne materials ingested through the inlet (see Figure 1).  In addition to solid objects that may create
+immediate and substantial impact damage, ingested fluids and liquid droplets may also affect the blades, though
+more gradually, accumulating erosion primarily along the leading edge of the R0 (see Figure 2).
+ 
+ 
+  
+ 
+                Figure 1:  Schematic of Inlet and Forward Compressor
+Common sources of water ingested through the gas turbine compressor inlet during operation include OnWW,
+fogging/SPRITS system output, and evaporative cooling system carry-over.  Water ingestion could also result from
+unintended sources such as the leakage of rainwater through compromised inlet ducting seals or malfunctioning
+accessory equipment.
+ 
+ 
+      Figure 2:  R0 Leading Edge Erosion
+Leading edge erosion degrades the blade’s material capability by creating a dense network of surface pits (see
+Figure 3) and has resulted in compressor event forced outages, with cracks initiating from erosion pits at the root of
+the R0 airfoil.  
+This TIL supersedes prior TILs 1303, 1389, 1400 and 1401, and provides consolidated recommendations regarding
+monitoring R0 erosion levels and repairing or mitigating such erosion.  Failure to follow these recommendations
+could result in excessive erosion, which, in turn, could lead to subsequent cracking and possible liberation of R0
+blades with potential downstream damage to the gas turbine. 
+© 2019 General Electric Company
+The proprietary information published in this Technical Information Letter is offered to you by GE in considera tion of its ongoing sales and service
+relationship with your organization. However , since the operation of your plant involves many factors not within our knowledge, and since operation of the
+plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for
+liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this
+information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty , negligent, or is in other respects
+responsible for any alleged injury or damage sustained by your organization as a result of applying this informa tion. This Technical Information Letter
+contains proprietary information of General Electric Com pany and is furnished to its customer solely to assist that customer in the installation, testing,
+operation and/or maintenance  of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be
+disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.
+
+ 
+ 
+Figure 3:    Erosion Mold Inspections (no erosion, 7 mils erosion)
+RECOMMENDA TIONS
+Recommendations for monitoring erosion levels caused by known sources of potential water droplet introduction to
+the inlet air stream are given in the following section. The recommended method for erosion quantification is through
+mold impressions and GE Power Services provides a process for evaluating these molds.  The accumulation of
+erosion may at some point require leading edge surface renewal prior to reaching a degradation limit.  Typically this
+activity may be performed at Major Inspection intervals, but additional inspections at regular intervals may be
+necessary to confirm a modest degradation rate. Contact your GE Power Services provider for scheduling of this
+activity.
+On-line Water Wash
+Compressor fouling results from the depositing of airborne contaminants onto the compressor flow path surfaces
+and it affects a decline in aerodynamic efficiency and, thus, gas turbine performance.  Water washing of the
+compressor is necessary to reduce the fouling effects and maintain a desired level of output.  However, water
+washing performed on-line inherently injects water droplets into the compressor at a high relative velocity, thereby
+creating a source of R0 leading edge erosion.
+TIL 1323 advises performing a modification to the original online water wash system to reduce the volume of water
+impinging on the R0 leading edge root location (the area susceptible to cracking from erosion).  With this
+modification, erosion rates are improved, but still require special maintenance intervals.  GE has now engineered
+and validated a new online water wash system that imparts significantly reduced erosion at the R0 root and requires
+no maintenance for up to 1000 cumulative hours of washing.  This allows for daily water washing (15 minutes per 48
+fired hours) with no R0 erosion maintenance necessary until the scheduled Major Inspection interval.  The new
+configuration has been validated through accelerated field testing which confirmed the reduced rate of erosion while
+maintaining the same cleaning effectiveness as the baseline system.  The system has been introduced into GE F-
+class production as well as retrofitted into field units as a system upgrade.  Contact your GE Power Services
+representative for information on this upgrade.
+                          Figure 4:  Relocated and Redesigned Spray Nozzles as Part of Upgraded OnWW System
+© 2019 General Electric Company
+The proprietary information published in this Technical Information Letter is offered to you by GE in considera tion of its ongoing sales and service
+relationship with your organization. However , since the operation of your plant involves many factors not within our knowledge, and since operation of the
+plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for
+liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this
+information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty , negligent, or is in other respects
+responsible for any alleged injury or damage sustained by your organization as a result of applying this informa tion. This Technical Information Letter
+contains proprietary information of General Electric Com pany and is furnished to its customer solely to assist that customer in the installation, testing,
+operation and/or maintenance  of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be
+disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.
+
+For current F-class units operating with the original OnWW system (which should be modified per TIL 1323), erosion
+levels should be inspected at regular intervals of OnWW by taking mold impressions of the R0 leading-edge root
+location.  See “Combined Wet Inlet Operation” for inspection interval information.  Contact your GE Power Services
+representative to arrange this inspection.  Mold inspections should be followed by fluorescent penetrant inspection
+(FPI) to ensure against existing cracks.
+OnWW should be performed based on desired output degradation limits as well as environmental effects to the
+forward compressor.  When fouling deposits contain corrosive elements, washing can help minimize corrosive
+attack.
+General guidelines for OnWW duration and frequency are as follows:
+5 minutes per 48 Fired Hours, if standard R0’s and the Gen-1 WW system are in place
+15 minutes per 48 Fired Hours, if standard R0’s and the Gen-2 WW system are in place (available through
+CM&U)
+15 minutes per 48 Fired Hours, if enhanced R0s (ECP 2, 2+3, 4, 5) are installed with either the Gen-1 WW
+or the Gen-2 WW system 
+ 
+These durations are advised to balance erosion rates and output degradation.  Shorter durations or longer intervals
+between washing may be scheduled at the operator’s discretion based on minimal performance degradation or
+corrosion concerns.  Conversely, longer or more frequent water washes could result in a greater rate of erosion,
+requiring more frequent repairs.  For this reason, the upgraded OnWW system now available generally limits daily
+washes through control system permissives.
+Inlet Fogging/SPRITS Operation
+Water carry-over into the compressor may originate from inlet fogging systems. These systems introduce water
+droplets into the air stream that may coalesce and contribute to R0 leading edge erosion. Erosion rates will vary
+based on spray ratio, maintenance practices and operating frequency.
+For units utilizing fogging systems, GE recommends that R0 blades be inspected with mold impressions and FPI at
+regular intervals of cumulative hours of fogger operation as defined in “Combined Wet Inlet Operation”.
+Evaporative Cooler Operation
+Though evaporative cooler systems are intended to cool the air and introduce moisture (not water droplets) for
+increased mass flow and efficiency, inadvertent water carry-over from this system may affect R0 erosion.  GE
+recommends monitoring the evaporative coolers for proper operation and any evidence of water carry-over.  This
+evidence may include water stains, puddles, or streaking in the filter inlet house or bell mouth area; deposits on filter
+or cycle deck material; or missing, damaged, or misaligned filter or cycle deck material.
+Any evidence of water carry-over should be dispositioned and eliminated by GE or the manufacturing vendor.  Refer
+to TILs 1285 and 1399 for additional information on evaporative cooler maintenance and annual commissioning.
+R0 erosion molds and FPI should be performed between 100 and 300 hours of cumulative operation of the evap
+system. For units with identified water carry-over, the inspection should be repeated at this interval or as determined
+based on the mold impressions.  If there is no significant erosion and it is continually verified that the evap system is
+generating no carry-over, no continual R0 mold inspection is necessary.
+Combined Wet Inlet Operation
+Many operators may use a combination of water-introducing systems.  R0 erosion inspections should include both
+mold impressions and FPI and should be performed when cumulative wet inlet operation time reaches 100 hours as
+defined by the following formula:
+Combined Wet Time = 4*(OnWW hours[A]) + .1*(OnWW hours[B]) + (Fogger hours[C]) + .2*(SPRITS hours[D]) +
+(Evap hours[E])
+Where [A] pertains to the legacy OnWW system, [B] pertains to the upgraded OnWW system, [C] applies
+for non-GE foggers, [D] applies for GE fogging/SPRITS systems, and [E] applies only if carry-over has been
+present or the evaporative cooler system has not been commissioned or maintained per TILs 1285 and 1399.
+From this, it can be seen that if an upgraded OnWW system is applied and evaporative coolers have been
+commissioned and maintained, then recurring mold inspections are primarily dependent on the accumulation of
+Fogging/SPRITS operation. These systems may have significant variability based on manufacturer, vintage, system
+tuning and modifications.  As such, following initial inspections, parameters C and D may be adjusted per GE
+disposition (see Figure 5).  
+© 2019 General Electric Company
+The proprietary information published in this Technical Information Letter is offered to you by GE in considera tion of its ongoing sales and service
+relationship with your organization. However , since the operation of your plant involves many factors not within our knowledge, and since operation of the
+plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for
+liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this
+information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty , negligent, or is in other respects
+responsible for any alleged injury or damage sustained by your organization as a result of applying this informa tion. This Technical Information Letter
+contains proprietary information of General Electric Com pany and is furnished to its customer solely to assist that customer in the installation, testing,
+operation and/or maintenance  of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be
+disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.
