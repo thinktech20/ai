@@ -1,0 +1,12 @@
+What is model registry?
+
+Model Registry is a centralized platform or repository where machine learning models are stored, managed, and organized throughout their lifecycle. It provides version control, metadata tracking, and collaboration features, making it easier to track model progress from development to deployment.
+
+Here's a detailed explanation:
+
+Model Versioning: It keeps track of multiple versions of a model, allowing teams to compare, deploy, or roll back to previous versions as needed.
+Metadata Management: Stores important information such as training data details, hyperparameters, evaluation metrics, and model performance.
+Deployment Management: Facilitates seamless deployment of models into production environments, ensuring the correct version is used.
+Collaboration and Governance: Enables collaboration among data scientists, engineers, and other stakeholders by providing a common platform for model sharing, review, and approval.
+Lifecycle Tracking: Supports the entire lifecycle of ML models, from training and validation to deployment and monitoring.
+In summary, Model Registry is a vital tool for managing the lifecycle of machine learning models efficiently, ensuring version control, reproducibility, and governance. It is not directly involved in data streaming or feature serving but plays a key role in model deployment and management.

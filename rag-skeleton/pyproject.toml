@@ -1,0 +1,13 @@
+[project]
+name = "rag-skeleton"
+version = "0.0.1"
+description = "Reusable scaffold for medallion-style document/RAG pipelines."
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

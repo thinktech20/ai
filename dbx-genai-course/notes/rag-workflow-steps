@@ -1,0 +1,8 @@
+conventional workflow for a RAG application, where evaluation is typically performed after the model generates a response to assess its quality and accuracy.
+
+Ingest and index documents
+User submits queries
+Retrieve relevant documents
+Generate response
+Evaluate the response
+Deploy the model

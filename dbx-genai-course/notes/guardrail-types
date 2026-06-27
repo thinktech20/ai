@@ -1,0 +1,24 @@
+Types of Guradrails:
+
+Safety Guardrail
+Used to prevent the generation of harmful, abusive, or toxic content.
+
+Security Guardrail
+Used to protect against prompt injection, data leakage, or unauthorized system access.
+
+Contextual Guardrail 
+Used to restrict responses to approved topics and enforce domain-specific behavior.
+
+Compliance Guardrail
+Used to ensure adherence to regulatory or legal requirements.
+
+==============================
+Profanity Filter:
+A profanity filter is a tool or software component designed to detect and block or censor offensive, vulgar, or inappropriate language in text content. Its primary purpose is to ensure that the language used in communication, especially in public or sensitive contexts, remains appropriate and respectful.
+
+In practice, a profanity filter scans the text for specific offensive words or phrases and either replaces them with symbols (like asterisks) or removes them entirely.
+
+In summary:
+
+Focuses on language safety and appropriateness.
+Does not influence the relevance or domain-specific content of the information.

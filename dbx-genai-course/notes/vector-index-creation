@@ -1,0 +1,28 @@
+Here's a step-by-step explanation of how to create an index in Databricks-managed vector store workflows:
+
+Steps to Create an Index:
+Prepare your data:
+
+You need to have your data (e.g., documents, text, or embeddings) available in a format that can be processed, such as a Delta table or a DataFrame.
+Generate Embeddings:
+
+Use your embedding model (e.g., OpenAI, SentenceTransformers) to convert your text data into vector representations.
+Store these embeddings as part of your dataset, typically as a new column.
+Create the Index:
+
+Use the function vsc.create_delta_sync_index():
+This creates a Delta Lake-based index that is synchronized with your data.
+It facilitates efficient similarity searches over large datasets.
+Example:
+Python
+vsc.create_delta_sync_index(
+  table_name="your_delta_table",
+  index_name="your_index_name",
+  vector_column="embedding",
+  feature_columns=["other_metadata"]
+)
+This command creates a vector index that stays synchronized with your Delta table, enabling fast retrieval.
+Use the Index for Similarity Search:
+Once created, you can perform similarity search queries using vsc.similarity_search() or other retrieval functions.
+Why is this important?
+Creating the index is a crucial step because it structures your data for efficient retrieval. Without creating the index first, subsequent search or retrieval functions won't work properly.

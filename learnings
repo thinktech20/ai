@@ -1,0 +1,6 @@
+Ontology and Data Dictionary Development: Simon, Jamaal, Vinson, and Abhinaya discussed ongoing issues with technical term confusion in the LLM, proposing the development of an ontology or data dictionary and mechanisms for updating and integrating these definitions into the system.
+Technical Term Confusion: Simon raised concerns about the LLM confusing state and row items, and misidentifying components like compressor stator information, prompting discussion on improving vocabulary and context.
+Ontology Mechanism Discussion: Jamaal questioned the mechanism for updating the ontology, referencing previous conversations and the need for a living document or system to append new definitions as issues are identified.
+Existing Documentation and Heat Map: Jamaal and Vinson reviewed current resources, including heat maps and GE K knowledge articles, noting gaps in systematic integration and the necessity for a more robust solution.
+Heat Map Enhancement Proposal: Abhinaya suggested adding a column for technical term descriptions in the heat map, allowing these definitions to be passed to the LLM for improved context and mapping.
+Testing Before Definition Addition: Vinson advocated for evidence-based identification of problematic terms before adding definitions, integrating this process into ongoing consistency and accuracy optimization efforts.

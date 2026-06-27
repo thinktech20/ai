@@ -1,0 +1,284 @@
+# Common NLP Task Categories
+
+## Summary
+
+Natural Language Processing, or **NLP**, includes different types of tasks used to understand, classify, compare, or generate text.
+
+Common NLP task categories include:
+
+* Named Entity Extraction
+* Semantic Similarity Scoring
+* Text Classification
+* Summarization
+
+---
+
+# 1. Named Entity Extraction
+
+## What It Is
+
+**Named Entity Extraction** identifies and classifies important entities in text.
+
+Entities are key pieces of information such as:
+
+* People
+* Organizations
+* Locations
+* Dates
+* Products
+* Events
+* Money amounts
+
+## Example
+
+Input text:
+
+```text
+Apple opened a new office in London in 2025.
+```
+
+Extracted entities:
+
+| Entity | Type         |
+| ------ | ------------ |
+| Apple  | Organization |
+| London | Location     |
+| 2025   | Date         |
+
+## Purpose
+
+Named Entity Extraction is used to convert unstructured text into structured information.
+
+## Common Use Cases
+
+* Extracting company names from news articles
+* Finding people and organizations in documents
+* Metadata extraction
+* Search filtering
+* Compliance and PII detection
+* Knowledge graph creation
+
+## Exam Shortcut
+
+> Named Entity Extraction = find and classify key entities in text.
+
+---
+
+# 2. Semantic Similarity Scoring
+
+## What It Is
+
+**Semantic Similarity Scoring** measures how similar two pieces of text are in meaning.
+
+It focuses on meaning, not just exact word matching.
+
+## Example
+
+Text 1:
+
+```text
+The customer wants to cancel the order.
+```
+
+Text 2:
+
+```text
+The buyer is asking to stop the purchase.
+```
+
+These sentences use different words but have similar meaning.
+
+## Purpose
+
+Semantic similarity helps determine whether two texts express the same or related ideas.
+
+## Common Use Cases
+
+* Duplicate question detection
+* Similar document search
+* Semantic search
+* Matching user queries to FAQ answers
+* Checking whether two sentences mean the same thing
+* RAG retrieval
+
+## Exam Shortcut
+
+> Semantic Similarity = compare meaning between two texts.
+
+---
+
+# 3. Text Classification
+
+## What It Is
+
+**Text Classification** assigns text to predefined categories or labels.
+
+## Example
+
+Input text:
+
+```text
+This product is amazing and works perfectly.
+```
+
+Classification output:
+
+```text
+Sentiment: Positive
+```
+
+## Common Classification Labels
+
+Examples of classification tasks include:
+
+| Task                  | Possible Labels                 |
+| --------------------- | ------------------------------- |
+| Sentiment analysis    | Positive, negative, neutral     |
+| Spam detection        | Spam, not spam                  |
+| Topic classification  | Finance, sports, technology     |
+| Intent classification | Refund, complaint, order status |
+| Risk classification   | Low, medium, high               |
+
+## Purpose
+
+Text Classification helps automatically organize or route text based on its meaning.
+
+## Common Use Cases
+
+* Sentiment analysis
+* Spam detection
+* Support ticket routing
+* Topic labeling
+* Intent detection
+* Document classification
+* Content moderation
+
+## Exam Shortcut
+
+> Text Classification = assign a label to text.
+
+---
+
+# 4. Summarization
+
+## What It Is
+
+**Summarization** condenses longer text into a shorter version while preserving the main ideas.
+
+## Example
+
+Original text:
+
+```text
+The quarterly report showed strong revenue growth, improved customer retention, and reduced operating costs across all regions.
+```
+
+Summary:
+
+```text
+The company improved revenue, retention, and costs this quarter.
+```
+
+## Purpose
+
+Summarization helps users quickly understand long documents or conversations.
+
+## Common Use Cases
+
+* Summarizing reports
+* Summarizing meeting transcripts
+* Summarizing support conversations
+* Creating executive summaries
+* Condensing research papers
+* Summarizing retrieved RAG context
+
+## Exam Shortcut
+
+> Summarization = shorten text while keeping the main meaning.
+
+---
+
+# 5. Comparison Table
+
+| NLP Task                    | What It Does                              | Example Output            |
+| --------------------------- | ----------------------------------------- | ------------------------- |
+| Named Entity Extraction     | Finds key entities in text                | Apple = Organization      |
+| Semantic Similarity Scoring | Measures meaning similarity between texts | Similarity score: 0.91    |
+| Text Classification         | Assigns a label to text                   | Sentiment = Positive      |
+| Summarization               | Produces a shorter version of text        | Short summary of a report |
+
+---
+
+# 6. One-Line Memory Guide
+
+| If the question says...                      | Think...                    |
+| -------------------------------------------- | --------------------------- |
+| Identify names, places, dates, organizations | Named Entity Extraction     |
+| Compare two texts by meaning                 | Semantic Similarity Scoring |
+| Assign a category or label                   | Text Classification         |
+| Shorten long text                            | Summarization               |
+| Detect duplicate questions                   | Semantic Similarity         |
+| Find PII or entities                         | Named Entity Extraction     |
+| Determine sentiment                          | Text Classification         |
+| Create a brief report summary                | Summarization               |
+
+---
+
+# 7. Common Exam Traps
+
+## Trap 1: NER vs Text Classification
+
+NER extracts entities from inside the text.
+
+Text classification assigns a label to the whole text.
+
+Example:
+
+| Task                    | Output               |
+| ----------------------- | -------------------- |
+| Named Entity Extraction | Apple = Organization |
+| Text Classification     | Topic = Technology   |
+
+---
+
+## Trap 2: Semantic Similarity vs Keyword Matching
+
+Semantic similarity compares meaning, not exact words.
+
+Example:
+
+```text
+"cancel my order" and "stop my purchase"
+```
+
+These are semantically similar even though the words are different.
+
+---
+
+## Trap 3: Summarization vs Classification
+
+Summarization creates a shorter version of the text.
+
+Classification assigns a label.
+
+Example:
+
+| Task           | Output                        |
+| -------------- | ----------------------------- |
+| Summarization  | Short paragraph               |
+| Classification | Positive / Negative / Neutral |
+
+---
+
+# 8. Final Summary
+
+Common NLP tasks include:
+
+* **Named Entity Extraction**: identifies and classifies entities.
+* **Semantic Similarity Scoring**: measures meaning similarity between texts.
+* **Text Classification**: assigns predefined labels.
+* **Summarization**: condenses long text into shorter text.
+
+The key exam idea is:
+
+> Match the NLP task to the output you need.
