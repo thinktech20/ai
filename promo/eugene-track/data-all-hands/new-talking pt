@@ -1,0 +1,77 @@
+# Slide 1 - Title (45-60 sec)
+
+Thanks....
+
+I wanted to share my learnings from a recent experience working with a customer to build an AI system in production, where the direction from the customer was very simple: use AI to spped up the development.
+
+As I worked through the project, one observation kept coming up for me.
+
+AI made code generation much faster, but I found myself spending much more time on review, validation, and engineering decisions.
+
+I'd like to share a few examples from that experience and some lessons that came out of it.
+
+---
+
+# Slide 2 - Building an AI Assistant for Outage Planning (2-3 min)
+
+Let me start with the business problem.
+
+The customer is a large energy and power infrastructure company with plants and equipment deployed worldwide, including generators, gas turbines, and other critical assets.
+
+These equipments require planned outages for maintenance, and those outages are expensive. They are often planned years in advance.
+
+Over time, the company accumulated decades of engineering knowledge across reports and documents. The challenge was making that knowledge easier to find and use when engineers needed it.
+
+To address that, we built two key capabilities.
+
+First, a searchable knowledge base using RAG pipelines in Databricks, allowing engineers to access information from historical reports.
+
+Second, an AI assistant that could help engineers find relevant information more quickly and efficiently.
+
+While building the solution, I used GitHub Copilot, Claude Code, and multiple models including Claude Opus and GPT for development, testing, debugging, and operational work.
+
+One challenge that came up repeatedly was data quality.
+
+The documents had accumulated over many years, and the formats were not always consistent. AI helped speed up the process of identifying issues and creating validation rules, but we still needed engineering review to ensure the results were accurate.
+
+Another example came during production rollout.
+
+We had a large backfill process running against thousands of documents. Leadership wanted regular updates on progress, completion estimates, and failures.
+
+AI helped generate queries, analyze progress, and speed up reporting, which significantly reduced the effort required to provide those updates.
+
+But throughout the project, I was never comfortable taking generated code or recommendations directly into production without review.
+
+That became one of the most important lessons from the experience.
+
+---
+
+# Slide 3 - Specifications Driven Development (3 min)
+
+One of the biggest lessons for me was how the engineering effort shifted.
+
+Traditionally, we spend most of our time writing code.
+
+With AI, I found the work shifting toward something closer to:
+
+40% context setting,
+20% generation and iteration,
+and 40% review and verification.
+
+Another pattern I noticed was what I call the "ask it again" loop.
+
+When requirements or specifications are unclear, we tend to keep asking AI the same question in different ways, generating more responses, consuming more tokens, and spending more time.
+
+In many cases, the real issue is not the model. The issue is that the specification is not clear enough.
+
+That's why shifting towrads specifications-driven development helped!
+
+"What I noticed was that better specifications consistently produced better outcomes. The more clearly I defined the problem up front, the fewer iterations I needed from AI."
+
+And even when AI helps generate the solution, making it production ready still requires the same engineering principles we have always relied on.
+
+
+We have prod readiness specs defined well for resiliency, rollback plans, observability, security, and operational controls.
+
+
+The biggest takeaway here was that AI can help us move much faster, but human review, testing, and engineering judgment still matter just as much.

@@ -1,0 +1,241 @@
+
+
+Title slide: 45-60 secs
+
+"Many of us are learning about AI through courses, demos, and experimentation. I wanted to share what it looked like to use these tools while building and rolling out a real production system."
+
+I have been working on a production AI application for a customer in the experience of building an AI system while also using AI throughout the engineering process.
+
+The interesting part wasn't just using those AI tools to write code. It was learning where they helped, where they didn't, and how our engineering team had to adapt.
+
+One observation kept coming up for me.
+
+AI made code generation much faster, but it became more imp to make engineering judgment. In many cases, it actually increased the importance of review, validation, and decision-making.
+
+That's what I want to share today.
+
+Pause.
+
+Move to slide 2.
+
+==========================================
+
+Slide 2
+Building an AI Assistant for Outage Planning
+2.5 - 3 minutes
+
+
+The customer operates large power generation equipment. When those assets go down, outages are expensive and are often planned years in advance.
+
+Over decades, they had accumulated a huge amount of engineering knowledge in reports and documents. The challenge wasn't that the information didn't exist. The challenge was finding the right information when engineers needed it.
+
+The goal was to make that historical knowledge easier to access."
+
+Point to diagram.
+
+"We built an AI assistant that could help engineers search and learn from decades of outage reports and maintenance history."
+
+Then:
+
+"What sounds simple on paper turned out to be much more challenging in practice.
+
+The documents were inconsistent. Different formats. Different structures. Sometimes the information we needed wasn't where we expected it to be.
+
+One of the biggest lessons was that data quality became a bigger challenge than the AI itself."
+
+Then bring AI in.
+
+"At the same time, I was using AI heavily throughout development.
+
+I used Claude, Copilot, GPT, and other models for coding, testing, debugging, and operational work.
+
+During production rollout we had a large backfill process running against thousands of documents. Leadership wanted regular updates on progress and completion estimates. AI helped generate queries, analyze progress, and speed up reporting."
+
+Then transition.
+
+"But the most important lesson wasn't about productivity. It was about how we work with AI."
+
+Move to Slide 3.
+
+================
+
+Specifications Driven Development
+3 minutes
+
+"This slide summarizes the biggest lesson I took away from the project.
+
+AI is very good at generating things.
+
+What's becoming more important is everything that happens before and after generation."
+
+Point to Design Specification.
+
+"Before asking AI to build something, we need a clear design.
+
+What problem are we solving?
+What assumptions are we making?
+What are the failure scenarios?
+
+The quality of the specification often determines the quality of the output."
+
+Move to Code Review.
+
+"The second lesson is around review.
+
+One thing I noticed repeatedly is that AI gives very confident answers.
+
+Sometimes those answers are correct.
+Sometimes they are not.
+
+So I found myself spending less time writing code and more time reviewing assumptions, edge cases, and hidden gaps."
+
+
+Move to Production Readiness.
+
+"The third lesson is production readiness.
+
+Just because AI can generate working code doesn't mean the system is production ready.
+
+We still need validation, resiliency, rollback plans, observability, security, and operational controls."
+
+Then finish with the bottom observations.
+
+"So my biggest takeaway is this:
+
+AI reduced the effort required to generate code.
+
+But it increased the importance of design, review, and engineering judgment.
+
+The review process became just as important as the generation process.
+
+And while AI can help us move faster, humans still need to remain accountable for the decisions that ultimately reach production."
+
+Final Close (15 seconds)
+
+I'd end with:
+
+"For me, the opportunity isn't just faster coding. It's building repeatable engineering practices that help teams use AI effectively in real production systems."
+
+That's probably the single sentence Eugene would most want the audience to remember
+
+==================
+
+
+so nothing to say for - ... maybe the person who is driving screen share may speak a bit here... but just in case they stop in this slide? what do you suggest?
+
+Actually, if this slide stays, I would say very little.
+
+The slide is designed to create tension.
+
+The worst thing you can do is explain it for 2 minutes.
+
+If Eugene is introducing the section, he may already do that. If he doesn't, and the slide comes up, I'd say something like:
+
+"When I started using AI heavily, this was the question that kept coming back to me.
+
+AI is making it easier than ever to generate code. Yet many teams still struggle with bugs, production incidents, and technical debt.
+
+After working through a production rollout, I don't think the bottleneck is code generation anymore. I think the bottleneck is everything around it — design, review, testing, and production readiness.
+
+That's what I want to share through a recent project."
+
+Then move immediately to the next slide.
+
+30 seconds max.
+
+One thing I'd suggest though:
+
+The statement
+
+"most engineering teams are shipping more bugs, more incidents..."
+
+is a pretty strong claim.
+
+If someone asks:
+
+"What's the source for that?"
+
+you don't really have one.
+
+So I'd slightly soften it:
+
+"If AI can generate code so quickly, why do teams still struggle with bugs, incidents, and technical debt?"
+
+or
+
+"If AI is making coding easier, why are production challenges not getting easier?"
+
+Those are harder to challenge and still make the same point.
+
+My preferred version would actually be:
+
+If AI is making code generation easier, why are design reviews, testing, and production readiness becoming more important?
+
+That directly sets up your talk.
+
+Because your entire presentation is essentially answering that question.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================
+
+1. The business problem
+
+He stopped you immediately when you went into architecture and asked:
+
+"What was the business problem?"
+"Why did they bring Slalom in?"
+"What industry are they in?"
+
+2. Your real-world use of AI
+
+He got most excited when you described:
+
+using Claude / Copilot in real work
+how you reviewed AI output
+how you challenged AI answers
+how you used AI during production rollout
+why you didn't trust full automation
+
+He repeatedly dug into:
+
+your thought process
+review process
+testing process
+human-in-the-loop decisions
+
+3. Engineering judgment
+
+This is probably the biggest thing.
+
+When you said:
+
+AI gives confident answers
+
+and
+
+I grill it and question it
+
+and
+
+I'm not comfortable letting it self-correct everything
+
+He loved that.
+
+That's exactly what he later referenced:
+
+"This is the conversation we need to have."

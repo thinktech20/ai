@@ -1,0 +1,36 @@
+
+Create a curated evaluation dataset and assess the retrieval and generation components independently using MLflow’s built‑in evaluation capabilities.
+
+https://docs.databricks.com/aws/en/mlflow/
+
+Log the model and metrics with MLflow during training, register the model in Unity Catalog using the MLflow API, and deploy the registered model through Databricks Model Serving.
+
+The course wording says “during training” because it is using the classic ML lifecycle example. But MLflow is not only for model training. In GenAI/RAG projects, MLflow is also very useful for tracking pipeline runs, parameters, metrics, artifacts, evaluations, and versions.
+
+So in your GE project, using MLflow for parsing, chunking, embedding, and evaluation is a valid use of MLflow capabilities.
+
+
+Track pipeline experiments
+→ compare parsing/chunking/embedding settings
+→ evaluate RAG quality and efficiency
+
+MLflow Tracking/Evaluation
+= log what happened and compare quality
+
+MLflow Model Packaging/Registry/Serving
+= save a deployable model or workflow and expose it as an endpoint
+
+If you wanted to deploy the whole RAG workflow as one served unit, you could wrap it as an MLflow PyFunc model:
+
+question
+  → PyFunc predict()
+  → retrieve chunks
+  → build prompt
+  → call LLM
+  → return answer
+
+Then you could:
+
+log PyFunc model with MLflow
+→ register it in Unity Catalog
+→ serve it with Databricks Model Serving

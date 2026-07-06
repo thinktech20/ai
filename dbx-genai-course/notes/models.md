@@ -161,6 +161,34 @@ These are usually **encoder models**, not generative LLMs.
 
 > DistilBERT is for **understanding/classification**, not for generating rich answers.
 
+### DBRX
+
+DBRX was released by Databricks as an open LLM, and Databricks says it was pretrained with a maximum context length of 32K tokens.
+
+That makes it a strong fit for use cases like:
+
+large document understanding
+long conversations
+RAG with many retrieved chunks
+summarizing long reports
+multi-page technical documents
+
+### Whisper Large v3
+
+Whisper Large v3 is an OpenAI speech-to-text model.
+
+It is used for:
+
+audio → text
+
+Examples:
+
+meeting recording → transcript
+customer call audio → text
+YouTube/audio file → captions
+speech in another language → translated English text
+
+OpenAI’s Whisper repo describes Whisper as a general-purpose speech recognition model that can do multilingual speech recognition, speech translation, and language identification.
 ---
 
 ## D. Embedding Models
@@ -199,6 +227,8 @@ Embedding models are used for retrieval, search, and similarity. They are not ma
 
 > BGE-Large retrieves relevant information.
 > An LLM generates the final response.
+
+
 
 ---
 
@@ -417,3 +447,9 @@ The most important thing is to match the model to the task:
 * Use **DistilBERT** for lightweight classification.
 * Use **Llama2-70B** for general generation.
 * Use **MPT-7B** when a smaller general-purpose model is enough.
+ ===
+
+
+ What advantage does the Instruct variant of CodeLlama 34B provide compared to the base CodeLlama 34B model? ( true or false)
+
+Statement - The Instruct variant is fine‑tuned to follow natural‑language instructions more accurately, making it better suited for interactive coding workflows such as code generation, debugging, and explanation—without requiring prompt engineering or fine‑tuning.
