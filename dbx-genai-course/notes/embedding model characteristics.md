@@ -505,3 +505,168 @@ Choose:
 The key exam idea is:
 
 > Embedding model choice affects retrieval quality, cost, latency, storage, and vector search performance.
+
+
+====
+
+1. Better retrieval quality:
+   Higher dimension can help, but it is not automatically better.
+
+2. Better retrieval quality:
+   Smaller or medium chunks often improve precision, but too small can lose context.
+
+Your own notes say the same thing: higher dimensions provide more room for semantic nuance, but increase cost, memory, search compute, and latency; smaller chunks can improve pinpoint retrieval, but may lose surrounding context and create more chunks.
+
+1. Higher dimension vs lower dimension embedding
+For retrieval quality
+
+Usually:
+
+Higher dimension = more semantic capacity
+Lower dimension = cheaper/faster, but may lose nuance
+
+A higher-dimensional embedding can capture more semantic detail, so it may improve retrieval quality.
+
+Example:
+
+768 dimensions  → less semantic capacity
+1536 dimensions → more semantic capacity
+3072 dimensions → even more capacity
+
+But this is not a universal rule.
+
+A strong 768-dimensional embedding model can outperform a weak 1536-dimensional model. So the embedding model quality matters more than dimension alone.
+
+Exam answer
+
+If the question asks:
+
+Which improves retrieval quality?
+
+Pick:
+
+A stronger embedding model / higher-quality embeddings / sufficient dimension
+
+If the question asks:
+
+Which reduces cost or latency?
+
+Pick:
+
+Lower embedding dimension
+Practical answer
+
+For production RAG:
+
+Start with the recommended/full dimension for the embedding model.
+Evaluate retrieval quality using recall@k / precision@k.
+Only reduce dimension if cost or latency is a problem.
+
+Do not reduce dimension blindly.
+
+2. Bigger chunk vs smaller chunk
+For retrieval quality
+
+Usually:
+
+Smaller chunks = better precision
+Bigger chunks = more context
+
+Smaller chunks are often better for retrieval because they are more focused.
+
+Example:
+
+Large chunk:
+"This report discusses installation, inspection, failures, repairs, warranty, and maintenance..."
+
+This chunk may match many unrelated queries because it contains many topics.
+
+Smaller chunk:
+
+"Compressor blade cracking was caused by vibration fatigue."
+
+This is much more precise for a query about blade cracking.
+
+So for RAG retrieval quality:
+
+Smaller / medium chunks usually retrieve more focused evidence.
+
+But chunks that are too small can be bad.
+
+Example:
+
+"this condition applies only when..."
+
+This chunk may be meaningless without the previous sentence.
+
+Exam answer
+
+If the question says:
+
+Retrieved chunks are too broad / prompt too large / too much irrelevant text
+
+Pick:
+
+Decrease chunk size
+
+If the question says:
+
+Retriever is missing surrounding context / answers are incomplete
+
+Pick:
+
+Increase chunk size slightly or increase overlap
+
+If the question says:
+
+Too many duplicate chunks
+
+Pick:
+
+Reduce overlap
+Best practical setting
+
+For technical PDFs, reports, and RAG systems, I would usually start with:
+
+Chunk size: medium
+Overlap: moderate, around 10-20%
+Embedding dimension: full/default dimension of a strong embedding model
+Top-k: tuned based on context window
+
+Then evaluate.
+
+A good starting mental model:
+
+Small chunks:
++ better precision
+- may lose context
+
+Large chunks:
++ preserve context
+- lower precision and larger prompts
+
+Higher dimension:
++ more semantic capacity
+- higher cost/latency
+
+Lower dimension:
++ cheaper/faster
+- may reduce quality
+Exam Quick Cheat Sheet
+Goal	Better Choice
+Improve retrieval quality	Stronger embedding model
+Capture more semantic nuance	Higher / sufficient dimension
+Reduce vector storage cost	Lower dimension
+Reduce vector search latency	Lower dimension
+Improve focused retrieval	Smaller or medium chunks
+Preserve surrounding context	Larger chunks or more overlap
+Reduce prompt size	Smaller chunks + lower top-k
+Avoid duplicate retrieved text	Lower overlap
+Fix missing context	Increase overlap or chunk size
+Fix broad irrelevant chunks	Decrease chunk size
+
+The safest exam line:
+
+Higher dimension can improve semantic representation, but costs more.
+Smaller chunks can improve retrieval precision, but too small can lose context.
+Best quality comes from evaluating model + dimension + chunk size together.
