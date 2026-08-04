@@ -1,3 +1,28 @@
+## 2026-07-16 (Thu)
+
+### Evening — check-in
+
+**Focus today (#2 GE work — FSR v2):** implementation alignment and cleanup.
+
+**What got done:**
+- Removed local doc path references from in-code comments/docstrings in v2 chunking-related files.
+- Clarified and documented v1 vs v2 chunking behavior differences in `gold/src/etl/fsr_v2/chunking.py`.
+- Updated design/implementation notes to capture an implementation-time sequencing change: parser-aligned chunk+embed needed for v2 correctness.
+- Aligned chunk attribution logic to Vince-style max-overlap behavior:
+  - updated `common/fsr_v2/region_utils.py`
+  - passed chunk end offsets from `gold/src/etl/fsr_v2/chunking.py`.
+- Removed extra post-attribution label override from v2 chunking to stay aligned with Vince method.
+- Removed legacy `%run ../../../common/fsr_config` from `silver/src/etl/nb_sdg_fsr_v2_metadata.py` (keep v2 config only).
+- Added note in `2-FSR-v2/implementation/impl-plan.md` that run-audit logging is deferred until end-to-end flow is stable.
+
+**Status:**
+- P1/P2 implementation alignment moved forward; key logic/path decisions now reflected in code + implementation docs.
+
+**Blockers:**
+- No hard blockers logged.
+
+---
+
 ## 2026-05-25 (Mon · D-19 to cert)
 
 ### Morning — drop-in log

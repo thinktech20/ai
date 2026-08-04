@@ -1,0 +1,53 @@
+1st Slide - Problem statement
+
+The business stakes.
+Outage planning runs ~2 years in advance. Taking equipment offline affects the whole grid.
+A missed risk signal in the data → unplanned downtime, safety risk, broken service commitments.
+Today: SMEs spend massive manual hours doing 'crystal-ball' risk assessments by hand.
+The data reality.
+Power-plant assets running up to 40 years. Decades of field service reports + scattered sources.
+Critical risk indicators live in unstructured PDFs of mixed scan quality.
+MVP scope: ~18K reports from 2010 onward — designed to scale to the full multi-decade corpus and more unit types later.
+Why RAG fit.
+<TBD>
+
+
+2nd Slide - RAG pipeline
+
+Show it as step-wise process -
+ingestion->processing->chunking&embedding->vector index
+
+and then retrieval show -> prompt+context(via vector search)->LLM -> output as risk analysis and data readiness. (relevant FSRs)
+
+
+3rd Slide:
+Parsing:
+
+Talk about the challenge here - FSR document complication
+so:
+challenge-
+how we solved it - basic flow of classification through rules, and then deterministic processing + llm prrocessing resulting metadta identifying ESN - equipmen type mapping, and regions
+result --
+
+4th slide
+chnunking & embedding
+challenge - retrieval should have efficient way of identifying chunks - SMEs stated problems.
+how we solved it - region attribution
+result -
+
+5th slide 
+ML flow evaluation metrics
+
+6th slide:
+
+Model serving endpoint - can we say how this rag ipeline is deployed as a model, so that ... think creatively... one of the asks from customer was how can we reliabley change methods in the trag pipeline, and show results as notig changes. this part - can you elaborate a bit on how we can implement this?
+
+===
+
+you can consider this as fairly technical slides but also simple to understand. I will use them in arch hive series as well as I will use them as my reference for databricks solutions architect interview.
+
+Also even if something is not yet in place, we should consider it more as implemnted or the right ways as opposed to stickig too hard to whats tehre.
+
+but since i want to be factual, i dont want too much of hypothetical/theoretical sayings.
+
+also, we can be creative and add a last slide as - further improvmenets worked pon, it should not be that thata there is no next work. to keep continuity.
