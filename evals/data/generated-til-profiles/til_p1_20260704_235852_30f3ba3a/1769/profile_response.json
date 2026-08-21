@@ -1,0 +1,157 @@
+{
+  "til_number": "TIL 1769",
+  "revision": null,
+  "title": "F-CLASS AFT STATOR ROCKING INSPECTION",
+  "publish_date": "2010-12-01",
+  "reason_for_revision": null,
+  "purpose": "This TIL outlines the inspection procedure to check for stator rocking on the aft stages (S14-S16) of the outlined F-class machines.",
+  "compliance_category_code": "C",
+  "compliance_category_text": "Compliance Required - Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Inspection",
+  "scope_of_work": [
+    "Inspection of the aft stator slots on all affected F-class units at the first available opportunity is recommended.",
+    "It should take one 12-hour shift to complete the aft stator rocking inspection."
+  ],
+  "service_recommendation_line_items": [
+    "During planned combustion inspections (CI) and hot gas path inspections (HGPI), perform a thorough borescope inspection (BI) of the aft stages (S14-S16) area to look for: base protruding into airflow path; large circumferential gap at the horizontal joint; protruding or missing shims; cracks and/or excessive wear (fretting) between the square base platform of the stator and the case or the next stator platform.",
+    "During major inspections or outages that require removal of the compressor discharge case (CDC), perform a stator rocking check and visual inspection of the stators and casing slots; measure the opening circumferential drop at the horizontal joint; check S14/S15/S16 stator vanes for rocking by pushing vanes to produce the largest radial drop and record the dimension in the stator rocking datasheet.",
+    "If rocking is found to be excessive or wear is found in the lower half, remove the stators and inspect bases for fretting, cracks and wear; inspect casing slot for wear into the lower rail and wear into the upper rail (a mirror may be required).",
+    "If any significant component wear, stator rocking, or cracks are discovered, document with pictures and submit to your GE Energy Services representative / GE Service Manager or Contract Performance Manager for documentation and engineering disposition."
+  ],
+  "completion_criteria_text": "Record the largest radial drop (Delta max) in the stator rocking datasheet; document any cracks/significant wear/rocking conditions with pictures and submit to GE for documentation and disposition.",
+  "maintenance_trigger_text": "At the first available opportunity (next shutdown); during planned CI, HGPI, or yearly monitoring when CDC is not removed; during HGPI or Major Inspections when CDC is removed and aft stators are exposed.",
+  "recommended_interval_or_trigger": [
+    "At the first available opportunity (next shutdown).",
+    "During planned CI, HGPI, or yearly monitoring if the CDC is not to be removed; during HGPI or Major Inspections when CDC is to be removed and aft stators are exposed."
+  ],
+  "usage_counters_to_check_or_consider": [],
+  "usage_counter_requirements_text": null,
+  "frame_or_model_applicability_text": "All 6FA+e, 7FA+, 7FA+e (flared and unflared), 7FB, 9FA+, 9FA+e (flared and unflared), and 9FB units that have not implemented a Package 4 or Package 5 enhanced compressor upgrade (which contains the enhanced aft stator modification).",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Applies to units that have not implemented a Package 4 or Package 5 enhanced compressor upgrade (which contains the enhanced aft stator modification).",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": "Units that have implemented a Package 4 or Package 5 enhanced compressor upgrade (which contains the enhanced aft stator modification).",
+  "required_prior_modifications_text": "Previous Modifications\nNone",
+  "prerequisite_outage_or_inspection_context_text": "Procedure 1 applies when aft stators are NOT exposed (CDC not removed) during CI, HGPI, or yearly monitoring; Procedure 2 applies during HGPI or Major Inspections when CDC is removed and aft stators are exposed.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "Applicability depends on whether the unit has implemented a Package 4 or Package 5 enhanced compressor upgrade (enhanced aft stator modification), requiring installed-configuration verification.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "compressor discharge case (CDC) removal is referenced as a condition for performing Procedure 2 inspections",
+      "required_inspection_types": [],
+      "source_location": "Extracted TIL PDF text - RECOMMENDATIONS / Inspection Procedure 2"
+    },
+    {
+      "part_number": null,
+      "context": "stator rocking datasheet is referenced for recording the largest radial drop measurement",
+      "required_inspection_types": [],
+      "source_location": "Extracted TIL PDF text - Inspection Procedure 2"
+    },
+    {
+      "part_number": null,
+      "context": "shims at the horizontal joint are referenced (protruding or missing shims may indicate stator rocking)",
+      "required_inspection_types": [],
+      "source_location": "Extracted TIL PDF text - Inspection Procedure 1"
+    }
+  ],
+  "reference_documents": [],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Package 4 enhanced compressor upgrade implemented vs not implemented",
+    "Package 5 enhanced compressor upgrade implemented vs not implemented",
+    "CDC removed (aft stators exposed) vs CDC not removed (aft stators not exposed)"
+  ],
+  "configuration_summary": "Inspection method depends on whether the compressor discharge case (CDC) will be removed (aft stators exposed) and applicability excludes units with Package 4 or Package 5 enhanced compressor upgrade containing the enhanced aft stator modification.",
+  "severity_signals": [
+    "base was protruding into the airflow path",
+    "stator tip rubs",
+    "stator vane liberation",
+    "fretting damage",
+    "wear damage found in the casing stator slot",
+    "large circumferential gap at the horizontal joint",
+    "protruding or missing shims",
+    "cracks and/or excessive wear (fretting)"
+  ],
+  "failure_consequences": [
+    "If the wear is significant enough it can lead to stator tip rubs",
+    "may potentially lead to stator vane liberation"
+  ],
+  "risk_summary": "Wear due to stator rocking has been found in the S15 casing slot; significant wear can progress to stator tip rubs and potentially stator vane liberation.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Compliance category definitions table",
+      "table_description": "Defines Optional (O) and Maintenance (M) compliance categories.",
+      "useful_for_downstream": false,
+      "reason": "General definitions only; no equipment-specific values."
+    },
+    {
+      "table_label": "Compliance category definition table",
+      "table_description": "Defines Compliance Required (C).",
+      "useful_for_downstream": false,
+      "reason": "General definition only; no equipment-specific values."
+    },
+    {
+      "table_label": "Compliance category definition table",
+      "table_description": "Defines Alert (A).",
+      "useful_for_downstream": false,
+      "reason": "General definition only; no equipment-specific values."
+    },
+    {
+      "table_label": "Compliance category definition table",
+      "table_description": "Defines Safety (S).",
+      "useful_for_downstream": false,
+      "reason": "General definition only; no equipment-specific values."
+    },
+    {
+      "table_label": "Timing code legend table",
+      "table_description": "Maps timing codes 1-6 to outage/implementation timing (e.g., code 2 = At First Opportunity (next shutdown)).",
+      "useful_for_downstream": false,
+      "reason": "Legend/terminology mapping; timing code is already captured from document header."
+    },
+    {
+      "table_label": "TIL COMPLIANCE RECORD",
+      "table_description": "Blank compliance record form for site/customer/contact information and turbine serial numbers.",
+      "useful_for_downstream": false,
+      "reason": "Administrative template; no operational inspection/parts/configuration data."
+    }
+  ],
+  "missing_information_flags": [
+    "No quantitative acceptance limits/thresholds are provided for what constitutes 'excessive' stator rocking or 'significant' wear.",
+    "No explicit inspection interval in operating hours/starts/trips is provided (only outage/event-based triggers such as CI/HGPI/yearly monitoring/next shutdown)."
+  ],
+  "source_snippets": [
+    {
+      "field": "frame_or_model_applicability_text",
+      "snippet": "All 6FA+e, 7FA+, 7FA+e (flared and unflared), 7FB, 9FA+, 9FA+e (flared and unflared), and 9FB units that have not implemented a Package 4 or Package 5 enhanced compressor upgrade (which contains the enhanced aft stator modification)."
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "If the wear is significant enough it can lead to stator tip rubs, and may potentially lead to stator vane liberation."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "During planned combustion inspections (CI) and hot gas path inspections (HGPI), a thorough borescope inspection (BI) of the aft stages (S14-S16) area should be performed."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "During major inspections or outages that require the removal of the compressor discharge case (CDC), a stator rocking check and visual inspection of the stators and casing slots should be performed."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "When stator vanes are exposed, vanes must be pushed in the direction that produces the largest radial drop. This dimension should be recorded in the stator rocking datasheet."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "If rocking is found to be excessive or wear is found in the lower half, remove the stators and inspect the bases for fretting, cracks and wear. Also inspect the casing slot for wear into the lower rail and wear into the upper rail (a mirror may be required for this inspection)."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "It should take one 12-hour shift to complete the aft stator rocking inspection."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

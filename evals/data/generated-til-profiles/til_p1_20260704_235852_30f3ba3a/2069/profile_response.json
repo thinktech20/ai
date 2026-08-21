@@ -1,0 +1,115 @@
+{
+  "til_number": "TIL 2069",
+  "revision": null,
+  "title": "7 & 9 F-CLASS TURBINE 1-2 SPACER WHEEL RIM INSPECTION RECOMMENDATIONS",
+  "publish_date": "2018-02-26",
+  "reason_for_revision": null,
+  "purpose": "Communicate inspection recommendations to help mitigate the risk of possible damage to the gas turbine associated with turbine 1-2 spacer wheel rim cracking and possible rim section liberation.",
+  "compliance_category_code": "A",
+  "compliance_category_text": "Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Next Scheduled Outage",
+  "scope_of_work": [
+    "Upon removal of the turbine shell casing for the hot gas path or major outage, perform a thorough cleaning of the rim of the 1-2 turbine spacer wheel to remove any oil and/or residual debris from the outer surface.",
+    "Perform an ultrasonic inspection of the turbine 1-2 spacer wheel rim region (forward and aft rim arms)."
+  ],
+  "service_recommendation_line_items": [
+    "For select frame 7 and 9 F-class gas turbine rotor 1-2 spacer wheels, perform an ultrasonic inspection of the rim region at the first outage (either hot gas path or major inspection) once the turbine 1-2 spacer wheel has accumulated 80,000 factored fired hours of operation (approximate range for inspection is 80,000 to 96,000 factored fired hours).",
+    "Strongly recommended: engage GE's Inspection & Life Extension Services (IL&LES) group to perform the ultrasonic inspection using developed techniques to fully inspect all necessary rim arm regions.",
+    "If indications are observed during inspection, contact your GE service representative for assistance with disposition of the findings.",
+    "Record TIL disposition in local records and in GE Power ServiceNow (TIL Disposition)."
+  ],
+  "completion_criteria_text": "This TIL is considered complete once the inspection mentioned in this recommendations section is completed and dispositioned.",
+  "maintenance_trigger_text": "Once the turbine 1-2 spacer wheel has accumulated 80,000 factored fired hours of operation (approximate range for inspection is 80,000 to 96,000 factored fired hours).",
+  "recommended_interval_or_trigger": [
+    "Perform inspection at the first outage (either hot gas path or major inspection) once the turbine 1-2 spacer wheel has accumulated 80,000 factored fired hours of operation.",
+    "GE recommends performing an inspection of the forward and aft rim arms of any turbine 1-2 spacer wheels having accumulated greater than 80,000 factored fired hours of operation."
+  ],
+  "usage_counters_to_check_or_consider": [
+    "operating_hours"
+  ],
+  "usage_counter_requirements_text": "Inspection recommended once the turbine 1-2 spacer wheel has accumulated 80,000 factored fired hours of operation (approximate range for inspection is 80,000 to 96,000 factored fired hours).",
+  "frame_or_model_applicability_text": "Select frame 7 and 9 F-class gas turbine rotor 1-2 spacer wheels with higher operational temperatures and specific environmental conditions. (F-class definition includes specific F, FA, and FB rotors)",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Turbine 1-2 spacer wheels with higher operational temperatures and specific environmental conditions; rotors operating in higher operational temperatures and humid or corrosive conditions may pose an increased risk of crack initiation and propagation in the rim arms.",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": null,
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "At the first outage (either hot gas path or major inspection) after reaching the factored fired hours trigger; scope begins upon removal of the turbine shell casing for the hot gas path or major outage.",
+  "sbom_dependency_flag": false,
+  "sbom_trigger_reason": null,
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "turbine 1-2 spacer wheel (rim region; forward and aft rim arms) to be cleaned and ultrasonically inspected",
+      "required_inspection_types": [
+        "UT"
+      ],
+      "source_location": "RECOMMENDATIONS; SCOPE OF WORK; BACKGROUND DISCUSSION"
+    }
+  ],
+  "reference_documents": [
+    {
+      "document_number": "TIL-1937",
+      "document_type": "TIL",
+      "context": "Fleet experience associated with TIL-1937 referenced in background discussion regarding increased risk in higher operational temperatures and humid or corrosive conditions."
+    }
+  ],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Frame/model: frame 7 and 9 F-class (including specific F, FA, and FB rotors)",
+    "Operating environment/conditions: higher operational temperatures; humid or corrosive conditions",
+    "Accumulated usage: factored fired hours threshold (>=80,000; inspection range 80,000 to 96,000)"
+  ],
+  "configuration_summary": "Applies to select frame 7 and 9 F-class rotor 1-2 spacer wheels, particularly those operating at higher operational temperatures and in humid or corrosive conditions; inspection is triggered by accumulated factored fired hours and performed at the first hot gas path or major inspection outage thereafter.",
+  "severity_signals": [
+    "high vibration trip",
+    "rim section liberation during full load operation",
+    "material ejected into the hot gas path",
+    "significant collateral damage to the compressor and turbine sections"
+  ],
+  "failure_consequences": [
+    "turbine 1-2 spacer wheel rim cracking and possible rim section liberation",
+    "significant collateral damage to the compressor and turbine sections of the gas turbine"
+  ],
+  "risk_summary": "Cracks can initiate from the internal surface of the turbine 1-2 spacer wheel rim arm and propagate radially and circumferentially outward until the rim can no longer sustain centripetal forces, resulting in rim section liberation and potential significant collateral damage; risk may be increased for rotors operating in higher operational temperatures and humid or corrosive conditions.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [],
+  "missing_information_flags": [
+    "No specific part numbers, wheel serial ranges, or rotor identification criteria are provided for determining which 'select' frame 7 and 9 F-class units are affected.",
+    "No explicit ultrasonic acceptance/rejection criteria or disposition thresholds are provided (only instruction to contact GE if indications are observed).",
+    "No explicit follow-on inspection interval after the initial UT is provided (document states further inspections occur as part of rotor life extension processes without specifying timing)."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "Communicate inspection recommendations to help mitigate the risk of possible damage to the gas turbine associated with turbine 1-2 spacer wheel rim cracking and possible rim section liberation."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "GE recommends performing an inspection of the forward and aft rim arms of any turbine 1-2 spacer wheels having accumulated greater than 80,000 factored fired hours of operation."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "GE recommends performing an ultrasonic inspection of the rim region of the turbine 1-2 spacer wheel at the first outage (either hot gas path or major inspection) once the turbine 1-2 spacer wheel has accumulated 80,000 factored fired hours of operation (approximate range for inspection is 80,000 to 96,000 factored fired hours)."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Upon removal of the turbine shell casing for the hot gas path or major outage, a thorough cleaning of the rim of the 1-2 turbine spacer wheel is required to remove any oil and/or residual debris from the outer surface."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Ultrasonic inspection of the turbine 1-2 spacer wheel rim region can be completed in approximately two shifts (~12-16 hours)."
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "This ejection of material into the hot gas path resulted in significant collateral damage to the compressor and turbine sections of the gas turbine."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "therefore this TIL is considered complete once the inspection mentioned in this recommendations section is completed and dispositioned."
+    }
+  ],
+  "extraction_confidence": 0.86
+}

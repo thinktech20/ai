@@ -1,0 +1,50 @@
+Open Databricks workspace and sync latest repo code so both notebooks are current: nb_fsr_chunking_index_eval.py and nb_fsr_eval_harness.py.
+
+Start Layer 1 first by opening nb_fsr_chunking_index_eval.py.
+
+Run the first install cell (%pip) in that notebook and wait for success.
+
+Run the Python restart cell (dbutils.library.restartPython), then re-run imports/widgets cells after restart.
+
+Set Layer 1 baseline widgets:
+BASELINE_METADATA_TABLE, BASELINE_CHUNK_TABLE, BASELINE_VS_INDEX, MLFLOW_EXPERIMENT, RUN_NAME_PREFIX, EMBEDDING_DIMENSION, FSR_VS_ENDPOINT, CANDIDATE_ID.
+
+Use these Layer 1 defaults unless you are testing a different target:
+- BASELINE_METADATA_TABLE = vaid.ai_sot_field_service_report.biz_metadata_field_service_report
+- BASELINE_CHUNK_TABLE = vaid.ai_std_con_field_service_report.vec_field_service_report
+- BASELINE_VS_INDEX = vaid.ai_std_con_field_service_report.vs_vec_field_service_report
+- RUN_NAME_PREFIX = neutral label only, for example fsr_chunking_index or fsr_chunking_index_chunk500_overlap50
+
+For baseline-only test, leave CANDIDATE_METADATA_TABLE, CANDIDATE_CHUNK_TABLE, CANDIDATE_VS_INDEX blank; for A/B test, fill candidate table/index values.
+
+Candidate run note:
+- The notebook always appends _baseline or _candidate to RUN_NAME_PREFIX.
+- Do not put baseline or candidate into RUN_NAME_PREFIX itself.
+
+Run the baseline eval cell and confirm it prints Baseline MLflow run id.
+
+If candidate is provided, run the candidate cell and confirm Candidate MLflow run id plus JSON comparison output.
+
+Open MLflow experiment from MLFLOW_EXPERIMENT and verify Layer 1 metrics for baseline vs candidate.
+
+Start with these Layer 1 metrics:
+- chunk_doc_coverage_ratio
+- avg_chunks_per_doc
+- bad_embedding_dim_count
+- empty_chunk_text_count
+- null_embedding_count
+
+Move to Layer 2 by opening nb_fsr_eval_harness.py.
+
+Run install cell (%pip), restart Python, then re-run imports/widgets cells.
+
+Set Layer 2 widgets:
+FSR_VS_ENDPOINT, FSR_VS_INDEX, FSR_METADATA_TABLE, PROBE_SET_TABLE, METADATA_VERSION (optional), PROBE_SET_VERSION, PROBE_QUERY_TEMPLATE, PROBE_PER_BUCKET, PROBE_SEED, MLFLOW_EXPERIMENT, RUN_NAME_PREFIX, TOP_K, MAX_PER_DOC, LITELLM_BASE_URL, LITELLM_API_KEY, EMBEDDING_MODEL.
+
+Layer 2 probe-set note:
+- Preferred mode for experiment 2: fill PROBE_SET_TABLE with the saved probe table.
+- Leave PROBE_SET_TABLE blank only if you want the notebook to sample probes from metadata.
+
+Run probe-set load/build cell, then run embedding smoke-test cell and confirm vector length plus healthy latency.
+
+Run final harness cell, capture MLflow run id, then verify retrieval metrics in MLflow (avg_retrieved_vs_exists_ratio, avg_retrieved_known_fsr_count, avg_known_fsr_count, probes_succeeded, probes_failed) and compare runs by changing TOP_K/MAX_PER_DOC one knob at a time.

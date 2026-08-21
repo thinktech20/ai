@@ -1,0 +1,64 @@
+Problem: currently Unit Risk Matrix, risk assessments are not giving consistent results every time, so we need to have evaluation metrics for data quality. Business users are stuck with it.
+
+Context:
+
+Meeting notes that was shared with me:
+1. FSR Data Quality & Retrieval (Vince)
+Vince worked Saturday running automated tests (16 iterations, 20–30 min each). Findings:
+
+Issue	Detail	Impact
+Top-K homogeneity	K=10 retrieval pulls all 10 chunks from one large FSR	Critical info from other FSRs is completely missed
+Weird text structures	Tables/images in FSRs produce garbage after chunking	LLM gets confused by OCR artifacts
+Corpus explosion	Went from ~8K → 50K+ FSRs (more than doubled)	Introduced new unknowns; biggest risk encountered
+Vince's assessment	"Pretty happy" with results once optimized	Sees 2000% improvement potential from proper test coverage
+Need: Two-way or three-way check mechanism to ensure no FSRs are missed going forward.
+
+
+
+2. Attached meeting transcript with Tao on this to understand the problem - not very clear though - evals/inputs/Meeting Tao- FSR data quality issue.docx
+
+3. My understanding is that we should use MLFlow and Model serving so that we can easily detect these issues. My learnings here - 
+ai-arch/dbx-genai-course/notes/MLFlow-Model-Serving.md
+ai-arch/dbx-genai-course/notes/evaluation-metrics.md
+ai-arch/dbx-genai-course/labs-content/Week-3/generative-ai-evaluation-and-governance-en_us-2.1.3/generative-ai-evaluation-and-governance-en_us-2.1.3/03 - Gen AI Evaluation Techniques
+ai-arch/dbx-genai-course/labs-content/Week-4/generative-ai-deployment-and-monitoring-en_us-2.0.9
+
+4. In the morning standup, Vince mentioned - 
+Epperson, Vinson (GE Vernova)
+11 minutes 39 seconds11:39
+Epperson, Vinson (GE Vernova) 11 minutes 39 seconds
+No, okay. I'll give some feedback for the previous meeting just quickly to the team. We're trying to go live, which means Jamal's team, the wider team starts adopting the tool and using it for unit risk agent. The kind of the three main issues are that we really have 40
+Epperson, Vinson (GE Vernova) 12 minutes
+I thought it was 43, but anyway.
+Epperson, Vinson (GE Vernova) 12 minutes 3 seconds
+problems with light LLM proxy that was causing some specific issues to not get an analysis or to drop back to a substandard analysis on a lower LLM model. That was important to be fixed. I think it sounds like that's fixed, hopefully, but I'm not sure 100%. So stay on top of that. The FSRs continue to be a problem.
+Epperson, Vinson (GE Vernova) 12 minutes 27 seconds
+that's being worked, I don't, I doubt, I have zero confidence we've solved that one, despite all the work that we've done. And it's no fault of this team, by the way, but I just don't think we have it solved. And then heat map, I set up a meeting after this, so that, so I'd like to end it.
+Epperson, Vinson (GE Vernova) 12 minutes 45 seconds
+in 15 minutes and spend some time on the heat map itself. We need a little bit more rigor around these applications, especially these more complicated ones where we have LLM as a judge. If you do some research on that, historically people will say that
+Epperson, Vinson (GE Vernova) 13 minutes 4 seconds
+Best case, you get somewhere between 60 and 70% accuracy on those. I think we're actually doing a bit better than that, frankly. But it's still not quite good enough, and there's things we can do. So we need some test harnesses and things like that. If you think about these data sets, how do we evaluate that?
+Epperson, Vinson (GE Vernova) 13 minutes 23 seconds
+if we're going to make a change to something that we feel really good about it. We need more testing, more automated testing, because these things take time to get analyzed, right? So anyway, that's kind of the three major topics or thoughts in my brain this week. We'll spend some time a little bit on each of these. On some of them, we'll wait on feedback from the SMEs and hope and pray week.
+Epperson, Vinson (GE Vernova) 13 minutes 42 seconds
+we got it fixed. So the last thing that the SME said is kind of amongst these, especially the FSRs with these other issues, these are the kind of things that get your tool put in a corner, which means they will stop using it and it will become irrelevant.
+
+5. For FSRs, we already have a data iingested and a pileine is running for incremental ingestion - pw_sdg_ai_ser_repo/silver/src/workflows/fsr/pw_sdg_fsr_ingestion.yml, design here - FSR/fsr-pipeline-design.md. So in this case, how can we add eval metrics? For TILs - its new development, and still building, you can tell me what better can we do - Til pipleine and design - 1-TILs/design/til-design.md, 1-TILs/design/til-extraction-pipeline.md, pw_sdg_ai_ser_repo/workflows/tils/pw_sdg_til_metadata.yml
+
+please first write the problem, and then if you have any questions, and then your recommendations.
+==================================
+
+prompt 2
+
+based on my recent meeting with tao - here its attached - evals/inputs/tao-meeting-2, I dont think there is very much clarity on the problem, and i am supposed t reach out to Vince to ask if he needs help.
+
+I believe its a problem of FSR retrieval by ESN, so not all relevant FSRs are getting retrived.
+
+From what I understood from Vince in stanup bruefy today - he mentioned -  So we need some test harnesses and things like that. If you think about these data sets, how do we evaluate that?
+if we're going to make a change to something that we feel really good about it. We need more testing, more automated testing, because these things take time to get analyzed, 
+
+so in my mind if we have an endpoint to test, or validate, may be model serving? or vector store which we have already, we can build test harness for retrival, and like tao said.. version 1 - result, version 2 - result
+
+we cant wait for gold dataset, we need to provide some proposal/suggestion etc so that we can take it from there. 
+
+Also, to said he did some analysis and shared with me ... he just asked to check that for reference, not necessarily we follow that - evals/inputs/0626-FSR_Retrieval_Issues_DeepDive_and_Resolution.md

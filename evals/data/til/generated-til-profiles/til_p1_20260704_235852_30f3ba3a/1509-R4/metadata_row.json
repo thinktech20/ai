@@ -1,0 +1,517 @@
+{
+  "document_id": "til 1509-r4 - f-class front end (r0, s0, and r1) compressor inspections",
+  "unique_key": "1509-R4__c5985bb71ca1f06b9866f7de507eca4a540335dd97abe1443b43355494577e7b",
+  "source_path": "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1509-R4 - F-CLASS FRONT END (R0, S0, AND R1) COMPRESSOR INSPECTIONS.pdf",
+  "source_hash": "c5985bb71ca1f06b9866f7de507eca4a540335dd97abe1443b43355494577e7b",
+  "source_system": "databricks_volume",
+  "requested_til_number": "1509-R4",
+  "matched_til_number": "1509-R4",
+  "match_type": "pdf_name_match",
+  "parser_method": "databricks_ai",
+  "parser_name": "databricks_ai",
+  "parser_version": "v1",
+  "profile_found": true,
+  "parsed_profile_json": {
+    "til_number": "TIL 1509",
+    "revision": "R4",
+    "title": "F-CLASS FRONT END (R0, S0, AND R1) COMPRESSOR INSPECTIONS",
+    "publish_date": "2020-09-23",
+    "reason_for_revision": "To update the criteria that warrants R1 blade tip non-destructive inspections, to recommend performing the described non-destructive inspections during major inspections, and to update TIL language for improved clarity.",
+    "purpose": "The purpose of this TIL is to provide compressor front-end (R0, S0, R1) inspection recommendations to help improve unit availability and reliability.",
+    "compliance_category_code": "C",
+    "compliance_category_text": "Compliance Required - Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Next Scheduled Outage",
+    "scope_of_work": [
+      "Perform annual visual (borescope) inspection of compressor front end: R0 LE root region, R0 and R1 blade tips, and S0 trailing edge (TE).",
+      "Perform non-destructive inspections (NDI) (red dye penetrant; FPI preferred when available) of R0 LE root, R0 and R1 blade tips, and S0 TE per configuration-dependent schedules and triggers; for 7F/9F inspections can be performed in-situ through inlet plenum without casing removal; for 6F certain NDI require major inspection exposure."
+    ],
+    "service_recommendation_line_items": [
+      "Annually (as part of annual borescope inspection), visually inspect: (1) R0 LE root region for cracks, nicks, dents, erosion or corrosion pitting (LE root region extends 1\" above the platform and 2\" downstream from the LE on both pressure and suction side); (2) R0 and R1 blade tips for missing tips, corrosion pits, visible cracks, rolled over material/burrs, and other evidence of rubs; (3) S0 TE for cracks (may initiate between root and ~50% span).",
+      "If R0 LE root cracks are observed during visual inspection: perform NDI of all R0 root locations immediately; if confirmed by NDI, do not restart the unit and contact GE Gas Power Services representative.",
+      "If R0 or R1 tip corner loss is observed: perform NDI of all R0 and R1 tips immediately; if indications are confirmed by NDI, do not restart the unit; additionally perform a borescope inspection of the entire compressor at the first opportunity.",
+      "If S0 TE cracks are observed: perform NDI of all S0 TE immediately; if confirmed by NDI, do not restart the machine and contact GE Gas Power Services representative.",
+      "NDI method: for purposes of this TIL, NDI is considered as a red dye penetrant inspection; when fluorescent penetrant inspection (FPI) is available, it is the preferred method for R0, S0 and R1 NDI.",
+      "7F/9F: perform inspections in-situ through the inlet plenum without casing removal (as stated).",
+      "6F access limitation: NDI cannot be performed on the S0 TE or R1 tips through the inlet; recommended NDI frequency for the 6F is at the major inspection (MI).",
+      "During MI (or another opportunity where the 7F or 9F compressor front-end is exposed), perform R0 root, R0 tip, S0 TE, and R1 tip NDI irrespective of previous findings.",
+      "If the 6F compressor front-end is exposed prior to MI, perform R0 root, R0 tip, S0 TE, and R1 tip NDI.",
+      "R0 LE root NDI (standard/non-enhanced R0 blades only): perform visual inspection and NDI after first 50 actual fired starts on the R0 blades; repeat after an additional 25 actual fired starts; if NDI cannot be performed, perform a visual inspection every 25 fired starts until NDI is performed; then perform annual R0 LE root NDI per Table 1 (7F/9F) or Table 2 (6F). If unit has enhanced compressor package 2 or higher, R0 LE root NDI is not required.",
+      "R0 and R1 blade tip NDI (standard/non-enhanced blades only): if no rub indications are present on R0 or R1 blade tips on units with >100 total actual fired starts, continue to monitor with visual inspections; on units with <100 actual fired starts, perform visual/borescope inspection on R0 and R1 blade tips at the next planned outage after accumulating 100 actual fired starts.",
+      "If rubs are identified on R0/R1 tips: perform NDI of R0 and R1 tips during first discovery and then again after 25, 50, and 100 actual fired starts to verify that tip cracks have not formed.",
+      "If rolled-over metal, burrs, cracks, or tip loss is noted: complete repairs at the first opportunity; until repairs are completed, perform NDI of R0 and R1 tips every 12 actual fired starts to avoid tip corner loss; tip grinding may be required to improve blade tip clearances to help prevent future rubs; following repair, repeat NDI at 25, 50, and 100 actual fired starts from time of repair.",
+      "After initial inspections/repairs, continue NDI of R0 and R1 blade tips per Table 1 (7F/9F) or Table 2 (6F). If unit is suspected to be in a corrosive environment and unit is not equipped with non-uniform vane spacing (NUVS) S0 and S1 vanes, perform NDI on R0 and R1 blade tips every 40 to 50 starts and inspect for corrosion pits and other linear indications.",
+      "S0 TE NDI (flared, standard/non-enhanced S0 vanes only): perform NDI per Table 1 (7F/9F) or Table 2 (6F); inspect entire trailing edge of every S0 vane including both pressure and suction side; if cracks are observed on any S0 TE, replace the entire stage. If unit has enhanced compressor package 2+ or higher, S0 TE NDI is not required; S0 TE NDI is also not required for unflared compressors.",
+      "Report any distress found by visual inspections or NDI to GE Gas Power Services representative for evaluation."
+    ],
+    "completion_criteria_text": "Completion is achieved when the applicable visual inspections and configuration-dependent NDIs (R0 LE root, R0/R1 tips, S0 TE) have been performed per the schedules/triggers in this TIL, and any identified distress has been reported to GE Gas Power Services for evaluation; if cracks/indications are confirmed by NDI, the unit/machine is not restarted.",
+    "maintenance_trigger_text": "Triggers include annual borescope interval; actual fired starts thresholds (50, +25, 12, 25/50/100, 40-50, 100 total); discovery of rubs, rolled-over metal/burrs, cracks, tip loss; corrosive environment concerns; and exposure opportunities such as MI or other outage where compressor front-end is exposed.",
+    "recommended_interval_or_trigger": [
+      "Annual visual inspection (as part of annual borescope inspection) of R0 LE root, R0/R1 tips, and S0 TE.",
+      "NDI intervals/triggers depend on compressor configuration (standard vs enhanced packages; flared vs unflared), unit frame (6F vs 7F/9F), and operating history/conditions (previous rubs, UVS/NUVS vane spacing, rotor shipped prior to 2006, corrosive environment) including specific fired-start thresholds and MI exposure opportunities."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "starts"
+    ],
+    "usage_counter_requirements_text": "Multiple recommendations are based on \"actual fired starts\" (e.g., first 50 starts on R0 blades; additional 25 starts; every 25 starts if NDI cannot be performed; >100 total starts; after 25/50/100 starts following rub discovery or repair; every 12 starts until repairs completed; every 40 to 50 starts in suspected corrosive environment without NUVS S0/S1).",
+    "frame_or_model_applicability_text": "Applicable to all 6F, 7F, and 9F gas turbines with an 18-stage axial compressor.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Inspection requirements depend on compressor configuration: standard (non-enhanced) vs enhanced compressor packages (package 1, 2, 2+, 3, 4, 5); flared vs unflared compressor; vane spacing configuration (UVS vs NUVS) for S0 and S1; and rotor ship date prior to 2006 (flared compressor only). For 6F, NDI cannot be performed on S0 TE or R1 tips through the inlet; recommended NDI frequency for 6F is at MI.",
+    "serial_or_unit_applicability_text": "R1 tip NDI criteria includes: rotor shipped prior to 2006 (flared compressor only).",
+    "exclusions_or_non_applicable_conditions_text": "R0 LE root NDI not required if unit has received enhanced compressor package 2 or higher. R0 tip NDI not required if unit has received enhanced compressor package 2 or higher. R1 tip NDI not required if unit has received enhanced compressor package 5. S0 TE NDI required only for flared compressors; not required for unflared compressors; not required if unit has received enhanced compressor package 2+ or higher.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Annual visual inspection is recommended as part of the annual borescope inspection. For 7F/9F, inspections can be performed in-situ through the inlet plenum without casing removal. For 6F, NDI cannot be performed on S0 TE or R1 tips through the inlet; recommended NDI frequency is at major inspection (MI). During MI (or another opportunity where the compressor front-end is exposed), perform R0 root, R0 tip, S0 TE, and R1 tip NDI irrespective of previous findings (7F/9F); similarly for 6F if exposed prior to MI.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Inspection requirements are configuration-dependent (enhanced compressor package level; flared vs unflared; UVS/NUVS S0/S1; rotor shipped prior to 2006), requiring installed-configuration verification.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "R0 blades (standard/non-enhanced vs enhanced compressor package 2 or higher affects whether R0 LE root NDI is required).",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Extracted TIL PDF text - Recommendations section: \"NDI on standard (non-enhanced) R0 LE root.\" and NDI method paragraph"
+      },
+      {
+        "part_number": null,
+        "context": "R1 blades (standard/non-enhanced vs enhanced compressor package 5 affects whether R1 tip NDI is required).",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Extracted TIL PDF text - Recommendations section: \"NDI on standard (non enhanced) R0 and R1 blade tip.\" and Table 1 notes"
+      },
+      {
+        "part_number": null,
+        "context": "S0 vanes (flared, standard/non-enhanced vs enhanced compressor package 2+ or higher affects whether S0 TE NDI is required; entire trailing edge inspection; replace entire stage if cracks observed).",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Extracted TIL PDF text - Recommendations section: \"NDI on standard (non enhanced) S0 TE.\" and Table 1/Table 2 notes"
+      },
+      {
+        "part_number": null,
+        "context": "Remote penetrant system for in-situ NDI of S0 and R1 (special tooling).",
+        "required_inspection_types": [],
+        "source_location": "Extracted TIL PDF text - Planning Information > Special Tooling"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1323",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations (this TIL does not modify those recommendations)."
+      },
+      {
+        "document_number": "TIL 1399",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations (this TIL does not modify those recommendations)."
+      },
+      {
+        "document_number": "TIL 1603",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations (this TIL does not modify those recommendations)."
+      },
+      {
+        "document_number": "TIL 1518",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations and also listed under Reference Documents for inlet system maintenance."
+      },
+      {
+        "document_number": "TIL 1345",
+        "document_type": "TIL",
+        "context": "Referenced regarding overspeed trip tests potentially causing casing distortion if not performed per TIL 1345."
+      },
+      {
+        "document_number": "TIL 1348",
+        "document_type": "TIL",
+        "context": "Referenced for improper start-up procedures for faster start-up times; \"Refer to TIL 1348 for select 7F units.\""
+      },
+      {
+        "document_number": "TIL 1579",
+        "document_type": "TIL",
+        "context": "Referenced for routine maintenance of piping and tubing within the turbine enclosure to prevent fluid spills on casings."
+      },
+      {
+        "document_number": "GEK 111330",
+        "document_type": "GEK",
+        "context": "Operations and Maintenance for Inlet Filter Compartment (corrosion reduction reference)."
+      },
+      {
+        "document_number": "GEK 116269",
+        "document_type": "GEK",
+        "context": "Gas Turbine Inlet Air Specification (corrosion reduction reference)."
+      },
+      {
+        "document_number": "GEK 111331",
+        "document_type": "GEK",
+        "context": "Operation and Maintenance Recommendations for Air Evaporative Coolers (corrosion reduction reference)."
+      },
+      {
+        "document_number": "GEK 111332",
+        "document_type": "GEK",
+        "context": "Operations and Maintenance Recommendations for Gas Turbine Inlet Duct and Plenum (corrosion reduction reference)."
+      },
+      {
+        "document_number": "TIL 1622",
+        "document_type": "TIL",
+        "context": "Water Removal Systems for Corrosion Reduction (corrosion reduction reference)."
+      },
+      {
+        "document_number": "O&M manuals",
+        "document_type": "Manual",
+        "context": "Referenced for inlet system and water removal systems inspection/maintenance recommendations."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Frame/model: 6F vs 7F vs 9F",
+      "Compressor configuration: standard (non-enhanced) vs enhanced compressor package (1, 2, 2+, 3, 4, 5)",
+      "Flared vs unflared compressor",
+      "S0/S1 vane spacing: UVS vs NUVS (flared compressor only for certain criteria)",
+      "Rotor ship date prior to 2006 (flared compressor only)",
+      "Operating history: prior tip rubs/tip cracks/tip loss; presence of rub indications; rolled-over metal/burrs",
+      "Operating environment: suspected corrosive environment"
+    ],
+    "configuration_summary": "Inspection schedule and whether specific NDIs are required varies by enhanced compressor package level, flared/unflared configuration, vane spacing (UVS/NUVS), rotor ship date (pre-2006 for flared), and observed operating distress (rubs/cracks/tip loss), with additional access limitations for 6F (S0 TE and R1 tip NDI not through inlet; MI exposure recommended).",
+    "severity_signals": [
+      "R0 LE root cracks confirmed by NDI: do not restart the unit.",
+      "R0 or R1 tip indications confirmed by NDI: do not restart the unit; perform borescope inspection of entire compressor at first opportunity.",
+      "S0 trailing edge cracks confirmed by NDI: do not restart the machine."
+    ],
+    "failure_consequences": [
+      "R0 LE root crack propagation can potentially lead to blade liberation; liberation of an R0 blade from the root region can cause collateral damage to the gas turbine.",
+      "Heavy tip rubs can lead to tip cracks and may eventually result in a tip corner loss; a tip corner loss may result in a forced outage to repair the affected downstream blades."
+    ],
+    "risk_summary": "Front end compressor distress has been observed in three categories (R0 LE root distress, R0/R1 blade tip distress, S0 TE distress). Risks include crack initiation/propagation driven by starts and potential high cycle fatigue at full speed, leading to blade liberation/collateral damage (R0 root) or tip corner loss and forced outage (R0/R1 tips); S0 TE cracks are driven by starts and associated with damping loss due to vane lock-up.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Table 1: Recommended inspections and schedule for 7F and 9F",
+        "table_description": "Inspection frequency matrix by 7F/9F compressor configuration (standard and enhanced packages 1, 2, 2+, 3, 4, 5) for Visual/Borescope, R0 Root NDI, R0 Tip NDI, R1 Tip NDI, and S0 TE NDI.",
+        "useful_for_downstream": true,
+        "reason": "Provides configuration-dependent inspection schedule (annual vs not required) needed for outage scoping and planning."
+      },
+      {
+        "table_label": "Table 2: Recommended inspections and schedule for 6F",
+        "table_description": "Inspection frequency matrix by 6F compressor configuration (standard and enhanced packages 1, 2, 3/4, 5) for Visual/Borescope (annual) and NDI items (R0 Root NDI, R0 Tip NDI, R1 Tip NDI, S0 TE NDI) including MI-based entries.",
+        "useful_for_downstream": true,
+        "reason": "Defines which inspections are annual vs major inspection (MI) and which are not required by enhanced package level."
+      }
+    ],
+    "missing_information_flags": [
+      "NDI abbreviation expansions beyond red dye penetrant/FPI preference are not provided (e.g., what specific NDI procedure/acceptance criteria to use).",
+      "No specific part numbers or kit numbers are provided for R0 blades, R1 blades, S0 vanes, or enhanced compressor packages."
+    ],
+    "source_snippets": [
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "This TIL is applicable to all 6F, 7F, and 9F gas turbines with an 18-stage axial compressor."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Subsequently, the crack can propagate at full speed operation due to high cycle fatigue and potentially lead to blade liberation. The liberation of an R0 blade from the root region can cause collateral damage to the gas turbine."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Subsequent starts could propagate this crack and may eventually result in a tip corner loss. A tip corner loss may result in a forced outage to repair the affected downstream blades."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "An annual visual inspection of the compressor front end is recommended as part of the annual borescope inspection."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "For the purposes of this TIL, NDI is considered as a red dye penetrant inspection. When florescent penetrant inspection (FPI) is available, it is the preferred method for R0, S0 and R1 NDI."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "For the 6F, an NDI cannot be performed on the S0 TE, or R1 tips through the inlet. The recommended NDI frequency for the 6F is at the major inspection (MI)."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Note: During MI, or another opportunity where the 7F or 9F compressor front-end is exposed, it is recommended the R0 root, R0 tip, S0 TE, and R1 tip NDI be performed, irrespective of previous findings."
+      },
+      {
+        "field": "usage_counter_requirements_text",
+        "snippet": "Perform a visual inspection and NDI of the R0 LE roots after the first 50 actual fired starts on the R0 blades. Repeat the R0 LE root NDI after an additional 25 actual fired starts from the first inspection."
+      },
+      {
+        "field": "usage_counter_requirements_text",
+        "snippet": "Until repairs are completed, an NDI of the R0 and R1 tips should be performed every 12 actual fired starts to avoid tip corner loss."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "If R0 LE root cracks exist and are confirmed by NDI, do not restart the unit."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "If R0 or R1 indications exist and are confirmed by NDI, do not restart the unit."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "If S0 trailing edge cracks exist and are confirmed by NDI, do not restart the machine."
+      }
+    ],
+    "extraction_confidence": 0.86
+  },
+  "raw_profile_json": {
+    "til_number": "TIL 1509-R4",
+    "revision": "R4",
+    "title": "F-CLASS FRONT END (R0, S0, AND R1) COMPRESSOR INSPECTIONS",
+    "publish_date": "2020-09-23",
+    "reason_for_revision": "To update the criteria that warrants R1 blade tip non-destructive inspections, to recommend performing the described non-destructive inspections during major inspections, and to update TIL language for improved clarity.",
+    "purpose": "The purpose of this TIL is to provide compressor front-end (R0, S0, R1) inspection recommendations to help improve unit availability and reliability.",
+    "compliance_category_code": "C",
+    "compliance_category_text": "Compliance Require",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Next Scheduled Outage",
+    "scope_of_work": [
+      "Perform annual visual (borescope) inspection of compressor front end: R0 LE root region, R0 and R1 blade tips, and S0 trailing edge (TE).",
+      "Perform non-destructive inspections (NDI) (red dye penetrant; FPI preferred when available) of R0 LE root, R0 and R1 blade tips, and S0 TE per configuration-dependent schedules and triggers; for 7F/9F inspections can be performed in-situ through inlet plenum without casing removal; for 6F certain NDI require major inspection exposure."
+    ],
+    "service_recommendation_line_items": [
+      "Annually (as part of annual borescope inspection), visually inspect: (1) R0 LE root region for cracks, nicks, dents, erosion or corrosion pitting (LE root region extends 1\" above the platform and 2\" downstream from the LE on both pressure and suction side); (2) R0 and R1 blade tips for missing tips, corrosion pits, visible cracks, rolled over material/burrs, and other evidence of rubs; (3) S0 TE for cracks (may initiate between root and ~50% span).",
+      "If R0 LE root cracks are observed during visual inspection: perform NDI of all R0 root locations immediately; if confirmed by NDI, do not restart the unit and contact GE Gas Power Services representative.",
+      "If R0 or R1 tip corner loss is observed: perform NDI of all R0 and R1 tips immediately; if indications are confirmed by NDI, do not restart the unit; additionally perform a borescope inspection of the entire compressor at the first opportunity.",
+      "If S0 TE cracks are observed: perform NDI of all S0 TE immediately; if confirmed by NDI, do not restart the machine and contact GE Gas Power Services representative.",
+      "NDI method: for purposes of this TIL, NDI is considered as a red dye penetrant inspection; when fluorescent penetrant inspection (FPI) is available, it is the preferred method for R0, S0 and R1 NDI.",
+      "7F/9F: perform inspections in-situ through the inlet plenum without casing removal (as stated).",
+      "6F access limitation: NDI cannot be performed on the S0 TE or R1 tips through the inlet; recommended NDI frequency for the 6F is at the major inspection (MI).",
+      "During MI (or another opportunity where the 7F or 9F compressor front-end is exposed), perform R0 root, R0 tip, S0 TE, and R1 tip NDI irrespective of previous findings.",
+      "If the 6F compressor front-end is exposed prior to MI, perform R0 root, R0 tip, S0 TE, and R1 tip NDI.",
+      "R0 LE root NDI (standard/non-enhanced R0 blades only): perform visual inspection and NDI after first 50 actual fired starts on the R0 blades; repeat after an additional 25 actual fired starts; if NDI cannot be performed, perform a visual inspection every 25 fired starts until NDI is performed; then perform annual R0 LE root NDI per Table 1 (7F/9F) or Table 2 (6F). If unit has enhanced compressor package 2 or higher, R0 LE root NDI is not required.",
+      "R0 and R1 blade tip NDI (standard/non-enhanced blades only): if no rub indications are present on R0 or R1 blade tips on units with >100 total actual fired starts, continue to monitor with visual inspections; on units with <100 actual fired starts, perform visual/borescope inspection on R0 and R1 blade tips at the next planned outage after accumulating 100 actual fired starts.",
+      "If rubs are identified on R0/R1 tips: perform NDI of R0 and R1 tips during first discovery and then again after 25, 50, and 100 actual fired starts to verify that tip cracks have not formed.",
+      "If rolled-over metal, burrs, cracks, or tip loss is noted: complete repairs at the first opportunity; until repairs are completed, perform NDI of R0 and R1 tips every 12 actual fired starts to avoid tip corner loss; tip grinding may be required to improve blade tip clearances to help prevent future rubs; following repair, repeat NDI at 25, 50, and 100 actual fired starts from time of repair.",
+      "After initial inspections/repairs, continue NDI of R0 and R1 blade tips per Table 1 (7F/9F) or Table 2 (6F). If unit is suspected to be in a corrosive environment and unit is not equipped with non-uniform vane spacing (NUVS) S0 and S1 vanes, perform NDI on R0 and R1 blade tips every 40 to 50 starts and inspect for corrosion pits and other linear indications.",
+      "S0 TE NDI (flared, standard/non-enhanced S0 vanes only): perform NDI per Table 1 (7F/9F) or Table 2 (6F); inspect entire trailing edge of every S0 vane including both pressure and suction side; if cracks are observed on any S0 TE, replace the entire stage. If unit has enhanced compressor package 2+ or higher, S0 TE NDI is not required; S0 TE NDI is also not required for unflared compressors.",
+      "Report any distress found by visual inspections or NDI to GE Gas Power Services representative for evaluation."
+    ],
+    "completion_criteria_text": "Completion is achieved when the applicable visual inspections and configuration-dependent NDIs (R0 LE root, R0/R1 tips, S0 TE) have been performed per the schedules/triggers in this TIL, and any identified distress has been reported to GE Gas Power Services for evaluation; if cracks/indications are confirmed by NDI, the unit/machine is not restarted.",
+    "maintenance_trigger_text": "Triggers include annual borescope interval; actual fired starts thresholds (50, +25, 12, 25/50/100, 40-50, 100 total); discovery of rubs, rolled-over metal/burrs, cracks, tip loss; corrosive environment concerns; and exposure opportunities such as MI or other outage where compressor front-end is exposed.",
+    "recommended_interval_or_trigger": [
+      "Annual visual inspection (as part of annual borescope inspection) of R0 LE root, R0/R1 tips, and S0 TE.",
+      "NDI intervals/triggers depend on compressor configuration (standard vs enhanced packages; flared vs unflared), unit frame (6F vs 7F/9F), and operating history/conditions (previous rubs, UVS/NUVS vane spacing, rotor shipped prior to 2006, corrosive environment) including specific fired-start thresholds and MI exposure opportunities."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "starts"
+    ],
+    "usage_counter_requirements_text": "Multiple recommendations are based on \"actual fired starts\" (e.g., first 50 starts on R0 blades; additional 25 starts; every 25 starts if NDI cannot be performed; >100 total starts; after 25/50/100 starts following rub discovery or repair; every 12 starts until repairs completed; every 40 to 50 starts in suspected corrosive environment without NUVS S0/S1).",
+    "frame_or_model_applicability_text": "Applicable to all 6F, 7F, and 9F gas turbines with an 18-stage axial compressor.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Inspection requirements depend on compressor configuration: standard (non-enhanced) vs enhanced compressor packages (package 1, 2, 2+, 3, 4, 5); flared vs unflared compressor; vane spacing configuration (UVS vs NUVS) for S0 and S1; and rotor ship date prior to 2006 (flared compressor only). For 6F, NDI cannot be performed on S0 TE or R1 tips through the inlet; recommended NDI frequency for 6F is at MI.",
+    "serial_or_unit_applicability_text": "R1 tip NDI criteria includes: rotor shipped prior to 2006 (flared compressor only).",
+    "exclusions_or_non_applicable_conditions_text": "R0 LE root NDI not required if unit has received enhanced compressor package 2 or higher. R0 tip NDI not required if unit has received enhanced compressor package 2 or higher. R1 tip NDI not required if unit has received enhanced compressor package 5. S0 TE NDI required only for flared compressors; not required for unflared compressors; not required if unit has received enhanced compressor package 2+ or higher.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Annual visual inspection is recommended as part of the annual borescope inspection. For 7F/9F, inspections can be performed in-situ through the inlet plenum without casing removal. For 6F, NDI cannot be performed on S0 TE or R1 tips through the inlet; recommended NDI frequency is at major inspection (MI). During MI (or another opportunity where the compressor front-end is exposed), perform R0 root, R0 tip, S0 TE, and R1 tip NDI irrespective of previous findings (7F/9F); similarly for 6F if exposed prior to MI.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Inspection requirements are configuration-dependent (enhanced compressor package level; flared vs unflared; UVS/NUVS S0/S1; rotor shipped prior to 2006), requiring installed-configuration verification.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "R0 blades (standard/non-enhanced vs enhanced compressor package 2 or higher affects whether R0 LE root NDI is required).",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Extracted TIL PDF text - Recommendations section: \"NDI on standard (non-enhanced) R0 LE root.\" and NDI method paragraph"
+      },
+      {
+        "part_number": null,
+        "context": "R1 blades (standard/non-enhanced vs enhanced compressor package 5 affects whether R1 tip NDI is required).",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Extracted TIL PDF text - Recommendations section: \"NDI on standard (non enhanced) R0 and R1 blade tip.\" and Table 1 notes"
+      },
+      {
+        "part_number": null,
+        "context": "S0 vanes (flared, standard/non-enhanced vs enhanced compressor package 2+ or higher affects whether S0 TE NDI is required; entire trailing edge inspection; replace entire stage if cracks observed).",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Extracted TIL PDF text - Recommendations section: \"NDI on standard (non enhanced) S0 TE.\" and Table 1/Table 2 notes"
+      },
+      {
+        "part_number": null,
+        "context": "Remote penetrant system for in-situ NDI of S0 and R1 (special tooling).",
+        "required_inspection_types": [],
+        "source_location": "Extracted TIL PDF text - Planning Information > Special Tooling"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1323",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations (this TIL does not modify those recommendations)."
+      },
+      {
+        "document_number": "TIL 1399",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations (this TIL does not modify those recommendations)."
+      },
+      {
+        "document_number": "TIL 1603",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations (this TIL does not modify those recommendations)."
+      },
+      {
+        "document_number": "TIL 1518",
+        "document_type": "TIL",
+        "context": "Referenced for LE erosion from water ingestion inspection/maintenance recommendations and also listed under Reference Documents for inlet system maintenance."
+      },
+      {
+        "document_number": "TIL 1345",
+        "document_type": "TIL",
+        "context": "Referenced regarding overspeed trip tests potentially causing casing distortion if not performed per TIL 1345."
+      },
+      {
+        "document_number": "TIL 1348",
+        "document_type": "TIL",
+        "context": "Referenced for improper start-up procedures for faster start-up times; \"Refer to TIL 1348 for select 7F units.\""
+      },
+      {
+        "document_number": "TIL 1579",
+        "document_type": "TIL",
+        "context": "Referenced for routine maintenance of piping and tubing within the turbine enclosure to prevent fluid spills on casings."
+      },
+      {
+        "document_number": "GEK 111330",
+        "document_type": "GEK",
+        "context": "Operations and Maintenance for Inlet Filter Compartment (corrosion reduction reference)."
+      },
+      {
+        "document_number": "GEK 116269",
+        "document_type": "GEK",
+        "context": "Gas Turbine Inlet Air Specification (corrosion reduction reference)."
+      },
+      {
+        "document_number": "GEK 111331",
+        "document_type": "GEK",
+        "context": "Operation and Maintenance Recommendations for Air Evaporative Coolers (corrosion reduction reference)."
+      },
+      {
+        "document_number": "GEK 111332",
+        "document_type": "GEK",
+        "context": "Operations and Maintenance Recommendations for Gas Turbine Inlet Duct and Plenum (corrosion reduction reference)."
+      },
+      {
+        "document_number": "TIL 1622",
+        "document_type": "TIL",
+        "context": "Water Removal Systems for Corrosion Reduction (corrosion reduction reference)."
+      },
+      {
+        "document_number": "O&M manuals",
+        "document_type": "Manual",
+        "context": "Referenced for inlet system and water removal systems inspection/maintenance recommendations."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Frame/model: 6F vs 7F vs 9F",
+      "Compressor configuration: standard (non-enhanced) vs enhanced compressor package (1, 2, 2+, 3, 4, 5)",
+      "Flared vs unflared compressor",
+      "S0/S1 vane spacing: UVS vs NUVS (flared compressor only for certain criteria)",
+      "Rotor ship date prior to 2006 (flared compressor only)",
+      "Operating history: prior tip rubs/tip cracks/tip loss; presence of rub indications; rolled-over metal/burrs",
+      "Operating environment: suspected corrosive environment"
+    ],
+    "configuration_summary": "Inspection schedule and whether specific NDIs are required varies by enhanced compressor package level, flared/unflared configuration, vane spacing (UVS/NUVS), rotor ship date (pre-2006 for flared), and observed operating distress (rubs/cracks/tip loss), with additional access limitations for 6F (S0 TE and R1 tip NDI not through inlet; MI exposure recommended).",
+    "severity_signals": [
+      "R0 LE root cracks confirmed by NDI: do not restart the unit.",
+      "R0 or R1 tip indications confirmed by NDI: do not restart the unit; perform borescope inspection of entire compressor at first opportunity.",
+      "S0 trailing edge cracks confirmed by NDI: do not restart the machine."
+    ],
+    "failure_consequences": [
+      "R0 LE root crack propagation can potentially lead to blade liberation; liberation of an R0 blade from the root region can cause collateral damage to the gas turbine.",
+      "Heavy tip rubs can lead to tip cracks and may eventually result in a tip corner loss; a tip corner loss may result in a forced outage to repair the affected downstream blades."
+    ],
+    "risk_summary": "Front end compressor distress has been observed in three categories (R0 LE root distress, R0/R1 blade tip distress, S0 TE distress). Risks include crack initiation/propagation driven by starts and potential high cycle fatigue at full speed, leading to blade liberation/collateral damage (R0 root) or tip corner loss and forced outage (R0/R1 tips); S0 TE cracks are driven by starts and associated with damping loss due to vane lock-up.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Table 1: Recommended inspections and schedule for 7F and 9F",
+        "table_description": "Inspection frequency matrix by 7F/9F compressor configuration (standard and enhanced packages 1, 2, 2+, 3, 4, 5) for Visual/Borescope, R0 Root NDI, R0 Tip NDI, R1 Tip NDI, and S0 TE NDI.",
+        "useful_for_downstream": true,
+        "reason": "Provides configuration-dependent inspection schedule (annual vs not required) needed for outage scoping and planning."
+      },
+      {
+        "table_label": "Table 2: Recommended inspections and schedule for 6F",
+        "table_description": "Inspection frequency matrix by 6F compressor configuration (standard and enhanced packages 1, 2, 3/4, 5) for Visual/Borescope (annual) and NDI items (R0 Root NDI, R0 Tip NDI, R1 Tip NDI, S0 TE NDI) including MI-based entries.",
+        "useful_for_downstream": true,
+        "reason": "Defines which inspections are annual vs major inspection (MI) and which are not required by enhanced package level."
+      }
+    ],
+    "missing_information_flags": [
+      "NDI abbreviation expansions beyond red dye penetrant/FPI preference are not provided (e.g., what specific NDI procedure/acceptance criteria to use).",
+      "No specific part numbers or kit numbers are provided for R0 blades, R1 blades, S0 vanes, or enhanced compressor packages."
+    ],
+    "source_snippets": [
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "This TIL is applicable to all 6F, 7F, and 9F gas turbines with an 18-stage axial compressor."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Subsequently, the crack can propagate at full speed operation due to high cycle fatigue and potentially lead to blade liberation. The liberation of an R0 blade from the root region can cause collateral damage to the gas turbine."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Subsequent starts could propagate this crack and may eventually result in a tip corner loss. A tip corner loss may result in a forced outage to repair the affected downstream blades."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "An annual visual inspection of the compressor front end is recommended as part of the annual borescope inspection."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "For the purposes of this TIL, NDI is considered as a red dye penetrant inspection. When florescent penetrant inspection (FPI) is available, it is the preferred method for R0, S0 and R1 NDI."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "For the 6F, an NDI cannot be performed on the S0 TE, or R1 tips through the inlet. The recommended NDI frequency for the 6F is at the major inspection (MI)."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Note: During MI, or another opportunity where the 7F or 9F compressor front-end is exposed, it is recommended the R0 root, R0 tip, S0 TE, and R1 tip NDI be performed, irrespective of previous findings."
+      },
+      {
+        "field": "usage_counter_requirements_text",
+        "snippet": "Perform a visual inspection and NDI of the R0 LE roots after the first 50 actual fired starts on the R0 blades. Repeat the R0 LE root NDI after an additional 25 actual fired starts from the first inspection."
+      },
+      {
+        "field": "usage_counter_requirements_text",
+        "snippet": "Until repairs are completed, an NDI of the R0 and R1 tips should be performed every 12 actual fired starts to avoid tip corner loss."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "If R0 LE root cracks exist and are confirmed by NDI, do not restart the unit."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "If R0 or R1 indications exist and are confirmed by NDI, do not restart the unit."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "If S0 trailing edge cracks exist and are confirmed by NDI, do not restart the machine."
+      }
+    ],
+    "extraction_confidence": 0.86
+  },
+  "extracted_document_method": "databricks_ai",
+  "extracted_text_char_count": 29596,
+  "extracted_table_count": 2,
+  "extraction_confidence": 0.86,
+  "llm_model": "azure-gpt-5-2",
+  "metadata_status": "completed",
+  "metadata_retry_count": 0,
+  "chunk_status": null,
+  "chunk_retry_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ingest_ts": "2026-07-05 00:17:55.485394",
+  "metadata_processed_ts": "2026-07-05 00:17:55.485987",
+  "chunk_processed_ts": null,
+  "run_id": "til_p1_20260704_235852_30f3ba3a"
+}

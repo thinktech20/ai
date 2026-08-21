@@ -1,0 +1,159 @@
+{
+  "til_number": "2284",
+  "revision": null,
+  "title": "F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS",
+  "publish_date": "2021-05-05",
+  "reason_for_revision": null,
+  "purpose": "To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations.",
+  "compliance_category_code": "S",
+  "compliance_category_text": "Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Next planned outage (HGP or MI)",
+  "scope_of_work": [
+    "FPI to inspect BWG entry slot pre-blending condition",
+    "Set up BWG Entry Slot tool and perform blending operation",
+    "FPI to inspect BWG entry slot post-blending condition",
+    "Flapper peen the modified geometry post machining and post machining successful FPI"
+  ],
+  "service_recommendation_line_items": [
+    "Perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time.",
+    "If FPI is clear of any indications, evaluate all the balance entry slot corner conditions with replication process.",
+    "If any balance weight entry slot corner condition presents with a <0.060\" fillet size, perform entry slot bending, FPI, and peening operations to mitigate the risk of crack initiation and propagation.",
+    "Corner specific item: if any portion of a specific balance weight groove corner meets noted criteria, then perform modification machining on the entire balance weight groove entry slot corner.",
+    "If fillet > 0.060\" and uniformly this size over full length of the BWG entry slot corner, leave in as-found condition.",
+    "For case with observable FPI indication/indications, contact GE engineering through an ER case for technical disposition."
+  ],
+  "completion_criteria_text": "This TIL may be considered complete after completion of the FPI/MP1 inspection and the CAS and DP geometry is modified.",
+  "maintenance_trigger_text": "Next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time.",
+  "recommended_interval_or_trigger": [
+    "During the next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI)",
+    "At or before the rotor reaches a total of 378,000 equivalent cold rotor turning time"
+  ],
+  "usage_counters_to_check_or_consider": [
+    "operating_hours",
+    "starts"
+  ],
+  "usage_counter_requirements_text": "Equivalent cold rotor turning time (ECRT) is calculated from turning gear hours (T_TG), fired starts (S_FS), forced cool downs (S_FC), forced cool down hours (T_FC), cooler starts (S_WC), and offline water wash operations (S_WW), with factors dependent on frame (X, Z) and unit type (SC/CC factor Y).",
+  "frame_or_model_applicability_text": "6F, 7F, and 9F Heavy Duty Gas Turbines.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Applies to compressor aft shaft (CAS) and distance piece (DP) balance weight groove (BWG) entry slots; ECRT calculation uses frame-dependent factors (X, Z) and unit type factor (Y for Simple Cycle vs Combined Cycle).",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": null,
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "During the next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI).",
+  "sbom_dependency_flag": false,
+  "sbom_trigger_reason": null,
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "compressor aft shaft (CAS)",
+      "required_inspection_types": [
+        "FPI"
+      ],
+      "source_location": "PURPOSE / RECOMMENDATIONS"
+    },
+    {
+      "part_number": null,
+      "context": "distance piece (DP)",
+      "required_inspection_types": [
+        "FPI"
+      ],
+      "source_location": "BACKGROUND DISCUSSION / RECOMMENDATIONS"
+    },
+    {
+      "part_number": null,
+      "context": "BWG Entry Slot Portable Machining Tool",
+      "required_inspection_types": [],
+      "source_location": "PLANNING INFORMATION > Special Tooling"
+    },
+    {
+      "part_number": null,
+      "context": "Flapper peening kit",
+      "required_inspection_types": [],
+      "source_location": "PLANNING INFORMATION > Special Tooling"
+    }
+  ],
+  "reference_documents": [
+    {
+      "document_number": "GER-3620",
+      "document_type": "Other",
+      "context": "Definitions for cooler starts (warm 2 and cold starts) referenced for calculating S_WC in ECRT."
+    }
+  ],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Frame (6FA vs 7FA vs 9FA) affects X, Z and full speed rpm used in ECRT calculation",
+    "Unit type (Simple Cycle vs Combined Cycle) affects start up factor Y used in ECRT calculation",
+    "Availability of unit historical recorded data (OSM connection/customer records) determines whether Path #1 or Path #2 is used for ECRT calculation"
+  ],
+  "configuration_summary": "ECRT calculation and factors depend on frame (6FA/7FA/9FA), unit type (SC/CC), and availability of historical operating data (Path #1 vs Path #2).",
+  "severity_signals": [
+    "crack-like indication was observed in the corner of a balance weight groove entry slot",
+    "fracture propagation may lead the CAS and/or DP to separate into two separate pieces"
+  ],
+  "failure_consequences": [
+    "CAS and/or DP to separate into two separate pieces",
+    "components to exit the gas turbine leading to the possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment"
+  ],
+  "risk_summary": "Crack-like indications may form at BWG entry slot corners due to corner condition variation and operational stresses; if cracks propagate, rapid crack growth and shaft separation may occur with potential for component release and injury/equipment damage.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Compliance category definitions (M/C/A/S)",
+      "table_description": "Defines Maintenance, Compliance Required, Alert, and Safety categories.",
+      "useful_for_downstream": false,
+      "reason": "General legend/definitions; does not provide equipment-specific operational values."
+    },
+    {
+      "table_label": "Timing code legend (1-3)",
+      "table_description": "Maps timing codes 1-3 to outage/operation timing descriptions.",
+      "useful_for_downstream": false,
+      "reason": "General legend; timing code for this TIL is already stated as 4 and legend does not provide equipment-specific values."
+    },
+    {
+      "table_label": "Timing code legend (4-6)",
+      "table_description": "Maps timing codes 4-6 to outage/operation timing descriptions.",
+      "useful_for_downstream": true,
+      "reason": "Provides the meaning of Timing Code 4 ('At First Exposure of Component'), which is operationally relevant for scheduling."
+    },
+    {
+      "table_label": "Example ECRT inputs table (T_TG, S_FS, S_FC, X, T_FC, S_WC, Y, S_WW)",
+      "table_description": "Example values used in the Example ECRT Calculation (e.g., 40,000 TG hours, 1,900 fired starts, 240 forced cool downs, X=24, T_FC=4800, S_WC=1300, Y=86, S_WW=40).",
+      "useful_for_downstream": true,
+      "reason": "Operationally useful as a worked example supporting ECRT calculation and required counters."
+    }
+  ],
+  "missing_information_flags": [
+    "No specific CAS/DP part numbers or affected serial number ranges are provided; applicability is only by frame (6F/7F/9F).",
+    "Replication process method/acceptance criteria details are referenced but not specified (only states 'evaluate ... with replication process').",
+    "Entry slot bending, blending/modification machining, and peening process parameters (dimensions beyond 0.060\" fillet threshold, tooling setup details) are not specified."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "It is recommended to perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "If any balance weight entry slot corner condition presents with a <0.060\" fillet size - perform entry slot bending, FPI, and peening operations to mitigate the risk of crack initiation and propagation."
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "If not mitigated, the fracture propagation may lead the CAS and/or DP to separate into two separate pieces. Separation of either shaft into two pieces may create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "• FPI to inspect BWG entry slot pre-blending condition\n• Set up BWG Entry Slot tool and perform blending operation\n• FPI to inspect BWG entry slot post-blending condition\n• Flapper peen the modified geometry post machining and post machining successful FPI"
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "This TIL may be considered complete after completion of the FPI/MP1 inspection and the CAS and DP geometry is modified."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

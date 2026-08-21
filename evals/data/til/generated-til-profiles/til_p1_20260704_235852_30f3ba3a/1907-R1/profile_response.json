@@ -1,0 +1,133 @@
+{
+  "til_number": "TIL 1907",
+  "revision": "R1",
+  "title": "ROTOR FORWARD SHAFT DOVETAIL CRACK",
+  "publish_date": "2014-02-25",
+  "reason_for_revision": "Minor updates to clarify root cause statement, clarify flared and unflared part applicability for AUL, and remove 7FB from application statement.",
+  "purpose": "To inform users of the risk of cracking in the forward shaft dovetail region and to define inspection scope and intervals for specific unflared and flared configurations.",
+  "compliance_category_code": "A",
+  "compliance_category_text": "Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": null,
+  "scope_of_work": [
+    "Perform a dovetail ultrasonic (UT) inspection on any 7FA unit that has operated for any length of time with the specified hardware configurations (flared: uncambered IGV, standard R0 (snowflake) or p-cut R0, uniform S0/S1 vane spacing; unflared: uncambered IGV, standard R0 or p-cut R0).",
+    "Perform UT on all 32 wheel dovetail slots on both the pressure and suction side of the dovetail."
+  ],
+  "service_recommendation_line_items": [
+    "For applicable 7FA configurations, perform dovetail ultrasonic (UT) inspection at 48,000 factored fired hours (hours-based units) or 900 factored fired starts (starts-based units).",
+    "If the unit has already exceeded its inspection interval, perform the inspection at the next interval according to the unit's operating profile (hours based or starts based).",
+    "If the compressor remains in the unenhanced configuration or with uniform S0/S1 vane spacing, perform reinspections at the specified inspection interval until the rotor maintenance interval is reached per GER 3620.",
+    "If upgraded to non-uniform S0/S1 vanes or an enhanced compressor package (package 2-5 for flared units, package 3-5 for unflared units), perform only one reinspection at the time of the upgrade; if the upgrade occurred prior to release of this TIL, perform only one inspection at the first interval outlined above.",
+    "Submit inspection results and the forward shaft serial number (located on the forward flange outside diameter of the shaft) to your GE Service Representative for review and additional recommendations."
+  ],
+  "completion_criteria_text": null,
+  "maintenance_trigger_text": "Inspection is recommended for any 7FA unit that has operated for any length of time with the specified hardware configurations; inspection timing is based on operating profile (hours-based or starts-based) and the inspection interval table.",
+  "recommended_interval_or_trigger": [
+    "Hours based unit: 48,000 factored fired hours",
+    "Starts based unit: 900 factored fired starts"
+  ],
+  "usage_counters_to_check_or_consider": [
+    "operating_hours",
+    "starts"
+  ],
+  "usage_counter_requirements_text": "For a unit that has already exceeded its inspection interval, the inspection should occur at the next interval described above according to that unit's operating profile, either hours based or starts based.",
+  "frame_or_model_applicability_text": "Select unflared 7FA units and all flared 7FA units originally shipped with uniform S0/S1 vanes and non-enhanced forward compressor hardware.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Applicable hardware configurations for inspection recommendation: Flared configuration: Uncambered IGV; Standard R0 (snowflake) or p-cut R0; Uniform S0/S1 vane spacing. Unflared configuration: Uncambered IGV; Standard R0 or p-cut R0. No inspections are recommended for any 7FA shipped new with non-uniform S0/S1 vane spacing (flared) or an enhanced compressor package 5.",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": "No inspections are recommended for any 7FA shipped new with non-uniform S0/S1 vane spacing (flared) or an enhanced compressor package 5. 7FB units are not affected by this TIL.",
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Time to perform actual inspection is 2-3 hours with the rotor and IGV locked and tagged out.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "Applicability and inspection/reinspection requirements depend on installed hardware configuration (e.g., flared vs unflared, uniform vs non-uniform S0/S1 vane spacing, enhanced compressor package level, R0 type, IGV type).",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "Ultrasonic tooling included as part of the standard R0 inspection kit.",
+      "required_inspection_types": [
+        "UT"
+      ],
+      "source_location": "PLANNING INFORMATION > Special Tooling"
+    }
+  ],
+  "reference_documents": [
+    {
+      "document_number": "GER 3620",
+      "document_type": "Other",
+      "context": "Reinspections are recommended at the inspection interval specified above, until the rotor maintenance interval is reached per GER 3620."
+    }
+  ],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Flared vs unflared 7FA configuration",
+    "S0/S1 vane spacing (uniform vs non-uniform)",
+    "Forward compressor package (unenhanced vs enhanced; package 2-5 for flared units; package 3-5 for unflared units)",
+    "IGV type (uncambered IGV)",
+    "R0 type (standard R0 (snowflake), standard R0, or p-cut R0)"
+  ],
+  "configuration_summary": "Inspection applicability and reinspection frequency depend on whether the unit is flared or unflared and whether it has uncambered IGV, standard/p-cut R0, and uniform S0/S1 vane spacing, as well as whether it has been upgraded to non-uniform S0/S1 vanes or an enhanced compressor package.",
+  "severity_signals": [
+    "Compliance Category - A",
+    "Timing Code - 4"
+  ],
+  "failure_consequences": [
+    "Operation with a crack increases the risk of R0 migration",
+    "Operation with a crack increases the risk of R0 and IGV clashing",
+    "Operation with a crack increases the risk of blade and wheel post liberation that could cause secondary damage to the gas turbine compressor"
+  ],
+  "risk_summary": "Cracks have been found on the pressure face of the wheel dovetail of the forward shaft; operation with a crack increases risk of R0 migration, R0 and IGV clashing, or blade and wheel post liberation causing secondary compressor damage.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Table 1: Inspection Intervals",
+      "table_description": "Inspection interval by operating profile: hours-based vs starts-based units.",
+      "useful_for_downstream": true,
+      "reason": "Provides the specific inspection interval thresholds (48,000 factored fired hours; 900 factored fired starts) needed for outage scoping and scheduling."
+    }
+  ],
+  "missing_information_flags": [
+    "No specific UT acceptance/rejection criteria or crack size/disposition guidance is provided (only that results should be submitted to GE for review).",
+    "No specific part numbers are provided for the 'standard R0 inspection kit' ultrasonic tooling or any replacement hardware (Parts section states N/A).",
+    "No explicit definition or method for calculating 'factored fired hours' or 'factored fired starts' is provided in the document text."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "To inform users of the risk of cracking in the forward shaft dovetail region and to define inspection scope and intervals for specific unflared and flared configurations."
+    },
+    {
+      "field": "frame_or_model_applicability_text",
+      "snippet": "Select unflared 7FA units and all flared 7FA units originally shipped with uniform S0/S1 vanes and non-enhanced forward compressor hardware."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "It is recommended to perform a dovetail ultrasonic (UT) inspection on any 7FA unit that has operated for any length of time with all of the below specified hardware:"
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "The ultrasonic inspection should be performed on all 32 wheel dovetail slots on both the pressure and suction side of the dovetail."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "Hours based unit 48,000 factored fired hours\nStarts based unit 900 factored fired starts"
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "If the compressor remains in the unenhanced configuration or with uniform S0/S1 vane spacing, reinspections are recommended at the inspection interval specified above, until the rotor maintenance interval is reached per GER 3620."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "If a unit is upgraded to non-uniform S0/S1 vanes or an enhanced compressor package (package 2-5 for flared units,\npackage 3-5 for unflared units), then only one reinspection is necessary at the time of the upgrade."
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "Operation with a crack increases the risk of R0 migration, R0 and IGV clashing, or blade and wheel post liberation that could cause secondary damage to the gas turbine compressor."
+    },
+    {
+      "field": "parts_referenced",
+      "snippet": "Ultrasonic tooling included as part of the standard R0 inspection kit."
+    }
+  ],
+  "extraction_confidence": 0.74
+}

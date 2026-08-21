@@ -1,0 +1,1678 @@
+{
+  "document_id": "til 1937-r2 - f-class turbine wheel inspection and maintenance recommendations",
+  "unique_key": "1937-R2__ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f",
+  "source_path": "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1937-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf",
+  "source_hash": "ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f",
+  "source_system": "databricks_volume",
+  "requested_til_number": "1937-R2",
+  "matched_til_number": "1937-R2",
+  "match_type": "pdf_name_match",
+  "parser_method": "databricks_ai",
+  "parser_name": "databricks_ai",
+  "parser_version": "v1",
+  "profile_found": true,
+  "parsed_profile_json": {
+    "til_number": "1937-R2",
+    "revision": "R2",
+    "title": "F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS",
+    "publish_date": "2024-04-10",
+    "reason_for_revision": "1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels.\n2) Added a specific ECI inspection interval for Stage 1 enhanced wheels with 2 Step-Age heat treatment.\n3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension.",
+    "purpose": "Advise users to perform routine inspections at a maintenance interval based on installed configuration.",
+    "compliance_category_code": "A",
+    "compliance_category_text": "Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Inspection",
+    "scope_of_work": [
+      "Qualified vendor to perform CO2 blast cleaning of turbine rotor.",
+      "GE Vernova qualified personnel to perform rotor inspections.",
+      "Back-cut stage 1 and stage 2 turbine blades.",
+      "Rotor inspection equipment and blend/peen kit are provided and applied by GE Vernova.",
+      "Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope.",
+      "CO2 blast cleaning of turbine rotor can be completed in one shift (12 hours), including a prior hand wiping to remove oil from the dovetail surfaces if necessary.",
+      "ECI of first and second stages can be completed in three shifts or all three stages in four shifts.",
+      "Total time between turbine blade removal and installation should be four shifts (two days). These durations are estimates only."
+    ],
+    "service_recommendation_line_items": [
+      "Perform routine inspections at a maintenance interval based on installed configuration (shot peening condition at first fire, cooling slot geometry, material heat treatment, and environmental conditions).",
+      "If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation.",
+      "Install back cut turbine blades on all turbine rotors.",
+      "Apply dovetail modified (\"back cut\") Stage 1 and 2 turbine blades at the next scheduled maintenance (hot gas path inspection or major inspection).",
+      "Perform dovetail ECI until rotor retirement at the frequency defined in the applicable configuration table (Tables 1 and 2).",
+      "Prior to ECI, appropriately clean the turbine rotor to facilitate proper functioning of the ECI equipment and accurate readings (preferred method: dry ice (CO2) blasting; hand-cleaning acceptable if CO2 blast not available).",
+      "Perform visual inspection (VT) / borescope inspection (BI) of accessible rotor surfaces; specifically examine broach slot fillets, slot bottoms, tangs, cooling slots, spacer rim seal tooth rubs/coating, balance weights, nut damage/surface indications in flanges and webs.",
+      "Perform UT on counterbore outside diameter ligaments on distance piece and turbine aft shaft.",
+      "Perform FPI to detect cracks on balance weights and lockwire tabs (not recommended for wheel posts).",
+      "Stage 3 wheel (TW3) and turbine aft shaft (TAS) inspections: TW3 BWG (if staked: FPI every MI and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary); TW3 LWT (if original: FPI every HGPI while buckets are removed; if modified: FPI every MI); TAS BWG (if staked: FPI every MI and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary)."
+    ],
+    "completion_criteria_text": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service.",
+    "maintenance_trigger_text": "Routine inspections at a maintenance interval based on installed configuration; additional triggers include HGPI, Major Inspection (MI), and conditions such as whether CDC is removed and whether buckets are removed.",
+    "recommended_interval_or_trigger": [
+      "Stage 1/2 wheel post ECI intervals depend on configuration (material heat treatment, peening condition, cooling slot geometry, balance rail & lock wire tab) and are specified in the applicable configuration tables for 7F/9F/6F.",
+      "For certain configurations: ECI every 24 hrs or 900 starts; ECI every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]; ECI at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]; BI every HGPI when CDC is not removed; FPI LWT every HGPI when buckets are removed; FPI BWG every Major and when CDC is removed during HGPI; some Stage 2 configurations add 'and at first Major after TW2 Life Extension'.",
+      "Back-cut (dovetail modified) Stage 1 and 2 turbine blades: apply at the next scheduled maintenance (hot gas path inspection or major inspection).",
+      "TW3/TAS: FPI intervals depend on staked vs stakeless and original vs modified features (every MI; every HGPI while buckets are removed; and when the Exhaust Frame is removed during HGPI)."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "operating_hours",
+      "starts"
+    ],
+    "usage_counter_requirements_text": "Inspection intervals in the configuration tables are expressed in operating hours (e.g., every 24 hrs, every 32 hrs, at 96 hrs) and starts (e.g., 900 starts, 1,200 starts, 3,600 starts, 2,400 starts).",
+    "frame_or_model_applicability_text": "Select F-class gas turbine rotors operating in high ambient and specific environmental conditions. Tables provide configurations for 7F, 9F, and 6F (Stages 1 and 2). Stage 3 wheel (TW3) and turbine aft shaft (TAS) inspections apply regardless of frame size or part numbers.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Inspection recommendations are based on turbine rotor shot peening condition at first fire, cooling slot geometry (original/contoured/enhanced), material heat treatment (2 Step Age / 3 Step Age), and balance rail & lock wire tab configuration (e.g., Original; Stakeless & Modified Tab). Some intervals change if back cut buckets are not installed. Some Stage 2 intervals include 'at first Major after TW2 Life Extension'.",
+    "serial_or_unit_applicability_text": "For 'Peening Modification' configurations: contact your GE Vernova representative with your turbine rotor serial number to determine the applicable peening condition; until validated, assume 'Fired without Shot Peening' recommendations apply.",
+    "exclusions_or_non_applicable_conditions_text": "FPI is not recommended for the wheel posts, as cracks under the dovetail tangs are typically closed. For TW3 and TAS balance weight grooves: if stakeless, no inspections necessary.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope. Some inspections are conditional on whether buckets are removed and whether CDC is removed during HGPI; some TW3/TAS inspections are conditional on whether the Exhaust Frame is removed during HGPI.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Configuration-dependent inspection intervals and applicability depend on installed wheel configuration and specific wheel part numbers listed in the configuration tables (requires installed-configuration verification).",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": "227C5762",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations (Stage 1 part numbers column)"
+      },
+      {
+        "part_number": "103E5795",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "188D7369",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3085",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "101E8627",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3896",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E5773",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2053",
+        "context": "7F Stage 1 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2063",
+        "context": "7F Stage 1 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "243C1494",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5612",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "188D7996",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "114E1228",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "196D1915",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E2434",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "199D3931",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "117E5673",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5303",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E2398",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5589",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E2621",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E3967",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E3771",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "BI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E4181",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "323E2241",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "144E7560",
+        "context": "7F Stage 1 wheel; (configuration columns blank in table row); ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations (final row)"
+      },
+      {
+        "part_number": "145E3626",
+        "context": "7F Stage 1 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "227C5763",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E5796",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "101E8629",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "108E4197",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E5775",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3897",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2055",
+        "context": "7F Stage 2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2064",
+        "context": "7F Stage 2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2400",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "199D3925",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5591",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5614",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "114E1229",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E2436",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E3968",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] and at first Major after TW2 Life Extension.",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E6503",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "BI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "323E2240",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] and at first Major after TW2 Life Extension.",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "146E3627",
+        "context": "7F Stage 2 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "101E2274",
+        "context": "9F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E3969",
+        "context": "9F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3982",
+        "context": "9F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "227C5743",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "188D7864",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2023",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2036",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2050",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2422",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "196D1632",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "198D1211",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5254",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]; BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "ECI",
+          "BI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "111E3299",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E6594",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "ECI",
+          "BI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "133E8667",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "145E2874",
+        "context": "9F Stage 1/2 wheel; Stakeless & Modified Tab configuration shown; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7523",
+        "context": "9F Stage 1 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7534",
+        "context": "9F Stage 2 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E9194",
+        "context": "6F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]; BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 6F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E3992",
+        "context": "6F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 6F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "137E1002",
+        "context": "6F Stage 1 wheel; Enhanced cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]; BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 6F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "141E4569",
+        "context": "6F Stage 1/2 wheel; Enhanced cooling slot geometry; Stakeless & Modified Tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 6F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7543",
+        "context": "6F Stage 1 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 6F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7549",
+        "context": "6F Stage 2 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 6F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": null,
+        "context": "Back cut / dovetail modified Stage 1 and Stage 2 turbine blades (\"back cut\" modifications; relief cut modifications incorporated into new production F-class turbine blades).",
+        "required_inspection_types": [],
+        "source_location": "Extracted TIL PDF text: 'Modified Stage 1 and 2 Turbine Blades' and 'SCOPE OF WORK'"
+      },
+      {
+        "part_number": null,
+        "context": "Blend/peen kit (provided and applied by GE Vernova).",
+        "required_inspection_types": [],
+        "source_location": "Extracted TIL PDF text: 'SCOPE OF WORK'"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1280",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1327",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1434",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1539",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1540",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1742",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "frame size (7F / 9F / 6F)",
+      "wheel stage (Stage 1 / Stage 2 / Stage 3 (TW3))",
+      "material heat treatment (2 Step Age / 3 Step Age)",
+      "shot peening condition at first fire (Fired without Shot Peening / Never Fired without Shot Peening / Peening Modification)",
+      "cooling slot geometry (Original / Contoured / Enhanced)",
+      "balance rail & lock wire tab configuration (Original / Stakeless & Modified Tab / Modified Tab / staked vs stakeless BWG)",
+      "back cut buckets installed vs not installed",
+      "CDC removed vs not removed during HGPI",
+      "buckets removed vs not removed",
+      "TW2 Life Extension status (post Rotor Life Extension)"
+    ],
+    "configuration_summary": "Inspection type and interval vary by installed turbine wheel configuration (heat treatment, peening condition, cooling slot geometry, and balance rail/lock wire tab features) and by maintenance context (HGPI/MI, CDC removal, bucket removal). Some ECI intervals change if back cut buckets are not installed; some Stage 2 ECI intervals add an additional trigger at first Major after TW2 Life Extension.",
+    "severity_signals": [
+      "Compliance Category - A",
+      "increased risk of crack initiation and propagation in high ambient and humid or corrosive conditions",
+      "risk of wheel post liberation during operation",
+      "potentially resulting in significant damage"
+    ],
+    "failure_consequences": [
+      "an undetected crack may continue to propagate due to exposure to stress and temperature until ... the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage",
+      "Cracks in the forward wheel web, if left unaddressed, could result in a partial wheel material liberation, particularly when located on the stage 1 wheel.",
+      "If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation."
+    ],
+    "risk_summary": "High nickel alloy turbine wheels are sensitive to surface imperfections; in high ambient and humid or corrosive conditions there is increased risk of crack initiation/propagation at cooling slot intersections, lock wire tabs, and balance weight grooves, with potential for wheel section/material liberation and significant damage if cracks reach critical length.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance category definitions table",
+        "table_description": "Defines M/C/A/S compliance categories and their meanings.",
+        "useful_for_downstream": false,
+        "reason": "Administrative legend; does not provide equipment-specific inspection intervals or parts."
+      },
+      {
+        "table_label": "Timing code legend table",
+        "table_description": "Defines timing codes 1-6 (e.g., Prior to Unit Startup, Next Scheduled Outage).",
+        "useful_for_downstream": false,
+        "reason": "Administrative legend; does not provide equipment-specific inspection intervals or parts."
+      },
+      {
+        "table_label": "Applicable 7F Stage 1 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix by heat treatment, peening condition, cooling slot geometry, and balance rail/lock wire tab; provides inspection types (ECI/Visual/BI/FPI/UT) and intervals (hours/starts/HGPI/Major) plus applicable Stage 1 part numbers.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability needed for outage scoping and configuration validation."
+      },
+      {
+        "table_label": "Applicable 7F Stage 2 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types and intervals (including post TW2 Life Extension trigger) plus applicable Stage 2 part numbers.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability; includes additional trigger 'at first Major after TW2 Life Extension'."
+      },
+      {
+        "table_label": "Applicable 9F Stage 1 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals and Stage 1 part numbers for 9F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability needed for configuration-based planning."
+      },
+      {
+        "table_label": "Applicable 9F Stage 2 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals (including post TW2 Life Extension trigger) and Stage 2 part numbers for 9F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability; includes post-life-extension trigger."
+      },
+      {
+        "table_label": "Applicable 6F Stage 1 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals and Stage 1 part numbers for 6F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability needed for configuration-based planning."
+      },
+      {
+        "table_label": "Applicable 6F Stage 2 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals (including post TW2 Life Extension trigger) and Stage 2 part numbers for 6F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability; includes post-life-extension trigger."
+      }
+    ],
+    "missing_information_flags": [
+      "No explicit definition of what constitutes 'high ambient and specific environmental conditions' beyond 'high ambient and humid or corrosive conditions'.",
+      "No explicit list of affected unit serial numbers; applicability is described generally and via 'contact your GE Vernova representative with your turbine rotor serial number' for peening validation.",
+      "No part numbers provided for Stage 3 wheel (TW3) or turbine aft shaft (TAS) despite inspection recommendations.",
+      "til_number still contains a hyphen-delimited revision suffix while revision is separately populated."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "Advise users to perform routine inspections at a maintenance interval based on installed configuration."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "Compliance Category - A"
+      },
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "Select F-class gas turbine rotors operating in high ambient and specific environmental conditions."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "Rotors operating in high ambient and humid or corrosive conditions have an increased risk of crack initiation and propagation."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "an undetected crack may continue to propagate due to exposure to stress and temperature until either: 1- the crack is detected and either repaired or the rotor is removed from service, or 2- the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "In addition to these inspections, it is recommended that back cut turbine blades always be installed on all turbine rotors."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Dovetail ECI should be performed until rotor retirement at the frequency defined in Table 1."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Qualified vendor to perform CO2 blast cleaning of turbine rotor.\nGE Vernova qualified personnel to perform rotor inspections.\nBack-cut stage 1 and stage 2 turbine blades."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "It is recommended to apply dovetail modified Stage 1 and 2 turbine blades at the next scheduled maintenance (hot gas path inspection or major inspection)."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "For the stage 3 turbine wheel (TW3) and turbine aft shaft (TAS), the following inspections apply regardless of frame size or part numbers:"
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "raw_profile_json": {
+    "til_number": "1937-R2",
+    "revision": "R2",
+    "title": "F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS",
+    "publish_date": "2024-04-10",
+    "reason_for_revision": "1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels.\n2) Added a specific ECI inspection interval for Stage 1 enhanced wheels with 2 Step-Age heat treatment.\n3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension.",
+    "purpose": "Advise users to perform routine inspections at a maintenance interval based on installed configuration.",
+    "compliance_category_code": "A",
+    "compliance_category_text": "Alert",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Inspection",
+    "scope_of_work": [
+      "Qualified vendor to perform CO2 blast cleaning of turbine rotor.",
+      "GE Vernova qualified personnel to perform rotor inspections.",
+      "Back-cut stage 1 and stage 2 turbine blades.",
+      "Rotor inspection equipment and blend/peen kit are provided and applied by GE Vernova.",
+      "Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope.",
+      "CO2 blast cleaning of turbine rotor can be completed in one shift (12 hours), including a prior hand wiping to remove oil from the dovetail surfaces if necessary.",
+      "ECI of first and second stages can be completed in three shifts or all three stages in four shifts.",
+      "Total time between turbine blade removal and installation should be four shifts (two days). These durations are estimates only."
+    ],
+    "service_recommendation_line_items": [
+      "Perform routine inspections at a maintenance interval based on installed configuration (shot peening condition at first fire, cooling slot geometry, material heat treatment, and environmental conditions).",
+      "If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation.",
+      "Install back cut turbine blades on all turbine rotors.",
+      "Apply dovetail modified (\"back cut\") Stage 1 and 2 turbine blades at the next scheduled maintenance (hot gas path inspection or major inspection).",
+      "Perform dovetail ECI until rotor retirement at the frequency defined in the applicable configuration table (Tables 1 and 2).",
+      "Prior to ECI, appropriately clean the turbine rotor to facilitate proper functioning of the ECI equipment and accurate readings (preferred method: dry ice (CO2) blasting; hand-cleaning acceptable if CO2 blast not available).",
+      "Perform visual inspection (VT) / borescope inspection (BI) of accessible rotor surfaces; specifically examine broach slot fillets, slot bottoms, tangs, cooling slots, spacer rim seal tooth rubs/coating, balance weights, nut damage/surface indications in flanges and webs.",
+      "Perform UT on counterbore outside diameter ligaments on distance piece and turbine aft shaft.",
+      "Perform FPI to detect cracks on balance weights and lockwire tabs (not recommended for wheel posts).",
+      "Stage 3 wheel (TW3) and turbine aft shaft (TAS) inspections: TW3 BWG (if staked: FPI every MI and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary); TW3 LWT (if original: FPI every HGPI while buckets are removed; if modified: FPI every MI); TAS BWG (if staked: FPI every MI and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary)."
+    ],
+    "completion_criteria_text": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service.",
+    "maintenance_trigger_text": "Routine inspections at a maintenance interval based on installed configuration; additional triggers include HGPI, Major Inspection (MI), and conditions such as whether CDC is removed and whether buckets are removed.",
+    "recommended_interval_or_trigger": [
+      "Stage 1/2 wheel post ECI intervals depend on configuration (material heat treatment, peening condition, cooling slot geometry, balance rail & lock wire tab) and are specified in the applicable configuration tables for 7F/9F/6F.",
+      "For certain configurations: ECI every 24 hrs or 900 starts; ECI every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]; ECI at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]; BI every HGPI when CDC is not removed; FPI LWT every HGPI when buckets are removed; FPI BWG every Major and when CDC is removed during HGPI; some Stage 2 configurations add 'and at first Major after TW2 Life Extension'.",
+      "Back-cut (dovetail modified) Stage 1 and 2 turbine blades: apply at the next scheduled maintenance (hot gas path inspection or major inspection).",
+      "TW3/TAS: FPI intervals depend on staked vs stakeless and original vs modified features (every MI; every HGPI while buckets are removed; and when the Exhaust Frame is removed during HGPI)."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "operating_hours",
+      "starts"
+    ],
+    "usage_counter_requirements_text": "Inspection intervals in the configuration tables are expressed in operating hours (e.g., every 24 hrs, every 32 hrs, at 96 hrs) and starts (e.g., 900 starts, 1,200 starts, 3,600 starts, 2,400 starts).",
+    "frame_or_model_applicability_text": "Select F-class gas turbine rotors operating in high ambient and specific environmental conditions. Tables provide configurations for 7F, 9F, and 6F (Stages 1 and 2). Stage 3 wheel (TW3) and turbine aft shaft (TAS) inspections apply regardless of frame size or part numbers.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Inspection recommendations are based on turbine rotor shot peening condition at first fire, cooling slot geometry (original/contoured/enhanced), material heat treatment (2 Step Age / 3 Step Age), and balance rail & lock wire tab configuration (e.g., Original; Stakeless & Modified Tab). Some intervals change if back cut buckets are not installed. Some Stage 2 intervals include 'at first Major after TW2 Life Extension'.",
+    "serial_or_unit_applicability_text": "For 'Peening Modification' configurations: contact your GE Vernova representative with your turbine rotor serial number to determine the applicable peening condition; until validated, assume 'Fired without Shot Peening' recommendations apply.",
+    "exclusions_or_non_applicable_conditions_text": "FPI is not recommended for the wheel posts, as cracks under the dovetail tangs are typically closed. For TW3 and TAS balance weight grooves: if stakeless, no inspections necessary.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope. Some inspections are conditional on whether buckets are removed and whether CDC is removed during HGPI; some TW3/TAS inspections are conditional on whether the Exhaust Frame is removed during HGPI.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Configuration-dependent inspection intervals and applicability depend on installed wheel configuration and specific wheel part numbers listed in the configuration tables (requires installed-configuration verification).",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": "227C5762",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations (Stage 1 part numbers column)"
+      },
+      {
+        "part_number": "103E5795",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "188D7369",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3085",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "101E8627",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3896",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E5773",
+        "context": "7F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2053",
+        "context": "7F Stage 1 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2063",
+        "context": "7F Stage 1 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "243C1494",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5612",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "188D7996",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "114E1228",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "196D1915",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E2434",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "199D3931",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "117E5673",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5303",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E2398",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5589",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E2621",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E3967",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E3771",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "BI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E4181",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "323E2241",
+        "context": "7F Stage 1 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "144E7560",
+        "context": "7F Stage 1 wheel; (configuration columns blank in table row); ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations (final row)"
+      },
+      {
+        "part_number": "145E3626",
+        "context": "7F Stage 1 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "227C5763",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E5796",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "101E8629",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "108E4197",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E5775",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3897",
+        "context": "7F Stage 2 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2055",
+        "context": "7F Stage 2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2064",
+        "context": "7F Stage 2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2400",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "199D3925",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5591",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5614",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "114E1229",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E2436",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed].",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E3968",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] and at first Major after TW2 Life Extension.",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E6503",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "BI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "323E2240",
+        "context": "7F Stage 2 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] and at first Major after TW2 Life Extension.",
+        "required_inspection_types": [
+          "ECI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "146E3627",
+        "context": "7F Stage 2 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 7F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "101E2274",
+        "context": "9F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "103E3969",
+        "context": "9F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E3982",
+        "context": "9F Stage 1 wheel; 2 Step Age; Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; inspections: ECI Visual, BI FPI UT; interval: every 24 hrs or 900 starts.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "227C5743",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "188D7864",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2023",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2036",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2050",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "193D2422",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "196D1632",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "198D1211",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Peening Modification; Original cooling slot geometry; Original balance rail & lock wire tab; peening condition must be validated by GE Vernova; until validated assume 'Fired without Shot Peening' recommendations apply.",
+        "required_inspection_types": [],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E5254",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]; BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "ECI",
+          "BI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "111E3299",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "119E6594",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); BI interval: every HGPI when CDC is not removed.",
+        "required_inspection_types": [
+          "ECI",
+          "BI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "133E8667",
+        "context": "9F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "145E2874",
+        "context": "9F Stage 1/2 wheel; Stakeless & Modified Tab configuration shown; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 9F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7523",
+        "context": "9F Stage 1 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7534",
+        "context": "9F Stage 2 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 9F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "109E9194",
+        "context": "6F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Original cooling slot geometry; Original balance rail & lock wire tab; ECI interval: every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]; BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 6F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "116E3992",
+        "context": "6F Stage 1/2 wheel; 2 Step Age; Never Fired without Shot Peening; Contoured cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 6F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "137E1002",
+        "context": "6F Stage 1 wheel; Enhanced cooling slot geometry; Original balance rail & lock wire tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]; BI interval: every HGPI when CDC is not removed; FPI interval: LWT every HGPI when buckets are removed; BWG every Major and when CDC is removed during HGPI.",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 6F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "141E4569",
+        "context": "6F Stage 1/2 wheel; Enhanced cooling slot geometry; Stakeless & Modified Tab; ECI interval: at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Stage 2 table adds: and at first Major after TW2 Life Extension); FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Labeled tables: Applicable 6F Stage 1 and Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7543",
+        "context": "6F Stage 1 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 6F Stage 1 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": "131T7549",
+        "context": "6F Stage 2 wheel; 3 Step Age; Never Fired without Shot Peening; Enhanced cooling slot geometry; Stakeless & Modified Tab; FPI interval: LWT every Major.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Labeled table: Applicable 6F Stage 2 Turbine Wheel Configurations"
+      },
+      {
+        "part_number": null,
+        "context": "Back cut / dovetail modified Stage 1 and Stage 2 turbine blades (\"back cut\" modifications; relief cut modifications incorporated into new production F-class turbine blades).",
+        "required_inspection_types": [],
+        "source_location": "Extracted TIL PDF text: 'Modified Stage 1 and 2 Turbine Blades' and 'SCOPE OF WORK'"
+      },
+      {
+        "part_number": null,
+        "context": "Blend/peen kit (provided and applied by GE Vernova).",
+        "required_inspection_types": [],
+        "source_location": "Extracted TIL PDF text: 'SCOPE OF WORK'"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1280",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1327",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1434",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1539",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1540",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1742",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "frame size (7F / 9F / 6F)",
+      "wheel stage (Stage 1 / Stage 2 / Stage 3 (TW3))",
+      "material heat treatment (2 Step Age / 3 Step Age)",
+      "shot peening condition at first fire (Fired without Shot Peening / Never Fired without Shot Peening / Peening Modification)",
+      "cooling slot geometry (Original / Contoured / Enhanced)",
+      "balance rail & lock wire tab configuration (Original / Stakeless & Modified Tab / Modified Tab / staked vs stakeless BWG)",
+      "back cut buckets installed vs not installed",
+      "CDC removed vs not removed during HGPI",
+      "buckets removed vs not removed",
+      "TW2 Life Extension status (post Rotor Life Extension)"
+    ],
+    "configuration_summary": "Inspection type and interval vary by installed turbine wheel configuration (heat treatment, peening condition, cooling slot geometry, and balance rail/lock wire tab features) and by maintenance context (HGPI/MI, CDC removal, bucket removal). Some ECI intervals change if back cut buckets are not installed; some Stage 2 ECI intervals add an additional trigger at first Major after TW2 Life Extension.",
+    "severity_signals": [
+      "Compliance Category - A",
+      "increased risk of crack initiation and propagation in high ambient and humid or corrosive conditions",
+      "risk of wheel post liberation during operation",
+      "potentially resulting in significant damage"
+    ],
+    "failure_consequences": [
+      "an undetected crack may continue to propagate due to exposure to stress and temperature until ... the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage",
+      "Cracks in the forward wheel web, if left unaddressed, could result in a partial wheel material liberation, particularly when located on the stage 1 wheel.",
+      "If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation."
+    ],
+    "risk_summary": "High nickel alloy turbine wheels are sensitive to surface imperfections; in high ambient and humid or corrosive conditions there is increased risk of crack initiation/propagation at cooling slot intersections, lock wire tabs, and balance weight grooves, with potential for wheel section/material liberation and significant damage if cracks reach critical length.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance category definitions table",
+        "table_description": "Defines M/C/A/S compliance categories and their meanings.",
+        "useful_for_downstream": false,
+        "reason": "Administrative legend; does not provide equipment-specific inspection intervals or parts."
+      },
+      {
+        "table_label": "Timing code legend table",
+        "table_description": "Defines timing codes 1-6 (e.g., Prior to Unit Startup, Next Scheduled Outage).",
+        "useful_for_downstream": false,
+        "reason": "Administrative legend; does not provide equipment-specific inspection intervals or parts."
+      },
+      {
+        "table_label": "Applicable 7F Stage 1 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix by heat treatment, peening condition, cooling slot geometry, and balance rail/lock wire tab; provides inspection types (ECI/Visual/BI/FPI/UT) and intervals (hours/starts/HGPI/Major) plus applicable Stage 1 part numbers.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability needed for outage scoping and configuration validation."
+      },
+      {
+        "table_label": "Applicable 7F Stage 2 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types and intervals (including post TW2 Life Extension trigger) plus applicable Stage 2 part numbers.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability; includes additional trigger 'at first Major after TW2 Life Extension'."
+      },
+      {
+        "table_label": "Applicable 9F Stage 1 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals and Stage 1 part numbers for 9F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability needed for configuration-based planning."
+      },
+      {
+        "table_label": "Applicable 9F Stage 2 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals (including post TW2 Life Extension trigger) and Stage 2 part numbers for 9F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability; includes post-life-extension trigger."
+      },
+      {
+        "table_label": "Applicable 6F Stage 1 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals and Stage 1 part numbers for 6F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability needed for configuration-based planning."
+      },
+      {
+        "table_label": "Applicable 6F Stage 2 Turbine Wheel Configurations",
+        "table_description": "Configuration matrix with inspection types/intervals (including post TW2 Life Extension trigger) and Stage 2 part numbers for 6F.",
+        "useful_for_downstream": true,
+        "reason": "Contains actionable inspection intervals and part-number applicability; includes post-life-extension trigger."
+      }
+    ],
+    "missing_information_flags": [
+      "No explicit definition of what constitutes 'high ambient and specific environmental conditions' beyond 'high ambient and humid or corrosive conditions'.",
+      "No explicit list of affected unit serial numbers; applicability is described generally and via 'contact your GE Vernova representative with your turbine rotor serial number' for peening validation.",
+      "No part numbers provided for Stage 3 wheel (TW3) or turbine aft shaft (TAS) despite inspection recommendations."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "Advise users to perform routine inspections at a maintenance interval based on installed configuration."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "Compliance Category - A"
+      },
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "Select F-class gas turbine rotors operating in high ambient and specific environmental conditions."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "Rotors operating in high ambient and humid or corrosive conditions have an increased risk of crack initiation and propagation."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "an undetected crack may continue to propagate due to exposure to stress and temperature until either: 1- the crack is detected and either repaired or the rotor is removed from service, or 2- the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "In addition to these inspections, it is recommended that back cut turbine blades always be installed on all turbine rotors."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Dovetail ECI should be performed until rotor retirement at the frequency defined in Table 1."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Qualified vendor to perform CO2 blast cleaning of turbine rotor.\nGE Vernova qualified personnel to perform rotor inspections.\nBack-cut stage 1 and stage 2 turbine blades."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "It is recommended to apply dovetail modified Stage 1 and 2 turbine blades at the next scheduled maintenance (hot gas path inspection or major inspection)."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "For the stage 3 turbine wheel (TW3) and turbine aft shaft (TAS), the following inspections apply regardless of frame size or part numbers:"
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "extracted_document_method": "databricks_ai",
+  "extracted_text_char_count": 35559,
+  "extracted_table_count": 8,
+  "extraction_confidence": 0.78,
+  "llm_model": "azure-gpt-5-2",
+  "metadata_status": "completed",
+  "metadata_retry_count": 0,
+  "chunk_status": null,
+  "chunk_retry_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ingest_ts": "2026-07-05 00:17:55.485394",
+  "metadata_processed_ts": "2026-07-05 00:17:55.485987",
+  "chunk_processed_ts": null,
+  "run_id": "til_p1_20260704_235852_30f3ba3a"
+}

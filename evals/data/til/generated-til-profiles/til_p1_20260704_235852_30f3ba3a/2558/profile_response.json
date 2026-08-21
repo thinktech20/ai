@@ -1,0 +1,164 @@
+{
+  "til_number": "2558",
+  "revision": null,
+  "title": "TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS",
+  "publish_date": "2025-04-29",
+  "reason_for_revision": null,
+  "purpose": "To advise users to perform routine inspections at maintenance intervals",
+  "compliance_category_code": "A",
+  "compliance_category_text": "Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Next Scheduled Outage",
+  "scope_of_work": [
+    "Qualified vendor to perform CO2 blast cleaning of turbine rotor.",
+    "GE Vernova qualified personnel to perform rotor inspections.",
+    "Rotor inspection equipment is provided and applied by GE Vernova.",
+    "Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope."
+  ],
+  "service_recommendation_line_items": [
+    "Perform Visual (VT) and Borescope (BI) inspection of accessible rotor surfaces; specifically look for overall surface conditions such as dents, dings, nicks, scratches, crack-like indications, raised material, etc.",
+    "Perform VT/BI focusing on: broach slot fillets, slot bottoms, tangs, and cooling slots; turbine blade cooling slots in wheel broach slots; spacer rim seal tooth rubs/coating; balance weights (looseness/migration, set screw staking quality, tight set screw); nut damage or surface indications in flanges and webs.",
+    "Perform FPI to detect cracks on lock wire tabs (lock wire tab fillets) when turbine blades are removed during routine maintenance intervals; FPI is not recommended for the wheel posts.",
+    "Perform dovetail ECI per Table 1 frequency (Stages 1 and 2 wheel posts referenced) until rotor retirement; third stage wheel posts and turbine wheels may also be inspected with the same equipment, if elected.",
+    "Prior to ECI, appropriately clean the turbine rotor to facilitate proper functioning of the ECI equipment and accurate readings; preferred method is dry ice (CO2) blasting; surfaces must be free of oil beforehand.",
+    "If crack-like indications are found, contact local GE Vernova service representative for disposition; in most cases, an in-situ repair procedure can be used to remove cracked lock wire tabs or balance weight stake marks."
+  ],
+  "completion_criteria_text": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service.",
+  "maintenance_trigger_text": "Timing Code - 6 Next Scheduled Outage",
+  "recommended_interval_or_trigger": [
+    "ECI at 96k FFH or 3,600 FFS (Stage 1 PN 146E3626).",
+    "FPI LWT: every Major at 64k FFH.",
+    "ECI at 96k FFH or 3,600 FFS (Stage 2 PN 146E3601).",
+    "Dovetail ECI should be performed until rotor retirement at the frequency defined in Table 1."
+  ],
+  "usage_counters_to_check_or_consider": [
+    "operating_hours",
+    "starts"
+  ],
+  "usage_counter_requirements_text": "Inspection intervals are stated in FFH and FFS (e.g., \"at 96k FFH or 3,600 FFS\" and \"every Major at 64k FFH\").",
+  "frame_or_model_applicability_text": "7F.05 and 7FA.04-200 gas turbine rotors.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Turbine wheels and spacers on 7F.05 and 7FA.04-200 units have a stakeless balance weight configuration. The table provides recommended inspections for 7F.05 and 7FA.04 turbine wheel configurations, which all utilize an enhanced cooling slot geometry, stakeless balance rail, and modified lock wire tab. All 7F.05 and 7FA.04-200 wheels are 3-step age heat treated (3SA).",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": "Fluorescent penetrant inspection (FPI) is recommended to detect cracks on lock wire tabs. However, it is not recommended for the wheel posts, as cracks under the dovetail tangs are typically closed.",
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "Specific applicable turbine wheel part numbers are referenced (Stage 1 PN 146E3626; Stage 2 PN 146E3601), requiring installed-configuration verification.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": "146E3626",
+      "context": "Applicable Part Numbers table: Stage 1 turbine wheel post/wheel associated with ECI recommendation.",
+      "required_inspection_types": [
+        "ECI"
+      ],
+      "source_location": "Labeled table: Recommendations / Applicable Part Numbers (page_id 3)"
+    },
+    {
+      "part_number": "146E3601",
+      "context": "Applicable Part Numbers table: Stage 2 turbine wheel post/wheel associated with ECI recommendation.",
+      "required_inspection_types": [
+        "ECI"
+      ],
+      "source_location": "Labeled table: Recommendations / Applicable Part Numbers (page_id 3)"
+    },
+    {
+      "part_number": null,
+      "context": "Dry ice (CO2) blasting used as preferred cleaning method prior to ECI.",
+      "required_inspection_types": [],
+      "source_location": "Extracted TIL PDF text: ECI cleaning paragraph and SCOPE OF WORK"
+    }
+  ],
+  "reference_documents": [],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "7F.05 vs 7FA.04-200 rotor",
+    "Stage (1 vs 2) turbine wheel post/wheel part number",
+    "Stakeless balance weight configuration / stakeless balance rail",
+    "Enhanced cooling slot geometry",
+    "Modified lock wire tab",
+    "3-step age heat treated (3SA)"
+  ],
+  "configuration_summary": "Applies to 7F.05 and 7FA.04-200 turbine wheel configurations utilizing enhanced cooling slot geometry, stakeless balance rail/weight configuration, modified lock wire tab, and 3-step age heat treated (3SA) wheels; ECI recommendations are tied to specific stage part numbers.",
+  "severity_signals": [
+    "Compliance Category - A",
+    "potentially resulting in significant damage"
+  ],
+  "failure_consequences": [
+    "An undetected crack may continue to propagate due to exposure to stress and temperature until the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section.",
+    "Potentially resulting in significant damage."
+  ],
+  "risk_summary": "High nickel alloy turbine rotor disks are sensitive to surface imperfections where an intergranular crack may initiate and propagate due to high stresses and temperatures; undetected cracks can propagate to a critical length and release wheel section and/or adjacent turbine blades into the turbine hot gas path section.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS",
+      "table_description": "Header table showing applicability line: \"7F.05 & 7FA.04-200\" and title.",
+      "useful_for_downstream": false,
+      "reason": "Administrative header; does not provide equipment-specific inspection values beyond what is captured elsewhere."
+    },
+    {
+      "table_label": "Compliance category definitions",
+      "table_description": "Defines M/C/A/S compliance categories.",
+      "useful_for_downstream": false,
+      "reason": "Terminology legend; not equipment-specific."
+    },
+    {
+      "table_label": "Timing code legend",
+      "table_description": "Lists timing codes 1-5 descriptions (e.g., prior to startup, at first opportunity).",
+      "useful_for_downstream": false,
+      "reason": "Terminology legend; not equipment-specific."
+    },
+    {
+      "table_label": "Recommendations / Applicable Part Numbers",
+      "table_description": "Inspection recommendations and intervals with stage and applicable part numbers: ECI at 96k FFH or 3,600 FFS for Stage 1 PN 146E3626 and Stage 2 PN 146E3601; FPI LWT every Major at 64k FFH.",
+      "useful_for_downstream": true,
+      "reason": "Contains actionable inspection intervals tied to usage counters and specific part numbers."
+    }
+  ],
+  "missing_information_flags": [
+    "Table 1 is referenced in text for inspection frequency and applicability, but only a partial recommendations/part-number table is provided; full Table 1 content (all stages/features/intervals) is not present in the supplied inputs.",
+    "No explicit definition/expansion of abbreviations FFH and FFS is provided in the supplied text.",
+    "No explicit inspection interval is stated for VT/BI (only described as good practice when available)."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "To advise users to perform routine inspections at maintenance intervals"
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "The crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section, potentially resulting in significant damage."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "Dovetail ECI should be performed until rotor retirement at the frequency defined in Table 1 and is available and recommended for all wheel posts referenced."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "Fluorescent penetrant inspection (FPI) is recommended to detect cracks on lock wire tabs. However, it is not recommended for the wheel posts, as cracks under the dovetail tangs are typically closed."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Qualified vendor to perform CO2 blast cleaning of turbine rotor."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "GE Vernova qualified personnel to perform rotor inspections."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "ECI at 96k FFH or 3,600 FFS"
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "FPI\nLWT: every Major at 64k FFH"
+    }
+  ],
+  "extraction_confidence": 0.78
+}

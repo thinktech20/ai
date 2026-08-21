@@ -1,0 +1,156 @@
+{
+  "til_number": "1502-2R1",
+  "revision": "R1",
+  "title": "7F AND 9F AFT END COMPRESSOR RUBS",
+  "publish_date": "2005-11-01",
+  "reason_for_revision": "To update the technical content of the TIL, including frequency of tip loss and recommendations when discovered.",
+  "purpose": "To inform users to monitor equipment operation and condition, and to identify the onset, occurrence, and effects of aft end compressor rubs (when the tip of the rotor blade rubs the casing). Rubs are evident when blade tip material is adversely affected. Information in this TIL is supplemental to information in the Inspection and Maintenance Manual provided with the gas turbine.",
+  "compliance_category_code": "M",
+  "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Next Scheduled Outage",
+  "scope_of_work": [
+    "Monitor equipment operation and condition to identify onset/occurrence/effects of aft end compressor rubs (rotor blade tip rubbing casing).",
+    "Integrate inspection for aft end compressor rubs with yearly scheduled borescope inspection: observe rotor blade stages 13 through 17 for mushroomed material, bluing at blade tip, and/or markings in casing area.",
+    "If rubs or tip loss occur, perform blending/clearance increase at Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed: tip grinding and polishing; repair tip corners by blade blending; typically remove 20 mils radially.",
+    "After tip grinding/blending, perform penetrant inspection to ensure no tip cracks are present."
+  ],
+  "service_recommendation_line_items": [
+    "Follow operating practices per GER 3620 to reduce the potential for rubs on aft end compressor blades.",
+    "Keep enclosure doors closed during startup, shutdown and normal operation.",
+    "If restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip occurs now or has occurred in the past, include the aft end area in the yearly borescope inspections.",
+    "Eliminate any potential pipe leaks that may cause quenching of the gas turbine compressor discharge casing.",
+    "Ensure vent fans and exhaust fans to the gas turbine enclosure are functioning properly such that no local forced convection is taking place at or near the compressor discharge casing.",
+    "During yearly borescope inspection per GER 3620, observe rotor blade stages 13 through 17 and look for mushroomed material, bluing at the blade tip, and/or markings in the casing area.",
+    "If rubs or tip loss occur, at MI or when CDC is removed, increase clearances by tip grinding and polishing and repair tip corners by blade blending; typically remove 20 mils radially to increase clearance and remove heat affected and rolled over material.",
+    "Following tip grinding/blending, perform penetrant inspection to ensure no tip cracks are present.",
+    "If CDC is removed prior to the major inspection, clearances can also be increased to eliminate the potential for tip rubs should the customer desire (contact GE service representative)."
+  ],
+  "completion_criteria_text": "Borescope inspection of rotor blade stages 13 through 17 completed with observations for mushroomed material, bluing at the blade tip, and/or markings in the casing area; if tip grinding/blending performed, penetrant inspection completed confirming no tip cracks are present.",
+  "maintenance_trigger_text": "Aft end rubs are primarily induced because of frequent restarts between two (2) to eight (8) hours after shutdown; if the unit operates this way now or has in the past, there is a potential for clearance closure to cause aft end tip rubs and the area should be included in the yearly borescope inspections.",
+  "recommended_interval_or_trigger": [
+    "Timing Code 6: Next Scheduled Outage.",
+    "Integrate inspection for aft end compressor rubs with yearly scheduled borescope inspection per GER 3620.",
+    "Perform blending/clearance increase at Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed if rubs or tip loss occur."
+  ],
+  "usage_counters_to_check_or_consider": [],
+  "usage_counter_requirements_text": null,
+  "frame_or_model_applicability_text": "All 7F and 9F Heavy Duty Gas Turbines.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Compressor section has 18 (0-17) stages of rotating components (rotor blades) and stationary components (stator vanes). Rotor blades in rows 13, 14, and 15 are primarily affected; recommendations include observing rotor blade stages 13 through 17. Aft end rubs induced by frequent restarts between two (2) to eight (8) hours after shutdown/trip due to thermal compression of casing relative to rotor decreasing clearances.",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": null,
+  "required_prior_modifications_text": "Previous Modifications: N/A",
+  "prerequisite_outage_or_inspection_context_text": "Yearly scheduled borescope inspection per GER 3620; blending/clearance increase at Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "Document requires installed-configuration verification of affected compressor rotor blade stages/rows (stages 13-17; rows 13-15 primarily affected) and references specific component (Compressor Discharge Casing (CDC)) removal context for corrective work.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "Compressor Discharge Casing (CDC) removal is referenced as a condition when blending/clearance increase can be performed.",
+      "required_inspection_types": [],
+      "source_location": "Extracted TIL PDF text - RECOMMENDATIONS section"
+    },
+    {
+      "part_number": null,
+      "context": "Rotor blades (stages 13 through 17; rows 13, 14, and 15 primarily affected) to be inspected for rubs/tip loss indicators.",
+      "required_inspection_types": [],
+      "source_location": "Extracted TIL PDF text - BACKGROUND DISCUSSION and RECOMMENDATIONS sections"
+    }
+  ],
+  "reference_documents": [
+    {
+      "document_number": "GER 3620",
+      "document_type": "Other",
+      "context": "Operating practices and yearly scheduled borescope inspection guidance referenced for reducing potential for rubs and integrating inspections."
+    },
+    {
+      "document_number": "Inspection and Maintenance Manual",
+      "document_type": "Manual",
+      "context": "TIL information is supplemental to information in the Inspection and Maintenance Manual provided with the gas turbine."
+    }
+  ],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Restart timing between two (2) to eight (8) hours after shutdown/trip (transient thermal condition affecting clearances)",
+    "Whether Compressor Discharge Casing (CDC) is removed / Major Inspection (MI) timing for performing tip grinding/blending"
+  ],
+  "configuration_summary": "Aft end compressor rub susceptibility depends on restart timing (2–8 hours after shutdown/trip) which can decrease aft-end clearances; corrective blending/clearance increase is performed at MI or when the CDC is removed.",
+  "severity_signals": [
+    "Light scoring on the casing",
+    "Material loss at the blade tip",
+    "Mushroomed material at blade tip",
+    "Bluing at the blade tip",
+    "Markings in the casing area",
+    "Material tip loss (typical loss dimensions less than 1/16 inch² in area)"
+  ],
+  "failure_consequences": [
+    "Heat generated from a rub can lower the local material fatigue strength of the blade resulting in material tip loss in the event of another rub."
+  ],
+  "risk_summary": "Aft end rubs and/or tip loss pose very low risk to unit operation and reliability; no performance impact and no forced outages have been experienced due to this issue.",
+  "safety_or_damage_language_found": false,
+  "tables_found_summary": [
+    {
+      "table_label": "Compliance category definitions table",
+      "table_description": "Defines Optional, Maintenance, Compliance Required, Alert/Safety categories.",
+      "useful_for_downstream": false,
+      "reason": "General definitions only; no equipment-specific operational values."
+    },
+    {
+      "table_label": "Timing code definitions table",
+      "table_description": "Defines timing codes (1-5) and their meanings.",
+      "useful_for_downstream": false,
+      "reason": "General legend; document already states Timing Code - 6 Next Scheduled Outage in text."
+    },
+    {
+      "table_label": "Timing code 7 row",
+      "table_description": "Single-row table indicating '7 Optional'.",
+      "useful_for_downstream": false,
+      "reason": "Legend-only content; not equipment-specific."
+    },
+    {
+      "table_label": "TIL COMPLIANCE RECORD form",
+      "table_description": "Blank compliance record form including fields for Part Number and MLI Number.",
+      "useful_for_downstream": false,
+      "reason": "Administrative template; no populated part/MLI data."
+    },
+    {
+      "table_label": "USER SATISFACTION SURVEY form",
+      "table_description": "Blank survey form.",
+      "useful_for_downstream": false,
+      "reason": "Administrative template; no operational data."
+    }
+  ],
+  "missing_information_flags": [
+    "No specific part numbers or kits provided for rotor blades or CDC-related work (Parts listed as N/A).",
+    "No explicit borescope acceptance/rejection limits beyond qualitative indicators (mushrooming, bluing, markings) and typical tip loss size."
+  ],
+  "source_snippets": [
+    {
+      "field": "risk_summary",
+      "snippet": "These rubs range from light scoring on the casing to material loss at the blade tip. This phenomenon was concluded to be very low risk relative to unit operation and reliability. No performance impact and no forced outages have been experienced as a result."
+    },
+    {
+      "field": "maintenance_trigger_text",
+      "snippet": "aft end rubs are primarily induced because of frequent restarts between two (2) to eight (8) hours after shutdown."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "Integrate the inspection for aft end compressor rubs with your yearly scheduled borescope inspection per GER 3620. Observe rotor blade stages 13 through 17 and look for mushroomed material (see Figure 3), bluing at the blade tip, and / or markings in the casing area."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "If rubs or tip loss do occur, blending to increase clearances can be performed at Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "Typically, 20 mils radially of material can be removed to both increase clearance and remove heat affected and rolled over material. Following this operation, a penetrant inspection must be performed to ensure no tip cracks are present."
+    },
+    {
+      "field": "severity_signals",
+      "snippet": "Rubs are evident when blade tip material is adversely affected."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

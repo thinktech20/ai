@@ -1,0 +1,253 @@
+{
+  "til_number": "TIL 2045",
+  "revision": "R2",
+  "title": "7F.04 S3B CREEP DISTRESS",
+  "publish_date": "2024-02-28",
+  "reason_for_revision": "Add Tech Advanced Gas Path (AGP) configuration, clarify overall recommendations, and update the TIL Affected Units List.",
+  "purpose": "Inform affected users of Stage 3 Bucket (S3B) and Stage 3 Shroud (S3S) modifications required for more reliable gas turbine operation. Failure to comply with these recommendations may result in a forced outage and/or increased part fallout during refurbishment.",
+  "compliance_category_code": "A",
+  "compliance_category_text": "Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": null,
+  "scope_of_work": [
+    "GE qualified NDT technician with tooling to perform FPI inspection",
+    "3 x 8 hour shift"
+  ],
+  "service_recommendation_line_items": [
+    "Send all affected spare sets of S3Ss to a GE Vernova Service Center to receive the cooling air modification prior to installation and operation in a unit.",
+    "Send all affected S3Ss currently operating in a unit to a GE Vernova Service Center to receive the cooling air modification after completion of current tour.",
+    "After installation of modified S3Ss, complete configuration changes: resizing of ninth-stage extraction air orifice plate; unit control constant update; installation of updated inter-segment seals (laminate seals) on Stage 1 Shroud, Stage 2 Nozzle, Stage 2 Shroud, Stage 3 Nozzle, and Stage 3 Shroud.",
+    "Send applicable S3Bs (that have operated with affected (uncooled) S3Ss per Table 1) to a GE Vernova Service Center for evaluation and to receive the new repair process; repair eligibility is based on evaluation of creep accumulated in each individual S3B.",
+    "Operate 7F.04 Standard AGP parts repaired with the new process only with modified (cooled) S3Ss in their subsequent tour.",
+    "For 7F.04 Tech parts, assess eligibility for subsequent tour operation during the repair process; if eligible, operate only with the modified (cooled) S3S configuration.",
+    "Limit parts tagged 129T6911P0001 through P048 and 129T6911P0101 through P0108 to ONLY one tour after repair; after completion of one tour post-repair, scrap these parts.",
+    "For S3Bs previously refurbished before the new repair process was implemented, perform Fluorescent Penetrant inspection (FPI) every 4000 fired hours until removed from service; FPI should cover both the pressure and suction sides of the tip shroud fillets."
+  ],
+  "completion_criteria_text": "This TIL will be considered complete when all affected S3Bs and S3Ss have received their respective modifications or have been retired from service.",
+  "maintenance_trigger_text": "Timing Code - 4",
+  "recommended_interval_or_trigger": [
+    "Timing Code 4: At First Exposure of Component",
+    "Fluorescent Penetrant inspected (FPI) every 4000 fired hours until removed from service (for S3Bs previously refurbished before the new repair process was implemented)."
+  ],
+  "usage_counters_to_check_or_consider": [
+    "operating_hours"
+  ],
+  "usage_counter_requirements_text": "S3Bs previously refurbished before the new repair process was implemented should be Fluorescent Penetrant inspected (FPI) every 4000 fired hours until removed from service.",
+  "frame_or_model_applicability_text": "7F gas turbines with the Standard, Tech, or Tech-Lite Advanced Gas Path (AGP) configurations installed or in inventory.",
+  "combustion_or_fuel_configuration_text": "7F gas turbines",
+  "hardware_or_part_configuration_text": "Applies to affected S3S part numbers listed in Table 1 and S3Bs that have operated with affected (uncooled) S3Ss per Table 1. Recommendations apply regardless of which AGP configuration (e.g., Standard, Tech, Tech-Lite, etc.) is installed in a unit or that unit's hours/starts duty cycle. After installation of modified S3Ss, resizing of ninth-stage extraction air orifice plate, unit control constant update, and installation of updated inter-segment seals (laminate seals) on specified static components are required; a CM&U process is mandatory to implement these changes.",
+  "serial_or_unit_applicability_text": "7F gas turbines with the Standard, Tech, or Tech-Lite Advanced Gas Path (AGP) configurations installed or in inventory.",
+  "exclusions_or_non_applicable_conditions_text": "Laminate seals are not required for Stage 1 Nozzles.",
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Timing Code - 4 (At First Exposure of Component). For S3Ss currently operating in a unit: send after completion of current tour. For spare sets: modify prior to installation and operation in a unit.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "Specific affected/modified S3S part numbers, S3B repair machining part number marking, kit/machining part numbers, and configuration changes (orifice plate resizing, control constant update, laminate seals) require installed-configuration verification.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": "146E1320",
+      "context": "Affected (Uncooled) S3S Part Number",
+      "required_inspection_types": [],
+      "source_location": "Table 1: Summary of Affected and Modified S3S Part Numbers"
+    },
+    {
+      "part_number": "115T4111",
+      "context": "Affected (Uncooled) S3S Part Number",
+      "required_inspection_types": [],
+      "source_location": "Table 1: Summary of Affected and Modified S3S Part Numbers"
+    },
+    {
+      "part_number": "125T7989",
+      "context": "Modified (Cooled) S3S Part Number (cooling air modification applied)",
+      "required_inspection_types": [],
+      "source_location": "Table 1: Summary of Affected and Modified S3S Part Numbers"
+    },
+    {
+      "part_number": "125T6855",
+      "context": "Modified (Cooled) S3S Part Number (cooling air modification applied)",
+      "required_inspection_types": [],
+      "source_location": "Table 1: Summary of Affected and Modified S3S Part Numbers"
+    },
+    {
+      "part_number": "129T6911",
+      "context": "Machining part number marking applied to S3Bs upon receiving the new repair process",
+      "required_inspection_types": [],
+      "source_location": "Stage 3 Bucket Recommendations section"
+    },
+    {
+      "part_number": "129T6911P0001 through P048",
+      "context": "Parts tagged with these part numbers will be limited to ONLY one tour after repair; after one tour post-repair, parts must be scrapped",
+      "required_inspection_types": [],
+      "source_location": "Parts Tour After Repair section"
+    },
+    {
+      "part_number": "129T6911P0101 through P0108",
+      "context": "Parts tagged with these part numbers will be limited to ONLY one tour after repair; after one tour post-repair, parts must be scrapped",
+      "required_inspection_types": [],
+      "source_location": "Parts Tour After Repair section"
+    },
+    {
+      "part_number": "100T8378",
+      "context": "Kit (7F.04 Standard AGP)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": "115T2726",
+      "context": "Kit (7F.04 Tech)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": "133E8966",
+      "context": "Machining (7F.04 Standard AGP)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": "144E7889",
+      "context": "Machining (7F.04 Standard AGP)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": "123T2854",
+      "context": "Machining (7F.04 Standard AGP)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": "124T3686",
+      "context": "Machining (7F.04 Standard AGP)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": "115T2721",
+      "context": "Machining (7F.04 Tech)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": "123T2881",
+      "context": "Machining (7F.04 Tech)",
+      "required_inspection_types": [],
+      "source_location": "Unlabeled table (Kit/Machining by configuration) on page 2"
+    },
+    {
+      "part_number": null,
+      "context": "Updated inter-segment seals (laminate seals) to be installed on Stage 1 Shroud, Stage 2 Nozzle, Stage 2 Shroud, Stage 3 Nozzle, and Stage 3 Shroud",
+      "required_inspection_types": [],
+      "source_location": "Stage 3 Shroud Recommendations section"
+    },
+    {
+      "part_number": null,
+      "context": "Ninth-stage extraction air orifice plate (requires resizing after installation of modified S3Ss)",
+      "required_inspection_types": [],
+      "source_location": "Stage 3 Shroud Recommendations section"
+    }
+  ],
+  "reference_documents": [
+    {
+      "document_number": "TIL 2045-R0",
+      "document_type": "TIL",
+      "context": "Referenced as prior release noting S3S modification and recommending FPI every 4000 fired hours for certain previously refurbished S3Bs."
+    },
+    {
+      "document_number": "TIL 2045-R1",
+      "document_type": "TIL",
+      "context": "Referenced as prior release noting new S3B repair process in development."
+    }
+  ],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "AGP configuration (Standard, Tech, Tech-Lite)",
+    "S3S configuration (affected/uncooled vs modified/cooled)",
+    "S3B repair status (new repair process applied; previously refurbished before new repair process)",
+    "Unit configuration changes required after modified S3S installation (ninth-stage extraction air orifice plate sizing, unit control constant update, laminate seals on specified static components)"
+  ],
+  "configuration_summary": "TIL applies to 7F gas turbines with Standard/Tech/Tech-Lite AGP configurations and affected S3S/S3B part populations. S3S cooling-air modification changes unit configuration and requires additional changes (orifice plate resizing, control constant update, laminate seals on specified static components). Post-repair S3B operation is constrained to use with modified (cooled) S3Ss; certain repaired part-number ranges are limited to one tour after repair then scrap.",
+  "severity_signals": [
+    "Failure to comply with these recommendations may result in a forced outage",
+    "tip shroud liberation",
+    "increased part fallout during refurbishment",
+    "potential for some S3Bs to be scrapped due to accumulated creep"
+  ],
+  "failure_consequences": [
+    "forced outage",
+    "tip shroud liberation",
+    "increased part fallout during refurbishment",
+    "unexpected unit performance or undesirable conditions (if partial completion of required configuration changes)"
+  ],
+  "risk_summary": "Creep distress in S3B tip shroud fillet regions can progress from internal creep voids to surface cracks and potentially tip shroud liberation; modifications and repair processes are recommended to improve creep life and reduce forced-outage risk.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Compliance Category definitions",
+      "table_description": "Defines M/C/A/S compliance categories",
+      "useful_for_downstream": false,
+      "reason": "Administrative legend; does not provide equipment-specific values."
+    },
+    {
+      "table_label": "Timing Code legend",
+      "table_description": "Defines timing codes 1-6 including Timing Code 4 'At First Exposure of Component'",
+      "useful_for_downstream": true,
+      "reason": "Provides the actionable timing trigger used by this TIL (Timing Code 4)."
+    },
+    {
+      "table_label": "Table 1: Summary of Affected and Modified S3S Part Numbers",
+      "table_description": "Maps affected (uncooled) S3S part numbers to modified (cooled) S3S part numbers",
+      "useful_for_downstream": true,
+      "reason": "Directly identifies affected hardware and required modified configuration by part number."
+    },
+    {
+      "table_label": "Kit/Machining by configuration (unlabeled table)",
+      "table_description": "Lists kit and machining part numbers for 7F.04 Standard AGP vs 7F.04 Tech",
+      "useful_for_downstream": true,
+      "reason": "Contains specific kit/machining identifiers needed for parts validation and work scoping."
+    }
+  ],
+  "missing_information_flags": [
+    "Table 2: Summary of Affected S3B Part Numbers is referenced in text but not present in provided labeled tables or extracted text content (specific affected S3B part numbers not available).",
+    "Specific part numbers for laminate seals, ninth-stage extraction air orifice plate, and unit control constant update are not provided."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "Inform affected users of Stage 3 Bucket (S3B) and Stage 3 Shroud (S3S) modifications required for more reliable gas turbine operation. Failure to comply with these recommendations may result in a forced outage and/or increased part fallout during refurbishment."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "All affected spare sets of S3Ss should be sent to a GE Vernova Service Center to receive the cooling air modification prior to installation and operation in a unit."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "All affected S3Ss currently operating in a unit should be sent to a GE Vernova Service Center to receive the cooling air modification after completion of current tour."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "After installation of the modified S3Ss, the following configuration changes are needed to account for the addition of the S3S cooling air: 1.Resizing of ninth-stage extraction air orifice plate 2. Unit control constant update 3. Installation of updated inter-segment seals, i.e., laminate seals, on the following static components."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "As part of this repair process, the amount of creep accumulated in each individual S3B will be evaluated to determine eligibility for this repair."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "Timing Code - 4"
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "these S3Bs should be Fluorescent Penetrant inspected (FPI) every 4000 fired hours until removed from service."
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "The internal creep voids that were observed may propagate to the surface and initiate cracks that could eventually lead to tip shroud liberation."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "This TIL will be considered complete when all affected S3Bs and S3Ss have received their respective modifications or have been retired from service."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

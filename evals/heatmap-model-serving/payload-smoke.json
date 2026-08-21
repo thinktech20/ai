@@ -1,0 +1,16 @@
+{
+  "dataframe_records": [
+    {
+      "candidate_table": "vaid.ai_std_con_field_service_report.vec_risk_matrix",
+      "baseline_table": "vaid.ai_std_con_field_service_report.vec_risk_matrix",
+      "experiment_name": "/Shared/heatmap_case2_eval",
+      "equipment_types": "GEN,GT",
+      "personas": "REL,OE",
+      "sample_size": 10,
+      "tags": {
+        "trigger": "smoke_test",
+        "case": "case2"
+      }
+    }
+  ]
+}
