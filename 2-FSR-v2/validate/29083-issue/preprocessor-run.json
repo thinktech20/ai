@@ -1,0 +1,81 @@
+{
+  "document_id": "35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270t483-final_master_report",
+  "volume_path": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270T483-Final_Master_Report.pdf",
+  "run_utc": "2026-07-30T19:27:56.040614+00:00",
+  "page_count": 85,
+  "char_count": 18030,
+  "metadata": {
+    "document_name": "35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270T483-Final_Master_Report.pdf",
+    "primary_esn": "270T483",  //evidence from doc (Work scope) and IBAT says - it should be 290T483, not 270T483. 
+    "primary_equip_type": "Generator", //correct
+    "primary_technology_code": "",
+    "gt_esn": "",
+    "gen_esn": "270T483", // incorrect, should be 290T483
+    "st_esn": "",
+    "all_esns": "270T483, 290T483",
+    "inactive_esns": "",
+    "outage_start_date": "03/01/2018",
+    "outage_end_date": "",
+    "report_issued_date": "09/04/2018"
+  },
+  "hints": "Active equipment (work performed): 270T483 (Generator)\nPrimary equipment inference: primary_equip_type=Generator (gt_bytes=0, gen_bytes=0, st_bytes=0, gt_sig_hits=0, gen_sig_hits=42).\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "regions": [
+    {
+      "start": 0,
+      "end": 303,
+      "metadata": {
+        "primary_esn": "270T483",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 5664,
+      "end": 7167,
+      "metadata": {
+        "primary_esn": "270T483",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 7257,
+      "end": 8270,
+      "metadata": {
+        "primary_esn": "270T483",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 9202,
+      "end": 10940,
+      "metadata": {
+        "primary_esn": "270T483",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 10982,
+      "end": 12592,
+      "metadata": {
+        "primary_esn": "270T483",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 12675,
+      "end": 14515,
+      "metadata": {
+        "primary_esn": "270T483",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 15163,
+      "end": 15842,
+      "metadata": {
+        "primary_esn": "270T483",
+        "primary_equip_type": "Generator"
+      }
+    }
+  ],
+  "inactive_esns_emitted": []
+}

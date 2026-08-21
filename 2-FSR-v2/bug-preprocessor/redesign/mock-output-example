@@ -1,0 +1,245 @@
+mock output of how section span and region will look like for 32689520-afed-4dd4-a895-20afed7dd4d2 (2-FSR-v2/bug-preprocessor/sample-pdfs/32689520-afed-4dd4-a895-20afed7dd4d2.pdf):
+
+Region scoping rule:
+- A region is always a contiguous character span — it never skips chars.
+- Each region is scoped to one ESN (not just one equipment type).
+- If ESN is unresolved, the region carries equipment type only.
+- If neither is resolved, the region is shared.
+- If the same ESN appears in non-contiguous parts of the document, those become separate regions
+  both carrying the same ESN — the gap between them is its own region with separate attribution.
+- Within one contiguous equipment block, if all subsections resolve to the same ESN,
+  they are merged into one region (no need to split per subsection).
+
+
+[
+  SectionSpan(
+    start=0, end=2110,
+    level=-1,                          # sentinel: pre-section text
+    heading_text="[front_matter]",
+    heading_type="SYNTHETIC",
+    equipment_type=None,
+    local_esn=None,
+    resolved_esn=None,
+    esn_confidence="none",
+    esn_source="none",
+    parent_idx=None,
+    is_summary=False,
+  ),
+
+  # ── GAS TURBINE equipment block ──────────────────────────────────────────
+  SectionSpan(
+    start=2110, end=97800,
+    level=0,
+    heading_text="GAS TURBINE (297191 | SY1024003)",
+    heading_type="HEADER",
+    equipment_type="Gas Turbine",
+    local_esn="297191",
+    resolved_esn="297191",
+    esn_confidence="highest",
+    esn_source="local_header",
+    parent_idx=None,
+    is_summary=False,
+  ),
+  SectionSpan(
+    start=2500, end=18300,
+    level=0,
+    heading_text="1 Summary",
+    heading_type="SECTION_HDR",
+    equipment_type="Gas Turbine",
+    local_esn=None,
+    resolved_esn="297191",
+    esn_confidence="high",
+    esn_source="parent_inherit",
+    parent_idx=1,
+    is_summary=True,
+  ),
+  SectionSpan(
+    start=18300, end=97800,
+    level=0,
+    heading_text="2 Technical Findings",
+    heading_type="SECTION_HDR",
+    equipment_type="Gas Turbine",
+    local_esn=None,
+    resolved_esn="297191",
+    esn_confidence="high",
+    esn_source="parent_inherit",
+    parent_idx=1,
+    is_summary=False,
+  ),
+  SectionSpan(
+    start=18300, end=26000,
+    level=1,
+    heading_text="2.1 Compressor Inspection",
+    heading_type="SUBSEC",
+    equipment_type="Gas Turbine",
+    local_esn=None,
+    resolved_esn="297191",
+    esn_confidence="high",
+    esn_source="parent_inherit",
+    parent_idx=3,
+    is_summary=False,
+  ),
+  SectionSpan(
+    start=26000, end=97800,
+    level=1,
+    heading_text="2.2 Turbine Hot Section",
+    heading_type="SUBSEC",
+    equipment_type="Gas Turbine",
+    local_esn=None,
+    resolved_esn="297191",
+    esn_confidence="high",
+    esn_source="parent_inherit",
+    parent_idx=3,
+    is_summary=False,
+  ),
+
+  # ── GENERATOR equipment block ─────────────────────────────────────────────
+  SectionSpan(
+    start=98600, end=171000,
+    level=0,
+    heading_text="GENERATOR (336X827 | SY1024004)",
+    heading_type="HEADER",
+    equipment_type="Generator",
+    local_esn="336X827",
+    resolved_esn="336X827",
+    esn_confidence="highest",
+    esn_source="local_header",
+    parent_idx=None,
+    is_summary=False,
+  ),
+  SectionSpan(
+    start=99200, end=115000,
+    level=0,
+    heading_text="1 Summary",
+    heading_type="SECTION_HDR",
+    equipment_type="Generator",
+    local_esn=None,
+    resolved_esn="336X827",
+    esn_confidence="high",
+    esn_source="parent_inherit",
+    parent_idx=6,
+    is_summary=True,
+  ),
+  SectionSpan(
+    start=115000, end=171000,
+    level=0,
+    heading_text="2 Field Test Results",
+    heading_type="SECTION_HDR",
+    equipment_type="Generator",
+    local_esn=None,
+    resolved_esn="336X827",
+    esn_confidence="high",
+    esn_source="parent_inherit",
+    parent_idx=6,
+    is_summary=False,
+  ),
+
+  # ── Appendix ──────────────────────────────────────────────────────────────
+  SectionSpan(
+    start=171000, end=195400,
+    level=0,
+    heading_text="Appendix A",
+    heading_type="UNNUMBERED",
+    equipment_type=None,
+    local_esn=None,
+    resolved_esn=None,
+    esn_confidence="none",
+    esn_source="none",
+    parent_idx=None,
+    is_summary=False,
+  ),
+]
+
+
+---
+
+# Region list (Phase 4 output — what P2 chunking and retrieval actually use)
+#
+# Coverage guarantee: every char from 0 to 195400 falls in exactly one region.
+# Char ranges: [start, end) — end is exclusive.
+
+[
+  # Region A — front matter: 0 → 2110
+  {
+    "start": 0, "end": 2110,
+    "metadata": {
+      "primary_esn": None,
+      "primary_equip_type": "shared",
+      "primary_technology_code": None,
+      "esn_confidence": "none",
+      "esn_source": "none",
+      "equip_type_source": "none",
+      "region_source": "front_matter",
+      "fallback_chain": [],
+    }
+  },
+
+  # Region B — Gas Turbine block: 2110 → 97800
+  # All GT subsections (1 Summary, 2 Technical, 2.1, 2.2) resolve to same ESN
+  # → merged into one region; subsection SectionSpans exist internally but do not split here.
+  {
+    "start": 2110, "end": 97800,
+    "metadata": {
+      "primary_esn": "297191",
+      "primary_equip_type": "Gas Turbine",
+      "primary_technology_code": "GT",
+      "esn_confidence": "highest",
+      "esn_source": "local_header",
+      "equip_type_source": "heading",
+      "region_source": "section_span",
+      "fallback_chain": ["local_header"],
+    }
+  },
+
+  # Region C — gap between GT and Generator: 97800 → 98600
+  # Left neighbor: ESN 297191 (GT). Right neighbor: ESN 336X827 (Generator).
+  # Different ESNs on both sides → conflict → shared, confidence none.
+  {
+    "start": 97800, "end": 98600,
+    "metadata": {
+      "primary_esn": None,
+      "primary_equip_type": "shared",
+      "primary_technology_code": None,
+      "esn_confidence": "none",
+      "esn_source": "none",
+      "equip_type_source": "none",
+      "region_source": "gap_fallback",
+      "fallback_chain": ["neighbor_left:297191", "neighbor_right:336X827", "conflict→shared"],
+    }
+  },
+
+  # Region D — Generator block: 98600 → 171000
+  {
+    "start": 98600, "end": 171000,
+    "metadata": {
+      "primary_esn": "336X827",
+      "primary_equip_type": "Generator",
+      "primary_technology_code": "GEN",
+      "esn_confidence": "highest",
+      "esn_source": "local_header",
+      "equip_type_source": "heading",
+      "region_source": "section_span",
+      "fallback_chain": ["local_header"],
+    }
+  },
+
+  # Region E — appendix/trailing: 171000 → 195400
+  {
+    "start": 171000, "end": 195400,
+    "metadata": {
+      "primary_esn": None,
+      "primary_equip_type": "shared",
+      "primary_technology_code": None,
+      "esn_confidence": "none",
+      "esn_source": "none",
+      "equip_type_source": "none",
+      "region_source": "trailing",
+      "fallback_chain": [],
+    }
+  },
+]
+
+# Coverage check:
+# 0→2110 (A) + 2110→97800 (B) + 97800→98600 (C) + 98600→171000 (D) + 171000→195400 (E)
+# = 0 to 195400 with no gaps and no overlaps.
+

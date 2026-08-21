@@ -1,0 +1,143 @@
+# FSR v2 Dev Ingest Databricks Mosaic AI Agent Configuration
+#
+# This agent orchestrates FSR v2 targeted ingest with profile-based table routing.
+# Deploy via Databricks SDK or Databricks Agents UI.
+#
+# Agent Name: fsr-v2-dev-ingest-agent
+# Version: 1.0
+# Environment: dev workspace only
+
+agent:
+  name: "fsr-v2-dev-ingest-agent"
+  description: |
+    FSR v2 targeted document ingest agent for dev validation.
+    
+    Supports:
+    - Document selection (one or more PDF file names)
+    - Table/index profile routing (ms_test → ds_test → dev)
+    - Reset modes (drop or no-drop)
+    - Lightweight validation and per-doc status reporting
+    
+    Example interaction:
+      User: Ingest and validate these docs 12345,67890 in dev using ms_test with drop
+      Agent: Routes to ms_test tables, runs P1→P2→P3 pipeline, returns per-doc status
+  
+  model: "claude-3-5-sonnet"  # Databricks Mosaic AI model
+  max_turns: 10
+  timeout_seconds: 3600  # 1 hour for full pipeline
+  
+  system_prompt: |
+    You are the FSR v2 Dev Ingest Agent for Databricks Field Service Report processing.
+    
+    Your role: Parse user requests to ingest and validate FSR documents, then execute
+    the Databricks orchestrator pipeline with correct table/index profiles.
+    
+    Command Format:
+    "Ingest and validate these docs <file_names> in dev using <profile> with <mode>"
+    
+    Where:
+    - file_names: comma-separated PDF names (e.g., "12345", "report_abc.pdf")
+    - profile: ms_test (first validation), ds_test (team validation), or dev (production)
+    - mode: drop (recreate tables/index) or no-drop (keep and reprocess)
+    
+    If profile is omitted, default to ms_test for safety.
+    
+    Your responsibilities:
+    1. Parse and validate the user request
+    2. Extract: file_names, profile, mode
+    3. Call the fsr_v2_orchestrator_run tool with correct parameters
+    4. Report results: overall status, per-doc table, failure summary
+    
+    Important rules:
+    - Profile routing is YOUR decision (agent layer) — tables are concrete by submission time
+    - Never modify notebook or pipeline behavior — only parameter routing
+    - Report partial failures clearly (some docs may pass, others fail)
+    - If user provides invalid profile, suggest ms_test, ds_test, or dev
+    - If drop mode is requested, remind user it's destructive but proceed (dev only)
+
+  tools:
+    - name: "fsr_v2_orchestrator_run"
+      description: "Execute FSR v2 dev ingest orchestrator notebook with concrete parameters"
+      
+      parameters:
+        type: "object"
+        required: ["target_pdf_names", "table_profile", "mode"]
+        properties:
+          target_pdf_names:
+            type: "string"
+            description: "Comma-separated PDF file names to ingest"
+          
+          table_profile:
+            type: "string"
+            enum: ["ms_test", "ds_test", "dev"]
+            description: "Table/index profile: ms_test (test), ds_test (team), dev (production)"
+          
+          mode:
+            type: "string"
+            enum: ["drop", "no-drop"]
+            description: "Reset mode: drop (recreate tables/index), no-drop (keep and reprocess)"
+      
+      tool_type: "databricks_jobs_run"
+      
+      job_config:
+        notebook_path: "/Repos/pw_sdg_ai_ser_repo/validation/fsr_v2/ingest_data/nb_fsr_v2_dev_ingest"
+        
+        # Base parameters always passed (tools can override specific ones)
+        base_parameters:
+          jb_env: "dev"
+          RUN_ALL_FROM_VOLUMES: "false"
+          FSR_CHUNKING_STRATEGY: "section"
+          FSR_SOURCE_VOLUME_PATHS: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual"
+          LITELLM_BASE_URL: "https://dev-gateway.apps.gevernova.net"
+        
+        # Table/index mappings per profile
+        profiles:
+          dev:
+            METADATA_TABLE_V2: "vaid.ai_sot_field_service_report.fsr_metadata_v2"
+            CHUNK_TABLE_V2: "vaid.ai_std_con_field_service_report.fsr_chunks_v2"
+            DOC_EQUIPMENT_MAP_TABLE_V2: "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2"
+            RUN_LOG_TABLE_V2: "vaid.ai_sot_field_service_report.fsr_run_log_v2"
+            DQ_LOG_TABLE_V2: "vaid.ai_sot_field_service_report.fsr_data_quality_log_v2"
+            VS_INDEX_V2: "vaid.ai_std_con_field_service_report.fsr_vs_index_v2"
+            VS_ENDPOINT_V2: "pw-ser-sdg-vector-search"
+          
+          ds_test:
+            METADATA_TABLE_V2: "vaid.ai_sot_field_service_report.ds_test_fsr_metadata_v2"
+            CHUNK_TABLE_V2: "vaid.ai_std_con_field_service_report.ds_test_fsr_chunks_v2"
+            DOC_EQUIPMENT_MAP_TABLE_V2: "vaid.ai_sot_field_service_report.ds_test_fsr_document_equipment_map_v2"
+            RUN_LOG_TABLE_V2: "vaid.ai_sot_field_service_report.ds_test_fsr_run_log_v2"
+            DQ_LOG_TABLE_V2: "vaid.ai_sot_field_service_report.ds_test_fsr_data_quality_log_v2"
+            VS_INDEX_V2: "vaid.ai_std_con_field_service_report.ds_test_fsr_vs_index_v2"
+            VS_ENDPOINT_V2: "pw-ser-sdg-vector-search"
+          
+          ms_test:
+            METADATA_TABLE_V2: "vaid.ai_sot_field_service_report.ms_test_fsr_metadata_v2"
+            CHUNK_TABLE_V2: "vaid.ai_std_con_field_service_report.ms_test_fsr_chunks_v2"
+            DOC_EQUIPMENT_MAP_TABLE_V2: "vaid.ai_sot_field_service_report.ms_test_fsr_document_equipment_map_v2"
+            RUN_LOG_TABLE_V2: "vaid.ai_sot_field_service_report.ms_test_fsr_run_log_v2"
+            DQ_LOG_TABLE_V2: "vaid.ai_sot_field_service_report.ms_test_fsr_data_quality_log_v2"
+            VS_INDEX_V2: "vaid.ai_std_con_field_service_report.ms_test_fsr_vs_index_v2"
+            VS_ENDPOINT_V2: "pw-ser-sdg-vector-search"
+        
+        mode_mapping:
+          drop: "true"
+          no-drop: "false"
+
+deployment:
+  workspace_host: "https://gevernova-ai-dev-dbr.cloud.databricks.com"
+  target_env: "dev"
+  
+  # After agent is deployed, users interact via:
+  # 1. Databricks Agents REST API
+  # 2. Databricks Workspace UI → Agents tab
+  # 3. Custom VS Code extension or CLI wrapper
+  
+  rbac:
+    - admin_group: "@GE Vernova Databricks Operations Team"
+    - service_account: "service.globalopsfsso@gevernova.com"
+
+versioning:
+  schema_version: "1.0"
+  agent_version: "1.0"
+  created_date: "2026-08-09"
+  updated_by: "madhurima.saxena@gevernova.com"

@@ -1,0 +1,47 @@
+$$ — ae
+
+GE Power Power Services
+
+3.3 Casing/Hood
+3.3.1 Turbine Casing
+
+Part Condition: Good
+Part Description:
+
+First 3 inch pipe on the right side ofthe casing wos cit out o remove the uppe
+
+turbine casing. Then the turbine easingremoved and placed in the turbine Mal
+erated ve (1 goa va) fe st aseed. removing th
+
+turbine casing vansferred to the od tine buiking and being fipped ove. Then, the UH
+and LH daphragms and packing casings removed
+
+On the loner half (LH) casing and UH casing, NDT (red dye) has been caried out on
+horizontal joint and most ofthe claptagm grooves ater cleaning the casings. No indiatlon
+during the NDT
+
+Besides, the UH and LH inner casing has been blast cleaned and NDT inspected during the
+juiage and no indication absorved. The NDT reports for the casings
+‘Rppendix section of this report.
+
+|Aso, during the TOPS ON | TOPS OFF alignment che ontact of both casing he
+been chocked at honzontal ont ve ever been tightened by hammering
+Unt the gap closed. Contact was good on most ofthe surface
+
+‘Ater the TOPS ONITOPS OFF alignment and NDT of the main parts such as rot
+diaphragms ete. The paris installed in places. After thal, upper half casing installed, and all
+bots are torqued per GE specs such as stretching by angle or with a torque valve
+(Extension inspection shoot attached.) After the torquing. sound test showed no loosen
+uds. Also. gap check has Been done on the final close, dit not show any problem.
+
+During the visual check no problem seen on the rupture disc as wel
+
+Recommendation Status: Should be planned for next Outage
+Recommendation Type: Services
+
+Recommendation Description:
+
+“The bolt heaters that were used during the outage was not the orignal one. Also, there was
+heating probiem with the bolt heaters used. Therefore, customer should test the bolt heaters
+‘on thai hand and investigate what fs the problem withthe bok heaters or order 3-4 new bolt
+

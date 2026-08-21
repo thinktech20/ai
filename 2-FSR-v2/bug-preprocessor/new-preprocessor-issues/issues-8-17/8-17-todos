@@ -1,0 +1,162 @@
+There are some issues reported for the data for 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b775cf29-8b42-4a83-af21-53075fef0802
+
+
+1. Doc Id: b775cf29-8b42-4a83-af21-53075fef0802
+
+This folder has the pdf and the preprocessor output attached.
+pdf - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b775cf29-8b42-4a83-af21-53075fef0802/b775cf29-8b42-4a83-af21-53075fef0802.pdf
+preprocessor output - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b775cf29-8b42-4a83-af21-53075fef0802/b775cf29-8b42-4a83-af21-53075fef0802.json
+
+Some screenshots of pages where we see issue -
+2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b775cf29-8b42-4a83-af21-53075fef0802/3.8-gen-toc.png
+2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b775cf29-8b42-4a83-af21-53075fef0802/3.8-pos.png
+
+Issue 1 : 
+
+Line 106 of preprocessor output does not have primary_esn? what is the reason?
+
+ {
+      "start": 19897,
+      "end": 21885,
+      "metadata": {
+        "primary_equip_type": "Generator",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "### 3.1.1 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+
+Also, Xujin ran the preprocessor standalone and told me:
+
+Saxena, Madhurima (GE Vernova, consultant) feels like it might be an IBAT tool issue on your side, I used your preprocessor v12, but write a local IBAT resolver, and I get:
+ 
+{
+    "start": 25378,
+    "end": 27588,
+    "metadata": {
+  "primary_esn": "337X765",
+      "primary_equip_type": "Generator",
+      "esn_confidence": "low",
+"esn_source": "ibat_train",
+      "equip_type_source": "heading",
+      "region_source": "section_span",
+      "section_path": [
+        "GAS TURBINE (297651 | SY0070884)",
+        "3 Turbine",
+        "### 3.1.1 Generator"
+      ],
+      "fallback_chain": [
+        "local",
+        "parent",
+        "single_type",
+        "ibat_train",
+        "none"
+      ]
+    },
+
+I think we should check if IBAt resolver is working.
+
+
+Issue 2: line 128 , it somehow detected Gas Turbine, the below block seems incorect, maybe its detected from this page - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b775cf29-8b42-4a83-af21-53075fef0802/3.8-pos.png? -
+
+{
+      "start": 21885,
+      "end": 55129,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.8\nPosition"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+
+
+    2. document Id - fcb1511e-596a-4a56-b151-1e596afa569c
+
+    Document here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/fcb1511e-596a-4a56-b151-1e596afa569c
+
+    Xujin's message -
+
+    Can you check the online version  if fcb1511e-596a-4a56-b151-1e596afa569c section 3.8.7 flipped back to Turbine? (337X581)
+
+    She shared this screenshot in message - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/fcb1511e-596a-4a56-b151-1e596afa569c/toc-portion-8-17.png
+
+    3. Doc id - fcb1511e-596a-4a56-b151-1e596afa569c
+
+    docukment here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/fcb1511e-596a-4a56-b151-1e596afa569c
+
+    Xujin mentioned -
+
+    This chunk_id = 9c910a17b1a1c5e6d39d461c574475c7 in document id = fcb1511e-596a-4a56-b151-1e596afa569c, contains two sub sections, not splitting them
+
+I ran the below query - 
+select * from vaid.ai_std_con_field_service_report.fsr_chunks_v2  where document_id='fcb1511e-596a-4a56-b151-1e596afa569c' and chunk_id ='9c910a17b1a1c5e6d39d461c574475c7'
+
+And the results are here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/fcb1511e-596a-4a56-b151-1e596afa569c/chunk.csv
+
+Also, Xujin mentioned - 
+I can't find them in fsr_chunk_v2 anymore, but by checking our 07/31 chunks:. Te page number there seems that we were separating these 3.8.6, 3.8.7 into different chunks previously, but not now. 
+She shared the below screenshot-
+2-FSR-v2/bug-preprocessor/new-preprocessor-issues/fcb1511e-596a-4a56-b151-1e596afa569c/7-31-chunks.png
+
+====
+
+Latest on the fcb1511e-596a-4a56-b151-1e596afa569c issue:
+
+The chat betwwen me and Xujin
+
+Madhurima:
+
+My analysis aligns with yours. One small difference in how we traced it: you found segment_start = -1 (no HEADER candidates at all) and context coming from "4 Generator" SECTION_HDR at 3171 directly. I arrived at the same conclusion from the other direction by looking at what context_candidates resolved to and why context_type ended up as Generator.
+Root cause is two things stacked:
+The TOC entry "4 Generator" was being picked up as a live section header because the SECTION_HDR loops had no toc_cutoff guard. This set context_type to Generator across the entire document body. When the preprocessor hit 3.8.7 Rotor, the guardrail blocked it.
+Rotor was not in the SUBSEC_TURBINE pattern, so it had no independent detection path when context was unavailable or wrong.
+Fix I am applying to preprocessor_v2:
+Add toc_cutoff guard to both SECTION_HDR loops so TOC entries are excluded from body context.
+Add Rotor to the SUBSEC_TURBINE pattern so it is detected independently of context.
+Add flip-back logic in the inference step so Rotor headings skip the nearest-sibling lookup and inherit from the Gas Turbine parent instead.
+After the fix, 3.8.6 Generator ends at 60359 and 3.8.7 Rotor gets its own Gas Turbine / 298464 region. The chunk split will restore automatically when P1 and P2 are rerun.
+
+Since this touches the SECTION_HDR context logic and SUBSEC_TURBINE pattern, it is a fairly broad change that could affect other documents. I think after the fix, we should run the full regression in the ds_test tables first and leave the dev tables intact. Once the regression passes we can promote to dev tables, so that we have a baseline.
+
+Implemented and ingested the data in "ds_test" tables, left dev tables as is. Let me know as you validate. Also, generated preprocessor outputs here - fsr-preprocessor-v2-output-8-17
+
+Xujin:
+
+Rotor should not add to Turbine subsection!
+Rotor can be from Turbine or Generator
+If we already have toc_cutoff value, can we use it to compare the section headers detected with ToC, so that 3.8 Position issue wont happen
+
+My understanding is detecting 4 generator from ToC should be fine, If the section header “3 Turbine” was assigned to Gas Turbine correctly.
+
+The current issue was not there back to the time we assigned all Turbine to Gas Turbine, right? But later on we said Turbine might be Gas might be Steam, so when we detect “3 Turbine” we assigned to None first. I think later on the 3 Turbine itself inherent from parent and got Gas turbine equipment tag, but that span’s equip type was still none
+ 
+So later on when 3.8.7 wants to refer to parents, it go backs to 4 generator from ToC
+ 

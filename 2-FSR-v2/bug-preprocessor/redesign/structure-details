@@ -1,0 +1,92 @@
+TOC levels are identified mainly by section number depth:
+
+- Equipment headers (unnumbered all-caps or HEADER pattern): level -1 (equipment_block) — root anchor, sits above all numbered sections
+- L0: whole number only, like 1, 2, 3 — numbered top-level within an equipment block
+- L1: one dot, like 1.1, 2.1, 3.1
+- L2: two dots, like 3.1.1
+- L3: three dots, like 3.1.1.1 (if present)
+
+Equipment block (level -1) only closes when the next equipment header is detected.
+Numbered L0 headings (1, 2, 3) never close an equipment block span.
+
+Parent-context rule (explicit):
+- Once an equipment header is detected (for example STEAM TURBINE (370T031 | SY1392002)), all following local headings in that block (1, 1.1, 1.2, 2, 2.1, 3, 3.1) stay under that equipment parent block until the next equipment header appears.
+- Their local level (L0/L1/L2/L3) is still determined by numbering depth, but equipment context does not reset just because numbering increments.
+
+
+
+For your screenshot, label like this:
+
+
+
+- OUTAGE DETAILS → L0 (unnumbered top header)
+- 1 Summary → L0
+- 1.1 Site Personnel → L1
+- STEAM TURBINE (370T031 | SY1392002) → L0 (unnumbered equipment header)
+- 1 Summary (under steam turbine block) → L0
+- 1.1 Timers and Counters → L1
+- 1.2 Steam Turbine Executive Summary → L1
+- 1.3 Work Scope → L1
+- 2 Technical → L0
+- 2.1 TIL/ETC → L1
+- 2.2 Recommendations → L1
+- 3 Turbine → L0
+- 3.1 Bearing → L1
+
+Important nuance:
+When the TOC restarts numbering inside a new equipment block (like another 1 Summary), keep it at the same level by pattern (L0/L1/L2), but attach it under that equipment parent block in the span tree. That is how you avoid cross-block confusion during regioning.
+
+
+In the proposed model, L1 boundaries are decided by the next heading event, not by page layout alone.
+
+How 1.1 vs 1.2 are differentiated and where each ends:
+
+1. Parse heading number into tokens.
+- 1.1 -> [1, 1]
+- 1.2 -> [1, 2]
+- Level is token count minus 1, so both are L1.
+
+2. Match by level and parent prefix.
+- Both share parent prefix 1, so they are sibling L1 nodes under L0 node 1.
+- If prefix changes (for example 2.1), it belongs under L0 node 2.
+
+3. End rule for each span.
+- A heading ends at the next heading with level <= current level.
+- So 1.1 ends exactly where 1.2 starts.
+- 1.2 ends where the next L1 sibling (1.3) starts, or where parent changes (2.0/2), whichever comes first.
+
+4. Child content is contained until sibling or parent boundary.
+- If 1.1.1 appears, it is L2 child of 1.1.
+- 1.1 span still continues through its L2 children until next L1 or L0 heading.
+
+5. Numbering restart is handled by parent context.
+- After an unnumbered equipment header like STEAM TURBINE (...), a new 1 Summary is a new L0 block under that equipment section, not a continuation of the earlier 1 Summary.
+- This is done by treating equipment headers as L0 anchors and resetting sibling tracking in that block.
+
+So in practice:
+- 1.1 and 1.2 are separate sibling headings at the same level.
+- 1.1 stops at the char offset where 1.2 starts.
+- 1.2 stops at 1.3 (or a higher-level shift like 2 Technical).
+
+
+Does each level end as a region?
+
+Not exactly.
+
+In the proposed design, each SectionSpan has a start and end, but not every span must become a final region.
+
+Think of two layers:
+
+1. Structural layer
+- L0, L1, L2 spans are built for hierarchy and ESN resolution.
+- This gives clean boundaries and flip-back behavior.
+
+2. Output layer (regions)
+- Regions are emitted from resolved spans that carry useful metadata (type and/or ESN).
+- Sibling spans with same resolved metadata can be merged.
+- Tiny/noisy spans (for example TOC artifacts) can be dropped or marked shared/fallback.
+- Unregioned gaps can be explicitly handled (front-matter/shared/fallback).
+
+So:
+- Every level/span has boundaries.
+- Region emission is policy-driven, not a strict 1:1 span-to-region mapping.

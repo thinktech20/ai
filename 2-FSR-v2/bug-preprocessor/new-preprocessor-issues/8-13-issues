@@ -1,0 +1,150 @@
+Issue 1:
+
+b775cf29-8b42-4a83-af21-53075fef0802: No generator ESN assigned and did not flip back at 3.1.2
+ 
+{
+      "start": 19897,
+      "end": 20930,
+      "metadata": {
+        "primary_equip_type": "Generator",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "### 3.1.1 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 20930,
+      "end": 21885,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.8 PI plus a winding resistance of 0.1374 Ohm with factory value being 0.1412 @ 25C."
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+ 
+and also weird section_path detected:
+{
+      "start": 28879,
+      "end": 31067,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.0\n8350"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+
+
+Another example:::
+
+    fcb1511e-596a-4a56-b151-1e596afa569c: 3.8.6 is generator, but 3.8.7 should go back to Turbine
+ 
+{
+      "start": 59386,
+      "end": 69345,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Turbine",
+          "## 3.4 Turbine",
+          "### 3.8.6 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 69345,
+      "end": 71683,
+      "metadata": {
+        "primary_esn": "298464",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Turbine",
+          "## 3.4 Turbine",
+          "### 3.9.6 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+    
+    ====================================
+
+    Issue 2:
+
+    0be4a3ad-7395-41ea-8ec2-e7669c9c15aa: 5 Electrical System is not detected. Did we add Electrical into Generator Keywords?
+
+    ======================================
+
+    Issue 3:
+
+    b1cdbc80-364f-4240-8dbc-80364f1240fa: the first "GAS TURBINE (297191 | SY0070261)" in ToC is not detected. (most of the document is missing the first Header in ToC, but not affect the results to much, so can be saved to next round if not an easy fix, I will document it, no worries)
+
+
+    =========================================================
+
+Issue 4
+
+27314604-ed52-402f-921f-34737a048841
+
+27314604-ed52-402f-921f-34737a048841, its weird. this section is weird to assigned to generator, as all the section path and parent are turbine

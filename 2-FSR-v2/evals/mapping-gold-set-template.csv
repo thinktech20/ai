@@ -1,0 +1,4 @@
+record_id,document_id,pdf_name,span_start_char,span_end_char,true_primary_esn,true_primary_equip_type,true_active_esns,label_status,notes
+G-0001,69dfe261-34b0-4740-ab89-498e7d0072df,Generator_GG10675_2023-08-06,,,GG10675,Generator,"GG10675",draft,"stable key is document_id + span_start_char + span_end_char"
+G-0002,d9b6c08b-d098-4939-a549-d113964e3150,Generator_337X765_2024-03-25,,,337X765,Generator,"337X765",draft,"stable key is document_id + span_start_char + span_end_char"
+G-0003,b775cf29-8b42-4a83-af21-53075fef0802,Gas_Turbine_297651_2024-03-25,,,297651,Gas Turbine,"297651|337X766",draft,"multi-esn sample; fill exact span from region text"

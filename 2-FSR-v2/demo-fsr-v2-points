@@ -1,0 +1,16 @@
+1. Show one pdf_name
+-- show how many equip types and esns can coexist
+-- tell a doc ca be 800 pages
+-- file:///C:/Users/560060992/Downloads/Gas_Turbine_298250_2023-09-19.pdf
+-- show page 12 (gas turbine)
+-- shiow page 221 (generatrator)
+
+2. Show the flow changes and region and metadta xmls
+2-FSR-v2/design/final-dots/fsr_v2.drawio
+
+3. Region - 
+2-FSR-v2/design/final-dots/multi-equip/preprocessor_regions.json
+
+
+4. Show all the three tables -- talk about a new chunk_index
+5. Mention - discussion about index strategy and fallback option in progress.

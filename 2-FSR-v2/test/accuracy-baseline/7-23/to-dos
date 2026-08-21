@@ -1,0 +1,15 @@
+
+1. Let us use chunking_strategy-"section" that we implemented, and copy that section_v2 implementation. Section v2 requires to be compared against v1_hierachical chunking strategy, especially section structure, examples below:
+
+ {"metadata_contract_version": "fsr_v2_chunk_metadata_v2", "doc": {"title": "5b688732-39f2-48d2-a887-3239f258d28b", "customer": "", "event_type": "", "ev_project_id": "", "ev_equipment_event_id": "", "ofs_event_id": "", "fsp_project_id": "FSP-261874", "xxx_project_id": "C-10329409", "fsr_number": "", "report_issued_date": "", "outage_start_date": "2019-11-23", "outage_end_date": "", "outage_type": "", "technology_type": "", "inactive_esns": []}, "region": {"primary_esn": "", "primary_equip_type": ""}, "section": {"section_title": "Rotor Assembly", "section_level": 3, "section_path": ["Components", "Rotors", "Rotor Assembly"]}, "chunk_context": {"chunk_start_char": 127447}}
+ 
+{"pdf_name": "Field_Service_Report_ProjectID_FSP-261874_C-10329409.pdf", "page_number": 239, "start_page": 239, "end_page": 240, "section_1": "inch extraction valve was disassembled, inspected and reassembled this outage.", "section_2": "Alignment/Clearances", "section_3": "Steam Path Internal Clearances", "section_4": "Wheel Clearance Record", "section_5": null, "chunk_count": 1, "title": "DSW - Major Inspection MI - ST, GEN, BOP DEAD SEA WORKS", "customer": null, "esn": "155360", "equipment_sys_id": "SY0509164", "equipment_type": "Steam Turbine", "equipment_class_code": "SAC", "event_type": "Hot Gas Path Inspection (HGPI)", "ev_project_id": "", "ev_equipment_event_id": "",
+
+-- first give me the differences that are there in v1_hierarchical section (code in fsr v1 - pw_sdg_ai_ser_repo/gold/src/etl/nb_sdg_fsr_chunks.py  and we copied to fsr v2 , v1_hierarchical - pw_sdg_ai_ser_repo/gold/src/etl/nb_sdg_fsr_v2_chunks.py )
+ 
+2. Outage_Start_Date needs to be there in the metadata Table as a column.
+3. Following fields are mandatory but not present in the Tables. We need to iinvestigate.
+volume_path					volumePath — empty
+equipment_sys_id			equipmentSysId — empty
+
+Note (v1 known issue): In `nb_sdg_fsr_metadata`, `FSR_TARGET_PDF_NAMES` can report "not found in configured volumes" for an existing file due to target-name normalization/case handling mismatch. Do not rely on v1 target-mode result for this check; validate on v2 flow.

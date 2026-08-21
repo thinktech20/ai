@@ -1,0 +1,253 @@
+1st step -
+
+
+extract the full FSR doc.
+
+either-
+TOC - built enough smart logic into it... if I see DC leaakge - i can make it gen
+If you see DC leakage - 
+or
+
+we need to have full extract - build full rules here.
+
+================
+
+what data is deriving - whats the most impactful thing to do next?
+
+
+
+1. 1st issue - top k issue - specifically atleast 1 - it missed entire fsr - transcript below:
+Okay, one of them to add for consideration is, because I don't know how widespread it is, but certainly, and we can always pull a report from the ground truth and just do a quick statistical analysis and say, these are the top categories and then what's the drill down? And that gives us, that's kind of what we did for this too, a little bit is like what's across all that data from the SMEs. So that's super helpful. You can just dump it in a cloud code or something and it'll give it, give you a bit of an analysis. 
+
+But one of the ones I was seeing was that that top K issue, there was specifically at least one that I happened to run into where it missed an entire FSR. It's really because the all 10 chunks that came back were very relevant, but tied to a single FSR and it missed the data from the other one. So, you know, do we implement some sort of a smart algorithm, very light smart algorithm to make sure that it checks all data sources? Do we increase top K? Do we like there's?
+I think there's a slightly more complicated one that we're going to have to figure out. And that's it.
+
+================
+
+retrieval layer - add in databricks
+=================
+Things to consider (Xujin):
+
+1. A document contains two generator/ GT ESNs - a section within a section , so a GT section contains gen sub-section as an exaple.
+2. Summary section should be tageed to both GT and Gen (Keith asked for)
+3. Steam Turbine ESn got generator evide3nce 
+=====
+
+
+Epperson, Vinson (GE Vernova)
+
+Yeah, I saw that. Is there, is there a, this is where like it needs to be a bit more intelligent, like just putting some deterministic pre-processing in place is not going to, I think that's going to be super helpful for us. Maybe a little bit on some of these, but probably not all of them. Is there.
+Epperson, Vinson (GE Vernova) 11 minutes 49 seconds
+I just, I'm throwing things out. I haven't thought through this. This is just something that hit my brain for a second, which is highly distracted right now with three other things. But the, for this, you know, is there, it'll probably take a while, probably even longer than, you know, the two or three days that we need to re-chunk stuff. But
+
+just run it through an intelligent LLM-based preprocessor for things like this, only to sort. And what I mean by that is 1 document comes in, it's just generator. There's nothing else in there. Okay, no problem. I don't really need to do anything with this. It's going to go into the normal processing bucket.
+Epperson, Vinson (GE Vernova) 12 minutes 29 seconds
+and it just gets some little designation in the metadata, wherever, but whatever, it just puts it and says, this is part of this list for when it gets metadata and chunked and embedded. And then there's one that says, oh, wow, I see the one that you have here on the screen, Xujin, and this one's super complicated. I need to send it over to the smart
+Epperson, Vinson (GE Vernova) 12 minutes 51 seconds
+LLM preprocessor and it's going to go through and it'll say, oh, there's a summary section and I have to go through the document 1st and I'm going to grab the serial numbers and put them all on, you know, metadata for the first one and then I'm going to go through and intelligently parse out the rest.
+Epperson, Vinson (GE Vernova) 13 minutes 11 seconds
+Takes longer, costs a little bit more in tokens, but I think that's the intelligence you're going to have to apply to something like this, what we're showing. Any thoughts on that? What do you guys think?
+=========================
+
+
+TOCs are bnot so clean - for classifying - so if they are in "attachments"?
+
+==============
+transcript for Vinson, ask --
+
+
+Epperson, Vinson (GE Vernova) 17 minutes 12 seconds
+I think that's a concept we should start working on a little bit and do some prototyping.
+Epperson, Vinson (GE Vernova) 17 minutes 19 seconds
+But, you know, this is where...
+Epperson, Vinson (GE Vernova) 17 minutes 21 seconds
+Oh, good. Tao joined. Hey, Tao. This is 1 where, you know, last time, well, I don't know, it all blends together. Since a previous meeting for this, we had talked about some automated testing across a wider set of data, maybe somehow based on that.
+FT
+
+Feng, Taojian (GE Vernova, consultant)
+17 minutes 33 seconds17:33
+Feng, Taojian (GE Vernova, consultant) 17 minutes 33 seconds
+Mmh.
+Feng, Taojian (GE Vernova, consultant) 17 minutes 38 seconds
+Mhm.
+
+Epperson, Vinson (GE Vernova)
+17 minutes 40 seconds17:40
+Epperson, Vinson (GE Vernova) 17 minutes 40 seconds
+DS Guru app or something else, doesn't matter. But I think this is where, so tell what we were talking about. I don't know if you caught the concept, but just trying to create an intelligent sorter. So it looks at it and says, oh, nope, clearly this is pure generator. Boom, it just goes into the normal.
+FT
+
+Feng, Taojian (GE Vernova, consultant)
+17 minutes 48 seconds17:48
+Feng, Taojian (GE Vernova, consultant) 17 minutes 48 seconds
+Yeah.
+
+Epperson, Vinson (GE Vernova)
+17 minutes 59 seconds17:59
+Epperson, Vinson (GE Vernova) 17 minutes 59 seconds
+metadata and chunking pile and nothing special needed.
+FT
+
+Feng, Taojian (GE Vernova, consultant)
+18 minutes 3 seconds18:03
+Feng, Taojian (GE Vernova, consultant) 18 minutes 3 seconds
+Mhm.
+
+Epperson, Vinson (GE Vernova)
+18 minutes 3 seconds18:03
+Epperson, Vinson (GE Vernova) 18 minutes 3 seconds
+If it's one of these crazy ones like Xujin is showing where it has generator in it, it doesn't say the word generator, but it is a generator serial number and clearly that, you know, DC leakage only applies to generator. Then it goes, oh wait, this one needs special attention. It's going to go over to my smart LLM.
+FT
+
+Feng, Taojian (GE Vernova, consultant)
+18 minutes 9 seconds18:09
+Feng, Taojian (GE Vernova, consultant) 18 minutes 9 seconds
+Mhm.
+
+
+Epperson, Vinson (GE Vernova)
+18 minutes 23 seconds18:23
+Epperson, Vinson (GE Vernova) 18 minutes 23 seconds
+a parser or something like that.
+FT
+
+Feng, Taojian (GE Vernova, consultant)
+18 minutes 26 seconds18:26
+Feng, Taojian (GE Vernova, consultant) 18 minutes 26 seconds
+Yeah, yeah, yeah. So, yesterday we talked about this, right? So, we see other things, but yeah, we still can add more, you know, even for their pre-processor, we still can add more fix for the different case, different pattern, yeah, so definitely.
+Feng, Taojian (GE Vernova, consultant) 18 minutes 44 seconds
+Yeah.
+
+Epperson, Vinson (GE Vernova)
+18 minutes 46 seconds18:46
+Epperson, Vinson (GE Vernova) 18 minutes 46 seconds
+Okay, can you guys start working to like prototype something like that just on a very small subset? And we have plenty of like good easy ESN FSRs and then we have some really bad ones. So we have a good mix now, a good test set. And I love to pitch in a little bit, but I have like three or four other super critical things I'm going to be working the weekend on. So.
+==================
+
+Yeah, but think of it very efficiently though, right? So think of it as there's a stage one where I need to do some quick assessment of maybe the full text extract or like Xujin was saying, maybe we just make it smart enough around the table of contents. And I just sort.
+FT
+
+Feng, Taojian (GE Vernova, consultant)
+20 minutes 28 seconds20:28
+Feng, Taojian (GE Vernova, consultant) 20 minutes 28 seconds
+Yeah.
+
+Epperson, Vinson (GE Vernova)
+20 minutes 44 seconds20:44
+Epperson, Vinson (GE Vernova) 20 minutes 44 seconds
+And then I have a secondary, that's when I start like my real pre-processing plus some intelligent pre-processing. I think there's two things there. Does that make sense? And if you guys say a better way, please go ahead. I just was thinking, how do I make this the most efficient and not have this thing, you know, take two weeks to get through the whole FSR data set if I wanted to, you know?
+SM
+
+Saxena, Madhurima (GE Vernova, consultant)
+20 minutes 45 seconds20:45
+Saxena, Madhurima (GE Vernova, consultant) 20 minutes 45 seconds
+Mhm.
+Saxena, Madhurima (GE Vernova, consultant)
+21 minutes 7 seconds21:07
+Saxena, Madhurima (GE Vernova, consultant) 21 minutes 7 seconds
+No, I understand. I'll have to think through and go over it again, but what I'm trying to understand is like the very first step that you mentioned, what determines that we need to take part A versus part B, right? So how are we kind of...
+Saxena, Madhurima (GE Vernova, consultant) 21 minutes 26 seconds
+identifying whether we need to go through pre-processor way or whether we need to go with some extract data plus extract or other ways, right?
+
+Epperson, Vinson (GE Vernova)
+21 minutes 36 seconds21:36
+Epperson, Vinson (GE Vernova) 21 minutes 36 seconds
+I think it's one of two things, based on what Xujin was showing and what she's worked on. It's likely to be the first thing I work with is the full text extract.
+ZX
+Zhou, Xujin (GE Vernova)
+21 minutes 48 seconds21:48
+Zhou, Xujin (GE Vernova) 21 minutes 48 seconds
+Mhm, mhm.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+21 minutes 49 seconds21:49
+Saxena, Madhurima (GE Vernova, consultant) 21 minutes 49 seconds
+Mhm.
+
+Epperson, Vinson (GE Vernova)
+21 minutes 49 seconds21:49
+Epperson, Vinson (GE Vernova) 21 minutes 49 seconds
+And I either go through the table of contents only and I can build enough smart logic into that, like, hey, if you see DC leakage, that means there's a generator here. Even if you don't see the word generator, you know, do some stuff like that. And then let's see, let's see if that gets us most of the way. If not.
+FT
+Feng, Taojian (GE Vernova, consultant)
+22 minutes 2 seconds22:02
+Feng, Taojian (GE Vernova, consultant) 22 minutes 2 seconds
+M.
+ZX
+Zhou, Xujin (GE Vernova)
+22 minutes 2 seconds22:02
+Zhou, Xujin (GE Vernova) 22 minutes 2 seconds
+Ohh.
+Zhou, Xujin (GE Vernova) 22 minutes 8 seconds
+Yeah.
+
+Epperson, Vinson (GE Vernova)
+22 minutes 9 seconds22:09
+Epperson, Vinson (GE Vernova) 22 minutes 9 seconds
+Maybe a little bit, it's going to take a bit longer, but maybe we actually on, if we ever really want to fully get there, we may need to look at the full text extract and then put some big rules around that. To me, that's like the first, I'm open to, I'm super open to suggestions. To me, that's the first, like the first step that happens and then I can do my analysis there before I do anything else down the line.
+ZX
+Zhou, Xujin (GE Vernova)
+22 minutes 18 seconds22:18
+Zhou, Xujin (GE Vernova) 22 minutes 18 seconds
+Yeah.
+FT
+Feng, Taojian (GE Vernova, consultant)
+22 minutes 21 seconds22:21
+Feng, Taojian (GE Vernova, consultant) 22 minutes 21 seconds
+Mm.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+22 minutes 26 seconds22:26
+Saxena, Madhurima (GE Vernova, consultant) 22 minutes 26 seconds
+Yeah.
+Saxena, Madhurima (GE Vernova, consultant) 22 minutes 33 seconds
+Makes sense.
+ZX
+Zhou, Xujin (GE Vernova)
+22 minutes 33 seconds22:33
+Zhou, Xujin (GE Vernova) 22 minutes 33 seconds
+Lisa, another question we want to kind of clarify that, like, when you say most of the issue correct, what is the like exact like a percentage or like a document that means like, and another thing is that we
+Zhou, Xujin (GE Vernova) 22 minutes 51 seconds
+Also, like, I, I, like, it's just one of my thoughts, like, for example, like, we can first try to fix the preprocessor, like a non-LLM preprocessor, as much as possible, and like, if we got some like a shared or like, like a, like a...
+Zhou, Xujin (GE Vernova) 23 minutes 10 seconds
+Unclassified, like, or ensure like a section, we just put like still included into the semantic search pool and attach the like metadata or like the or like the section had the information it can can find to the LLM and and let the LLM decide during the.
+Zhou, Xujin (GE Vernova) 23 minutes 31 seconds
+Risk analysis instead of a separate LLM, I mean passing, for example, like we tell the preprocessor if you see any sub report or appendix or like a auxiliary, you put it into like a shared or like a not not sure some some some.
+Zhou, Xujin (GE Vernova) 23 minutes 52 seconds
+Tag like that, and that tag you you need to like pass all these like section header pass you can extract it to LLM and I mean when LLM doing the risk analysis it sees like a sub the the the pass like a gas turbine server reports DC leakage test and in the system prompt we instructed a little bit it.
+Zhou, Xujin (GE Vernova) 24 minutes 15 seconds
+Like, I mean, during the risk analysis, it can kind of tell, it's a, although it's putting gas term by section, it's a generator evidence.
+
+Epperson, Vinson (GE Vernova)
+24 minutes 17 seconds24:17
+Epperson, Vinson (GE Vernova) 24 minutes 17 seconds
+Yeah.
+Epperson, Vinson (GE Vernova) 24 minutes 21 seconds
+V.
+Epperson, Vinson (GE Vernova) 24 minutes 23 seconds
+No, I think that's, you're right, you're 100% right, you're on it, Xujin. You guys work on the logic first. I mean, before you do anything, just work on the logic of this is what I see from these FSRs that I have, and here's the logic I'd use to deterministically try to sort through it before I go to the LLM. And then, and then we'll.
+Epperson, Vinson (GE Vernova) 24 minutes 42 seconds
+We'll go from there. Madhurima, do you save off the text extracts, like the initial, whenever those are generated, or do those, have those all gotten saved somewhere?
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+24 minutes 53 seconds24:53
+Saxena, Madhurima (GE Vernova, consultant) 24 minutes 53 seconds
+But they are not as of now. They're not persistent. Okay.
+
+Epperson, Vinson (GE Vernova)
+24 minutes 55 seconds24:55
+Epperson, Vinson (GE Vernova) 24 minutes 55 seconds
+Next time we do this, let's look at that. Yeah, I'd rather persist it. Like, we keep having to come back to this damn thing and it's a step that would be nice to just go grab some of those and like the DS Guru will make them and we can change it to that other text extract from PDS if you want. Xujin, we can add that, but...
+ZX
+Zhou, Xujin (GE Vernova)
+25 minutes 3 seconds25:03
+
+==========
+
+briefly - this is what i think Vince is suggesting, but can be understood in terms of tasks what are needed etc --
+
+briefly, the POC is to be done on this --
+ 
+A two-stage pre-processing approach to handle these edge cases efficiently:
+Stage 1 (fast sort): Quickly assess each doc — likely using the table of contents or full text extract — and classify it. If it's clearly a pure generator or pure gas turbine doc with no ambiguity, route it straight into the standard metadata + chunking pipeline without any special handling.
+Stage 2 (smart LLM path): If the quick scan flags it as ambiguous (e.g., generator content but no generator ESN, or "DC leakage" in the ToC without the word "generator"), hand it off to a smarter LLM-based parser that can figure out the right ESN attribution.

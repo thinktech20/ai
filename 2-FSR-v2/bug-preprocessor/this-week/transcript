@@ -1,0 +1,664 @@
+
+Saxena, Madhurima (GE Vernova, consultant) started transcription
+
+Epperson, Vinson (GE Vernova)
+0 minutes 4 seconds0:04
+Epperson, Vinson (GE Vernova) 0 minutes 4 seconds
+some extra resources to speed it up.
+SM
+
+Saxena, Madhurima (GE Vernova, consultant)
+0 minutes 7 seconds0:07
+Saxena, Madhurima (GE Vernova, consultant) 0 minutes 7 seconds
+Okay, yeah.
+
+Epperson, Vinson (GE Vernova)
+0 minutes 11 seconds0:11
+Epperson, Vinson (GE Vernova) 0 minutes 11 seconds
+But anyway, I don't expect to hear anything back from those guys. Maybe if they send something today, I'll share it with you guys. As soon as they share something, I'll let you guys know. I'll put it in our chat.
+ZX
+
+Zhou, Xujin (GE Vernova)
+0 minutes 11 seconds0:11
+Zhou, Xujin (GE Vernova) 0 minutes 11 seconds
+Yeah, I know it's...
+Zhou, Xujin (GE Vernova) 0 minutes 12 seconds
+Look.
+Zhou, Xujin (GE Vernova) 0 minutes 22 seconds
+I feel the running time also varies A lot. Sometimes I got results in 20 minutes, but sometimes it goes to 40 minutes.
+SM
+
+Saxena, Madhurima (GE Vernova, consultant)
+0 minutes 25 seconds0:25
+Saxena, Madhurima (GE Vernova, consultant) 0 minutes 25 seconds
+Okay.
+
+Epperson, Vinson (GE Vernova)
+0 minutes 32 seconds0:32
+Epperson, Vinson (GE Vernova) 0 minutes 32 seconds
+Mm.
+SM
+
+Saxena, Madhurima (GE Vernova, consultant)
+0 minutes 39 seconds0:39
+Saxena, Madhurima (GE Vernova, consultant) 0 minutes 39 seconds
+Sure, so that's some fine tuning that we will need to look at, probably.
+Saxena, Madhurima (GE Vernova, consultant) 0 minutes 47 seconds
+And also like Xujin has a list of categories of fixes that would be needed. Probably that's something that we will need to, there's some edge cases that she has identified and corresponding fixes. So I'll connect with her to see what's needed there.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+3 minutes 35 seconds3:35
+Saxena, Madhurima (GE Vernova, consultant) 3 minutes 35 seconds
+Yeah.
+ZX
+Zhou, Xujin (GE Vernova)
+3 minutes 38 seconds3:38
+Zhou, Xujin (GE Vernova) 3 minutes 38 seconds
+And.
+
+Epperson, Vinson (GE Vernova)
+3 minutes 38 seconds3:38
+Epperson, Vinson (GE Vernova) 3 minutes 38 seconds
+Yeah, correct.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+3 minutes 39 seconds3:39
+Saxena, Madhurima (GE Vernova, consultant) 3 minutes 39 seconds
+Yeah, Xujin, so I feel what I'm thinking is probably I'll put a thin retrival layer there itself and we can in the databricks itself so that we can experiment around with those knobs before we apply those to app. So it would be easier for us to identify.
+ZX
+Zhou, Xujin (GE Vernova)
+3 minutes 57 seconds3:57
+Zhou, Xujin (GE Vernova) 3 minutes 57 seconds
+Mhm.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+4 minutes4:00
+Saxena, Madhurima (GE Vernova, consultant) 4 minutes
+and fix with that before we go into like overall deployment and everything right with the app integration.
+ZX
+Zhou, Xujin (GE Vernova)
+4 minutes 7 seconds4:07
+Zhou, Xujin (GE Vernova) 4 minutes 7 seconds
+B.
+Zhou, Xujin (GE Vernova) 4 minutes 9 seconds
+Yeah, yeah, yeah, yeah, I agree, yeah, yeah, and yeah, those two issues somehow, like in some cases, it's related to each other, so yeah, we can focusing on that. The reason if you want, I can share you those document IDs and the list of like edge or not edge or some common like issues, our preprocessor.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+4 minutes 13 seconds4:13
+Saxena, Madhurima (GE Vernova, consultant) 4 minutes 13 seconds
+P.
+Saxena, Madhurima (GE Vernova, consultant) 4 minutes 21 seconds
+Chavan.
+ZX
+Zhou, Xujin (GE Vernova)
+4 minutes 32 seconds4:32
+Zhou, Xujin (GE Vernova) 4 minutes 32 seconds
+Logic still have bugs on, and I mean only if you want, but yeah, I we plan to kind of group it, like group the issues and in like different groups and solve it, start solving it next week.
+
+Epperson, Vinson (GE Vernova)
+4 minutes 50 seconds4:50
+Epperson, Vinson (GE Vernova) 4 minutes 50 seconds
+Okay, yeah, let's maybe take it the one, take a look at the one you think is, or the group that's most important that you want to fix first. And if we have time, we'll go down a little bit. We can hit them kind of light and then just see. And then
+Epperson, Vinson (GE Vernova) 5 minutes 4 seconds
+Do yeah, we'll just start fixing them next week. Just go down the list.
+Epperson, Vinson (GE Vernova) 5 minutes 9 seconds
+That's good.
+ZX
+Zhou, Xujin (GE Vernova)
+5 minutes 9 seconds5:09
+Zhou, Xujin (GE Vernova) 5 minutes 9 seconds
+Yeah, you, you, you mean, you mean right now?
+
+Epperson, Vinson (GE Vernova)
+5 minutes 11 seconds5:11
+Epperson, Vinson (GE Vernova) 5 minutes 11 seconds
+If you want, if you guys want to, if you're really tired and it's Friday, and I mean, I know I am, but I'm leaning heavily on Claude to do a lot of my work today. So I'm making it. If you guys want to wait till Monday, I'm okay with that. We got a lot done this week, actually. So I'm super, I think it took us a little longer than I thought it would, but
+ZX
+Zhou, Xujin (GE Vernova)
+5 minutes 15 seconds5:15
+Zhou, Xujin (GE Vernova) 5 minutes 15 seconds
+Hey.
+Zhou, Xujin (GE Vernova) 5 minutes 23 seconds
+Yeah, yeah, yes.
+
+Epperson, Vinson (GE Vernova)
+5 minutes 31 seconds5:31
+Epperson, Vinson (GE Vernova) 5 minutes 31 seconds
+At least we've got it to where we can get the evaluation now, but we did make a lot of progress this week.
+ZX
+Zhou, Xujin (GE Vernova)
+5 minutes 38 seconds5:38
+Zhou, Xujin (GE Vernova) 5 minutes 38 seconds
+Sure, so yeah, I just quickly share my screen. So in the SharePoint, I kind of create a like a document called like prepare for some like a box and I kind of classify them into like the pre-processor logic or some like
+Zhou, Xujin (GE Vernova) 6 minutes 1 second
+Parser format issue, so I basically put the in the those problematic or like a issue like a like a document ID which normally like can be used to find the at at in the volume and the like some some classification and like basically it's like my own comments.
+Zhou, Xujin (GE Vernova) 6 minutes 23 seconds
+I, I, I, the difference is that I'm kind of never lying on, like, AI, I was using like basically open documents and like understand the preprocessor logic, and I know like this, for example, those will cause an issue, so like one big and the general.
+Zhou, Xujin (GE Vernova) 6 minutes 43 seconds
+issue we saw is like the current processor logical will give us the wrong like ESN tagging, not wrong equipment type, but wrong ESN tagging if a document exists, for example, two gas turbine ESN or two generator ESN.
+Zhou, Xujin (GE Vernova) 7 minutes 3 seconds
+say that a document got two generator ESN, like a generator ESN A, and it's got some section headers, generator B, it's then got another some section headers. And then the issue will come like, let me try to open one of it.
+Zhou, Xujin (GE Vernova) 7 minutes 23 seconds
+And then the issue becomes like, ohh...
+Zhou, Xujin (GE Vernova) 7 minutes 30 seconds
+That's what was a moment for this too, like this one, we got 2 generator, yes, 2 gas turbine, yeah, 2 gas turbine, yes, and so like actually all the chunks, all the paragraph here should be tagged to this, yes, and right, and like the...
+Zhou, Xujin (GE Vernova) 7 minutes 49 seconds
+paragraph here should be attached to this ESN. What is the current logic is like when it detects a kind of turbine section and it didn't got a like a serial number, ESN number directly comes with that turbine.
+Zhou, Xujin (GE Vernova) 8 minutes 8 seconds
+Like section header, it will go to that document level that GT ESN, which is the kind of the first active gas turbine ESN comes like that characterize the first one, so so then this will cause an issue. For example, in this one, we...
+Zhou, Xujin (GE Vernova) 8 minutes 29 seconds
+Tested, like this one, for example, this one comes first, then this section doesn't cause any issue, the all attached to that's a correct ESN, but after like this section is also correct attached to this one, but starting test like it's noticing another.
+Zhou, Xujin (GE Vernova) 8 minutes 51 seconds
+turbine section, it starts a new boundary and all the things left also goes to the other gas turbine ESN. So this kind of sections is then like a common issue we should quickly fix there. And also like there are some like subsection.
+Zhou, Xujin (GE Vernova) 9 minutes 12 seconds
+kind of logical appears like when both generator and the gas termine like ESN appears. So like for example, like when a generator section appears after like under a gas termine section, we should know that that generator section is talking about.
+Zhou, Xujin (GE Vernova) 9 minutes 34 seconds
+The generator ESN that like related to that gas turbine ESN, so that's part like we were thinking about, so we can kind of using the IBOT train searching tools, so, so for example, like on the gas turbine A section, we see a generator subsection, then it means that the generator.
+Zhou, Xujin (GE Vernova) 9 minutes 56 seconds
+subsection should be linked to that gas termine, like ESN, which is like on the same train level. And also like the current, some current logic is that like if you detect a generator section under a gas termine section, then even after that generator section ends, it's go back to talk about some, for example, inlet bell.
+Zhou, Xujin (GE Vernova) 10 minutes 21 seconds
+almost issue, but since it didn't like attack another turbine section, those section falls back to still like forcing to the generator like a section. So yeah, so we should deal with some like, I mean, basically those kind of subsection.
+Zhou, Xujin (GE Vernova) 10 minutes 39 seconds
+logic. Another issue is that it's from cases of the feedback. Case mentioned that like he actually wants the like a summary section to be tagged to both like a gas turbine and like a generator because.
+Zhou, Xujin (GE Vernova) 10 minutes 59 seconds
+And I was asking if like this section, because I previously saw this section doesn't contain any important information. It's okay to be like not tagged to anyone or like tagged to either. It doesn't matter. And like I asked if like even it got some executive summary, then that like all the information will.
+
+Epperson, Vinson (GE Vernova)
+11 minutes 1 second11:01
+
+ZX
+Zhou, Xujin (GE Vernova)
+15 minutes 13 seconds15:13
+Zhou, Xujin (GE Vernova) 15 minutes 13 seconds
+Yeah, yeah.
+Zhou, Xujin (GE Vernova) 15 minutes 16 seconds
+Yeah, on that like case also give some feedback, so not only like the sub reports up, by the way, when when I scanning through like the documents for like a we prepared and sent out to the SME line yesterday, I also see like not only sub reports, but there is another section called like electrification, so...
+
+Epperson, Vinson (GE Vernova)
+15 minutes 29 seconds15:29
+Epperson, Vinson (GE Vernova) 15 minutes 29 seconds
+You.
+ZX
+Zhou, Xujin (GE Vernova)
+15 minutes 38 seconds15:38
+Zhou, Xujin (GE Vernova) 15 minutes 38 seconds
+Like, ohh, yeah, so it's called the electrification section, so when we see electrification section, it also like the shows, ohh, that section means it's a generator section, so yeah, this is a, yeah, as many simple as that, we if we see like DC liquid or see electrification, it's a...
+Zhou, Xujin (GE Vernova) 15 minutes 59 seconds
+Like A generator section.
+Zhou, Xujin (GE Vernova) 16 minutes 5 seconds
+Yeah, yeah, and the reason I don't know how often it appears, but we also see a very, very bad report where, like, the whole report didn't appear like one, like a generator, yes, and...
+Zhou, Xujin (GE Vernova) 16 minutes 23 seconds
+Totally, like at all, it didn't like I mean user body text like that generator ESN was not there, but like it's only got a, for example, it's only got a gas turbine ESN and like even through the whole body test, like here you can still see the generator ESN here, but in that report we don't see the generator.
+
+Epperson, Vinson (GE Vernova)
+16 minutes 31 seconds16:31
+Epperson, Vinson (GE Vernova) 16 minutes 31 seconds
+M.
+Epperson, Vinson (GE Vernova) 16 minutes 44 seconds
+Yeah.
+ZX
+Zhou, Xujin (GE Vernova)
+16 minutes 47 seconds16:47
+Zhou, Xujin (GE Vernova) 16 minutes 47 seconds
+ESN in the whole like chunk text, but it's mentioning about.
+
+Epperson, Vinson (GE Vernova)
+16 minutes 50 seconds16:50
+Epperson, Vinson (GE Vernova) 16 minutes 50 seconds
+Yeah, that's that's exactly the one I was talking about. Yeah, exactly.
+ZX
+Zhou, Xujin (GE Vernova)
+16 minutes 54 seconds16:54
+Zhou, Xujin (GE Vernova) 16 minutes 54 seconds
+But just imagine the same report, but like even the generator serial number, it's not here, but it's actually discussing the generator like evidence.
+
+Epperson, Vinson (GE Vernova)
+17 minutes 8 seconds17:08
+Epperson, Vinson (GE Vernova) 17 minutes 8 seconds
+Yeah.
+ZX
+Zhou, Xujin (GE Vernova)
+17 minutes 10 seconds17:10
+Zhou, Xujin (GE Vernova) 17 minutes 10 seconds
+We also see that bad case here.
+
+Epperson, Vinson (GE Vernova)
+17 minutes 10 seconds17:10
+Epperson, Vinson (GE Vernova) 17 minutes 10 seconds
+I think.
+Epperson, Vinson (GE Vernova) 17 minutes 12 seconds
+I think that's a concept we should start working on a little bit and do some prototyping.
+Epperson, Vinson (GE Vernova) 17 minutes 19 seconds
+But, you know, this is where...
+Epperson, Vinson (GE Vernova) 17 minutes 21 seconds
+Oh, good. Tao joined. Hey, Tao. This is 1 where, you know, last time, well, I don't know, it all blends together. Since a previous meeting for this, we had talked about some automated testing across a wider set of data, maybe somehow based on that.
+FT
+Feng, Taojian (GE Vernova, consultant)
+17 minutes 33 seconds17:33
+Feng, Taojian (GE Vernova, consultant) 17 minutes 33 seconds
+Mmh.
+Feng, Taojian (GE Vernova, consultant) 17 minutes 38 seconds
+Mhm.
+
+Epperson, Vinson (GE Vernova)
+17 minutes 40 seconds17:40
+Epperson, Vinson (GE Vernova) 17 minutes 40 seconds
+DS Guru app or something else, doesn't matter. But I think this is where, so tell what we were talking about. I don't know if you caught the concept, but just trying to create an intelligent sorter. So it looks at it and says, oh, nope, clearly this is pure generator. Boom, it just goes into the normal.
+FT
+Feng, Taojian (GE Vernova, consultant)
+17 minutes 48 seconds17:48
+Feng, Taojian (GE Vernova, consultant) 17 minutes 48 seconds
+Yeah.
+
+Epperson, Vinson (GE Vernova)
+17 minutes 59 seconds17:59
+Epperson, Vinson (GE Vernova) 17 minutes 59 seconds
+metadata and chunking pile and nothing special needed.
+FT
+Feng, Taojian (GE Vernova, consultant)
+18 minutes 3 seconds18:03
+Feng, Taojian (GE Vernova, consultant) 18 minutes 3 seconds
+Mhm.
+
+Epperson, Vinson (GE Vernova)
+18 minutes 3 seconds18:03
+Epperson, Vinson (GE Vernova) 18 minutes 3 seconds
+If it's one of these crazy ones like Xujin is showing where it has generator in it, it doesn't say the word generator, but it is a generator serial number and clearly that, you know, DC leakage only applies to generator. Then it goes, oh wait, this one needs special attention. It's going to go over to my smart LLM.
+FT
+Feng, Taojian (GE Vernova, consultant)
+18 minutes 9 seconds18:09
+Feng, Taojian (GE Vernova, consultant) 18 minutes 9 seconds
+Mhm.
+Feng, Taojian (GE Vernova, consultant) 18 minutes 11 seconds
+Yeah.
+Feng, Taojian (GE Vernova, consultant) 18 minutes 12 seconds
+Yeah.
+Feng, Taojian (GE Vernova, consultant) 18 minutes 16 seconds
+Yeah, yeah, yeah.
+
+Epperson, Vinson (GE Vernova)
+18 minutes 23 seconds18:23
+Epperson, Vinson (GE Vernova) 18 minutes 23 seconds
+a parser or something like that.
+FT
+Feng, Taojian (GE Vernova, consultant)
+18 minutes 26 seconds18:26
+Feng, Taojian (GE Vernova, consultant) 18 minutes 26 seconds
+Yeah, yeah, yeah. So, yesterday we talked about this, right? So, we see other things, but yeah, we still can add more, you know, even for their pre-processor, we still can add more fix for the different case, different pattern, yeah, so definitely.
+Feng, Taojian (GE Vernova, consultant) 18 minutes 44 seconds
+Yeah.
+
+FT
+Feng, Taojian (GE Vernova, consultant)
+19 minutes 42 seconds19:42
+Feng, Taojian (GE Vernova, consultant) 19 minutes 42 seconds
+Yeah.
+Feng, Taojian (GE Vernova, consultant) 19 minutes 44 seconds
+Yeah, yeah, I think mainly works on the preprocessor. Other things, no change, right? I think it can keep continue and then only we need to add a fix on the preprocessor, see if we can catch the those kind of different patterns. Yeah, so that should be a, yeah, we can.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+19 minutes 45 seconds19:45
+Saxena, Madhurima (GE Vernova, consultant) 19 minutes 45 seconds
+Yeah.
+ZX
+Zhou, Xujin (GE Vernova)
+19 minutes 46 seconds19:46
+Zhou, Xujin (GE Vernova) 19 minutes 46 seconds
+Six.
+
+Epperson, Vinson (GE Vernova)
+19 minutes 59 seconds19:59
+Epperson, Vinson (GE Vernova) 19 minutes 59 seconds
+Yeah, yeah.
+FT
+Feng, Taojian (GE Vernova, consultant)
+20 minutes 2 seconds20:02
+Feng, Taojian (GE Vernova, consultant) 20 minutes 2 seconds
+That should be there.
+ZX
+Zhou, Xujin (GE Vernova)
+20 minutes 4 seconds20:04
+Zhou, Xujin (GE Vernova) 20 minutes 4 seconds
+Yeah.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+20 minutes 4 seconds20:04
+Saxena, Madhurima (GE Vernova, consultant) 20 minutes 4 seconds
+Yeah, I think what if I have to understand what we are saying is that we are trying to make parsing more intelligent and decide on which paths to take based on initial judgment of what that document looks like. And in a very small nutshell.
+FT
+Feng, Taojian (GE Vernova, consultant)
+20 minutes 4 seconds20:04
+Feng, Taojian (GE Vernova, consultant) 20 minutes 4 seconds
+Yeah.
+Feng, Taojian (GE Vernova, consultant) 20 minutes 22 seconds
+Bais.
+
+Epperson, Vinson (GE Vernova)
+20 minutes 22 seconds20:22
+Epperson, Vinson (GE Vernova) 20 minutes 22 seconds
+It.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+20 minutes 23 seconds20:23
+Saxena, Madhurima (GE Vernova, consultant) 20 minutes 23 seconds
+Probably, yeah.
+FT
+Feng, Taojian (GE Vernova, consultant)
+20 minutes 24 seconds20:24
+Feng, Taojian (GE Vernova, consultant) 20 minutes 24 seconds
+Yeah, yeah, yeah. I think the entire.
+
+Epperson, Vinson (GE Vernova)
+20 minutes 25 seconds20:25
+Epperson, Vinson (GE Vernova) 20 minutes 25 seconds
+Yeah, but think of it very efficiently though, right? So think of it as there's a stage one where I need to do some quick assessment of maybe the full text extract or like Xujin was saying, maybe we just make it smart enough around the table of contents. And I just sort.
+FT
+Feng, Taojian (GE Vernova, consultant)
+20 minutes 28 seconds20:28
+Feng, Taojian (GE Vernova, consultant) 20 minutes 28 seconds
+Yeah.
+
+Epperson, Vinson (GE Vernova)
+20 minutes 44 seconds20:44
+Epperson, Vinson (GE Vernova) 20 minutes 44 seconds
+And then I have a secondary, that's when I start like my real pre-processing plus some intelligent pre-processing. I think there's two things there. Does that make sense? And if you guys say a better way, please go ahead. I just was thinking, how do I make this the most efficient and not have this thing, you know, take two weeks to get through the whole FSR data set if I wanted to, you know?
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+20 minutes 45 seconds20:45
+Saxena, Madhurima (GE Vernova, consultant) 20 minutes 45 seconds
+Mhm.
+Saxena, Madhurima (GE Vernova, consultant) 20 minutes 54 seconds
+Okay.
+FT
+Feng, Taojian (GE Vernova, consultant)
+20 minutes 55 seconds20:55
+Feng, Taojian (GE Vernova, consultant) 20 minutes 55 seconds
+Mmh.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+21 minutes 7 seconds21:07
+Saxena, Madhurima (GE Vernova, consultant) 21 minutes 7 seconds
+No, I understand. I'll have to think through and go over it again, but what I'm trying to understand is like the very first step that you mentioned, what determines that we need to take part A versus part B, right? So how are we kind of...
+Saxena, Madhurima (GE Vernova, consultant) 21 minutes 26 seconds
+identifying whether we need to go through pre-processor way or whether we need to go with some extract data plus extract or other ways, right?
+
+Epperson, Vinson (GE Vernova)
+21 minutes 36 seconds21:36
+Epperson, Vinson (GE Vernova) 21 minutes 36 seconds
+I think it's one of two things, based on what Xujin was showing and what she's worked on. It's likely to be the first thing I work with is the full text extract.
+ZX
+Zhou, Xujin (GE Vernova)
+21 minutes 48 seconds21:48
+Zhou, Xujin (GE Vernova) 21 minutes 48 seconds
+Mhm, mhm.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+21 minutes 49 seconds21:49
+Saxena, Madhurima (GE Vernova, consultant) 21 minutes 49 seconds
+Mhm.
+
+Epperson, Vinson (GE Vernova)
+21 minutes 49 seconds21:49
+Epperson, Vinson (GE Vernova) 21 minutes 49 seconds
+And I either go through the table of contents only and I can build enough smart logic into that, like, hey, if you see DC leakage, that means there's a generator here. Even if you don't see the word generator, you know, do some stuff like that. And then let's see, let's see if that gets us most of the way. If not.
+FT
+Feng, Taojian (GE Vernova, consultant)
+22 minutes 2 seconds22:02
+Feng, Taojian (GE Vernova, consultant) 22 minutes 2 seconds
+M.
+ZX
+Zhou, Xujin (GE Vernova)
+22 minutes 2 seconds22:02
+Zhou, Xujin (GE Vernova) 22 minutes 2 seconds
+Ohh.
+Zhou, Xujin (GE Vernova) 22 minutes 8 seconds
+Yeah.
+
+Epperson, Vinson (GE Vernova)
+27 minutes 17 seconds27:17
+Epperson, Vinson (GE Vernova) 27 minutes 17 seconds
+Yep, sounds good.
+ZX
+Zhou, Xujin (GE Vernova)
+27 minutes 17 seconds27:17
+Zhou, Xujin (GE Vernova) 27 minutes 17 seconds
+Yeah, I mean, reason before you drop, I want to show like a show you another the last case. This is a very weird case we see. So this is what I was saying that like this is a steam turbine ESN. And like in this report, it actually got some like
+Zhou, Xujin (GE Vernova) 27 minutes 37 seconds
+generator like evidence. So here those here are some like like you see here the system like it's got steam turbine and the generators or so there are some generator evidence. But if you search for the generator like a kind of this generator.
+Zhou, Xujin (GE Vernova) 27 minutes 56 seconds
+Yeah.
+Zhou, Xujin (GE Vernova) 28 minutes 1 second
+Any of this, yes, and in the body text, I mean the whole body text. Oh, so, so if we scan like this and even LLM coming, it won't detect this, right? So, so like it's like we kind of at some point we need to use the iPad train tool, but...
+
+Epperson, Vinson (GE Vernova)
+28 minutes 7 seconds28:07
+Epperson, Vinson (GE Vernova) 28 minutes 7 seconds
+Yeah.
+ZX
+Zhou, Xujin (GE Vernova)
+28 minutes 21 seconds28:21
+Zhou, Xujin (GE Vernova) 28 minutes 21 seconds
+Also, another thing is that if SME noticed this kind of issue, they must let us know, because I noticed that previous some documents are missing, but they didn't raise it. For example, if they didn't bring this example to us, we, we, it's like we will never fix this logic in our in our scripts, so, so yeah.
+
+Epperson, Vinson (GE Vernova)
+28 minutes 38 seconds28:38
+Epperson, Vinson (GE Vernova) 28 minutes 38 seconds
+Yeah.
+Epperson, Vinson (GE Vernova) 28 minutes 41 seconds
+Yep. I look forward to you solving that one. That's why you get paid the big bucks. Xujin. That's a tough one. No, you're right. Yeah, that's a, I'm joking. That's a, that's a tough one.
+ZX
+Zhou, Xujin (GE Vernova)
+28 minutes 57 seconds28:57
+Zhou, Xujin (GE Vernova) 28 minutes 57 seconds
+Yeah, yeah.
+
+Epperson, Vinson (GE Vernova)
+28 minutes 57 seconds28:57
+Epperson, Vinson (GE Vernova) 28 minutes 57 seconds
+Okay, I wrote the number down. I'll go look at that one and maybe play around with it too. You're right, maybe at some point we just really can't. We can't solve every single one of these and that's fine. And then we use some way for them to submit things like this as special cases or something like that.
+ZX
+Zhou, Xujin (GE Vernova)
+29 minutes 2 seconds29:02
+Zhou, Xujin (GE Vernova) 29 minutes 2 seconds
+A.
+Zhou, Xujin (GE Vernova) 29 minutes 14 seconds
+Yeah, yeah, thank you so much. Yeah.
+FT
+Feng, Taojian (GE Vernova, consultant)
+29 minutes 15 seconds29:15
+Feng, Taojian (GE Vernova, consultant) 29 minutes 15 seconds
+Siva.
+
+Epperson, Vinson (GE Vernova)
+29 minutes 16 seconds29:16
+Epperson, Vinson (GE Vernova) 29 minutes 16 seconds
+And then we charge him a fee. We charge him a fee or something. That way we collect some money and have a party at the end of the year or something.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+29 minutes 17 seconds29:17
+Saxena, Madhurima (GE Vernova, consultant) 29 minutes 17 seconds
+Okay.
+
+Epperson, Vinson (GE Vernova)
+29 minutes 25 seconds29:25
+Epperson, Vinson (GE Vernova) 29 minutes 25 seconds
+You send a special use case and we have to manually do something. We charge 100 bucks.
+ZX
+Zhou, Xujin (GE Vernova)
+29 minutes 25 seconds29:25
+Zhou, Xujin (GE Vernova) 29 minutes 25 seconds
+Yeah, yeah.
+FT
+Feng, Taojian (GE Vernova, consultant)
+29 minutes 32 seconds29:32
+Feng, Taojian (GE Vernova, consultant) 29 minutes 32 seconds
+Yeah, recharge token.
+
+Epperson, Vinson (GE Vernova)
+29 minutes 32 seconds29:32
+Epperson, Vinson (GE Vernova) 29 minutes 32 seconds
+Yeah.
+Epperson, Vinson (GE Vernova) 29 minutes 34 seconds
+Yes, and we gotta pay for all these damn tokens.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+29 minutes 35 seconds29:35
+Saxena, Madhurima (GE Vernova, consultant) 29 minutes 35 seconds
+Okay.
+FT
+Feng, Taojian (GE Vernova, consultant)
+29 minutes 37 seconds29:37
+Feng, Taojian (GE Vernova, consultant) 29 minutes 37 seconds
+M.
+ZX
+Zhou, Xujin (GE Vernova)
+29 minutes 38 seconds29:38
+Zhou, Xujin (GE Vernova) 29 minutes 38 seconds
+Yeah, and another, another issue is, so it's an issue I want to bring to you. So, this is the dev URA app. In the ER cases, it only shows one like available ER cases, but like in the citation somewhere, I saw like more.
+Zhou, Xujin (GE Vernova) 29 minutes 56 seconds
+Ohh, I mean other ER cases, so can you also look into like the this issue? So, so here you see there are other ER cases right, but but in the data readiness part, I only see one, so can you see?
+DA
+Dutta, Abhinaya (GE Vernova, consultant)
+30 minutes 9 seconds30:09
+Dutta, Abhinaya (GE Vernova, consultant) 30 minutes 9 seconds
+No, it's only one year case. That's only one year case.
+ZX
+Zhou, Xujin (GE Vernova)
+30 minutes 13 seconds30:13
+Zhou, Xujin (GE Vernova) 30 minutes 13 seconds
+Oscar.
+DA
+Dutta, Abhinaya (GE Vernova, consultant)
+30 minutes 16 seconds30:16
+Dutta, Abhinaya (GE Vernova, consultant) 30 minutes 16 seconds
+Okay, if you just hover with that, yeah, yeah, that's the citation token. Ignore that part. On the top, if you see the evidence, there is only one.
+ZX
+Zhou, Xujin (GE Vernova)
+30 minutes 16 seconds30:16
+Zhou, Xujin (GE Vernova)
+30 minutes 16 seconds30:16
+Zhou, Xujin (GE Vernova) 30 minutes 16 seconds
+Also, so actually, they are they are.
+Zhou, Xujin (GE Vernova) 30 minutes 24 seconds
+Ohh.
+Zhou, Xujin (GE Vernova) 30 minutes 28 seconds
+Also, so this.
+DA
+Dutta, Abhinaya (GE Vernova, consultant)
+30 minutes 28 seconds30:28
+Dutta, Abhinaya (GE Vernova, consultant) 30 minutes 28 seconds
+That the UUID, yeah, that hex code, you can ignore that part that some internal.
+ZX
+Zhou, Xujin (GE Vernova)
+30 minutes 33 seconds30:33
+Zhou, Xujin (GE Vernova) 30 minutes 33 seconds
+Oh, so, so this is diff, but that's...
+Zhou, Xujin (GE Vernova) 30 minutes 39 seconds
+Oh, but, but this ER like a date.
+DA
+Dutta, Abhinaya (GE Vernova, consultant)
+30 minutes 40 seconds30:40
+Dutta, Abhinaya (GE Vernova, consultant) 30 minutes 40 seconds
+In the evidence, it is talking about only over your team.
+ZX
+Zhou, Xujin (GE Vernova)
+30 minutes 43 seconds30:43
+Zhou, Xujin (GE Vernova) 30 minutes 43 seconds
+But see this is a 2020, it seems to me like 2020 March 28th, but this one is like 2021 April 26th. So, but they are the same ER case.
+DA
+Dutta, Abhinaya (GE Vernova, consultant)
+31 minutes 3 seconds31:03
+Dutta, Abhinaya (GE Vernova, consultant) 31 minutes 3 seconds
+In the vector index, it must be there.
+ZX
+Zhou, Xujin (GE Vernova)
+31 minutes 8 seconds31:08
+Zhou, Xujin (GE Vernova) 31 minutes 8 seconds
+Yeah, yeah, I mean, just for you to check, yeah, it's just something weird to see, like, maybe they are the same ones.
+DA
+Dutta, Abhinaya (GE Vernova, consultant)
+31 minutes 9 seconds31:09
+Dutta, Abhinaya (GE Vernova, consultant) 31 minutes 9 seconds
+Um...
+Dutta, Abhinaya (GE Vernova, consultant) 31 minutes 17 seconds
+Which ESN is this? Okay, fine, we'll check this part.
+ZX
+Zhou, Xujin (GE Vernova)
+31 minutes 22 seconds31:22
+Zhou, Xujin (GE Vernova) 31 minutes 22 seconds
+Yeah. Thank you so much. Thank you.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+31 minutes 29 seconds31:29
+Saxena, Madhurima (GE Vernova, consultant) 31 minutes 29 seconds
+All right, so I think then we're good. We'll wait for what to send me is providers, and then we'll see if we can have to fix anything right away.
+Saxena, Madhurima (GE Vernova, consultant) 31 minutes 42 seconds
+Alright, have a great weekend, everyone. Talk to you soon.
+FT
+Feng, Taojian (GE Vernova, consultant)
+31 minutes 44 seconds31:44
+Feng, Taojian (GE Vernova, consultant) 31 minutes 44 seconds
+Okay.
+Feng, Taojian (GE Vernova, consultant) 31 minutes 46 seconds
+Yeah, Xujin, Xujin, can you post this file to the somewhere channel, or you can take a look, okay?
+ZX
+Zhou, Xujin (GE Vernova)
+31 minutes 55 seconds31:55
+Zhou, Xujin (GE Vernova) 31 minutes 55 seconds
+Ohh, which which file you mean like?
+FT
+Feng, Taojian (GE Vernova, consultant)
+31 minutes 58 seconds31:58
+Feng, Taojian (GE Vernova, consultant) 31 minutes 58 seconds
+Yeah, and any, any you just like you show the example, right? So you can put there, I can take a look at, see if there's something we can solve, yeah.
+ZX
+Zhou, Xujin (GE Vernova)
+32 minutes 4 seconds32:04
+Zhou, Xujin (GE Vernova) 32 minutes 4 seconds
+Ohh yeah, yeah, yeah, yeah, yeah, the example I already put it in the in our chat, like that document ID too.
+FT
+Feng, Taojian (GE Vernova, consultant)
+32 minutes 9 seconds32:09
+Feng, Taojian (GE Vernova, consultant) 32 minutes 9 seconds
+****.
+Feng, Taojian (GE Vernova, consultant) 32 minutes 12 seconds
+OK, OK, so this is a good, good, so I, yeah, I just OK.
+ZX
+Zhou, Xujin (GE Vernova)
+32 minutes 15 seconds32:15
+Zhou, Xujin (GE Vernova) 32 minutes 15 seconds
+Do you want me to download it?
+FT
+Feng, Taojian (GE Vernova, consultant)
+32 minutes 18 seconds32:18
+Feng, Taojian (GE Vernova, consultant) 32 minutes 18 seconds
+You don't need, you give me the number, I can download myself, no big deal.
+ZX
+Zhou, Xujin (GE Vernova)
+32 minutes 24 seconds32:24
+Zhou, Xujin (GE Vernova) 32 minutes 24 seconds
+Sure.
+FT
+Feng, Taojian (GE Vernova, consultant)
+32 minutes 25 seconds32:25
+Feng, Taojian (GE Vernova, consultant) 32 minutes 25 seconds
+Yeah.
+Feng, Taojian (GE Vernova, consultant) 32 minutes 28 seconds
+OK, thank you.
+SM
+Saxena, Madhurima (GE Vernova, consultant)
+32 minutes 29 seconds32:29
+Saxena, Madhurima (GE Vernova, consultant) 32 minutes 29 seconds
+All right, thank you.
+FT
+Feng, Taojian (GE Vernova, consultant)
+32 minutes 31 seconds32:31
+Feng, Taojian (GE Vernova, consultant) 32 minutes 31 seconds
+Thank you, and goodbye.
+ZX
+Zhou, Xujin (GE Vernova)
+32 minutes 31 seconds32:31
+Zhou, Xujin (GE Vernova) 32 minutes 31 seconds
+Thank you, bye.
+
+Saxena, Madhurima (GE Vernova, consultant) stopped transcription

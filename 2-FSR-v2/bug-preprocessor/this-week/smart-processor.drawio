@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Page-1" id="jYaRvgYerOIc6B1Xtw1W">
+    <mxGraphModel dx="729" dy="232" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-3" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Extract raw document&amp;nbsp;&lt;div&gt;Create one canonical text source&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="180" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-7" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-2" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Build canonical region inventory&lt;div&gt;Split by TOC + section headers&lt;/div&gt;&lt;div&gt;Assign region_id to every region&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="180" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-5" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#008A00,#00994D);fontColor=#ffffff;strokeColor=#005700;align=left;" value="one fixed list of regions (with region_id, start, end) created once, and reused by both paths" vertex="1">
+          <mxGeometry height="70" width="180" x="470" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-9" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-6" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Run deterministic attribution on all canonical regions" vertex="1">
+          <mxGeometry height="60" width="230" x="180" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-13" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-8" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Apply rule-based ambiguity detection&lt;div&gt;(resolved/ ambiguous )&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="180" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-10" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#008A00,#00994D);fontColor=#ffffff;strokeColor=#005700;align=left;" value="Modify deterministic preprocessor to run attribution on a fixed canonical region list" vertex="1">
+          <mxGeometry height="70" width="180" x="470" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-11" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=light-dark(#008A00,#00994D);fontColor=#ffffff;strokeColor=#005700;align=left;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;These rules are grounded in failure cases identified from real FSR documents.&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;resolved&lt;/b&gt;: We have enough clear evidence from rules and document text to assign ESN/equipment confidently.&lt;/div&gt;&lt;div&gt;&lt;b&gt;ambiguous&lt;/b&gt;: Evidence is mixed or incomplete, so deterministic rules are not enough; send this region to the LLM path.&lt;/div&gt;&lt;div&gt;&lt;b&gt;unresolved&lt;/b&gt;: Document text alone is not enough (even with LLM); requires external lookup (IBAT).&lt;/div&gt;" vertex="1">
+          <mxGeometry height="180" width="360" x="450" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-15" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-25" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-12" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;rounded=0;" value="Any ambiguous regions?" vertex="1">
+          <mxGeometry height="80" width="80" x="100" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-24" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-23" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-14" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Send ambiguous regions to LLM (pass region_ids + region_text)" vertex="1">
+          <mxGeometry height="60" width="180" x="50" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-20" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-19" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-17" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;rounded=0;" value="Any unresolved regions?" vertex="1">
+          <mxGeometry height="80" width="80" x="390" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-29" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-28" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-19" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="IBAT Train lookup" vertex="1">
+          <mxGeometry height="60" width="120" x="370" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="90" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="385" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-27" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="1N74XsZe5HaOwDHVRuP_-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-23" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="LLM returns attribution decisions keyed by region_id" vertex="1">
+          <mxGeometry height="60" width="180" x="50" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="290" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-33" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-32" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-28" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="&lt;div&gt;Merge: apply LLM patches + IBAT results&lt;/div&gt;&lt;div&gt;as overrides onto canonical region list&lt;/div&gt;&lt;div&gt;preserve provenance per region&lt;/div&gt;&lt;div&gt;base_source / attribution_source / status&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="420" x="220" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-30" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.895;entryY=-0.038;entryDx=0;entryDy=0;entryPerimeter=0;" target="1N74XsZe5HaOwDHVRuP_-28">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="595.9" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="500" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-35" edge="1" parent="1" source="1N74XsZe5HaOwDHVRuP_-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="1N74XsZe5HaOwDHVRuP_-34" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-32" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Final Output&lt;div&gt;single merged region list with metadata + provenanace&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="330" x="265" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="1N74XsZe5HaOwDHVRuP_-34" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Chunk region attribution" vertex="1">
+          <mxGeometry height="40" width="232.5" x="313.75" y="1310" as="geometry" />
+        </mxCell>
+        <mxCell id="IvryKlnEU36YGKzvBh7e-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1" vertex="1">
+          <mxGeometry height="30" width="60" x="110" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IvryKlnEU36YGKzvBh7e-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2" vertex="1">
+          <mxGeometry height="30" width="60" x="130" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="IvryKlnEU36YGKzvBh7e-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3" vertex="1">
+          <mxGeometry height="30" width="60" x="120" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="IvryKlnEU36YGKzvBh7e-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4" vertex="1">
+          <mxGeometry height="30" width="60" x="140" y="380" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="CcV267pVGRbnRJF6B-v3" name="Page-2">
+    <mxGraphModel dx="1232" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2bIBlo5SkiZwGY85J4Vb-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontSize=6;labelBackgroundColor=default;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Classification Rules (Quick Summary)&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Use these rules in order for each bug.&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Classify as Deterministic processor fix when the issue is about structure, extraction, or state logic.&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Section/header/boundary detection problems&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;ESN regex/format parsing and normalization&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Active vs inactive ESN filtering&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Context stack enter/exit and fallback path bugs&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Deterministic unresolved tagging for low-information docs&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Classify as LLM preprocessor when attribution is ambiguous and needs semantic inference.&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Generator evidence exists but ESN is missing or implicit&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Multiple plausible ESNs and deterministic signals are insufficient&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Shared/summary/auxiliary sections that need multi-assign reasoning&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Cross-context conflicts where text meaning outweighs local pattern hits&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Classify as unresolved (LLM plus IBAT path) when text alone cannot identify the ESN.&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;No usable ESN in body text and no deterministic tie-breaker&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;LLM may suggest attribution, but final resolution needs external hierarchy/train lookup&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;For mixed bugs, split handling by stage.&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Deterministic stage must detect ambiguity and avoid forced wrong assignment&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;LLM stage resolves only ambiguous canonical regions&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;IBAT stage resolves truly unresolved cases&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Guardrail: parser quality defects are deterministic prerequisites.&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;If region boundaries are wrong, do not treat this as an LLM-first fix.&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Fix extraction/segmentation first, then run ambiguity routing.&lt;/h1&gt;" vertex="1">
+          <mxGeometry height="800" width="680" x="20" y="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

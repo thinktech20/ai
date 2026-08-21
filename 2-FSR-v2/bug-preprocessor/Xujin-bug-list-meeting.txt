@@ -1,0 +1,615 @@
+
+
+Call with Feng, and 2 others-20260805_110818-Meeting Recording
+
+August 5, 2026, 6:08PM
+
+1h 2m 9s
+
+621792274320Saxena, Madhurima (GE Vernova, consultant) started transcription
+
+576072292608Zhou, Xujin (GE Vernova)   0:03Maybe also we can like run some DS group test for if need a.So, so this whole section, this whole bug for, it's about subsection, like a subsection logic. So it's a logic about what's happened if there are like a one section under another section.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   0:10Mhm.Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   0:28So, so let's go over it, basically go over it to 1 by 1, so you can have an idea on that. So, this document I already like I showed you before, so, so this this case, like a subsection issue happened in Q.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   0:38Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   0:49The first case is that it's like there are two, for example, two gas turbine, two active gas turbine ESN or two active generator ESN. So in this case, as we said, like one, it detects a turbine section, it's assigned to that primary gas turbine, like ESN, whichMight not be correct, because, like, whenever a gas termine section, like a boundary or section header detect like this, it should go to its own like ESN instead of the kind of a primary or that GT ESN, so, so based on this.Uh, like you, you understand, right? So, based on on the this, uh, what I think about that, um...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   1:31Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   1:37It's this is.2, so when a subsection equipment of boundary detector without its own ESN, so, so like in this case, if a section header is detected and got an ESN attached to it, it's good, no problem. It's the boundary got attached to this ESN.But when I like a section like this that detect and there are no ESN to it, and this is a subsection like, so yes, like one day I ask you if it can so, so can understand this, so this is the section under this like a big guest travelling section.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   2:01Oh.Mm.
+
+576072292608Zhou, Xujin (GE Vernova)   2:16So, in this case, happened, so I said, if it is the same as the larger or the alter section, just to inherent the larger or alter section, yes, and it means like here we detect a guest termine, and if like...After it, I mean, in the same like a big section, we detect another kind of turbine section. We will just inherit the alter or I call the alter or larger section sections ESN.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   2:43Mhm.
+
+576072292608Zhou, Xujin (GE Vernova)   2:53So, this is the first situation. The second situation is, if it is another, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   2:58Xujin, for the first situation, if a subsection has no ESN, then it inherits the one from its section. But if they suppose subsection also have an ESN, then what? Like, should we take the subsection?
+
+576072292608Zhou, Xujin (GE Vernova)   3:01Huh.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   3:18Section is OKOK.
+
+576072292608Zhou, Xujin (GE Vernova)   3:18Yeah, yeah, yeah, yeah, for example, if this is the section somehow contains its own ESN in the in the title, then then we just follow that one, but if it doesn't got ESN in the fallback case, we inherit the alter section one.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   3:28Yeah.Okay, okay.
+
+576072292608Zhou, Xujin (GE Vernova)   3:38So this is the first case where like the outer section is gas turbine and the inner one like a detector is also turbine, right? But there are also another case where like outer section is gas turbine and an inner section we detect a generator.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   3:49Mmhm.Mhm.
+
+576072292608Zhou, Xujin (GE Vernova)   3:59So, so in so, so, so with not by not like just I mean discussing, let's let's open an I'm not sure if it's this, let me see if...This one is a good example. So for example, this one, this one, like we have two guests, I mean, maybe, I mean, 2 turbine and the two generator, yes.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   4:19Okay.Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   4:32So, in this report, it contains 2 active turbine and two active generator in this case. So, for example, if we detect this one, this got an yes and it goes to this yes and no problem. If we detect this turbine combust bus transition, it's inherent from this.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   4:32Mhm.
+
+576072292608Zhou, Xujin (GE Vernova)   4:52297191, no problem. If later on, I mean, just for example, for example, there is a like a generator section here, like for example, this 3.5 somehow I say like a generator.Ohh, let's, let's, yeah, let's use use this as an example, so, so yeah, so, so this one, so the alter one we got this like got we see turbine we attached to this one, no problem, if we see a generator, let's forgot about this auxiliary because auxiliary may may goes to like a LLM one.So, if we see a generator like a detector under a like a larger section, so this is a case where I wrote here, so it's the second situation, so, so if if it detect another equipment type under that section.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   5:37It.
+
+576072292608Zhou, Xujin (GE Vernova)   5:57We will first cheque if our in our active ESN list, there is only one like for example generator ESN. If yes, we will use that only one active generator ESN, but if not, we use the train tool to find the.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   6:14Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   6:17that's ESN. So yeah, yeah, it might be kind of confusing. Let's use this as an example. So this case, we got 2 gas turbine ESN, right? And then two generator. Assume here we got a outer gas turbine we attached to this. We detect a turbine. We also inherit from this one. So assume like a section 4 here.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   6:27Right.
+
+576072292608Zhou, Xujin (GE Vernova)   6:41It's not appendix, but it's a generator and it doesn't got any like ESN attached to it. So like this falls to the case where we detect a subsection equipment type boundary, which is different from the like this alter section header. And then we go to the.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   6:47Mhm.
+
+576072292608Zhou, Xujin (GE Vernova)   7:00document to that active ESN list to cheque if it's there is only one like active generator ESN. If there is only one active generator ESN, no problem we will use that one. If there are like more than one or like less than one, so either zero or more than.more than one generator, active generator ESN, we will use the outer gas turbine, this like a section header ESN and use the iPad train tool to attach it to the correct like ESN. For example, this one we search for.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   7:24Yeah.Okay.Yeah.So, if, for example, we have a generator or any other different kind of equipment in subsection, and it has some ESL attached to it, then we will use...
+
+576072292608Zhou, Xujin (GE Vernova)   7:39Oh.Yeah.Yeah.Oh.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   7:56I mean, we will use the section ESM, not the subsection ESM.
+
+576072292608Zhou, Xujin (GE Vernova)   8:02So yeah, yeah, it's got like several like conditions. So if it's the same equipment type, turbine, turbine, we just inherent. We don't use the primary like that GTESN. If like the outer one is turbine, the inner one is generator,we needed to cheque if the active generator ESN only got one like a candidate. If we got one candidate, then no issue. Actually for the turbine, if we only got one candidate, it's also no issue. But if we got two candidates like this, or if we don't got any candidate, we got.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   8:27Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   8:40We use this turbine ESN to go to like a iPad train tool.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   8:45OKOK, got it. OK.
+
+576072292608Zhou, Xujin (GE Vernova)   8:49Yeah, so this should also say solve this issue. Let me cheque this one. This one we also got two turbine session. So this turbine session needs to go to this one, while like this, the next to this turbine session needs to go to this one. We cannot like detect this turbine session andGo to the kind of the the the general, like, that's a primary guest on ESN, so, so, so this is the kind of the first small step here, and then let me, yeah, let me read what I wrote here, so...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   9:22Mm.Okay.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   9:34So the third thing is that if one subsection flips the equipment type, after that level of section end, it needs to flip back to the previous equipment type. That's one like, I mean, under this case.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   9:42Mhm.
+
+576072292608Zhou, Xujin (GE Vernova)   9:53So, this is a turbine section, and under that there is a generator subsection, right? So, so, so this part we are talking about generator, assuming in the case that we don't have this one, OK, because this one we detect the turbine, we will also flip already flip back to turbine.But assume like we don't have this, this one, like delete this one. If we directly, I mean, after this section, we directly see this things. This seems like it's, I mean, it should not be, I mean, inherent to the generator like tag. It should go back to turbine because.It's kind of like this is under a turbine section. There is a subsection talk about generator. So after the generator like evidence detector, it needs to flip back to the like a turbine section. So instead of like a continue its own like a generator.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   10:51OK, as soon as that section subsection ends, it should go back to its own original equipment type. OK, OK.
+
+576072292608Zhou, Xujin (GE Vernova)   10:52Ohh.Tag. Does that make sense?Emma.Yeah, yeah, that's why I ask, is that possible like for the parser somehow like understand that, for example, 3.1.1 is a subsection under 3.1. So if it sees 3.1.1 and it detects 3.1.2.Two, or it's detector 3.2, it means like that section ends and it needs to go back to the, like, for example, either go back to this or go back to this, so like people can only, you know.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   11:35I think it does understand that indentation and the only some of the places there were no numbered headings like.
+
+576072292608Zhou, Xujin (GE Vernova)   11:39Ohh, that's good.Yeah, yeah, yeah, let me, I also got that one, yeah, downloaded, let me open it. It's a section handle, it's this, this one.Did I just already open it?Oh, it's another one.Yes, it's this one. See for like, yeah, this example like it.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   12:16Yeah.Yeah, yeah, so under three we have generator field rotor that doesn't have a number, right? So sometimes I have to cheque what happens in this these cases. Is it detecting it properly or not?
+
+576072292608Zhou, Xujin (GE Vernova)   12:25Yeah.Al.I checked, no, I think I let me see. I checked it and I see it's not.not not work work well. Let me let me bring this up. This is where I use this kind of things and this is just like I copied the one and rename it and then you know
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   13:00I.
+
+576072292608Zhou, Xujin (GE Vernova)   13:00So, so this might be totally might not be the totally the same, but we can like use this kind of as a quick quick understanding, so we can see what it happened.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   13:14I think you have to remove 35. You copied, just go back. Yeah, initial data slash 803. It starts or 35803.
+
+576072292608Zhou, Xujin (GE Vernova)   13:20Yeah, yeah, yeah, yeah, it's it's.P.I, I, I think it's...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   13:29Line number 16, line number 16, are we giving the right name?
+
+576072292608Zhou, Xujin (GE Vernova)   13:33Ohh.Yeah, yeah, yeah, it started like this, yeah, no, no, no, no, so, so see here, like it says it didn't detect like a boundary in this case, like I I let it to print the boundary and add a page number just for like a for for this purpose and let we try also try.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   13:36Oh, okay, okay, okay, okay.Mm-hmm.
+
+576072292608Zhou, Xujin (GE Vernova)   13:55On this one.Do I have?
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   14:00Mm.
+
+576072292608Zhou, Xujin (GE Vernova)   14:03Ohh no, I think I didn't download that one, but but let me see if I got it in another place, but yeah, this the other one I saved here, it's the same issue, so this one it's also.this one, this one, it's also like this 806, this one, this is also the issue that the section doesn't got got a number before it, so, so it's not, I mean, somehow it's not, so, so yeah, this is, I mean, also in some issue we need to.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   14:37Mm.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   14:43Ohh, I, I mean, you know, kind of this I called this I put actually in bug three, so I didn't put it in bug 4, because like bug 4 is the subsection logic issue and bug three I called it like a we need like a broader format of section header detection, so...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   14:44Yeah, yeah.Yeah.Mhm.Yeah, I think we should fix 3 also because I think if we suppose fix 4 and then subsection does not fall back, like its boundary is not different, then it will give you a wrong result, right? So we need to fix both. Yeah, yeah, yeah, yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   15:04Yeah, and...You know.Yeah.Yeah, yeah.Yeah, I also see a like a weird issue. So this kind of, I kind of doesn't really understand. So in this report, what I see is that like it's detecting some like a section header, but like it's also missing someone. So.So, yeah, let me show you this one.I mean, it's maybe my local wrong issue, but you can also try on your machine. So let's see. So that's really where, so it's kind of detect something, but it's also like a...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   15:48Okay.Mhm.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   16:05discard something like, yeah, and so the boundary detector is on like a 3.1, 3.3.1 turbine and a 4.1 generator. So it's detecting 4.1 generator, no problem.And it's also detected 3.1 turbine, but somehow it's not detecting, let me see, another someone somewhere, it also have a...Yeah, let me cheque. So, so I remember that if I'm using, I'm not saying we should change, but it's just for testing purpose. So, so it gives me different kind of results. So, so see, see here, it gives me also.Like page 98, 99, 100, let me cheque what 99. Yeah, so, so it's kind of something like this. So, so, so here on page 99, there is a 3.1, 3.3.1 turbine casing.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   17:18Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   17:24where it should detect a turbine run. And here it also gets a, like, it's the same section, but they somehow kind of repeated it. So, so like, I mean, the, our current PY PDF2 is doing great job because it's not detecting.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   17:34Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   17:44Kind of a repeated section here, but it might, I mean, on the other sense.Got some like a missing, so, so just, I'm just bringing this up to.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   17:54So you are saying buy new PDF is getting these numbers like when you do with buy new PDF you get okay, okay.
+
+576072292608Zhou, Xujin (GE Vernova)   17:59Yeah.Yeah, yeah, so, so, so, so, like, I mean, it's good, like, a P.Y.M.U. I mean, P.Y. PDF to the current we are using is only get one like a turbine section here, which is great, right? So, so which is a correct one, but the issue is that, like, actually, there are some...since existing those pages. So, so I'm not sure if it's because like the PDF 2 is not detecting it or like you got some like additional logic, for example, like delete the same like a section header once it detected. So, so that one I just bring it up so you can.You can cheque, cheque if it's, yeah, yeah, so, yeah, so, so the...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   18:42Okay. I think I think first we need to fix the section part like it should identify each section properly and end and start of it. Once we have that then and other logic of like finding ESS for subsection or section will work correctly right so.
+
+576072292608Zhou, Xujin (GE Vernova)   18:52That's about right.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   19:05I think both have to be fixed. Now, one thing, do you know, like when it detects boundary, is it like for each section it is doing the boundary or how is it calculating the boundary? Do you know? Or I can cheque in the code.
+
+576072292608Zhou, Xujin (GE Vernova)   19:05Mm.Mhm.What's your question again?
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   19:23Like boundaries, right? How boundaries defined in this document from pre-processor, do you know?
+
+576072292608Zhou, Xujin (GE Vernova)   19:29Yeah, yeah, yeah. The boundary is like anything like, it must be a number and some like space and previously it cannot got any dot. So if somehow it must be this kind of a four.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   19:40Uh-huh.
+
+576072292608Zhou, Xujin (GE Vernova)   19:50Or a space like a generator or guest, but it can like be like a generator state or test, like anything after it is OK, but if it's a three dot, it's a it's not get to get to detect. I I I believe I mean the previous like a version, maybe tall change, but Vincent's version is like that. I think Vincent's version must be like after termite. There are no.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   19:54No.Okay.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   20:12Text, but the power already fixed that, so, so, like, even after turbine, they are like a turbine test, it can be detected as boundaries, so it's, yeah, it's basically only detected.The.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   20:23Is boundary means section start and section end?
+
+576072292608Zhou, Xujin (GE Vernova)   20:26Yeah, yeah, yeah, at the start a section and yeah, and yeah, yeah, so, so it's a, so, so we need to incorporate those, like Vincent's logic was it needs to be change a line and got a number and then like got a turbine and no
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   20:27Okay.Okay.Uh-huh.
+
+576072292608Zhou, Xujin (GE Vernova)   20:46tax like a call added that like a there can be tax after that and as we see here it we may need to include those case where there is a dot so three dot space turbine is also like acceptable and this kind of things I I don't I I have no idea
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   20:51Ohh.Mm.
+
+576072292608Zhou, Xujin (GE Vernova)   21:06Like...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   21:08Mm.
+
+576072292608Zhou, Xujin (GE Vernova)   21:09As long as, like, it changes a line at a, like, I mean, start a new line as a as a section header, but, but yeah, this is the one we definitely need to do, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   21:19Let me let me first cheque how it is, you know, currently behaving with that section. Then we can tweak it like first I need to understand what's going on, right? And I think that will actually help in making bigger fixes. A lot of things, yeah, yeah, you're right.
+
+576072292608Zhou, Xujin (GE Vernova)   21:23Oh, great, great, great. Yeah, but yeah.Yeah.Yes, yes, yes, yes.A lot of things, yeah, yeah, yeah, and and this one, yeah, when you cheque it, yeah, yeah, you can you can test those ones, and yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   21:39Yeah, then.I can share, I can share with you. One thing I wanted to also tell you is like this, I am writing right, so we can test it with the retrieval also, so...
+
+576072292608Zhou, Xujin (GE Vernova)   21:56Yeah, yeah, yeah, let me, yeah, look at this, yeah, yeah, yeah, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   21:59I want your help in that one actually. So let me share my screen. Can I share my screen?
+
+576072292608Zhou, Xujin (GE Vernova)   22:03Yeah.Sure, sure, sure, yeah, yeah, I think I, ohh, I forgot to stop, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   22:11Okay, so I was thinking first thing, two things to be written, right? One is top K, like, or retrieval, right? So we want to, we want to kind of.
+
+576072292608Zhou, Xujin (GE Vernova)   22:25Oh, by the way, how do you do that? Are you using, like, are you running the app and kind of look at the long views, or you look at the code directory?
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   22:34Code directly, so that's why I even set it up so that you don't have to run the app, right? That's why I told you, like, if I'll tell you how to how to execute, I'll tell you, but before I tell before we go there, I just want to make sure that what I'm trying to test is correct, like what metric we need, right?
+
+576072292608Zhou, Xujin (GE Vernova)   22:36All of us.Yeah.Mm-mm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   22:53I want that in place. And once I set it up, you can directly run it. You don't have to change much.
+
+576072292608Zhou, Xujin (GE Vernova)   22:54Mhm.Yeah, and I hope that there is a like a functionality that I can directly, I mean, I can, I mean, how do you say that? I can stop at the stop at the retrieval part because like when I test that using the dev app, I need to wait until like all the LLM results.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   23:08Singh.
+
+576072292608Zhou, Xujin (GE Vernova)   23:19Like A pop-up, like it's 20 to 40 minutes, then I can look at the log, but I'm actually not interested in the like a risk analysis at all. I only want to look at the retrieval result, so, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   23:20Yeah.Mm.Yes, yes, that is what I am trying to do. So this part, right, this will only retry from that index and do that testing that you are looking for. And I will, I will, I will share that how to run that. But before we go there, I need to do a few things to understand like.
+
+576072292608Zhou, Xujin (GE Vernova)   23:41Ohh.Uh-huh.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   23:52What I have in place is right also, right? Like, for example, we, I was writing this probe set, right? For example, we, I run on this one, for example, top K, I'm testing top K with retrievers assuming, right? So.
+
+576072292608Zhou, Xujin (GE Vernova)   23:56Mm.Mm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   24:13I need to have what I will test. So this is my probe set I will, I just made-up something, but definitely we need to fix this. So I was like, this is the QD I send, this is the ESN I send, this is the equipment type I send, this is the expected document IDs when I send this.
+
+576072292608Zhou, Xujin (GE Vernova)   24:20Oh.Ohh.Uh-huh.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   24:33Right, and then, so basically when I say, for example, a question is asking, a user is asking a question, giving a ESN, then, and the equipment type, then these FSRs should be returned is what I'm saying.
+
+576072292608Zhou, Xujin (GE Vernova)   24:34Oh, what's that?Mhm.Mhm.Oh, oh.Oh.Also, so like I need to put put the three FSRs, for example, in in 765.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   24:52I mean...Right, right, 3 FSR. So it is just the document IDs pipe separated. So if I know that these are the documents for this question and for this ESN should be returned, then I put this as a set my set. Then evidence terms is more like a...
+
+576072292608Zhou, Xujin (GE Vernova)   24:59I gotcha.Oh.MMM.MM mm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   25:20how much of this data that is returned has evidence in it, right, for this ESN, right? Then which sections did it hit in the document? This is just made-up, okay, don't worry about this. I'm saying.
+
+576072292608Zhou, Xujin (GE Vernova)   25:27Mhm.Mhm.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   25:38If, if I need your help first, is in determining is like, is this the schema that I'm looking for is helpful? I can change it also based on what you want. I basically what we're trying to do is when we test top K, right? What are the what are the things that we want to test when when say?
+
+576072292608Zhou, Xujin (GE Vernova)   25:46Yeah, yeah, I, yeah, I, I think, yeah.Yeah.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   26:00For example, I change K value from 5 to 10. What are the things that you are expecting to test? If you can tell me that, then we can make this CSV file accordingly. I thought this is helpful, so I started with that. Then we kind of run it.
+
+576072292608Zhou, Xujin (GE Vernova)   26:03Thank you.Yeah.Yeah, yeah.Yeah, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   26:20Multiple times and see what the what the results are right, so that is what I and I have.
+
+576072292608Zhou, Xujin (GE Vernova)   26:22Mm.Yeah, yeah, yeah, you know, yeah, because she will be deterministic also, but we, of course, we let's run like at least two to three times to test it if it's like a state, I mean deterministic, and hopefully it will always give us the same, the same, yeah, so, so can you go back, please?
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   26:30Yes.Yes.So I kind of put this probe template like what I told you, right? Like ESN, query, tax, equipment type, expected document ID, which is pipe limited, and then what is the minimum?
+
+576072292608Zhou, Xujin (GE Vernova)   26:45Oh.So, so, so, so, yeah, yeah, I have a quick question. So, so, here, can you scroll up a little bit? So, here, like the the the query text is kind of my my input, because, yeah, and ESN is my input, like equipment I I type.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   27:01Mhm.Yes.
+
+576072292608Zhou, Xujin (GE Vernova)   27:15Is my, it can be my input, right? So, so expected document IDs, those are also my input.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   27:23Yes, because this is this is a kind of a baseline right that you give Basically you tell that if I provide this query this CSN and equipment I am expecting these kind of document IDs Say for example.
+
+576072292608Zhou, Xujin (GE Vernova)   27:38Oh, oh, oh, so you are saying that it's not that one, for example, when I expected the document ID I provide three, it means it's retrieving the three. If I provide two, it's retrieving that two. It means like it's kind of the ground truth. I provided 3 and it will test it for like the actual pool size.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   27:50No, no, no, no.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   27:58Is is the four is like a that three document, or it's a missing one, or it's a got an addition. Ohh, ohh, I'm sorry, I I cannot.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   28:01Yes, yes.That is what I think this is just a ground truth probing template. Like if you provide this expected document IDs for this QD and I get top K, I get how many of those expected documents I get like.
+
+576072292608Zhou, Xujin (GE Vernova)   28:16Mhm.I am.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   28:24So this minimum expected is like minimum number of expected document that must appear in top K. So it should be greater than one, right? So when we cheque this and if we see, oh, this integer is giving us zero, then there's a problem, right, with my... So that's why this...
+
+576072292608Zhou, Xujin (GE Vernova)   28:28I can't even.Oh, I understand. Yeah, I mean,Ohh, yes, and as a yeah, I would expect like not to the expected evidence term or the expected section hit, but kind of the expected like a FS document ID plus the page number, because, for example, yeah, I know that, for example...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   28:57Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   29:00For the F.O.D. state issue, like a page 24 of that document to, like, for example, cited in the previous trials, I, I got that kind of knowledge or ground truth, so, so I mean, I, I, I hope, like, I can.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   29:16So yeah, see, no, no, sure, I can see this is something that's why I wanted to review with you because you know more than me what you should look for, right? So I'll change it to expected document ID, expected page numbers, document IDs plus page number, right?
+
+576072292608Zhou, Xujin (GE Vernova)   29:18Yeah.That is needed.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   29:36And then we cheque.
+
+576072292608Zhou, Xujin (GE Vernova)   29:36It's wonderful. I feel like it's two separate things that are both needed. So the expected document IDs here, for example, I provide 3 documents. I want to make sure the retrieval pool sizes like that's three documents. So there are not 4 documents or there are not only two documents.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   29:42Okay.Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   29:57And the retrieve result, like when I said, for example, K = 10, the retrieve result may be, for example, I provide 3 documents, but the retrieve the result based on the issue question I ask, it might be like all like in one document, which which which which is fine, so it it doesn't mean that is wrong.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   29:57Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   30:17But in that one, like I need another kind of expected, maybe called expected cited document ID and its page number. So in that one, I can only put that like expected, like only one document ID and for example, page 42 and page 324.as the expected like a cited one. So this means like, I want to make sure like that two page numbers, yes, as in the top K. So for example, if I set K equals 5 and I didn't see like that page got.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   30:39Mhm.Yeah, yeah.We're getting relevant pages, yeah, yeah.Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   30:54Either, either like that five chunks, I can like, for example, test k = 10, and if I set k = 10, I see, ohh, both like this document is page 42 and 324, they are both like in the, I mean, either retrieve the top K.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   31:13Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   31:14And then that's good, so, so it means like where I'm sending enough evidence to LLM, so...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   31:20Got it. Okay, that makes sense. So I can add that. And we don't need evidence, right? Like, I was initially thinking, like, if we kind of say, like, this is the phrase or kind of example I expect to come from this chunk.
+
+576072292608Zhou, Xujin (GE Vernova)   31:21Ohh.Yeah, thank you so much.The.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   31:39Then we can cheque whether we are getting, but I will remove it because I don't think we have that detail. I will keep it, we can expand it more later, but let's just start with minimum thing that you asked for, like the page number and how much of that is, and we can...See if we want section hits or evidence later, right? We can section hints, I think section hints will.
+
+576072292608Zhou, Xujin (GE Vernova)   32:00Yeah.Yeah, yeah, section is, it's, it's, I feel it's something like I would want you to, I mean, print out or like, I'm not sure if your output is a is there or is some like a terminal, but I want to see the the result of the section header of that that site. I'm I'm not so I'm sorry, I mean those like a...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   32:22Zhou.
+
+576072292608Zhou, Xujin (GE Vernova)   32:28specific chunks like either top K or like some some like a specific chunks but but I don't expect it I expect that I can like manually input it then it would be too much yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   32:33Here.Right, right. So it should not be expected. It should be the output, right? So I will put it as an output. Let me see if it's directly available. If not, I will add it and see what needs to be changed. But I will focus on making this change. That's fine. And then see what I'm trying to do is I have.
+
+576072292608Zhou, Xujin (GE Vernova)   32:42Yeah, yeah.Yeah.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   33:03a retrieval already built in. I'll share with you once I have this thing running because if I give you halfway, you'll not be able to use it as such, right? So let me fix that. So I have this retrieval thing also built in.
+
+576072292608Zhou, Xujin (GE Vernova)   33:13The.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   33:22Yeah.which mimics what what kind of this app does without the LLM and all. It's just a simple QD hybrid mode QD similarity search on the index. So we so what this top key is going to do is run this.
+
+576072292608Zhou, Xujin (GE Vernova)   33:31One minute.Mm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   33:42retriever with that value and provide what is expected and also give you the results, right, that we should be able to view and compare when we change case. So that is my goal. Let me make it runnable so that you can use it and then we can go from there.
+
+576072292608Zhou, Xujin (GE Vernova)   33:43Mhm.Mhm.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   34:02Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   34:03Yeah, I agree, I agree, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   34:05OK, so that was one thing I did, but I also started this mapping in.
+
+576072292608Zhou, Xujin (GE Vernova)   34:09Yeah, yeah, yeah, yeah, yeah, yeah, yeah, yeah, can can we go back to start prop prop like that's a no, no, no, that's yeah, either this one or the one like is a document one.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   34:16Robeset.Yeah, sure.
+
+576072292608Zhou, Xujin (GE Vernova)   34:25So yeah, yeah, yeah, yeah, somewhere here. So the just for like for more simpler like using perspective. So one thing is that like for the.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   34:39Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   34:44Corey input, I know, like, like a currently, it's for example, it's expecting me to paste the the whole issue questioning, right?Like, yeah, yeah, so...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   34:58And the whatever the okay, so what does app do right? So let's think of it like when SMEs use app, they when they kind of do risk analysis, what QD we form right?
+
+576072292608Zhou, Xujin (GE Vernova)   35:09Yeah, yeah.Yeah.Yeah.Yeah.Yeah, yeah, yeah, yeah, yeah, yeah, let me, yeah, I got some like some, I'll give me a moment, I got some like example like where, when I run, when the user I run it, what's what's our input a moment, please? Where, where is?
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   35:27Yeah.Yeah, if you have those kind of inputs, I can take pick from there too, right? So.
+
+576072292608Zhou, Xujin (GE Vernova)   35:41Ohh, ohh, it's uh, yeah, uh, let me just uh paste uh some some some things so in our chat.Okay.Yeah, so what I I paste some some something, so this is actually the input when we when we were using, yeah, you can you can take a look at it, it's it's like we it's a serial number plus it's either like it's a rotor stator and like the issue name, so which is the...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   35:57It.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   36:16The the shorter one and the like this basically come from the the heat map, so let me.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   36:27So basically it is having the serial number, the component, and the issue type. So tell me one thing, like if I, let me open this.
+
+576072292608Zhou, Xujin (GE Vernova)   36:32P.Yeah.Yeah, yeah.Yeah.Yeah, yeah, yeah, open this one, so, so this one is also in Databricks. I, I just downloaded it, but, but this one is somewhat something in Databricks as well, without those highlights, this is the things, so it's actually like a serial numbers because I'm doing like running the whole process, it's not only.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   36:51Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   37:03A query is also the analysis, so so it's like a query, like when I run the app, I I give it to the yes and then it find me the relevant data and then start query, but it's also, yeah, so this yes and your your your test tool goes to another place, but the the like a status you that you can find in.component type like column D. So it's like I provide the component type and also the column G, the issue name. So it's like I, for example, I provide the stator, IRPR, if you scroll down a little bit, let's just use that as an example.Like, ohh, no, maybe goes up a little bit, so it's a stator IR, yeah, see like the row twenty-two, so state, yeah, row twenty-two, the stator at C stator and see my issue name is IRPR, then it will pass the issue prompt like in column H.The issue prompt, the whole issue prompt to the as the like a query inputs, yeah, so you know.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   38:06P.Got it, so I, I what I can do is I can I can use this heat map in the in the test tool that I'm building, right?
+
+576072292608Zhou, Xujin (GE Vernova)   38:15Yes.Ohh, no, no, no, no, no, no, no, no, no, don't use this one, use the one in Databricks, so, so I think Databricks got the latest heat map. This is 1 like I downloaded.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   38:30No, no, I mean we will use the right one. I'm seeing like the structure, like for example, so we what we can do is we we use this heat map sheet in the in the test we only change, like say for example.
+
+576072292608Zhou, Xujin (GE Vernova)   38:37Yeah, yes, yes, yes.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   38:50component, persona or something like that, right?
+
+576072292608Zhou, Xujin (GE Vernova)   38:53Ha.We, we, yeah, we just need a component. You really, if like a focus on on this like a generator, this this things, we basically only need a state, I mean the component type and the issue name. Can can you scroll down a little bit? Let me make sure, like after the generator section, yeah.So, so here there are some GE those like gas turbine. It's we don't need to configure. There are also like this component type to be other other is in like OE persona, but I think can you scroll up? Let me cheque if all the.rotor and the stator, they are all in like a REL, yeah. They are all the rotor and the stator are in reliable like a persona, so we don't need to configure that and we don't need to configure the equipment type because we are only either, we will either put stator or rotor. And so it's just the component type plus issue name.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   39:53Okay, tell me one thing, Xujin. Like, say for example, I want to test relevancy or accuracy with top key. I want to provide some input and I want to see some output, right? Now, instead some input, I think what we are saying is...
+
+576072292608Zhou, Xujin (GE Vernova)   39:56Uh-huh.Ohh.Mm-hmm.Mm-hmm.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   40:14If we provide a component on a persona, for that component and persona, it should return me certain pages, because for that component and persona, it will first derive the issue prompt from this sheet, and it will pass that issue prompt to the...
+
+576072292608Zhou, Xujin (GE Vernova)   40:19Mhm.Mhm.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   40:40and it returns to me on the page number, the section, and other details which will tell me like, oh, this is right or wrong, right? That's what we are trying to do. Okay, so if I have to find an issue prompt,
+
+576072292608Zhou, Xujin (GE Vernova)   40:40Mhm.Did you?Mhm.Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   40:59If I, it should be unique, right? Like I should be able to give some unique way of this sheet which will tell, oh, okay, then this should be the issue prompt. So what is that unique way, right? Because I see like these are all same. So if I provide these, it will all, it will result me these many.
+
+576072292608Zhou, Xujin (GE Vernova)   41:01Okay.Yeah, yeah, yeah, yeah.Yeah, exactly. It's a column D and column G. So state plus the issue name will give you the, yeah, the unique issue prompt. And just as you mentioned, like when I see, for example, the top K, I know, for example, there are two, maybe 2 pages that must be retrieved.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   41:21Okay.Column day and column.Oh, okay.Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   41:39And I look at top K, yeah, you return the section header in those in metadata, and also the page number, and of course the the corresponding document name, that that one is good enough, I can use that too, but but but yeah, so so it's basically like, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   41:55Let's just quickly, I mean, let's just quickly write a little bit, okay? For input, we provide a component.
+
+576072292608Zhou, Xujin (GE Vernova)   42:00Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   42:07and we provide issue name.
+
+576072292608Zhou, Xujin (GE Vernova)   42:09issue name and that those two is together for the like the Corey input.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   42:11And.Yes, that goes as QD input.
+
+576072292608Zhou, Xujin (GE Vernova)   42:21Mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   42:22Right, and to the search index.
+
+576072292608Zhou, Xujin (GE Vernova)   42:23Mhm, mhm.Mhm, mhm.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   42:30And then as an output to that, we want to see, we also provide as an, this goes as an input, but this, sorry, provide top.
+
+576072292608Zhou, Xujin (GE Vernova)   42:41Yeah, we also need to provide those expected those things.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   42:44OK, right top K. We provide this and we provide expected document IDs, or do we OK?
+
+576072292608Zhou, Xujin (GE Vernova)   42:53Ohh, yes, document ID and the expected the cited the document ID and the page number.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   43:01I did document ID and page number. OK, so we provide these and it creates QD issue prompt from this and as an output I need what I need.
+
+576072292608Zhou, Xujin (GE Vernova)   43:05Page number, mhm.Mhm, mhm.Output, we we first like need the, for example, if my top K equals 5, with the output like I I need to expect the the those those chunk tags, so although I'm not expect, I'm not maybe not like looking it right now, but sometimes the...At some point, I need to look at the the chunk text, right? Or maybe I want to send it to to to some like a LLM, so so like LLM call, so, so yeah, so, so yeah, first one is yeah, it's...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   43:51It.So, expected one is like metrics, like return the doc IDs versus expected doc IDs, right?
+
+576072292608Zhou, Xujin (GE Vernova)   43:58Ohh, yes, yeah.Yeah.Yeah, yeah, yeah, it's a, yes, it's a, it's a, yeah, yeah, expected doc ID versus return doc IDs, yeah, this is like the the the query pool, yeah, no, no problem, and then the second one is also, yeah, expected cited document ID.It's like a, this is kind of the flag, right? Like for example, I entered 2 document ID, two expected cited document ID and it's page number. I would want a kind of a flag if it's like a yes or no, like it's a, it's a, it's.In top K on yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   44:45Yeah, yeah, flag, like say, for example, flag if it is, if they are not same, right, and...
+
+576072292608Zhou, Xujin (GE Vernova)   44:55A moment, you are this, you are talking about the document ID right now, right?
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   45:01Yeah, return doc IDs versus expected doc IDs flag if they are not.
+
+576072292608Zhou, Xujin (GE Vernova)   45:02So, it's, oh yeah.Yeah, yeah, that that is, if this we don't have a flag, it's okay, because I, I assume there won't be, yeah, but flag is better, like there won't be a lot of document, so, so if they are like a return is 4, like I, I, where I expected is five, I can like compare by ice, but yeah, yeah, you can put the flag here.If that's not too complicated, so Rich, yeah, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   45:29Okay.Yeah.Yeah, maybe we can put some threshold, like if it is less than 50%, then flag it or something like that. Also, we can put, but we can keep it very straight also, like if they are not equal, then it will flag it now.
+
+576072292608Zhou, Xujin (GE Vernova)   45:35Yeah.I mean, I mean the document ID, I would expect it, like, for example, for 765, my expected, like, pull-sized document ID, there are three, right? But if it was a returned document, I only got two, yeah, I need to you to flag that.Which one, like, it's missing? It's not like maybe I mean for 50% those threshold, it's you need to exactly like tell like which one is missing, and also on the other side, which one is like, if there are some additional document ID, which one are like found additional something like that?
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   46:08Yeah.You should give every detail I understand. So that is there and then we also have a metric, similar metrics of expected side.
+
+576072292608Zhou, Xujin (GE Vernova)   46:30Yeah.Mhm.Oh, the expected cited document ID and the page number is like, for example, I provided 2, then I just need a kind of a flag on like a yes or no for each of them. So for example, if I provide a page 42 and a page...300. I need to know page 42 if it's a yes or no and the page 300 if it's a yes or no like for each for each like a chunk because like those are those two are like the important evidence I need to know if it's in top case also that's yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   47:16So, basically, this, how will you provide it? Will you provide something like, say, XYZ, 10, and then an array kind of thing, right? Like, I expect XYZ, 10, ABC, 20.
+
+576072292608Zhou, Xujin (GE Vernova)   47:27Yeah.Yeah, yeah.Okay.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   47:38And then also ABC comma 40, something like that you will provide, right? Okay, so then I can cheque.
+
+576072292608Zhou, Xujin (GE Vernova)   47:38Mhm.Yeah, yeah, exactly.ABC, those ABC XYZ is the document ID that those the ones like the with the UUI that yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   47:49Yeah, yeah, yeah, yeah.Yeah, yeah, these are document IDs. So like our document ID can have multiple, like page 20 expected, page 40 expected, but from this document ID, page 10 expected, something like that, right? Okay, then we, okay, I compare them and I put them yes or no for each of them. And then what else do we need as an author?
+
+576072292608Zhou, Xujin (GE Vernova)   47:55Mhm.Yeah, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   48:16Put.
+
+576072292608Zhou, Xujin (GE Vernova)   48:16Yeah, yeah, the rest is like basically all the chunk tags. It's, I mean, not not not something I would expected to use directly, but maybe at some point when you look.Yeah, ohh.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   48:37Chunk test, I think you can get it from the chunk table only, right? But if I say, if I give chunk ID, it's better, right? Because then you can, because we don't want to copy all the text here, all right?
+
+576072292608Zhou, Xujin (GE Vernova)   48:47Oh, yes, yes, yes.Yeah, yeah, great, yeah, yeah, yeah, chunk idea, yes, chunk idea, uh, it's great, uh, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   48:56Good, because then it we can query the table to get the text, right?
+
+576072292608Zhou, Xujin (GE Vernova)   49:00Yeah, yeah, yeah, and also maybe the, I'm wondering if section headers are needed because I feel like for the section header, it's better for me to get the chunk ID and query the chunk table so that I can see this section header if I want to do some comparison. So I think chunk.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   49:04P.
+
+576072292608Zhou, Xujin (GE Vernova)   49:20Chunk ID itself is is fine, because if you provide section handles, there will be quite quite like a chunk.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   49:27No, no, I don't want to build a logic on my own. The logic should be something which is already there right now. My question is like currently chunk table, does it have any section header information? If it has, then we can provide it. But if not...
+
+576072292608Zhou, Xujin (GE Vernova)   49:41Yeah.Yeah, yeah, yeah, yeah, yeah, in chunk idea to, I mean, in those chunk tables, the metadata section, it's got like a section header, like section 1 to section 5. I think you build them section.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   49:53Then we don't need it because we can QD it from that table using chunk title, right?
+
+576072292608Zhou, Xujin (GE Vernova)   49:57Yeah, yeah, I agree. That's what I was saying. Yeah, I think like chunk ID is fine. So as long as we got to the chunk ID, we can query to find it.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   50:05Okay, so let me work on this piece and then I will, I'll keep you updated on if I need more, I have questions on this. But I think it should be easy for us to find it out. So that's one thing I'll work on. But I, one more thing I started to work on, but I'll just hold out for now because I was not sure whether it's right now needed. This was.
+
+576072292608Zhou, Xujin (GE Vernova)   50:15Ohh, that's good, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   50:29the gold set right like we have been testing whether so there were two things that I initially thought of doing one isYeah.
+
+576072292608Zhou, Xujin (GE Vernova)   50:43Previous, previous, like that tool, I would also expect some, like, kind of a maybe, maybe I'm not sure, but maybe some like a batch wrong, like, yeah, yeah, big.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   50:55Yeah, yeah, that's right, because we want to make sure that it works on multiple documents, right? Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   51:04Yeah, yeah, yeah, yeah, yeah, sure.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   51:05And batch run, we can specify also if you want, run on, I think we can run on all documents versus some, right? So if I say run all docs, say for example, takes time, then I provide, okay, run on.See, the thing is, it's always comparing with your existing input, right? So...
+
+576072292608Zhou, Xujin (GE Vernova)   51:31Yeah, yeah, I I will provide all the input, no problem, just.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   51:34So then we have to run it on all the document IDs that are provided, right?
+
+576072292608Zhou, Xujin (GE Vernova)   51:43Yeah, I will provide the expect, no, no, no, it's let me see. I will provide the expected document IDs like for each case. I mean, for example, for serial number one, I will provide the three expected ID. For serial #2, I will provide like another.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   51:58Again.
+
+576072292608Zhou, Xujin (GE Vernova)   52:02For example, for document ID, and they all got.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   52:06OK, OK, let me start on this, then it will get give us more clarity. Let me start and build start doing, and then I'll ask you more questions.
+
+576072292608Zhou, Xujin (GE Vernova)   52:07And so, like this expected cited document.Yeah, yeah, maybe not, yeah, maybe not batch Ron at this moment, yeah, just to first build it and let me try.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   52:21Yeah, let you try, see it, and then we make it more better. But I think batch run should be possible in the first run itself. Okay, so let's do that. I will stop. I will not do the other experiments right now. But okay, so I will first fix the bug. I mean, first look at the section headers, and I'll parallelly work on this one.
+
+576072292608Zhou, Xujin (GE Vernova)   52:29Mm-mm.Yeah, and then the second one.Yeah.Ohh.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   52:43And then there's another thing that we discussed, right? The LLM flow. Shouldn't we kind of share that with the Vince or we should wait for it? What do you say? Because I think Rashminkumar said by, we said by this week, right? What are we trying to do by this week?
+
+576072292608Zhou, Xujin (GE Vernova)   52:44Yeah.Yeah.Yeah.I, I, I think, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   53:03Friday, so if we, if we have, we should have some kind of understanding whether we are doing LLM processing or not.
+
+576072292608Zhou, Xujin (GE Vernova)   53:05Yeah, yeah.I, I think, no, no, it's I think, like, to understand whether we need to use it, it depends on two things: the 1st is that how our bug fix goes, for example, when you fix a bug and then, like, you see a lot of difficulties and like impossible, for example, the just saying, for example.the section had a without like a number, we cannot detect it at all. Then that needed to go to LL. I'm just giving some, yeah, so that needs to go to LLM. And if that is the case, then it is a kind of a must call LLM, because that's a big.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   53:38Mm.I see, yeah, yeah.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   53:51Big, like, you can, you can, you can like infer that there are maybe a lot of this kind of cases, but for example, if we we are able to fix most of them, then we need to like maybe Vinson or Jonathan input on whether we need that, but the issue is that, like, although we are not implementing it, but Jonathan got a like a next Monday, he got a like a meeting with.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   53:52Yeah.Arushi.Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   54:15The other team, right? So, so I mean, I would, I would expect, I mean, not to the full like complete to the one, but before like next Monday, we should send it to Vinson and Jonathan and to let them get a kind of idea or quick review on that, maybe not a meeting, but but they should.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   54:32Yeah, yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   54:34See, see the diagram you draw like a yesterday, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   54:37Yeah.So okay, we will let me let me do this first research thing on section how what we get and then I'll connect with you and then we'll decide what to do next.
+
+576072292608Zhou, Xujin (GE Vernova)   54:40Yeah, yeah, yeah.Yeah.Yeah, yeah, yeah, yeah, yeah, ohh yeah, let me, yeah, let me, let me finish this one, as, as, as this one, like, ohh, we we just stop some somewhere here, so, so, so you you can refer to those documents for, like, for the examples that you you can test on, like...These are the two examples that there are no numbers. These are the examples where, like, where, where it's like that repeated 3.3.1, like we I'm referring to, and like this one we just to go over.Point 2 and the.3.3 or.2 we said like it's the inherent and the IBAT one. The third one is like if the subsection ends we need to like flip back instead of like making all the like rest become the generator if it's in a.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   55:48Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   55:48turbine section. And the first one is also very quick but also important. The first one is that...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   55:50Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   55:56like currently our boundary and our ESN assign got a kind of a boundary pass first and then go to that that page page like a signature based page fallback. So Vinson's previous logic is that if a like a generator and a gas turbine boundary both detected, then we will use the boundary
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   55:58It.
+
+576072292608Zhou, Xujin (GE Vernova)   56:21to assign like original like those ESN original equipment type. But there if there is only one boundary like there is only like gas turbine boundary, then it goes to the page like a fallback. It doesn't use the boundary to detect, but like there it need a fix. So so even with one equipment type, but if there are two like yes, then it still needs to go to like
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   56:23The.It.
+
+576072292608Zhou, Xujin (GE Vernova)   56:45like the boundary path instead of the fallback. So just giving an example, like this example, it got two turbine serial number. You cannot say because like I only detect turbine boundaries, so I go to page fallback and like I'm trying to detect those signature.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   56:58Yeah.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   57:05In the in the pages, and for example, this page is somehow didn't got enough like a turbine, those like a signature hits, it's not assigned to anything, so like the current issue is that in our table sometimes there are some like some some section not assigned to anything, it's because like we goes to page fallback, so if we go to page fallback.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   57:07Yeah.No.Ohh.
+
+576072292608Zhou, Xujin (GE Vernova)   57:30There will be some, like, like a kind of a blank ones, because, for example, this page it didn't detect any signature, then then it will just leave it as blank, but yeah, so Vincent's logic was like, if there is only guest, because he think like, if like only turbine.evidence turbine section header existing in a report, no generator, then we don't need the boundary. We just need to go to the fallback. But actually, so even there is only one gas turbine, I mean only gas turbine equipment type boundary detector.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   58:00No.
+
+576072292608Zhou, Xujin (GE Vernova)   58:08But if there are two ESN, it still needs to go to the boundary path instead of the fallback path, like the page fallback path. Yeah, yeah, that's it.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   58:11It.I see.Yeah, yeah, so it should not go fall back to page, but it should go to boundary path only instead of going to...
+
+576072292608Zhou, Xujin (GE Vernova)   58:26Yeah, yeah, so it's only like if we didn't detect any boundary, or like we go to go to the page fallback, even if we only detect one like a gas turbine boundary, but since there are two gas turbine ESN, so we still need to rely on that boundary instead of like just saying we imagine in that case like this.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   58:32MMM.
+
+576072292608Zhou, Xujin (GE Vernova)   58:50Page got to get this FSR got to get ESN. If we go to fall back, then how do we know? Like, even if we know I know this page got the turbine signatures, this is a turbine section. I mean, this is a turbine evidence page. How, how, how should I attach it to to which ESN? It may not something, yeah, so, so we still need to use the boundary path.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   58:53It.I see.Yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   59:13In the case that we detect the two ESN, but although they are both turbine, we still need to use the boundary paths.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   59:20Got it. Sure, I will let me look into the code what Singh and then I can we can connect again if I have questions on that.
+
+576072292608Zhou, Xujin (GE Vernova)   59:21Ohh, and it's the same, yeah, the same for the generator.Yeah.Yeah, yeah, yeah, great, great. Yeah, yeah, yeah, you can continue.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   59:31Eugen, now one thing is like I saw an e-mail from Namruth. I don't know if you want you can maybe answer her. I don't know what she is looking for.
+
+576072292608Zhou, Xujin (GE Vernova)   59:38Ohh.Yeah, yeah, yeah, let me take a rest, yeah, and and a look at it, so, so, like, currently, oh my god, there are so many things you need to work on, so, so, so, like, for the...
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   59:48She is, yeah, I mean, give her some small things to look at, because otherwise she's like confused most of the time, right? Like this, yeah, OK, yeah.
+
+576072292608Zhou, Xujin (GE Vernova)   59:53Yeah.Yeah, yeah, yeah, yeah, so, so, so the currently you will look at those bug, like it's basically bug three and bug 4 first, and like the testing, the testing like that tool, if you don't have time, it's also okay, I can, I can use the like the user prompt in long fuse.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   1:00:05Yes.
+
+576072292608Zhou, Xujin (GE Vernova)   1:00:17Like, although I into it, yeah.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   1:00:17No, no, no, I will give you, I will give you that. I'll give you both. Don't, I mean, I'll have it, don't worry. Yeah, yeah, I know it's not easy to test from the waiting for so long and looking at love.
+
+576072292608Zhou, Xujin (GE Vernova)   1:00:24Yeah, yeah, yeah, so, so.Yeah, because I only want to see the retrieval result, but I need to wait for the response. Yeah, yeah, thank you so much.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   1:00:32Exactly.I have something basic at least for you, then we can keep on defining it, making it better and better, right? Okay.
+
+576072292608Zhou, Xujin (GE Vernova)   1:00:37Yeah.Yeah, yeah, yeah, yeah, yeah, yeah, so after, after if you have a question, just ping me and after you got that fix two and I mean fix like a bug three and bug 4 fixed, you can send me the pre-processor first before ingestion. I mean, send me the pre-processor first. I will use the pre-processor locally to test like those region.Region metadata results. If that looks good, we will do the ingestion and we run the regression cheque, and while you are building the testing tool, after you build the testing tool, I can compare some of the kind of retrieval results, and after that, if we still have time, we can look at the that like a section header.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   1:01:10Zhou.
+
+576072292608Zhou, Xujin (GE Vernova)   1:01:23that issue because like I still notice like some of our chunks is using some like a table like a like a previous pages table like a context to ask like a some kind of a section header like a section one so that is an issue if we have time we can also we we I mean.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   1:01:41So if you can add that Namruth bug also in your sheet so that we don't lose track of it. Once I finish that, I can look into that one, right?
+
+576072292608Zhou, Xujin (GE Vernova)   1:01:48Yeah, yeah.Yes, yes, yes, yes. That one is also a must work, but it's not that kind of that urgent, I would say, but that's also a must focus at some point. Yeah, thank you so much. You can continue work. Yeah, I, yeah. Can ping me when you need it. Bye.
+
+576072292608Saxena, Madhurima (GE Vernova, consultant)   1:01:52Okay.Okay, thanks, Seidel. Talk to you. Bye.I.
+
+

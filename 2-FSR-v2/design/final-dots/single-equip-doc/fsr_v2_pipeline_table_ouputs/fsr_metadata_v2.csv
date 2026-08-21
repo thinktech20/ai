@@ -1,0 +1,1520 @@
+document_id,pdf_name,volume_path,title,customer,primary_esn,primary_equip_type,gt_esn,gen_esn,primary_equip_sys_id,primary_equip_class_code,event_type,ev_project_id,ev_equipment_event_id,ofs_event_id,fsp_project_id,xxx_project_id,fsr_number,report_issued_date,outage_start_date,outage_end_date,outage_type,technology_type,prepared_by,approved_by,document_summary,page_count,file_size_bytes,file_last_modified,preprocessor_regions,inactive_esns,extractor_method,preprocess_method,llm_model_extraction,llm_extraction_prompt_version,pipeline_version,run_id,metadata_status,metadata_error,metadata_retry_count,chunk_status,chunk_error,chunk_retry_count,ingested_at,scraped_at,chunked_at,updated_at
+5b688732-39f2-48d2-a887-3239f258d28b,Generator_316X914_2019-11-23,/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/5b688732-39f2-48d2-a887-3239f258d28b,5b688732-39f2-48d2-a887-3239f258d28b,,316X914,Generator,155360,316X914,SY0490705,6FA,,,,,FSP-261874,C-10329409,,,2019-11-23,,,,,,"GE Power Power Services
+1.2 Site Personnel
+Name Category Role
+Ionut Alexandru Petre GE GENERATOR WINDER
+Shane Kimber GE GENERATOR WINDER
+Shakiti Patel GE GENERATOR WINDER
+Lee Barrett GE GENERATOR WINDER
+1.3 Executive Summary
+This report documents the planned outage that has been completed on a SAC type steam
+turbine unit with the serial number 155360.
+The scope includes major inspection of both steam turbine and generator for Dead Sea
+Works Unit 3, which is operated as a backup unit for the last few years. This outage is a
+transactional maintenance works. Fieldcore team planned and executed the outage with craft
+labor provided by Fieldcore or by its subcontractor.
+There was one EHS specialist supplied by Fieldcore both at day and night shift. The NDT
+inspections of the unit were performed by a subcontractor. The outage was started on 22
+November 2019.
+Prior to outage start, it was planned to replace all the old parts with new the parts when
+possible. This was agreed with the customer during the start of the outage.
+Therefore, the main parts given below has been changed with the new ones;
+1. Horizontal Joint Bolts, Stud and Nut
+2. Steam turbine oil deflectors
+3. Steam turbine bearing pads and oil seals
+4. Packing Rings (All inter stage and gland seal except N01G06)
+5. Generator oil deflectors
+6. Generator bearing pads
+7. Extraction valves internals and actuators (10”, 12” and 42”)
+8. Steam seal dump and feed valve
+9. Steam ejectors and silencer
+The other parts change depended on the condition and availability of the part.
+
+GE Power Power Services
+1.3 Executive Summary
+The chronological job summary is given below;
+24 November 2019
+· Full Crew (Day/Night shift) arrived at site and HSE Induction completed. Release the
+Crew for rest.
+· Logistic Site preparation Completed
+· Scaffolding Team from Customer arrived this morning and start the activities. The delay
+cannot be considering critical due no activities started from our side. The full crew arrived
+today and had a HSE Induction. The scaffolds during the outage will be modified as per the
+activities that will be carried out.
+· Lifting Tools and Devices are under inspection of Third parties for certification. (Local
+regulation)
+· The night shift will not be at site today due the HSE induction, required 24hrs rest before
+start to work. Night shift will start on 25th November
+· Materials check ongoing.
+25 November 2019
+· Lifting Tools and Devices are under inspection of Third parties for certification completed
+(Local regulation)
+· Coupling Cover Removal completed
+· ST & Gen Coupling Flanges split-out Started
+· Start removing the external Instrumentation (ST+GEN), Customer Scope, in progress
+· Electrical connection on GEN removal completed
+· Unbolt Extraction Valves (only 50% Bolts out, to avoid Alignment reading issue) done.
+· Bump Test for axial floating in progress
+· Unbolt trip throttle valve TTV (only 50% Bolts out, to avoid Alignment reading issue) in
+progress
+26 November 2019
+· ST & Gen Coupling Flanges Unbolt completed.
+· Coupling Split flange ongoing.
+· Removing the external Instrumentation (ST+GEN), Customer Scope, in progress
+· Bump Check and Coupling Run-out Completed and values recorded as found
+· Unbolt TTV (only 50% Bolts out, to avoid Alignment reading issue) one BOP Side
+completed
+· Removed SV1 Crosby the safety valve cap and nut. Nozzle ring location checked and
+ring locked. Nozzle ring position recorded.
+· Started removal of vertical flange bolting of exhaust to condenser. (%50)
+· Started removal of horizontal flange of SV1 Crosby safety valve. (Lower valve)
+· Continued alignment check of steam turbine to generator coupling.
+27 November 2019
+· Completed removal of vertical flange bolting of exhaust to condenser.
+
+GE Power Power Services
+1.3 Executive Summary
+· Completed removal of front standard cover.
+· Completed removal of roof at generator excitor side.
+· Completed removal of 10 inch extraction Check valve and put out-side of turbine
+building.
+· Coupling cleaned.
+· Coupling studs (as found) elongation measured. Two coupling bolts loosened.
+· Started unbolting TTV flange bolts for turbine and piping (one stud loosened)
+· Initiated Crosby valve (upper) disassembly.
+· Extraction valve cover bolts removed (left two)
+· Removed Exciter’s Air Cooling Duct
+· Removed bolts from Exciter’s End Cover
+· Scaffolding subcontractor Built scaffoldings at CE to remove Cooler’s Piping and to allow
+for Coolers removal and inspection.
+28 November 2019
+· ST Casing split line bolts removal completed
+· Exhaust cover removed
+· Excitation system removed
+· 10"" blind flange on extraction line installed after check valve removal
+· Start preparation for casing lifting, lifting beam brought to turbine building.
+· Unbolting of TTV. (4 left and 2 on right flange.) All the bolts stuck inside and were
+required to cut.
+· Disassembly of CE end shield, removed oil piping and started removing covers, in
+progress
+· TTV Unbolt ongoing, decided to cut all the bolts not possible to remove even after
+heated.
+· Extraction valve gear (V2) removed.
+· HP horizontal joint nuts - removed 75%.
+· Exhaust bearing vent pipe (outside) removed.
+· Crosby's safety relief valve (V1) disassembled.
+· Removed from CE Enclosure the fan & motor skid for generator bearing seal oil system
+· Rig, lift and removed End Wall from CE Enclosure
+· Unbolted and removed Brushless Exciter Air Cooling Duct
+· Record Clearness Values of Exciter Gaps
+· Unbolted and removed outboard deflector from Brushless Exciter
+· Removed U/H inboard deflector from Brushless Exciter.
+29 November 2019
+· Continued with preparation for lifting the Turbine outer casing. Lifting arrangement
+completed.
+· Tried to lift-up the outer casing but seems to be stuck at snout rings, we decided to
+remove the gear valve assembly first.
+· Materials check for BOP side
+
+GE Power Power Services
+1.3 Executive Summary
+· Removal of TE Shield ongoing
+· TTV Unbolt ongoing, decided to cut all the bolts not possible to remove even after
+heated.
+· Extraction valve gear (V2) removed.
+· HP horizontal joint nuts - removed 75%.
+· Exhaust bearing vent pipe (outside) removed.
+· Crosby's safety relief valve (V1) disassembled.
+· Removed from CE Enclosure the fan & motor skid for generator bearing seal oil system
+· Rig, lift and removed End Wall from CE Enclosure
+· Unbolted and removed Brushless Exciter Air Cooling Duct
+· Record Clearness Values of Exciter Gaps
+· Unbolted and removed outboard deflector from Brushless Exciter
+· Removed U/H inboard deflector from Brushless Exciter.
+30 November 2019 - 01 December 2019
+· Removed Upper half of turbine casing.
+· Start with inner casing unbolting.
+· Removed front bearing cap.
+· Removed exhaust bearing cap.
+· Unbolt flanges of Crosby's safety relief valve ongoing.
+· Removed seal oil piping from TE side
+· Removed lift oil piping from TE bearing
+· Unbolt and open flanged lube oil drain piping connection from TE bearing
+· Removed Outer End Shield Panels from TE side
+· Removed Outer Oil Deflector from TE side
+· Record clearances at opening, of TE nozzle shield to rotor fan wheel and of TE inner oil
+deflector to rotor shaft
+· Inner Casing Removed Top half
+· V1 unbolted removed and dropped in laydown area, used torch to unbolts, nut stuck on
+the casing, required a complete shift
+· Materials check for BOP side ongoing
+· Turbine ends bearing cover removed
+· Turbine casing middle split bolts removal ongoing
+· Internal instrumentation removal
+· Started Generator preparation for rotor removal
+· Safety Crosby Valve 1 piping welding completed.
+02 December 2019
+· Removed Upper half of Grid diaphragm.
+· Removed Upper half of exhaust bearing cap and Upper half of journal bearings.
+· Removed TG guard.
+· Removed oil deflectors and seals (clearances measured).
+· Performed rotor bump check.
+
+GE Power Power Services
+1.3 Executive Summary
+· Recorded turbine axial and radial position.
+· Crosby's safety relief valve removed from the pipes.
+· 42” Non-return valve cap removed.
+· Removed all parts of TE inner end shield
+· Removed U/H TE tilting pads bearing
+· Record tilt & twist measurements on TE tilting pads bearing
+· Moved up on generator deck the skid pan and the yoke for support the rotor at CE side
+· Push the generator rotor (using axial jacking device mounted on generator coupling at
+TE) toward CE side (11 mm) to install the yoke on the shaft
+· Install the shaft support (the yoke) on the oil deflector area at CE side
+· Cut gasket material at the length of stator core 3300 mm and width 600 mm (to install
+under skid pan and protect the stator core)
+· TTV, 10” Check Valve, and Crosby Safety Valve (Only Internal Parts) sent and arrived to
+NIDCO Work-Shop.
+· Invert to half outer casing and place in laydown area, completed
+· Recording all the datum Rotor Vs Inner Casing, Diaphragms, supports (Radial, axial) in
+progress
+· Generator preparation for rotor removal in progress
+· Materials check for all spare parts
+· 42” Check valve Outside linkage mechanism and start internal parts removal
+· Electrical disconnection for all 6 motors.
+03 December 2019
+· Steam path clearances measurements. Ongoing.
+· Diaphragm drop check performed for the lower half of the casing.
+· Nozzle box packing heads dowel pins - drilling out. Ongoing.
+· 12’’ extraction check valve (steam turbine side) disassembled and removed. Left in
+loading bay.
+· Extraction steam pipe supported, cylinder and limit switches wrapped onto steam pipe.
+· Overhead floor grating had to be cut, in order to remove check valve. Floor replaced in
+position, area marked with barricade red-white tape.
+· Installed flex italic gasket inside the stator core
+· Pulled the rope for skid pan thru the stator core using plastic tube
+· Applied mech grease/Vaseline on the skid pan and wrapped in plastic foil
+· Tried to install the skid pan on the top of the rotor, the air gap was too small to pass CE
+Retaining Ring
+· Removed skid pan removed the gasket material from stator core, push the rotor 20 mm
+towards CE side, jack the rotor at CE side and install the skid pan at the bottom of the stator
+core
+· The skid pan is centered down inside the core (plastic foil to be removed from the top of
+skid pan left and right, to allow for body shoe installation
+· Generator field removed from the generator frame and put on the stands. This operation
+took longer than planned due the issue with the special tools that are not original.
+
+GE Power Power Services
+1.3 Executive Summary
+· Build scaffolding around the upper half steam turbine casing.
+· Upper half diaphragm drops measured.
+· Start to clean middle split line of upper casing
+· Removed four pins from the nozzle box by drilling them out.
+· For the 42"" valve, removed mechanical seal on the Non Air-Actuator Side.
+· Continued removal of 42"" valve internal parts. Commenced removing valve stem from
+valve (Only 1-foot length removed, still need to finish removing the shaft). The components
+stuck due the long operation time and no maintenance.
+· Continued to remove packing ring from ST UH casing.
+04 December 2019
+· Steam path clearances done.
+· Diaphragm drop check done.
+· Trust bearing removed.
+· Turning gear removed.
+· Rotor and nozzle box removed.
+· Packing rings removed (UH and LH).
+· 12’’ steam extraction pipeline split. Blank flange installed on BOP side before second
+check valve for upcoming Customer’s activities (steam supply system recommissioning).
+· 42” Extraction Valve: more than 50% of cover’s studs removed.
+· Removed skid pan and gasket material from stator core
+· Vacuum cleaned inside stator core and on CE side
+· Initiated visual inspection of the stator core and stator armature
+· Cover with tarpaulin EW on both ends CE & TE
+· Removed all generator parts and tools from generator platform; scaffolding company
+removed temporary platform from Generator CE side in order to create a space for ST rotor
+· Removed lifting ring (yoke) from CE side
+· Removed CE bearing cap
+· Removed U/H CE bearing liner
+· Record tilt & twist measurements and removed oil seals and springs from CE bearing
+· Continued with the removal of the nozzle box, pins stuck inside and hard to be removed.
+· Continued with the packing ring and diaphragm from the UH turbine casing. Only one
+left.
+· Continued to remove upper half N2 packing casings from its packing housing.
+05 December 2019
+· Diaphragm and packing heads removal. Ongoing.
+· Packing housing segments of the nozzle box are removed.
+· Nozzle box locator installed. The Nozzle box moved toward to coupling.
+· Performed visual inspection for first stage. The ER case updated accordingly.
+· 42” Extraction Valve: cover’s studs removed. Still 5 to be disassembled
+· Lube oil motors removed.
+· Cleaning inside stator frame and bearing pedestal on TE side
+
+GE Power Power Services
+1.3 Executive Summary
+· Start cleaning and inspection the mechanical parts disassembled from generator
+· Record dimensional checks at Opening (measure ID by using inside micrometer), of
+OLD CE Inner and CE Outer Oil Deflectors, to see if they are out of tolerance.
+· Re-open ER case for stator rewedge and requested more details to GE engineering
+regarding the spare parts available on site.
+· Completed removal of all upper half diaphragms.
+· Placed all the removed diaphragms on the pallet and send to NIDCO for sand blasting.
+Except 5 diaphragms because the trucks were full.
+· Completed removal of HP inner casing lower half.
+· Completed removal of LP bearing instrument cables (by customer).
+· Completed removal of HP and LP bearing lower half.
+· For the oil tank:
+Removed both Hydraulic Lube Oil Pumps and motors
+Removed both AC Lube Oil Pumps and motors
+Removed DC lube oil pump and motors
+Removed Vapor Extractor and Motor
+· The valve parts below are sent to NIDCO:
+Spare Parts for: 1st/2nd/3rd Extraction Valves; TTV; V1; V1 Assembly
+42” extraction disc/disc arm assembly
+06 December 2019
+· Diaphragm and packing heads removed.
+· Initiated with turbine casing stone cleaning (LH).
+· HP and LP bore diameters are measured.
+· Oil deflectors diameters are measured.
+· Crosby new safety valve installation:
+· Pipeline flanges cleaned and stoned.
+· Old bolts and nuts cleaned.
+· Valve lifted and placed in position, new gaskets installed, studs tightened using hammer
+and flogger in both flanges.
+· Vertical flange 2nd round studs tightened using Hytorc Avanti-1 @200 bars.
+· Received answer from GE Engineering on ER-20191129-0176 - Full stator rewedge kit
+for 7A6 GE Generator
+· Cleaning generator parts.
+· Record dimensional checks at Opening (measure ID by using inside micrometer), of
+OLD TE Outer Oil Deflector, to see if they are out of tolerance.
+· Continue ELCID test of stator core, 50% done. USP device from ELCID kit stopped
+working (no image on display) and we had to stop the test after reading 38 slots.
+· Continued with inventory of the parts.
+· Continued torqueing the bolts for the safety valves.
+· Continued cleaning of UH and LH turbine casing flanges.
+· Completed another set of transportation for blast cleaning at NIDCO workshop. (Need
+another truck for Sunday morning.)
+
+GE Power Power Services
+1.3 Executive Summary
+· Completed cleaning of load coupling.
+· Completed flatness and coupling face measurements of load coupling.
+08 December 2019
+· Turbine casing stone cleaning (LH and UH). Ongoing.
+· Shaft diameters are measured (oil deflectors locations).
+· Crosby new safety valve installation: -Horizontal and vertical flanges' 3rd round
+tightening completed, using Hytorc Avanti-3. Flanges marked, following studs' tightening. -
+Hand lever arm was installed.
+· 42'' check valve: -Cover surface cleaned and stoned. -Valve seat cleaned and stoned.
+Needs to be further inspected. Please advise hereinbelow.
+· 10 & 12 extraction check valves: -Bolting hardware (studs & nuts) cleaning initiated. Not
+completed, needs to be continued.
+· Issued a confined space work permit with the customer, for working inside generator
+terminal enclosure at CE side
+· Cleaning the oil and passed vacuum cleaner inside generator terminal enclosure CE
+side
+· Build scaffolding on LHS Generator, to access Air Horizontal Cooler's Ends
+· Remove Coolers' steel sheet plates for sealing at left-hand side LHS Generator
+· Removed bolts from the Coolers' flanges at right-hand side RHS of Generator, in
+preparation for Coolers' removal for inspection.
+· Continued with inventory of the parts.
+· Started to inventory the new HJ bolts and nuts.
+· Continued for cleaning of UH casing.
+· Continued for cleaning of LH casing.
+· Continued to measure the ST-GEN coupling.
+· Completed removal of generator coolers.
+· Removed all motor coupling halves (total of 8)
+· 8 e.a. of motors given to Customer for refurbishment.
+· Disassembled Vapor Extractor (100% Complete).
+· Commenced Disassembly of DC Oil Pump (80% Complete)
+· Performed dimensional inspection of DC Oil Pump Internal Components (25%
+Complete)
+· Inspection of 42"" Extraction Valve Seat
+· Recorded TTV assembly pilot lift. Recorded TTV pilot to stem lift
+· Disassembled TTV assembly.
+· Recorded runout on TTV stem. Recorded TTV PSH bushing clearances. Recorded TTV
+disc ODs.
+· Disassembled 12"" NRV.
+09 December 2019
+· Turbine casing stone cleaning (LH and UH).
+· End packing and interstage packing inventory completed.
+
+GE Power Power Services
+1.3 Executive Summary
+· 10'' & 12'' extract check valves removed and blank flanges positioned in BOP side. Old
+gaskets were used, were in good as new condition, flanges torqued, Customer is ready to
+re-commission steam to pipelines.
+· 10'' pneumatic cylinder was solid rock, screws could not been untightened, valve disk
+was not swinging at all, valve shaft was cut in order to dismantle valve from actuator.
+· Both valves, 10'' shaft part and connector left in wooden pallets in turbine hall loading
+bay.
+· V2 grid valve partially disassembled; pin and pivot-block disassembled, coupling adapter
+was rock solid, had to be cut (3 pcs) in order to dismantle valve's rod. Valve left in wooden
+pallet in parts' tent opposite turbine hall, Disassembled parts left inside blue box (rod and
+destroyed coupling adapter also).
+· Moved apart the two generator coolers, cleaned the coolers' frames, blow them with
+compressed air to remove the oil and dirt between tubes. Traces of oil and water found on
+the TE Cooler's bottom plate inside generator frame. It looks that there is a water leak on this
+cooler, please investigate more during DS before reassembly (eventually a leak test to be
+performed on this cooler from T.E. side)
+· Cleaned the TE and CE cooler's big flanges from the fixed end of the coolers
+· Cleaned the flanges from generator frame, use metallic brushes and scraper
+· Cleaned the oil inside generator frame, from the steel plates (under the coolers)
+· Cleaned the steel plates for sealing the coolers to the generator frame (floating end)
+· Cleaned with denatured alcohol Stator End Winding at CE side
+· Continued with inventory of the HJ bolts and nuts. Continued marking of the parts per
+position. Continued with rotor stand arrangement.
+· Completed generator coupling measurements (coupling flatness, coupling bolt hole and
+coupling fit measurements). Completed UH casing cleaning. Completed LH casing cleaning.
+Completed rear standard bearing cover flange cleaning. Completed rear standard cover
+flange cleaning. Generator TE cooler test equipment prepared.
+· Sent 10"" & 12"" Extraction Valves and 42"" Extraction Valve Cover to NIDCO
+· Disconnected TTV hydraulic return and supply lines •Sourced spare parts for DC and
+AC lube oil pumps •Completed DC Pump Disassembly & Inspection
+· Commenced DC Pump Reassembly (75% Complete- need to install pump in sump).
+· Onboarded the three (3) mechanics from DSW. Started setting up A/O Blasting zone on
+site at NIDCO -Removed broken hardware from TTV steam strainer. Remove the nut and
+anti-rotation pin from the 12"" NRV. Relived and removed the five (5) springs on the on the V1
+CV. Unpinned and removed all five (5) linkage systems on the V1 CV. Removed the V1 CV
+cam shaft. Unbolted and removed the V1 CV actuator. Flipped V1 CV steam chest for seat
+removal.
+10 December 2019
+· Continued with the inventory of the parts (diaphragm's hardware).
+· Disassembled, cleaned and inspected thrust bearing. Measured the thrust pads. The
+ER-20191209-1405 was opened.
+· Front standard cap cleaned.
+
+GE Power Power Services
+1.3 Executive Summary
+· V2 grid valve disassembly. Ongoing
+· TTV actuator removed & disassembled. Initiated inspection.
+· Cleaned brushless exciter parts (hardware, fuses, diodes) from generator rotor.
+· Cleaned the generator body and under retaining rings with denatured alcohol and rags.
+· Dimensional checks of generator shaft journals on bearing area and oil deflector areas
+at CE and TE.
+· Cover the generator field (rotor) with plastic foil.
+· Finish cleaning stator end winding at TE side, marked with black color the areas where
+bar ties became loose.
+· Continued to install HJ bolts in place. %50 completed.
+· Continued with rotor stand arrangement, The rotor Stand arrived at site not suitable for
+use, required a modification, on the elevation and on the Shaft seat area.
+· SKF hydraulic bolt tooling arrived at site in the morning. Completed testing of generator
+coolers (No problem found).
+· Built tent around generator rotor. Generator stator cleaning completed.
+· Completed inventory of the casing HJ bolting.
+· Start disassembly of 1 AC Lube Oil Pump (80% Complete)
+· Started visual and dimensional inspections of 1 AC Lube Oil Pump (75%)
+· Performed inspection of lube oil pump discharge valve- SAT
+· Found Gaskets for Lube Oil Coolers- Qty 2
+· Unloaded two (2) more check valves and cover (yesterday)
+· Start making new studs for TTV upper head gland that are not on parts list (using large
+stud material)
+· Continue building tent for A/O blast cleaning Complete
+· Removed V1 CV Seats and Valve Assemblies
+· Cleaned V1 CV stems and recorded OD mic checks ~ UNSAT
+· Recorded the V1 CV bushing ID mic checks ~ UNSAT
+· Cleaned V1 cam shaft for dimensional checks
+· Completed marking/stamping and disassembly of V1 CV2 thru CV5 linkages
+· Removed the pin and nut from the 12"" NRV (A)
+· Started removing the pin and nut from the 10"" NRV (A) ~ Needs drilled
+· Removed the lock tabs and nut from the 42"" NRV
+11 December 2019
+· Continued to prepare rigging for rotor lifting for nozzle box removal.
+· Continued the installation of generator cooler piping.
+· Completed manufacturing of rotor stand for nozzle box removal.
+· Completed diameter measurements of two oil deflectors.
+· Completed installation of HJ bolts on the casing.
+· Completed measurements of coupling flatness, bolt holes and rabbet fit.
+· Commenced disassembly of #2 AC Lube Oil Pump (80% completed)
+· Commenced cleaning and inspections of #2 AC Lube Oil Pump (75%)
+· Performed inspection of #2 AC Lube oil pump discharge valve-SAT
+
+GE Power Power Services
+1.3 Executive Summary
+· Measured TTV Actuator Piston and Housing- Measurements left on Table in office.
+Clearance between piston and housing is 0.008""
+· Commenced A/O Blast Cleaning
+· A/O Cleaned 42"" NRV Disc/Arm and Lid
+· A/O Cleaned 12"" NRV Casing
+· Removed 10"" and 12"" Lever Arms from Shafts
+· Removed pin from 10"" NRV
+· Staged 10"" NRV and remaining 12"" NRV components in blast tent for A/O Cleaning
+· Started removal of V1 valve bushings ~ Will need to make up tool
+· Started fabricating smaller ""V""-Blocks for CV stem inspections
+· Started shaking out parts for TTV assembly
+· Completed machining new studs for TTV upper head gland.
+· Load Coupling Supergrip Bolts removed.
+· Load Coupling Removed.
+· Gear ring unbolted and removed.
+· Initiated with cleaning of Load Coupling parts.
+· V2 grid valve disassembly completed; Dowels were cut, guides & shims removed from
+both sides. Valve housing was cleaned and stoned. New bushing was tested for re-assembly.
+· TTV actuator: -Cylinder and piston were cleaned. Scratch marks removed from surfaces
+using stone, fine emery cloth and scotchbrite. -O-rings removed from relay valve and
+measured.
+· Rig, lift and installed TE and CE generator coolers.
+· Installed new gaskets and applied silicone under seal steel plates, torque the bolts.
+· Updated ER case ER-20191129-0176 - Full stator re-wedge kit for 7A6 GE Generator
+12 December 2019
+· Continued to check new packing rings against the old packing rings to see if there is a
+difference.
+· Completed manufacturing of extra stand for rotor transportation.
+· Completed diaphragm slot measurements for axial crush pin clearance except N02
+packing casings.
+· Completed cleaning of generator TE and CE bearing housing cleaning.
+· Completed cleaning of generator CE and TE bearings UH.
+· Sent TTV Actuator springs to NIDCO for MP NDE
+· Sent V2 grid valve operating mechanism to NIDCO for machining
+· Moved couplings and coupling covers to new Hydraulic Pumps (100% complete)
+· Commenced cleaning 42 inch extraction valve top flange and prepared installing new
+studs in valve casing (50% complete)
+· Removed spray chambers (Complete 50%) •Set aside 42-inch extraction valve parts for
+reassembly.
+· Continued A/O cleaning. Completed the 10"" (A) and 12"" (A) discs and 10"" lever arm.
+Start on TTV internals and flanges.
+
+GE Power Power Services
+1.3 Executive Summary
+· Performed PT inspection on 10"" (A), 12"" (A), and 42"" NRV discs ~ SAT
+· Performed PT inspection on 12"" (A) NRV seat ~ SAT.
+· Performed PT inspection on TTV seat ~ SAT
+· Removed V1 valve busing nuts *All were very difficult to remove and took more than
+normal methods
+· Cleaned TTV new assembly parts
+· Performed dimensional checks on new TTV parts. *Valve stem has minor bow but well
+within design tolerances.
+· Blue contact checked TTV stem to PSH backseat ~ SAT
+· Blue contact checked TTV pilot valve to main disc internal seat ~ SAT
+· Dimensionally checked 42"" NRV ~ Wear noted. Recommend comparing to OEM design
+tolerances
+· Dimensionally checked 12"" NRV ~ Wear noted. Recommend comparing to OEM design
+tolerances
+· Dimensionally checked 10"" NRV ~ Wear noted. Recommend comparing to OEM design
+tolerances
+· Checked shoulder gap on 42"" NRV ~ SAT (within 1/64"" rule of thumb)
+· Assembled 42"" NRV with new nut and nut washer. The spacer washers could not be
+located so the as-found spacer washers were used. Pin not used as communicated through
+email
+· Fabricated and weld installed 42"" NRV anti-rotations bars •Packaged and shipped 42""
+NRV and 42"" NRV Valve Cover
+· Shipped remaining parts in the ""3rd Extraction"" box that were shipped to site and not
+used (see pic)
+· Shook out parts for 12"" (A) NRV assembly •Blue contact checked 12"" (A) NRV ~ UNSAT
+· Located small amount of clover lapping compound and commenced lapping 12"" (A)
+NRV
+· Unloaded truck containing components and tooling sent from site.
+· Load Coupling Supergrip Bolts removed.
+· Load Coupling Removed.
+· Gear ring unbolted and removed.
+· Initiated with cleaning of Load Coupling parts.
+· V2 grid valve disassembly completed; Dowels were cut, guides & shims removed from
+both sides. Valve housing was cleaned and stoned. New bushing was tested for re-assembly.
+· TTV actuator: -Cylinder and piston were cleaned. Scratch marks removed from surfaces
+using stone, fine emery cloth and scotchbrite. -O-rings removed from relay valve and
+measured.
+· Rigged, lifted and installed TE and CE generator coolers.
+· Installed new gaskets and applied silicone under seal steel plates, torque the bolts.
+· Updated ER case ER-20191129-0176 - Full stator rewedge kit for 7A6 GE Generator
+13 December 2019
+
+GE Power Power Services
+1.3 Executive Summary
+· Completed adjustment of the turbine rotor transportation stand.
+· Placed the rotor in the transportation stand and adjusted the position of the rotor.
+· Cleaned the ST to Generator coupling covers.
+· Tested the resistance of the old and new pad thermocouples at generator CE and TE
+bearings.
+· Completed cleaning of TE bearing housing UH cover.
+· Completed inventory of packing rings.
+· 42"" extraction non-return valve cover gasket manufactured and installed.
+· Valve covers bolts torqued
+· Continued assembly of TTV new parts. Removed V1 bushings from steam chest-
+· Complete A/O cleaning of TTV. Started A/O cleaning of lower half inner casing ~ 75%
+complete.
+· Pads and end plates replaced for Journal bearings
+· Active and inactive pads replaced for Thrust bearing.
+· Cleaned load coupling bolt covers.
+· Measured diameters for rear pedestal oil deflector.
+· Measured Journal bearing bore diameters with new pads.
+· Measured new thrust pads thickness (active and inactive sides).
+· 42'' steam extraction non return valve re-assembly. Ongoing. Note: Customer provided a
+36'' Garlock gasket, it cannot be used on the valve's top cover as dimensions do not match.
+If Customer insists it can been modified to inside/outside diameter and installed but it will
+have much less sealing surface and limited tightening as it cannot include studs drill holes.
+· Moved CE and TE bearing halves inside turbine hall
+· Rig, lift and install upper half bearings CE &TE
+· Record inside diameters of the old bearings. Ongoing.
+· IR and PI test on the generator rotor, and field resistance check
+· IR and PI test and winding resistance checks of Exciter Stator Armature
+· Resistance checks of the fuses and of the diodes from Brushless Exciter
+· Winding Resistance check of Exciter Field Winding; IR and PI test not conclusive
+· IR and PI test of Generator Stator; Stator Armature resistance check not conclusive
+15 December 2019
+· Materials preparation. Cleaning new and old parts.
+· Recorded ""B"" diameter of old pad set installed on CE generator bearing
+(dwg.196C8937_rev.C)
+· Removed old pad set and replace with new spare parts 196C8937P0035 (new pad set)
+on CE bearing; extension wires for TC/RTD are linked to the old pads #4 & #5 CE bearing.
+· Recorded ""B"" diameter of old pad set installed on TE generator bearing
+(dwg.196C8937_rev.C)
+· Removed old pad set and replace with new spare parts 196C8937P0035 (new pad set)
+on TE bearing; extension wires for TC/RTD are linked to the old pads #4 & #5 TE bearing.
+· Cleaned the two halves of brushless exciter field (exciter stator armature) with dry rags
+and alcohol, cleaned with scotchbrite all the casing flanges.
+
+GE Power Power Services
+1.3 Executive Summary
+· IR and PI test on exciter field winding and was ok Moved the brushless exciter field
+winding (two wooden pallets) next to the generator field tent (please apply heater from
+customer, to the exciter winding)
+· Continuing with end-wedge repairing.
+· Completed preparation of rotor for transportation.
+· Rotor sent to NIDCO for A/O blast cleaning, NDT and bucket works.
+· Completed cleaning of generator TE pedestal lower half part.
+· Completed installation of lug and bolts on UH casing.
+· Removed Outlet & Inlet Cooler Piping Flanges of lube oil coolers. Found Inlet Flanges
+installed with Pieces of Sheet Metal- Need to ask customer to replace with blind flanges.
+Took pictures of tube bundles, bundles look to be in good condition.
+· Informed customer that oil pump discharge butterfly valves are damaged and need to be
+replaced.
+· 42 Inch Extraction Valve; Gave customer new limit switches and levers.
+· Attempted to check pre-charge on accumulators.
+16 December 2019
+· Continued with end winding repair.
+· Continued cleaning of generator parts. Continued with the inventory of the parts.
+· Continued with preparation of extension measuring device.
+· Completed preparation of installation parts for diaphragms.
+· Installed both hydraulic pump motors on Lube Oil Tank (100% Complete)
+· Reassembled and reinstalled Vapor Extractor (100% Complete)
+· Replaced bearings and Oil seals on Both AC Pumps (100% Complete)
+· Completed preparation of the parts for shipment.
+· Continued to repair second party of 10"" and 12"" valves.
+· Completed the workshop activities for the first party of 10"" and 12"" valves.
+· Continued the cleaning, measuring and inspection of TTV parts.
+· Prepared rotor for sand blasting.
+· Continued with the NDT of valve parts.
+· Cover with plastic foil the neutral terminals and the frame under EW CE side, and on the
+stator frame at the bottom on TE side Applied flooding resin on End Winding CE & TE side,
+let to dry out.
+· Cleaned the star point surfaces with scotchbrite, rags and alcohol Cleaning inner and
+outer end shield segments in progress
+17 December 2019
+· Continued with installation of End-wedges.
+· Continued to measure crush pin clearances. Stage 6 LH and inner casing slots and
+crush pins measured.
+· Completed welding of the filter support on the end shield.
+· Checked and carried all empty boxes from inventory area. • Rotor stands and lifting
+beam sent to NIDCO.
+
+GE Power Power Services
+1.3 Executive Summary
+· Completed manufacture of entensiometer rod.
+· Received TTV parts, stage 6 LH diaphragm, 10"" extraction valve, 12"" extraction valve
+and LH inner casing from the shop. Unloaded the truck.
+· Sent V1 Parts to NIDCO (Rack, LVDT, Moog Valve, & all O-rings)
+· Completed Reassembly of #1 AC Pump Internals (100% Complete)
+· Completed Reassembly of #2 AC Pump Internals (100% Complete)
+· Set aside Steam Seal Supply and Dump Valves.
+· Set aside Main Condenser Ejectors.
+· Received 10"" and 12"" Extraction Valve Parts from NIDCO.
+· Received TTV parts from NIDCO.
+· Cleaning end shield panels from turbine hall Cleaning exciter's lower air duct and steel
+shims, cleaning hardware (bolts, nuts, washers) Connect all vent and drain tubing lines to
+the generator coolers at CE and TE side.
+18 December 2019
+· Completed cleaning of inner casing. • Completed cleaning of the stage 6 diaphragm.
+· Installed the stage 6 diaphragm and inner casing. Checked the side slip of these.
+· Cleaned the flange of outer cover for SV1 crosby valve.
+· Installed A' Hydraulic Pump (100% Complete)
+· Installed B' Hydraulic Pump (100% Complete)
+· Installed A' AC Lube Oil Pump (100% Complete)
+· Installed B' AC Lube Oil Pump and Motor (100% Complete)
+· Disassembled, Inspected and reassembled DC lube oil Pump (100% Complete)
+· Installed DC Lube Oil Pump and Motor (100% Complete)
+· Obtained gaskets for Steam seal dump valve and supply valve-sitting on desk in office
+· Continued A/O cleaning the rotor. Approximately 85% complete. Plan on having the rotor
+complete tomorrow mid-day.
+· Used small sandblaster to blast two (2) lower half packing glands
+· PT tested welds on TTV •Cleaned the metal debris out of the TTV Steam Strainer
+· Completed dimensional checks on TTV Steam Strainer
+· Completed machining SV2 valve seat •Completed removing cracks in SV2 Disc
+· Completed welding SV2 Disc
+· Performed another contact check on SV2
+· Disassembled V1 In-Service Actuator
+· Changed components on V1 Actuator that are new
+· Torqued new V1 rack to V1 Actuator ~ Needs drilled and pinned
+· Cleaned and inventoried/changed shims on V1 camshaft bearing blocks
+· Removed V1 old camshaft bearings
+· Cleaned V1 camshaft bearing caps
+· Measured the V1 valve spring free lengths
+· Staged V1 valve parts for linkage parts swaps
+· Steam seal supply and steam seal dump valves installed. 1- ½ ' valve was installed with
+correct steam flow, but actuator had to be disassembled and rotated 180deg to bring
+
+GE Power Power Services
+1.3 Executive Summary
+positioner and air supply flow regulator in the front.
+· 2nd Stage Air Ejector, Silencer and Hogging Ejector removed. Pipelines' flanges and old
+bolts/nuts cleaned. New Silencer and Ejectors replaced in position, roughly. New spiral
+wound gaskets necessary for completing installation.
+· Continue to remove all stator wedges, except the wedges from slot # 8, 13 and 42.
+· Vacuum cleaned the stator core
+· Cleaned inside the slots and on top of the bars with rags and alcohol
+· Counted new body wedges (2 boxes inside the tent and 1 box on generator deck):
+540+463+450=1453 body wedges (there are more than 1410, of what is written on the
+boxes)
+· Counted new end-wedges (1 box inside the tent): 150 end-wedges
+19 December 2019
+· Checked accumulator pre charge and recharged to 57 Bar.
+· Removed Lube Oil Cooler Covers •Installed Final AC Pump Motor.
+· Removed, Inspected and Reinstalled Spray Chambers.
+· Removed covers and gland seal condenser.
+· Received paper gasket and O-rings for TTV Actuator from customer.
+· Received spiral wound gaskets for silencer and air ejectors.
+· Reorganized several machines in shop for rotor footprint.
+· Staged rotor stands in shop and set per the bearing journal spans.
+· Completed A/O cleaning of the Rotor.
+· Rigged and removed the rotor utilizing a two-crane set-up and staged in rotor stands *
+Note that journals didn't look the best.
+· Moved rotor shipping standoff truck and truck left
+· Started blasting lower half 2nd, 5th, and 12th stage diaphragms and nozzle packing box
+~ 50% complete
+· Cleaned camshaft bearing block bases.
+· Inventoried camshaft bearing block shims and reinstalled.
+· Leveled camshaft bearing blocks and made shim changes as needed * note that one
+block was heavily loaded.
+· Measured the camshaft bearing block IDs and made shim changes as need * Note that
+some are over design but ok for this outage. May want to address next outage and I will put
+in my shop write-up.
+· Installed camshaft bearing block liners.
+· Installed camshaft and expanded liners.
+· Removed camshaft and dimensional inspected liners *Showing tight right now but shaft
+still moves
+· Prepped V1 CV for A/O Blast Cleaning.
+20 December 2019
+· Fisher steam seal supply and steam seal dump valves: Travel stops (softeners) removed
+from positioners boxes.
+
+GE Power Power Services
+1.3 Executive Summary
+· 2nd Stage Air Ejector, Silencer and Hogging Ejector: Gaskets installed in flanges,
+installation completed, only pending item silencer drain pipe spool with ½ ' valve.
+· TTV actuator initiated. 2nd paper gasket manufactured, cover gasket manufactured for
+cylinder from green Garlock sheet. Shaft bearing and one piston ring replaced. Cylinder
+assembled in position and hydraulic oil supply & drain connected with new o-ring. Solenoid
+valve disassembled cleaned and re-installed with 4 new O-rings.
+· Lube oil coolers and gland seal condenser flanges & removed piping cleaned.
+· Cleaned the Brushless Exciter Exhaust Air Duct flanges (located on Generator deck)
+and End Shield hardware (bolts & nuts)
+· Cleaned the last part of TE End Shield (under the GLAC)
+· Continue to install center wedges and adjacent wedges
+· Continued to clean bolts and nut of various assemblies.
+· Continued with the inventory of the parts.
+· Performed pressure test on Lube Oil Coolers-SAT
+· Performed pressure test on Gland Steam Condenser-SAT
+· Cut gaskets for Lube oil coolers
+· Received TTV from NIDCO
+· Received Upper Crosby Valve Parts from NIDCO
+22 December 2019
+· TTV actuator reassembly completed. Once springs delivered from NIDCO, new 80A
+piston ring replaced in stem assembly and springs/main piston/stem was reassembled to
+worm gear housing. Assembly was lifted, installed to actuator housing and torqued to spec,
+new paper gaskets used. Hydraulic relay (spool valve installed) using new O-rings. Housing
+cover installed using new Garlock gasket.
+· Lube oil coolers reassembled using new gaskets.
+· Gland seal condenser reassembled (RHS only).
+· Continue to install new wedges inside stator core
+· Cleaned and install new rubber gaskets on lateral panels of inner end shields
+· Cleaned and install new rubber gasket on Brushless Exciter's Cover
+· Cleaned the remaining hardware (bolts & nuts).
+· Started to remove the V1 flange studs - three (3) studs left, to be removed (attempt)
+during the night shift.
+· Rigged, lifted and removed UH turbine casing from old turbine building.
+· Flipped the UH turbine casing and placed the casing in turbine hall.
+· Cleaned and installed the L/H packing casings, performed side slip: N1G2, N1G3, N1G4
+· Cleaned the N1G4 U/H packing casing.
+· Measured and recorded the N1G4 packing ring Butt clearance.
+· Cleaned the packing casings and measured the drops, butt clearances.
+· Gland Steam Condenser Assembled (LHS)
+· Received and Installed Blind Flanges in Lube Oil Cooler Inlet Piping
+· Rotated Both AC Pumps for electrical connection
+· Turning Gear Motor Attached
+
+GE Power Power Services
+1.3 Executive Summary
+· Completed ~ 50% of rotor MPI. *Note that indication was found on the notch in 14th
+stage
+· Completed A/O Cleaning of 2nd, 5th, 10th, 12th, and 13th stage diaphragms along with
+nozzle packing gland
+· Finished cleaning and removing barriers from V1 steam chest from A/O cleaning
+· Swapped V1 linkage parts that were provided new
+· Finished cleaning all V1 linkage parts that are to be reused
+· Completed V1 linkage inspection. *Several components need repaired and really should
+be replaced.
+· Drilled and pinned V1 actuator
+· Prepped nozzle box for A/O Cleaning
+23 December 2019
+· Cleaned the exhaust cover, V2 and V1 flanges.
+· Cleaning UH casing's HJ holes. Ongoing.
+· TTV actuator upper half disassembled, stem-piston assembly lifted and disassembled.
+80A new piston ring was not properly installed, relay disassembled from main piston, relay
+OD and bore ID measured, 80A new piston ring installed in its proper location. Piston-stem
+reassembled, upper half TTV actuator reassembled, manual operation tested, electric panel
+bolted in position.
+· TTV flanges and bolt holes cleaning (on-going task).
+· Crosby valve reassembly: Blue contact check between disk ring and insert was not very
+effective due to parts construction although parts were clean and flat. Re-assembly
+proceeded up to top spring washer installation (on-going).
+· Extraction valves pneumatic actuators new support plates tested, bolt holes are more
+than 3mm offset, no new small bolts found. Holes to be made oval or slightly bigger and
+Customer to provide steel bolts(please advise hereinbelow).
+· Installed remaining rubber gaskets on outer end shield panels (the two big panels).
+· Cleaned oil deflectors' hardware (bolts, washers, nuts).
+· Showed customer the new limit switches for extraction valves and how they fit in place.
+Customer will work on new limit switch supports to fit in place.
+· Continued to work on the UH casing bolt hole cleaning.
+· Continued to work on TTV flange cleaning
+· Completed cleaning and checking the stud on the TTV body casing. The studs checked
+are marked with ""X"".
+· Electrical connection for the AC, DC and hydraulic pumps completed.
+· SSDV and SSFV connections completed.
+· Grid valve bushing manufactured by customer.
+· Completed ~ 99% of rotor MPI. *Verified that indication on rotor was only on surface in
+one area. Checking other area tomorrow.
+· Completed NDT on 2nd Stg L/H, 5th Stg L/H, 12th Stg L/H, 16th Stg L/H, and lower half
+nozzle packing gland. No relevant indications.
+· Completed A/O Cleaning of 16th and 18th stage diaphragms. Nozzle is ~ 40%
+
+GE Power Power Services
+1.3 Executive Summary
+complete.
+· Completed V1 Linkage analysis and identified areas that need inserts installed
+· Completed V1 seat bore inspection. Seat bores are severely distorted and are
+recommended to be corrected during this outage, including modification of the valve seats •
+Verified seats do not come with extra stock.
+· Set V1 in position for inspection of bushing bores.
+· Completed assembly of the V1 actuator.
+· Packaged diaphragms for shipment tomorrow.
+24 December 2019
+· Cleaning UH casing's HJ holes. Complete.
+· TTV actuator installed.
+· Lube oil coolers reassembled.
+· Continued with axial crush pin measurements. Stage 18 L/H crush pins measured.
+· Received diaphragms, nozzle box and one packing casing from the workshop.
+· Completed removal of diaphragm support.
+· Completed installation of new diaphragm supports.
+· Completed cleaning of TTV body cover nuts.
+· Two AC and one DC lube oil pumps bump check completed. Two pumps rotation found
+wrong and corrected.
+· SV1 crosby safety valve spring adjustment completed.
+· Completed A/O Cleaning of Nozzle Box, 15th Stg L/H, N1G1 L/H, N2G1 L/H, N2G2 L/H,
+and N2G3 L/H
+· Completed NDT of 10th L/H, 13th L/H, 16th L/H, 18th L/H, and Nozzle Box. Note that
+indication was found in weld on nozzle box
+· Cut off 14th stage bucket per PAC recommendation
+· Dressed bucket area and profiled bucket cover
+· Removed metal build up on 2nd stage bucket cover
+· Support NDT with FC guys and 6th stages from spill strip encounter
+· NDT'd the area where bucket was cut. No indications found.
+· NDT'd the area where the metal build-up was removed. No indications found.
+· Weighed bucket. 263.5 grams plus
+· Shipped lower half components and nozzle to NIDCO. Forgot TTV gasket but will put on
+tomorrow's truck.
+· Assembled CV3 Linkage with new and old components.
+25 December 2019
+· Performed crush pin measurements for diaphragms and nozzle delivered during the day
+shift.
+· Diaphragms installed.
+· Diaphragms axial movement measured in place using dial indicator.
+· Nozzle box flipped.
+· Completed upper Crosby valve reassembly. (Crosby valve reassembled)
+
+GE Power Power Services
+1.3 Executive Summary
+· Continued with side slip and butt clearance measurements.
+· Continued to clean diaphragm HJ and packing ring fits.
+· Continued to remove sealing ring at the nozzle box due to the deposit that stuck them in
+place. One group removed and nozzle box bore cleaned.
+· Received diaphragms, packing casings, V1 hydraulic actuator and rack from the
+workshop.
+· Completed removal of scaffolding from safety valve 1 area.
+· Completed bump check of hydraulic pumps.
+· Completed wire extension for thermocouples at generator bearings.
+· Completed inventory and cleaning od TTV studs and nuts. Found complete set of studs
+and nuts for interface flanges.
+· Completed A/O Cleaning of 7th, 9th, 4th, 3rd, and 8th stage lower half diaphragms
+· Started cleaning NRV for fill in work for FC guys between support
+· Completed NDT of 4th, 7th, 9th, and 15th lower half diaphragms
+· Completed NDT of lower half N1G1, N2G1, N2G2, and N2G3
+· Completed NDT of 15th stage lower half grid
+· Completed NDT of V1 valve springs • Started NDT of V1 steam chest - Found two
+indications so far
+· Finished minor blends on rotor but did not go too far
+· Cleaned and polished nuts pot faces on V1 horizontal and vertical flanges
+· Cleaned V1 valve seat bolt holes
+· Cleaned V1 bushing bores and recorded dimensional data
+· NIDCO started drilling the V1 stem clevises identified to need inserts
+· Continued support of NDT and A/O Cleaning
+· Loaded truck and sent all available components and old V1 actuator
+26 December 2019
+· Performed crush pin measurements for diaphragms delivered during day shift.
+· Diaphragms and packing casings installed with new hardware. (N02G03 set screw stuck
+and was drilled out).
+· Diaphragms axial movement measured in place using dial indicator.
+· Nozzle box's snout rings pulled out.
+· Continued with side slip and butt clearance measurements for diaphragms and packing
+rings.
+· Continued to clean diaphragm HJ and packing ring fits.
+· Received diaphragms from the workshop and unloaded the truck.
+· Completed to cleaning the nozzle box bores from the deposit.
+· Received the boxes from customs for the missing parts.
+· Installed the new TTV studs in places where the old ones removed.
+· Last five lower half diaphragms were sand blasted, and NDT tested. Loaded on truck
+and sent back to DSW. Sand blasting tent was affected from extreme weather conditions
+(wind and rain) and needs to be repaired.
+· 10 & 12'' non-return check valves: pre-assembled after NDTs completion. Disks new
+
+GE Power Power Services
+1.3 Executive Summary
+bushings to be installed and proceed in with blue contact checks.
+27 December 2019
+· Performed crush pin measurements for diaphragms delivered during day shift.
+· Diaphragms and packing casings installed with new hardware. (N02G03 set screw stuck
+and was drilled out).
+· Diaphragms axial movement measured in place using dial indicator.
+· Nozzle box's snout rings pulled out.
+· Completed measurement with side slip and butt clearance for LH diaphragms and
+packing rings.
+· Completed cleaning of LH diaphragm HJ and packing ring fits.
+· Rigged, lifted and put the UH turbine casing in place. Nuts not installed.
+· Four lever arms-clevises assemblies, pre-assembled. Fifth needs cotter pin bore on arm
+pin to be corrected.
+· Against adverse weather conditions (wind and rain all night and half morning) team re-
+constructed a smaller tent for upcoming sandblasting activities.
+29 December 2019
+· Preparation for tops on and off check by Laser.
+· Continue to install new body wedges inside stator core.
+· Opened confined space permit exhaust area. Completed erection of scaffolding around
+exhaust area.
+· Initiated reassembly of TTV in place. This should be completed after final installation of
+UH casing in place.
+· CV-V1 fifth lever arm pin drilled and fitted with new cotter pin. Lever arm and clevis pre-
+assembled (task completed).
+· Sandblasting tent completed, equipment was set up and blasting activities resumed: -
+Lower half grid valve completed. -Upper half #12 & #13 diaphragms completed. -#5, #6, #7
+upper half packings completed. -#11 & #15 upper half diaphragms initiated, almost 40%
+completed.
+· NDT completed on lower half grid valve, upper half #12 & #13 diaphragms, visual
+inspection + MPI, without indications. All packed ready for return shipment.
+· NDT completed on 10''& 12'' extract check valves (red dye penetrant only). Minor
+indication (pores) on 12'' BOP side flange and 12'' LHS shaft bore. UT to be initiated and
+finished tomorrow.
+· Old bushings removed (machined) from 10''& 12'' NRV disk arms and new bushings
+were shrink-fitted. On 10'' valve parts were pre-assembled, and blue contact check was
+performed. Minor lapping at seat and 2nd blue contact check was satisfactory.
+· All five new CV-V1 seats measured (AA outer diameter) and machining was calculated.
+Aluminum holding device was modified and CNC lathe set-up. 7 new rings already
+machined, very good job, perfect fit within tolerance.
+· CV-V1 hydraulic actuator linkage: -Rolled material machined and removed, bore
+restored. -New bearing shrunk-fit installed. -Linkage mounted to the hydraulic actuator.
+
+GE Power Power Services
+1.3 Executive Summary
+· Minor blending was done near #5 valve bushing bore, indication remaining but as it is
+within acceptable limits per Engineering's disposition is left as found.
+30 December 2019
+· Tops on and off check by Laser completed and adjustment ongoing.
+· Continue to install new body wedges inside stator core around 60%.
+· Scaffolding removed from the exhaust area.
+· Rigged, lifted and removed the UH turbine casing.
+· Sandblasting: -#11, #15 & #3 upper half diaphragms completed. -#1, #3, #4 & #5, #6, #7
+upper half glands completed. -HP inner casing upper half, N2 steam seal casing upper half,
+nozzle upper half right side/left side initiated, almost 35% completed. Sandblasting stopped
+due to air hose supply to sand feed hopper isolation valve failure. Valve was replaced with
+new.
+· NDT: -10 & 12'' non return extract valves: cover studs, seat and disk sealing surface
+were UT inspected. Disk shaft weld and disk anti-rotation lugs' welds were MPI inspected, no
+findings. -#1, #3, #4 & #5, #6, #7 upper half glands visual + MPI completed; without findings.
+-#11, #15 & #3 upper half diaphragms visual + MPI completed; #3 diaphragm, bucket 13
+from LHS horizontal joint split line had an indication in airfoil's trailing edge/pressure side
+closer to outer wall of the vane. To be blended and weld repaired at DSW.
+· 10 & 12'' non return extract valves: blue contact check performed on 12'' valve;
+satisfactory. 10'' valve re-assembled after valves' UT inspections finished (valve re-assembly
+completed).
+· CV-V1 new seats inner seal rings: Machining completed on all 20 new rings. • Rotor's
+new balancing counterweights manufacturing: Task progressing step by step, estimated
+completion ~55%.
+31 December 2019
+· Started to adjust the exhaust hood to condenser vertical flange studs. • Started cleaning
+of extraction valve connection flanges.
+· Continued wedging of the generator. (%70 completed.)
+· Removed the UH turbine casing from the turbine hall.
+· Rigged, lifted and flipped the UH turbine casing.
+· UH turbine casing placed in the small turbine building.
+· Scaffolding installed around UH turbine casing.
+· TOPS ON/OFF laser alignment completed. Final check will be done by using ERAG.
+· Received 2 e.a. of extraction valves, 5 e.a. of UH diaphragm, LH grid valve diaphragm
+and packing casings received from workshop.
+· Sandblasting: -HP inner casing upper half, N2 steam seal casing upper half, nozzle
+upper half right side/left side completed. -#4, #7, #8, #16 & #18 upper half diaphragms
+completed.
+· NDT: -HP inner casing upper half, N2 steam seal casing upper half, nozzle upper half
+right side/left side, #4, #7 and #8 upper half diaphragms visual and MPI completed. Minor
+dents on #4 & #7 vanes trailing edges need to be blended on-site. Parts packed and
+
+GE Power Power Services
+1.3 Executive Summary
+prepared for shipment.
+· 12'' non return extract valve reassembly completed.
+· CV-V1: clevises pin bore new inserts manufacturing completed, inserts were shrunk
+fitted to clevises and clevises were reassembled to lever arms.
+· Rotor's new balancing counterweights manufacturing: 33 pcs manufactured int total, trial
+tested on rotor's groove, they snugly fit, task completed.
+· Rotor's journals cleaning initiated; HP side bearing journal has a minor scratch mark at
+¾ of journal's circumference. Will be cleaned and hand polished using finest emery cloth and
+scotchbrite before journals diameter recording.
+· Both assembled non-return check valves and previously sandblasted and NDT
+inspected diaphragms/ packing rings were loaded and shipped to DSW early in the morning.
+01 January 2020
+· Continued to install 12"" extraction valves. Activity stopped due the wrong gasket
+supplied by Customer, seems also the previously gasket for the other 2 check valves,
+already installed are wrong. Probably need to be replace, considered a delay of 1 shift.
+· Continued to clean the spill strip areas and maintained them.
+· Continued to install new body wedges inside stator core. (%80 completed.)
+· TOPSON/TOPOFF report received from Pruftechnik.
+· Measured and recorded LH diaphragm drops and side slips.
+· UH turbine exhaust side vertical flange studs corrected for easy installation. • Butterfly
+valves for the lube oil pumps installed.
+· Sandblasting: -#2, #5, #6, #9, #10, #14 and #17 upper half diaphragms completed. All
+sand blasting activities completed.
+· NDT: -#14, #16, #17, #18 upper half diaphragms visual and MPI completed. Dent on
+#17 vane trailing edge (horizontal joint) needs to be blended on-site. All parts packed and
+prepared for shipment.
+· Rotor's journals cleaning completed on upper half; Once rotor assembled to balance
+equipment, rotor will be lifted and cleaned on journals' bottom half for UT and dimensional
+check.
+· New inner casing stud manufacturing initiated (in progress).
+· New CV-V1 valve/stem assemblies' and bushings' dimensions and run-out recorded
+(task completed).
+02 January 2020
+· Crush pin measurements for UH diaphragms.
+· UH diaphragm cleaning.
+· UH casing cleaning.
+· UH packing rings butt clearance measurement.
+· Continue to install new body and end wedges inside stator core. Ongoing
+· Continued to install 12"" extraction valve.
+· Continued to install new body wedges inside stator core. (%80 completed.)
+· Spill strip cleaning and adjustment completed on all LH diaphragm.
+
+GE Power Power Services
+1.3 Executive Summary
+· UH casing NDT completed.
+· LH casing NDT completed.
+· Stage 3 LH diaphragm indication checked by UT and PT. The indication found to be on
+the surface and fixed by blending.
+· Nozzle box indication cleaned, and NDT checked. The indication was fixed by polishing
+out.
+· Sandblasting: -#5 & #6 upper half diaphragms were completed today on second side,
+not yesterday. Aluminum Oxide blasting area cleaned, and tent went down. All sand blasting
+activities completed today.
+· NDT: -All remaining upper half diaphragms visual and MPI completed. Parts have been
+packed and prepared for shipment, first thing tomorrow morning.
+· Area prepared and cleaned, parts removed for delivery of balancing equipment.
+Container arrived on-site and equipment was unloaded from truck.
+· Balancing equipment was assembled, leveled and rotor was loaded. Power supply was
+connected and verified.
+· New inner casing stud manufacturing completed.
+· Rotor journals were further cleaned before rotor loaded to the rollers.
+03 January 2020
+· Cleaned UH and LH casing.
+· Cleaned and installed LH diaphragms in place.
+· Cleaned and installed stage 11, 12, 13 UH diaphragms in place.
+· Cleaned and installed N01 G2, G3 and G4 UH packing casings in place.
+· ""Old"" trust shims removed, thickness measured, installed back (the screws did not
+punched)
+· Performed ELCID test after Full Stator Re-wedge and was ok.
+· Installed 33 new end-wedges at T.E. side (39 end-wedges left to be wedged)
+· Cut 0.015"" thk filler strips to be installed under end-wedge radial pins
+· Start wedge mapping
+· Continued to install extraction valve actuators and level arms. Need to install one
+remaining actuator in place and install the level arms. The arms and switches should be
+arranged for proper working by customer.
+· Completed installation of 12"" extraction valve. Both flanges tightened.
+· Diaphragms and inner casing received from NIDCO.
+· Unloaded the truck and placed most of the diaphragms inside the turbine hall.
+· Checked the received inner casing hold down bolt and nut for dimension.
+· Completed the installation of the scaffolding for generator rotor installation.
+· Completed the new body wedges inside stator core.
+· Turbine stationary parts loaded and sent to DSW.
+· Rotor was connected to the balancing equipment coupling and rotated using the motor.
+· Rotor journals were conditioned using fine emery cloth and Scotchbrite.
+· NIDCO provided supports for dial indicators: Maximum TIR is 0.001'' between stages
+15/16 and 10/11. At rotor journals TIR is less than 0.001'' (±0.01 mm).
+
+GE Power Power Services
+1.3 Executive Summary
+05 January 2020
+· Installed LP packing casings to the packing box. (Located: near LH casing)
+· Installed UH seal rings to diaphragms and packing casings (N1).
+· Performed butt clearance measurements (except stage 17, N1G4, G5, G6).
+· Installed UH diaphragms (2,3,4,5) to inner casing.
+· Vacuum cleaned inside stator core and stator frame and blow with compressed air to
+remove foreign materials
+· Installed radial pins on end-wedges on both ends CE & TE, and apply epoxy
+· Applied finishing paint inside stator core and on end windings at CE & TE
+· Continued to install extraction valve actuators and level arms. One level arm left, it
+needs modification. The arms and switches should be arranged for proper working by
+customer.
+· Hytorc tool, socket, torque wrench and torque multiplier sent to NIDCO. These will be
+delivered to NIDCO by customer.
+· Generator field removed from Alstom turbine hall. Rigged, lifted and placed on the truck,
+then brought to the steam turbine hall.
+· Generator exciter end (collector end) bearing pedestal and bearing LH put under
+generator field. Collector end bearing UH installed in place.
+· The shop supported balancing today. The balance tech installed two control/test weights
+on each end of the rotor with 330 grams of weight at the stage 14 location. He reported that
+this was not enough and will do the calculations tonight.
+06 January 2020
+· Rotated the generator field (rotor) on the supports, with the two poles in vertical position
+· Installed coupling shoe on T.E. coupling
+· Installed C.E. Upper-Half bearing pedestal, torque the bearing and bearing pedestal
+bolts
+· Lift generator rotor at C.E. side and push towards T.E. the C.E. bearing and bearing
+pedestal, to install the rotor jacking device
+· Install rotor jacking device (the collar) on oil deflector area at C.E. side
+· Install Nomex insulation sheet inside stator core
+· Install skid pan on top of Nomex sheet inside stator core, tight in place the skid pan with
+ropes at C.E. and T.E. side
+· Performed preliminary insulation resistance check (Megger test) of stator winding
+· Performed DC Leakage Test on stator winding
+· Removed all electrical equipment from generator deck, cover stator core on both sides
+and turned on the heater inside the stator core.
+· Continued to install extraction valve actuators and level arms. One level arm left, it
+needs modification. The arms and switches should be arranged for proper working by
+customer.
+· Started correction for axial crush pin clearances and repairs on UH diaphragms.
+· Generator rotor rigged, lifted and put in place with the help of both mobile and overhead
+
+GE Power Power Services
+1.3 Executive Summary
+crane.
+· Steam welder arrived at site. Welder tools and consumables checked.
+· The shop rotor balancing continued. The balance tech has run the rotor with 500 and
+700 grams of weight at the mid-span with lead weight. We only have 31 weights which is ~
+600 grams. So, we have installed all 600 grams at the mid-span.
+· The coupling that was provided with the balancing equipment has runout on the
+peripheral. The runout is 0.007"" on the OD which is equivalent to about 1.5 grams. Although
+it is almost negligible, it is in GE procedure to ensure there is no imbalance as to not
+compromise the balancing data. The coupling has been machined and will be installed in the
+morning.
+· The V1 valve reassembly continues. The tooling received at ~ 11:15. The bushings were
+installed with new washers. However, when installing the valve assemblies, the #3 and #4
+stem/disc assemblies would not insert into the bushings. Tried each of the new assemblies in
+these locations to determine that it is not the stem/disc but the bushing themselves. It is
+found out that the bushing has concentricity problem, that need to be fixed in the next
+outage.
+07 January 2020
+· Lift generator rotor by using overhead crane and shaft jacking device
+· Removed body shoe under the rotor
+· Removed skid pan and Nomex insulation sheet from the stator core
+· Installed L/H T.E. bearing inside bearing pedestal
+· Checked T.E. bearing twist measurement at closing, and installed U/H T.E. bearing,
+torque the bolts
+· Installed T.E. bearing pedestal U/H, torque the bolts.
+· Continued to repair diaphragms. The diaphragm repair specialists started to work on LH
+diaphragm stg 3 and stg4.
+· Removed the hydraulic oil manifold from its place. Need tubing connection parts to
+complete the installation. • One of the extraction valve actuators removed to have the
+support for switches to be modified by customer.
+· UH diaphragm crush pin adjustment completed.
+· Stg 15 diaphragm side slip corrected.
+· The shop rotor balancing continued today. The coupling flange that was machined
+yesterday to correct the runout was installed and the rotor coupled. Rotor runout checks
+were completed and uploaded to PAC as directed by engineering. The existing weight
+(totaling 125g) was removed from the midspan plane which has helped the balance.
+· The V1 valve bushing machining has been completed. NCR submitted on the issue. The
+bushings have been installed with new nuts and washers, and the nuts torqued per the
+drawing specifications. All V1 valve stem/discs and seats are installed. The seats were
+installed as best possible using indicators to center the seats to the bores then using the
+valve to align the seat. All seats were torqued, staked, and then the valve flipped to the
+running position.
+
+GE Power Power Services
+1.3 Executive Summary
+08 January 2020
+· Installed C.E. Inner Shield Panels, torque the bolts
+· Installed C.E. Nozzle Shield, and record clearances to generator rotor
+· Installed C.E. inner oil deflector, record clearances at closing
+· Installed C.E. flexible hoses for oil vapor extraction at inner oil deflector and bearing
+pedestal C.E. side
+· Installed T.E. Inner Shield Panels, torque the bolts
+· Installed T.E. Nozzle Shield, and record clearances to generator rotor
+· Installed T.E. inner oil deflector, record clearances at closing
+· Installed T.E. flexible hoses for oil vapor extraction at inner oil deflector and bearing
+pedestal C.E. side
+· Installed T.E. Outer Shield Panel (in a few bolts)
+· Continued to repair diaphragms. The diaphragm repair specialists continue to work on
+LH diaphragm stg 3 and stg4.
+· Continued to adjust crush pin and side slip adjustment. (Stage 2, 3 for side slip and
+Stage 5 crush pin adjustment remains.)
+· Continued to install hydraulic oil manifold. Waiting for the customer to supply the tubing
+connection.
+· Nozzle box seal rings installed. Nozzle box punched at outer seal rings area.
+· Installed gasket for the air piping for extraction valves.
+· Rotor balancing completed, waiting answer from Engineering for total approval. V1
+Reassembling in progress.
+08 January 2020
+· Installed T.E. outer end shield, torque the bolts
+· Installed T.E. outer oil deflector, record clearances at closing
+· Installed brush supports at T.E. for shaft ground detector
+· Installed T.E. lube oil feed line
+· Installed T.E. lift oil piping
+· Installed the air filters on end shield and bearing pedestal at T.E.
+· Installed C.E. outer end shield, torque the bolts
+· Installed C.E. outer oil deflector, record clearances at closing
+· Installed C.E. lube oil drain line
+· Installed C.E. lift oil piping
+· Installed L/H air duct from brushless exciter
+· Installed Exciter Field Winding, record clearances in inspection forms
+· Installed Air Duct Cover on brushless exciter
+· Continued to repair diaphragms. The diaphragm repair specialists started to work on UH
+diaphragm stg 3 and stg4.
+· Stage 3 and 4 L/H diaphragm repairs completed.
+· Stage 2 side slip corrected.
+· Stage 5 crush pin clearance corrected.
+· Stage 17 diaphragm partition fixed.
+
+GE Power Power Services
+1.3 Executive Summary
+· 3 e.a. of inner casing hold down bolt’s washer machined and adjusted per specs. One
+hold down bolt waiting for reamer and pin.
+· N01G05 packing rings butt clearance adjusted and installed in place.
+· Installed limit switches support for extraction valves for the second time. Customer need
+to check the assembly to correct the positions.
+· Guide pin drawings given to the customer for manufacture. Expected to be received on
+next Monday.
+· 4 nuts given to customer for machining. Expected to be received on next Sunday.
+· Rotor balancing data submitted for engineering approval. GE engineering required extra
+data for approval. Info sent and balancing approved.
+· V1 assembly and tuning continues.
+10 January 2020
+· Borescope inspected the LO feed line and installed LO feed piping at C.E.
+· Installed air duct with new gaskets, between exciter and outer end shield at C.E. side
+· Rig, lift and install end wall panel at C.E. side
+· Rig, lift and installed roof panel at C.E. side
+· Rig, lift, install and connect to control valve the seal oil piping, on top of roof panel
+· Installed seal oil system fan & motor skid and piping at C.E. side
+· Housekeeping inside Generator Exciter Compartment
+· Continued to repair diaphragms. The diaphragm repair specialists continued to work on
+UH diaphragm stg 3 and stg4.
+· Stage 3, 4 and 17 L/H diaphragm NDT completed after repairs. No indication found.
+· Stage 17 L/H diaphragm cleaned and put in place.
+· One inner casing hold down bolt drilled for pin installation. Pin will be installed on
+Sunday.
+· Nozzle box packing casing bolt torqued.
+· Turbine hall prepared for incoming turbine rotor.
+· Rotor received from NIDCO. Truck unloaded and rotor put on the stands.
+· V1 valve received from NIDCO. Truck unloaded and valve placed at turbine hall.
+· Rotor balancing approval received from engineering.
+· Rotor loaded on the truck and sent to DSW site.
+· V1 assembly completed.
+· V1 valve loaded on the truck and sent to DSW site.
+12 January 2020
+· Cleaned the turbine rotor coupling surfaces.
+· Cleaned and taped the bolt hole and clear the punch marks for gear ring assembly.
+· Cleaned the gear ring.
+· LH of Nozzle Box Packing housing re-installed, bolts torqued and lock plates bended.
+· Installed the nozzle box to the rotor with nozzle box's bearing assembly. (rigging left in
+turbine bld).
+· Installed the gear ring in place.
+
+GE Power Power Services
+1.3 Executive Summary
+· Cleaned the front and exhaust standard for bearing installation.
+· HP and LP bearings end plates screw punched. LH of the bearings installed in place.
+· Cleaned stage 3 and stage 4 LH diaphragms after NDT.
+· Rotor journals polished and diameters measured.
+· SKF bolts sleeve outside diameters measured.
+· Stage 3 and 4 U/H diaphragm repair completed.
+· Stage 11 U/H diaphragm and N02 packing casing carried to turbine hall from other
+turbine area.
+· Removed the FME covers. Checked the cleanness of turbine with customer.
+· Cleaned the load couplings coupling surfaces and bolt holes.
+· Alignment pins manufactured for load coupling ST side.
+· Installed bearing TCs and Bently Nevada probes at C.E. side (customer)
+· Installed flexible connections and star point, torque the bolts (FC with customer's
+subcontractor); the bolts need to be re-torqued after 8 hours.
+13 January 2020
+· Checked the ERAG measurements and punched the diaphragms set screws.
+· Stage 11 and 17 U/H diaphragm repairs completed.
+· Stage 3, 4, 11 and 17 U/H diaphragm NDT completed. No indication found on the
+repaired areas. The diaphragms cleaned afterwards.
+· Took rotor radial positions and recorded the measurements.
+· Installed packing rings on UH diaphragms stage 3, 4 and 17.
+· Dummy nuts machined for load coupling installation.
+· Took UH diaphragms stage 11 and 17 to the old turbine hall.
+· Cleaned the exhaust casing footing hardware.
+· Completed bearing TCs and Bently Nevada probes installation on both ends (customer)
+· Connected power cables of brushless exciter, shaft ground detector brushes, stator and
+gas RTDs (customer)
+· Re-checked the torque of the bolts inside GLAC and on neutral star point of the stator,
+taped with electrical tape (customer's subcontractor)
+· Housekeeping inside neutral star point compartment and reinstalled the two hatches
+inside Exciter Compartment.
+· Cleaned and Installed LH of grid diaphragm (LH of moving part).
+· Installed Rotor and Nozzle Box Assy in place.
+· Turning gear installed.
+· LH of active and inactive pads were installed.
+· Performed Gear Ring Runout measurements (radial and axial). Runout found
+acceptable. Screws punched.
+· Performed ERAG readings. (All diaphragms and packing rings pushed to the left)
+· Adjusted the diaphragms per ERAG data and confirmed the adjustments by ERAG
+again.
+14 January 2020
+
+GE Power Power Services
+1.3 Executive Summary
+· Stage 11 and 17 U/H diaphragms installed.
+· LH diaphragms and packing casings drop checks confirmed. All diaphragms and
+packing casings lugs punched and locked.
+· UH diaphragms and packing casings drop checks confirmed. All diaphragms and
+packing casings lugs punched and locked.
+· Bump check repeated and confirmed as 19 mils. Rotor left on generator side (inactive
+side). Thrust shim screws not punched.
+· UH N01G01 packing ring axial springs installed.
+· UH N02G01, G02 and G03 packing rings installed.
+· Turbine casing installation guide pins manufacture completed. Tried in place, small
+adjustments made.
+· Nozzle box LH packing rings N01 G06 and G05 installed in place. For G05, old packing
+rings used.
+· Nozzle box hold down bolt caps adjusted, and nuts tightened. • Cleaned turbine hall and
+prepared rigging for casing flip.
+· The thrust bearing was fully assembled, bump check performed. New set screws for
+thrust shims installed (not punched).
+· Thrust bearing cover and UH of inactive side pads removed for spool piece bolts
+installation.
+· The spool piece installed. Sleeves expanded 28 MPa and bolts preloaded 80 MPa.
+· The runout measurements (axial and radial) performed for spool piece coupling.
+· The drop check performed, and upper half parts adjusted except UH diaphragms # 11,
+17.
+· Seal ring segments installed for LH parts except the nozzle box's rings.
+15 January 2020
+· The extraction valve limit switch adjustments done. Waiting for customer to test the
+switches.
+· Active thrust bearing removed and thrust shim assembly screws punched. Then active
+thrust bearing installed in place.
+· Upper half turbine casing flipped and placed to the turbine hall. • UH inner casing
+diaphragm set screws checked and adjusted.
+· Closing clearances checked and confirmed.
+· Hydraulic oil manifold fittings installed, and the Allen bolts torqued. Wiring needs to be
+checked by customer.
+· Lower half oil deflector at the generator side of thrust bearing installed in place. Screws
+need to be punched.
+· Scaffolding built around the generator for alignment preparations.
+· Checked tightening for opposite end of the spool piece coupling bolts (generator side) to
+ensure the requisite tightness of both nuts.
+· Installed locking devices for Spool piece coupling bolts.
+· Took final runout (axial and radial) check for spool piece coupling.
+· Measured and recorded closing clearances. Left N2 X and Y.
+
+GE Power Power Services
+1.3 Executive Summary
+· Cleaned UH casing HJ surface.
+· Cleaned UH of the grid diaphragm (moving part).
+· Installed UH of the grid diaphragm (moving part). Bolts torqued, lock plates are bent.
+16 January 2020
+· The inner casing checked and found gap on HJ of stage 5 diaphragm. Inner casing
+disassembled and diaphragms checked.
+· Inner casing diaphragms seal key, pins and joints cleaned.
+· Inner casing installed, and bolts are torqued.
+· UH casing HJ surfaces, diaphragms seal keys, pins, pin holes and mating surfaces
+cleaned.
+· UH casing rigging installed, and casing lifted, leveled.
+· Speed sensor box broken bolts repaired.
+· N01G04 UH pin replaced with the new one.
+· Punched screws of the inactive thrust bearing shims. Thrust bearing reassembled finally.
+Bolts torqued.
+· Installed UH of nozzle box packing housing with seal rings. Bolts torqued, lock plates
+bended.
+· Installed UH of inner casing. Bolts preheated and tightened with angle required.
+· Installed UH of N02 packing casing. Bolts torqued.
+· Performed rotor axial and radial position measurements (rotor pushed to inactive pads).
+· Punched screws for end seals of oil deflectors.
+· Installed oil deflectors LH and UH. Alignment and clearance check performed. HJ bolts
+tightened.
+· Installed UH of journal bearings. Bolts tightened.
+17 January 2020
+· Outer casing horizontal and vertical joint bolts torqued per specs.
+· V1 assembly lock plates checked. Missing lock plates installed and corrected as needed.
+· V1 steam inlet flange and bolt holes cleaned.
+· The turbine deck access stairs installed. Need to weld the guard rails that were removed
+for generator field removal.
+· Cleaned HJ of turbine casing UH and LH.
+· Applied sealant to the HJ and vertical joint.
+· Applied lubricant to seal keys and pins and etc for the easiness of installation.
+· Installed turbine casing in place.
+· The pins and nuts installed for horizontal and vertical joint of the casing. Pre-tightened
+slightly by small hammer.
+· Rotor rotated one turn by turning gear. Smooth and without any noise.
+· Installed alignment hardware for LP and HP (Turbine end) oil deflectors. The UH of HP
+(generator side) oil deflector needs to be modified for fitting installation.
+· Installed the coupling guard inside the front bearing pedestal. Instrumentation Re-
+installed.
+
+GE Power Power Services
+1.3 Executive Summary
+18 January 2020
+· Continued with V2 reassembly.
+· Continued with torqueing of TTV side flange studs.
+· TTV rigged, flipped and installed in place.
+· Studs and nuts for TTV side flanges installed in place.
+· Checked and cleaned the flange surfaces of V1 assembly.
+· Nozzle box Snout rings aligned.
+· Applied lubricant to pin and stud threads.
+· Installed V1 assembly in place. Applied Birkosit on the sealing surface.
+· Torqued the studs of the V1 valve chest per the specs.
+· V1 actuator oil feed line connected.
+· V1 actuator guard cleaned and prepared for installation.
+· Oil seal ring (Gen side) installed with RTV.
+· Oil deflector (Gen side) was modified and fitting screwed. Alignment hardware installed.
+19 January 2020
+· TTV cap bolts and flange bolts torqued as required.
+· Connected TTV leak off flanges. Bolts tightened.
+· Connected water spray piping to the Exhaust casing (outside). Bolts tightened.
+· Installed V1 actuator guard.
+· Continued with V2 reassembly. Coupling changed with the new one. Hydraulic pipes
+cleaned. Dimensions checked for fit up and found okay.
+· All TTV bolts and studs torqueing completed.
+· Cleaned the 3"" steam line and flange connections.
+20 January 2020
+· Completed installation of V2 in place. Applied sealant on the valve chests area. Bolt
+torqued per the specs.
+· Hydraulic cylinder of V2 aligned and installed. Hydraulic lines connected. LVDT installed.
+· Front standard instrumentation checked. Rotor displacement sensor calibrated per bump
+check.
+· Front standard cover installed in place. Started torqueing the bolts.
+· Turning gear motor rotation checked. Power connections completed.
+· Generator bearing vacuum extractor motor rotation checked.
+· Cleaned the generator skid foots for alignment preparations. Excitation and turbine front
+standard area need cleaning.
+· Exhaust area instrumentation install completed.
+· V1 leak off pipe adjusted for welding. Preheating and welding completed. Stress relief
+heating will be completed tomorrow.
+· LP Bearing: - FME Covers removed; - Installed fitting on oil deflector and connected to
+the seal airline; - Cleanness check performed; - RTV applied to the HJ, UH of oil deflector
+spine and cable routes; - Inner cover installed and bolts tightened with torque required.
+
+GE Power Power Services
+1.3 Executive Summary
+· 3"" steam piping connected using temporary gaskets. The spool pipe prepared for
+welding.
+· Cleaning generator footing hardware. Ongoing.
+· Customer's contractor started the lube oil piping flushing.
+21 January 2020
+· Check and corrected the oil leak at excitation end bearing of the generator. Then
+hydraulic pumps started and seen that problem at the excitation end bearing. Outer oil
+deflector removed and lift oil connections tightened.
+· Front standard remaining bolt installed.
+· Front standard oil deflector air feed tubes connected. Also, speed pick up sensor
+connections done.
+· Installed hydraulic jacks for vertical alignment movements.
+· Turning gear air cylinder bracket installed in place. Need connections to be completed.
+· Hydraulic pumps adjusted.
+· Scaffolding removed around the TTV.
+· Post weld stress relief heating completed for the 3"" pipe
+· Installed exhaust outer cover in place. Applied sealant to HJ and Vertical joint surfaces
+and on cable routes.
+· Started up the Gen vapor extractor, lube oil coolers, lube oil and lifting oil. Hydraulic
+pump (right) pressure adjusted.
+· Performed first set of ST-Gen alignment measurements.
+· Radiographic test of 3"" pipe performed (Customer).
+· Build platform near 3"" pipe (Scaffolders).
+22 January 2020
+· Continued with the coupling alignment generator to steam turbine. Two readings and
+one shim change performed.
+· Continued to install V2 leak of line.
+· Reassembled the excitation side outer oil deflector of generator.
+· Cleaned area of the Gen gib keys (TE and CE).
+· ST-Gen coupling alignment. Ongoing
+23 January 2020
+· Completed changing the gaskets of V2 leak-off line.
+· V1 auto calibration completed.
+· V2 auto calibration completed.
+· Alignment of steam turbine rotor to generator rotor completed.
+· Generator anchor bolts adjusted. Need welding of lock plates.
+· LP bearing outer cover bolts torqued.
+24 January 2020
+· ST-Generator coupling reassembled. Bolts tightened with elongation required (Avanti 5
+
+GE Power Power Services
+1.3 Executive Summary
+used).
+· Connected Oil deflector (gen side) air sealing line.
+· Installed coupling guard. Bolts tightened.
+26 January 2020
+· Completed generator anchor bolt lock plate welding.
+· TTV (trip throttle valve) cover blind flange installed. Need torqueing of the bolts.
+27 January 2020
+· Completed exhaust hood spray testing.
+· Completed rupture disc cover installation.
+· Continued turbine insulation installation. (customer)
+· Started to manufacture tool to lift the trip throttle valve stem.
+28 January 2020
+· Continued turbine insulation installation. (customer)
+· Continued to adjust the TTV.
+· Turbine put on turning gear. (No lift seen on generator field.)
+29 January 2020
+· TTV adjustment completed. Distance between stem arranged as 0.131"".
+· Insulation installation completed (customer).
+· Continued commissioning activities.
+30 January 2020
+· Some of pressure switches has been dismounted and calibrated.
+· Some issue has noted on Lube oil pump logic we investigate where is the issue. Need to
+complete this activity before proceeding with warm up and start up.
+02 February 2020
+· Fixed issue with lube oil sequence, test related to control oil pumps successful
+completed.
+· Completed test related to Bently nevada Trip.
+· Noted some issue on lube oil pump P 500. Mechanical team will investigate about it.
+03 February 2020
+· The problem with P500 pump was discovered. Started to disassemble the pump and fix
+where it is possible.
+04 February 2020
+· The P500 pump reassembly completed and started the pump, no problem seen. ,
+· Turbine put on turning gear.
+· Turbine get ready for vacuum test and over speed test.
+
+GE Power Power Services
+1.3 Executive Summary
+· Installation of CAP software on HMY done.
+05 February 2020
+· Support customer during Over speed test.
+· Over speed test successful performed.
+· Synchronized the with national grid and reached at 7 MW. The unit has been stopped
+due to steam leakage from third extraction line. (Customer issue)
+After this, during the check of the lube oil system, dirt and some water observed in samples
+from the lube oil tank. An ER case has been opened for this issue as “ER-20200218-0387 -
+Water and particles in the lube/lift/hydraulic systems”. The ER advice has been shared with
+the customer.
+The crew completely demobilized from the site 11 February 2020.
+All the NDT reports for the outage are attached to the Appendix section of this report.
+The component repair details and recommendations are given at the next sections of the
+report.
+ER cases opened during the outage are given as;
+ER-20200218-0387 Water and particles in the lube/lift/hydraulic systems
+ER-20200130-0041 LOAD CURVE
+ER-20200107-0461 DIAPHRAGM PARTITION DAMAGE
+ER-20200106-0193 DSW Rotor Balancing Support
+ER-20200102-0333 Installation and operation instruction
+ER-20191230-0163 STAGE 3 DIAPHRAGM DAMAGE
+ER-20191226-0131 Cracks on valve chest casing after NDT inspection
+ER-20191211-0177 STAGE 14 ROTOR BLADE REPAIR
+ER-20191209-1405 155360_Steam turbine_thrust bearing_inspection review
+ER-20191209-0637 DIAPHRAGM SPILL STRIP DAMAGE
+ER-20191208-0157 S14 BUCKETS CRACK
+ER-20191206-0284 INTERNAL ALIGNMENT DRAWING
+ER-20191205-0076 ASSEMBLY/DISASSEMBLY PROCEDURE FOR LOAD COUPLING
+ER-20191204-0537 ROTOR VISUAL INSPECTION RESULTS
+ER-20191127-0902 155360_Steam turbine to Generator alignment review
+ER-20191108-0231 DSW Rotor and casing lifting device B777K09155360
+ER-20190522-0955 Outage Preparation for Major Inspection DSW 3 ST
+ER-20191129-0176 Full stator rewedge kit for 7A6 GE Generator TEWAC with SN 316X914",415,77774944,2026-06-12T10:00:46.000Z,"[{""start"": 0, ""end"": 366, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 367, ""end"": 1084, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 1085, ""end"": 2000, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 2001, ""end"": 2387, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 2388, ""end"": 3127, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 3128, ""end"": 3746, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 3747, ""end"": 4414, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 4415, ""end"": 5087, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 5088, ""end"": 5753, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 5754, ""end"": 7505, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 7506, ""end"": 9930, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 9931, ""end"": 12283, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 12284, ""end"": 14528, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 14529, ""end"": 17389, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 17390, ""end"": 19994, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 19995, ""end"": 22559, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 22560, ""end"": 25010, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 25011, ""end"": 28303, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 28304, ""end"": 31143, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 31144, ""end"": 33763, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 33764, ""end"": 36335, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 36336, ""end"": 39321, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 39322, ""end"": 42039, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 42040, ""end"": 44851, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 44852, ""end"": 47437, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 47438, ""end"": 50357, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 50358, ""end"": 53233, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 53234, ""end"": 55643, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 55644, ""end"": 58462, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 58463, ""end"": 61326, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 61327, ""end"": 64359, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 64360, ""end"": 67167, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 67168, ""end"": 70042, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 70043, ""end"": 72962, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 72963, ""end"": 75971, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 75972, ""end"": 78559, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 78560, ""end"": 81270, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 81271, ""end"": 83944, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 83945, ""end"": 86662, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 86663, ""end"": 89276, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 89277, ""end"": 91860, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 91861, ""end"": 94156, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 94157, ""end"": 96038, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 96039, ""end"": 98123, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 98124, ""end"": 98345, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 98346, ""end"": 99571, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 99572, ""end"": 101282, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 101283, ""end"": 102858, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 102859, ""end"": 105212, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 105213, ""end"": 107872, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 107873, ""end"": 110824, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 110825, ""end"": 113578, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 113579, ""end"": 114254, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 114255, ""end"": 115297, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 115298, ""end"": 115512, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 115513, ""end"": 116029, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 116030, ""end"": 116548, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 116549, ""end"": 117066, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 117067, ""end"": 117584, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 117585, ""end"": 118971, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 121864, ""end"": 122685, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 122686, ""end"": 123023, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 123024, ""end"": 123999, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 124000, ""end"": 124965, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 124966, ""end"": 125927, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 125928, ""end"": 126886, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 126887, ""end"": 127856, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 127857, ""end"": 128820, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 128821, ""end"": 129388, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 129389, ""end"": 132348, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 132349, ""end"": 135378, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 135379, ""end"": 136057, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 136058, ""end"": 136377, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 136378, ""end"": 136634, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 136635, ""end"": 138265, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 138374, ""end"": 139275, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 139276, ""end"": 140177, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 140178, ""end"": 141673, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 141674, ""end"": 143067, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 143068, ""end"": 143249, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 143250, ""end"": 144612, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 144613, ""end"": 145968, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 145969, ""end"": 147370, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 147371, ""end"": 149065, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 149066, ""end"": 150756, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 150757, ""end"": 151442, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 151443, ""end"": 152566, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 152567, ""end"": 153909, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 153910, ""end"": 156322, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 156323, ""end"": 156600, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 156601, ""end"": 156857, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 156858, ""end"": 157077, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 157078, ""end"": 158488, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 158489, ""end"": 161151, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 161152, ""end"": 161797, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 161798, ""end"": 162109, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 162110, ""end"": 162407, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 162408, ""end"": 162675, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 162676, ""end"": 165482, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 165483, ""end"": 167811, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 167812, ""end"": 168149, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 168150, ""end"": 168528, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 168529, ""end"": 168850, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 168851, ""end"": 169221, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 169222, ""end"": 169581, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 169582, ""end"": 169888, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 169889, ""end"": 170242, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 170243, ""end"": 170616, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 170617, ""end"": 170991, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 170992, ""end"": 171333, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 171334, ""end"": 171711, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 171712, ""end"": 172077, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 172078, ""end"": 172436, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 172437, ""end"": 172799, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 172800, ""end"": 173121, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 173122, ""end"": 173503, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 173504, ""end"": 173833, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 173834, ""end"": 174193, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 174194, ""end"": 174555, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 174556, ""end"": 174935, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 174936, ""end"": 175275, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 175276, ""end"": 175655, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 175656, ""end"": 175995, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 175996, ""end"": 176375, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 176376, ""end"": 176719, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 176720, ""end"": 177100, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 177101, ""end"": 177441, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 177442, ""end"": 177796, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 177797, ""end"": 178174, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 178175, ""end"": 178536, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 178537, ""end"": 178882, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 178883, ""end"": 179260, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 179261, ""end"": 179606, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 179607, ""end"": 179984, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 179985, ""end"": 180339, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 180340, ""end"": 180717, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 180718, ""end"": 181014, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 181015, ""end"": 181356, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 181357, ""end"": 181732, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 181733, ""end"": 182111, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 182112, ""end"": 182445, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 182446, ""end"": 182791, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 182792, ""end"": 183103, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 183104, ""end"": 183399, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 183400, ""end"": 184676, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 184677, ""end"": 186313, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 186314, ""end"": 187832, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 187833, ""end"": 189094, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 189095, ""end"": 190690, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 190691, ""end"": 192178, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 192179, ""end"": 194239, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 194240, ""end"": 195391, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 195392, ""end"": 195703, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 195704, ""end"": 196015, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 196016, ""end"": 196327, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 196328, ""end"": 196639, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 196640, ""end"": 196951, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 196952, ""end"": 197263, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 197264, ""end"": 197575, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 197576, ""end"": 198556, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 198557, ""end"": 199757, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 199758, ""end"": 200038, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 200039, ""end"": 200319, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 200320, ""end"": 200618, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 200619, ""end"": 200790, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 200791, ""end"": 202635, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 202636, ""end"": 205696, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 205697, ""end"": 208834, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 208835, ""end"": 211321, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 211322, ""end"": 211979, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 211980, ""end"": 212301, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 212302, ""end"": 212628, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 212629, ""end"": 212925, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 212926, ""end"": 213238, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 213239, ""end"": 213585, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 213586, ""end"": 213900, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 213901, ""end"": 214121, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 214122, ""end"": 216942, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 216943, ""end"": 219775, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 219776, ""end"": 221170, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 221171, ""end"": 224114, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 224115, ""end"": 227157, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 227158, ""end"": 230195, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 230196, ""end"": 233121, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 233122, ""end"": 236200, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 236201, ""end"": 239474, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 239475, ""end"": 242343, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 242344, ""end"": 242671, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 242672, ""end"": 243036, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 243037, ""end"": 243342, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 243343, ""end"": 245263, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 245264, ""end"": 247199, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 247200, ""end"": 248115, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 248116, ""end"": 250126, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 250127, ""end"": 251079, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 251080, ""end"": 252691, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 252692, ""end"": 254485, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 254486, ""end"": 255890, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 255891, ""end"": 257301, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 257302, ""end"": 259069, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 259070, ""end"": 260907, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 260908, ""end"": 262246, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 262247, ""end"": 264264, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 264265, ""end"": 265324, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 265325, ""end"": 266154, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 266155, ""end"": 267122, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 267123, ""end"": 269614, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 269615, ""end"": 270929, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 270930, ""end"": 271268, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 271269, ""end"": 271565, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 271566, ""end"": 273064, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 273065, ""end"": 273907, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 273908, ""end"": 275391, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 275392, ""end"": 275589, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 275590, ""end"": 276457, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 276458, ""end"": 279050, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 279051, ""end"": 279497, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 279498, ""end"": 281238, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 281239, ""end"": 281842, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 281843, ""end"": 283157, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 283158, ""end"": 283434, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 283435, ""end"": 286477, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 286478, ""end"": 287520, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 287521, ""end"": 288341, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 288342, ""end"": 289217, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 289218, ""end"": 290154, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 290155, ""end"": 291179, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 291180, ""end"": 292084, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 292085, ""end"": 292866, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 292867, ""end"": 293734, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 293735, ""end"": 296874, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 296875, ""end"": 299961, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 299962, ""end"": 300726, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 300727, ""end"": 301372, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 301373, ""end"": 301628, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 301629, ""end"": 303623, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 303624, ""end"": 304690, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 304691, ""end"": 305076, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 305077, ""end"": 305961, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 305962, ""end"": 306086, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 306087, ""end"": 306209, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 306210, ""end"": 306434, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 306435, ""end"": 306706, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 306707, ""end"": 306969, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 306970, ""end"": 307064, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 307065, ""end"": 307303, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 307304, ""end"": 308064, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 308065, ""end"": 308553, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 308554, ""end"": 309255, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 309256, ""end"": 309330, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 309331, ""end"": 309410, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 309411, ""end"": 309484, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 309485, ""end"": 309584, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 309585, ""end"": 309975, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 309976, ""end"": 310138, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 310139, ""end"": 310417, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 310418, ""end"": 310566, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 310567, ""end"": 311622, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 311623, ""end"": 312036, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 312037, ""end"": 312253, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 312254, ""end"": 313364, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 313365, ""end"": 313417, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 313418, ""end"": 314442, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 314443, ""end"": 315190, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 315191, ""end"": 316249, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 316250, ""end"": 316992, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 316993, ""end"": 317805, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 317806, ""end"": 318593, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 318594, ""end"": 318646, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 318647, ""end"": 319880, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 319881, ""end"": 321403, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 321404, ""end"": 322369, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 322370, ""end"": 322422, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 322423, ""end"": 323892, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 323893, ""end"": 325271, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 325272, ""end"": 326752, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 326753, ""end"": 328986, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 328987, ""end"": 329705, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 329706, ""end"": 330873, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 330874, ""end"": 332369, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 332370, ""end"": 332422, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 332423, ""end"": 333203, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333204, ""end"": 333256, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333257, ""end"": 333315, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333316, ""end"": 333372, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333373, ""end"": 333425, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333426, ""end"": 333480, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333481, ""end"": 333535, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333536, ""end"": 333590, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333591, ""end"": 333645, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333646, ""end"": 333700, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333701, ""end"": 333755, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 333756, ""end"": 339918, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 339919, ""end"": 347711, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 347712, ""end"": 348199, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 348200, ""end"": 348404, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 348669, ""end"": 348924, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 348925, ""end"": 350919, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 350920, ""end"": 351986, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 351987, ""end"": 352372, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 352373, ""end"": 353257, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 353258, ""end"": 353382, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 353383, ""end"": 353505, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 353506, ""end"": 353730, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 353731, ""end"": 354002, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 354003, ""end"": 354265, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 354266, ""end"": 354360, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 354361, ""end"": 354599, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 354600, ""end"": 355360, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 355361, ""end"": 355849, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 355850, ""end"": 356551, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 356552, ""end"": 356626, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 356627, ""end"": 356706, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 356707, ""end"": 356780, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 356781, ""end"": 356880, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 356881, ""end"": 357271, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 357272, ""end"": 357434, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 357435, ""end"": 357713, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 357714, ""end"": 357862, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 357863, ""end"": 358918, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 358919, ""end"": 359332, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 359333, ""end"": 359549, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 359550, ""end"": 360660, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 360661, ""end"": 360713, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 360714, ""end"": 361738, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 361739, ""end"": 362486, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 362487, ""end"": 363545, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 363546, ""end"": 364288, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 364289, ""end"": 365101, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 365102, ""end"": 365889, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 365890, ""end"": 365942, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 365943, ""end"": 367176, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 367177, ""end"": 368699, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 368700, ""end"": 369665, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 369666, ""end"": 369718, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 369719, ""end"": 371188, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 371189, ""end"": 372567, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 372568, ""end"": 374048, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 374049, ""end"": 376282, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 376283, ""end"": 377001, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 377002, ""end"": 378169, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 378170, ""end"": 379665, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 379666, ""end"": 379718, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 379719, ""end"": 380499, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380500, ""end"": 380552, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380553, ""end"": 380611, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380612, ""end"": 380668, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380669, ""end"": 380721, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380722, ""end"": 380776, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380777, ""end"": 380831, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380832, ""end"": 380886, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380887, ""end"": 380941, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380942, ""end"": 380996, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 380997, ""end"": 381051, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 381052, ""end"": 387214, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 387215, ""end"": 395007, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 395008, ""end"": 395495, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}, {""start"": 405506, ""end"": 405694, ""metadata"": {""primary_esn"": ""316X914"", ""primary_equip_type"": ""Generator""}}]",null,pypdf2_v1.0,preprocessor_v2_final,gemini-3-flash,v2_with_hints,fsr_v2.0,null,completed,null,0,completed,null,0,2026-07-23T02:07:49.453Z,2026-07-23T02:07:49.453Z,2026-07-23T02:10:56.365Z,2026-07-23T02:10:56.365Z

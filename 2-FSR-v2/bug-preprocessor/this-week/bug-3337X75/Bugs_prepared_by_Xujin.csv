@@ -1,0 +1,29 @@
+bug_id,Document_id,Bug_classification,Comment,fixes
+1,Most of the document,,Summary section,"If boundaries are detected, then ""Before any detect boundary-->shared"""
+2,0be4a3ad-7395-41ea-8ec2-e7669c9c15aa,pre_processor logic,GG10675 is not detected,"Broader format of ESN, Already fixed part of it"
+,cdd0cca4-93ba-43b0-98e5-3d1ea2312c19.,,GENERATOR (GG10525 | SY0499189) is not detected,
+,3f5a1ea8-8f35-4e97-9a1e-a88f358e9768,pre_processor logic,"Cannot detect ESN with ""SY:'",
+3,35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270t483-final_master_report,parser issue + Preprocessor Logic,"Section header without number, is not detected","Check section header paresed results, broader format for section header detections"
+,806975e9-062b-4da3-9ae7-5881a5daffd1_204049598-39387-297652-final_master_report,parser issue + Preprocessor Logic,"Section header without number, is not detected",
+,5b688732-39f2-48d2-a887-3239f258d28b,parser issue + Preprocessor Logic,"Several Section headers are missing: Turbine boundary only detected after Gen boundary, With PYPDF2 some section header is not detected becaues of PYPDF2 did not preserve line breaks",
+4,32689520-afed-4dd4-a895-20afed7dd4d2,"pre_processor logic, parser issue","Big and common issue! Sub-section fall back to primary ESN causes issue when there are two same equipment type esn. And the distinct type <2 logic is wrong when there are two same equipment type ESNs; 3 Turbine on page 169 is not detected by PyPDF2, which can be detected by pymupdf","1. One equipment type but two active ESNs --> boundary path, instead of goes to fall-back path; 2.When a subsection equipment boundary detected without its own ESN, if it is the same as the larger/outer section, inherent the ESN, if it is another equipment type, check if active ESN list only have one that equipment type ESN, if yes, use that, if not, use train tool to find the ESN; 3. If one subsection boundary flip the equipment type, after that level of section ends, it flips back to the previous equipement type."
+,b25c94da-d954-4283-9c94-dad954a28307,pre_processor logic,"2 Gas Turbine ESN issue, same as above",
+,b1cdbc80-364f-4240-8dbc-80364f1240fa,pre_processor logic,2 Gas Turbine 2 Generator ESN issue,
+,fcb1511e-596a-4a56-b151-1e596afa569c,,"When Generator Subsection ends, should go back to Turbine section",
+,af693a98-1e5c-499d-aa10-cccc54885c64,,"When Generator Subsection ends, should go back to Turbine section",
+5,d3b1da8a-03b4-4ea6-aa7b-0482edb532ce,pre_processor logic,The inactive ESN detection has an issue because of inactive pattern found in a page that contains that active ESN in the footer,
+,111adf26-dcec-4b33-9adf-26dcec6b334e,parser issue,potential footer text issue,
+6,b775cf29-8b42-4a83-af21-53075fef0802,pre_processor logic,"The generator section is detected, but assigned to another wrong Gen ESN that appears in the body context",Used Ibat train tool or Tao's proposal on Count Win
+,b7b347fd-0b59-4c67-b609-9ad2c35105cc,pre_processor logic,"Generator ESN never exist, but its talking about generator",looking at IBAT train tool if this situation happens
+7,796f4d53-a8ad-42e1-af4d-53a8add2e1a4,pre_processor logic,The report contains information about a GEN ESN that is not within the same train id,"The scanned title is very important, may go to LLM solution"
+8,d9b6c08b-d098-4939-a549-d113964e3150,pre_processor logic,"no information, only say: See 297651 spring 2024 HGP report",
+9,b775cf29-8b42-4a83-af21-53075fef0802,pre_processor logic,Generator evidence in Electrification section,"Electricfication, DC leakage --> Gen; section under controls for excitation or LCI --> Gen"
+,Unit_10B_Borescope_Inspection_Spring_2026_.pdf,pre_processor logic,generator evidence in DC leakage section,
+10,,,,"Generator detection wins, i.e., Gas Turbine Generator means it is a Generator  section"
+11,,,,"QCP and PIPI, if they appears as an individual section, it can contain shared information"
+12,bdd56c7a-ebe5-4bf7-904a-5bb63091ba20,,"No any generator section header, but generator was mentioned in a short axuliary section body text","Detect unclear section header, and goes to LLM "
+13,0be4a3ad-7395-41ea-8ec2-e7669c9c15aa,pre_processor logic + parser,sub report's TOC in Appendix section header was not detected,
+,796f4d53-a8ad-42e1-af4d-53a8add2e1a4,,,
+14,a1f6ca9b-f5db-4f22-b6ca-9bf5db7f227a,pre_processor logic,"Two reports about GT 1 and GT2 in appendix; No ESN in body text of two reports, thus cannot assign ESNs",
+15,4597a853-5ffb-40bb-b0be-bd6307b0acdc,pre_processor logic,"Whole document is about generator, but since there are only 1 equipment type detected, it goes to page fall back instead of boundary based",Should still use boundary based region if 1 equipement type section header is detected
+,69dfe261-34b0-4740-ab89-498e7d0072df,,,

@@ -1,0 +1,53 @@
+[
+  {
+    "start": 1340,
+    "end": 4628,
+    "metadata": {
+      "primary_esn": "298250",
+      "primary_equip_type": "Gas Turbine"
+    }
+  },
+  {
+    "start": 4628,
+    "end": 13446,
+    "metadata": {
+      "primary_esn": "338X447",
+      "primary_equip_type": "Generator",
+      "primary_technology_code": "7FH2"
+    }
+  },
+  {
+    "start": 13446,
+    "end": 15769,
+    "metadata": {
+      "primary_esn": "298250",
+      "primary_equip_type": "Gas Turbine"
+    }
+  },
+  {
+    "start": 15769,
+    "end": 230251,
+    "metadata": {
+      "primary_esn": "298250",
+      "primary_equip_type": "Gas Turbine"
+    }
+  },
+  {
+    "start": 230251,
+    "end": 240957,
+    "metadata": {
+      "primary_esn": "338X447",
+      "primary_equip_type": "Generator",
+      "primary_technology_code": "7FH2"
+    }
+  },
+  {
+    "start": 240957,
+    "end": 259531,
+    "metadata": {
+      "primary_esn": "338X447",
+      "primary_equip_type": "Generator",
+      "primary_technology_code": "7FH2"
+    }
+  }
+]

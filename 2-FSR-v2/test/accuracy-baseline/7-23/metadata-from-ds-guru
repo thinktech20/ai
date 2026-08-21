@@ -1,0 +1,295 @@
+{
+  "metadata": {
+    "document_name": "5b688732-316X914.pdf",
+    "gt_esn": "155360",
+    "gen_esn": "316X914",
+    "primary_esn": "316X914",
+    "primary_equip_type": "Generator",
+    "outage_start_date": "23 Nov 2019"
+  },
+  "hints": "Active equipment (work performed): 155360 (Gas Turbine), 316X914 (Generator)\nPrimary equipment inference: primary_equip_type=Generator (gt_bytes=0, gen_bytes=0, gt_sig_hits=15, gen_sig_hits=109).\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "regions": [
+    {
+      "start": 0,
+      "end": 14196,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 14196,
+      "end": 17052,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 17052,
+      "end": 27945,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 27945,
+      "end": 30780,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 30780,
+      "end": 38943,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 38943,
+      "end": 41656,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 41656,
+      "end": 69609,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 69609,
+      "end": 72524,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 72524,
+      "end": 118389,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 121340,
+      "end": 122472,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 122472,
+      "end": 128804,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 128804,
+      "end": 137647,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 137754,
+      "end": 142620,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 142620,
+      "end": 145333,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 145333,
+      "end": 150735,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 150735,
+      "end": 153200,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 153200,
+      "end": 289479,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 289479,
+      "end": 291130,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 291130,
+      "end": 299716,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 299716,
+      "end": 311875,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 311875,
+      "end": 315448,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 315448,
+      "end": 317101,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 317101,
+      "end": 318343,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 318343,
+      "end": 319873,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 319873,
+      "end": 320846,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 320846,
+      "end": 346751,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 346751,
+      "end": 346949,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 347213,
+      "end": 359372,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 359372,
+      "end": 362945,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 362945,
+      "end": 364598,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 364598,
+      "end": 365840,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 365840,
+      "end": 367370,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 367370,
+      "end": 368343,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 368343,
+      "end": 394248,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator"
+      }
+    },
+    {
+      "start": 404231,
+      "end": 404413,
+      "metadata": {
+        "primary_esn": "155360",
+        "primary_equip_type": "Gas Turbine"
+      }
+    }
+  ],
+  "pages": 415,
+  "timing_ms": 361.8
+}

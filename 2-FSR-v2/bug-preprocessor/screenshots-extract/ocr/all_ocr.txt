@@ -1,0 +1,271 @@
+1.1 Site Personnel
+1.2 Executive Summary
+
+1.1 Timers and Counters
+1.2 Work Scope
+
+24 eee cts
+
+3.1 Auxiliaries
+
+3.1.1 Piping and Flexible Metal Hoses
+3.2 Combustion Section
+
+3.2.1 Combustion Liners
+
+3.2.2 Flame Detectors and Ignitors
+
+3.2.3 Combustion Cans
+
+3.2.4 Flow Sleeves
+
+3.2.5 Primary Fuel Nozzles
+
+UP
+1.1 SITE PERSONNEL
+
+1.2 EXECUTIVE SUMMARY
+1.3 WORK SCOPE
+
+2.1 RECOMMENDATIONS
+
+ENERATOR - FIELD/ROTOR
+FIELD / ROTOR
+5.1 GENERATOR FELD ASSEMBLY
+ELECTRICAL TESTING.
+3.2 FIELD ASSEMBL
+GENERATOR - STATOR,
+MAGIC INSPECT
+ATOR STATOR
+RADIAL SLOT WEDGES,
+RATOR STATOR
+
+-CTRICAL TESTING
+
+END WINDING
+5.6 GENERATOR END- WINDING
+Hy BUSHINGS
+3.7 HIGH VOLTAGE BUSHING
+
+GE Power Power Services
+
+4.5.2 Final Operation Concept defined by
+mapping
+4.5.3 Safety Oil Protection Test Certificate
+5 Quality Checkpoint (QCP)
+5.1 Attachments
+GAS TURBINE (804867 | SY0047510)
+1Summary
+1.1 Timers and Counters
+1.2 Executive Summary
+1.3 Work Scope
+2 Technical
+2.1 Recommendations
+3 Turbine
+3.1 RotorWstion
+3.1.1 Initial Measurements
+
+3.1.2 Measurements after bearing #1
+movement
+3.2 Air Intake
+3.2.1 Filter House
+3.2.2 Air Intake Manifold
+3.3 Compressor
+
+GE Power Power Services
+
+3.2.6 Secondary Fuel Nozzles
+3.2.7 Inner and Ou ire Tubes and
+Hardware
+3.2.8 Transition Pieces and Hardware
+3.3 Exhaust Section
+3.3.1 T3 Journal Bearing
+3.4 Unit Rotor
+3.4.1 Boresecope Insp
+4Unit
+4.1 Unit Description
+4.2 Parts Used
+GAS TURBINE (296405 | syoorrei
+
+1.Summary
+
+1.1 Timers and C
+1.2 Work Scope
+2 Technical
+2.1 Recommendations
+3 Turbine
+3.1 Unit Rotor
+
+3.2.6 Secondary Fuel Nozzles
+
+3.2.7 Inner and Outer Crossfire Tubes and
+Hardware
+
+3.2.8 Transition Pieces and Hardware
+3.3 Exhaust Section
+
+3.3.1 T3 Journal Bearing
+3.4 Unit Rotor
+
+3.4.1 Boresecope Inspection
+
+4.1 Unit Description
+4.2 Parts Used
+
+1.1 Timers and Counters
+1.2 Work Scope
+T
+2.1 Recommendations
+i
+3.1 Unit Rotor
+3.1.1 Borescope Inspection
+
+3.2.2 Stage 1 Buckets
+3.2.3 Stage 2 Buckets
+3.2.4 Stage 3 Buckets
+3.2.5 Stage 1 Nozzles
+
+Stage 2 Nozzles
+
+3.2.7 Stage 3 Nozzles
+st
+
+3.2.8 Stage 1 Shrou
+3.2.9 Stage 2 Shrouds
+3.2.10 Stage 3 Shrouds
+3.3 Compressor Section
+3.3.1 Inlet Guide Vanes
+3.3.2 Compressor Bor
+3.3.3 Exit Guide Vanes
+3.4 Casing
+3.4.1 Turbine Case
+
+GE Power Power Services
+
+GE Power Power Services
+
+3.4.2 Compressor Discharge Case
+3.4.3 Combustion Wrapper Case
+3.5 Ducting
+3.5.1 Exhaust Ducting
+
+3.6 Auxiliaries
+3.6.1 Accessory Coupling
+3.6.2 Accessory Gearbox
+3.6.3 #2 Bearing Vent Pipe
+3.6.4 #2 Bearing Drain Pipe
+3.6.5 Turbine Encl oof Si
+4 Appendix
+4.1 Attachments:
+STEAM TURBINE (155442 | SY009165
+
+1.Summary
+
+1.1 Timers and Counters
+2 Turbine
+2.1 Borescope Inspection
+2.1.1 Borescope Inspection
+GENERATOR (336X827 | SY0071998)
+
+1.2 Gas Turbine Executive Summ:
+
+1.3 Work Scope
+
+2 Technical
+
+2.1 TIL/ETC
+
+2.2 Recommendations
+3 Turbine
+
+3.1 Auxiliaries
+
+3.1.1 Generator Stator/Field Tests with
+Borescope Inspection
+
+3.1.2 Turbine Enclosure FWD & AFT Side
+
+3.1.3 Lift Qil Pump and Motor
+
+identi and Proprietary Information. Not to
+Hot Gas Path Inspection (H
+
+MURRAY I AND Il LLC
+
+THOMAS A. SMITH
+
+Zho
+GE Power
+
+3.3.1 Turbine Casing”
+
+$$ — ae
+
+GE Power Power Services
+
+3.3 Casing/Hood
+3.3.1 Turbine Casing
+
+Part Condition: Good
+Part Description:
+
+First 3 inch pipe on the right side ofthe casing wos cit out o remove the uppe
+
+turbine casing. Then the turbine easingremoved and placed in the turbine Mal
+erated ve (1 goa va) fe st aseed. removing th
+
+turbine casing vansferred to the od tine buiking and being fipped ove. Then, the UH
+and LH daphragms and packing casings removed
+
+On the loner half (LH) casing and UH casing, NDT (red dye) has been caried out on
+horizontal joint and most ofthe claptagm grooves ater cleaning the casings. No indiatlon
+during the NDT
+
+Besides, the UH and LH inner casing has been blast cleaned and NDT inspected during the
+juiage and no indication absorved. The NDT reports for the casings
+‘Rppendix section of this report.
+
+|Aso, during the TOPS ON | TOPS OFF alignment che ontact of both casing he
+been chocked at honzontal ont ve ever been tightened by hammering
+Unt the gap closed. Contact was good on most ofthe surface
+
+‘Ater the TOPS ONITOPS OFF alignment and NDT of the main parts such as rot
+diaphragms ete. The paris installed in places. After thal, upper half casing installed, and all
+bots are torqued per GE specs such as stretching by angle or with a torque valve
+(Extension inspection shoot attached.) After the torquing. sound test showed no loosen
+uds. Also. gap check has Been done on the final close, dit not show any problem.
+
+During the visual check no problem seen on the rupture disc as wel
+
+Recommendation Status: Should be planned for next Outage
+Recommendation Type: Services
+
+Recommendation Description:
+
+“The bolt heaters that were used during the outage was not the orignal one. Also, there was
+heating probiem with the bolt heaters used. Therefore, customer should test the bolt heaters
+‘on thai hand and investigate what fs the problem withthe bok heaters or order 3-4 new bolt
+
+3.1 Bearing
+3.1.1 Journal Bearings
+3.1.2 Thrust Bearing
+3.1.3 Oil Deflectors
+3.2 Rotors
+3.2.1 Rotor Assembly
+3.2.2 Stub Shaft
+3.3 Casing/Hood
+
+3.3.1 “pre Casing
+
+GE Power
+
+3.4 Diaphragms/Nozzl
+e
+
+3.4.1 Nozzle Box
+
+3.4.2 HP/LP Diaphragms
+3.5 Packing
+
+3.5.1 Interstage Packing
+

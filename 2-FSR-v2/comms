@@ -1,0 +1,19 @@
+
+Hi Abhinaya, sharing the retrieval approach (attached). A few things to note on what's implemented:
+
+**Data Readiness** (`GET /equipment/{esn}`) — plain SQL query against the metadata and mapping tables. No vector search needed.
+
+**FSR Retrieval** (`POST /retrieve`) — two steps:
+1. SQL gate to check if the ESN has eligible docs (active, completed, within recency window). Returns candidate doc IDs.
+2. Vector search filtered at the **chunk level** by `primary_esn` — this is key, because v2 attributes each chunk to a specific ESN via the preprocessor regions. Filtering at the doc level and then pulling all chunks from those docs would return sections for every piece of equipment in the doc, not just the requested ESN's sections — which hurts precision.
+
+If `primary_esn` results are sparse (< 3 chunks), a fallback pulls unattributed chunks (`primary_esn = ''`) from the eligible docs found in step 1.
+
+Once the P1 preprocessor covers all char spans, every chunk will have a non-empty `primary_esn` and the fallback step can be dropped.
+
+A few other things:
+- **Index order matters**: query the v2 index first, v1 as fallback only. v1 has the wrong ESN-to-equipment-type mapping that v2 was built to fix — if we search v1 first, we risk surfacing that old incorrect data.
+- Embedding model used at query time is the same one used during indexing: `azure-text-embedding-3-large-1`
+- The approach is designed around what the data currently says. Where the data isn't right, the fix goes in the pipeline — not the retrieval logic. We should measure precision on this base approach first, then improve from there.
+
+Happy to walk through any part of this.

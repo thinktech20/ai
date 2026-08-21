@@ -1,0 +1,19 @@
+Currently the FSR v2 is not mapping the two ESNs properly with their document in the data readiness step of FSR v2.
+
+Xujin shared that mapping should look like as in 2-FSR-v2/this-week/bug-3337X75/ground-truth.
+
+Attached are the current records in vaid.ai_sot_field_service_report.fsr_metadata_v2 and vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2. atatched here - 2-FSR-v2/this-week/bug-3337X75/table-data-in-dev
+
+Can you derive the current state from these tables?
+
+I was told that the issue is in preprocessor - pw_sdg_ai_ser_repo/common/fsr_v2/preprocessor.py, and that needs to be fixed.
+
+Xujin shared with me - 2-FSR-v2/this-week/bug-3337X75/Bugs_prepared_by_Xujin.csv -- can you look into this sheet and see if she has any notes for the document id in question for this bug, that might give you some insight on the bug.
+
+
+For analysis, and finding root cause of the issue , we can utilize the pw_sdg_ai_ser_repo/validation/fsr_v2/preprocessor/run-preprocessor-standalone.ipynb notebook, you can update this notebook to use the exact input, so that i can ru this in databricks and provide you the result to troubleshoot.
+
+
+Write your analysis here in a doc - 2-FSR-v2/this-week/bug-3337X75
+
+also when you do the analysis - you should be able to give your thoughts on that we do not introduce any regression.

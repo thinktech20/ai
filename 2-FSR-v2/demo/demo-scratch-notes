@@ -1,0 +1,80 @@
+For AWS proserv, I want to demo my FSR v2 recent work, and also talk about delivering business value.
+
+Lets build couple of slides.
+
+1. Improvements in FSR v2 and busoness value - this is more for AWS managers to present to customer as well, as WSR etc.
+2. Architecture diagram - this is useful internally team also , and plan to present to external audience, which is end to end architecture of the FSR v2.
+
+Here is what comes from the top of my mind, some scrach notes , we can rearrange and structure the slides:
+
+Accuracy improvement - Xujin mentioned:
+
+Hi team, 
+Viramgama, Rashminkumar (GE Vernova, consultant) Sarro, Vinicyus (GE Vernova), Here is the metadata extraction accuracy and regression check result: ESN_metadata_check_results_QA.xlsx, and here on the second sheet is the next week's Todo items Bugs_prepared_for_0803.xlsx
+ 
+Our QA implementation accuracy:
+  Noisy Evidence (non-Generator chunks tagged to Generator):                      28/2095 = 1.34%
+Missing Evidence (Generator chunks did not tagged to Generator):              137/2095 = 6.54%
+Missing Evidence (exclude "shared" cases):                                                  50/2095 = 2.39%
+So we got 92.12% chunks correct for the 12 test ESNs (18 FSR reports), and 96.27% accuracy if exclude those shared/summary sections at the beginning.
+ 
+Compare to 07/31's preprocessor's implementation  (79% accuracy and 85.25% exclude shared accuracy),
+  Fixes (wrong -> correct):       176 (marked Y in last column)
+  Regressions (correct -> wrong):  3 (marked N)
+ 
+We are aware of some left edge cases, such as final master reports (where SME raised one ticket on it), that's in our todo list next week. Please let SME continue validation, and we will continue improving. Thanks!
+
+
+
+
+
+
+=============================
+
+
+The new implementaion tags Steam Turbine as well, not just ST but other equip types as well.
+
+
+and here is what xujin said --
+
+I am in a D11 steam Turbine meeting  that's what they plan to do next phase, so glad that we distinguish Steam Turbine already.
+
+
+===
+
+We have more metadta now -- like ..., giving us more filtering and labeling capability
+
+============
+
+We also now store and persist the extracted FSRs, which improves and gives us flexibility, of reusing thee extracted docs,
+
+also, we use the same extracted doc in chunking making it more efficient.
+
+
+==============
+
+DS team efficiency -
+
+buld mlflow experiments which help ds team, to validate with larger set of data and make informed decsions.
+
+=====================
+
+You can also talk about improvemnets in deterministic processor -  how many bugs resolved etc
+
+=======================
+
+You can selectively pick the notes from here -
+
+2-FSR-v2
+
+also code is here --
+
+pw_sdg_ai_ser_repo
+
+
+also earlier we started to write some notes for arch series here - ai-arch/Aug-2026-updates
+=============
+
+please create content in sepearte md file here for slide content, no need to build pptx for now -
+
+2-FSR-v2/demo

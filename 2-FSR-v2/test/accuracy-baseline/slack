@@ -1,0 +1,19 @@
+Hi Tao and Xujin — I did a deep dive on the deviation from ds-guru. Here's what I found:
+
+Preprocessor alignment
+The active core logic is aligned with Vince's preprocessor_v2_final.py.
+The v2 wrapper mainly adds TOC-based document_summary extraction — no changes to the core ESN/region preprocessing.
+
+Root cause: extraction method
+The drift was due to switching the extraction method to pdfplumber (for both metadata and chunking).
+
+With the same preprocessor, the extractor made a difference because ds-guru's extraction step injects heading markers (##) before feeding text to the preprocessor. This suppresses the sub-section regex patterns (which are anchored at ^\d), so ds-guru produces ~2 coarse regions instead of 22 fine-grained ones. The pipeline wasn't doing this injection, which caused the mismatch.
+
+Changes made
+
+Switched extractor to match ds-guru (pypdf2 + heading marker injection + same page separator)
+Added missing section metadata to chunk output
+
+Proposal
+Let's first validate with a baseline of Vince's method + FSR v1 chunking strategy, and then we can switch and experiment from there.
+

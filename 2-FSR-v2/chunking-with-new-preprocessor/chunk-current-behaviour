@@ -1,0 +1,150 @@
+## FSR v2 current chunking behavior
+
+**Code source of truth:** `pw_sdg_ai_ser_repo`, especially:
+
+- `gold/src/etl/fsr_v2/chunk_splitter.py`
+- `gold/src/etl/fsr_v2/chunking.py`
+- `common/fsr_v2/chunker.py`
+- `gold/src/etl/nb_sdg_fsr_v2_chunks.py`
+
+### Runtime flow
+
+1. P2 loads the parsed document from `parsed_volume_path` when available. If
+	 the artifact is unavailable, it falls back to parsing the source PDF.
+2. P2 reads `preprocessor_regions` from `fsr_metadata_v2`.
+3. Regions are sorted by character offsets and processed independently.
+4. Each region's text is passed to `SmartChunker` as a separate input.
+5. The resulting relative offsets are converted back to absolute document
+	 offsets.
+6. Every chunk inherits the owning region's complete P1 metadata, including
+	 `primary_esn`, `primary_equip_type`, and `section_path`.
+7. Chunks are embedded in parallel through a `ThreadPoolExecutor` and written
+	 with a deterministic `md5(document_id + chunk_index)` chunk ID.
+
+### What `section` means today
+
+`section` is currently a selectable `SmartChunker` strategy. It detects
+markdown-style headings and creates heading-based chunks. It is **not** the
+overall attribution model used by the new preprocessor.
+
+The effective production behavior is:
+
+```text
+full_text
+	-> preprocessor_regions
+	-> split each region independently
+	-> recursively sub-chunk each region
+	-> inherit region metadata
+	-> embed and persist
+```
+
+There is no chunking strategy parameter. The splitter always uses recursive
+sub-chunking and stores the fixed lineage value `region_first:recursive`.
+
+### Current defaults
+
+The v2 P2 notebook currently uses:
+
+| Parameter | Current default |
+|---|---:|
+| `FSR_CHUNK_SIZE` | `3800` |
+| `FSR_CHUNK_OVERLAP` | `150` |
+| `FSR_MIN_CHUNK_SIZE` | `450` |
+| `FSR_EMBED_BATCH_SIZE` | `32` in the shared P2 implementation |
+| `FSR_P2_EMBED_CONCURRENCY` | `8` in the shared P2 implementation |
+
+The redesign's preferred target size is 2000 with a hard maximum of 3800;
+the current splitter exposes the hard maximum as `FSR_CHUNK_SIZE`. Recursive
+splitting may produce smaller chunks when paragraph, line, or sentence
+boundaries permit it.
+
+### Short chunk policy
+
+`FSR_MIN_CHUNK_SIZE` is an adjustable P2 parameter. It controls the minimum
+length of a chunk after recursive splitting; it is not part of the semantic
+region-attribution strategy. The current default is `450` characters.
+
+Do not choose this value from chunk counts alone. Evaluate it using the
+exported preprocessor outputs and a representative P2 run:
+
+1. Measure the chunk-length distribution for candidate thresholds, at least
+	 `<100`, `100-249`, `250-449`, and `>=450` characters.
+2. Review short chunks by content type: meaningful terminal section, heading or
+	 table fragment, continuation created by a boundary, boilerplate, gap text,
+	 or duplicate/noise.
+3. Compare retrieval recall for known queries using minimum sizes `450`, a
+	 lower threshold such as `100`, and a merge policy for compatible short
+	 chunks.
+
+Recommended policy:
+
+- Drop isolated headings, boilerplate, separators, and obvious noise.
+- Retain a meaningful terminal section even when it is shorter than `450`.
+- Merge a short chunk into an adjacent chunk when both have the same region
+	metadata and section ancestry.
+- Keep short shared front-matter or gap chunks only when they contain useful
+	narrative context; otherwise drop them.
+- Record the selected threshold and merge/drop counts in the P2 run log so the
+	decision can be revisited without changing the chunking architecture.
+
+The initial validation should compare the current `450` default with `100`
+and with the merge policy above. The production decision should be based on
+short-chunk content quality and retrieval recall, not on the `450` value by
+itself.
+
+### Important guarantees and limitations
+
+**Guaranteed by the current region-first splitter:**
+
+- A normal regioned chunk does not cross a region boundary.
+- ESN/equipment attribution comes directly from the owning region rather than
+	max-overlap arbitration.
+- Chunk overlap is applied within each region only; it does not cross regions.
+- `section_path` from the region is copied into `section_1` through
+	`section_5`.
+- The serialized `metadata.region` preserves P1 provenance fields:
+	`primary_esn`, `primary_equip_type`, `primary_technology_code`,
+	`esn_confidence`, `esn_source`, `equip_type_source`, `region_source`,
+	`section_path`, and `fallback_chain`.
+- P1 emits contiguous regions covering the full document, including synthetic
+	front-matter, gap, and trailing regions. P2 normalizes malformed or missing
+	region input into explicit shared regions rather than applying a document-
+	level ESN fallback.
+
+**Not yet fully implemented from the redesign proposal:**
+
+- Large regions are not currently split first by child `SectionSpan`
+	boundaries. P1 preserves `section_path` on regions, but P2 does not receive
+	the child span intervals needed for section-aware splitting.
+- Missing or incomplete `preprocessor_regions` is normalized into shared
+	front/gap/trailing regions. Those chunks have no ESN attribution and remain
+	auditable instead of inheriting a document-level ESN.
+- The current chunk schema does not promote `start_char`, `end_char`, or
+	`esn_confidence` to first-class columns. Offset and confidence information
+	remains available in the region/metadata contract where emitted.
+
+### Production decision
+
+Use one production strategy: region-first recursive chunking.
+
+```text
+chunk_strategy=region_first:recursive
+```
+
+No strategy selector is exposed. The only production lineage value is
+`region_first:recursive`.
+
+### Required validation before backfill
+
+- Verify zero chunk spans cross two regions with different ESNs.
+- Verify front matter, gaps, and trailing text are either covered by explicit
+	synthetic regions or intentionally excluded and logged.
+- Verify the deployed defaults remain `3800 / 150 / 450`.
+- Add a test proving missing or malformed `preprocessor_regions` produces
+	explicit shared regions rather than silently producing misattributed chunks.
+- Pass child `SectionSpan` intervals or equivalent section boundaries into P2
+	if section-aware splitting is still required for large regions.
+- Add a test proving that a large region is split without crossing a region
+	boundary and that its chunks inherit the correct ESN.
+- Add an incremental-ingestion test covering P1 region output through P2
+	chunk creation and rerun behavior.

@@ -1,0 +1,24 @@
+FSR v2 Chunking - Now that we have a "shared"  in metadata - preprocessor regions, and shared points to pages which have are not mapped to gen or GT esn, do we need to add a filter durning retrieval?
+
+Let me know if you understand the question.
+
+References:
+Code reference:
+pw_sdg_ai_ser_repo/common/fsr_v2/preprocessor_v2.py
+pw_sdg_ai_ser_repo/silver/src/etl/fsr_v2/metadata_processor_v2.py
+pw_sdg_ai_ser_repo/gold/src/etl/nb_sdg_fsr_v2_chunks.py
+
+
+validation we did yesterday -
+pw_sdg_ai_ser_repo/validation/fsr_v2/preprocessor/run-preprocessor-standalone.ipynb
+pw_sdg_ai_ser_repo/validation/fsr_v2/ingest_data
+
+FSR documents attached under doc id folder name here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues
+
+let me know if you dont see any docs.
+
+
+Docs:
+2-FSR-v2/bug-preprocessor/redesign/proposed-design-changes.md
+2-FSR-v2/bug-preprocessor/new-preprocessor-issues/rca-plan.md
+

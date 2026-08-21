@@ -1,0 +1,859 @@
+{
+  "document_id": "af693a98-1e5c-499d-aa10-cccc54885c64",
+  "metadata": {
+    "document_name": "af693a98-1e5c-499d-aa10-cccc54885c64.pdf",
+    "gt_esn": "297652",
+    "gen_esn": "337X766",
+    "all_esns": "297652, 337X766",
+    "primary_esn": "297652",
+    "primary_equip_type": "Gas Turbine",
+    "outage_start_date": "25 Mar 2024",
+    "outage_end_date": "23 Apr 2024",
+    "report_issued_date": "14 May 2024"
+  },
+  "regions": [
+    {
+      "start": 0,
+      "end": 3052,
+      "metadata": {
+        "primary_equip_type": "shared",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "none",
+        "region_source": "front_matter",
+        "section_path": [],
+        "fallback_chain": [
+          "front_matter"
+        ]
+      }
+    },
+    {
+      "start": 3052,
+      "end": 3314,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "highest",
+        "esn_source": "local_header",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR (337X766 | SY0072576)"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 3314,
+      "end": 8883,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR (337X766 | SY0072576)",
+          "3 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 8883,
+      "end": 9509,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "highest",
+        "esn_source": "local_header",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 9509,
+      "end": 9531,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)",
+          "2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 9531,
+      "end": 12950,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)",
+          "2 Turbine",
+          "## 2.1 Auxiliaries"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 12950,
+      "end": 13023,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)",
+          "2 Turbine",
+          "## 2.2 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 13023,
+      "end": 13780,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)",
+          "2 Turbine",
+          "## 2.2 Inlet",
+          "### 2.2.1 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 13780,
+      "end": 14314,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)",
+          "2 Turbine",
+          "## 2.2 Inlet",
+          "### 2.2.2 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 14314,
+      "end": 14422,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)",
+          "2 Turbine",
+          "## 2.3 Compressor"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 14422,
+      "end": 15494,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297652 | SY0070885)",
+          "2 Turbine",
+          "## 2.3 Compressor",
+          "### 2.3.1 Compressor"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 15494,
+      "end": 51662,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 51662,
+      "end": 53661,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 53661,
+      "end": 56076,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.2 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 56076,
+      "end": 63236,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 63236,
+      "end": 63317,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 63317,
+      "end": 65379,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.1 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 65379,
+      "end": 74474,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 74474,
+      "end": 74564,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 74564,
+      "end": 75125,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 75125,
+      "end": 79679,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 79679,
+      "end": 80403,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 80403,
+      "end": 95837,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 95837,
+      "end": 96658,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 96658,
+      "end": 142620,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Gas Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.4 Combustion",
+          "## 2.5 Turbine",
+          "### 2.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 142620,
+      "end": 142738,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "highest",
+        "esn_source": "local_header",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR (337X766 | SY0072576)"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 142738,
+      "end": 143283,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR (337X766 | SY0072576)",
+          "## 1.1 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 143283,
+      "end": 143937,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR (337X766 | SY0072576)",
+          "## 1.1 Generator",
+          "## 2.1 Recommendations"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 143937,
+      "end": 143961,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR (337X766 | SY0072576)",
+          "3 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 143961,
+      "end": 147087,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR (337X766 | SY0072576)",
+          "3 Generator",
+          "## 3.1 Stator Visual Inspection"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 147087,
+      "end": 170868,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 170868,
+      "end": 181857,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "## 3.2 Stator Tests"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 181857,
+      "end": 182765,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "## 3.2 Stator Tests",
+          "## 3.3 Field Visual Inspection"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 182765,
+      "end": 184921,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "## 3.2 Stator Tests",
+          "## 3.3 Field Visual Inspection",
+          "## 3.4 Field (Rotor)"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 184921,
+      "end": 188107,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "## 3.2 Stator Tests",
+          "## 3.3 Field Visual Inspection",
+          "## 3.4 Field (Rotor)",
+          "## 3.5 Field Testing"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    }
+  ],
+  "hints": "Active equipment (work performed): 297652 (Gas Turbine), 337X766 (Generator)\nSection ESN confidence distribution: high=48, highest=3\nSection hierarchy level conflicts flagged: 19\nPrimary equipment inference: primary_equip_type=Gas Turbine, primary_esn=297652.\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "page_count": 328,
+  "char_count": 188107
+}

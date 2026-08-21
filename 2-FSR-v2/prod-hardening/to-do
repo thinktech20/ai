@@ -1,0 +1,279 @@
+## FSR v2 production-hardening plan
+
+**Source of truth:** implementation in `pw_sdg_ai_ser_repo`. Design and RCA
+documents are supporting context only; any mismatch must be resolved in favor
+of the deployed code and recorded here.
+
+### Verified starting points
+
+- P1 discovers the input set with Spark, but parses, preprocesses, calls the
+	enrichment LLM, and writes results in a driver-side sequential loop.
+- P2 claims documents in batches and drains the queue, but v2 does not yet
+	expose the v1 P2 embedding/PDF worker controls or implement equivalent
+	bounded concurrency in the v2 chunking path.
+- v2 has separate P1, P2, P3, and validation workflow files, but the bundle
+	configuration and target-specific v2 parameters need a complete dev/qa/stg/
+	prod audit.
+- P1/P2 run-log writes are currently optional and non-blocking. P1 DQ logging
+	covers failed metadata documents; P2 needs equivalent per-document failure
+	visibility and run-level operational metrics.
+- The parsed-document volume is versioned by parser version, but cache
+	overwrite, partial-file, stale-file, permission, and source-file-change
+	behavior need explicit guarantees before backfill use.
+- Retrieval uses `document_id`, ESN mapping, status, dates, and chunk metadata;
+	the retrieval guide does not use metadata `title` for eligibility or VS
+	filtering. Removing or renaming it still requires a compatibility check.
+
+## Work plan
+
+### 1. Baseline and contract inventory
+
+- Freeze the current code/config behavior: entry points, tables, statuses,
+	retries, idempotency keys, volume paths, VS index contract, and job graph.
+- Compare FSR v1 and v2 code plus the v1 design and backfill-operation notes.
+- Record all public table columns and consumers, especially metadata/chunk
+	fields, `title`, `document_id`, parsed-document paths, and run/DQ logs.
+- Define acceptance metrics for an 18K-document backfill: throughput,
+	completion rate, retry behavior, duplicate rate, recovery after interruption,
+	and VS readiness.
+
+### 2. P1 scale, concurrency, and idempotency
+
+- Design bounded P1 concurrency for parsing/preprocessing/enrichment, with
+	gateway rate limits, per-document timeouts, retry/backoff, and a clear worker
+	count parameter. Do not parallelize unbounded LLM calls from the driver.
+- Preserve atomic document claiming/status transitions so two job runs cannot
+	process the same document concurrently.
+- Keep discovery incremental and duplicate-safe across multiple source volumes;
+	define behavior when the same `document_id` has changed size or modification
+	time.
+- Define one P1 reprocessing contract for an existing `document_id` across all
+	three P1-owned stores: parsed-document volume, `fsr_metadata_v2`, and
+	`fsr_document_equipment_map_v2`. **Decision: do not replace an unchanged
+	document.** When source path, source fingerprint, parser version, and parsed
+	schema version match, reuse the current parsed artifact, metadata row, and
+	equipment-map rows without reprocessing. When any of those values changes,
+	write a new versioned parsed artifact atomically, then advance the metadata
+	pointer and rebuild the current equipment-map rows from the new regions.
+	Delete obsolete ESNs from the current map only after the new artifact is
+	complete, so P2 never reads a mixed version.
+- Add an integration test that processes the same document twice unchanged, then
+	reprocesses it after a source or parser-version change; assert one metadata
+	row, one current parsed-artifact pointer, and only the current equipment-map
+	rows for that `document_id`.
+- Add a controlled backfill mode/partitioning strategy using the existing
+	operational tracker conventions, without creating a new tracker artifact.
+- Load-test the chosen settings against a representative 18K-document sample.
+
+### 3. P2 batching and bounded concurrency
+
+- Retain document-level claim batches and stale-claim recovery.
+- Add/verify bounded parallel PDF parsing/chunking and embedding concurrency,
+	with gateway-aware limits, batch-size validation, retries, timeouts, and
+	poison-document isolation.
+- Ensure partial embedding/chunk failures cannot leave a document marked
+	completed, and that reruns do not duplicate chunk rows.
+- Add a run timeout/drain policy and explicit behavior for retry-exhausted
+	documents.
+
+#### P2 code-review todos
+
+- Replace the current select-then-update flow with an atomic document claim.
+	Two concurrent P2 runs must not process the same document when both select
+	it before either status update commits.
+- Make chunk replacement idempotent when chunk boundaries change. A rerun must
+	remove stale chunk rows for the processed document; MERGE by
+	`document_id + chunk_index` alone can leave obsolete tail chunks behind.
+- Catch unexpected `Future` exceptions from the embedding pool. Any document
+	ouched by a failed embedding future must be marked `failed` so it cannot
+	remain `in_progress` until stale-claim recovery.
+- Apply `_sanitize_section_metadata()` before persisting section metadata, or
+	remove the unused helper after confirming P1 `section_path` is authoritative.
+- Resolve the parsed-document contract: P2 currently requires
+	`parsed_volume_path`, although the module documentation describes a PyMuPDF
+	fallback. Choose one behavior and make code, workflow validation, and docs
+	consistent.
+- Validate every embedding vector dimension against the configured expected
+	dimension before writing chunks or syncing the Vector Search index.
+- Remove or implement `mapping_miss_fail_threshold`; the current mapping-miss
+	count is always zero and does not provide a meaningful operational metric.
+
+### 4. Parsed-document volume contract
+
+- Define the cache key and manifest fields: source path, source size/mtime or
+	checksum, parser version, schema version, and write run ID.
+- Reuse the current parsed JSON when its source fingerprint, parser version,
+	and parsed-schema version match. On a source or parser/schema change, write a
+	new versioned artifact and advance the metadata pointer only after the write
+	completes; retain prior versions according to explicit retention/audit policy.
+- Make writes atomic or recoverable, detect corrupt/partial JSON, and specify
+	behavior for missing volume, missing permissions, quota failures, and P2
+	fallback parsing.
+- Add cleanup/retention guidance so an 18K-document backfill does not grow the
+	volume without bound.
+
+### 5. Configuration and fail-fast validation
+
+- Split FSR v2 variables clearly from v1 in `databricks.yaml` and workflow
+	parameters, while documenting the small set of intentionally shared values.
+- Complete and verify explicit v2 sections for dev, qa, stg, and prod:
+	catalogs/schemas, source volumes, tables, VS endpoint/index, model names,
+	worker/batch limits, and secrets.
+- Remove unused or confusing parameters, including compatibility aliases once
+	their consumers are confirmed.
+- Decide whether to retire `FSR_MAX_PDFS` after development validation. It can
+	silently truncate an explicit `FSR_TARGET_PDF_NAMES` list, so do not set both
+	for a targeted run. Use the target list for exact ad hoc processing and use
+	`FSR_MAX_PDFS` only as a temporary development safety cap for broad discovery.
+- Replace silent fallback parsing with strict validation for required integers,
+	floats, enums, paths, table identifiers, embedding dimension, and supported
+	strategy names. Fail before processing any document.
+- Make production-safe defaults explicit: no debug target/max-document caps,
+	TLS verification policy, and no accidental writes to test tables.
+
+### 6. Workflow topology and operations
+
+- Verify separate DDL, P1, P2, P3/sync, and validation jobs with dependencies,
+	retries, timeouts, concurrency limits, queue settings, and alerting.
+- Add the daily incremental workflow: P1 discovery -> P2 drain -> P3 sync,
+	with failure propagation and rerun semantics.
+- Define whether backfill and daily ingestion may overlap and how they are
+	serialized or safely isolated.
+- Verify deployment paths, service principals, permissions, UC volume access,
+	and environment-specific job names.
+
+### 7. Logging, audit, and monitoring
+
+- Standardize run-level and document-level fields: run ID, environment, job,
+	batch, document ID, source/cache decision, status transition, duration,
+	retry count, error category, and row/chunk counts.
+- Make required operational log writes reliable and observable; do not hide a
+	failed audit write behind a warning unless that behavior is explicitly
+	accepted.
+- Move v2 run/audit/DQ tables to
+	`ai_std_con_monitoring_diagnostics`, confirm catalog/schema ownership, and
+	update DDL, config, workflows, validation, and consumers together.
+- Add dashboards/queries or documented checks for backlog, retry exhaustion,
+	stale claims, cache failures, embedding failures, missing chunks, and VS lag.
+
+### 8. Chunk strategy and schema cleanup
+
+- Trace every configured chunk strategy and its consumers/tests. Keep only the
+	production-supported strategy and the minimum migration compatibility needed
+	for existing data.
+- Validate chunk metadata and region attribution against the retrieval contract.
+- Decide whether `title` is a required document field, a duplicate/misparsed
+	field, or an unused compatibility field. Remove it only with a migration and
+	consumer check; otherwise correct its population and document its purpose.
+
+### 9. Dead-code and dependency cleanup
+
+- Build a usage report for candidate files such as
+	`silver/src/etl/fsr_v2/metadata_processor.py`, including notebook `%run`,
+	imports, tests, deployment includes, and ad-hoc validation references.
+- Produce a delete list with evidence, then remove only confirmed dead files,
+	stale strategies, compatibility aliases, and unused workflow parameters.
+- Inventory parser and runtime-library imports across deployed FSR v2 notebooks,
+	modules, job clusters, and bundle/library configuration. Remove unnecessary
+	installations such as `pypdf2` only after confirming no supported v2 path,
+	validation notebook, or shared parser dependency still imports them; retain
+	the selected PyMuPDF parser and its required runtime dependencies.
+- Run import/static checks after cleanup and retain required developer/debug
+	notebooks separately from production deployment inputs.
+
+### 10. Validation and release gates
+
+- Add focused unit tests for config validation, claim/retry transitions, cache
+	reuse/overwrite/corruption, chunk idempotency, and log/audit payloads.
+- Run an integration test through P1 -> P2 -> P3 -> validation on a controlled
+	sample in dev, including rerun and injected failure cases.
+- Run a scale/backfill rehearsal and compare the acceptance metrics from step 1.
+- Produce a QA/prod promotion checklist with rollback, replay, and operational
+	response steps.
+
+## Questions for review
+
+1. Should P1 enrichment concurrency be implemented in the notebook process, or
+	 should P1 be redesigned as a Spark-distributed map/pandas UDF workload?
+
+	 [Ans] - I think the way we did it FSR v1 worked very well, thugh it was P2, but we can check how it was done there.
+2. What are the approved LiteLLM request-rate/concurrency limits for QA and
+	 prod, and should those limits be shared across FSR v1 and v2?
+
+	 [Ans] - I do not know the answer. Check fsr v1 code and fsr-prod-ops to see if you find anything.
+
+	 [Review] - The repository and prod-ops notes show `FSR_P2_EMBED_CONCURRENCY=8`
+	 as the default, with production tuning to 4 workers and batch size 16 when
+	 rate limits occur. This is operational evidence, not an authoritative
+	 LiteLLM quota. Start production backfill conservatively at 4 workers and
+	 confirm the QA/prod gateway limits with the platform team.
+3. Should daily ingestion be one scheduled chained job, or separate scheduled
+	 P1/P2/P3 jobs with task dependencies and independent reruns?
+
+	 [Ans] - I think we can make one chained job for incremental processing, and we can also keep extra 3 jobs, so that if in case during backfill of large data, we can trigger them and run it independently, as p2 job picks from the same metadta table where chunk status is pending. Also, I need one test that incremental ingestion is really working.
+
+4. May backfill and daily ingestion overlap, or must a backfill lock the FSR v2
+	 tables and source/cache volume?
+
+	 [Ans] - backfills are done once, and at that time we can stop the daily ingestion job, also create a small runbook to mention how to run these jobs, we created one for FSR v1.
+
+5. What are the exact QA, staging, and production catalog/schema/table names and
+	 source volume paths? The current bundle defaults are not sufficient as the
+	 environment contract.
+
+	 [Ans] - table names and index name is same across all environments. for schmea ad catalog, follow the FSR v1 pattren, except for point 6 below.
+6. Is `ai_std_con_monitoring_diagnostics` under catalog `vaid`, and should run,
+	 DQ, and audit tables use one common naming convention there?
+
+	 [Ans] - yes for dev it is in vaid, for other environments it is in the respective catalogs.
+
+7. For an existing parsed JSON, should P1 reuse it when source metadata matches,
+	 overwrite it when the source changes, or always write a new run/version?
+
+	 [ans] - Give me some suggestions.
+
+	 [Decision] - Reuse without reprocessing when source fingerprint, parser
+	 version, and parsed-schema version match. When any value changes, write a
+	 new versioned artifact, atomically advance the metadata pointer, and rebuild
+	 the current equipment-map rows so P2 cannot read mixed state.
+8. Is the `title` column consumed by any API, downstream table, dashboard, or
+	 historical query outside the retrieval guide?
+
+	 [ans] - can you make a list of all columns which you think are redundant, and create a small slack message for me to ask the app team, as they are consuming this index and metadta .
+
+9. Which chunk strategy is the production decision: `section`, another v2
+	 strategy, or a still-supported migration path for existing chunks?
+
+	 [ans] - I think the latest changes we made based on preprocessor redesign - 2-FSR-v2/bug-preprocessor/redesign/proposed-design-changes.md, has the chunking changes, based on that though we call it "section", it is something like "region", check whats happening here. We should use the current chunking behaviour, but we should probaly name it better, review the code and let me know.
+
+	 [Review] - Confirmed. The effective behavior is `regions -> split each
+	 region independently -> inherit region metadata -> embed`. We should use
+	 one production implementation: `region_first:recursive`. The old
+	 `FSR_CHUNKING_STRATEGY` parameter has been removed because v2 is not yet
+	 production deployed. Defaults are now 3800 maximum characters,
+	 150-character intra-region overlap, and 450 minimum characters. P1 already
+	 emits full-document coverage with front-matter, gap, and trailing regions,
+	 and P2 now normalizes incomplete region input into explicit shared regions.
+	 The remaining design gap is child-SectionSpan-aware splitting inside very
+	 large regions. See
+	 `2-FSR-v2/chunking-with-new-preprocessor/chunk-current-behaviour`.
+
+10. What is the required behavior when a document reaches retry exhaustion:
+		alert only, quarantine, or a separate remediation job?
+
+		[ans] - there should be a separate remediation job i believe, which we dont ned to build now, but should have all failures logged properly to look at. let me know your suggestions.
+
+		[Review] - Agree. Keep the document as `chunk_status='failed'`, preserve
+		`chunk_retry_count` and `chunk_error`, and write a DQ row with
+		`failure_category='retry_exhausted'`. A future remediation job can select
+		that category without introducing a new status now. The current run/DQ
+		logging work should be completed as part of hardening.
+
+## Deliverables before implementation
+
+- Approved architecture and workflow plan.
+- Environment/config matrix and parameter removal list.
+- Parsed-volume contract and failure matrix.
+- Dead-file/unused-parameter delete list with usage evidence.
+- Table migration and retrieval compatibility plan.
+- Test, load-test, observability, rollback, and QA/prod release checklist.

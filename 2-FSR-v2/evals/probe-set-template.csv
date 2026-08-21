@@ -1,0 +1,5 @@
+probe_id,esn,equip_type,persona,component,issue_name,issue_prompt,expected_document_ids,expected_cited_doc_pages,label_source,confidence,notes
+
+P-001,ESN123456,generator,reliability_engineer,bearing,high vibration,"What are the known causes and recommended actions for high vibration in the bearing of ESN123456?","FSR-10021|FSR-10455|FSR-11002","FSR-10021,42|FSR-10455,324",document_equipment_map,high,"cited pages must appear in top-k"
+P-002,ESN223344,gas_turbine,outage_analyst,combustor,crack findings,"What crack findings have been reported for the combustor on ESN223344 and what actions were taken?","FSR-08912|FSR-09177","FSR-09177,18|FSR-09177,205",prior_retrieval_run,medium,"use for doc set diff checks plus cited page yes/no flags"
+P-003,ESN998877,generator,maintenance_engineer,stator winding,insulation degradation,"What insulation degradation findings exist for the stator winding on ESN998877?","FSR-12011","FSR-12011,77",heuristic_mapping,low,"candidate probe for later SME promotion"

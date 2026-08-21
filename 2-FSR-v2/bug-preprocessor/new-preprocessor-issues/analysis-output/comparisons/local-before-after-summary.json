@@ -1,0 +1,118 @@
+{
+  "local_regression_summary": [
+    {
+      "case": "af693",
+      "before_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/before-fix/af693a98-1e5c-499d-aa10-cccc54885c64.json",
+      "after_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/after-fix/af693a98-1e5c-499d-aa10-cccc54885c64.pymupdf_v1_0.json",
+      "before_region_count": 25,
+      "after_region_count": 26,
+      "before_primary": [
+        "Gas Turbine",
+        "297652"
+      ],
+      "after_primary": [
+        "Gas Turbine",
+        "297652"
+      ],
+      "before_gt_esn": "297652",
+      "after_gt_esn": "297652",
+      "before_gen_esn": "337X766",
+      "after_gen_esn": "337X766"
+    },
+    {
+      "case": "fcb",
+      "before_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/before-fix/fcb1511e-596a-4a56-b151-1e596afa569c.json",
+      "after_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/after-fix/fcb1511e-596a-4a56-b151-1e596afa569c.pymupdf_v1_0.json",
+      "before_region_count": 23,
+      "after_region_count": 25,
+      "before_primary": [
+        "Generator",
+        "337X581"
+      ],
+      "after_primary": [
+        "Generator",
+        "337X581"
+      ],
+      "before_gt_esn": "298464",
+      "after_gt_esn": "298464",
+      "before_gen_esn": "337X581",
+      "after_gen_esn": "337X581"
+    },
+    {
+      "case": "5b_pymupdf",
+      "before_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/before-fix/5b688732-39f2-48d2-a887-3239f258d28b.pymupdf_v1_0.json",
+      "after_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/after-fix/5b688732-39f2-48d2-a887-3239f258d28b.pymupdf_v1_0.json",
+      "before_region_count": 9,
+      "after_region_count": 9,
+      "before_primary": [
+        "Generator",
+        "316X914"
+      ],
+      "after_primary": [
+        "Generator",
+        "316X914"
+      ],
+      "before_gt_esn": null,
+      "after_gt_esn": null,
+      "before_gen_esn": "316X914",
+      "after_gen_esn": "316X914"
+    },
+    {
+      "case": "5b_pypdf2",
+      "before_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/before-fix/5b688732-39f2-48d2-a887-3239f258d28b.pypdf2_v1_0.json",
+      "after_file": "/home/u560060992/dbx/2-FSR-v2/bug-preprocessor/new-preprocessor-issues/analysis-output/after-fix/5b688732-39f2-48d2-a887-3239f258d28b.pypdf2_v1_0.json",
+      "before_region_count": 8,
+      "after_region_count": 8,
+      "before_primary": [
+        "Generator",
+        "316X914"
+      ],
+      "after_primary": [
+        "Generator",
+        "316X914"
+      ],
+      "before_gt_esn": null,
+      "after_gt_esn": null,
+      "before_gen_esn": "316X914",
+      "after_gen_esn": "316X914"
+    }
+  ],
+  "af693_target_checks": [
+    {
+      "label": "2.6 Generator Mechanical Scope",
+      "positions": [
+        2349,
+        74477
+      ],
+      "selected_body_index": 74477,
+      "before": {
+        "equip_type": "Generator",
+        "esn": "337X766",
+        "source": "single_type"
+      },
+      "after": {
+        "equip_type": "Generator",
+        "esn": "337X766",
+        "source": "single_type"
+      }
+    },
+    {
+      "label": "2.7 Unit Rotor",
+      "positions": [
+        2441,
+        75128
+      ],
+      "selected_body_index": 75128,
+      "before": {
+        "equip_type": "Generator",
+        "esn": "337X766",
+        "source": "parent_inherit"
+      },
+      "after": {
+        "equip_type": "Gas Turbine",
+        "esn": "297652",
+        "source": "single_type"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+2-FSR-v2\evals\retrieval-scoring-spec.md
+
+from above doc, in ## Probe template column definitions
+
+I think Xujin mentioned --
+instead of --
+ min_expected_doc_hits_top_k
+  expected_evidence_terms
+  - expected_section_hints
+
+
+she expects --
+  expected FSR doc id + page num
+
+from transcript: <transcript-start>
+  retrieval pool will have expected doc ids - So the expected document IDs here, for example, I provide 3 documents. I want to make sure the retrieval pool sizes like that's three documents. So there are not 4 documents or there are not only two documents.
+
+  And the retrieve result, like when I said, for example, K = 10, the retrieve result may be, for example, I provide 3 documents, but the retrieve the result based on the issue question I ask, it might be like all like in one document, which is fine, so it it doesn't mean that is wrong.
+
+But in that one, like I need another kind of expected, maybe called expected cited document ID and its page number. So in that one, I can only put that like expected, like only one document ID and for example, page 42 and page 324.
+
+as the expected like a cited one. So this means like, I want to make sure like that two page numbers, yes, as in the top K. So for example, if I set K equals 5 and I didn't see like that page got.
+
+Either, either like that five chunks, I can like, for example, test k = 10, and if I set k = 10, I see, ohh, both like this document is page 42 and 324, they are both like in the, I mean, either retrieve the top K.
+
+And then that's good, so, so it means like where I'm sending enough evidence to LLM.
+
+<transcript-end>
+
+
+====
+
+query_input---
+
+instead of providing quey, the user can provide equipment_type, persona, component and issue name, then the issue_prompt should be derived from the excel (look at columns here) - 2-FSR-v2/evals/fsr-v2-top-k-eval/Heat Map.xlsx
+====
+
+output should also return chunk_id
+
+====
+
+metrics:
+ retrurned doc ids vs expected doc ids - flag if they are not same - which are missing, which ones are found
+ expected cited doc id & page num - flag yes and no for each of them (pg 42 - y or no)
+
+ ===
+
+
+ we should be bale to run it on multiple docs
+ 
+
+
+

@@ -1,0 +1,116 @@
+can you do a root cause analysis of the bugs reported by Xujin today (8/12) and update - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/rca-plan.md for today's analysis and root cause and fix needed. Bugs are mentoned here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/issue.
+
+Let me know first if you have any questions, so that I can directly post them to Xujin - put your questions if you have any with doc-id
+
+Also update rca-plan for refernce docs, as i will not need to give them again.
+
+
+Code reference:
+pw_sdg_ai_ser_repo/common/fsr_v2/preprocessor_v2.py
+pw_sdg_ai_ser_repo/silver/src/etl/fsr_v2/metadata_processor_v2.py
+
+validation we did yesterday -
+pw_sdg_ai_ser_repo/validation/fsr_v2/preprocessor/run-preprocessor-standalone.ipynb
+pw_sdg_ai_ser_repo/validation/fsr_v2/ingest_data
+
+FSR documents attached under doc id folder name here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues
+
+let me know if you dont see any docs.
+
+
+Docs:
+2-FSR-v2/bug-preprocessor/redesign/proposed-design-changes.md
+2-FSR-v2/bug-preprocessor/new-preprocessor-issues/rca-plan.md
+
+
+Xujin's bug list: 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Bugs_prepared_for_0803(Sheet1).csv
+
+8/12:
+
+New bugs reported by Xujin:
+
+Xujin (First Bug):
+doc id - b896cb9f-b70e-48c5-b9b1-477aa18bf03a
+ 
+
+I am checking some IBAT tool call cases, noticed that some issues. For example this one
+ 
+"metadata": {
+
+      "primary_esn": "804699",
+
+      "primary_equip_type": "Gas Turbine",
+
+      "esn_confidence": "low",
+
+      "esn_source": "ibat_train",
+
+      "equip_type_source": "heading",
+
+      "region_source": "section_span",
+
+      "section_path": [
+
+        "STEAM TURBINE (814638 | SY0052637)",
+
+        "1 Turbine"
+
+      ],
+ 
+First is that 1 Turbine always goes to Gas turbine, never steam turbine. and 814638 and 804699 is not in same train id
+ =================================
+
+ Madhurima's analysis (First Bug):
+
+doc id - b896cb9f-b70e-48c5-b9b1-477aa18bf03a
+ 
+I am checking some IBAT tool call cases, noticed that some issues. For example this one   "metadata": {       "primary_esn": "804699",       "primary_equip_type": "Gas Turbine",       "esn_confidence…
+`1 Turbine` is matched by the generic subsection regex in [preprocessor_v2.py], and that path currently hard-codes the equipment type to `Gas Turbine` for every bare `Turbine` subsection. So when the document has:
+ 
+- `STEAM TURBINE (814638 | SY0052637)`
+- `1 Turbine`
+the parser still labels that span as Gas Turbine, which then conflicts with the section path that correctly says it sits under the steam-turbine header.
+ 
+I checked the b896cb9f-b70e-48c5-b9b1-477aa18bf03a case. The root cause is that the preprocessor is treating bare 1 Turbine subsections as Gas Turbine by default, even when they sit under a STEAM TURBINE header. That makes the section path and the equipment type disagree.
+The fix is to make bare Turbine subsections inherit the nearest explicit equipment header above them instead of forcing them to Gas Turbine. That keeps gas-turbine docs unchanged, and it should correctly label the steam-turbine 1 Turbine section as Steam Turbine.
+ ================================
+ Xujin:
+
+ The "Steam Turbine" in table confuses as section header, so if these table contain somehow a different equipment name, there will be an issue
+ 
+doc id - b1cdbc80-364f-4240-8dbc-80364f1240fa
+
+Image shared - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b1cdbc80-364f-4240-8dbc-80364f1240fa/ST-issue.png
+
+ And that Turbine -->Steam/Gas is a must fix. There are many steam Turbine section contains a subsection header called "turbine", if they all mapped to GT and its ESN, there will be a lot of noisy evidences
+
+ ===================
+Xujin::
+ doc id - b25c94da-d954-4283-9c94-dad954a28307
+
+ 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/b25c94da-d954-4283-9c94-dad954a28307/gt-bug.png
+
+ The GT esn is missing here, and all the span after this, feels like a logic bug
+
+ Are these GT esn missing issue caused because we don't have IBAT resolver yet? 
+
+ ==========================
+
+Xujin:
+doc id - 32689520-afed-4dd4-a895-20afed7dd4d2
+
+because it read a Gas Turbine from table, and thought it as level "-1"
+ 
+And when level "-1" does not got esn, since there is no "parent", so it would never trigger IBAT tool
+ =========================================
+
+ Xujin:
+
+ I scanned through the 12 ESN Related documents,
+ 
+So our current issue on bug 3,4,6, are just: (1) some esn not attaching because of section -1 level mis detected from a table (2) Turbine -->Steam/Gas Turbine issue.
+ 
+After fixing these two, I think the last quick things is to: Add Electrical/ Electrification/DC leakage into Generator section header detecting keywords, just like Combustion/Inlet for Turbine; (which will be relativity quick I believe, and will solve a lot of sections)
+ 
+Other issues, such as Shared sections (QCP, PIPO, Coupling, Alignment), and ambiguous sections (Appendix, embedded reports) --> we document them and let them goes into next round or 20%
+refer to: 12 docs here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Bugs_prepared_for_0803(Sheet1).csv

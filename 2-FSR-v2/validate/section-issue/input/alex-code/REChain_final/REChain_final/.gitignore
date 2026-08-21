@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+.env
+.env.*
+!.env.example
+dbr_token.txt
+litellm_token.txt
+
+*.log
+REChainExperiment/output/

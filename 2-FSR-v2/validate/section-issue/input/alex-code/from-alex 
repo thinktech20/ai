@@ -1,0 +1,36 @@
+This code has the logic required to include the additional FSR chunk metadata including section header information. I think the chunks above may be based on an earlier version of the code
+2-FSR-v2/validate/section-issue/input/alex-code/REChain_final
+
+Related confluence page - 2-FSR-v2/validate/section-issue/input/alex-code/Section-based+Chunking+Analysis.doc
+
+
+def format_fsr_section(chunks: List[Dict], max_chunk_chars: int = 10000) -> str:
+    if not chunks:
+        return "No FSR chunks available."
+    parts: List[str] = []
+    for i, c in enumerate(chunks, 1):
+        section_values = [_normalize_prompt_scalar(c.get(f"section_{idx}", "")) for idx in range(1, 6)]
+        section_path = " > ".join(value for value in section_values if value)
+        start_page = _normalize_prompt_scalar(c.get("start_page", c.get("page_number", "")))
+        end_page = _normalize_prompt_scalar(c.get("end_page", c.get("page_number", "")))
+        if start_page and end_page:
+            page_range = start_page if start_page == end_page else f"{start_page}-{end_page}"
+        else:
+            page_range = start_page or end_page or "N/A"
+        parts.append(
+            f"--- FSR Chunk {i} ---\n"
+            f"Chunk ID: {clean_scalar(c.get('chunk_id', '')) or 'N/A'}\n"
+            f"Report Name: {clean_scalar(c.get('report_name', c.get('pdf_name', ''))) or 'N/A'}\n"
+            f"Page Range: {page_range}\n"
+            f"Serial: {clean_scalar(c.get('generator_serial', '')) or 'N/A'}\n"
+            f"Start Date: {clean_scalar(c.get('start_date', '')) or 'N/A'}\n"
+            f"End Date: {clean_scalar(c.get('end_date', '')) or 'N/A'}\n"
+            f"Section Path: {section_path or 'N/A'}\n"
+            f"Event Type: {clean_scalar(c.get('event_type', '')) or 'N/A'}\n"
+            f"Outage Type: {clean_scalar(c.get('outage_type', '')) or 'N/A'}\n"
+            f"Technology Type: {clean_scalar(c.get('technology_type', '')) or 'N/A'}\n"
+            f"Report Unit Status: {clean_scalar(c.get('report_unit_status', '')) or 'N/A'}\n"
+            f"Score: {clean_scalar(c.get('score', '')) or 'N/A'}\n"
+            f"Context: {_truncate(c.get('chunk_text', ''), max_chunk_chars)}"
+        )
+    return "\n\n".join(parts)

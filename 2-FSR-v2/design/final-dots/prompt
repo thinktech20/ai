@@ -1,0 +1,35 @@
+References:
+
+FSR v2:
+design: 2-FSR-v2/design/fsr-v2-design.md
+pw_sdg_ai_ser_repo/silver/src/etl/nb_sdg_fsr_v2_metadata.py
+pw_sdg_ai_ser_repo/gold/src/etl/nb_sdg_fsr_v2_chunks.py
+
+[caution: the design docs might be a bit updated, so reply on code more than design doc for analysis]
+
+
+Assume that you are exlaining  FSR v2 pipeline to a new joinee in the team. The detailed design here - 2-FSR-v2/design/fsr-v2-design.md for the entire pipline, but you I need very clear brief and to the point answer to below questions. The answers should be derived from the FSRV2 implementation.
+
+1. how a pdf document is extracted, 
+2. parsed, 
+3. what are preprocesor regions, and then how is the metadta exyttracted mapped to document level metadta, region level metadta
+4. What are the other ouptputs from preprocessor and how are they used. 
+5. how is preprocessor, if it is calculating these columns, how is it calculting these columns:
+    1. metadta table - primary_esn, primary_equip_type, gt_esn, gen_esn, event_type
+    2. Attached a sample preprocessor_regions column value (2-FSR-v2/design/final-dots/preprocessor_regions.json) for this volume path - /Volumes/viud/ing_ud_fieldvision/fv_field_service_report/5b688732-39f2-48d2-a887-3239f258d28b. Can you look at it and tell me how tehse are calculated.
+
+6. How is primary_esn, primary_equip_type, active_esns columns in fsr_chunks_v2 calculated?
+7. How is all teh fields in the metadta json calculated, example value:
+
+{"metadata_contract_version": "fsr_v2_chunk_metadata_v2", "doc": {"title": "5b688732-39f2-48d2-a887-3239f258d28b", "customer": "", "event_type": "", "ev_project_id": "", "ev_equipment_event_id": "", "ofs_event_id": "", "fsp_project_id": "FSP-261874", "xxx_project_id": "C-10329409", "fsr_number": "", "report_issued_date": "", "outage_start_date": "2019-11-23", "outage_end_date": "", "outage_type": "", "technology_type": "", "inactive_esns": []}, "region": {"primary_esn": "", "primary_equip_type": ""}, "section": {"section_title": "Site Personnel", "section_level": 2, "section_path": ["Dec 2011", "Site Personnel"]}, "chunk_context": {"chunk_start_char": 0}}
+ 
+
+8. How is "esn", "is_primary_esn", source region cuont columns calculated for fsr_document_equipment_map_v2 table.
+
+I downloaded a FSR here - 2-FSR-v2/design/final-dots/5b688732-39f2-48d2-a887-3239f258d28b.pdf, can you use that and explain me specifically for this FSR how data is mapped fro above questions. 
+
+I have also downloaded the data for bewlow queries anbd attached here- 2-FSR-v2/design/final-dots/fsr_v2_pipeline_table_ouputs
+
+select * from vaid.ai_sot_field_service_report.fsr_metadata_v2 where document_id ='5b688732-39f2-48d2-a887-3239f258d28b';
+select *  from vaid.ai_std_con_field_service_report.fsr_chunks_v2 where document_id='5b688732-39f2-48d2-a887-3239f258d28b';
+select *  from vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2 where document_id='5b688732-39f2-48d2-a887-3239f258d28b';

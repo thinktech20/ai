@@ -1,0 +1,16 @@
+1. We need to implement 2-FSR-v2/bug-preprocessor/redesign/proposed-design-changes.md
+
+The mock output is in 2-FSR-v2/bug-preprocessor/redesign/mock-output-example
+The key code files to work on are preprocessor.py and metadata_processor_v2.py.
+
+
+2. We should leave the file - pw_sdg_ai_ser_repo/common/fsr_v2/preprocessor.py as it is and create another file in the same folder for this preprocessor. But since existing preprocessor has been tested a lot, the regex expressions should be copied as is, if there is a change, we should call it out. Also, use this code as much as-is wherever applicable, do not re-invent code for the things that are already working.
+3. The new preprocessor - should be very organized so it is easy tp extend. For the schema we proposed for region and sections etc, should be defined upfront. Also, for any values which are defined, we should define enums. and explain them correctly.
+4. For the IBAT train logic, keep it in a method seperate. Also consider keeping small methods which are testable.
+5. the things that we do outside the preprocessor like - pw_sdg_ai_ser_repo/silver/src/etl/fsr_v2/metadata_processor_v2.py should be done here.
+6. can we add  a tests folder in pw_sdg_ai_ser_repo, and add some unit tests for preprocessr
+7. please do this - write code, method wise, and add unit test and test it. do not boil the ocean, we dont need the quantity, we need quality.
+8. can you build agent whch does code building, code review, and unit tests, and final validations?
+9. When in doubt ask questions - do not make assumptions and go on.
+
+let me know your plan before you start this activity.

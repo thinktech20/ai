@@ -1,0 +1,25 @@
+GE Power Power Services
+
+4.5.2 Final Operation Concept defined by
+mapping
+4.5.3 Safety Oil Protection Test Certificate
+5 Quality Checkpoint (QCP)
+5.1 Attachments
+GAS TURBINE (804867 | SY0047510)
+1Summary
+1.1 Timers and Counters
+1.2 Executive Summary
+1.3 Work Scope
+2 Technical
+2.1 Recommendations
+3 Turbine
+3.1 RotorWstion
+3.1.1 Initial Measurements
+
+3.1.2 Measurements after bearing #1
+movement
+3.2 Air Intake
+3.2.1 Filter House
+3.2.2 Air Intake Manifold
+3.3 Compressor
+

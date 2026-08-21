@@ -1,0 +1,25 @@
+Input:
+
+top k 
+expected document_ids
+expected cited document id and page number [xyz,10], [abc,20], [abc,40]
+
+
+from heat map - 2-FSR-v2/evals/fsr-v2-top-k-eval/Heat Map.xlsx
+uniquely issue prompt can be derived from 
+component
+issue_name
+
+that ques as query input to the serach index
+
+output
+
+metrics:
+ retrurned doc ids vs expected doc ids - flag if they are not same - which are missing, which ones are found
+ expected cited doc id & page num - flag yes and no for each of them (pg 42 - y or no)
+ chunk_id
+ 
+
+- batch run 
+=================
+

@@ -1,0 +1,4 @@
+Hi team, I updated the preprocessor as discussed in the morning meeting. It includes stronger section and sub-section boundary detection, correct subsection flip-back behavior, and safer hierarchy anchoring across noisy PDF/page-join text patterns. I did explicit scenario validation with Xujin on the critical edge cases (for example 2.6/2.7 flip-back and 2.x/3.x path anchoring). 
+
+These were the main issues highlighted by Xujin in her list. 
+Once Xujin does the regression, and confirms, we can plan to take this QA tomorrow.

@@ -1,0 +1,1039 @@
+{
+  "bug_id": "mixed",
+  "name": "custom-regression",
+  "document_id_raw": "9e279e5a-a24e-4ebd-a79e-5aa24efebd04",
+  "document_id": "9e279e5a-a24e-4ebd-a79e-5aa24efebd04",
+  "volume_path": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/9e279e5a-a24e-4ebd-a79e-5aa24efebd04",
+  "selected_volume_root": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report",
+  "run_utc": "2026-08-11T17:51:44.023911+00:00",
+  "page_count": 664,
+  "char_count": 571497,
+  "metadata": {
+    "document_name": "9e279e5a-a24e-4ebd-a79e-5aa24efebd04",
+    "gt_esn": "297652",
+    "gen_esn": "337X766",
+    "all_esns": "297652, 337X766",
+    "primary_esn": "297652",
+    "primary_equip_type": "Gas Turbine",
+    "primary_technology_code": "7FA.03",
+    "outage_start_date": "13 Mar 2020"
+  },
+  "hints": "Active equipment (work performed): 297652 (Gas Turbine), 337X766 (Generator)\nSection ESN confidence distribution: high=84\nSection hierarchy level conflicts flagged: 3\nPrimary equipment inference: primary_equip_type=Gas Turbine, primary_esn=297652.\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "regions": [
+    {
+      "start": 0,
+      "end": 2036,
+      "metadata": {
+        "primary_equip_type": "shared",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "none",
+        "region_source": "front_matter",
+        "section_path": [],
+        "fallback_chain": [
+          "front_matter"
+        ]
+      }
+    },
+    {
+      "start": 2036,
+      "end": 7173,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 7173,
+      "end": 29213,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "primary_technology_code": "7FA.03",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 29213,
+      "end": 29297,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "primary_technology_code": "7FA.03",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine",
+          "## 2.4 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 29297,
+      "end": 34732,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "primary_technology_code": "7FA.03",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.1 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 34732,
+      "end": 39704,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "primary_technology_code": "7FA.03",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine",
+          "## 2.4 Combustion",
+          "### 2.4.6 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 39704,
+      "end": 44909,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "primary_technology_code": "7FA.03",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine",
+          "## 2.5 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 44909,
+      "end": 278735,
+      "metadata": {
+        "primary_esn": "297652",
+        "primary_equip_type": "Gas Turbine",
+        "primary_technology_code": "7FA.03",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine",
+          "## 2.5 Turbine",
+          "### 2.5.3 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 278735,
+      "end": 294566,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine",
+          "## 2.5 Turbine",
+          "### 2.5.3 Turbine",
+          "3 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 294566,
+      "end": 295600,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Generator",
+          "2 Turbine",
+          "## 2.5 Turbine",
+          "### 2.5.3 Turbine",
+          "3 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 295600,
+      "end": 304392,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 304392,
+      "end": 304500,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 304500,
+      "end": 305629,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 305629,
+      "end": 309312,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR",
+          "### 3.1.8 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 309312,
+      "end": 310023,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR",
+          "### 3.1.8 Generator",
+          "### 3.1.9 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 310023,
+      "end": 310052,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION REPORT"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 310052,
+      "end": 351731,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 351731,
+      "end": 351957,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 351957,
+      "end": 351981,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 351981,
+      "end": 352127,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352127,
+      "end": 352151,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352151,
+      "end": 352291,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352291,
+      "end": 352315,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352315,
+      "end": 352395,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352395,
+      "end": 352419,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352419,
+      "end": 352505,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352505,
+      "end": 352529,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352529,
+      "end": 352667,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352667,
+      "end": 352691,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352691,
+      "end": 352877,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352877,
+      "end": 352901,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 352901,
+      "end": 353094,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353094,
+      "end": 353118,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353118,
+      "end": 353313,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353313,
+      "end": 353337,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353337,
+      "end": 353527,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353527,
+      "end": 353551,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353551,
+      "end": 353745,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353745,
+      "end": 353769,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353769,
+      "end": 353962,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353962,
+      "end": 353986,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 353986,
+      "end": 354147,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GENERATOR INSPECTION PHOTOS"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 354147,
+      "end": 354479,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 354479,
+      "end": 407693,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator Report _Final",
+          "### 3.1.10 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 407693,
+      "end": 571497,
+      "metadata": {
+        "primary_esn": "337X766",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "document_id": "35803273-2440-4d36-87fe-e45f7f0e5467",
+  "volume_path": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/35803273-2440-4d36-87fe-e45f7f0e5467",
+  "run_utc": "2026-08-11T17:50:29.114168+00:00",
+  "page_count": 0,
+  "char_count": 0,
+  "metadata": {
+    "document_name": "35803273-2440-4d36-87fe-e45f7f0e5467",
+    "primary_esn": "",
+    "primary_equip_type": "",
+    "primary_technology_code": "",
+    "gt_esn": "",
+    "gen_esn": "",
+    "st_esn": "",
+    "all_esns": "",
+    "inactive_esns": "",
+    "outage_start_date": "",
+    "outage_end_date": "",
+    "report_issued_date": ""
+  },
+  "hints": "Section ESN confidence distribution: \nSection hierarchy level conflicts flagged: 0\nPrimary equipment inference: primary_equip_type=None, primary_esn=None.\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "regions": [
+    {
+      "start": 0,
+      "end": 0,
+      "metadata": {
+        "primary_equip_type": "shared",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "none",
+        "region_source": "synthetic",
+        "section_path": [],
+        "fallback_chain": [
+          "shared"
+        ]
+      }
+    }
+  ],
+  "inactive_esns_emitted": []
+}

@@ -1,0 +1,24 @@
+1. Doc id: b896cb9f-b70e-48c5-b9b1-477aa18bf03a
+Should a subsection title like “1 Turbine” always inherit equipment type from the nearest explicit parent header (Steam Turbine vs Gas Turbine), unless that subsection itself has an explicit equipment marker? Yes
+2. Doc id: b896cb9f-b70e-48c5-b9b1-477aa18bf03a
+When subsection ESN conflicts with parent header ESN/train, which source should win for primary_esn: parent section context, subsection text, or IBAT resolution priority rules?
+subsection text first, parent section logic then (inherent if same type, IBAT if not same type and esn list not only one candidate for that equipment type) A following questions, the candidate list should use "Broad_esn" list right? Currently seems to use all_esn list
+3. Doc id: b1cdbc80-364f-4240-8dbc-80364f1240fa
+For equipment names detected inside tables, do you want table text excluded from section-header level detection entirely, or included only when the table is clearly a section index/TOC style table?
+We don't want the table like this following to be included. Are you saying that we do something like, if we find a section header, compare it with the main ToC, only if there is a match, keep that as a section header? I think this works , since embedded sub report and its ToC are out of scope now.
+Refer to - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/point-3-artifact.png
+4. Doc id: b1cdbc80-364f-4240-8dbc-80364f1240fa
+Can you share 1 to 2 additional examples where table content should not create a new top-level section, so we can validate the rule is not overfitting to this one case?
+32689520-afed-4dd4-a895-20afed7dd4d2, page 6, b25c94da-d954-4283-9c94-dad954a28307, page 307, page 14 ; just run a check on chunk_text, seems that all this table content matches level "-1" (Generator/Gas Turbine with no additional text) are under summary section 
+5. Doc id: b25c94da-d954-4283-9c94-dad954a28307 and 32689520-afed-4dd4-a895-20afed7dd4d2
+If a misdetected level “-1” section has no ESN, should IBAT fallback still trigger using nearest valid ancestor or previous resolved equipment context, instead of requiring a parent at that same parsed level?
+yes, but I think there won't be this issue anymore after the above fix, I actually never see a level "-1" in ToC do not have ESN and SY id attached. i run another check over chunk_text, seems that 100% of level "-1" in PRIMARY ToC contains ESN or SY id, there are no "GENERATOR____page x" in primary Toc
+6. Doc id: b25c94da-d954-4283-9c94-dad954a28307
+For “GT ESN missing” spans after the bad section, should we recover context from the last known valid GT section and continue propagation, or should we hard-reset and wait for a new explicit equipment+ESN anchor?
+I think this issue won't exist anymore, since even it is detected, it will be assigned to an esn in point 5. But we can have this fall back: recover context from the last known valid GT section
+7. Scope confirmation for all ESN docs in 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Bugs_prepared_for_0803(Sheet1).csv.csv)
+Can we treat these as must-fix now:
+Turbine inheritance fix (Steam vs Gas)
+Ignore table-only equipment text for hierarchy levels This two first
+Add Generator header keywords: Electrical, Electrification, DC leakage This one next
+and defer shared/ambiguous sections (QCP, PIPO, Coupling, Alignment, Appendix, embedded reports) to next round? I agree. at least after QA implementation

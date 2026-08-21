@@ -1,0 +1,141 @@
+FSR v2 preprocessor terminology (from code)
+
+- region
+	- A chunk of the full document text with start and end character positions plus metadata (equipment identity/type).
+	- Output format is a list like: start, end, metadata.
+
+- boundary
+	- An internal marker used to split the document into regions.
+	- Built from detected equipment headers/section headers, stored as: character position + equipment type + ESN.
+	- Not returned directly in output; it is used to construct regions.
+
+- section
+	- In preprocessor code: top-level numbered equipment headings (example pattern like "1 GAS TURBINE", "2 GENERATOR").
+	- In metadata_processor_v2 code: TOC-based summary sections with title, start_page, end_page.
+
+- sub-section
+	- Numbered deeper headings (for example 3.1 or 3.1.1) used to identify nested Generator/Turbine content when top-level sectioning is not enough.
+	- Implemented via subsection regex matches in preprocessor.
+
+- char offsets
+	- Character index positions in the full concatenated text.
+	- Region start/end use these offsets; page_offsets maps each page to a start/end character span in full_text.
+
+- page
+	- A single parsed page from parsed_doc.pages (list of page texts).
+	- Preprocessor loops page-by-page for detection/fallback.
+	- TOC parsing in metadata_processor_v2 uses page numbers from text (human page numbers), then maps into page list indexes.
+
+- header
+	- Explicitly defined as equipment header patterns like:
+		GAS TURBINE|GENERATOR|STEAM TURBINE|EXCITER (ESN | SYxxxxxxx)
+	- These headers are a key source for ESN/type detection and boundary creation.
+
+Notes on definition status
+- All requested terms are represented in code behavior.
+- "boundary" is internal (not a public field), but clearly implemented and used.
+
+How everything connects (simple map)
+
+Parsed input
+- pages (list of page text)
+- page_offsets (char start/end per page in full_text)
+- full_text (all pages concatenated)
+
+Flow
+1. headers + sections + sub-sections are detected in full_text
+2. each match becomes a boundary (char position + type + ESN)
+3. sorted boundaries create region spans
+	- region.start = current boundary position
+	- region.end = next boundary position (or end of full_text)
+4. if boundary split is weak, fallback uses page-level assignment
+	- pages are tagged by signatures/forms
+	- adjacent pages with same metadata are merged using page_offsets continuity
+5. final output from preprocessor
+	- regions (char-offset chunks with metadata)
+	- metadata/hints
+6. metadata_processor_v2 then adds TOC summary sections separately
+	- TOC sections (title/start_page/end_page) -> extracted text
+	- stored in metadata.document_summary
+
+Relationship diagram (Mermaid)
+
+```mermaid
+flowchart TD
+	A[ParsedDocument input<br/>pages + full_text + page_offsets]
+
+	A --> B1[Header detection]
+	A --> B2[Section detection]
+	A --> B3[Sub-section detection]
+
+	B1 --> C[Boundaries<br/>char position + equip type + ESN]
+	B2 --> C
+	B3 --> C
+
+	C --> D{2 or more distinct equipment types?}
+
+	D -->|Yes| E[Create region by boundary span<br/>start = current boundary pos<br/>end = next boundary pos or EOF]
+	D -->|No / weak split| F[Page-level fallback assignment<br/>tag each page by forms/signatures/ESN]
+	F --> G[Merge adjacent pages with same metadata<br/>using contiguous page_offsets]
+
+	E --> H[preprocessor output<br/>regions + metadata + hints]
+	G --> H
+
+	A --> I[TOC entry extraction]
+	I --> J[Build summary sections<br/>title + start_page + end_page]
+	J --> K[Extract section text from pages]
+
+	H --> L[metadata_processor_v2 final result]
+	K --> L
+	L --> M[metadata.document_summary added]
+```
+
+Important nuance
+- There is no explicit join that maps TOC sections to specific regions.
+- They coexist in the same final payload, but come from different logic paths.
+
+Risk note: inferred section ends
+
+Current behavior
+- In preprocessor logic, section/sub-section matches are start markers.
+- End is inferred later as the next boundary or end of document when regions are built.
+
+Will this be a problem?
+- Not always. It is usually fine for region-level routing and metadata attribution.
+- It can become a problem when boundaries are missed or noisy.
+
+Main risks
+- Missed boundary: one section can absorb text from the next section.
+- False boundary: one section can be split too early.
+- Harder debugging: no standalone section span object to inspect directly.
+- Format drift: irregular headings make inferred ends less stable across documents.
+
+Suggested hardening (if needed)
+- Emit explicit section spans (type/title, start_char, end_char, source).
+- Keep current region output, but derive it from explicit spans.
+- Track basic quality metrics: uncovered text, overlapping spans, and span-length outliers.
+
+Boundary types (preprocessor)
+
+Boundary sources
+- Equipment header boundaries
+	- Source pattern: equipment header line with (ESN | SYxxxxxxx)
+	- Type comes from matched equipment label.
+- Top-level numbered section boundaries
+	- Source pattern: numbered equipment heading (SECTION_HDR).
+	- Type is canonicalized from heading text.
+- Generator sub-section boundaries
+	- Source pattern: numbered subsection beginning with Generator.
+	- Type is Generator.
+- Turbine-related sub-section boundaries
+	- Source pattern: numbered subsection beginning with Turbine/Compressor/Combustion/Inlet.
+	- Type is Gas Turbine if gt_esn exists, otherwise Steam Turbine if st_esn exists.
+
+Canonical boundary type values
+- Gas Turbine
+- Generator
+- Steam Turbine
+- Exciter
+
+Filtering rule
+- Boundaries linked to inactive ESNs are dropped before region creation.

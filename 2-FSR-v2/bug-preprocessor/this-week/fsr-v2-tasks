@@ -1,0 +1,30 @@
+# FSR v2 — Tasks (week of 2026-08-04)
+
+## Preprocessor edge case design  [Madhurima + Xujin]
+- Go through Xujin's categorized edge case list from SharePoint
+- Design handling logic for each category:
+  - Multiple same-type ESNs in one doc (wrong boundary reset after second section)
+  - Generator subsection nested under a GT section (content after it re-attributed to generator incorrectly)
+  - "Electrification" section header as generator signal (not currently recognized)
+  - Generator ESN absent from body text but content is clearly generator evidence
+  - Steam turbine doc with embedded generator evidence — no ESN/keyword signal; may need IBOT train tool or SME-submission path
+- Review design with Vince before implementing
+
+## MLflow experiment setup  [Madhurima]
+- Set up MLflow experiment in Databricks for top-K / retrieval strategy testing
+- Exp 1: Cross-ESN Generator retrieval miss rate (probe Generator ESNs where is_primary_esn = false)
+- Exp 2: Chunk-level ESN attribution accuracy on multi-ESN docs (score stored primary_esn/equip_type vs preprocessor_regions oracle)
+- A/B: run probes against v1 and v2 VS index; pin probe table (Delta version) so both runs use same ESN population
+
+## Check Tao's dual-ESN fix covers 766/765 issue  [watch Tao — for b775cf29-8b42-4a83-af21-53075fef0802.pdf]
+- Tao is checking if the current fix covers the same-type dual-ESN tagging issue
+- Specific case: ESNs 766/765 in doc b775cf29-8b42-4a83-af21-53075fef0802.pdf
+- Confirm outcome once Tao reports back; may need a targeted test or fix if not covered
+
+## Persist text extracts to Databricks volume  [Madhurima — next rechunking cycle]
+- Write full text extracts to a Databricks volume during the rechunking run
+- Not blocking current week — pick up in the next cycle
+
+## Follow-ups (others)
+- Abhinaya: investigate ER case date discrepancy in dev URA (same ER case showing two different dates — 2020-03-28 vs 2021-04-26)
+- Vince: review ST-with-hidden-Generator edge case document over the weekend

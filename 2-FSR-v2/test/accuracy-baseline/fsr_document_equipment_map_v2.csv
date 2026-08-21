@@ -1,0 +1,23 @@
+document_id,esn,equip_type,technology_code,is_primary_esn,is_active,source_region_count,created_at,updated_at
+unit_4_gt_hgp_inspection_and_generator__rotor_swap_,337X790,Generator,7FH2,false,true,5,2026-07-22T03:51:27.268Z,2026-07-22T03:51:27.268Z
+unit_4_gt_hgp_inspection_and_generator__rotor_swap_,297868,Gas Turbine,null,true,true,4,2026-07-22T03:51:27.268Z,2026-07-22T03:51:27.268Z
+unit_10b_borescope_inspection_spring_2026_,337X351,Generator,7FH2,false,true,5,2026-07-22T03:50:27.690Z,2026-07-22T03:50:27.690Z
+unit_10b_borescope_inspection_spring_2026_,298340,Gas Turbine,null,true,true,42,2026-07-22T03:50:27.690Z,2026-07-22T03:50:27.690Z
+thomas_a_smith_gt_4_hgpi,337X766,Generator,7FH2,false,true,9,2026-07-22T03:49:32.306Z,2026-07-22T03:49:32.306Z
+thomas_a_smith_gt_4_hgpi,297652,Gas Turbine,null,true,true,8,2026-07-22T03:49:32.306Z,2026-07-22T03:49:32.306Z
+riverside_generating_station_unit_1_generator_ (2),338X447,Generator,7FH2,true,true,542,2026-07-22T03:48:31.422Z,2026-07-22T03:48:31.422Z
+hgpi___idc_replacement_2024,899053,Gas Turbine,null,true,true,3,2026-07-22T03:46:39.450Z,2026-07-22T03:46:39.450Z
+gt12_major_inspection_2024,875127,Gas Turbine,null,true,true,3,2026-07-22T03:44:23.705Z,2026-07-22T03:44:23.705Z
+b775cf29-8b42-4a83-af21-53075fef0802 (1),337X766,Generator,7FH2,false,true,2,2026-07-22T03:43:18.874Z,2026-07-22T03:43:18.874Z
+b775cf29-8b42-4a83-af21-53075fef0802 (1),297651,Gas Turbine,null,true,true,5,2026-07-22T03:43:18.874Z,2026-07-22T03:43:18.874Z
+b1cdbc80-364f-4240-8dbc-80364f1240fa,316X976,Generator,null,false,true,4,2026-07-22T03:42:11.650Z,2026-07-22T03:42:11.650Z
+b1cdbc80-364f-4240-8dbc-80364f1240fa,336X827,Generator,null,false,true,2,2026-07-22T03:42:11.650Z,2026-07-22T03:42:11.650Z
+b1cdbc80-364f-4240-8dbc-80364f1240fa,155442,Steam Turbine,null,false,true,2,2026-07-22T03:42:11.650Z,2026-07-22T03:42:11.650Z
+b1cdbc80-364f-4240-8dbc-80364f1240fa,297191,Gas Turbine,null,true,true,4,2026-07-22T03:42:11.650Z,2026-07-22T03:42:11.650Z
+39_v1.0(17),954X204,Generator,null,true,true,27,2026-07-22T03:40:42.629Z,2026-07-22T03:40:42.629Z
+35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270t483-final_master_report,270T483,Generator,null,true,true,84,2026-07-22T02:52:31.360Z,2026-07-22T02:52:31.360Z
+bdd56c7a-ebe5-4bf7-904a-5bb63091ba20,298464,Gas Turbine,null,true,true,136,2026-07-22T03:33:26.598Z,2026-07-22T03:33:26.598Z
+fcb1511e-596a-4a56-b151-1e596afa569c,298464,Gas Turbine,null,true,true,10,2026-07-22T03:32:48.320Z,2026-07-22T03:32:48.320Z
+fcb1511e-596a-4a56-b151-1e596afa569c,337X581,Generator,7FH2,false,true,10,2026-07-22T03:32:48.320Z,2026-07-22T03:32:48.320Z
+5b688732-39f2-48d2-a887-3239f258d28b,155360,Gas Turbine,null,true,true,1,2026-07-22T03:12:09.421Z,2026-07-22T03:12:09.421Z
+5b688732-39f2-48d2-a887-3239f258d28b,316X914,Generator,null,false,true,1,2026-07-22T03:12:09.421Z,2026-07-22T03:12:09.421Z

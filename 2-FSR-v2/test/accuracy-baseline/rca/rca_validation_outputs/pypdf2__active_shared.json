@@ -1,0 +1,159 @@
+{
+  "doc_metadata": {
+    "document_name": "fcb1511e-596a-4a56-b151-1e596afa569c",
+    "gt_esn": "298464",
+    "gen_esn": "337X581",
+    "primary_esn": "337X581",
+    "primary_equip_type": "Generator",
+    "primary_technology_code": "7FH2",
+    "outage_start_date": "12 Dec 2020"
+  },
+  "hints": "Active equipment (work performed): 298464 (Gas Turbine), 337X581 (Generator)\nPrimary equipment inference: primary_equip_type=Generator (gt_bytes=101427, gen_bytes=155353, gt_sig_hits=119, gen_sig_hits=119).\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "region_count": 22,
+  "region_key_counts": {
+    "298464|Gas Turbine": 11,
+    "337X581|Generator": 11
+  },
+  "first_10_boundaries": [
+    [
+      33976,
+      "Gas Turbine",
+      "298464"
+    ],
+    [
+      71763,
+      "Generator",
+      "337X581"
+    ],
+    [
+      71779,
+      "Generator",
+      "337X581"
+    ],
+    [
+      72203,
+      "Generator",
+      "337X581"
+    ],
+    [
+      72408,
+      "Generator",
+      "337X581"
+    ],
+    [
+      72613,
+      "Generator",
+      "337X581"
+    ],
+    [
+      72818,
+      "Generator",
+      "337X581"
+    ],
+    [
+      73023,
+      "Generator",
+      "337X581"
+    ],
+    [
+      73228,
+      "Generator",
+      "337X581"
+    ],
+    [
+      85374,
+      "Gas Turbine",
+      "298464"
+    ]
+  ],
+  "first_10_regions": [
+    {
+      "start": 33976,
+      "end": 71763,
+      "metadata": {
+        "primary_esn": "298464",
+        "primary_equip_type": "Gas Turbine"
+      }
+    },
+    {
+      "start": 71763,
+      "end": 71779,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 71779,
+      "end": 72203,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 72203,
+      "end": 72408,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 72408,
+      "end": 72613,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 72613,
+      "end": 72818,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 72818,
+      "end": 73023,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 73023,
+      "end": 73228,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 73228,
+      "end": 85374,
+      "metadata": {
+        "primary_esn": "337X581",
+        "primary_equip_type": "Generator",
+        "primary_technology_code": "7FH2"
+      }
+    },
+    {
+      "start": 85374,
+      "end": 85374,
+      "metadata": {
+        "primary_esn": "298464",
+        "primary_equip_type": "Gas Turbine"
+      }
+    }
+  ]
+}

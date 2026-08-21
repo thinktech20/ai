@@ -1,0 +1,35 @@
+For FSR v2, we need to look into below prblems --
+
+1. Xujin's ask from chat -
+
+
+So what is the logic Alex previously used to detect section 1 - 5 metadata in prod?
+ 
+Are we using the same logic, just changed from pymupdf to pypdf2?
+ 
+I noticed that section 1 - 5 is actually the information we need for Span right?
+ for doc --
+
+ These are the boundaries detected by pypdf2 and pymupdf, the upper figure is for pypdf2, and see for example, it is not detecting:
+  Page  16 | SECTION_HDR | Turbine        | ESN: (fallback) | "2 Turbine"
+  Page  20 | SUBSEC_GT   | Gas Turbine    | ESN: (fallback) | "2.2 Inlet"
+  Page 110 | SUBSEC_GT   | Gas Turbine    | ESN: (fallback) | "2.4 Combustion"
+  Page 131 | SUBSEC_GT   | Gas Turbine    | ESN: (fallback) | "2.5 Turbine"
+  Page 114 | SUBSEC_GT   | Gas Turbine    | ESN: (fallback) | "2.4.2 Combustion"
+  Page 115 | SUBSEC_GT   | Gas Turbine    | ESN: (fallback) | "2.4.2 Combustion"
+ 
+It's mainly because on Page 110, 2.4 Combustion section in text is:
+ 
+  "...Page 100 of 3192.4 Combustion Section\n..." no line change after page 319
+
+  2. Since Xujin's english is not so good, we need to first identify the problem. Lets do that for document Id - af693a98-1e5c-499d-aa10-cccc54885c64.
+
+  3. We need to check for the prod chunk data for this doc id - af693a98-1e5c-499d-aa10-cccc54885c64 here - 2-FSR-v2/chunking-bug/af693a98-1e5c-499d-aa10-cccc54885c64/fsr_v1_vec_field_service_report _table.csv to understand what Xujin means and is stating the problem.
+
+  4. The code for FSR v1 chunking is here - pw_sdg_ai_ser_repo/gold/src/etl/nb_sdg_fsr_chunks.py
+
+  5. The code for FSR v2 chunking is here - pw_sdg_ai_ser_repo/gold/src/etl/nb_sdg_fsr_v2_chunks.py. This has not been tested yet. It is based on the design here - 2-FSR-v2/bug-preprocessor/redesign/proposed-design-changes.md
+
+  6. Can you also look at the chunking risk mentioned here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/rca-plan.md, as this is with the latest preprocessor changes.
+
+  7. first explain the problem that Xujin mentioned, ask questions if it is not clear. I can ask her on slack

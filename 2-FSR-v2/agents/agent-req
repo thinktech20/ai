@@ -1,0 +1,34 @@
+I need to have a quick agent which can help with frequent tasks of FSR v2 --
+
+When I say -
+Ingest & validate these docs <doc_ids> in <env>, <with/without> recreating tables, it should :
+doc_ids: comma separated one or more file names in violumes
+env = dev, qa, prod
+with/without:
+1. If its without recreating table: drop and recreate tables and index
+2. If its with recreating tables: do not drop or recreate tables /index
+
+then it should:
+1. insert or one or more doc ids that are passed
+2. if they exist already - it should delete them first and re-insert them (deleting means deleting from all three tables and index- fsr_metadata_table_v2: "vaid.ai_sot_field_service_report.fsr_metadata_v2"
+      fsr_chunk_table_v2: "vaid.ai_std_con_field_service_report.fsr_chunks_v2"
+      fsr_doc_equipment_map_table_v2: "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2"
+      fsr_vs_endpoint_v2: "pw-ser-sdg-vector-search"
+      fsr_vs_index_v2: "vaid.ai_std_con_field_service_report.fsr_vs_index_v2" )
+3. It should tell clearly - metadata table inserted, chunk table inserted, index updated, or failures if any. 
+4. It should be able to minimum valudation obn the data like like key fields are present or not.
+
+For reference, you can read the below:
+2-FSR-v2\design\fsr-v2-design.md -- this has changed a lot from initial write up, so teh below doc has latest design - 
+2-FSR-v2\bug-preprocessor\redesign\proposed-design-changes.md
+stil conside code as source of truth -
+pw_sdg_ai_ser_repo\silver\src\etl\fsr_v2 and pw_sdg_ai_ser_repo\silver\src\etl\nb_sdg_fsr_v2_metadata.py
+pw_sdg_ai_ser_repo\gold\src\etl\nb_sdg_fsr_v2_chunks.py and pw_sdg_ai_ser_repo\gold\src\etl\fsr_v2
+ddl - pw_sdg_ai_ser_repo\ddls\fsr_v2\nb_sdg_fsr_v2_ddl.py
+I have some validation here - pw_sdg_ai_ser_repo\validation\fsr_v2
+
+but outside the code repo - 2-FSR-v2\validate\nb_fsr_v2_verify.py here.
+
+but i suggest we dont need to run all tnose validation , but build some quick set of validation, sanity checks.
+
+question can this agent run on databricks, as i believe running locally in vscode will have issues - we have to use databricks connect, and that will not work loading files from databricks volumes. I am open to suggestions, but let me know the best way - i want to only tell the agent to do the work and it should do all with verifying results ands reporting to me.

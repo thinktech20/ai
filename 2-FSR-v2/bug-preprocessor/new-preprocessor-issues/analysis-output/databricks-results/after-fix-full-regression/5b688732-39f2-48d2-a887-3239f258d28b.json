@@ -1,0 +1,220 @@
+{
+  "bug_id": "mixed",
+  "name": "custom-regression",
+  "document_id_raw": "5b688732-39f2-48d2-a887-3239f258d28b",
+  "document_id": "5b688732-39f2-48d2-a887-3239f258d28b",
+  "volume_path": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/5b688732-39f2-48d2-a887-3239f258d28b",
+  "selected_volume_root": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report",
+  "run_utc": "2026-08-11T17:52:01.957203+00:00",
+  "page_count": 415,
+  "char_count": 455081,
+  "metadata": {
+    "document_name": "5b688732-39f2-48d2-a887-3239f258d28b",
+    "gen_esn": "316X914",
+    "st_esn": "155360",
+    "all_esns": "155360, 316X914",
+    "primary_esn": "316X914",
+    "primary_equip_type": "Generator",
+    "outage_start_date": "23 Nov 2019"
+  },
+  "hints": "Active equipment (work performed): 155360 (Steam Turbine), 316X914 (Generator)\nSection ESN confidence distribution: high=5, none=6\nSection hierarchy level conflicts flagged: 3\nPrimary equipment inference: primary_equip_type=Generator, primary_esn=316X914.\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "regions": [
+    {
+      "start": 0,
+      "end": 94794,
+      "metadata": {
+        "primary_equip_type": "shared",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "none",
+        "region_source": "front_matter",
+        "section_path": [],
+        "fallback_chain": [
+          "front_matter"
+        ]
+      }
+    },
+    {
+      "start": 94794,
+      "end": 148501,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 148501,
+      "end": 150799,
+      "metadata": {
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "### 3.3.1 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 150799,
+      "end": 151003,
+      "metadata": {
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "### 3.3.1 Turbine",
+          "### 3.3.1 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 151003,
+      "end": 151189,
+      "metadata": {
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "### 3.3.1 Turbine",
+          "### 3.3.1 Turbine",
+          "### 3.3.1 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 151189,
+      "end": 279535,
+      "metadata": {
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "### 3.3.1 Turbine",
+          "### 3.3.1 Turbine",
+          "### 3.3.1 Turbine",
+          "### 3.3.1 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 279535,
+      "end": 287657,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 287657,
+      "end": 292717,
+      "metadata": {
+        "primary_esn": "316X914",
+        "primary_equip_type": "Generator",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Generator",
+          "## 4.1 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 292717,
+      "end": 455081,
+      "metadata": {
+        "primary_equip_type": "Exciter",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "Exciter"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    }
+  ]
+}

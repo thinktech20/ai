@@ -1,0 +1,1139 @@
+{
+  "bug_id": "mixed",
+  "name": "custom-regression",
+  "document_id_raw": "b775cf29-8b42-4a83-af21-53075fef0802",
+  "document_id": "b775cf29-8b42-4a83-af21-53075fef0802",
+  "volume_path": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/b775cf29-8b42-4a83-af21-53075fef0802",
+  "selected_volume_root": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report",
+  "run_utc": "2026-08-14T14:16:46.968649+00:00",
+  "page_count": 325,
+  "char_count": 201610,
+  "metadata": {
+    "document_name": "b775cf29-8b42-4a83-af21-53075fef0802",
+    "gt_esn": "297651",
+    "all_esns": "297651",
+    "primary_esn": "297651",
+    "primary_equip_type": "Gas Turbine",
+    "outage_start_date": "25 Mar 2024",
+    "outage_end_date": "25 Apr 2024",
+    "report_issued_date": "14 May 2024"
+  },
+  "hints": "Active equipment (work performed): 297651 (Gas Turbine)\nSection ESN confidence distribution: high=51, highest=1, none=1\nSection hierarchy level conflicts flagged: 10\nPrimary equipment inference: primary_equip_type=Gas Turbine, primary_esn=297651.\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "regions": [
+    {
+      "start": 0,
+      "end": 1242,
+      "metadata": {
+        "primary_equip_type": "shared",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "none",
+        "region_source": "front_matter",
+        "section_path": [],
+        "fallback_chain": [
+          "front_matter"
+        ]
+      }
+    },
+    {
+      "start": 1242,
+      "end": 3460,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "single_type",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "3 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 3460,
+      "end": 19730,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "highest",
+        "esn_source": "local_header",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 19730,
+      "end": 19897,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 19897,
+      "end": 21885,
+      "metadata": {
+        "primary_equip_type": "Generator",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "### 3.1.1 Generator"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 21885,
+      "end": 55129,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.8\nPosition"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 55129,
+      "end": 55887,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.8\nPosition",
+          "### 3.1.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 55887,
+      "end": 56591,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.8\nPosition",
+          "### 3.1.3 Lift Oil Pump and Motor"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 56591,
+      "end": 57500,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.8\nPosition",
+          "### 3.1.4 Piping and Flexible Metal Hoses"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 57500,
+      "end": 57579,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.2 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 57579,
+      "end": 58254,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.2 Inlet",
+          "### 3.2.1 T1 Journal Bearing"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 58254,
+      "end": 58789,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.2 Inlet",
+          "### 3.2.2 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 58789,
+      "end": 60761,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.2 Inlet",
+          "### 3.2.3 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 60761,
+      "end": 60883,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.3 Compressor"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 60883,
+      "end": 95750,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.3 Compressor",
+          "### 3.3.1 Compressor"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 95750,
+      "end": 95834,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 95834,
+      "end": 99248,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.1 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 99248,
+      "end": 99775,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.2 Flame Detectors"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 99775,
+      "end": 100608,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.3 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 100608,
+      "end": 104063,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.4 Flow Sleeves"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 104063,
+      "end": 104772,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.5 Fuel Nozzles"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 104772,
+      "end": 106154,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.6 CDM Probes"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 106154,
+      "end": 106469,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.7 Spark Plugs"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 106469,
+      "end": 107462,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.8 Liner Caps"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 107462,
+      "end": 108427,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.9 Inner and Outer Crossfire Tubes and Hardware"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 108427,
+      "end": 112567,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.10 Transition Pieces and Hardware"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 112567,
+      "end": 114753,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.4 Combustion",
+          "### 3.4.11 Axial Fuel Staging (AFS)"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 114753,
+      "end": 114836,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 114836,
+      "end": 120095,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.1 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 120095,
+      "end": 120533,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 120533,
+      "end": 123835,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.3 Stage 1 Nozzles"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 123835,
+      "end": 125945,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.4 Stage 1 Shrouds"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 125945,
+      "end": 126666,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.5 Stage 1 Buckets"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 126666,
+      "end": 128586,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.6 Stage 2 Nozzles"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 128586,
+      "end": 130552,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.7 Stage 2 Shrouds"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 130552,
+      "end": 131204,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.8 Stage 2 Buckets"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 131204,
+      "end": 132984,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.9 Stage 3 Nozzles"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 132984,
+      "end": 135061,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.10 Stage 3 Shrouds"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 135061,
+      "end": 135630,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.5 Turbine",
+          "### 3.5.11 Stage 3 Buckets"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 135630,
+      "end": 135709,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.6 Exhaust Section"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 135709,
+      "end": 142587,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "## 3.6 Exhaust Section",
+          "### 3.6.1 Exhaust Diffuser"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 142587,
+      "end": 143821,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "## 5.2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 143821,
+      "end": 143962,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "## 5.3 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 143962,
+      "end": 153243,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "## 5.4 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 153243,
+      "end": 167122,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "3 Turbine",
+          "3.6.5\nRemove S3B - Quality Checks"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 167122,
+      "end": 201610,
+      "metadata": {
+        "primary_esn": "297651",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (297651 | SY0070884)",
+          "## 8.1 Combustion"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    }
+  ]
+}

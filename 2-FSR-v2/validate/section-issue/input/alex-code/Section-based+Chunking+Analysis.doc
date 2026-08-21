@@ -1,0 +1,530 @@
+Date: Mon, 27 Jul 2026 17:45:22 -0400 (EDT)
+Message-ID: <442972839.10974.1785188722833@alplnx236356.corporate.ge.com>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_10973_861794207.1785188722833"
+
+------=_Part_10973_861794207.1785188722833
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Section-based Chunking Analysis</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-link-pressed, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Section-based Chunking Analysis</h1>
+    <div class=3D"Section1">
+        <h2 class=3D"code-line" style=3D"" data-line=3D"2" id=3D"Sectionbas=
+edChunkingAnalysis-Overview">Overview</h2>
+<p class=3D"code-line" style=3D"" data-line=3D"4">This dataset analysis con=
+tains the results of processing 30 Field Service Report PDFs using<span>&nb=
+sp;</span><strong>non-recursive subsection chunking</strong>. The content i=
+s chunked at subsection boundaries (L1, L2, L3, L4, L5 levels are preserved=
+), but subsections are<span>&nbsp;</span><strong>not further split using se=
+mantic chunking</strong><span>&nbsp;</span>- each subsection remains as a s=
+ingle complete chunk, regardless of size.</p>
+<h2 class=3D"code-line" style=3D"" data-line=3D"6" id=3D"SectionbasedChunki=
+ngAnalysis-ProcessingDetails">Processing Details</h2>
+<h3 class=3D"code-line" style=3D"" data-line=3D"8" id=3D"SectionbasedChunki=
+ngAnalysis-Input">Input</h3>
+<ul class=3D"code-line" style=3D"" data-line=3D"9">
+ <li class=3D"code-line" data-line=3D"9" data-uuid=3D"f2dca674-1ea2-403b-9d=
+ea-3aa21ad3da5c"><strong>Source</strong>: 30 Field Service Report PDFs</li>
+ <li class=3D"code-line" data-line=3D"10" data-uuid=3D"6ea0e4f7-1f6b-4dc0-8=
+43e-c606469dfeaf"><strong>Method</strong>: Post-processing of existing recu=
+rsive chunks</li>
+ <li class=3D"code-line" data-line=3D"11" data-uuid=3D"4b6356a2-2d42-4dc2-a=
+fcc-9dcff40f07bd"><strong>Approach</strong>: Combined all chunks belonging =
+to the same subsection path into a single chunk</li>
+</ul>
+<h3 class=3D"code-line" style=3D"" data-line=3D"13" id=3D"SectionbasedChunk=
+ingAnalysis-Output">Output</h3>
+<ul class=3D"code-line" style=3D"" data-line=3D"14">
+ <li class=3D"code-line" data-line=3D"14" data-uuid=3D"5fa4dcfd-92ed-4e04-a=
+dc4-0a23b9f2f35f"><strong>Documents</strong>: 30 processed files (one per s=
+ource PDF)</li>
+ <li class=3D"code-line" data-line=3D"15" data-uuid=3D"5ced8957-6424-4321-8=
+c72-288c3b3a36d2"><strong>Format</strong>: Structured chunks with preserved=
+ subsection hierarchy</li>
+</ul>
+<h2 class=3D"code-line" style=3D"" data-line=3D"17" id=3D"SectionbasedChunk=
+ingAnalysis-KeyStatistics">Key Statistics</h2>
+<h3 class=3D"code-line" style=3D"" data-line=3D"19" id=3D"SectionbasedChunk=
+ingAnalysis-OverallMetrics">Overall Metrics</h3>
+<div class=3D"table-wrap">
+ <table class=3D"relative-table confluenceTable" style=3D"width: 15.1838%;"=
+>
+  <colgroup>
+   <col style=3D"width: 57.4985%;">
+   <col style=3D"width: 42.387%;">
+  </colgroup>
+  <thead class=3D"">
+   <tr class=3D"">
+    <th style=3D"text-align: left;" class=3D"confluenceTh">Metric</th>
+    <th style=3D"text-align: left;" class=3D"confluenceTh">Value</th>
+   </tr>
+  </thead>
+  <tbody class=3D"">
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Total reports</td>
+    <td class=3D"confluenceTd">30</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Average chunks per report</td>
+    <td class=3D"confluenceTd">25.3</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Total chunks (all reports)</td>
+    <td class=3D"confluenceTd">759</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Average chunk size</td>
+    <td class=3D"confluenceTd">3,225 characters</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Median chunk size</td>
+    <td class=3D"confluenceTd">552 characters</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Min chunk size</td>
+    <td class=3D"confluenceTd">51 characters</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Max chunk size</td>
+    <td class=3D"confluenceTd">218,141 characters</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3 class=3D"code-line" style=3D"" data-line=3D"30" id=3D"SectionbasedChunk=
+ingAnalysis-ChunkSizeDistribution(Percentiles)">Chunk Size Distribution (Pe=
+rcentiles)</h3>
+<div class=3D"table-wrap">
+ <table style=3D"" class=3D"confluenceTable">
+  <thead class=3D"">
+   <tr class=3D"">
+    <th style=3D"text-align: left;" class=3D"confluenceTh">Percentile</th>
+    <th style=3D"text-align: left;" class=3D"confluenceTh">Chunk Size (char=
+s)</th>
+   </tr>
+  </thead>
+  <tbody class=3D"">
+   <tr class=3D"">
+    <td class=3D"confluenceTd">25th (p25)</td>
+    <td class=3D"confluenceTd">226</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">50th (p50 / median)</td>
+    <td class=3D"confluenceTd">552</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">75th (p75)</td>
+    <td class=3D"confluenceTd">1,540</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">90th (p90)</td>
+    <td class=3D"confluenceTd">5,504</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">95th (p95)</td>
+    <td class=3D"confluenceTd">12,704</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">99th (p99)</td>
+    <td class=3D"confluenceTd">56,710</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3 class=3D"code-line" style=3D"" data-line=3D"40" id=3D"SectionbasedChunk=
+ingAnalysis-Report-LevelMetrics">Report-Level Metrics</h3>
+<div class=3D"table-wrap">
+ <table style=3D"" class=3D"confluenceTable">
+  <thead class=3D"">
+   <tr class=3D"">
+    <th style=3D"text-align: left;" class=3D"confluenceTh">Metric</th>
+    <th style=3D"text-align: left;" class=3D"confluenceTh">Value</th>
+   </tr>
+  </thead>
+  <tbody class=3D"">
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Average total chars per report</td>
+    <td class=3D"confluenceTd">81,591</td>
+   </tr>
+   <tr class=3D"">
+    <td class=3D"confluenceTd">Average report size</td>
+    <td class=3D"confluenceTd">~80 KB</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h2 class=3D"code-line" style=3D"" data-line=3D"46" id=3D"SectionbasedChunk=
+ingAnalysis-Comparison:RecursivevsNon-Recursive">Comparison: Recursive vs N=
+on-Recursive</h2>
+<h3 class=3D"code-line" style=3D"" data-line=3D"48" id=3D"SectionbasedChunk=
+ingAnalysis-RecursiveChunking(Original)">Recursive Chunking (Original)</h3>
+<ul class=3D"code-line" style=3D"" data-line=3D"49">
+ <li class=3D"code-line" data-line=3D"49" data-uuid=3D"48bf0dc6-b36f-4e83-9=
+126-54d12fe1fcc4"><strong>Total size</strong>: 3.17 MB</li>
+ <li class=3D"code-line" data-line=3D"50" data-uuid=3D"318750ff-fc7e-4cdd-b=
+771-706339cef481"><strong>Avg chunks per report</strong>: ~27.8</li>
+ <li class=3D"code-line" data-line=3D"51" data-uuid=3D"53a8d411-13ff-4c5a-b=
+4bb-a8648ab94c6f"><strong>Approach</strong>: Subsection boundaries preserve=
+d + semantic splitting within subsections</li>
+ <li class=3D"code-line" data-line=3D"52" data-uuid=3D"616e9bc7-f6cc-4184-9=
+f3c-e5fb1231b9f5"><strong>Chunks per subsection</strong>: Multiple (long su=
+bsections split into optimal-sized chunks)</li>
+ <li class=3D"code-line" data-line=3D"53" data-uuid=3D"94006a2d-35b8-4e39-8=
+492-46bf95c81701"><strong>Use case</strong>: Optimal chunk sizes for embedd=
+ings, minimizes token waste</li>
+</ul>
+<h3 class=3D"code-line" style=3D"" data-line=3D"55" id=3D"SectionbasedChunk=
+ingAnalysis-Non-RecursiveChunking(ThisFolder)">Non-Recursive Chunking (This=
+ Folder)</h3>
+<ul class=3D"code-line" style=3D"" data-line=3D"56">
+ <li class=3D"code-line" data-line=3D"56" data-uuid=3D"48c6eabc-5747-4fbc-9=
+bc4-8fbb251f2ca8"><strong>Total size</strong>: 2.86 MB (10% smaller)</li>
+ <li class=3D"code-line" data-line=3D"57" data-uuid=3D"e406b49b-0aaf-41d2-a=
+f94-e5c794da0af7"><strong>Avg chunks per report</strong>: 25.3</li>
+ <li class=3D"code-line" data-line=3D"58" data-uuid=3D"78b9c06e-de67-43e0-b=
+c3d-0244f4168d91"><strong>Approach</strong>: Subsection boundaries preserve=
+d, NO semantic splitting within subsections</li>
+ <li class=3D"code-line" data-line=3D"59" data-uuid=3D"18f54e0e-c531-4a17-a=
+c98-8918d1e24cea"><strong>Chunks per subsection</strong>: Single (each subs=
+ection is one complete chunk)</li>
+ <li class=3D"code-line" data-line=3D"60" data-uuid=3D"611f65e6-c7f6-4a82-b=
+d44-a0ed86f89ab2"><strong>Use case</strong>: When subsection completeness i=
+s more important than chunk size uniformity</li>
+</ul>
+<h2 class=3D"code-line" style=3D"" data-line=3D"62" id=3D"SectionbasedChunk=
+ingAnalysis-ChunkMetadata">Chunk Metadata</h2>
+<p class=3D"code-line" style=3D"" data-line=3D"64">Each chunk includes:</p>
+<ul class=3D"code-line" style=3D"" data-line=3D"65">
+ <li class=3D"code-line" data-line=3D"65" data-uuid=3D"3ac0c6af-9b9b-4a39-b=
+1c5-7bb060e6c403"><strong>text</strong>: Combined content from the complete=
+ subsection</li>
+ <li class=3D"code-line" data-line=3D"66" data-uuid=3D"b7d3b106-c23c-4ad6-a=
+ccb-9b8dc00c7d70"><strong>metadata</strong>:=20
+  <ul class=3D"code-line" data-line=3D"67">
+   <li class=3D"code-line" data-line=3D"67">Document title/identifier</li>
+   <li class=3D"code-line" data-line=3D"68">Hierarchical section path (sect=
+ion_1 through section_5)</li>
+   <li class=3D"code-line" data-line=3D"69">Chunk position indicators (inde=
+x and count)</li>
+   <li class=3D"code-line" data-line=3D"70">Page range (start and end pages=
+)</li>
+   <li class=3D"code-line" data-line=3D"71">Source tracking (how many origi=
+nal chunks were combined)</li>
+  </ul></li>
+</ul>
+<h2 class=3D"code-line" style=3D"" data-line=3D"73" id=3D"SectionbasedChunk=
+ingAnalysis-KeyObservations">Key Observations</h2>
+<ol class=3D"code-line" style=3D"" data-line=3D"75">
+ <li class=3D"code-line" data-line=3D"75" data-uuid=3D"765b014c-4be6-4b9e-b=
+38c-d0cbd3dc56ed">
+  <p class=3D"code-line" data-line=3D"75"><strong>Chunk Size Variability</s=
+trong>: The large difference between median (552) and mean (3,225) indicate=
+s significant variability - most subsections are small, but some are very l=
+arge.</p></li>
+ <li class=3D"code-line" data-line=3D"77" data-uuid=3D"04548f42-f179-4f5d-b=
+7e4-341c317e953a">
+  <p class=3D"code-line" data-line=3D"77"><strong>Similar Chunk Count</stro=
+ng>: Non-recursive (25.3 avg) vs recursive (27.8 avg) have similar counts b=
+ecause both preserve subsection boundaries. The difference is that recursiv=
+e further splits large subsections.</p></li>
+ <li class=3D"code-line" data-line=3D"79" data-uuid=3D"d62e2829-f6ca-48d1-a=
+ec9-fc51659baa28">
+  <p class=3D"code-line" data-line=3D"79"><strong>Context Preservation</str=
+ong>: Each subsection maintains its complete content in a single chunk, avo=
+iding fragmentation across multiple semantic chunks.</p></li>
+ <li class=3D"code-line" data-line=3D"81" data-uuid=3D"370cebe1-15aa-4605-a=
+4e9-55c4d20770d3">
+  <p class=3D"code-line" data-line=3D"81"><strong>Large Outliers</strong>: =
+The max chunk (218K chars) represents a subsection with substantial content=
+ that would normally be split into multiple chunks in the recursive approac=
+h.</p></li>
+</ol>
+<h2 class=3D"code-line" style=3D"" data-line=3D"83" id=3D"SectionbasedChunk=
+ingAnalysis-UseCaseRecommendations">Use Case Recommendations</h2>
+<h3 class=3D"code-line" style=3D"" data-line=3D"85" id=3D"SectionbasedChunk=
+ingAnalysis-UseNon-RecursiveWhen:">Use Non-Recursive When:</h3>
+<ul class=3D"code-line" style=3D"" data-line=3D"86">
+ <li class=3D"code-line" data-line=3D"86" data-uuid=3D"8e94c745-4635-4df2-b=
+493-6670cc2f43b9">Complete subsection content is critical (no mid-subsectio=
+n splits)</li>
+ <li class=3D"code-line" data-line=3D"87" data-uuid=3D"05f33606-8e7e-4c6a-9=
+61b-4b55c43c92a1">Your embedding model can handle variable chunk sizes (50 =
+to 200K+ chars)</li>
+ <li class=3D"code-line" data-line=3D"88" data-uuid=3D"558cc4b7-a939-4d05-a=
+0ba-18fc6995d9e3">Context completeness within each subsection is more impor=
+tant than size uniformity</li>
+ <li class=3D"code-line" data-line=3D"89" data-uuid=3D"f99233f4-5112-41c6-9=
+6c0-5bb3c2ddd70d">You want to avoid retrieving partial subsection content</=
+li>
+</ul>
+<h3 class=3D"code-line" style=3D"" data-line=3D"91" id=3D"SectionbasedChunk=
+ingAnalysis-UseRecursiveWhen:">Use Recursive When:</h3>
+<ul class=3D"code-line" style=3D"" data-line=3D"92">
+ <li class=3D"code-line" data-line=3D"92" data-uuid=3D"52e971f3-13ad-4fc9-9=
+122-3b42ee64d9df">Consistent, optimal chunk sizes are important for your em=
+bedding model</li>
+ <li class=3D"code-line" data-line=3D"93" data-uuid=3D"018a4731-079a-4dd5-9=
+baa-88680bc9bdf4">Token limits require predictable chunk sizes</li>
+ <li class=3D"code-line" data-line=3D"94" data-uuid=3D"6f2b9e06-cb15-4063-8=
+3bc-908f60f21de3">You want to minimize irrelevant content in retrieved resu=
+lts</li>
+ <li class=3D"code-line" data-line=3D"95" data-uuid=3D"11cd84d0-6cf0-4047-8=
+071-a96bc4d6cf7d">Fine-grained semantic retrieval within large subsections =
+is needed</li>
+</ul>
+<h2 class=3D"code-line" style=3D"" data-line=3D"97" id=3D"SectionbasedChunk=
+ingAnalysis-FilesGenerated">Files Generated</h2>
+<ul class=3D"code-line" style=3D"" data-line=3D"99">
+ <li class=3D"code-line" data-line=3D"99" data-uuid=3D"d8468059-3b68-4e26-8=
+05a-789e3e3e1718">Processed chunk outputs (30 files)</li>
+ <li class=3D"code-line" data-line=3D"100" data-uuid=3D"7802024f-9819-4f81-=
+acdf-0833e2694a6a">Statistical summary with percentiles</li>
+ <li class=3D"code-line" data-line=3D"101" data-uuid=3D"00e10ef0-8f17-4294-=
+94ad-481eb1475db7">Documentation</li>
+</ul>
+<h2 class=3D"code-line" style=3D"" data-line=3D"103" id=3D"SectionbasedChun=
+kingAnalysis-ProcessingMethodology">Processing Methodology</h2>
+<p class=3D"code-line" style=3D"" data-line=3D"105">The non-recursive chunk=
+s were created by:</p>
+<ol class=3D"code-line" style=3D"" data-line=3D"106">
+ <li class=3D"code-line" data-line=3D"106" data-uuid=3D"cbe12728-132b-4627-=
+bf3f-9d6302db399d">Reading existing recursively-chunked outputs</li>
+ <li class=3D"code-line" data-line=3D"107" data-uuid=3D"9e0431df-9a7c-4225-=
+8ede-ccf1a2017bfa">Grouping chunks by their full subsection path (section_1=
+ through section_5)</li>
+ <li class=3D"code-line" data-line=3D"108" data-uuid=3D"f99856fa-44fd-49b7-=
+bc6e-c7a14a4b5f42">Combining all chunks within each subsection into a singl=
+e chunk</li>
+ <li class=3D"code-line" data-line=3D"109" data-uuid=3D"83399522-549d-4001-=
+a62d-810ede157186">Preserving all metadata while updating chunk counts</li>
+</ol>
+<p class=3D"code-line" style=3D"" data-line=3D"111">Analysis was performed =
+to generate statistical summaries and distribution metrics.</p>
+<p class=3D"code-line" style=3D"" data-line=3D"115"><br></p>
+    </div>
+</body>
+</html>
+------=_Part_10973_861794207.1785188722833--

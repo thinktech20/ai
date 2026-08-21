@@ -1,0 +1,2866 @@
+[
+  {
+    "start": 0,
+    "end": 366,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 367,
+    "end": 1084,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 1085,
+    "end": 2000,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 2001,
+    "end": 2387,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 2388,
+    "end": 3127,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 3128,
+    "end": 3746,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 3747,
+    "end": 4414,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 4415,
+    "end": 5087,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 5088,
+    "end": 5753,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 5754,
+    "end": 7505,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 7506,
+    "end": 9930,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 9931,
+    "end": 12283,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 12284,
+    "end": 14528,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 14529,
+    "end": 17389,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 17390,
+    "end": 19994,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 19995,
+    "end": 22559,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 22560,
+    "end": 25010,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 25011,
+    "end": 28303,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 28304,
+    "end": 31143,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 31144,
+    "end": 33763,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 33764,
+    "end": 36335,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 36336,
+    "end": 39321,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 39322,
+    "end": 42039,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 42040,
+    "end": 44851,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 44852,
+    "end": 47437,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 47438,
+    "end": 50357,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 50358,
+    "end": 53233,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 53234,
+    "end": 55643,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 55644,
+    "end": 58462,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 58463,
+    "end": 61326,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 61327,
+    "end": 64359,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 64360,
+    "end": 67167,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 67168,
+    "end": 70042,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 70043,
+    "end": 72962,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 72963,
+    "end": 75971,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 75972,
+    "end": 78559,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 78560,
+    "end": 81270,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 81271,
+    "end": 83944,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 83945,
+    "end": 86662,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 86663,
+    "end": 89276,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 89277,
+    "end": 91860,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 91861,
+    "end": 94156,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 94157,
+    "end": 96038,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 96039,
+    "end": 98123,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 98124,
+    "end": 98345,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 98346,
+    "end": 99571,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 99572,
+    "end": 101282,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 101283,
+    "end": 102858,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 102859,
+    "end": 105212,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 105213,
+    "end": 107872,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 107873,
+    "end": 110824,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 110825,
+    "end": 113578,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 113579,
+    "end": 114254,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 114255,
+    "end": 115297,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 115298,
+    "end": 115512,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 115513,
+    "end": 116029,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 116030,
+    "end": 116548,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 116549,
+    "end": 117066,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 117067,
+    "end": 117584,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 117585,
+    "end": 118971,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 121864,
+    "end": 122685,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 122686,
+    "end": 123023,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 123024,
+    "end": 123999,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 124000,
+    "end": 124965,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 124966,
+    "end": 125927,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 125928,
+    "end": 126886,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 126887,
+    "end": 127856,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 127857,
+    "end": 128820,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 128821,
+    "end": 129388,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 129389,
+    "end": 132348,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 132349,
+    "end": 135378,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 135379,
+    "end": 136057,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 136058,
+    "end": 136377,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 136378,
+    "end": 136634,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 136635,
+    "end": 138265,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 138374,
+    "end": 139275,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 139276,
+    "end": 140177,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 140178,
+    "end": 141673,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 141674,
+    "end": 143067,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 143068,
+    "end": 143249,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 143250,
+    "end": 144612,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 144613,
+    "end": 145968,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 145969,
+    "end": 147370,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 147371,
+    "end": 149065,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 149066,
+    "end": 150756,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 150757,
+    "end": 151442,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 151443,
+    "end": 152566,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 152567,
+    "end": 153909,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 153910,
+    "end": 156322,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 156323,
+    "end": 156600,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 156601,
+    "end": 156857,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 156858,
+    "end": 157077,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 157078,
+    "end": 158488,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 158489,
+    "end": 161151,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 161152,
+    "end": 161797,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 161798,
+    "end": 162109,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 162110,
+    "end": 162407,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 162408,
+    "end": 162675,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 162676,
+    "end": 165482,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 165483,
+    "end": 167811,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 167812,
+    "end": 168149,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 168150,
+    "end": 168528,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 168529,
+    "end": 168850,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 168851,
+    "end": 169221,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 169222,
+    "end": 169581,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 169582,
+    "end": 169888,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 169889,
+    "end": 170242,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 170243,
+    "end": 170616,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 170617,
+    "end": 170991,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 170992,
+    "end": 171333,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 171334,
+    "end": 171711,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 171712,
+    "end": 172077,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 172078,
+    "end": 172436,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 172437,
+    "end": 172799,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 172800,
+    "end": 173121,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 173122,
+    "end": 173503,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 173504,
+    "end": 173833,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 173834,
+    "end": 174193,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 174194,
+    "end": 174555,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 174556,
+    "end": 174935,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 174936,
+    "end": 175275,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 175276,
+    "end": 175655,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 175656,
+    "end": 175995,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 175996,
+    "end": 176375,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 176376,
+    "end": 176719,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 176720,
+    "end": 177100,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 177101,
+    "end": 177441,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 177442,
+    "end": 177796,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 177797,
+    "end": 178174,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 178175,
+    "end": 178536,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 178537,
+    "end": 178882,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 178883,
+    "end": 179260,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 179261,
+    "end": 179606,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 179607,
+    "end": 179984,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 179985,
+    "end": 180339,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 180340,
+    "end": 180717,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 180718,
+    "end": 181014,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 181015,
+    "end": 181356,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 181357,
+    "end": 181732,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 181733,
+    "end": 182111,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 182112,
+    "end": 182445,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 182446,
+    "end": 182791,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 182792,
+    "end": 183103,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 183104,
+    "end": 183399,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 183400,
+    "end": 184676,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 184677,
+    "end": 186313,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 186314,
+    "end": 187832,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 187833,
+    "end": 189094,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 189095,
+    "end": 190690,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 190691,
+    "end": 192178,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 192179,
+    "end": 194239,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 194240,
+    "end": 195391,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 195392,
+    "end": 195703,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 195704,
+    "end": 196015,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 196016,
+    "end": 196327,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 196328,
+    "end": 196639,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 196640,
+    "end": 196951,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 196952,
+    "end": 197263,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 197264,
+    "end": 197575,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 197576,
+    "end": 198556,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 198557,
+    "end": 199757,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 199758,
+    "end": 200038,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 200039,
+    "end": 200319,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 200320,
+    "end": 200618,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 200619,
+    "end": 200790,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 200791,
+    "end": 202635,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 202636,
+    "end": 205696,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 205697,
+    "end": 208834,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 208835,
+    "end": 211321,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 211322,
+    "end": 211979,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 211980,
+    "end": 212301,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 212302,
+    "end": 212628,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 212629,
+    "end": 212925,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 212926,
+    "end": 213238,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 213239,
+    "end": 213585,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 213586,
+    "end": 213900,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 213901,
+    "end": 214121,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 214122,
+    "end": 216942,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 216943,
+    "end": 219775,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 219776,
+    "end": 221170,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 221171,
+    "end": 224114,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 224115,
+    "end": 227157,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 227158,
+    "end": 230195,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 230196,
+    "end": 233121,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 233122,
+    "end": 236200,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 236201,
+    "end": 239474,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 239475,
+    "end": 242343,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 242344,
+    "end": 242671,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 242672,
+    "end": 243036,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 243037,
+    "end": 243342,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 243343,
+    "end": 245263,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 245264,
+    "end": 247199,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 247200,
+    "end": 248115,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 248116,
+    "end": 250126,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 250127,
+    "end": 251079,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 251080,
+    "end": 252691,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 252692,
+    "end": 254485,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 254486,
+    "end": 255890,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 255891,
+    "end": 257301,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 257302,
+    "end": 259069,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 259070,
+    "end": 260907,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 260908,
+    "end": 262246,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 262247,
+    "end": 264264,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 264265,
+    "end": 265324,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 265325,
+    "end": 266154,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 266155,
+    "end": 267122,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 267123,
+    "end": 269614,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 269615,
+    "end": 270929,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 270930,
+    "end": 271268,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 271269,
+    "end": 271565,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 271566,
+    "end": 273064,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 273065,
+    "end": 273907,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 273908,
+    "end": 275391,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 275392,
+    "end": 275589,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 275590,
+    "end": 276457,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 276458,
+    "end": 279050,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 279051,
+    "end": 279497,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 279498,
+    "end": 281238,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 281239,
+    "end": 281842,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 281843,
+    "end": 283157,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 283158,
+    "end": 283434,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 283435,
+    "end": 286477,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 286478,
+    "end": 287520,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 287521,
+    "end": 288341,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 288342,
+    "end": 289217,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 289218,
+    "end": 290154,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 290155,
+    "end": 291179,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 291180,
+    "end": 292084,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 292085,
+    "end": 292866,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 292867,
+    "end": 293734,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 293735,
+    "end": 296874,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 296875,
+    "end": 299961,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 299962,
+    "end": 300726,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 300727,
+    "end": 301372,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 301373,
+    "end": 301628,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 301629,
+    "end": 303623,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 303624,
+    "end": 304690,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 304691,
+    "end": 305076,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 305077,
+    "end": 305961,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 305962,
+    "end": 306086,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 306087,
+    "end": 306209,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 306210,
+    "end": 306434,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 306435,
+    "end": 306706,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 306707,
+    "end": 306969,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 306970,
+    "end": 307064,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 307065,
+    "end": 307303,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 307304,
+    "end": 308064,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 308065,
+    "end": 308553,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 308554,
+    "end": 309255,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 309256,
+    "end": 309330,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 309331,
+    "end": 309410,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 309411,
+    "end": 309484,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 309485,
+    "end": 309584,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 309585,
+    "end": 309975,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 309976,
+    "end": 310138,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 310139,
+    "end": 310417,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 310418,
+    "end": 310566,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 310567,
+    "end": 311622,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 311623,
+    "end": 312036,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 312037,
+    "end": 312253,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 312254,
+    "end": 313364,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 313365,
+    "end": 313417,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 313418,
+    "end": 314442,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 314443,
+    "end": 315190,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 315191,
+    "end": 316249,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 316250,
+    "end": 316992,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 316993,
+    "end": 317805,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 317806,
+    "end": 318593,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 318594,
+    "end": 318646,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 318647,
+    "end": 319880,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 319881,
+    "end": 321403,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 321404,
+    "end": 322369,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 322370,
+    "end": 322422,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 322423,
+    "end": 323892,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 323893,
+    "end": 325271,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 325272,
+    "end": 326752,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 326753,
+    "end": 328986,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 328987,
+    "end": 329705,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 329706,
+    "end": 330873,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 330874,
+    "end": 332369,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 332370,
+    "end": 332422,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 332423,
+    "end": 333203,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333204,
+    "end": 333256,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333257,
+    "end": 333315,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333316,
+    "end": 333372,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333373,
+    "end": 333425,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333426,
+    "end": 333480,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333481,
+    "end": 333535,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333536,
+    "end": 333590,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333591,
+    "end": 333645,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333646,
+    "end": 333700,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333701,
+    "end": 333755,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 333756,
+    "end": 339918,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 339919,
+    "end": 347711,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 347712,
+    "end": 348199,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 348200,
+    "end": 348404,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 348669,
+    "end": 348924,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 348925,
+    "end": 350919,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 350920,
+    "end": 351986,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 351987,
+    "end": 352372,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 352373,
+    "end": 353257,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 353258,
+    "end": 353382,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 353383,
+    "end": 353505,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 353506,
+    "end": 353730,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 353731,
+    "end": 354002,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 354003,
+    "end": 354265,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 354266,
+    "end": 354360,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 354361,
+    "end": 354599,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 354600,
+    "end": 355360,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 355361,
+    "end": 355849,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 355850,
+    "end": 356551,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 356552,
+    "end": 356626,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 356627,
+    "end": 356706,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 356707,
+    "end": 356780,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 356781,
+    "end": 356880,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 356881,
+    "end": 357271,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 357272,
+    "end": 357434,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 357435,
+    "end": 357713,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 357714,
+    "end": 357862,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 357863,
+    "end": 358918,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 358919,
+    "end": 359332,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 359333,
+    "end": 359549,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 359550,
+    "end": 360660,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 360661,
+    "end": 360713,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 360714,
+    "end": 361738,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 361739,
+    "end": 362486,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 362487,
+    "end": 363545,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 363546,
+    "end": 364288,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 364289,
+    "end": 365101,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 365102,
+    "end": 365889,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 365890,
+    "end": 365942,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 365943,
+    "end": 367176,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 367177,
+    "end": 368699,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 368700,
+    "end": 369665,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 369666,
+    "end": 369718,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 369719,
+    "end": 371188,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 371189,
+    "end": 372567,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 372568,
+    "end": 374048,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 374049,
+    "end": 376282,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 376283,
+    "end": 377001,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 377002,
+    "end": 378169,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 378170,
+    "end": 379665,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 379666,
+    "end": 379718,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 379719,
+    "end": 380499,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380500,
+    "end": 380552,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380553,
+    "end": 380611,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380612,
+    "end": 380668,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380669,
+    "end": 380721,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380722,
+    "end": 380776,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380777,
+    "end": 380831,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380832,
+    "end": 380886,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380887,
+    "end": 380941,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380942,
+    "end": 380996,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 380997,
+    "end": 381051,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 381052,
+    "end": 387214,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 387215,
+    "end": 395007,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 395008,
+    "end": 395495,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  },
+  {
+    "start": 405506,
+    "end": 405694,
+    "metadata": {
+      "primary_esn": "316X914",
+      "primary_equip_type": "Generator"
+    }
+  }
+]
