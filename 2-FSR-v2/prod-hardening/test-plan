@@ -1,0 +1,180 @@
+## FSR v2 Prod-Hardening — Test Plan
+
+Covers all changes listed in `prod-hardening-items`. Tests are grouped by
+pipeline stage. Each item references the prod-hardening section it validates.
+
+---
+
+### Unit tests (new/extended in `tests/fsr_v2/`)
+
+#### P1 — parsing and volume contract  (§4)
+- **Atomic write:** call `save_parsed_document`, kill the process mid-write by
+  patching `write_text` to raise after writing partial bytes, then call
+  `load_parsed_document` on the result — expect a descriptive error, not a
+  silent corrupt load.
+- **Fingerprint reuse:** call `save_parsed_document`, then call again with the
+  same source fingerprint + parser version — assert the file is not rewritten
+  (mtime unchanged).
+- **Stale fingerprint:** change `file_size_bytes` in the doc dict and call
+  again — assert the file is rewritten and the new fingerprint is stored.
+- **Corrupt JSON detection:** write a truncated JSON to the volume path, call
+  `load_parsed_document` — expect a clear `ValueError`, not `JSONDecodeError`.
+
+#### P1 — LLM failure behaviour  (§2 P1 code-review)
+- Patch `extract_llm_metadata` to raise `RuntimeError("LLM timeout")`.
+- Assert the exception propagates out of `enrichment.run()` (not swallowed).
+- Assert the P1 notebook outer loop adds the document to `failed_rows`.
+- Assert `fsr_metadata_v2` is NOT written with `metadata_status = 'completed'`.
+
+#### P1 — outage date filter  (§2)
+- **Pre-LLM filter hit:** build page-1 text containing "Outage Start Date:
+  2012-03-01", run the text scan — assert LLM is not called and doc is skipped.
+- **Pre-LLM filter miss → post-LLM filter hit:** page-1 scan finds nothing;
+  LLM returns `outage_start_date = "2014-06-15"` — assert doc is not written
+  to metadata table.
+- **Both filters miss (date after threshold):** LLM returns `outage_start_date
+  = "2019-08-01"` — assert doc proceeds to `write_enriched_metadata`.
+- **Missing date (conservative pass-through):** LLM returns no date — assert
+  doc proceeds.
+
+#### P1 — LLM batching  (§2)
+- Patch `_call_llm` to record call count.
+- Process 5 docs with `FSR_V2_P1_LLM_BATCH_SIZE=2` — assert `_call_llm` is
+  called 3 times (ceil(5/2)), not 5 times.
+
+#### P1 — bounded concurrency  (§2)
+- Run P1 on 10 docs with `FSR_V2_P1_WORKERS=4`. Patch the parser to record
+  peak concurrent executions. Assert peak concurrency never exceeds 4.
+- Inject a failure in one worker (parser raises). Assert the other 9 docs
+  complete successfully and the failed doc is in `failed_rows`.
+- Patch `_call_llm` to raise `HTTPError(429)` on the first call. Assert P1
+  retries with backoff and does not propagate the rate-limit error as a
+  document failure if a subsequent attempt succeeds.
+
+#### P1 — date format validation  (§8)
+- Pass `report_issued_date = "25/03/2024"` through the post-enrichment
+  normalisation step — assert it is converted to `"2024-03-25"` or rejected
+  with a clear error.
+- Pass an unparseable value — assert the field is set to `None` and a DQ row
+  is written, not a pipeline failure.
+
+#### P2 — atomic claim  (§3 P2 code-review)
+- Simulate two concurrent P2 instances selecting the same document before
+  either updates status — assert only one proceeds (the other gets 0 rows from
+  the atomic claim).
+
+#### P2 — chunk idempotency  (§3 P2 code-review)
+- Process a document, producing N chunks. Change chunk boundaries and rerun.
+  Assert the table contains exactly the new chunks and no stale tail chunks
+  from the first run.
+
+#### P2 — embedding Future exception  (§3 P2 code-review)
+- Patch the embedding pool to raise on one document's future.
+- Assert that document is marked `failed`, not left as `in_progress`.
+
+#### P2 — embedding dimension validation  (§3 P2 code-review)
+- Return a vector of wrong dimension from the embedding mock.
+- Assert the document is marked `failed` before any chunk row is written.
+
+#### Config validation  (§5)
+- Set `FSR_V2_PARSER_VERSION` to an unsupported value — assert `ValueError`
+  before any document is processed.
+- Leave `METADATA_TABLE_V2` blank — assert `ValueError` at startup.
+- Set `FSR_V2_MIN_OUTAGE_YEAR` to a non-integer — assert `ValueError`.
+
+#### Security  (§12)
+- Pass `REQUESTED_ESN = "' OR 1=1 --"` through the ESN validation/escaping
+  path — assert it is rejected or escaped before reaching the SQL string.
+- Confirm `equip_type` in `_make_ibat_resolver()` is checked against the
+  equipment-type enum before interpolation.
+
+#### Regression — bare Turbine heading  (§11)
+- Add fixture from known-bad doc `b896cb9f` (Rocksavage) or `5b688732`
+  (316X914) to `test_preprocessor_v2.py` — assert the bare Turbine section
+  correctly inherits the parent equipment type after the fix.
+
+---
+
+### Integration tests (dev environment, controlled sample)
+
+#### Full pipeline — happy path
+1. Run DDL notebook to create tables and volume dirs.
+2. Run P1 on a set of 10 known-good FSR PDFs.
+3. Assert all 10 have `metadata_status = 'completed'` and non-null
+   `parsed_volume_path` in `fsr_metadata_v2`.
+4. Run P2. Assert all 10 have `chunk_status = 'completed'` and chunk rows
+   in `fsr_chunks_v2`.
+5. Run P3 (VS sync). Assert VS index reports all 10 docs as indexed.
+6. Run the retrieval validation notebook. Assert no missing chunks for tested
+   ESNs.
+
+#### Rerun idempotency
+1. Run P1 + P2 + P3 on the same 10-doc set a second time without any source
+   changes.
+2. Assert: metadata row count unchanged, chunk row count unchanged, no
+   duplicate ESN rows in equipment map, VS index unchanged.
+
+#### Source-change reprocessing  (§2)
+1. Modify the `file_size_bytes` of one document to simulate a source change.
+2. Rerun P1. Assert that document is re-parsed, a new parsed artifact is
+   written, and the metadata row is updated.
+3. Assert the other 9 documents are untouched (cache reuse).
+
+#### LLM failure recovery
+1. Patch the gateway to return 500 for one document.
+2. Run P1. Assert that document has `metadata_status = 'failed'` and a DQ row.
+3. Restore the gateway. Rerun P1. Assert the document is retried and succeeds.
+
+#### Outage date filter — integration
+1. Include 2 PDFs with pre-2016 outage dates and 3 with post-2016 dates.
+2. Run P1. Assert only the 3 post-2016 docs appear in `fsr_metadata_v2`.
+3. Rerun P1. Assert the 2 filtered docs are still absent (not retried as failures).
+
+#### Incremental ingestion  (§6, §11)
+1. Run the full pipeline on 5 docs. Confirm VS readiness.
+2. Add 1 new PDF to the source volume.
+3. Run the daily incremental job (P1 → P2 → P3).
+4. Assert only the new doc was processed (P1/P2 counts = 1).
+5. Assert the VS index now includes the new doc.
+
+#### Backfill isolation  (§6)
+1. Pause the daily ingestion job.
+2. Run backfill P1 on a 100-doc batch with a specific `FSR_V2_MIN_OUTAGE_YEAR`.
+3. Confirm no overlap with the incremental set (distinct document IDs).
+4. Resume daily ingestion. Assert no conflicts or duplicate chunk rows.
+
+---
+
+### Scale / load rehearsal  (§2, §11)
+
+- Run P1 on a representative 1,000-doc sample.
+  - Assert p95 per-document time is within acceptable range.
+  - Assert LLM batch calls stay within gateway rate limits (no 429s).
+- Run P2 with `FSR_P2_EMBED_CONCURRENCY=4` on the output.
+  - Assert no stale-claim rows after completion.
+  - Assert chunk row count matches expected (validate against a known subset).
+- Run P3 and confirm VS index sync completes without errors.
+- Simulate a mid-run crash (kill the driver) and confirm rerun picks up from
+  the correct retry state without duplicates.
+
+---
+
+### Security checks  (§12)
+
+- Static scan: confirm no f-string interpolation of widget/user values into
+  SQL across all FSR v2 notebooks and modules.
+- Confirm `FSR_LLM_VERIFY_SSL` defaults to `"true"` in all production
+  notebooks and workflow YAML files.
+- Confirm `verify=False` does not appear in any non-dev FSR v2 path.
+
+---
+
+### QA → Prod promotion gates  (§11)
+
+- [ ] All unit tests pass in CI.
+- [ ] Full pipeline integration test passes in dev.
+- [ ] Scale rehearsal metrics meet acceptance criteria from §1.
+- [ ] Security scan clean (no SQL injection gaps, no verify=False in prod paths).
+- [ ] `FSR_LLM_VERIFY_SSL` default is `"true"` in all prod workflow YAMLs.
+- [ ] Prod CR contains only FSR v2 changes.
+- [ ] Rollback plan documented and rehearsed (drain in-progress docs, revert bundle).

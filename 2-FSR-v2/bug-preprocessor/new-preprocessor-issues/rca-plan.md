@@ -254,6 +254,114 @@ Step 5 validation update (latest run review):
 Deliverable:
 - Validation summary indicating corrected cases and any residual anomalies.
 
+## Open Items (deferred — not fixed yet)
+
+### OPEN-1: equipment-prefixed subsections do not flip back to parent root
+
+**Found:** 2026-09-01, while checking the prod-hardening ESN changes for regressions.
+**Status:** open. No code change made — deliberately deferred.
+**Failing test:** `tests/fsr_v2/test_preprocessor_v2.py::test_nested_generator_subsection_produces_distinct_atomic_regions`
+**Red since:** `771ffca` "FSR v2: tighten generic subsection inference and isolate
+standalone output path". Still red on `fsr_v2` HEAD. Confirmed by running the suite
+across 10 historical commits — failures went 1 → 3 at that commit.
+
+Observed on the synthetic fixture (`GAS TURBINE` root, `1.1` Generator subsection,
+`1.2 Turbine Compressor Check`):
+
+```
+Gas Turbine  | GAS TURBINE (297191 | SY0000001)
+Gas Turbine  | 1 GAS TURBINE / GT parent text
+Generator    | 1.1 Generator Stator Test / Generator child text
+Generator    | 1.2 Turbine Compressor Check / GT resumes here   <- expected Gas Turbine
+```
+
+Cause: the guardrail "explicit equipment-prefixed headings remain excluded" keeps
+headings like `1.2 Turbine ...` out of the generic-subsection inference path, so they
+get neither flip-back nor keyword typing — they inherit the previous span, which is
+the Generator subsection.
+
+Why it matters: this is the locked flip-back rule not holding, and it is adjacent to
+Xujin's report that steam-turbine sections containing a `turbine` subsection produce
+noisy evidence. Real-document regression on Databricks stayed green (the validated
+case, `2.7 Unit Rotor`, is *untyped* and goes through a different path), so impact
+may be limited to typed subsections.
+
+Decision needed: either relax the guardrail so equipment-prefixed subsections resolve
+against the nearest explicit root, or restate the rule and update the test.
+
+### OPEN-2: two stale unit tests (test-only, no product impact)
+
+- `test_metadata_processor_v2_as_thin_adapter` — the test's `fake_preprocess(ctx)`
+  does not accept the `ibat_resolver` kwarg that `metadata_processor.run()` now
+  passes. Production code is correct; the mock signature was never updated.
+- `test_unnumbered_equipment_heading_detection_bug3` — fails because of the
+  intentional `REQUIRE_PRIMARY_TOC_MATCH_FOR_UNNUMBERED_EQUIP` gate. Verified by
+  toggling the flag: gate on → 0 candidates, gate off → 2 candidates with the prose
+  line correctly excluded. Detection works; the fixture supplies `raw_pages=[]` so
+  there is no TOC to match. The gate exists to stop TOC/table lines leaking through,
+  which was itself one of the reported bugs.
+
+### OPEN-4: docs whose cover page carries a sys_id (SY…) instead of an ESN
+
+**Found:** 2026-09-01, investigating the 9 of 53 docs with an empty `primary_esn`.
+**Status:** open. Fix would land in preprocessor ESN recognition — deliberately not
+touched.
+
+Not a text-extraction problem. Triage over all 53 parsed JSONs:
+
+```
+docs with ZERO esn tokens : 0
+docs with <100 chars/page : 0
+```
+
+Every doc has extractable text (the 9 range from 260 to 1294 chars/page), so the
+earlier "scanned PDF / needs OCR" theory is **disproven**.
+
+What the cover pages actually say:
+
+```
+TERMOBAHIA    Gas Turbine   ESN: SY0048845 ... Machine Serial No. V02450
+Oskarshamns   Steam Turbine ESN: SY0022093
+ENERCRISA     Steam Turbine ESN: SY0339115   Generator ESN: SY1408482
+```
+
+The value printed after `ESN:` is an **equipment system id**, not a serial number.
+Working docs show both, e.g. `STEAM TURBINE (814638 | SY0052637)` where `814638`
+is the ESN and `SY0052637` the sys_id. These documents label the sys_id as the ESN.
+
+IBAT resolves some of them:
+
+| sys_id on cover page | real ESN in IBAT | sub_class |
+| --- | --- | --- |
+| SY0022093 | SLF3319 | DKY4-6D100 |
+| SY0048845 | V02450 | GT24 |
+| SY1408482 | *(null)* | *(null)* |
+| SY0339115 | *(null)* | GR36/35-5 |
+
+Two things follow:
+
+1. The real ESN is sometimes present in the text under a different label —
+   `Machine Serial No. V02450` — and IBAT independently confirms `SY0048845 -> V02450`.
+2. These ESNs use formats like `V02450` and `SLF3319`, not the GE-style shapes
+   (`297652`, `316X914`, `GG10525`, `270T483`) the extractor is tuned for. Likely
+   Alstom-heritage units.
+
+Candidate fix, in rough order of value: recognise `Machine Serial No.` / `Serial
+Number` as ESN labels; widen the ESN token shape beyond GE-style; and use the
+existing IBAT resolver to translate a cover-page `SY…` into its serial number.
+
+Impact: 9 of 53 docs (17%) currently get no doc-level ESN, no equipment-map row,
+and are therefore unreachable by ESN-filtered retrieval.
+
+### OPEN-3: `st_esn` persisted but not yet exercised
+
+`st_esn` now flows preprocessor → metadata → chunks → equipment map (added
+2026-09-01). No document in the 8-doc smoke set has a steam-turbine ESN, so the value
+path is unverified. The steam-turbine docs `b896cb9f` and `b1cdbc80` are in Batch B;
+running the full 53-doc set (track 3) exercises it.
+
+---
+
 ## Notes
 - Commit relocation/revert decisions are deferred until after RCA + fix verification.
 - Follow-up design direction captured for future extension:
@@ -1195,3 +1303,223 @@ Cross-refs:
 - No hidden `3.1.x Turbine` heading exists in the extracted text for that range — the original Fix 2 suspects (page-join OCR artifact, TOC-style leader, SUBSEC filter drop) are not the cause on the current extracted text.
 - Row 5 is architectural, not a boundary bug: `3 Turbine` (chars 19 730–19 897, 167 chars) sits immediately before `3.1.1 Generator` with essentially no body of its own — the emitter is producing an atomic region for a parent heading whose entire body is the first subsection.
 - Next step for row 4: obtain the customer's page-89 excerpt and search the extracted text; if a Gas Turbine line is genuinely present in the span, we'll have a concrete boundary to detect. Until then, no code change scoped.
+
+
+## Finding (2026-08-21) — Generator regions on `65f6535e-e26a-4e7a-bd41-6cdf4eaf1efa` blank ESN; `FSR_IBAT_TABLE` widget not wired at runtime
+
+Trigger:
+- Customer reported that for `65f6535e-e26a-4e7a-bd41-6cdf4eaf1efa`, the chunk table shows `region_primary_esn` blank on pages 195, 197, 198, 199, 201, 202, 204 even though `region_primary_equip_type = Generator` on all seven. The doc-equipment map `vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2` has one row (`298339`, Gas Turbine, 7FA) and no mapping to Generator `337X350`.
+
+### Evidence collected
+
+Files:
+- PDF + parsed JSON + chunk CSV + map CSV under `2-FSR-v2/bug-preprocessor/new-preprocessor-issues/65f6535e-e26a-4e7a-bd41-6cdf4eaf1efa/`.
+- Region-level metadata pull: `query-1.csv` in the same folder.
+- IBAT probe: `Query-A.csv` in the same folder.
+
+Text extraction:
+- Pipeline parsed JSON: 205 pages, 37 454 chars total (~180 chars/page). Almost all pages are effectively blank — this is a scanned/image PDF that pymupdf cannot OCR.
+- `337X350`: 0 occurrences in the parsed text.
+- All `\d{3}[A-Z]\d{3}` tokens: **none**. `broad_esns` therefore contains only the `esn_type` seed values (`298339`), not `337X350`.
+- Local pymupdf run reproduces the same shape (0 occurrences of `337X350`, no Generator-shaped tokens).
+
+IBAT probe (Query A on `vgpd.prm_std_views.ibat_equipment_mst`):
+
+| esn | equipment_type | equipment_status | record_status | active_lineage_indicator | train_sys_id_fk |
+|---|---|---|---|---|---|
+| 298339 | GAS TURBINE | InService | Active | True | UNI026746 |
+| **337X350** | **GENERATOR** | InService | Active | True | **UNI026746** |
+| 298339-HRSG | HRSG | InService | Active | True | UNI026746 |
+
+Both anchor ESNs are on the same train, single Generator on the train, all lifecycle filters pass. Fix 1's train-scoped SQL for `equip_type = 'Generator'` and `current_turbine_esn = '298339'` returns exactly `['337X350']`.
+
+Region-level metadata (from `query-1.csv`):
+
+| idx | span | type | esn | esn_source | section_path |
+|---|---|---|---|---|---|
+| 0 | 0–1090 | shared | – | none | – |
+| 1 | 1090–1364 | Gas Turbine | 298339 | single_type | `3.2.1 Compressor` |
+| 2 | 1364–1982 | Gas Turbine | 298339 | single_type | `3 Turbine` |
+| 3 | 1982–2018 | Generator | – | **none** | `5 Electrical System` |
+| 4 | 2018–2076 | Generator | – | **none** | `5 Electrical System > 5.1 Electrical` |
+| 5 | 2076–3948 | Generator | – | **none** | `5 Electrical System > 5.2 Excitation System` |
+| 6 | 3948–5381 | Gas Turbine | 298339 | local_header | `GAS TURBINE (298339 \| SY0048192)` |
+| 7 | 5381–8176 | Gas Turbine | 298339 | parent_inherit | `GT > 3 Turbine` |
+| 8 | 8176–15524 | Gas Turbine | 298339 | parent_inherit | `GT > 3 Turbine > 3.2.1 Compressor` |
+| 9 | 15524–15629 | Generator | – | **none** | `GT > 5 Electrical System` |
+| 10 | 15629–37658 | Generator | – | **none** | `GT > 5 Electrical > 5.1 Electrical` |
+
+### Root cause
+
+Every Generator region has `esn_source = 'none'`, not `ibat_train`. Given Query A's result, if Fix 1's train-scoped resolver had run, regions 9 and 10 would have resolved to `337X350` via `ibat_train`: `_resolve_span_esn_with_ibat_train` falls through the `broad_esns` and `all_esns` pools (both = `{'298339'}`, so `filtered = []` in each pool), then hits the `if len(normalized) == 1: return normalized[0]` tail and returns `'337X350'`.
+
+Confirmed by a local rerun on this doc's parsed JSON: with a mock `ibat_resolver` that mirrors Query A (returns `['337X350']` for `equip_type='Generator', current_turbine_esn='298339'`), every Generator region resolves to `337X350` — regions 3, 4 and 5 via `IBAT_TRAIN` / `PARENT_INHERIT`, regions 9 and 10 via `IBAT_TRAIN`. Fix 1 code is correct.
+
+Deploy timing check: the customer confirmed the deployed `pw_sdg_ai_ser_repo` matches commit `e33e92c5bc1b4be77025a38f20ec807aa75cc3c0`, which contains Fix 1. That rules out deploy-lag.
+
+Remaining explanation: the deployed job passed `ibat_table=None` to `metadata_processor_v2.run`, so `_make_ibat_resolver` was never called and the preprocessor's `_resolve_span_esn_with_ibat_train` short-circuited on the `if ibat_resolver is None: return None` guard.
+
+- `pw_sdg_ai_ser_repo/silver/src/etl/nb_sdg_fsr_v2_metadata.py`:
+
+```python
+IBAT_TABLE = get_runtime_param("FSR_IBAT_TABLE", "")
+…
+processor_output = processor_impl.run(
+    parsed_doc,
+    spark=spark,
+    ibat_table=IBAT_TABLE or None,
+)
+```
+
+- `pw_sdg_ai_ser_repo/silver/src/etl/fsr_v2/metadata_processor_v2.py`:
+
+```python
+ibat_resolver = (
+    _make_ibat_resolver(spark, ibat_table)
+    if spark is not None and ibat_table
+    else None
+)
+```
+
+When `FSR_IBAT_TABLE` is an empty string at runtime, `IBAT_TABLE or None` collapses to `None`, no resolver is wired, and every Generator region without doc-inventory ESN evidence falls to `esn_source = 'none'` — exactly what `query-1.csv` shows.
+
+Most likely cause of the empty widget: a Databricks widget-persistence gotcha. `dbutils.widgets.text(..., default)` only applies the default when the widget is created for the first time. If the notebook / job had `FSR_IBAT_TABLE` created earlier as an empty string, subsequent runs pick up that empty value even after the workflow YAML default and the `databricks.yaml` variable are populated. The dev target does set `fsr_ibat_table: "vgpd.prm_std_views.ibat_equipment_mst"` and both `workflows/fsr_v2/pw_sdg_fsr_v2_p1_metadata.yml` and `workflows/fsr_v2/pw_sdg_fsr_v2_ingestion.yml` reference `${var.fsr_ibat_table}`, but a stale widget still wins.
+
+Secondary observation (unrelated to this root cause): regions 3, 4, 5 (`5 Electrical System > …`) sit before the explicit `GAS TURBINE (…)` header at char 3948, but `current_turbine_esn` has already been seeded to `298339` by the `single_type` resolution on regions 1 and 2. The local mock rerun confirmed those three resolve via `ibat_train` / `parent_inherit` in that same order, so there is no resolver-ordering bug — the guardrail flagged in the earlier draft is not needed.
+
+### Verification plan
+
+1. Confirm the `FSR_IBAT_TABLE` widget value used by the P1 job run that ingested this doc. Either check the Job Run's parameters in the Databricks UI, or add a `log.info(f"IBAT_TABLE={IBAT_TABLE!r}")` right below line 136 in `nb_sdg_fsr_v2_metadata.py` before the next run so the value is captured in driver logs.
+2. Re-ingest `65f6535e-e26a-4e7a-bd41-6cdf4eaf1efa` only (target-mode P1) with `FSR_IBAT_TABLE` explicitly overridden to `vgpd.prm_std_views.ibat_equipment_mst`.
+3. Re-run `query-1.csv` and compare `esn_source` on the five Generator regions.
+   - Expected on regions 3, 4, 5, 9, 10: `esn_source = 'ibat_train'` (or `parent_inherit` on 4, 5 after 3 resolves), `region_esn = '337X350'`.
+4. Confirm the map builder writes the `337X350` mapping into `fsr_document_equipment_map_v2` after reingest (`source_region_count` should be > 0 for the Generator row).
+
+### Follow-up hardening (optional)
+
+- Log `IBAT_TABLE` (and `EV_SOT_TABLE`, `PSOT_TABLE`) at the top of the P1 notebook so a stale-widget run is visible in logs.
+- Consider raising early when a job runs against a real workspace but has `FSR_IBAT_TABLE=''` — the current silent fallback to `ibat_resolver=None` produces a whole class of blank-ESN outputs that only surface downstream.
+### Regression guardrails to preserve after redeploy
+
+- `b775cf29`: `3.1.1 Generator → 337X765` via `ibat_train` (already verified deterministic).
+- `fcb1511e`: `3.8.6 Generator → 337X581`.
+- `af693a98`: `2.7 Rotor` flips back to Gas Turbine.
+- `65f6535e` (this doc): Generator regions on pages 195–204 resolve to `337X350` via `ibat_train`.
+
+### Status
+
+- Fix 1 code confirmed correct via local rerun with a mock resolver.
+- Waiting on customer to re-run P1 with `FSR_IBAT_TABLE` explicitly set for this doc.
+- No code change scoped yet; the optional widget-logging hardening above can go in when the root cause is confirmed on the Databricks side.
+
+### Update (2026-08-21, later) — orchestration gap confirmed and patched
+
+Further inspection of the dev orchestrators showed a concrete reason `FSR_IBAT_TABLE` reaches P1 empty on `ms_test_*` runs — the wrappers do not pass it through, so the P1 sub-notebook's `get_runtime_param("FSR_IBAT_TABLE", "")` always defaults to an empty string when P1 is invoked via these wrappers.
+
+Affected wrappers:
+- `pw_sdg_ai_ser_repo/validation/fsr_v2/ingest_data/nb_fsr_v2_dev_ingest.py`
+- `pw_sdg_ai_ser_repo/validation/fsr_v2/ingest_data/nb_fsr_v2_dev_debug_single_doc.py`
+
+Neither wrapper declared widgets for `FSR_IBAT_TABLE`, `FSR_EVENT_VISION_TABLE`, `FSR_PSOT_TABLE`, or `FSR_PDF_REF_VIEW`, and neither included those keys in the `arguments={...}` dict passed to `dbutils.notebook.run("silver/src/etl/nb_sdg_fsr_v2_metadata", ...)`. This is the exact reason `65f6535e-...`'s Generator regions came out with `esn_source = 'none'` in the `ms_test` pipeline while P2/P3 were unaffected (they consume the regions already written by P1 and do not call IBAT).
+
+Changes applied:
+- Both wrappers now declare the four enrichment widgets with dev defaults (`vgpd.prm_std_views.ibat_equipment_mst`, `vgpd.fsr_std_views.eventmgmt_event_vision_sot`, `vgpd.fsr_std_views.fsr_field_vision_field_services_report_psot`, `vgpp.fsr_std_views.fsr_pdf_ref`), read them via `get_runtime_param`, and forward them to the P1 sub-notebook. `nb_fsr_v2_dev_ingest.py` also warns early if `FSR_IBAT_TABLE` is empty.
+- `nb_fsr_v2_dev_debug_single_doc.py` now defaults `DEBUG_DOC_ID` to `65f6535e-e26a-4e7a-bd41-6cdf4eaf1efa` for the immediate re-run. Its existing pre-run step already `DELETE`s rows for the doc from `META_TABLE`, `MAP_TABLE`, `CHUNK_TABLE` before running P1, so reingest is idempotent.
+- `nb_sdg_fsr_v2_metadata.py` (the hardening applied earlier) logs the resolved `FSR_IBAT_TABLE`, `FSR_EVENT_VISION_TABLE`, `FSR_PSOT_TABLE`, `FSR_PDF_REF_VIEW` values on every run so future stale-widget cases surface immediately in driver logs.
+- `2-FSR-v2/test/test-dev.md` P1 params block updated with the previously-missing `FSR_PDF_REF_VIEW` widget so the pasteable dev widget block matches the actual dependency list.
+
+Note on scope:
+- Only P1 is affected. `nb_sdg_fsr_v2_chunking` and `nb_sdg_fsr_v2_vs_index` do not read IBAT / event / PSOT / PDF-ref tables; they operate on the region output already persisted by P1. Fixing P1's argument-passing was sufficient.
+
+Expected next run (`nb_fsr_v2_dev_debug_single_doc.py` with `DEBUG_DOC_ID=65f6535e-...`):
+- Driver log line `Enrichment tables: FSR_IBAT_TABLE='vgpd.prm_std_views.ibat_equipment_mst' ...` present.
+- `65f6535e-...` metadata row: `primary_esn=298339`, `primary_equip_type=Gas Turbine`.
+- Region-level pull (same query as `query-1.csv`): Generator regions on `5 Electrical System` / `5.1 Electrical` / `5.2 Excitation System` resolve to `337X350` via `IBAT_TRAIN` / `PARENT_INHERIT`, matching the local mock rerun in this finding.
+- Doc-equipment map (`ms_test_fsr_document_equipment_map_v2`): a new row `(65f6535e-..., 337X350, Generator)` with `source_region_count > 0` in addition to the existing GT row.
+
+## Sep 3 Review — Xujin's Requested Preprocessor Fixes
+
+### Review inputs
+
+- Request list: `2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Sep-3/todo-processor-fix`
+- Xujin review notes: `2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Sep-3/Review of the 0821 Preprocessor Bug List from Xujin Teams Chat.md`
+- Meeting transcript: `2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Sep-3/Meeting-with-Xujin-transcript.docx`
+- Code reviewed: `pw_sdg_ai_ser_repo/common/fsr_v2/preprocessor_v2.py`
+
+The referenced PDFs are not required for this code review. The `0be4...` PDF is already present locally, and the existing Databricks output is available for comparison. A PDF would only be needed if we need to verify the exact extracted heading text or page location for `5a82...`.
+
+### Requested logic fix A — `5.1 DC Leakage` must be Generator
+
+**Finding:** The current code contains the intended fix, with a narrow structural precondition:
+
+1. `SECTION_HDR_GEN_KEYWORD` recognizes a top-level heading such as `5 Electrical`, `5 Electrical System`, or `5 Electrification` and records root `5` as `Generator`.
+2. `SUBSEC_GEN_KEYWORD` recognizes `5.1 Electrical`, `5.1 Electrification`, and `5.1 DC Leakage` variants only when root `5` is already typed as `Generator`.
+3. The focused synthetic check produced `5 Electrical -> Generator` and `5.1 DC Leakage -> Generator`.
+
+**Remaining risk:** If the source heading is not a line-anchored form supported by these expressions, or if the root heading is missing/unclear, `5.1 DC Leakage` is still not created as a Generator candidate. The `5a82...` document needs a post-fix run or exact extracted-text inspection to confirm which form occurs there.
+
+**Plan action:** Run `5a82aa03-e7dd-45c4-b226-460c508a4889` through the standalone preprocessor and capture the `5 Electrical` / `5.1 DC Leakage` candidate and emitted region. Do not broaden the regex until the extracted heading form is known.
+
+### Requested logic fix B — flip back to Gas Turbine after Electrical
+
+**Finding:** The current implementation now supports the intended parent fallback for untyped numbered subsections. `_infer_equipment_for_untyped_subsections` first uses a typed predecessor with the same numeric root, then uses the explicit parent; the hierarchy builder also re-anchors a root change to the nearest explicit equipment header. This addresses the reported “level `-1` headings are not used” failure when a new subsection candidate exists.
+
+**Remaining boundary:** The generic candidate pattern requires a dotted number (`x.y` or deeper). A bare, untyped root-level heading after Electrical, such as `6 Unit Rotor`, will not be a generic subsection candidate unless it is matched by another section-header rule. Therefore the fix is not proven for every possible “after 5 Electrical” heading shape.
+
+**Plan action:** Validate `0be4a3ad-7395-41ea-8ec2-e7669c9c15aa` using the actual extracted text and assert both:
+
+- Electrical content is `Generator`.
+- The first subsequent turbine/root or untyped subsection content is `Gas Turbine`, with the governing `GAS TURBINE (...)` header in its path.
+
+### Requested quick keyword edits
+
+These are **not implemented** in `preprocessor_v2.py`:
+
+- `Bently Nevada`, `HMI`, `couplings`, `Alignment` -> `Shared`
+- `Field`, `EL CID`, `LCI` -> `Generator`
+- `PIPO`, `Control System`, `QCP` -> `Turbine`
+
+`Generator` and turbine keyword routing can reuse the existing typed-subsection candidate flow, subject to explicit boundary and case-normalization tests. `Shared` cannot be added as a list-only change: `shared` currently exists only as an emitted gap/fallback equipment label, not as a supported subsection candidate type. Adding it requires an explicit shared-subsection rule and a decision about ESN inheritance and retrieval semantics.
+
+**Plan action:** Keep these edits separate from the two confirmed logic fixes. First agree whether `Turbine` means `Gas Turbine` or a distinct generic type, then add span-scoped keyword rules and validate that each rule ends at the next sibling boundary. Defer the Shared rule until its retrieval behavior is confirmed.
+
+### Review disposition
+
+- Logic fix A: **implemented in code; target-document verification pending** (`5a82...`).
+- Logic fix B: **implemented for candidate forms covered by the current hierarchy rules; target-document verification pending** (`0be4...`).
+- Quick keyword edits: **not implemented; require a separate scoped change**, with Shared requiring more than a keyword-list addition.
+- Generator keyword extension (`Field`, `EL CID`, `LCI`): **implemented for numbered Generator subsections**, including descriptive headings such as `Field Winding` and `Field Inspection`; the matcher intentionally keeps only the narrow `EL CID` spelling; focused synthetic validation passed.
+- Turbine keyword extension (`PIPO`, `Control System`, `QCP`): **implemented at root and subsection levels using exact heading names** and existing Gas Turbine versus Steam Turbine resolution; suffix variants are intentionally excluded; focused validation passed for both contexts.
+- Remaining quick keyword edits (`Shared` mappings): **not implemented; require a separate scoped change**, with Shared requiring more than a keyword-list addition.
+- PDF download/share: **not needed now**. Please provide the PDF only if the standalone extracted text does not preserve the relevant heading or if page-level evidence is required.
+
+### Focused validation checklist
+
+1. Run the standalone preprocessor for `5a82...` and `0be4...`.
+2. Save before/after JSON plus a short evidence note under `analysis-output/2026-09-03/`.
+3. Compare candidate heading text, section path, `primary_equip_type`, `primary_esn`, and `esn_source` around the affected sections.
+4. Run the existing regression set after any additional code change; treat region-boundary drift as a downstream review item even when primary metadata is stable.
+
+## Sep 3 Local PyMuPDF Run Addendum
+
+The standalone runner was reproduced locally using `parse_pymupdf` (`pymupdf_v1.0`) and the current `preprocessor_v2.py`, with no LLM, chunking, embedding, or table-write stages.
+
+### `0be4a3ad-7395-41ea-8ec2-e7669c9c15aa`
+
+- Source PDF is available locally and was processed successfully.
+- Parser result: 1,443 pages and 1,492,336 characters.
+- Output artifact: `analysis-output/2026-09-03/0be4a3ad-7395-41ea-8ec2-e7669c9c15aa-pymupdf-local.json`
+- Extracted body headings include `5 Electrical System`, `## 5.1 Generator`, and later `6 Sub Reports`.
+- `5 Electrical System` and its detected `5.x` subsections are tagged `Generator / GG10675`.
+- `6 Sub Reports` is not recognized as a `SECTION_HDR` by the pre-fix candidate rules, so the emitted regions remained Generator through the end of the document. This reproduced the flip-back risk as a missing level-0 candidate boundary.
+- A focused fix was then added: numbered `Sub Reports` is emitted as a guarded level-0 candidate and typed from the nearest explicit equipment header. The post-fix local run emits `6 Sub Reports` as `Gas Turbine / 899053`, ending the Generator span.
+- The attached-style wording `5.1 DC Leakage Test` does not occur in this PDF's PyMuPDF text; the TOC/body heading is `5.1 Generator`. This is a different document shape from the attached example.
+
+### `5a82aa03-e7dd-45c4-b226-460c508a4889`
+
+- Source PDF was subsequently provided and processed successfully.
+- Parser result: 223 pages and 118,942 characters.
+- PyMuPDF found `5.1 DC Leakage Test` in the TOC and body text.
+- After the targeted fix, the body heading is emitted as a `Generator` region under `5 Sub Reports`.
+- The region has no Generator ESN because the document inventory contains only GT ESN `298340`; this is an ESN-resolution limitation, not a failure to classify the section as Generator.
+- Output artifact: `analysis-output/2026-09-03/5a82aa03-e7dd-45c4-b226-460c508a4889-pymupdf-local-after-logic-fix.json`

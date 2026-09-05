@@ -1,0 +1,538 @@
+## FSR v2 production-hardening plan
+
+**Source of truth:** implementation in `pw_sdg_ai_ser_repo`. Design and RCA
+documents are supporting context only; any mismatch must be resolved in favor
+of the deployed code and recorded here.
+
+### Verified starting points
+
+- P1 discovers the input set with Spark, but parses, preprocesses, calls the
+	enrichment LLM, and writes results in a driver-side sequential loop.
+- P2 claims documents in batches and drains the queue, but v2 does not yet
+	expose the v1 P2 embedding/PDF worker controls or implement equivalent
+	bounded concurrency in the v2 chunking path.
+- v2 has separate P1, P2, P3, and validation workflow files, but the bundle
+	configuration and target-specific v2 parameters need a complete dev/qa/stg/
+	prod audit.
+- P1/P2 run-log writes are currently optional and non-blocking. P1 DQ logging
+	covers failed metadata documents; P2 needs equivalent per-document failure
+	visibility and run-level operational metrics.
+- The parsed-document volume is versioned by parser version, but cache
+	overwrite, partial-file, stale-file, permission, and source-file-change
+	behavior need explicit guarantees before backfill use.
+- Retrieval uses `document_id`, ESN mapping, status, dates, and chunk metadata;
+	the retrieval guide does not use metadata `title` for eligibility or VS
+	filtering. Removing or renaming it still requires a compatibility check.
+
+## Work plan
+
+### 1. Baseline and contract inventory
+
+- Freeze the current code/config behavior: entry points, tables, statuses,
+	retries, idempotency keys, volume paths, VS index contract, and job graph.
+- Compare FSR v1 and v2 code plus the v1 design and backfill-operation notes.
+- Record all public table columns and consumers, especially metadata/chunk
+	fields, `title`, `document_id`, parsed-document paths, and run/DQ logs.
+- Define acceptance metrics for an 18K-document backfill: throughput,
+	completion rate, retry behavior, duplicate rate, recovery after interruption,
+	and VS readiness.
+
+### 2. P1 scale, concurrency, and idempotency
+
+- ~~**Add bounded P1 concurrency with LLM batching.**~~ ✅ Done —
+	`ThreadPoolExecutor` for stages 2–3 (`FSR_V2_P1_WORKERS`, default 4).
+	LLM batching implemented: `batch_extract_llm_metadata()` sends N docs per
+	LLM request (`FSR_V2_P1_LLM_BATCH_SIZE`, default 10; inter-batch delay
+	`FSR_V2_P1_LLM_DELAY_S`, default 1s). Batch failures mark all docs in the
+	batch as failed; missing rows within a batch are caught individually.
+- ~~**Fix: Stage 4 (LLM + per-doc write) blocked behind a full-corpus Stage 2–3
+	barrier.**~~ ✅ Done — found during dev backfill validation
+	(2026-09-02): `nb_sdg_fsr_v2_metadata.py` submitted the *entire* discovered
+	doc set to the `ThreadPoolExecutor` and didn't start Stage 4 until
+	`as_completed()` drained for every submitted doc. At tens of thousands of
+	docs and 4 workers that barrier alone was many hours with zero visible
+	progress, even though Stage 4's per-doc MERGE write was already correct.
+	Fixed by interleaving: Stage 4 now fires as soon as `LLM_BATCH_SIZE` docs
+	clear Stage 2–3 (via a buffer drained inside the `as_completed()` loop),
+	with a final flush for any partial batch after the pool exits. Same total
+	throughput, but progress and writes are now continuous, and a mid-run crash
+	only loses one in-flight batch instead of the whole run. Verified in the
+	sandbox against `ms_test_*` tables (53-doc set, track 4): completions
+	landed continuously (7 at ~3min, 27 at ~6min, 53/53 by ~11min) instead of
+	one final flush.
+- ~~**Fix: P1 run-log write silently failing (schema drift).**~~ ✅ Done —
+	found alongside the above: `fsr_run_log_v2`'s live dev table (in
+	`ai_std_con_field_service_report` after the schema-location fix) was
+	missing the `p1_workers`, `llm_batch_count`, `docs_date_filtered` columns
+	that the P1 notebook has been inserting since those were added to
+	`RUN_LOG_TABLE_V2_DDL_COLS`. The INSERT's `try/except` swallowed the
+	failure as a non-blocking warning, so every P1 run since that column
+	addition wrote **zero** run-log rows with no visible error. Fixed
+	non-destructively in dev via `ALTER TABLE ... ADD COLUMNS` (no need for a
+	full `RESET_FSR_V2=true` drop/recreate). **Action needed before prod
+	backfill:** run the same `ALTER TABLE ADD COLUMNS` (or the DDL notebook)
+	against qa/stg/prod `fsr_run_log_v2` tables too, or confirm they were
+	created fresh after the column addition.
+- Preserve atomic document claiming/status transitions so two job runs cannot
+	process the same document concurrently.
+- ~~Keep discovery incremental and duplicate-safe across multiple source volumes.~~
+	✅ Done (2026-09-03) — **`document_id` derivation was inconsistent between the
+	two P1 input paths, silently duplicating documents.** Discovery mode
+	(`load()`, volume scan) derived the id from the **full filename stem**, while
+	target mode (`_lookup_target_docs()` → `_target_document_id()`) derived it from
+	the **leading UUID only**. Source filenames carry a compound suffix
+	(`<uuid>_605009986-189548-299265-Final_Master_Report.pdf`), so the same
+	physical PDF registered under two different ids depending on how P1 was
+	triggered — two metadata rows, two chunk sets, two equipment-map rows, and
+	duplicate hits at retrieval. Observed in dev: **152 physical PDFs with >1
+	`document_id`** (911 pure-UUID + 192 UUID+suffix rows).
+
+	**Not a concurrency or double-write defect** — the MERGE keys on
+	`document_id`, and the two ids are genuinely different strings, so MERGE
+	correctly treated them as separate documents. The defect was upstream in key
+	derivation.
+
+	**Fix:** both paths now use the UUID-prefix rule. `_canonical_doc_id_col()`
+	in `input.py` is the Spark expression equivalent of the existing Python
+	`_target_document_id()`; discovery mode uses it. Non-UUID filenames still
+	fall back to the full stem (unchanged). Because dedup partitions by
+	`document_id`, this also collapses `<uuid>_report.pdf` /
+	`<uuid>_report_1.pdf` variants in discovery mode.
+
+	Verified on isolated `ms_test_*` tables after a full DDL reset: 40-doc
+	discovery run → 0 ids with a `_suffix`, 0 files with >1 id; then a target-mode
+	rerun of 3 of those files **requested by their full compound name** left the
+	row count at 40 (updated in place, no duplicates).
+
+	**Dev tables were reset (`RESET_FSR_V2=true`) rather than migrated**, since
+	the change alters the primary key. qa/stg/prod must be reset or migrated the
+	same way before/with this deploy — existing rows carry the old compound ids.
+- Define behavior when the same `document_id` has changed size or modification
+	time.
+- ~~Add a `FSR_V2_MIN_DOC_YEAR` workflow parameter (default: 2016)~~
+	✅ Done — two-pass filter with `FSR_V2_MIN_DOC_YEAR` (lower bound) and
+	`FSR_V2_MAX_DOC_YEAR` (upper bound, empty = no limit). Pre-LLM page-1 scan
+	via `extract_doc_year_from_page1()` covers all four date labels; post-LLM
+	check via `determine_doc_date()` in `enrichment.run()`. Both bounds applied
+	in the pre-LLM filter and in `enrichment.run(min_outage_year, max_doc_year)`.
+	Use `FSR_V2_MAX_DOC_YEAR` for year-cohort backfill partitioning (e.g. set
+	`MIN=2016, MAX=2018` for the first pass). Parameters in `databricks.yaml`
+	and `pw_sdg_fsr_v2_p1_metadata.yml`.
+
+	**Note:** DDL migration needed to add `approved_date` and `job_start_date`
+	columns to existing `fsr_metadata_v2` tables in dev/qa/stg/prod before
+	deployment.
+- ~~**Date-filtered docs were re-parsed on every run and the queue never
+	drained.**~~ ✅ Done (2026-09-03). Two linked defects found when the first
+	full-corpus QA run was started:
+
+	1. **Filtering happened after the full parse.** Discovery has no date filter
+	   (it only sees filenames — the year is inside the PDF), so all 50,175 docs
+	   were stub-registered and *fully* parsed — every page extracted, boilerplate
+	   suppressed, parsed artifact written to the volume — before the year was
+	   checked and the doc discarded. Roughly half the corpus is out of range, so
+	   about half the parse cost was pure waste.
+	2. **Filtered docs stayed `pending` forever.** They were only counted, never
+	   given a terminal status. The retry query claims `metadata_status='pending'`,
+	   so every later run re-claimed and re-parsed all ~28K of them, and the queue
+	   could never reach zero — there was no "backfill complete" signal.
+
+	**Fix:** a cheap `extract_page1_text()` probe reads only page 1 and bails
+	before the full parse; out-of-range docs are then written back as
+	`metadata_status='date_filtered'` (terminal). The retry query only claims
+	`pending`/retry-eligible `failed`, and discovery excludes every id already in
+	the table, so a filtered doc is never opened again on later runs.
+
+	Verified on a mixed pre/post-2016 corpus (isolated `ms_test_*`, clean DDL):
+	run 1 claimed 54 → 50 completed + 4 `date_filtered` in 681s; **run 2 claimed
+	0 docs and finished in 12.9s**, with zero rows left `pending`.
+
+	**P2 is unaffected** — it claims `metadata_status='completed'` only, so
+	`date_filtered` is invisible to it.
+- ~~**Record the resolved document date, not just the filter outcome.**~~
+	✅ Done (2026-09-03) — three columns added to `fsr_metadata_v2`:
+	`doc_date` (canonical date, first non-empty of
+	`outage_start_date > job_start_date > approved_date > report_issued_date`),
+	`doc_year` (the year the filter acted on), and `doc_date_source` (which field
+	won, or `missing`; suffixed `:page1_scan` when it came from the pre-parse
+	probe). Populated for **both** `completed` and `date_filtered` rows —
+	previously a filtered doc had *no* date columns populated at all, so there was
+	no record of why it was skipped.
+
+	Makes the filter auditable, gives retrieval/analytics one canonical date
+	instead of coalescing four columns, and enables **surgical reclaim**: widening
+	the bound only needs to flip the rows that now qualify
+	(`... AND doc_year >= <new_min>`) rather than flipping everything and
+	re-probing docs that will just be rejected again.
+- **Widening the year range later is cheap — but turning the filter off is not
+	enough on its own.** Because discovery excludes every id already in the table
+	*and* the retry query ignores non-`pending`/`failed` rows, simply clearing
+	`FSR_V2_MIN_DOC_YEAR` would leave previously-filtered docs silently skipped
+	forever. The reclaim step is a metadata-only UPDATE (no file I/O, no deletes,
+	completed docs untouched) — see the backfill runbook.
+- Define one P1 reprocessing contract for an existing `document_id` across all
+	three P1-owned stores: parsed-document volume, `fsr_metadata_v2`, and
+	`fsr_document_equipment_map_v2`. **Decision: do not replace an unchanged
+	document.** When source path, source fingerprint, parser version, and parsed
+	schema version match, reuse the current parsed artifact, metadata row, and
+	equipment-map rows without reprocessing. When any of those values changes,
+	write a new versioned parsed artifact atomically, then advance the metadata
+	pointer and rebuild the current equipment-map rows from the new regions.
+	Delete obsolete ESNs from the current map only after the new artifact is
+	complete, so P2 never reads a mixed version.
+- Add an integration test that processes the same document twice unchanged, then
+	reprocesses it after a source or parser-version change; assert one metadata
+	row, one current parsed-artifact pointer, and only the current equipment-map
+	rows for that `document_id`.
+- Add a controlled backfill mode/partitioning strategy using the existing
+	operational tracker conventions, without creating a new tracker artifact.
+- ~~Load-test the chosen settings against a representative 18K-document sample.~~
+	⚠ Partially done (2026-09-02) — P1 swept at `FSR_V2_P1_WORKERS` = 4 / 8 / 16
+	over equal ~240-doc chunks: **2885s / 2891s / 2931s (~299 / 302 / 295
+	docs/hr) — flat.** `FSR_V2_P1_WORKERS` only threads Stage 2-3
+	(parse+preprocess); Stage 4 (LLM batch + per-doc enrichment MERGE) is
+	sequential on the main thread and is the real bottleneck, so raising workers
+	buys nothing. **Recommend keeping the default 4 for the prod backfill.**
+	At ~300 docs/hr, P1 alone is ~3 days for 22K docs and ~7 days for 50K —
+	confirm that is acceptable, since the only meaningful speedup is
+	parallelizing Stage 4 (not attempted). Still outstanding: an equivalent
+	bounded sweep for **P2** (`FSR_P2_BATCH_SIZE`, `FSR_P2_EMBED_CONCURRENCY`),
+	and re-verifying `FSR_V2_P1_LLM_DELAY_S` against the **prod** LLM gateway
+	(only the dev gateway was exercised).
+
+	**Corpus is larger than planned:** dev discovery found **50,177 eligible
+	(2016+) docs, not ~18–22K.** Re-check the prod corpus size before sizing the
+	year-cohort passes.
+
+#### P1 code-review todos
+
+- ~~**LLM failure must mark the document `failed`, not write empty metadata.**~~
+	✅ Done — `try/except` swallow removed from `enrichment.run()`. LLM exceptions
+	now propagate to the P1 outer `except` block, which writes `metadata_status =
+	'failed'`. `min_outage_year` post-LLM filter also added to `enrichment.run()`.
+- **Target mode crashes the whole run on ambiguous filename matches.** Open.
+	`_lookup_target_docs()` in `input.py` raises
+	`ValueError: Ambiguous PDF matches for <id> in <vol>` when a target id matches
+	more than one file (e.g. `<name>.pdf` and `<name>_1.pdf` in a manual-upload
+	volume) — this aborts the entire P1 run, not just that document. Hit in dev
+	against `ecrt_reports`. Discovery mode no longer has this problem for
+	UUID-named files (the dedup window picks the newest), but non-UUID names and
+	all of target mode still do. Prefer the same "newest wins" resolution, or at
+	minimum fail only that document instead of the run.
+
+### 3. P2 batching and bounded concurrency
+
+- Retain document-level claim batches and stale-claim recovery.
+- Add/verify bounded parallel PDF parsing/chunking and embedding concurrency,
+	with gateway-aware limits, batch-size validation, retries, timeouts, and
+	poison-document isolation.
+- Ensure partial embedding/chunk failures cannot leave a document marked
+	completed, and that reruns do not duplicate chunk rows.
+- Add a run timeout/drain policy and explicit behavior for retry-exhausted
+	documents.
+
+#### P2 code-review todos
+
+- ~~Replace the current select-then-update flow with an atomic document claim.~~
+	⚠ Partially improved — `pending_docs` query now guards with `AND chunk_status
+	= 'in_progress'` so only actually-claimed docs are processed. Full atomic
+	claim (requires `chunk_claimed_by` DDL column) is deferred.
+- ~~Make chunk replacement idempotent when chunk boundaries change.~~ ✅ Done —
+	MERGE now includes `WHEN NOT MATCHED BY SOURCE AND tgt.document_id IN
+	({success_ids_sql}) THEN DELETE` to remove stale tail chunks on rerun.
+- ~~Catch unexpected `Future` exceptions from the embedding pool.~~ ✅ Done —
+	`future.result()` wrapped in `try/except`; failed futures mark all their refs
+	as `embed_failures` so no doc remains `in_progress`.
+- ~~Apply `_sanitize_section_metadata()` before persisting section metadata, or
+	remove the unused helper.~~ ✅ Done — removed (P1 `section_path` is authoritative).
+- ~~Resolve the parsed-document contract.~~ ✅ Done — P2 requires `parsed_volume_path`;
+	the PyMuPDF fallback reference has been removed from module docs.
+- ~~Validate every embedding vector dimension against the configured expected
+	dimension before writing chunks or syncing the Vector Search index.~~ ✅ Done —
+	`expected_embed_dimension` parameter added; dimension mismatch fails the whole
+	batch with a clear error.
+- ~~Remove or implement `mapping_miss_fail_threshold`.~~ ✅ Done — parameter
+	removed from `chunking.run()`, `nb_sdg_fsr_v2_chunks.py`, and
+	`databricks.yaml`; dead `mapping_miss_count = 0` tracking removed.
+
+### 4. Parsed-document volume contract
+
+**Volume:** `fsr_parsed_docs` (one versioned subdirectory per `FSR_V2_PARSER_VERSION`).
+
+**Already implemented:**
+- `FSR_PARSED_DOC_VOLUME_ROOT` is validated at P1 startup — fail-fast if the
+  versioned directory does not exist.
+- Warning logged when `FSR_PARSED_DOC_VOLUME_ROOT` is empty (parse-once skipped).
+- P2 raises `ValueError` if `parsed_volume_path` is missing from the metadata row
+  or if the file does not exist on disk; this propagates to the P2 error handler
+  and marks the document `failed`.
+- P1's outer `try/except` catches `save_parsed_document` failures and marks the
+  document `failed` with a DQ row.
+
+**Still needed (not implemented):**
+- ~~**Atomic write.**~~ Not applied — `Path.rename()` atomicity is not guaranteed
+  on UC volumes (serverless), and `load_parsed_document` already handles corrupt
+  JSON gracefully. Reverted to direct `write_text()`.
+- **Cache reuse.** Not implemented — fingerprint-based reuse requires
+  `Path.exists()` which does not work reliably on serverless clusters, and was
+  not present in FSR v1 either. FSR v2 re-parses on every P1 run; this is
+  acceptable given P2 already reads the persisted parsed JSON instead of
+  re-parsing the PDF.
+- ~~**Corrupt/partial file detection on load.**~~ ✅ Done — `load_parsed_document`
+  now wraps `json.loads()` in a `try/except` and raises a descriptive
+  `ValueError` so P2 marks the document `failed` cleanly.
+- **Cleanup/retention policy.** Define max file age or a fixed number of versions
+  to retain so an 18K backfill does not grow the volume without bound.
+- ~~**Scanned/image-only PDFs complete silently with no retrievable content.**~~
+  ✅ Detection done (2026-09-03); **OCR remedy still open.** A large share of the
+  corpus has no text layer on its content pages — PyMuPDF returns only the
+  repeated page header/footer (`GE Power Power Services / Imagination at Work /
+  Page N of 133 / …`), which the preprocessor correctly strips as boilerplate.
+  Net effect: a 135-page report yields ~2.3k chars → one synthetic region → **one
+  chunk**, while reporting `metadata_status=completed` / `chunk_status=completed`
+  with no error anywhere. Measured in dev: **180 of 871 completed docs over 20
+  pages (21%) yield under 200 chars/page**; worst cases include 587p→2 chunks and
+  509p→1 chunk.
+
+  **Not a parser defect.** Verified by probing the PDF directly: pages that come
+  back empty contain ~48% image coverage and zero content-area text spans.
+  Swapping to pdfplumber/pypdf would give identical results — none of them OCR.
+  The only remedy is an OCR path.
+
+  **Detection shipped:** new P1 check `p1_low_text_extraction` writes
+  `severity=WARN`, `failure_category=no_text_layer_suspected_scan` to
+  `fsr_data_quality_log_v2` (WARN, not FAIL — the doc still completes).
+  Thresholds `FSR_V2_DQ_LOW_TEXT_MIN_PAGES` (20) and
+  `FSR_V2_DQ_LOW_TEXT_CHARS_PER_PAGE` (200) in `databricks.yaml` +
+  `pw_sdg_fsr_v2_p1_metadata.yml` + `pw_sdg_fsr_v2_ingestion.yml`. Use this to
+  size the OCR backlog before/after the prod backfill.
+
+  **Still open:** decide whether to OCR these documents, and how. Parser
+  swappability is mostly ready — `parser_version` is persisted on the metadata
+  row *and* in the artifact path (`fsr_parsed_docs/<parser_version>/…`), so
+  artifacts from different parsers coexist rather than overwrite, and
+  `ExtractorMethod` already validates the configured value. **Gap:** v2's
+  `parsing.py` hardcodes `parse_pymupdf()` instead of dispatching through a
+  factory, so adding an OCR parser needs a code change in P1. The v1-style
+  pluggable factory at `common/parsers/` (incl. `databricks_ai_parser.py`) may
+  be the fastest route if Databricks `ai_parse_document` handles scanned pages.
+
+### 5. Configuration and fail-fast validation
+
+- Split FSR v2 variables clearly from v1 in `databricks.yaml` and workflow
+	parameters, while documenting the small set of intentionally shared values.
+- Complete and verify explicit v2 sections for dev, qa, stg, and prod:
+	catalogs/schemas, source volumes, tables, VS endpoint/index, model names,
+	worker/batch limits, and secrets.
+- Remove unused or confusing parameters, including compatibility aliases once
+	their consumers are confirmed.
+- ~~Decide whether to retire `FSR_MAX_PDFS` after development validation.~~
+	✅ Done — removed from FSR v2 P1 notebook and both FSR v2 workflow YAMLs.
+	Use `FSR_TARGET_PDF_NAMES` for targeted runs. `fsr_max_pdfs` retained in
+	`databricks.yaml` global variables only for FSR v1 compatibility.
+- Replace silent fallback parsing with strict validation for required integers,
+	floats, enums, paths, table identifiers, embedding dimension, and supported
+	strategy names. Fail before processing any document.
+- Make production-safe defaults explicit: no debug target/max-document caps,
+	TLS verification policy, and no accidental writes to test tables.
+
+### 6. Workflow topology and operations
+
+- Verify separate DDL, P1, P2, P3/sync, and validation jobs with dependencies,
+	retries, timeouts, concurrency limits, queue settings, and alerting.
+- ~~Add the daily incremental workflow.~~ ✅ Done — use the existing
+	`PW_SDG_FSR_V2_Ingestion` chained workflow (`pw_sdg_fsr_v2_ingestion.yml`)
+	for both daily incremental ingestion and targeted validation/backfill runs.
+	Leave `FSR_TARGET_PDF_NAMES` empty for incremental ingestion; set it for
+	targeted runs. The duplicate `pw_sdg_fsr_v2_daily_incremental.yml` workflow
+	was removed. The 3 independent jobs (`PW_SDG_FSR_V2_Metadata`,
+	`PW_SDG_FSR_V2_Chunking`, `PW_SDG_FSR_V2_VS_Index`) remain available for
+	manual backfill/recovery use.
+- ~~Define whether backfill and daily ingestion may overlap.~~ ✅ Done —
+	pause the daily incremental job during backfill; see backfill runbook.
+- Verify deployment paths, service principals, permissions, UC volume access,
+	and environment-specific job names.
+
+### 7. Logging, audit, and monitoring
+
+- Standardize run-level and document-level fields: run ID, environment, job,
+	batch, document ID, source/cache decision, status transition, duration,
+	retry count, error category, and row/chunk counts.
+- Make required operational log writes reliable and observable; do not hide a
+	failed audit write behind a warning unless that behavior is explicitly
+	accepted. **Concrete instance found 2026-09-02:** the P1 run-log INSERT names
+	`p1_workers`/`llm_batch_count`/`docs_date_filtered`, but the live dev
+	`fsr_run_log_v2` predated those columns, so every INSERT failed and was
+	swallowed by the surrounding `try/except` \u2014 P1 completed hundreds of docs
+	while the run log stayed empty, with no error surfaced anywhere. Fixed in dev
+	non-destructively via `ALTER TABLE \u2026 ADD COLUMNS`. **Check qa/stg/prod for
+	the same drift before trusting their run logs.** This is exactly the
+	"failed audit write behind a warning" case this item warns about \u2014 worth
+	deciding whether a run-log write failure should be fatal.
+- ~~Move v2 run/audit/DQ tables to `ai_std_con_monitoring_diagnostics`.~~
+	Reverted \u2014 service principal lacks USE SCHEMA on that schema. `fsr_run_log_v2`
+	and `fsr_data_quality_log_v2` use `ai_std_con_field_service_report` in all
+	four environments. Tables created fresh via DDL notebook (drop/recreate).
+	**Corrected in `databricks.yaml` 2026-09-02** \u2014 `fsr_run_log_table_v2` /
+	`fsr_dq_log_table_v2` still pointed at the inaccessible diagnostics schema
+	for dev/qa/stg/prod; repointed to `ai_std_con_field_service_report`.
+- Add dashboards/queries or documented checks for backlog, retry exhaustion,
+	stale claims, cache failures, embedding failures, missing chunks, and VS lag.
+	Add **low-text/no-OCR docs** (`check_name='p1_low_text_extraction'` in
+	`fsr_data_quality_log_v2`) to this list \u2014 those complete successfully but are
+	effectively invisible to retrieval.
+
+### 8. Chunk strategy and schema cleanup
+
+- Trace every configured chunk strategy and its consumers/tests. Keep only the
+	production-supported strategy and the minimum migration compatibility needed
+	for existing data.
+- Validate chunk metadata and region attribution against the retrieval contract.
+- ~~Decide whether `title` is a required document field.~~ ✅ Decision — keep it.
+- ~~Enforce YYYY-MM-DD string format for all date columns.~~ ✅ Done —
+	`_normalize_date()` helper added to `metadata_enrichment.py`; applied to
+	`outage_start_date`, `outage_end_date`, `report_issued_date`, `job_start_date`,
+	and `approved_date` at write time. Common formats handled: YYYY-MM-DD,
+	MM/DD/YYYY, DD Mon YYYY, Month DD, YYYY.
+
+### 9. Dead-code and dependency cleanup ✅ Largely done
+
+- ~~Build a usage report for candidate files such as
+	`silver/src/etl/fsr_v2/metadata_processor.py`.~~ ✅ Done — all candidates
+	audited; confirmed-dead files deleted (see §10).
+- ~~Produce a delete list with evidence, then remove only confirmed dead files.~~
+	✅ Done — see §10 for full status.
+- ~~Inventory parser and runtime-library imports across deployed FSR v2 notebooks.~~
+	✅ Done — `pypdf`, `PyPDF2` removed; only `PyMuPDF` + `langchain-text-splitters`
+	remain in `nb_sdg_fsr_v2_chunks.py`.
+- ~~Run import/static checks after cleanup.~~ ✅ Done — tests pass; no broken imports.
+
+### 10. Confirmed file-removal candidates
+
+| File | Status |
+|---|---|
+| `common/fsr_v2/region_utils.py` | ✅ Deleted |
+| `silver/src/etl/fsr_v2/metadata_processor.py` (v1 shim) | ✅ Deleted |
+| `common/fsr_v2/preprocessor.py` (legacy v1) | ✅ Deleted |
+| `common/fsr_v2/hierarchical_chunking_v1.py` | ✅ Deleted; `v1_hierarchical` block removed from `chunker.py`; `V1_HIERARCHICAL` removed from `enums.py` |
+| `silver/src/etl/fsr_v2/parsing.py` → `parse_pypdf2()` | ✅ Deleted; `parse()` retained as one-line compat wrapper |
+| `%pip install pypdf PyPDF2` in `nb_sdg_fsr_v2_chunks.py` | ✅ Done — reduced to `PyMuPDF langchain-text-splitters` |
+| `common/fsr_v2/prompts/normalization_prompt_v1.py` | ✅ Deleted; `V1_BASELINE` enum value removed |
+| `common/fsr_v2/prompts/normalization_prompt_v2_with_hints.py` | ✅ Renamed → `normalization_prompt.py` |
+| `silver/src/etl/fsr_v2/metadata_processor_v2.py` | ✅ Renamed → `metadata_processor.py` |
+| `gold/src/etl/fsr_v2/backfill/nb_sdg_fsr_v2_document_equipment_map.py` | ✅ Deleted — confirmed not in any active workflow YAML |
+
+### 11. Validation and release gates
+
+- Add focused unit tests for config validation, claim/retry transitions, cache
+	reuse/overwrite/corruption, chunk idempotency, and log/audit payloads.
+- Run an integration test through P1 -> P2 -> P3 -> validation on a controlled
+	sample in dev, including rerun and injected failure cases.
+- Run a scale/backfill rehearsal and compare the acceptance metrics from step 1.
+- Produce a QA/prod promotion checklist with rollback, replay, and operational
+	response steps.
+- When creating the prod CR, include only FSR v2 changes — no FSR v1 or
+	unrelated pipeline changes in the same CR.
+- Add a permanent unit test for the "bare Turbine heading" regression fix
+	(commits `44089b1`/`9f7fe48`). Use one of the known-bad fixtures from the
+	regression notebook (`b896cb9f` Rocksavage or `5b688732` 316X914) so a
+	silent regression is caught before it reaches QA.
+- Add an integration test that verifies incremental ingestion works end-to-end:
+	run P1 → P2 → P3 on a small set, confirm VS readiness, then add one new
+	document and re-run; assert only the new doc is processed.
+
+### 12. Security hardening (from PR reviews)
+
+| # | File | Issue | Severity | Status |
+|---|---|---|---|---|
+| 1 | `validation/fsr_v2/nb_fsr_v2_retrieval.py` | `REQUESTED_ESN` SQL injection | Medium | ✅ Done — `re.fullmatch(r"[A-Z0-9]{4,12}", REQUESTED_ESN)` validation added |
+| 2 | `silver/src/etl/fsr_v2/metadata_processor.py` — `_make_ibat_resolver()` | `equip_type` SQL interpolation | Low | Not applied — value comes from fixed preprocessor regex; whitelist would change behavior without benefit |
+| 3 | `validation/fsr_v2/ingest_data/nb_fsr_v2_dev_ingest.py` | `verify=False` on VS-index delete | Low | ✅ Done — changed to `verify=True` |
+| 4 | `silver/src/etl/nb_sdg_fsr_v2_metadata.py` | `FSR_LLM_VERIFY_SSL` flag | Informational | ✅ Done — removed from `databricks.yaml` and all workflow YAMLs entirely; notebooks default to `"false"` with a comment |
+
+## Questions for review
+
+1. Should P1 enrichment concurrency be implemented in the notebook process, or
+	 should P1 be redesigned as a Spark-distributed map/pandas UDF workload?
+
+	 [Ans] - I think the way we did it FSR v1 worked very well, thugh it was P2, but we can check how it was done there.
+2. What are the approved LiteLLM request-rate/concurrency limits for QA and
+	 prod, and should those limits be shared across FSR v1 and v2?
+
+	 [Ans] - I do not know the answer. Check fsr v1 code and fsr-prod-ops to see if you find anything.
+
+	 [Review] - The repository and prod-ops notes show `FSR_P2_EMBED_CONCURRENCY=8`
+	 as the default, with production tuning to 4 workers and batch size 16 when
+	 rate limits occur. This is operational evidence, not an authoritative
+	 LiteLLM quota. Start production backfill conservatively at 4 workers and
+	 confirm the QA/prod gateway limits with the platform team.
+3. Should daily ingestion be one scheduled chained job, or separate scheduled
+	 P1/P2/P3 jobs with task dependencies and independent reruns?
+
+	 [Ans] - I think we can make one chained job for incremental processing, and we can also keep extra 3 jobs, so that if in case during backfill of large data, we can trigger them and run it independently, as p2 job picks from the same metadta table where chunk status is pending. Also, I need one test that incremental ingestion is really working.
+
+4. May backfill and daily ingestion overlap, or must a backfill lock the FSR v2
+	 tables and source/cache volume?
+
+	 [Ans] - backfills are done once, and at that time we can stop the daily ingestion job, also create a small runbook to mention how to run these jobs, we created one for FSR v1.
+
+5. What are the exact QA, staging, and production catalog/schema/table names and
+	 source volume paths? The current bundle defaults are not sufficient as the
+	 environment contract.
+
+	 [Ans] - table names and index name is same across all environments. for schmea ad catalog, follow the FSR v1 pattren, except for point 6 below.
+6. Is `ai_std_con_monitoring_diagnostics` under catalog `vaid`, and should run,
+	 DQ, and audit tables use one common naming convention there?
+
+	 [Ans] - yes for dev it is in vaid, for other environments it is in the respective catalogs.
+
+7. For an existing parsed JSON, should P1 reuse it when source metadata matches,
+	 overwrite it when the source changes, or always write a new run/version?
+
+	 [ans] - Give me some suggestions.
+
+	 [Decision] - Reuse without reprocessing when source fingerprint, parser
+	 version, and parsed-schema version match. When any value changes, write a
+	 new versioned artifact, atomically advance the metadata pointer, and rebuild
+	 the current equipment-map rows so P2 cannot read mixed state.
+8. Is the `title` column consumed by any API, downstream table, dashboard, or
+	 historical query outside the retrieval guide?
+
+	 [ans] - can you make a list of all columns which you think are redundant, and create a small slack message for me to ask the app team, as they are consuming this index and metadta .
+
+9. Which chunk strategy is the production decision: `section`, another v2
+	 strategy, or a still-supported migration path for existing chunks?
+
+	 [ans] - I think the latest changes we made based on preprocessor redesign - 2-FSR-v2/bug-preprocessor/redesign/proposed-design-changes.md, has the chunking changes, based on that though we call it "section", it is something like "region", check whats happening here. We should use the current chunking behaviour, but we should probaly name it better, review the code and let me know.
+
+	 [Review] - Confirmed. The effective behavior is `regions -> split each
+	 region independently -> inherit region metadata -> embed`. We should use
+	 one production implementation: `region_first:recursive`. The old
+	 `FSR_CHUNKING_STRATEGY` parameter has been removed because v2 is not yet
+	 production deployed. Defaults are now 3800 maximum characters,
+	 150-character intra-region overlap, and 450 minimum characters. P1 already
+	 emits full-document coverage with front-matter, gap, and trailing regions,
+	 and P2 now normalizes incomplete region input into explicit shared regions.
+	 The remaining design gap is child-SectionSpan-aware splitting inside very
+	 large regions. See
+	 `2-FSR-v2/chunking-with-new-preprocessor/chunk-current-behaviour`.
+
+10. What is the required behavior when a document reaches retry exhaustion:
+		alert only, quarantine, or a separate remediation job?
+
+		[ans] - there should be a separate remediation job i believe, which we dont ned to build now, but should have all failures logged properly to look at. let me know your suggestions.
+
+		[Review] - Agree. Keep the document as `chunk_status='failed'`, preserve
+		`chunk_retry_count` and `chunk_error`, and write a DQ row with
+		`failure_category='retry_exhausted'`. A future remediation job can select
+		that category without introducing a new status now. The current run/DQ
+		logging work should be completed as part of hardening.
+
+## Deliverables before implementation
+
+- Approved architecture and workflow plan.
+- Environment/config matrix and parameter removal list.
+- Parsed-volume contract and failure matrix.
+- Dead-file/unused-parameter delete list with usage evidence.
+- Table migration and retrieval compatibility plan.
+- Test, load-test, observability, rollback, and QA/prod release checklist.

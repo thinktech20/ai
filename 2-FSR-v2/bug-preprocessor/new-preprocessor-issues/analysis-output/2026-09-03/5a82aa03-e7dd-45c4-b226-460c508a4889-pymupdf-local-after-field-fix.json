@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "document_name": "5a82aa03-e7dd-45c4-b226-460c508a4889.pdf",
+    "gt_esn": "298340",
+    "all_esns": "298340",
+    "primary_esn": "298340",
+    "primary_equip_type": "Gas Turbine",
+    "outage_start_date": "10 Apr 2026",
+    "report_issued_date": "18 May 2026"
+  },
+  "hints": "Active equipment (work performed): 298340 (Gas Turbine)\nSection ESN confidence distribution: high=4, highest=1\nSection hierarchy level conflicts flagged: 0\nPrimary equipment inference: primary_equip_type=Gas Turbine, primary_esn=298340.\nIf any of outage_start_date, outage_end_date, report_issued_date, event_type are not already provided, extract them from the title page.",
+  "regions": [
+    {
+      "start": 0,
+      "end": 4849,
+      "metadata": {
+        "primary_equip_type": "shared",
+        "esn_confidence": "none",
+        "esn_source": "none",
+        "equip_type_source": "none",
+        "region_source": "front_matter",
+        "section_path": [],
+        "fallback_chain": [
+          "front_matter"
+        ]
+      }
+    },
+    {
+      "start": 4849,
+      "end": 5165,
+      "metadata": {
+        "primary_esn": "298340",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "highest",
+        "esn_source": "local_header",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (298340 | SY0048193)"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 5165,
+      "end": 6168,
+      "metadata": {
+        "primary_esn": "298340",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (298340 | SY0048193)",
+          "2 Turbine"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 6168,
+      "end": 6237,
+      "metadata": {
+        "primary_esn": "298340",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (298340 | SY0048193)",
+          "2 Turbine",
+          "## 2.2 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 6237,
+      "end": 108930,
+      "metadata": {
+        "primary_esn": "298340",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (298340 | SY0048193)",
+          "2 Turbine",
+          "## 2.2 Inlet",
+          "### 2.2.1 Inlet"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    },
+    {
+      "start": 108930,
+      "end": 118942,
+      "metadata": {
+        "primary_esn": "298340",
+        "primary_equip_type": "Gas Turbine",
+        "esn_confidence": "high",
+        "esn_source": "parent_inherit",
+        "equip_type_source": "heading",
+        "region_source": "section_span",
+        "section_path": [
+          "GAS TURBINE (298340 | SY0048193)",
+          "5 Sub Reports"
+        ],
+        "fallback_chain": [
+          "local",
+          "parent",
+          "single_type",
+          "ibat_train",
+          "none"
+        ]
+      }
+    }
+  ]
+}

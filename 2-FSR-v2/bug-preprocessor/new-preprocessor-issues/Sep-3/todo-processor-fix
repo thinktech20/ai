@@ -1,0 +1,15 @@
+
+2. Preprocessor fixes 
+Logic Bugs on Preprocessor 0821
+a. In 5a82aa03-e7dd-45c4-b226-460c508a4889, it did not assign the section 5.1 DC leakage to Generator. (Seems that only 5 DC leakage will be detected now)
+b. In 0be4a3ad-7395-41ea-8ec2-e7669c9c15aa, after 5 Electrical section, it did not flip back to Gas Turbine, seems that level "-1" headings are not used for flip back logic.
+ 
+
+Tao's findings here - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Sep-3/Review of the 0821 Preprocessor Bug List from Xujin Teams Chat.md
+
+Meeting ranscript - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Sep-3/Meeting-with-Xujin-transcript.docx
+ 
+Quick Editions to Preprocessor
+a. Bently Nevada, HMI, couplings, Alignment --> Shared
+b. Field, EL CID, LCI --> Generator
+c. PIPO, Control System, QCP --> Turbine

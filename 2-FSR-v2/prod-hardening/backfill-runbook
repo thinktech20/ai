@@ -1,0 +1,204 @@
+## FSR v2 Backfill Runbook
+
+Reference for running the one-time 18K-document backfill. Keep alongside the
+FSR v1 runbook.
+
+---
+
+### Before you start
+
+1. Confirm the daily incremental job (`PW_SDG_FSR_V2_Daily_Incremental`) is
+   **paused** for the duration of the backfill.
+2. Confirm the DDL migration has been run and `approved_date` + `job_start_date`
+   columns exist in `fsr_metadata_v2`.
+3. Confirm `fsr_parsed_docs` volume directory exists for the target environment:
+   `/Volumes/<catalog>/ai_sot_field_service_report/fsr_parsed_docs/pymupdf_v1.0/`
+
+---
+
+### Recommended partitioning
+
+Run in year cohorts to limit blast radius and simplify monitoring.
+Use the existing `FSR_V2_MIN_DOC_YEAR` + a temporary `FSR_V2_MAX_DOC_YEAR`
+override (add to notebook widget if needed), or just run sequentially by
+year by monitoring progress against `fsr_metadata_v2`.
+
+Suggested order:
+- Pass 1: 2016–2018
+- Pass 2: 2019–2020
+- Pass 3: 2021–2022
+- Pass 4: 2023–present
+
+---
+
+### Understanding the discovered-vs-processed gap
+
+Discovery **does not date-filter** — it lists the volumes and sees only
+filenames; the document's year lives inside the PDF. So Stage 1 logs a count
+far larger than the number that will actually be processed (dev: 50,175
+discovered vs ~22K eligible). This is expected, not a misconfiguration.
+
+Each queued doc gets a **page-1 probe** (one page opened, not a full parse).
+Out-of-range docs are written back as `metadata_status='date_filtered'`, which
+is terminal: the retry query never re-claims them and discovery skips them on
+every later run, so they cost nothing after the first pass.
+
+Where the real numbers appear:
+
+```
+Stage 1 complete: N docs queued ... BEFORE the date filter
+P1 progress: X/N screened | eligible-written=… date-filtered=… failed=…
+P1 totals: queued=… | eligible/succeeded=… | date-filtered=… | failed=…
+```
+
+and in `fsr_run_log_v2` (`docs_claimed`, `docs_succeeded`, `docs_date_filtered`).
+
+Live queue state:
+
+```sql
+SELECT metadata_status, COUNT(*)
+FROM fsr_metadata_v2 GROUP BY 1;
+-- completed | date_filtered | failed | pending(0 when drained)
+```
+
+---
+
+### Widening the year range later (reclaiming date-filtered docs)
+
+**Clearing `FSR_V2_MIN_DOC_YEAR` alone will NOT backfill previously-filtered
+documents.** They are excluded from discovery (their id is already in the
+table) *and* from the retry query (status is not `pending`/`failed`), so they
+would be silently skipped forever.
+
+Reclaim them explicitly. This is metadata-only — no re-parsing, no deletes, and
+already-completed documents are untouched:
+
+```sql
+-- Full reclaim (filter removed entirely)
+UPDATE <catalog>.ai_sot_field_service_report.fsr_metadata_v2
+SET metadata_status = 'pending', updated_at = current_timestamp()
+WHERE metadata_status = 'date_filtered';
+
+-- Surgical reclaim (bound widened, e.g. 2016 -> 2010): only rows that now
+-- qualify, so docs still out of range are not re-probed just to be re-rejected
+UPDATE <catalog>.ai_sot_field_service_report.fsr_metadata_v2
+SET metadata_status = 'pending', updated_at = current_timestamp()
+WHERE metadata_status = 'date_filtered'
+  AND doc_year >= 2010;
+```
+
+Change the year parameter **first** (or in the same run), otherwise the
+reclaimed rows are simply filtered again. Preview the blast radius before
+running:
+
+```sql
+SELECT doc_year, COUNT(*) FROM fsr_metadata_v2
+WHERE metadata_status = 'date_filtered' GROUP BY doc_year ORDER BY doc_year;
+```
+
+---
+
+### Running a backfill pass
+
+Use **`PW_SDG_FSR_V2_Ingestion`** (the independent job, not the daily incremental)
+so you can control target sets and re-trigger P1/P2/P3 independently.
+
+**Step 1 — P1 (metadata extraction)**
+
+Trigger `PW_SDG_FSR_V2_Metadata` or the P1 task in `PW_SDG_FSR_V2_Ingestion`:
+
+```
+FSR_V2_P1_WORKERS       = 4         # conservative start; tune to 8 if no 429s
+FSR_V2_MIN_DOC_YEAR     = 2016
+FSR_TARGET_PDF_NAMES    =           # empty = process all eligible from volumes
+FSR_SOURCE_VOLUME_PATHS = <env vol paths>
+```
+
+Monitor P1 via driver logs and:
+```sql
+SELECT metadata_status, COUNT(*) FROM fsr_metadata_v2 GROUP BY 1
+```
+
+Wait for `pending` count to reach 0 (or retry cap) before moving to P2.
+
+**Step 2 — P2 (chunking + embedding)**
+
+Trigger `PW_SDG_FSR_V2_Chunking` or P2 task in `PW_SDG_FSR_V2_Ingestion`:
+
+```
+FSR_P2_EMBED_CONCURRENCY = 4       # start conservative; tune up if no rate limits
+FSR_P2_BATCH_SIZE        = 20
+```
+
+Monitor:
+```sql
+SELECT chunk_status, COUNT(*) FROM fsr_metadata_v2 GROUP BY 1
+```
+
+**Step 3 — P3 (VS index sync)**
+
+Trigger `PW_SDG_FSR_V2_VS_Index` with `INDEX_MODE = sync`.
+
+---
+
+### Monitoring during the run
+
+Check for failures:
+```sql
+-- Documents that failed P1
+SELECT document_id, metadata_error, metadata_retry_count
+FROM fsr_metadata_v2
+WHERE metadata_status = 'failed'
+ORDER BY scraped_at DESC LIMIT 50;
+
+-- Documents that failed P2
+SELECT document_id, chunk_error, chunk_retry_count
+FROM fsr_metadata_v2
+WHERE chunk_status = 'failed'
+ORDER BY chunked_at DESC LIMIT 50;
+
+-- DQ log for failure categories
+SELECT failure_category, COUNT(*) AS n
+FROM fsr_data_quality_log_v2
+WHERE run_id = '<run_id>'
+GROUP BY 1 ORDER BY n DESC;
+```
+
+Check for stale in-progress docs (should be empty after a run completes):
+```sql
+SELECT document_id, chunked_at
+FROM fsr_metadata_v2
+WHERE chunk_status = 'in_progress'
+  AND chunked_at < current_timestamp() - INTERVAL 60 MINUTES;
+```
+
+---
+
+### After the backfill
+
+1. Re-enable the daily incremental job.
+2. Run the retrieval validation notebook for a sample of ESNs to confirm VS
+   readiness.
+3. Check that `fsr_run_log_v2` has summary rows for all P1 and P2 runs.
+4. Record total doc count, failure rate, and VS doc count in this file.
+
+---
+
+### Rollback
+
+If the backfill produces bad data:
+1. Pause the daily incremental job.
+2. Identify affected `document_id` set.
+3. Reset their status:
+   ```sql
+   UPDATE fsr_metadata_v2
+   SET metadata_status = 'pending', chunk_status = 'pending',
+       metadata_error = NULL, chunk_error = NULL,
+       metadata_retry_count = 0, chunk_retry_count = 0
+   WHERE document_id IN (<affected_ids>);
+   ```
+4. Delete their chunk rows:
+   ```sql
+   DELETE FROM fsr_chunks_v2 WHERE document_id IN (<affected_ids>);
+   ```
+5. Re-run P1 → P2 → P3 for the affected set using `FSR_TARGET_PDF_NAMES`.

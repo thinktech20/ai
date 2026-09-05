@@ -1,0 +1,22 @@
+9/1:
+
+first priority:
+ingest 22K docs in dev and QA
+
+1. Identify the URA app retriver logic - 2-FSR-v2/retrieval/current-rertriever-algo-ura.md, and check if shared makes it different for these docs -
+d82afaae-8979-436c-bb4e-92aaa8b48f62_605012157-52123-298340-final_master_report
+ 
+d1348ae1-b54c-418f-9833-b0ce99bcc899_605012157-52122-298339-Final_Master_Report
+
+for the data readiness section.
+
+3 Identify Ambiguous sections
+LLM related Experiments
+a. Appendix, Attachment, Sub-reports --> "Ambiguous" tag --> URA/separate LLM
+b. Embedded ToC, final_master_report --> LLM
+
+https://teams.microsoft.com/l/meetingrecap?driveId=b%21R5vq9KdxU0izU18mvHyyPo_pbTxTtl9JmhWR00cC_6xJVZ2mLNI0QLCY94li8lKM&driveItemId=01DRQGXN2CFVQAOC3YZ5HKUAXUM7ZG2DSU&sitePath=https%3A%2F%2Fspo-mydrive.ge.com%2F%3Av%3A%2Fg%2Fpersonal%2F560060992_ge_com%2FIQBCLWAHC3jPTqoC9GfybQ5UAbozXij0N-vlrIXbrcqIzMU&fileUrl=https%3A%2F%2Fspo-mydrive.ge.com%2F%3Av%3A%2Fg%2Fpersonal%2F560060992_ge_com%2FIQBCLWAHC3jPTqoC9GfybQ5UAbozXij0N-vlrIXbrcqIzMU&threadId=19%3A5e764817b2ef48bd96f53c866b2f2b9e%40thread.v2&callId=c71ef171-78ef-4ba4-9bcc-d4b87cc6e404&threadType=GroupChat&meetingType=Unknown&subType=RecapSharingLink_RecapChiclet
+ 
+
+ 
+

@@ -1,0 +1,42 @@
+Account ID
+7539-2029-1680
+Account name
+Access denied
+Account color
+Access denied
+Account alias
+pwr-datalake
+Federated user
+bu-dna-gev-af-dev-executor/560060992
+
+
+bu-dna-dao-mwaa-gpr-dev-02
+_qa jobs
+
+PW_SDG_FSR_V2_DDL
+PW_SDG_FSR_V2_Metadata
+PW_SDG_FSR_V2_Chunking
+PW_SDG_FSR_V2_VS_Index
+
+
+_qa
+vaiq.ai_sot_field_service_report.fsr_data_quality_log_v2
+vaiq.ai_sot_field_service_report.fsr_document_equipment_map_v2
+vaiq.ai_sot_field_service_report.fsr_metadata_v2
+vaiq.ai_sot_field_service_report.fsr_run_log_v2
+vaiq.ai_std_con_field_service_report.fsr_chunks_v2
+vaiq.ai_std_con_field_service_report.fsr_data_quality_log_v2
+vaiq.ai_std_con_field_service_report.fsr_document_equipment_map_v2
+vaiq.ai_std_con_field_service_report.fsr_metadata_v2
+vaiq.ai_std_con_field_service_report.fsr_run_log_v2
+
+
+Actual tables
+
+FSR v2 storage tables actually configured:
+
+vaiq.ai_std_con_field_service_report.fsr_metadata_v2
+vaiq.ai_std_con_field_service_report.fsr_chunks_v2
+vaiq.ai_std_con_field_service_report.fsr_document_equipment_map_v2
+vaiq.ai_sot_field_service_report.fsr_run_log_v2
+vaiq.ai_sot_field_service_report.fsr_data_quality_log_v2

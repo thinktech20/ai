@@ -1,0 +1,576 @@
+## FSR v2 Prod-Hardening — Verification Plan
+
+**Branch:** `fsr_v2` in `pw_sdg_ai_ser_repo`
+**Last updated:** 2026-08-31
+
+**Pre-requisite (both tracks):** Run the FSR v2 DDL notebook with
+`RESET_FSR_V2 = true` to drop and recreate all tables and the VS index
+before the first ingestion run. This picks up the new `approved_date`,
+`job_start_date` columns and the `ai_std_con_monitoring_diagnostics` table paths.
+Each track has its own explicit DDL step below.
+
+Two tracks to run before QA promotion. Both run against the shared dev tables,
+so they must be run **sequentially, Track 1 first** — Track 2's DDL reset wipes
+whatever Track 1 left behind. Track 1 validates the new concurrency, LLM
+batching, and date-filter code on a small doc set; Track 2 validates end-to-end
+pipeline correctness using the full known-good doc set.
+
+---
+
+### Track 1 — Concurrency and date filter (dev tables, small doc set)
+
+**Goal:** confirm that P1 concurrency (`FSR_V2_P1_WORKERS=4`), the pre-LLM
+date filter, and P2 chunk idempotency work correctly, on a small doc set that
+keeps the feedback loop short.
+
+**Tables:** `vaid.ai_sot_field_service_report.fsr_metadata_v2`,
+`vaid.ai_std_con_field_service_report.fsr_chunks_v2`,
+`vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2`
+
+**Parsed doc volume:** `/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs`
+
+**Doc set:** use a small representative subset — 8–10 docs from Batch A below,
+covering a mix of equipment types and including at least one doc with an
+outage year < 2016 to validate the date filter.
+
+#### Steps
+
+1. Run DDL notebook against dev tables with `RESET_FSR_V2 = true`
+   to drop and recreate all tables and the VS index from scratch.
+
+```python
+dbutils.widgets.removeAll()
+dbutils.widgets.text("FSR_PARSED_DOC_VOLUME_ROOT", "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs")
+dbutils.widgets.text("METADATA_TABLE_V2",           "vaid.ai_sot_field_service_report.fsr_metadata_v2")
+dbutils.widgets.text("CHUNK_TABLE_V2",              "vaid.ai_std_con_field_service_report.fsr_chunks_v2")
+dbutils.widgets.text("DOC_EQUIPMENT_MAP_TABLE_V2",  "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2")
+dbutils.widgets.text("RUN_LOG_TABLE_V2",            "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2")
+dbutils.widgets.text("DQ_LOG_TABLE_V2",             "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2")
+dbutils.widgets.text("VS_INDEX_V2",                 "vaid.ai_std_con_field_service_report.fsr_vs_index_v2")
+dbutils.widgets.text("VS_ENDPOINT_V2",              "pw-ser-sdg-vector-search")
+dbutils.widgets.text("RESET_FSR_V2",               "true")
+```
+
+> **Running from a job?** Paste these into the job's notebook parameters JSON:
+```json
+{
+  "FSR_PARSED_DOC_VOLUME_ROOT": "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs",
+  "METADATA_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_metadata_v2",
+  "CHUNK_TABLE_V2": "vaid.ai_std_con_field_service_report.fsr_chunks_v2",
+  "DOC_EQUIPMENT_MAP_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2",
+  "RUN_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2",
+  "DQ_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2",
+  "VS_INDEX_V2": "vaid.ai_std_con_field_service_report.fsr_vs_index_v2",
+  "VS_ENDPOINT_V2": "pw-ser-sdg-vector-search",
+  "RESET_FSR_V2": "true"
+}
+```
+
+2. Run P1 (`nb_sdg_fsr_v2_metadata`) with the small doc set:
+
+```python
+dbutils.widgets.removeAll()
+dbutils.widgets.text("jb_env",                       "dev")
+dbutils.widgets.text("METADATA_TABLE_V2",            "vaid.ai_sot_field_service_report.fsr_metadata_v2")
+dbutils.widgets.text("DOC_EQUIPMENT_MAP_TABLE_V2",   "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2")
+dbutils.widgets.text("RUN_LOG_TABLE_V2",             "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2")
+dbutils.widgets.text("DQ_LOG_TABLE_V2",              "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2")
+dbutils.widgets.text("INPUT_MODE",                   "volume_list")
+dbutils.widgets.text("FSR_SOURCE_VOLUME_PATHS",      "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual,/Volumes/vaid/ai_std_con_field_service_report/fsr_v2_test")
+dbutils.widgets.text("FSR_TARGET_PDF_NAMES",         "5b688732-39f2-48d2-a887-3239f258d28b,fcb1511e-596a-4a56-b151-1e596afa569c,796f4d53-a8ad-42e1-af4d-53a8add2e1a4,a1f6ca9b-f5db-4f22-b6ca-9bf5db7f227a,9e279e5a-a24e-4ebd-a79e-5aa24efebd04,cdd0cca4-93ba-43b0-98e5-3d1ea2312c19,b775cf29-8b42-4a83-af21-53075fef0802,35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270t483-final_master_report")
+dbutils.widgets.text("FSR_PARSED_DOC_VOLUME_ROOT",   "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs")
+dbutils.widgets.text("FSR_V2_P1_WORKERS",            "4")
+dbutils.widgets.text("FSR_V2_P1_LLM_BATCH_SIZE",    "5")
+dbutils.widgets.text("FSR_V2_MIN_DOC_YEAR",          "2016")
+dbutils.widgets.text("FSR_V2_PARSER_VERSION",        "pymupdf_v1.0")
+dbutils.widgets.text("FSR_V2_METADATA_PROCESSOR_VERSION", "v2")
+dbutils.widgets.text("FSR_IBAT_TABLE",               "vgpd.prm_std_views.ibat_equipment_mst")
+dbutils.widgets.text("FSR_EVENT_VISION_TABLE",       "vgpd.fsr_std_views.eventmgmt_event_vision_sot")
+dbutils.widgets.text("FSR_PSOT_TABLE",               "vgpd.fsr_std_views.fsr_field_vision_field_services_report_psot")
+dbutils.widgets.text("FSR_PDF_REF_VIEW",             "vgpp.fsr_std_views.fsr_pdf_ref")
+dbutils.widgets.text("FSR_LLM_MODEL",                "azure-gpt-5-2")
+dbutils.widgets.text("LITELLM_BASE_URL",             "https://dev-gateway.apps.gevernova.net")
+dbutils.widgets.text("LITELLM_API_KEY",              "sk-cjRRha3Ejczz8AmnJKyQxA")
+```
+
+> **Running from a job?** Paste these into the job's notebook parameters JSON:
+```json
+{
+  "jb_env": "dev",
+  "METADATA_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_metadata_v2",
+  "DOC_EQUIPMENT_MAP_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2",
+  "RUN_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2",
+  "DQ_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2",
+  "INPUT_MODE": "volume_list",
+  "FSR_SOURCE_VOLUME_PATHS": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual,/Volumes/vaid/ai_std_con_field_service_report/fsr_v2_test",
+  "FSR_TARGET_PDF_NAMES": "5b688732-39f2-48d2-a887-3239f258d28b,fcb1511e-596a-4a56-b151-1e596afa569c,796f4d53-a8ad-42e1-af4d-53a8add2e1a4,a1f6ca9b-f5db-4f22-b6ca-9bf5db7f227a,9e279e5a-a24e-4ebd-a79e-5aa24efebd04,cdd0cca4-93ba-43b0-98e5-3d1ea2312c19,b775cf29-8b42-4a83-af21-53075fef0802,35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270t483-final_master_report",
+  "FSR_PARSED_DOC_VOLUME_ROOT": "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs",
+  "FSR_V2_P1_WORKERS": "4",
+  "FSR_V2_P1_LLM_BATCH_SIZE": "5",
+  "FSR_V2_MIN_DOC_YEAR": "2016",
+  "FSR_V2_PARSER_VERSION": "pymupdf_v1.0",
+  "FSR_V2_METADATA_PROCESSOR_VERSION": "v2",
+  "FSR_IBAT_TABLE": "vgpd.prm_std_views.ibat_equipment_mst",
+  "FSR_EVENT_VISION_TABLE": "vgpd.fsr_std_views.eventmgmt_event_vision_sot",
+  "FSR_PSOT_TABLE": "vgpd.fsr_std_views.fsr_field_vision_field_services_report_psot",
+  "FSR_LLM_MODEL": "azure-gpt-5-2",
+  "LITELLM_BASE_URL": "https://dev-gateway.apps.gevernova.net",
+  "LITELLM_API_KEY": "sk-cjRRha3Ejczz8AmnJKyQxA"
+}
+```
+
+> `FSR_PDF_REF_VIEW` is **not** a declared job parameter on
+> `PW_SDG_FSR_V2_Metadata`; passing it makes `run-now` fail. It comes from the
+> bundle variable `fsr_pdf_ref_view` instead. Same for `FSR_EMBEDDING_DIMENSION`
+> on the chunking job.
+
+3. **Verify concurrency and LLM batching worked:**
+   - Driver logs show `P1 workers = 4` and `LLM batch 1/N (M docs)`.
+   - Stage 2-3 progress lines arrive out of order (concurrent).
+   - All docs present in `fsr_metadata_v2` with `metadata_status =
+     'completed'` (except any date-filtered docs, which must be absent).
+
+4. **Verify date filter and new date columns:**
+   - Any doc with all date fields < 2016 must NOT appear in the metadata table.
+   - Driver logs show `[DATE-FILTER/pre-LLM]` or `[DATE-FILTER/post-LLM]`
+     lines for filtered docs, with the source label (e.g. `job_start_date`).
+   - For passed docs: `job_start_date` and `approved_date` columns populated
+     where those labels appear on the cover page; all date values in YYYY-MM-DD.
+
+5. Run P2 (`nb_sdg_fsr_v2_chunks`) against dev tables:
+
+```python
+dbutils.widgets.removeAll()
+dbutils.widgets.text("jb_env",                 "dev")
+dbutils.widgets.text("METADATA_TABLE_V2",      "vaid.ai_sot_field_service_report.fsr_metadata_v2")
+dbutils.widgets.text("CHUNK_TABLE_V2",         "vaid.ai_std_con_field_service_report.fsr_chunks_v2")
+dbutils.widgets.text("FSR_P2_BATCH_SIZE",      "20")
+dbutils.widgets.text("FSR_P2_MAX_RETRIES",     "3")
+dbutils.widgets.text("FSR_P2_MAX_ITERATIONS",  "0")
+dbutils.widgets.text("FSR_CHUNK_SIZE",         "3800")
+dbutils.widgets.text("FSR_CHUNK_OVERLAP",      "150")
+dbutils.widgets.text("FSR_MIN_CHUNK_SIZE",     "450")
+dbutils.widgets.text("FSR_EMBEDDING_MODEL",    "azure-text-embedding-3-large-1")
+dbutils.widgets.text("FSR_EMBEDDING_DIMENSION", "3072")
+dbutils.widgets.text("LITELLM_BASE_URL",       "https://dev-gateway.apps.gevernova.net")
+dbutils.widgets.text("LITELLM_API_KEY",        "sk-cjRRha3Ejczz8AmnJKyQxA")
+```
+
+> **Running from a job?** Paste these into the job's notebook parameters JSON:
+```json
+{
+  "jb_env": "dev",
+  "METADATA_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_metadata_v2",
+  "CHUNK_TABLE_V2": "vaid.ai_std_con_field_service_report.fsr_chunks_v2",
+  "FSR_P2_BATCH_SIZE": "20",
+  "FSR_P2_MAX_RETRIES": "3",
+  "FSR_P2_MAX_ITERATIONS": "0",
+  "FSR_CHUNK_SIZE": "3800",
+  "FSR_CHUNK_OVERLAP": "150",
+  "FSR_MIN_CHUNK_SIZE": "450",
+  "FSR_EMBEDDING_MODEL": "azure-text-embedding-3-large-1",
+  "FSR_EMBEDDING_DIMENSION": "3072",
+  "LITELLM_BASE_URL": "https://dev-gateway.apps.gevernova.net",
+  "LITELLM_API_KEY": "sk-cjRRha3Ejczz8AmnJKyQxA"
+}
+```
+
+6. **Verify chunk idempotency:**
+   - Re-run P2 on the same docs a second time.
+   - Assert chunk row count is unchanged (no duplicates from the `WHEN NOT
+     MATCHED BY SOURCE ... THEN DELETE` fix).
+   - Assert no docs remain `in_progress` after completion.
+
+7. **Verify LLM failure handling:**
+   - Temporarily set `LITELLM_BASE_URL` to an invalid URL for one targeted doc.
+   - Assert that doc lands in `metadata_status = 'failed'` with an error message,
+     not `completed` with empty fields.
+   - Restore the URL and rerun; assert the doc is retried and completes.
+
+---
+
+### Track 2 — Full dev pipeline (dev tables)
+
+**Goal:** validate end-to-end correctness for the full known-good doc set
+in the shared dev tables (`vaid.*`).
+
+**Tables:** `vaid.ai_sot_field_service_report.fsr_metadata_v2`,
+`vaid.ai_std_con_field_service_report.fsr_chunks_v2`,
+`vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2`
+
+**Doc set — Batch A (27 docs):**
+```
+a1f6ca9b-f5db-4f22-b6ca-9bf5db7f227a
+dd49968b-f9f3-4190-8996-8bf9f3b190a4
+a7d1eb20-01c4-4d3a-91eb-2001c4bd3a42
+7bd46ac1-a114-45df-bbd1-9232920f34a6
+4638f199-976b-4b59-b8f1-99976beb5920
+5a80e76a-3286-45bb-80e7-6a328655bba8
+2e99bef9-224d-4980-99be-f9224d698022
+2e985aa3-4262-4a92-985a-a34262ca9215
+d633b55c-0a89-4448-b945-4d5c3e5ecedc
+c067602d-4b8f-4dd9-99e4-670db03c6d06
+09aee7cd-b42f-40c5-aee7-cdb42f60c5ec
+5f1ac3d0-eed1-4135-9ac3-d0eed11135f7
+90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7
+5a82aa03-e7dd-45c4-b226-460c508a4889
+a9d4cff6-3586-4d8c-a26b-09754468d833_605013480-50051-298340-final_master_report
+d82afaae-8979-436c-bb4e-92aaa8b48f62_605012157-52123-298340-final_master_report
+be53e9a9-a3be-457b-a04f-2ed5d0387a1e
+d1348ae1-b54c-418f-9833-b0ce99bcc899_605012157-52122-298339-final_master_report
+2b66a60e-8501-4560-adf8-192af8d7a04d
+0208ea9c-327a-40fc-88ea-9c327a90fc5c
+f93401b3-da8a-4e45-b401-b3da8a5e4552
+7a977117-fe94-4387-bac0-de48a2e45f5c
+bab97474-e2af-4f40-8251-346a69bb5619_605012901-526-298006-final_master_report
+8675f3cf-c109-461b-b7b2-70d5f45adf87
+cc9fe3d7-87cc-4687-9fe3-d787cc3687b3
+0be4a3ad-7395-41ea-8ec2-e7669c9c15aa
+bdd56c7a-ebe5-4bf7-904a-5bb63091ba20
+```
+
+**Doc set — Batch B (26 docs):**
+```
+4597a853-5ffb-40bb-b0be-bd6307b0acdc
+27314604-ed52-402f-921f-34737a048841
+4a56cb21-fd6b-4300-ac1b-62cf53b868a0
+11338269-9d7c-4865-bfcf-1a4db9014acf
+af693a98-1e5c-499d-aa10-cccc54885c64
+b775cf29-8b42-4a83-af21-53075fef0802
+9e279e5a-a24e-4ebd-a79e-5aa24efebd04
+cdd0cca4-93ba-43b0-98e5-3d1ea2312c19
+69dfe261-34b0-4740-ab89-498e7d0072df
+d9b6c08b-d098-4939-a549-d113964e3150
+796f4d53-a8ad-42e1-af4d-53a8add2e1a4
+5b688732-39f2-48d2-a887-3239f258d28b
+fcb1511e-596a-4a56-b151-1e596afa569c
+b7b347fd-0b59-4c67-b609-9ad2c35105cc
+35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270t483-final_master_report
+806975e9-062b-4da3-9ae7-5881a5daffd1_204049598-39387-297652-final_master-report
+3e91b865-2aaa-4233-ae4a-3e15ba641f96_605007134-180498-270t483-final_master_report
+b1cdbc80-364f-4240-8dbc-80364f1240fa
+3f5a1ea8-8f35-4e97-9a1e-a88f358e9768
+32689520-afed-4dd4-a895-20afed7dd4d2
+b25c94da-d954-4283-9c94-dad954a28307
+d3b1da8a-03b4-4ea6-aa7b-0482edb532ce
+111adf26-dcec-4b33-9adf-26dcec6b334e
+unit_10b_borescope_inspection_spring_2026_
+3d156a24-2bb9-4ccd-a81e-c122c39aa3ac
+65f6535e-e26a-4e7a-bd41-6cdf4eaf1efa
+```
+
+#### Steps
+
+1. Run the FSR v2 DDL notebook against dev tables with `RESET_FSR_V2 = true`
+   to drop and recreate all tables and the VS index.
+
+```python
+dbutils.widgets.removeAll()
+dbutils.widgets.text("FSR_PARSED_DOC_VOLUME_ROOT", "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs")
+dbutils.widgets.text("METADATA_TABLE_V2",           "vaid.ai_sot_field_service_report.fsr_metadata_v2")
+dbutils.widgets.text("CHUNK_TABLE_V2",              "vaid.ai_std_con_field_service_report.fsr_chunks_v2")
+dbutils.widgets.text("DOC_EQUIPMENT_MAP_TABLE_V2",  "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2")
+dbutils.widgets.text("RUN_LOG_TABLE_V2",            "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2")
+dbutils.widgets.text("DQ_LOG_TABLE_V2",             "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2")
+dbutils.widgets.text("VS_INDEX_V2",                 "vaid.ai_std_con_field_service_report.fsr_vs_index_v2")
+dbutils.widgets.text("VS_ENDPOINT_V2",              "pw-ser-sdg-vector-search")
+dbutils.widgets.text("RESET_FSR_V2",               "true")
+```
+
+> **Running from a job?** Paste these into the job's notebook parameters JSON:
+```json
+{
+  "FSR_PARSED_DOC_VOLUME_ROOT": "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs",
+  "METADATA_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_metadata_v2",
+  "CHUNK_TABLE_V2": "vaid.ai_std_con_field_service_report.fsr_chunks_v2",
+  "DOC_EQUIPMENT_MAP_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2",
+  "RUN_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2",
+  "DQ_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2",
+  "VS_INDEX_V2": "vaid.ai_std_con_field_service_report.fsr_vs_index_v2",
+  "VS_ENDPOINT_V2": "pw-ser-sdg-vector-search",
+  "RESET_FSR_V2": "true"
+}
+```
+
+```python
+dbutils.widgets.removeAll()
+dbutils.widgets.text("jb_env",                       "dev")
+dbutils.widgets.text("METADATA_TABLE_V2",            "vaid.ai_sot_field_service_report.fsr_metadata_v2")
+dbutils.widgets.text("DOC_EQUIPMENT_MAP_TABLE_V2",   "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2")
+dbutils.widgets.text("RUN_LOG_TABLE_V2",             "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2")
+dbutils.widgets.text("DQ_LOG_TABLE_V2",              "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2")
+dbutils.widgets.text("INPUT_MODE",                   "volume_list")
+dbutils.widgets.text("FSR_SOURCE_VOLUME_PATHS",      "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual,/Volumes/vaid/ai_std_con_field_service_report/fsr_v2_test")
+dbutils.widgets.text("FSR_TARGET_PDF_NAMES",         "a1f6ca9b-f5db-4f22-b6ca-9bf5db7f227a,dd49968b-f9f3-4190-8996-8bf9f3b190a4,a7d1eb20-01c4-4d3a-91eb-2001c4bd3a42,7bd46ac1-a114-45df-bbd1-9232920f34a6,4638f199-976b-4b59-b8f1-99976beb5920,5a80e76a-3286-45bb-80e7-6a328655bba8,2e99bef9-224d-4980-99be-f9224d698022,2e985aa3-4262-4a92-985a-a34262ca9215,d633b55c-0a89-4448-b945-4d5c3e5ecedc,c067602d-4b8f-4dd9-99e4-670db03c6d06,09aee7cd-b42f-40c5-aee7-cdb42f60c5ec,5f1ac3d0-eed1-4135-9ac3-d0eed11135f7,90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7,5a82aa03-e7dd-45c4-b226-460c508a4889,a9d4cff6-3586-4d8c-a26b-09754468d833_605013480-50051-298340-final_master_report,d82afaae-8979-436c-bb4e-92aaa8b48f62_605012157-52123-298340-final_master_report,be53e9a9-a3be-457b-a04f-2ed5d0387a1e,d1348ae1-b54c-418f-9833-b0ce99bcc899_605012157-52122-298339-final_master_report,2b66a60e-8501-4560-adf8-192af8d7a04d,0208ea9c-327a-40fc-88ea-9c327a90fc5c,f93401b3-da8a-4e45-b401-b3da8a5e4552,7a977117-fe94-4387-bac0-de48a2e45f5c,bab97474-e2af-4f40-8251-346a69bb5619_605012901-526-298006-final_master_report,8675f3cf-c109-461b-b7b2-70d5f45adf87,cc9fe3d7-87cc-4687-9fe3-d787cc3687b3,0be4a3ad-7395-41ea-8ec2-e7669c9c15aa,bdd56c7a-ebe5-4bf7-904a-5bb63091ba20")
+dbutils.widgets.text("FSR_PARSED_DOC_VOLUME_ROOT",   "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs")
+dbutils.widgets.text("FSR_V2_P1_WORKERS",            "4")
+dbutils.widgets.text("FSR_V2_P1_LLM_BATCH_SIZE",    "10")
+dbutils.widgets.text("FSR_V2_MIN_DOC_YEAR",          "2016")
+dbutils.widgets.text("FSR_V2_PARSER_VERSION",        "pymupdf_v1.0")
+dbutils.widgets.text("FSR_V2_METADATA_PROCESSOR_VERSION", "v2")
+dbutils.widgets.text("FSR_IBAT_TABLE",               "vgpd.prm_std_views.ibat_equipment_mst")
+dbutils.widgets.text("FSR_EVENT_VISION_TABLE",       "vgpd.fsr_std_views.eventmgmt_event_vision_sot")
+dbutils.widgets.text("FSR_PSOT_TABLE",               "vgpd.fsr_std_views.fsr_field_vision_field_services_report_psot")
+dbutils.widgets.text("FSR_PDF_REF_VIEW",             "vgpp.fsr_std_views.fsr_pdf_ref")
+dbutils.widgets.text("FSR_LLM_MODEL",                "azure-gpt-5-2")
+dbutils.widgets.text("LITELLM_BASE_URL",             "https://dev-gateway.apps.gevernova.net")
+dbutils.widgets.text("LITELLM_API_KEY",              "sk-cjRRha3Ejczz8AmnJKyQxA")
+```
+
+> **Running from a job?** Paste these into the job's notebook parameters JSON:
+```json
+{
+  "jb_env": "dev",
+  "METADATA_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_metadata_v2",
+  "DOC_EQUIPMENT_MAP_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2",
+  "RUN_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_run_log_v2",
+  "DQ_LOG_TABLE_V2": "vaid.ai_std_con_monitoring_diagnostics.fsr_data_quality_log_v2",
+  "INPUT_MODE": "volume_list",
+  "FSR_SOURCE_VOLUME_PATHS": "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual,/Volumes/vaid/ai_std_con_field_service_report/fsr_v2_test",
+  "FSR_TARGET_PDF_NAMES": "a1f6ca9b-f5db-4f22-b6ca-9bf5db7f227a,dd49968b-f9f3-4190-8996-8bf9f3b190a4,a7d1eb20-01c4-4d3a-91eb-2001c4bd3a42,7bd46ac1-a114-45df-bbd1-9232920f34a6,4638f199-976b-4b59-b8f1-99976beb5920,5a80e76a-3286-45bb-80e7-6a328655bba8,2e99bef9-224d-4980-99be-f9224d698022,2e985aa3-4262-4a92-985a-a34262ca9215,d633b55c-0a89-4448-b945-4d5c3e5ecedc,c067602d-4b8f-4dd9-99e4-670db03c6d06,09aee7cd-b42f-40c5-aee7-cdb42f60c5ec,5f1ac3d0-eed1-4135-9ac3-d0eed11135f7,90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7,5a82aa03-e7dd-45c4-b226-460c508a4889,a9d4cff6-3586-4d8c-a26b-09754468d833_605013480-50051-298340-final_master_report,d82afaae-8979-436c-bb4e-92aaa8b48f62_605012157-52123-298340-final_master_report,be53e9a9-a3be-457b-a04f-2ed5d0387a1e,d1348ae1-b54c-418f-9833-b0ce99bcc899_605012157-52122-298339-final_master_report,2b66a60e-8501-4560-adf8-192af8d7a04d,0208ea9c-327a-40fc-88ea-9c327a90fc5c,f93401b3-da8a-4e45-b401-b3da8a5e4552,7a977117-fe94-4387-bac0-de48a2e45f5c,bab97474-e2af-4f40-8251-346a69bb5619_605012901-526-298006-final_master_report,8675f3cf-c109-461b-b7b2-70d5f45adf87,cc9fe3d7-87cc-4687-9fe3-d787cc3687b3,0be4a3ad-7395-41ea-8ec2-e7669c9c15aa,bdd56c7a-ebe5-4bf7-904a-5bb63091ba20",
+  "FSR_PARSED_DOC_VOLUME_ROOT": "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs",
+  "FSR_V2_P1_WORKERS": "4",
+  "FSR_V2_P1_LLM_BATCH_SIZE": "10",
+  "FSR_V2_MIN_DOC_YEAR": "2016",
+  "FSR_V2_PARSER_VERSION": "pymupdf_v1.0",
+  "FSR_V2_METADATA_PROCESSOR_VERSION": "v2",
+  "FSR_IBAT_TABLE": "vgpd.prm_std_views.ibat_equipment_mst",
+  "FSR_EVENT_VISION_TABLE": "vgpd.fsr_std_views.eventmgmt_event_vision_sot",
+  "FSR_PSOT_TABLE": "vgpd.fsr_std_views.fsr_field_vision_field_services_report_psot",
+  "FSR_PDF_REF_VIEW": "vgpp.fsr_std_views.fsr_pdf_ref",
+  "FSR_LLM_MODEL": "azure-gpt-5-2",
+  "LITELLM_BASE_URL": "https://dev-gateway.apps.gevernova.net",
+  "LITELLM_API_KEY": "sk-cjRRha3Ejczz8AmnJKyQxA"
+}
+```**
+   - All 27 docs have `metadata_status = 'completed'`.
+   - `parsed_volume_path` is populated for all docs.
+   - `primary_esn` is non-null for all docs.
+   - All date columns (`outage_start_date`, `job_start_date`, `approved_date`,
+     `report_issued_date`) are in YYYY-MM-DD format where populated.
+   - No docs with all date fields < 2016 (default `FSR_V2_MIN_DOC_YEAR=2016`).
+   - Equipment map rows present for all completed docs.
+   - Driver logs show LLM batch calls: `LLM batch 1/N`.
+
+4. Run P2 on the Batch A output:
+
+```python
+dbutils.widgets.removeAll()
+dbutils.widgets.text("jb_env",                 "dev")
+dbutils.widgets.text("METADATA_TABLE_V2",      "vaid.ai_sot_field_service_report.fsr_metadata_v2")
+dbutils.widgets.text("CHUNK_TABLE_V2",         "vaid.ai_std_con_field_service_report.fsr_chunks_v2")
+dbutils.widgets.text("FSR_P2_BATCH_SIZE",      "20")
+dbutils.widgets.text("FSR_P2_MAX_RETRIES",     "3")
+dbutils.widgets.text("FSR_P2_MAX_ITERATIONS",  "0")
+dbutils.widgets.text("FSR_CHUNK_SIZE",         "3800")
+dbutils.widgets.text("FSR_CHUNK_OVERLAP",      "150")
+dbutils.widgets.text("FSR_MIN_CHUNK_SIZE",     "450")
+dbutils.widgets.text("FSR_EMBEDDING_MODEL",    "azure-text-embedding-3-large-1")
+dbutils.widgets.text("FSR_EMBEDDING_DIMENSION", "3072")
+dbutils.widgets.text("LITELLM_BASE_URL",       "https://dev-gateway.apps.gevernova.net")
+dbutils.widgets.text("LITELLM_API_KEY",        "sk-cjRRha3Ejczz8AmnJKyQxA")
+```
+
+> **Running from a job?** Paste these into the job's notebook parameters JSON:
+```json
+{
+  "jb_env": "dev",
+  "METADATA_TABLE_V2": "vaid.ai_sot_field_service_report.fsr_metadata_v2",
+  "CHUNK_TABLE_V2": "vaid.ai_std_con_field_service_report.fsr_chunks_v2",
+  "FSR_P2_BATCH_SIZE": "20",
+  "FSR_P2_MAX_RETRIES": "3",
+  "FSR_P2_MAX_ITERATIONS": "0",
+  "FSR_CHUNK_SIZE": "3800",
+  "FSR_CHUNK_OVERLAP": "150",
+  "FSR_MIN_CHUNK_SIZE": "450",
+  "FSR_EMBEDDING_MODEL": "azure-text-embedding-3-large-1",
+  "FSR_EMBEDDING_DIMENSION": "3072",
+  "LITELLM_BASE_URL": "https://dev-gateway.apps.gevernova.net",
+  "LITELLM_API_KEY": "sk-cjRRha3Ejczz8AmnJKyQxA"
+}
+```**
+   - All 27 docs have `chunk_status = 'completed'`.
+   - Chunk rows present in `fsr_chunks_v2` for all docs.
+   - No `in_progress` rows remain after P2 drains.
+   - `embedding_dimension` logged as 3072 in driver output.
+
+6. Run P3 (VS index sync):
+
+```python
+dbutils.widgets.removeAll()
+dbutils.widgets.text("CHUNK_TABLE_V2",    "vaid.ai_std_con_field_service_report.fsr_chunks_v2")
+dbutils.widgets.text("VS_INDEX_V2",       "vaid.ai_std_con_field_service_report.fsr_vs_index_v2")
+dbutils.widgets.text("VS_ENDPOINT_V2",    "pw-ser-sdg-vector-search")
+dbutils.widgets.text("INDEX_MODE",        "sync")
+dbutils.widgets.text("FSR_EMBEDDING_DIMENSION", "3072")
+```
+
+> **Running from a job?** Paste these into the job's notebook parameters JSON:
+```json
+{
+  "CHUNK_TABLE_V2": "vaid.ai_std_con_field_service_report.fsr_chunks_v2",
+  "VS_INDEX_V2": "vaid.ai_std_con_field_service_report.fsr_vs_index_v2",
+  "VS_ENDPOINT_V2": "pw-ser-sdg-vector-search",
+  "INDEX_MODE": "sync",
+  "FSR_EMBEDDING_DIMENSION": "3072"
+}
+```
+
+   Confirm VS index reports all completed docs as indexed.
+
+7. Run `nb_fsr_v2_retrieval.py` for 2–3 ESNs from the batch. Confirm docs are
+   returned and chunks are non-empty.
+
+8. Repeat steps 2–7 for Batch B (update `FSR_TARGET_PDF_NAMES` to the Batch B list).
+
+9. **Verify idempotency (rerun test):**
+   - Rerun P1 on Batch A unchanged. Assert metadata row count and
+     `parsed_volume_path` pointers are unchanged.
+   - Rerun P2 on Batch A. Assert chunk row count unchanged.
+
+---
+
+### Pass criteria (both tracks)
+
+- [ ] All targeted docs reach `metadata_status = 'completed'` or correctly
+      land in `failed` / absent (date-filtered).
+- [ ] No docs remain `in_progress` after P2 drains.
+- [ ] Chunk count stable across reruns (idempotency).
+- [ ] ESN and outage date populated for all completed docs.
+- [ ] VS retrieval returns results for test ESNs.
+- [ ] Driver logs show `P1 workers = 4` and stage 2-3 concurrent progress.
+- [ ] Date-filtered docs (outage year < 2016) absent from metadata table.
+
+---
+
+## Automating the verification
+
+**Status: built and working.** Lives in `2-FSR-v2/automation/` (see
+`automation/autonomous.md` for the full list of what runs without manual steps).
+Every check
+above is now a SQL assertion that runs from a laptop against the dev warehouse.
+No notebook watching, no copy-pasting output.
+
+### Why not Databricks Agents
+
+The Agents UI (Knowledge Assistant, Genie, Information Extraction) is for
+building end-user chatbots over data. Genie could translate "are any docs
+stuck?" into SQL, but it is non-deterministic — the same question can produce
+different SQL on different days, and a verification gate that sometimes
+disagrees with itself is worse than no gate. Verification wants fixed queries
+with fixed expected answers. So: plain SQL, checked into git, diffable.
+
+Agents stay useful for the *product* side (letting users ask questions of FSR
+data). They are the wrong tool for CI.
+
+### How it works
+
+Three things are reachable directly from the dev profile, which is what makes
+this unattended:
+
+| Capability | API | Verified |
+|---|---|---|
+| Query dev tables | SQL Statement Execution on warehouse `ai-pw-ser-ds-dev-sqlw` (`c383216f6af5c7c0`) | yes |
+| Trigger pipeline jobs | `jobs/run-now` — `CAN_MANAGE` on all FSR v2 jobs | yes |
+| Read driver logs | `jobs/runs/get-output` | yes |
+
+So the loop is: trigger job → poll to terminal state → query tables → print
+PASS/FAIL → non-zero exit on failure. Compute is serverless throughout, so
+nothing waits on a cluster starting.
+
+### Files
+
+```
+2-FSR-v2/automation/
+  autonomous.md      what can run without manual steps
+  verify_fsr_v2.py   CLI: `check` (assert only) and `run` (jobs + assert)
+  checks.py          the assertions, one function each
+  dbx_client.py      stdlib REST client, reads ~/.databrickscfg
+  tracks.json        per-track tables, doc lists, and job params
+```
+
+`tracks.json` holds the same parameters as the widget blocks above, so the
+notebook params and the automation cannot drift apart. The LiteLLM key is a
+`${LITELLM_API_KEY}` placeholder resolved from the environment at launch — no
+secret in the file.
+
+### Usage
+
+```bash
+cd 2-FSR-v2/automation
+
+# read-only, safe any time, touches nothing
+python3 verify_fsr_v2.py check --track 1
+
+# full unattended run: ddl -> p1 -> p2 -> vs -> check -> rerun p1,p2 -> compare
+export LITELLM_API_KEY=sk-...
+python3 verify_fsr_v2.py run --track 1
+```
+
+`run` also covers the idempotency test on its own: it snapshots
+`(document_id, parsed_volume_path, chunk_count)` after the first pass, reruns
+P1 and P2, and fails if anything moved. That was step 9 of Track 2 and step 6
+of Track 1 — both now automatic.
+
+### Checks implemented
+
+Mapped one-to-one to the pass criteria, all against the real dev schema:
+
+| Check | Replaces |
+| --- | --- |
+| expected docs completed | "all N docs have `metadata_status='completed'`" |
+| no rows stuck `in_progress` | "no docs remain in_progress after P2 drains" |
+| no failed docs (surfaces `metadata_error`) | manual failure scan |
+| `primary_esn` populated | "primary_esn non-null for all docs" |
+| `parsed_volume_path` populated | "parsed_volume_path populated" |
+| all date columns match `YYYY-MM-DD` | manual date format eyeball |
+| no completed doc older than `min_doc_year` | date-filter verification |
+| equipment map row per completed doc | "equipment map rows present" |
+| chunks exist per chunked doc | "chunk rows present for all docs" |
+| no orphan chunks | new — catches chunks left behind by a reset |
+| `embedding_dimension == 3072` | "embedding_dimension logged as 3072" |
+| no empty `chunk_text` | retrieval sanity |
+| idempotency snapshot compare | "chunk row count unchanged on rerun" |
+| driver log greps: `P1 workers = 4`, `LLM batch i/N`, `[DATE-FILTER/` | steps 3 and 4 log inspection |
+
+Sample output against the freshly reset dev tables — note it correctly flags
+the empty table and passes everything else:
+
+```
+  [FAIL] expected docs completed (8)        8 not completed: [...=MISSING]
+  [PASS] no rows stuck in_progress          metadata=0, chunk=0
+  [PASS] no failed docs                     none
+  [PASS] all date columns are YYYY-MM-DD    ok
+  [PASS] no completed docs older than 2016  ok
+  [SKIP] embedding dimension                no chunk rows yet, skipped
+  12 checks, 1 failed
+```
+
+### Remaining gap
+
+The concurrency / batching / date-filter checks parse driver stdout, and that is
+the weak link: **the jobs run on serverless, which does not dependably return a
+`logs` field from `runs/get-output`.** So these three checks may silently report
+"pattern not found" even on a healthy run. Treat them as advisory until fixed.
+
+The real fix is a few lines in P1 writing these as rows into `fsr_run_log_v2`
+(`event_type`, `detail`), after which they become SQL like everything else and
+we get run history for free. This is now worth doing rather than optional.
+
+Retrieval smoke test (step 7 of Track 2) is not automated yet, but it is
+unblocked: one-off serverless notebook runs work (verified), so a small notebook
+that queries the VS index and returns results via `dbutils.notebook.exit` can be
+triggered and read back the same way as everything else. No cluster needed.
+
+### What is needed from you
+
+Just the LLM key, once per verification cycle:
+
+```bash
+export LITELLM_API_KEY=sk-...
+python3 verify_fsr_v2.py run --track 1
+```
+
+Everything else I can drive and read back myself — `check` is read-only and safe
+to run against the tables at any time. See `2-FSR-v2/automation/autonomous.md`
+for the full capability list.

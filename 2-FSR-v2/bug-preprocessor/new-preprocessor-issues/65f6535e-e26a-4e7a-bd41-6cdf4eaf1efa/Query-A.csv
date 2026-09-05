@@ -1,0 +1,4 @@
+equipment_type,esn,equipment_status,record_status,active_lineage_indicator,train_sys_id_fk,block_sys_id_fk,plant_sys_id_fk
+GAS TURBINE,298339,InService,Active,True,UNI026746,BLC001268,8784
+GENERATOR,337X350,InService,Active,True,UNI026746,BLC001268,8784
+HRSG,298339-HRSG,InService,Active,True,UNI026746,BLC001268,8784

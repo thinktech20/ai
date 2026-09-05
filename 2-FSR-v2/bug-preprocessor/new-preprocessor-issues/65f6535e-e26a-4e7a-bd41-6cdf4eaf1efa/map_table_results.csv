@@ -1,0 +1,3 @@
+document_id,esn,equip_type,technology_code,is_primary_esn,is_active,source_region_count,created_at,updated_at
+65f6535e-e26a-4e7a-bd41-6cdf4eaf1efa,298339,Gas Turbine,7FA,true,true,5,2026-08-20T22:06:10.674Z,2026-08-20T22:06:10.674Z
+be53e9a9-a3be-457b-a04f-2ed5d0387a1e,337X350,Generator,null,false,true,12,2026-08-20T22:05:30.277Z,2026-08-20T22:05:30.277Z

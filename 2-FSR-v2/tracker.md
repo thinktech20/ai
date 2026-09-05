@@ -1,6 +1,6 @@
 # FSR V2 Pipeline — Implementation Tracker
 
-Last updated: 2026-08-12
+Last updated: 2026-08-31
 
 ---
 
@@ -94,6 +94,52 @@ Working dir: /home/u560060992/dbx/pw_sdg_ai_ser_repo
 
 ---
 
+## 2026-08-31 — Prod Hardening
+
+### Code changes
+
+**P1 — Concurrency & LLM batching**
+- `ThreadPoolExecutor` for stages 2–3 (`FSR_V2_P1_WORKERS`, default 4)
+- LLM calls batched via `batch_extract_llm_metadata()` (`FSR_V2_P1_LLM_BATCH_SIZE=10`, inter-batch delay `FSR_V2_P1_LLM_DELAY_S=1s`)
+- LLM failure now propagates to `metadata_status='failed'` — no more silent empty-metadata writes
+
+**P1 — Date filter**
+- Two-pass year filter: pre-LLM page-1 scan + post-LLM check via `determine_doc_date()`
+- Covers `outage_start_date`, `job_start_date`, `approved_date`, `report_issued_date` in priority order
+- Params: `FSR_V2_MIN_DOC_YEAR` (lower bound, default 2016) + `FSR_V2_MAX_DOC_YEAR` (upper bound for backfill partitioning)
+
+**Schema**
+- New columns in `fsr_metadata_v2`: `approved_date`, `job_start_date`
+- Date normalization (`YYYY-MM-DD`) applied to all date fields at write time
+- Run/DQ log tables moved to `ai_std_con_monitoring_diagnostics` in all 4 envs
+- Drop/recreate `fsr_metadata_v2` in dev and QA before next ingestion run
+
+**P2**
+- Chunk idempotency: MERGE now deletes stale tail chunks for reprocessed docs
+- Embedding pool Future exceptions caught; failed futures mark docs as `failed`
+- Embedding dimension validation (`FSR_EMBEDDING_DIMENSION`)
+- `mapping_miss_fail_threshold` removed (always zero, never functional)
+
+**Config / workflow**
+- `FSR_MAX_PDFS` removed from FSR v2 workflows and notebook
+- `FSR_LLM_VERIFY_SSL` removed from `databricks.yaml` and all workflow YAMLs
+- Daily incremental workflow created: `pw_sdg_fsr_v2_daily_incremental.yml`
+- Backfill runbook created: `2-FSR-v2/prod-hardening/backfill-runbook`
+
+**Dead code removed**
+- Deleted: `region_utils.py`, `preprocessor.py` (v1), `metadata_processor.py` (v1 shim), `hierarchical_chunking_v1.py`, `normalization_prompt_v1.py`, backfill notebook
+- Renamed: `metadata_processor_v2.py` → `metadata_processor.py`; `normalization_prompt_v2_with_hints.py` → `normalization_prompt.py`
+- Removed: `V1_BASELINE` LLM prompt enum, `v1_hierarchical` chunking strategy, `parse_pypdf2()` function
+
+**Security**
+- `REQUESTED_ESN` SQL injection: `re.fullmatch([A-Z0-9]{4,12})` validation added
+- `verify=False` fixed to `verify=True` in dev ingest VS-index delete call
+
+**Tests**
+- 43 unit tests passing (up from 39 pre-hardening); covers concurrency, date filter, LLM failure, date normalization, ESN validation
+
+---
+
 ## Next Steps
 
 1. Run end-to-end dev validation for the 4 independent jobs (P1/P2/P3/Validation) using current workflow layout.
@@ -177,3 +223,18 @@ Working dir: /home/u560060992/dbx/pw_sdg_ai_ser_repo
 
 - Identify and document the rules for when to use the deterministic processor versus the LLM preprocessor.
 - Update the MLflow experiment with the data and evaluation inputs needed to measure FSR retrieval accuracy.
+
+
+## 2026-08-21 WSR Update
+
+### Last Week
+
+- Built and shared the MLflow experiment for retrieval top-K sweeps with the data science team, and integrated the probe set so runs are directly comparable across strategies.
+- Landed the latest deterministic preprocessor fixes for Electrical System handling, train-scoped IBAT resolution for deterministic Generator ESN attribution, and a narrower TOC cross-check that filters front-matter and page-join noise without dropping real body sections. Validated on Databricks.
+- Shared the LLM preprocessor flow with the team: two-stage design (deterministic then LLM), the ambiguity rules that decide when to route to the LLM path, and where IBAT enrichment fits in between.
+
+### Next Week
+
+- Close out the remaining Generator ESN gap on scanned or image-only PDFs where doc-level extraction finds no Generator token; verify the ingestion job now wires the IBAT dependency end-to-end into P1 and confirm Generator regions resolve via the train-scoped path.
+- Continue MLflow experiment iteration on the probe set and extend the evaluation inputs to cover FSR retrieval accuracy, not just top-K coverage.
+- Start scoping an LLM preprocessor prototype against the ambiguity rules, focusing first on the highest-value cases (same-type multi-ESN and boundary exit) before broadening.

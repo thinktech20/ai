@@ -6,13 +6,16 @@ search for evidence retrieval.
 
 ## Use Cases
 
-1. **Data Readiness API** — `GET /dataservices/api/v1/equipment/{esn}`
-	 Return all eligible FSR documents for an ESN, whether the ESN is primary or
-	 secondary in the document.
+1. **Data Readiness API** — `GET /dataservices/api/v1/equipment/{esn}/data-readiness`
+	 Return FSR availability and a report count, alongside other source-readiness
+	 results. It does not return report metadata.
 
-2. **FSR Retrieval API** — `POST /retrieve`
+2. **FSR Report Listing API** — `GET /dataservices/api/v1/equipment/{esn}/fsr-reports`
+	 Return a paginated list of FSR metadata for an ESN.
+
+3. **FSR Retrieval API** — `POST /dataservices/api/v1/retriever/retrieve`
 	 Return the most relevant FSR chunks for an ESN and query text, subject to
-	 the configured recency window.
+	 the active retrieval-routing configuration.
 
 ## Code References
 
@@ -23,6 +26,10 @@ search for evidence retrieval.
 		vector search request.
 - URA Data Readiness/report service: [equipment_service.py](../../../uai3071390-genai-services-demand-generation-usecase/backend/services/data-service/src/data_service/services/equipment_service.py)
 	- v2 FSR report listing and report-count queries.
+	- Legacy listing and report-count fallback queries.
+- URA equipment routes: [equipment.py](../../../uai3071390-genai-services-demand-generation-usecase/backend/services/data-service/src/data_service/routes/equipment.py)
+	- `data-readiness` returns source availability counts.
+	- `fsr-reports` returns the paginated report metadata list.
 - v2 vector-index definition: [vector_index.py](../../pw_sdg_ai_ser_repo/vs/src/etl/fsr_v2/vector_index.py)
 	- `columns_to_sync` for `fsr_vs_index_v2`.
 - v2 index creation DDL: [nb_sdg_fsr_v2_ddl.py](../../pw_sdg_ai_ser_repo/ddls/fsr_v2/nb_sdg_fsr_v2_ddl.py)
@@ -35,36 +42,31 @@ search for evidence retrieval.
 
 ## 1. Data Readiness
 
-The application uses SQL only; vector search is not involved.
+The application uses SQL only; Vector Search is not involved. Data readiness
+returns the count of eligible FSR reports, not a list of documents.
 
 ### Steps
 
-1. Look up the requested ESN in the v2 document-to-equipment mapping table.
-2. Join matching documents to the v2 metadata table.
+1. Determine whether FSR is enabled for the equipment's workflow configuration.
+	 If it is not enabled, readiness returns an FSR count of zero.
+2. If `FSR_MULTI_ESN_APPLIED` is enabled, count matching v2 mapping/metadata
+	 rows first.
 3. Keep only active ESN mappings and documents with completed metadata and
 	 chunk processing.
-4. Apply the configured lookback window to `outage_start_date`.
-5. Return the document metadata ordered by `report_issued_date` descending.
+4. Apply the `outage_start_date` lookback only when `FSR_LOOKBACK_SET` is
+	 enabled. The number of months is `FSR_LOOKBACK_MONTHS` (default: 120).
+5. If the v2 count is zero, use the legacy chunks-to-metadata query instead.
 
-The same eligibility query is used to count available FSR reports for the
-readiness view.
+The report-list endpoint applies the same v2 readiness predicates, groups by
+document, orders by `report_issued_date` descending, and paginates. The count
+and list are separate SQL queries. Both use the legacy fallback when the v2
+path produces no matches.
 
-### Query
+### v2 Query Shape
 
 ```sql
 SELECT
-		meta.title,
-		meta.event_type,
-		meta.ev_project_id,
-		meta.ev_equipment_event_id,
-		meta.pdf_name,
-		meta.volume_path,
-		meta.fsr_number,
-		meta.report_issued_date,
-		meta.outage_start_date,
-		meta.outage_end_date,
-		meta.document_summary,
-		meta.primary_equip_sys_id AS equipment_sys_id
+		COUNT(DISTINCT meta.document_id) AS cnt
 FROM fsr_document_equipment_map_v2 AS d
 INNER JOIN fsr_metadata_v2 AS meta
 		ON d.document_id = meta.document_id
@@ -72,15 +74,19 @@ WHERE UPPER(d.esn) = UPPER(:esn)
 	AND d.is_active = true
 	AND meta.metadata_status = 'completed'
 	AND meta.chunk_status = 'completed'
-	  AND meta.outage_start_date >= DATE_FORMAT(
-		  ADD_MONTHS(CURRENT_DATE(), -120), 'yyyy-MM-dd'
-	  )
-ORDER BY meta.report_issued_date DESC;
+	[AND meta.outage_start_date >= DATE_FORMAT(
+		ADD_MONTHS(CURRENT_DATE(), -FSR_LOOKBACK_MONTHS), 'yyyy-MM-dd'
+	)] -- only when FSR_LOOKBACK_SET is enabled
 ```
 
-`is_primary_esn` is not used as a filter here. The mapping table includes both
-primary and secondary ESNs, which is what allows the readiness response to
-return every FSR associated with the requested equipment.
+`is_primary_esn` is not used as a v2 filter. Thus a successful v2 mapping
+lookup includes both primary and secondary ESNs. This is conditional: if the
+multi-ESN path is disabled or has no matches, the legacy fallback additionally
+filters legacy metadata by its `esn` field and does not provide the same
+secondary-ESN guarantee.
+
+`from_date` and `to_date` supplied to data readiness or `fsr-reports` are not
+applied by the v2 queries. They are applied only by the legacy fallback.
 
 ## 2. FSR Retrieval
 
@@ -91,24 +97,29 @@ embedded and sent to Databricks Vector Search using hybrid search.
 
 ### Steps
 
-1. **Check v2 eligibility.** Query the multi-ESN mapping table joined to v2
-	 metadata and collect eligible `document_id` values for the ESN.
-2. **Select the index.**
-	 - If v2 documents are found, use the v2 multi-ESN index.
-	 - If no v2 documents are found, query the legacy/timeboxed index instead.
-	 - If neither path returns eligible documents, skip vector search and return
-		 no evidence.
-3. **Get the query embedding.** The application reads the stored embedding for
-	 the issue prompt from the configured embedding table.
-4. **Run hybrid search** with the query text, query embedding, ESN/document
+1. **Choose the document filter and index.**
+	- Explicit `document_ids` bypass SQL eligibility and use the v2 index only
+		when `FSR_MULTI_ESN_APPLIED` is enabled.
+	- When `FSR_LOOKBACK_SET` and `FSR_MULTI_ESN_APPLIED` are both enabled, query
+		the v2 mapping/metadata tables for eligible document IDs.
+	- If that v2 query has no documents, query the legacy/timeboxed tables and
+		use the legacy index.
+	- When `FSR_LOOKBACK_SET` is disabled, use the legacy index with an ESN-only
+		filter; no SQL document-eligibility lookup occurs.
+	- If a required eligibility query returns no documents, skip Vector Search
+		and return no evidence.
+2. **Get the query embedding.** Standard callers read stored issue-prompt
+	 embeddings from the configured embedding table. Calls from `qna-agent`
+	 generate a fresh embedding for each prompt.
+3. **Run hybrid search** with the query text, query embedding, ESN/document
 	 filters, and `top_k`.
-5. **Return the ranked chunks** and their evidence, document name, page number,
+4. **Return the ranked chunks** and their evidence, document name, page number,
 	 report date, and similarity score for each issue.
 
-The index fallback is based on whether eligible documents exist in the v2
-mapping table. A zero-hit response from the v2 vector index does **not** cause
-the application to issue a second vector-search request against the legacy
-index.
+When the lookback and multi-ESN flags are enabled, index fallback is based on
+whether eligible documents exist in the v2 mapping table. A zero-hit response
+from the v2 vector index does **not** cause the application to issue a second
+vector-search request against the legacy index.
 
 ### Step 1: v2 eligibility query
 
@@ -119,10 +130,11 @@ INNER JOIN fsr_metadata_v2 AS meta
 		ON d.document_id = meta.document_id
 WHERE UPPER(d.esn) = UPPER(:esn)
 	AND d.is_active = true
+	AND meta.metadata_status = 'completed'
 	AND meta.chunk_status = 'completed'
-	  AND meta.outage_start_date >= DATE_FORMAT(
-		  ADD_MONTHS(CURRENT_DATE(), -120), 'yyyy-MM-dd'
-	  );
+	[AND meta.outage_start_date >= DATE_FORMAT(
+		ADD_MONTHS(CURRENT_DATE(), -FSR_LOOKBACK_MONTHS), 'yyyy-MM-dd'
+	)]; -- only when FSR_LOOKBACK_SET is enabled
 ```
 
 The legacy fallback uses the older chunk-to-document relationship:
@@ -138,7 +150,7 @@ INNER JOIN (
 		ON meta.document_id = c.document_id
 WHERE meta.document_id IS NOT NULL
 	  AND meta.outage_start_date >= DATE_FORMAT(
-		  ADD_MONTHS(CURRENT_DATE(), -120), 'yyyy-MM-dd'
+		  ADD_MONTHS(CURRENT_DATE(), -FSR_LOOKBACK_MONTHS), 'yyyy-MM-dd'
 	  );
 ```
 
@@ -207,3 +219,5 @@ number of returned rows below the requested `top_k`.
 	`2-FSR-v2/retrieval/retriver-changes-needed.md` and is not yet implemented.
 - Query embeddings must match the embedding model used by the selected index.
 - SQL values such as `esn` are passed as parameters in the retrieval service.
+- The readiness/report-list service escapes ESN values with `sql_literal`
+	 rather than using a bound SQL parameter.

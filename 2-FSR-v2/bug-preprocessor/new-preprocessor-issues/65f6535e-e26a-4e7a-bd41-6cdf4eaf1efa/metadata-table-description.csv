@@ -1,0 +1,50 @@
+col_name,data_type,comment
+document_id,string,Normalized UUID stem from volume path — primary key
+pdf_name,string,Human-readable PDF name
+volume_path,string,Full /Volumes/... path to the source PDF
+title,string,Report title extracted from the PDF
+customer,string,Customer / site name
+primary_esn,string,"Primary ESN — doc-level, resolved via preprocessor + enrichment. Used for IBAT/Event Vision lookup."
+primary_equip_type,string,"Primary equipment type (e.g. Generator, Gas Turbine) — doc-level for primary ESN only"
+gt_esn,string,Doc-level Gas Turbine ESN anchor emitted by preprocessor (non-exhaustive if multiple GT ESNs exist)
+gen_esn,string,Doc-level Generator ESN anchor emitted by preprocessor (non-exhaustive if multiple Generator ESNs exist)
+primary_equip_sys_id,string,Equipment system ID from IBAT — primary ESN only. TODO: extend to per-ESN lookup for secondary ESNs.
+primary_equip_class_code,string,Equipment sub-class / code from IBAT — primary ESN only. TODO: extend to per-ESN lookup for secondary ESNs.
+event_type,string,"Event type (e.g. Call-Out, Inspection)"
+ev_project_id,string,Event Vision project ID
+ev_equipment_event_id,string,Event Vision equipment event ID
+ofs_event_id,string,OFS event ID
+fsp_project_id,string,FSP project ID
+xxx_project_id,string,Additional project ID (pipe-separated if multiple)
+fsr_number,string,FSR document number
+report_issued_date,string,Date the FSR was issued — format: YYYY-MM-DD
+outage_start_date,string,Outage start date — format: YYYY-MM-DD
+outage_end_date,string,Outage end date — format: YYYY-MM-DD
+outage_type,string,Outage type — resolved from PSOT table
+technology_type,string,Technology type — resolved from PSOT table
+prepared_by,string,Name of the person who prepared the report
+approved_by,string,Name of the person who approved the report
+document_summary,string,LLM-generated full-document summary
+page_count,int,Number of pages in the PDF
+file_size_bytes,bigint,File size in bytes
+file_last_modified,timestamp,Last modified timestamp from volume listing
+parsed_volume_path,string,Volume path to persisted parsed.json used by P1/P2 parse-once flow
+parsed_parser_version,string,"Parser version used to produce parsed_volume_path (e.g. pypdf2_v1.0, pymupdf_v1.0)"
+preprocessor_regions,string,JSON array of char-offset regions with per-region ESN + equip_type metadata — used by P2 for chunk attribution
+inactive_esns,string,JSON array of ESNs marked inactive (not applicable this outage)
+extractor_method,string,P1 text extraction method (e.g. pypdf2_v1.0) — experiment tracking
+preprocess_method,string,P1 preprocessor version (e.g. preprocessor_v2_final) — experiment tracking
+llm_model_extraction,string,"P1 LLM model for doc-level field extraction (e.g. gpt-4-turbo, claude-3-sonnet) — experiment tracking"
+llm_extraction_prompt_version,string,"P1 LLM prompt template version (e.g. v1, v2_with_hints) — experiment tracking"
+pipeline_version,string,Overall FSR v2 pipeline version (e.g. fsr_v2.0) — experiment tracking
+run_id,string,Unique run identifier (e.g. run_2026-07-18_exp_001) for grouping across documents in single run — experiment tracking
+metadata_status,string,P1 status: pending / completed / failed
+metadata_error,string,Error message if P1 failed
+metadata_retry_count,int,Number of P1 attempts on this document
+chunk_status,string,P2 status: pending / in_progress / completed / failed
+chunk_error,string,Error message if P2 failed
+chunk_retry_count,int,Number of P2 attempts on this document
+ingested_at,timestamp,When this row was first created (file discovery)
+scraped_at,timestamp,When P1 last completed or failed
+chunked_at,timestamp,When P2 last completed or failed
+updated_at,timestamp,"When any field was last modified (status, error, retry count, etc.)"
