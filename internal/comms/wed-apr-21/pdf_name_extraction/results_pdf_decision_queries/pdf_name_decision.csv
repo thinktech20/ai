@@ -1,0 +1,17 @@
+col_name
+esn
+ev_equipment_system_id
+ev_equipment_type
+ev_equipment_class
+ev_event_type
+ev_project_id
+ev_equipment_event_id
+ev_ofs_event_id
+fsp_project_id
+erp_project_id
+fsr_number
+report_issued_date
+outage_start_date
+outage_end_date
+s3_filename
+PDF_name

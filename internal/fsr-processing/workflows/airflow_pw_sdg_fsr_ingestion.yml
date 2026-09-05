@@ -1,0 +1,26 @@
+# Airflow DAG YAML: FSR Ingestion Pipeline
+# Triggers the pw_sdg_fsr_ingestion Databricks workflow job
+#
+# Matches format: reference/databricks-team/databricks-team-ref-docs-n-code/GP_AF_FDC-main/dags/databricks/FDC/workflows/
+#
+# How it works:
+#   1. Airflow reads this YAML and creates a DAG
+#   2. The task uses common.databricks_connection_module to:
+#      a. Retrieve PAT from AWS Secrets Manager (keyed by fsso)
+#      b. Look up job ID by job_name via Databricks Jobs API
+#      c. Call POST /api/2.0/jobs/run-now
+#      d. Poll until TERMINATED
+#   3. All notebook orchestration happens in Databricks (depends_on in the job)
+
+dag_id: pw.sdg.pw_sdg_fsr_ingestion
+tags: ['PW', 'SDG', 'Databricks']
+fsso: 'TBD'                          # ETL Functional SSO ID — get from Sonam/Chaithra
+schedule_interval: null               # Manual trigger initially; change to cron for production
+tz: 'America/New_York'
+
+tasks:
+- method_name: databricks_connection
+  task_name: tsk_pw_sdg_fsr_ingestion
+  job_module: common.databricks_connection_module
+  task_id: 1
+  job_name: pw_sdg_fsr_ingestion

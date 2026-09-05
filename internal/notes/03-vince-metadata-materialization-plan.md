@@ -1,0 +1,440 @@
+# Detailed Plan: Adopting Vince's Metadata Materialization Suggestion
+
+**Date:** 2026-04-16
+**Context:** Review of `implementation/fsr-processing/design/source-materials/SDG_FSR_metadata_schema.pdf`
+
+---
+
+## Why Materialize Metadata on Chunk Rows?
+
+Databricks Vector Search indexes a single Delta table — there's no join at query time.
+Any field you want to filter on or return in results must live on the chunk row itself.
+
+- **Pre-filtering**: Users query by ESN, equipment type, date range, etc. These filters
+  must be columns on the indexed table; otherwise you'd have to fetch all results and
+  post-filter, wasting the top-K budget.
+- **Context in results**: When a chunk is returned, the consuming app needs metadata
+  (title, dates, equipment info) without a second round-trip to the metadata registry.
+- **No runtime joins**: Storing only `pdf_name` on chunks and joining at serving time
+  adds latency and isn't supported by the Vector Search API at all.
+
+The metadata registry remains the source of truth; chunk rows carry a materialized
+copy of the fields needed for retrieval filtering and display.
+
+---
+
+## Goal
+
+Evaluate and implement a revised FSR retrieval data model based on Vince's suggestion:
+
+- resolve more FSR metadata at ingestion time
+- write selected metadata directly into chunk rows
+- reduce query-time joins
+- retain a canonical metadata table for file-level source-of-truth and re-enrichment
+
+This plan assumes a **hybrid target design**, not a full removal of the metadata table.
+
+---
+
+## Current State: Pipelines Are Disconnected
+
+> **Note (2026-04-16, confirmed with Tao):** The DS team's two pipelines currently run
+> independently and do not feed into each other:
+>
+> - **Scraping pipeline** → writes `fsr_scraped_file_mapping_ref` (canonical file-level metadata)
+> - **Chunk pipeline** → reads PDFs, chunks them, enriches from `fsr_pdf_ref` (a different view) — never reads `fsr_scraped_file_mapping_ref`
+>
+> Tao's recommendation: metadata extraction (scraping) should run **first**, and the
+> chunk pipeline should then consume its output so that every chunk row carries the
+> resolved metadata. This is exactly the integration this plan describes (Phase C),
+> but it does not exist today. The two pipelines need to be wired together.
+
+---
+
+## Proposed Target Design
+
+The target design should be:
+
+1. **Canonical file-level metadata table**
+   - one row per FSR document or per resolved file-level record
+   - produced by the scraping and enrichment pipeline
+   - remains the source of truth for enriched FSR metadata
+
+2. **Chunk retrieval table**
+   - one row per chunk or per chunk-per-ESN row
+   - remains the Vector Search source
+   - includes selected pre-resolved metadata fields copied from the canonical metadata layer
+
+3. **Reduced query-time joins**
+   - retrieval should use chunk-row metadata first
+   - only fields not materialized into chunk rows should require later joins
+
+4. **Backfill / re-materialization path**
+   - if the canonical metadata changes, chunk rows can be refreshed from it
+
+---
+
+## Why This Target Design
+
+This plan balances both sides:
+
+### What Vince's suggestion improves
+
+1. Query responses become simpler because useful metadata is already on the chunk.
+2. Retrieval can avoid some expensive or brittle post-query joins.
+3. The response payload can be assembled faster and more consistently.
+4. The chunk row becomes more self-describing.
+
+### Why the metadata table should still remain
+
+1. File-level metadata should still have a canonical source of truth.
+2. Re-enrichment is much easier against one file-level row than many chunk rows.
+3. Not every metadata field should be duplicated into every chunk row.
+4. Some metadata will evolve over time and should remain centrally manageable.
+
+---
+
+## Design Principles
+
+## 1. Materialize only high-value metadata
+
+Do not copy every possible file-level field into the chunk table.
+
+Good candidates for chunk-level materialization are fields that are:
+- used often in retrieval responses
+- stable over time
+- useful for filtering, ranking, or display
+- cheap to understand and maintain
+
+Bad candidates are fields that are:
+- very wide
+- rarely used
+- volatile or frequently corrected
+- better represented as a grouped nested object later
+
+## 2. Keep one precedence rule per field
+
+Every materialized field must have a clearly defined winner when values disagree between:
+- PDF extraction
+- LLM normalization
+- IBAT
+- Event Vision
+- `fsr_pdf_ref`
+- other later sources
+
+Without precedence rules, chunk materialization will create silent inconsistency.
+
+## 3. Keep the chunk table retrieval-focused
+
+The chunk table should get richer, but it should not become an unbounded dumping ground for every FSR business field.
+
+## 4. Preserve re-materialization ability
+
+Any metadata copied into chunk rows must be reproducible from canonical sources.
+
+That means:
+- no manual-only values in chunk rows
+- no metadata that can only be regenerated by inspecting old query output
+
+---
+
+## Recommended Metadata To Materialize Into Chunk Rows
+
+## Phase 1 fields
+
+These are the recommended first fields to write directly into the chunk table:
+
+1. `title`
+2. `customer_name` or equivalent normalized customer field
+3. `generator_serial` / `esn`
+4. `equipment_sys_id`
+5. `equipment_type`
+6. `event_type`
+7. `report_issued_date`
+8. `outage_start_date`
+9. `outage_end_date`
+10. `ev_project_id`
+11. `ev_equipment_event_id`
+12. `fsp_project_id`
+13. `fsr_number` if reliable enough
+14. `document_summary` if the team agrees to support it as a maintained field
+
+## Keep outside the chunk row initially
+
+These should remain in the canonical metadata layer for now:
+
+1. the full `scraped_mapping` object
+2. all raw extracted fields from Stage 1
+3. verbose audit fields used only for debugging extraction quality
+4. source-specific auxiliary fields not needed by retrieval consumers
+
+---
+
+## Proposed Schema Changes
+
+## Canonical metadata table
+
+Keep or create a canonical enriched file-level metadata table with a stable schema such as:
+
+1. document identity fields
+   - `pdf_name`
+   - `pdf_path` if needed
+   - `source_system`
+   - `document_type`
+
+2. resolved FSR metadata fields
+   - `title`
+   - `customer_name`
+   - `esn`
+   - `equipment_sys_id`
+   - `equipment_type`
+   - `equipment_code`
+   - `event_type`
+   - `ev_project_id`
+   - `ev_equipment_event_id`
+   - `ofs_event_id`
+   - `fsp_project_id`
+   - `xxx_project_id`
+   - `fsr_number`
+   - `report_issued_date`
+   - `outage_start_date`
+   - `outage_end_date`
+   - `document_summary` if approved
+
+3. lineage and audit fields
+   - `metadata_resolution_version`
+   - `metadata_resolved_at`
+   - `field_source_map` or equivalent lineage object
+
+## Chunk table
+
+Extend the chunk table to include selected materialized metadata columns such as:
+
+1. existing retrieval fields
+   - `chunk_id`
+   - `pdf_name`
+   - `page_number`
+   - `generator_serial`
+   - `report_date`
+   - `chunk_text`
+   - `metadata`
+   - `created_at`
+   - `uploaded_at`
+
+2. new materialized metadata fields
+   - `title`
+   - `customer_name`
+   - `equipment_sys_id`
+   - `equipment_type`
+   - `event_type`
+   - `ev_project_id`
+   - `ev_equipment_event_id`
+   - `fsp_project_id`
+   - `outage_start_date`
+   - `outage_end_date`
+   - `fsr_number`
+   - `document_summary` if adopted
+   - `metadata_resolution_version`
+
+---
+
+## Source Precedence Rules To Define
+
+This is the most important design step before implementation.
+
+For each field, define one winning source.
+
+Suggested first-pass precedence:
+
+1. `generator_serial` / `esn`
+   - first preference: `fsr_pdf_ref`
+   - second preference: scraping pipeline resolved ESN
+   - third preference: chunk-level ESN detection
+
+2. `report_issued_date`
+   - first preference: canonical resolved metadata table
+   - second preference: `fsr_pdf_ref`
+   - third preference: chunk metadata if already parsed
+
+3. `equipment_type`, `equipment_code`
+   - first preference: IBAT-enriched metadata output
+
+4. `event_type`, `ev_project_id`, `ev_equipment_event_id`, `fsp_project_id`, outage dates
+   - first preference: Event Vision-enriched metadata output
+
+5. `title`
+   - first preference: normalized scraping output
+
+6. `customer_name`
+   - confirm whether this comes from FieldVision / PSOT, PDF extraction, or another source
+
+7. `document_summary`
+   - only materialize if there is agreement on how it is generated and refreshed
+
+---
+
+## Pipeline Changes Needed
+
+## Phase A — Canonical metadata layer hardening
+
+1. Confirm the canonical output table name and location.
+2. Confirm whether the current `main.gp_services_sdg_poc.fsr_scraped_file_mapping_ref` is the transition table or whether a new normalized metadata table should be introduced.
+3. Add any missing fields needed for chunk materialization, such as `title`, `customer_name`, or `document_summary` if approved.
+4. Add lineage columns indicating field provenance and resolution version.
+
+## Phase B — Chunk schema extension
+
+1. Extend the chunk table schema with the selected metadata fields.
+2. Decide whether the table is altered in place or recreated through a controlled migration.
+3. Update any downstream assumptions in retrieval or evaluation code.
+
+## Phase C — Ingestion-time metadata attachment
+
+1. Before writing chunk rows, load or resolve the canonical metadata row for the document.
+2. Merge selected metadata fields into every chunk row generated for that document.
+3. Preserve current ESN row-splitting behavior for multi-ESN PDFs.
+4. Ensure materialized metadata stays consistent across all chunk rows for the same document, except where ESN-specific duplication is required.
+
+## Phase D — Retrieval simplification
+
+1. Update retrieval to return chunk-level metadata directly where available.
+2. Remove only the query-time joins that become unnecessary.
+3. Keep grouped response assembly if consumers still need structured sub-objects.
+4. Reassess whether `scraped_mapping` should remain a separate nested object or become a thinner metadata snapshot.
+
+## Phase E — Backfill / re-materialization
+
+1. Identify existing chunk tables requiring backfill.
+2. Decide between:
+   - full reingestion
+   - targeted update / overwrite by `pdf_name`
+   - new versioned chunk table
+3. Validate that materialized fields match canonical metadata after backfill.
+
+---
+
+## Retrieval Impact
+
+If this plan is implemented, retrieval should change as follows:
+
+### Current direction
+
+1. Vector Search returns chunk identifiers and text.
+2. Retrieval hydrates or joins metadata later.
+3. Rich response assembly depends on supplementary views.
+
+### Proposed future direction
+
+1. Vector Search returns chunk identifiers and text plus pre-materialized metadata fields from the chunk source.
+2. Retrieval uses chunk-level metadata for most response fields.
+3. Only remaining specialized enrichment steps use joins.
+
+This should reduce:
+- runtime join complexity
+- risk of empty metadata when supplementary tables are unavailable
+- response assembly overhead
+
+---
+
+## Migration Strategy
+
+## Option 1 — In-place extension
+
+Add columns to the existing chunk table and backfill them.
+
+Pros:
+- least disruption to existing table names
+
+Cons:
+- backfill complexity
+- more risk if existing consumers assume old schema
+
+## Option 2 — New versioned chunk table
+
+Create a new chunk table with materialized metadata and point new retrieval flows to it.
+
+Pros:
+- cleaner migration
+- easier A/B validation
+
+Cons:
+- temporary duplication
+- needs cutover planning
+
+## Recommended approach
+
+Start with a **new versioned table in Dev** if possible.
+
+Reason:
+- easier comparison against the current model
+- lower risk while testing precedence rules and schema shape
+
+---
+
+## Validation Plan
+
+## Functional validation
+
+1. For a sample set of PDFs, confirm the chunk rows carry the expected metadata fields.
+2. Confirm multi-ESN documents still split correctly.
+3. Confirm metadata values match canonical metadata rows.
+4. Confirm retrieval can populate the response without depending on the removed joins.
+
+## Performance validation
+
+1. Compare query latency before and after metadata materialization.
+2. Compare Delta storage growth.
+3. Compare ingestion time overhead.
+4. Compare retrieval complexity and failure modes.
+
+## Data quality validation
+
+1. Spot-check field precedence outcomes.
+2. Measure null rate changes for key fields.
+3. Check whether any materialized fields drift from the canonical metadata table.
+
+---
+
+## Risks
+
+1. **Over-denormalization risk**
+   - too many fields copied into chunk rows will make the schema bloated and harder to maintain
+
+2. **Precedence ambiguity risk**
+   - without explicit field precedence rules, values may become inconsistent across runs
+
+3. **Re-enrichment complexity risk**
+   - if metadata changes later, chunk rows must be refreshed in a controlled way
+
+4. **Schema drift risk**
+   - if canonical metadata and chunk metadata evolve independently, consumers will become confused about which is authoritative
+
+5. **False simplification risk**
+   - eliminating all joins may look simpler, but can create hidden duplication and harder long-term maintenance
+
+---
+
+## Open Questions
+
+1. Which fields are truly needed on every chunk response versus only occasionally?
+2. Should `document_summary` become a supported managed field, and how would it be generated?
+3. Should `customer_name` come from PDF extraction, PSOT, or another authoritative source?
+4. Is the canonical metadata table the current scraped mapping table, or should a new normalized metadata table be introduced?
+5. Which joins should remain even after materialization?
+6. Should this design be implemented directly in production target tables, or validated first in `main.gp_services_sdg_poc`?
+7. Who owns metadata precedence rules across FSR PDF, `fsr_pdf_ref`, IBAT, and Event Vision?
+
+---
+
+## Recommended Next Step
+
+The best immediate next step is **not code change yet**.
+
+The next step should be a short design decision session that produces:
+
+1. approved field list for chunk materialization
+2. approved precedence rule per field
+3. decision on canonical metadata table shape
+4. decision on migration style: in-place vs versioned new table
+
+Only after that should implementation begin.

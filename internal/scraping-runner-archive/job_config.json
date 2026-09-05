@@ -1,0 +1,33 @@
+{
+  "name": "FSR Scraping Pipeline — Dev",
+  "tasks": [
+    {
+      "task_key": "fsr_scraping",
+      "notebook_task": {
+        "notebook_path": "/Users/${workspace_user}/fsr_scraping/run_scraping_pipeline",
+        "base_parameters": {
+          "FSR_OUTPUT_TABLE": "main.gp_services_sdg_poc.fsr_scraped_file_mapping_ref__dev_tmp",
+          "FORCE_RESET": "false",
+          "FSR_BATCH_SIZE": "4",
+          "FSR_BATCH_THREADS": "4",
+          "FSR_LLM_MODEL": "gemini-3-flash",
+          "FSR_LLM_CONCURRENCY": "3",
+          "FSR_LLM_VERIFY_SSL": "false",
+          "FSR_LOOKUP_SOURCE": "auto"
+        },
+        "source": "WORKSPACE"
+      },
+      "existing_cluster_id": "${cluster_id}",
+      "timeout_seconds": 7200,
+      "max_retries": 1
+    }
+  ],
+  "schedule": null,
+  "tags": {
+    "team": "sdg",
+    "pipeline": "fsr-scraping",
+    "env": "dev"
+  },
+  "format": "MULTI_TASK",
+  "max_concurrent_runs": 1
+}

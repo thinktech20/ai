@@ -163,7 +163,7 @@ Live UI-NN list at [`../fsr-prod-ops/tracker.md`](../fsr-prod-ops/tracker.md).
 | UI-22 VS index sync staleness | May 22 | 🟢 | Mon — last commit May 7, ~8 days behind; verify + manual resync if real |
 | UI-15 ESN proper resolution | TBD (Pranesh) | 🟢 | In flight, ADO #664259 |
 | UI-17 + UI-18 (DQ + P1 retry) | PR + dev validation | 🟢 | Pushed, awaits PR |
-| UI-12 LiteLLM secret-scope | Awaiting Databricks team | ⏸ | Pinged 2026-05-12 |
+| UI-12 LiteLLM credential scope | Awaiting Databricks team | ⏸ | Pinged 2026-05-12 |
 | FSR robustness items list for Abhijeet | May 20 | 🟡 | Carry from May 13 |
 | FSR runbook / handoff doc — draft v1 | May 17 | ✅ | 2-page docx at [`../FSR/fsr-docs/FSR Pipeline - Runbook and Guide.docx`](../FSR/fsr-docs/FSR%20Pipeline%20-%20Runbook%20and%20Guide.docx). Page 1 = pre-reqs DEV/PROD + Build & deploy ownership + config touch-points + jobs reference. Page 2 = operations (run schedule, observability, 6-row repair recipes, terminal failures, ownership). Modeled on team's SDG Infra & Build Pipeline Provisioning Guide; complements existing Confluence design + deploy plan (doesn't repeat them). |
 | FSR runbook — user review pass | May 18 | ✅ | Done. Removed Setup Steps; added Build & deploy ownership (Bronze=D&A, Silver/Gold=Dev, branch→workspace table, prod deploy flow via CCB); renamed title ("Handoff" dropped). |

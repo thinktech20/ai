@@ -1,0 +1,36 @@
+# DBR Workflow: Safe FSR orchestration test
+# Mirrors the real two-task structure without touching tables, volumes, or prod notebooks.
+# Both tasks call the same print-only notebook created in the user's workspace.
+
+resources:
+  jobs:
+    pw_sdg_fsr_ingestion_test:
+      name: pw_sdg_fsr_ingestion_test
+
+      tasks:
+      - task_key: fsr_metadata_extraction
+        notebook_task:
+          notebook_path: ${var.workflow_test_notebook_path}
+          source: WORKSPACE
+        timeout_seconds: 1800
+        max_retries: 0
+
+      - task_key: fsr_chunk_ingestion
+        notebook_task:
+          notebook_path: ${var.workflow_test_notebook_path}
+          source: WORKSPACE
+        depends_on:
+        - task_key: fsr_metadata_extraction
+        timeout_seconds: 1800
+        max_retries: 0
+
+      max_concurrent_runs: 1
+      queue:
+        enabled: true
+      tags:
+        team: sdg
+        pipeline: fsr-ingestion-test
+        env: ${var.jb_env}
+        purpose: safe-workflow-test
+      run_as:
+        user_name: ${var.jb_run_as}

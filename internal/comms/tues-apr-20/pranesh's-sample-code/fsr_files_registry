@@ -1,0 +1,55 @@
+# Databricks notebook source
+# ─────────────────────────────────────────────────────────────────────────────
+# FSR File Registry – Step 1 of Process 1
+# Scans PDF volumes, discovers new/changed files, and upserts them into the
+# file registry table with scraped = null (ready for scraping).
+# ─────────────────────────────────────────────────────────────────────────────
+
+# COMMAND ----------
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, lit, current_timestamp
+from pyspark.sql.types import StructType, StructField, StringType, TimestampType
+from datetime import datetime, timezone
+import time
+
+spark = SparkSession.builder.getOrCreate()
+
+# ── Configuration ─────────────────────────────────────────────────────────────
+
+VIUD_CATALOG = "viud"
+
+PDF_VOLUME_PATHS = [
+    f"/Volumes/{VIUD_CATALOG}/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports",
+    f"/Volumes/{VIUD_CATALOG}/ing_ud_fieldvision/fv_field_service_report",
+]
+
+REGISTRY_TABLE = "main.gp_services_sdg_poc.fsr_file_registry"
+
+_SKIP_SUFFIXES = {".crdownload", ".tmp", ".part", ".download", ".DS_Store",
+                  ".json", ".txt", ".csv", ".xlsx"}
+
+print(f"Registry table : {REGISTRY_TABLE}")
+print(f"Volumes        : {len(PDF_VOLUME_PATHS)}")
+
+# COMMAND ----------
+
+# ── Step 1: Ensure registry table exists ──────────────────────────────────────
+
+spark.sql(f"""
+    CREATE TABLE IF NOT EXISTS {REGISTRY_TABLE} (
+        volume_path    STRING    NOT NULL,
+        pdf_name       STRING,
+        last_modified  TIMESTAMP,
+        scraped        STRING,
+        error_reason   STRING,
+        discovered_at  TIMESTAMP,
+        scraped_at     TIMESTAMP
+    )
+    USING DELTA
+    COMMENT 'FSR file registry — tracks all PDF files discovered on volumes and their scraping status.'
+    TBLPROPERTIES ('delta.enableChangeDataFeed' = 'true')
+""")
+
+print(f"[OK] Registry table ready: {REGISTRY_TABLE}")
+

@@ -1,0 +1,74 @@
+# Filename: databricks.yml
+# Databricks Asset Bundle config for FSR AI pipelines
+# Based on: reference/databricks-team/databricks-team-ref-docs-n-code/gp_fdc_repo-dev/databricks.yml
+
+bundle:
+  name: SDG
+
+include:
+  - "pw_*.yml"
+
+
+variables:
+  jb_env:
+    default: "dev"
+  jb_business_unit_name:
+    default: "gas-power"
+  jb_sub_domain_code:
+    default: "sdg"
+  jb_domain_name:
+    default: "SDG AI"
+  jb_run_as:
+    # ETL Functional SSO — Chaithra to provide the actual FSSO for our project
+    # Placeholder: using the FDC one for now
+    default: "Service.PMOFUNCTIONALSSO@ge.com"
+  workflow_test_notebook_path:
+    default: "/Workspace/Users/madhurima.saxena@ge.com/workflow_test_fsr/test_workflow_fsr_pipeline"
+  filename_param:
+    # CICD user path — this is where bundles deploy notebooks
+    default: "/Users/d44c1af5-e99e-4010-8302-464e74d13ba1/.bundle/SDG/files"
+  catalog_name:
+    default: "main"
+  catalog_name_vgp:
+    default: "vgpd"
+  catalog_name_viud:
+    default: "viud"
+  poc_schema:
+    default: "gp_services_sdg_poc"
+
+
+targets:
+  dev:
+    mode: development
+    workspace:
+      host: "https://gevernova-ai-dev-dbr.cloud.databricks.com"
+      root_path: /Users/d44c1af5-e99e-4010-8302-464e74d13ba1/.bundle/${bundle.name}
+    variables:
+      jb_env: "dev"
+      catalog_name: "main"
+      catalog_name_vgp: "vgpd"
+      catalog_name_viud: "viud"
+      poc_schema: "gp_services_sdg_poc"
+
+    permissions:
+      - level: CAN_MANAGE
+        user_name: ${var.jb_run_as}
+      # Add team members / groups as needed
+    presets:
+      name_prefix: "[dev] "
+
+  prod:
+    mode: production
+    workspace:
+      # AI Prod workspace — TBD
+      host: "https://gevernova-ai-prod-dbr.cloud.databricks.com"
+    variables:
+      jb_env: "prod"
+      catalog_name: "main"          # TBD — will change to vaid/vaiq
+      catalog_name_vgp: "vgpp"
+      catalog_name_viud: "viud"     # TBD — confirm prod ingestion catalog
+      poc_schema: "gp_services_sdg_poc"  # TBD — will change to production schema
+
+    permissions:
+      - level: CAN_MANAGE
+        user_name: ${var.jb_run_as}

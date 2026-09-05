@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "dbx",
+			"path": ".."
+		},
+		{
+			"path": "../../uai3071390-genai-services-demand-generation-usecase"
+		}
+	],
+	"settings": {
+		"jupyter.interactiveWindow.cellMarker.codeRegex": "^# COMMAND ----------|^# Databricks notebook source|^(#\\s*%%|#\\s*\\<codecell\\>|#\\s*In\\[\\d*?\\]|#\\s*In\\[ \\])",
+		"jupyter.interactiveWindow.cellMarker.default": "# COMMAND ----------"
+	}
+}

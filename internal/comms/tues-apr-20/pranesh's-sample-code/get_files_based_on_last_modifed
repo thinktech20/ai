@@ -1,0 +1,24 @@
+from datetime import datetime, timezone
+
+# ── Hardcoded test values ──────────────────────────────────────────────────
+WATERMARK = "2026-04-19T00:00:00.000Z" 
+VIUD_CATALOG = "viud" 
+VOLUME_PATH = f"/Volumes/{VIUD_CATALOG}/ing_ud_fieldvision/fv_field_service_report"
+
+# ── Convert watermark string to epoch ms ──────────────────────────────────
+watermark_dt = datetime.fromisoformat(WATERMARK.replace("Z", "+00:00"))
+watermark_ms = int(watermark_dt.timestamp() * 1000)
+
+# ── List files via dbutils ─────────────────────────────────────────────────
+all_files = [f for f in dbutils.fs.ls(VOLUME_PATH) if not f.path.endswith("/")]
+
+# ── Filter by modificationTime > watermark ────────────────────────────────
+new_files = [f for f in all_files if f.modificationTime > watermark_ms]
+
+print(f"Total files in volume     : {len(all_files)}")
+print(f"Watermark                 : {WATERMARK}")
+print(f"Files newer than watermark: {len(new_files)}")
+print("\nSample (up to 5):")
+for f in new_files[:5]:
+    ts = datetime.fromtimestamp(f.modificationTime / 1000, tz=timezone.utc).isoformat()
+    print(f"  {ts}  {f.name}")

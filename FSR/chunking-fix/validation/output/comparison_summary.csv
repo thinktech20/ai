@@ -1,0 +1,5 @@
+new_avg_page_span,new_chunk_max,new_chunk_p50,new_chunk_p95,new_elapsed_s,new_error,new_n_chunks,new_pages,new_section_coverage_pct,new_text_chars,new_total_chars,old_chunk_max,old_chunk_p50,old_chunk_p95,old_elapsed_s,old_error,old_n_chunks,old_pages,old_text_chars,old_total_chars,pdf,size_kb,text_loss_pct_new_vs_old
+14.89,3999,3813,3985,1.17,,28,204,10.7,106003,88888,3994,3050,3990,0.4,,35,204,106761,107630,000496d8-fefa-4b6c-a654-791e328a4ddb,46242,17.4
+2.57,1544,121,1527,0.2,,23,51,100.0,18654,6721,3941,3636,3941,0.13,,6,51,20243,20325,00063d90-f42d-45bb-933e-d941dc57a90a,13364,66.9
+2.44,1630,188,1506,0.69,,27,60,100.0,15650,10218,3893,3859,3893,0.29,,5,60,17504,17970,000966e2-b88b-459c-8966-e2b88be59c9d,12702,43.1
+11.51,4000,3881,3999,2.02,,108,611,4.6,349366,311397,3977,3725,3930,0.88,,98,611,351151,351921,00170e4e-fdec-45fa-a7e8-e87ada9711e8,66458,11.5

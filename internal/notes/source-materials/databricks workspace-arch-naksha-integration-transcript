@@ -1,0 +1,123 @@
+incorrect
+
+Mishra, Binayak (GE Vernova, consultant) started transcription
+NV
+
+Nm, Vinayaka (GE Vernova)
+0 minutes 7 seconds0:07
+Nm, Vinayaka (GE Vernova) 0 minutes 7 seconds
+I think I see it.
+Nm, Vinayaka (GE Vernova) 0 minutes 9 seconds
+Step.
+Nm, Vinayaka (GE Vernova) 0 minutes 11 seconds
+OK, so myself Vinayak, so I'm supporting the field services data in the analytics. I have Sonam and Akshay from our team, so Akshay.
+Nm, Vinayaka (GE Vernova) 0 minutes 38 seconds
+For the objects that we're going to create in the AI data bricks workspace. OK, so we'll quickly get started. Let me quickly share my screen.
+Nm, Vinayaka (GE Vernova) 0 minutes 47 seconds
+3.
+Nm, Vinayaka (GE Vernova) 0 minutes 50 seconds
+I think until now, as far as I know, you were, you know, doing the POC in the NRC workspace, right? So I think we have two AI, you know, exclusive.
+Nm, Vinayaka (GE Vernova) 1 minute 7 seconds
+Workspace created in the Databricks, right? So let me know if you're able to see my screen.
+Nm, Vinayaka (GE Vernova) 1 minute 19 seconds
+Can anyone confirm if you're able to see my screen?
+
+Chhabra, Sonam1 (GE Vernova)
+1 minute 22 seconds1:22
+Chhabra, Sonam1 (GE Vernova) 1 minute 22 seconds
+Uh, we can, we can Vinayaka.
+NV
+
+Nm, Vinayaka (GE Vernova)
+1 minute 24 seconds1:24
+Nm, Vinayaka (GE Vernova) 1 minute 24 seconds
+OK, thanks. So this is the new Dev workspace that has been created and similarly we have the prod workspace as well for.
+Ramnath, Akshay (GE Vernova) 43 minutes 2 seconds
+So you can give something meaningful so that it is easy for the reviewer to understand why the change was made.
+Ramnath, Akshay (GE Vernova) 43 minutes 11 seconds
+This will basically squash these commits into one. So here I have just shown just a very simple thing, but when we do a day-to-day development we might end up having a lot of commits. So it is always good to squash related commits so that way it makes the the review process a little easy.
+Ramnath, Akshay (GE Vernova) 43 minutes 39 seconds
+So once you have done that, you can just push the change to remote.
+SS
+Sharma, Shivam (GE Vernova)
+43 minutes 47 seconds43:47
+Sharma, Shivam (GE Vernova) 43 minutes 47 seconds
+Akshay, I think once you push the change to remote, let's let's take a pause for tomorrow, today, right? And resume tomorrow because I see the we are anyways overtime and the is also dropping, right? So we can cover the the actual deployment piece maybe in the next call, right?
+
+Ramnath, Akshay (GE Vernova)
+43 minutes 48 seconds43:48
+Ramnath, Akshay (GE Vernova) 43 minutes 48 seconds
+Mm-hmm.
+Ramnath, Akshay (GE Vernova) 43 minutes 55 seconds
+Yes.
+Ramnath, Akshay (GE Vernova) 44 minutes
+Sounds good. OK.
+Ramnath, Akshay (GE Vernova) 44 minutes 7 seconds
+It makes sense.
+Ramnath, Akshay (GE Vernova) 44 minutes 15 seconds
+OK.
+Ramnath, Akshay (GE Vernova) 44 minutes 30 seconds
+So once this is done, you see now earlier there were two commits. We just have a single commit now. So we'll we'll as Shivam highlighted probably the next set of steps we'll talk in the next call. But before we close the call, are there any questions?
+Ramnath, Akshay (GE Vernova) 44 minutes 46 seconds
+Did you guys feel I was moving fast or was it understandable?
+Ramnath, Akshay (GE Vernova) 44 minutes 54 seconds
+Yep, please feel free to reach out offline in case there are any questions with regard to whatever we have covered till now, but please do let me know.
+
+Arunachalam, Krithika (GE Vernova)
+45 minutes 7 seconds45:07
+Arunachalam, Krithika (GE Vernova) 45 minutes 7 seconds
+Yeah, thanks, Akshay. This was helpful. Thanks, Shivam. Thanks for organizing this.
+SS
+Sharma, Shivam (GE Vernova)
+45 minutes 10 seconds45:10
+Sharma, Shivam (GE Vernova) 45 minutes 10 seconds
+Thanks Akshay team. So please reach out to the team, right? This team has been developing on database for more than two years now, right? So they have very good understanding of the platform and how things should happen. So please feel free to reach out and then.
+
+Arunachalam, Krithika (GE Vernova)
+45 minutes 19 seconds45:19
+Arunachalam, Krithika (GE Vernova) 45 minutes 19 seconds
+Mm.
+SS
+Sharma, Shivam (GE Vernova)
+45 minutes 25 seconds45:25
+Sharma, Shivam (GE Vernova) 45 minutes 25 seconds
+Also, please test and try whatever was explained today so that if you have any issues in terms of accesses or in terms of let's say the setup or something else, those get highlighted now rather than one week before the deployment, right? So that's all my ask would be. And then if somebody can share the list of you because I see.
+Sharma, Shivam (GE Vernova) 45 minutes 45 seconds
+A lot of folks on the call who are not part of Git. If somebody can set send me the list of SSOs who needs to be added to Git, I can add make sure that everybody has all the accesses on the Git side as well, OK.
+
+Arunachalam, Krithika (GE Vernova)
+45 minutes 57 seconds45:57
+Arunachalam, Krithika (GE Vernova) 45 minutes 57 seconds
+Yeah, I know that too.
+SS
+Sharma, Shivam (GE Vernova)
+45 minutes 59 seconds45:59
+Sharma, Shivam (GE Vernova) 45 minutes 59 seconds
+All right. Thanks, Krithika.
+
+Arunachalam, Krithika (GE Vernova)
+46 minutes46:00
+Arunachalam, Krithika (GE Vernova) 46 minutes
+Thank you.
+SS
+Sharma, Shivam (GE Vernova)
+46 minutes 1 second46:01
+Sharma, Shivam (GE Vernova) 46 minutes 1 second
+Thanks, Vinayaka.
+
+Ramnath, Akshay (GE Vernova)
+46 minutes 3 seconds46:03
+Ramnath, Akshay (GE Vernova) 46 minutes 3 seconds
+Thanks, Tim. Have a great rest of the day. Bye.
+NV
+Nm, Vinayaka (GE Vernova)
+46 minutes 4 seconds46:04
+Nm, Vinayaka (GE Vernova) 46 minutes 4 seconds
+Yeah. Thanks. Thanks, everyone.
+SS
+Sharma, Shivam (GE Vernova)
+46 minutes 5 seconds46:05
+Sharma, Shivam (GE Vernova) 46 minutes 5 seconds
+Have a good night. Bye.
+
+Mishra, Binayak (GE Vernova, consultant) stopped transcription

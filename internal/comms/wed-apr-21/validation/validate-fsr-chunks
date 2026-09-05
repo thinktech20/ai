@@ -1,0 +1,230 @@
+FSR chunk validation queries
+
+Target PDFs
+- 3ef8d150-1225-4c62-ac5e-ae9166c73954
+- 08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d
+
+1. Baseline coverage in old gt_litellm table
+Purpose: find PDFs with enough chunk rows to compare.
+
+```sql
+SELECT pdf_name, COUNT(*) AS chunk_rows
+FROM main.gp_services_sdg_poc.field_service_report_gt_litellm
+GROUP BY pdf_name
+HAVING COUNT(*) >= 2
+ORDER BY chunk_rows DESC, pdf_name
+LIMIT 20;
+```
+
+2. Baseline sample across both PDFs
+Purpose: show the old duplication pattern across the selected PDFs.
+
+```sql
+SELECT chunk_id, pdf_name, page_number, generator_serial, report_date,
+       substring(chunk_text, 1, 500) AS chunk_preview, metadata
+FROM main.gp_services_sdg_poc.field_service_report_gt_litellm
+WHERE pdf_name IN (
+  '3ef8d150-1225-4c62-ac5e-ae9166c73954',
+  '08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d'
+)
+ORDER BY pdf_name, page_number, chunk_id
+LIMIT 4;
+```
+
+3. Baseline duplication check for PDF 1
+Purpose: show one front-matter chunk duplicated across two ESNs.
+
+```sql
+SELECT chunk_id, pdf_name, page_number, generator_serial, report_date,
+       substring(chunk_text, 1, 300) AS chunk_preview
+FROM main.gp_services_sdg_poc.field_service_report_gt_litellm
+WHERE pdf_name = '3ef8d150-1225-4c62-ac5e-ae9166c73954'
+ORDER BY page_number, chunk_id
+LIMIT 2;
+```
+
+4. Baseline duplication check for PDF 2
+Purpose: confirm the same old-pattern duplication on the second PDF.
+
+```sql
+SELECT chunk_id, pdf_name, page_number, generator_serial, report_date,
+       substring(chunk_text, 1, 300) AS chunk_preview
+FROM main.gp_services_sdg_poc.field_service_report_gt_litellm
+WHERE pdf_name = '08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d'
+ORDER BY page_number, chunk_id
+LIMIT 2;
+```
+
+5. New test-table coverage
+Purpose: confirm both PDFs were loaded into the new chunk table.
+
+```sql
+SELECT pdf_name, COUNT(*) AS chunk_rows
+FROM main.gp_services_sdg_poc.fsr_chunks_test
+WHERE pdf_name IN (
+  '3ef8d150-1225-4c62-ac5e-ae9166c73954',
+  '08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d'
+)
+GROUP BY pdf_name
+ORDER BY pdf_name;
+```
+
+6. New chunk stream sample for PDF 1
+Purpose: show ordered `chunk_index` and page spans in the new pipeline.
+
+```sql
+SELECT chunk_id, pdf_name, chunk_index, start_page, end_page,
+       substring(chunk_text, 1, 300) AS chunk_preview
+FROM main.gp_services_sdg_poc.fsr_chunks_test
+WHERE pdf_name = '3ef8d150-1225-4c62-ac5e-ae9166c73954'
+ORDER BY chunk_index
+LIMIT 2;
+```
+
+7. New chunk stream sample for PDF 2
+Purpose: confirm the same ordered-chunk pattern on the second PDF.
+
+```sql
+SELECT chunk_id, pdf_name, chunk_index, start_page, end_page,
+       substring(chunk_text, 1, 300) AS chunk_preview
+FROM main.gp_services_sdg_poc.fsr_chunks_test
+WHERE pdf_name = '08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d'
+ORDER BY chunk_index
+LIMIT 2;
+```
+
+8. New metadata status check
+Purpose: confirm metadata and chunking completed for both PDFs.
+
+```sql
+SELECT pdf_name, title, esn, equipment_type, event_type, report_issued_date,
+       metadata_status, chunk_status
+FROM main.gp_services_sdg_poc.fsr_metadata_registry_test
+WHERE pdf_name IN (
+  '3ef8d150-1225-4c62-ac5e-ae9166c73954',
+  '08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d'
+)
+ORDER BY pdf_name;
+```
+
+9. Vince attribute coverage in metadata table
+Purpose: check which requested attributes exist and are populated for these PDFs.
+
+```sql
+SELECT pdf_name, title, customer, esn, equipment_sys_id, equipment_type,
+       event_type, ev_project_id, ev_equipment_event_id, fsp_project_id,
+       fsr_number, report_issued_date, outage_start_date, outage_end_date,
+       prepared_by, approved_by, page_count
+FROM main.gp_services_sdg_poc.fsr_metadata_registry_test
+WHERE pdf_name IN (
+  '3ef8d150-1225-4c62-ac5e-ae9166c73954',
+  '08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d'
+)
+ORDER BY pdf_name;
+```
+
+10. Vince attribute coverage on chunk rows
+Purpose: verify which metadata fields are materialized as top-level chunk columns.
+
+```sql
+DESCRIBE main.gp_services_sdg_poc.fsr_chunks_test;
+```
+
+11. Test index sync health check
+Purpose: confirm the recreated test index is bound to the right table and has caught up to the latest chunk rows.
+
+Expected checks in Catalog for `main.gp_services_sdg_poc.vs_fsr_chunks_test`
+- `Index status = Online`
+- `Source table = main.gp_services_sdg_poc.fsr_chunks_test`
+- `Rows indexed = 759`
+- `Embedding dimension = 3072`
+- `Last processed timestamp` is current for the rerun
+
+12. Notebook-based vector query validation
+Purpose: verify retrieval against the recreated test index when the UI cannot issue `query_text` directly for this index type.
+
+Step A — create the query embedding
+
+```python
+import requests
+
+query_text = "THOMAS A. SMITH Steam Turbine ESN 270T503"
+litellm_api_key = "<temporary key for one-off validation>"
+
+resp = requests.post(
+  "https://dev-gateway.apps.gevernova.net/v1/embeddings",
+  headers={
+    "Authorization": f"Bearer {litellm_api_key}",
+    "Content-Type": "application/json",
+  },
+  json={
+    "model": "azure-text-embedding-3-large-1",
+    "input": [query_text],
+  },
+  timeout=120,
+  verify=False,
+)
+
+print(resp.status_code)
+query_vector = resp.json()["data"][0]["embedding"]
+print(len(query_vector))
+```
+
+Expected result
+- status code `200`
+- vector length `3072`
+
+Step B — query the Vector Search index with `query_vector`
+
+```python
+from databricks.vector_search.client import VectorSearchClient
+
+vsc = VectorSearchClient()
+index = vsc.get_index(
+  endpoint_name="pw-ser-sdg-vector-search",
+  index_name="main.gp_services_sdg_poc.vs_fsr_chunks_test",
+)
+
+result = index.similarity_search(
+  num_results=3,
+  columns=[
+    "pdf_name",
+    "chunk_id",
+    "chunk_text",
+    "title",
+    "esn",
+    "equipment_type",
+    "event_type",
+    "report_issued_date",
+  ],
+  query_vector=query_vector,
+)
+
+result
+```
+
+Expected result
+- top hit returns `pdf_name = 08ef2ef4-fc25-4bc8-af2e-f4fc253bc86d`
+- top hit text includes `THOMAS A. SMITH`
+- result payload includes expected materialized metadata (`title`, `esn`, `equipment_type`, `event_type`)
+
+13. Final validation summary for the two-PDF test
+Purpose: capture the main findings from the old-vs-new comparison.
+
+Verified fixes versus old `gt_litellm`
+- Old baseline duplicated the same opening chunk across multiple `generator_serial` variants for the same PDF.
+- New pipeline produces one ordered chunk stream per PDF using `chunk_index`, `start_page`, and `end_page`.
+- New metadata layer resolves one file-level row per PDF with `metadata_status = completed` and `chunk_status = completed`.
+- New test index can be recreated, synced, and queried end-to-end using a query embedding.
+
+Remaining gaps / not fully fixed yet
+- Vince's requested metadata set is only partially materialized onto chunk rows.
+- Some metadata fields exist only in the metadata table, not as top-level chunk columns.
+- Some fields are still null for the tested PDFs (`customer`, `prepared_by`, `approved_by`, some project IDs).
+- The Databricks UI query dialog is not sufficient for this index type because it needs `query_vector` rather than plain `query_text`.
+
+Current comparison summary
+- Old baseline: duplicated opening chunks across multiple `generator_serial` variants.
+- New pipeline: one ordered chunk stream per PDF with `chunk_index`, `start_page`, and `end_page`.
+- New metadata table: partial alignment with Vince's requested attributes, not complete yet.
+- New Vector Search test index was recreated successfully and validated with notebook-based vector query.

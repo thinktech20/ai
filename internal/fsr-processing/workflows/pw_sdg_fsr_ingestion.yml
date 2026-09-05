@@ -1,0 +1,65 @@
+# DBR Workflow: FSR Ingestion Pipeline
+# Two-task job: metadata extraction (scraping) → chunk ingestion
+# Serverless compute (confirmed by Shivam)
+#
+# Matches format: reference/databricks-team/databricks-team-ref-docs-n-code/gp_fdc_repo-dev/silver/src/workflows/enabled/
+#
+# NOTE: notebook_path values use CURRENT locations.
+#       When code moves to silver/src/etl/, update paths to:
+#         ${var.filename_param}/silver/src/etl/run_scraping_pipeline
+#         ${var.filename_param}/silver/src/etl/run_pipeline
+
+resources:
+  jobs:
+    pw_sdg_fsr_ingestion:
+      name: pw_sdg_fsr_ingestion
+
+      tasks:
+      # ── Task 1: FSR Metadata Extraction (scraping pipeline) ──
+      - task_key: fsr_metadata_extraction
+        notebook_task:
+          notebook_path: /Workspace/Users/${var.jb_run_as}/fsr_scraping/run_scraping_pipeline
+          source: WORKSPACE
+          base_parameters:
+            FSR_OUTPUT_TABLE: "${var.catalog_name}.${var.poc_schema}.fsr_scraped_file_mapping_ref"
+            FORCE_RESET: "false"
+            FSR_BATCH_SIZE: "4"
+            FSR_BATCH_THREADS: "4"
+            FSR_LLM_MODEL: "gemini-3-flash"
+            FSR_LLM_CONCURRENCY: "3"
+            FSR_LLM_VERIFY_SSL: "false"
+            FSR_LOOKUP_SOURCE: "auto"
+        timeout_seconds: 7200
+        max_retries: 1
+        retry_on_timeout: false
+
+      # ── Task 2: FSR Chunk Ingestion (chunking + Delta + VS sync) ──
+      - task_key: fsr_chunk_ingestion
+        notebook_task:
+          notebook_path: /Workspace/Users/${var.jb_run_as}/fsr_pipeline/run_pipeline
+          source: WORKSPACE
+          base_parameters:
+            EMBEDDINGS_TABLE: "${var.catalog_name}.${var.poc_schema}.field_service_report"
+            FSR_REF_VIEW: "${var.catalog_name_vgp}.fsr_std_views.fsr_pdf_ref"
+            VS_ENDPOINT_NAME: "pw-ser-sdg-vector-search"
+            FORCE_RESET: "false"
+        depends_on:
+        - task_key: fsr_metadata_extraction
+        timeout_seconds: 7200
+        max_retries: 1
+        retry_on_timeout: false
+
+      # ── Job-level settings ──
+      max_concurrent_runs: 1
+      queue:
+        enabled: true
+      email_notifications:
+        on_failure:
+        # Add team email addresses
+        - pranesh.kumar@ge.com
+      tags:
+        team: sdg
+        pipeline: fsr-ingestion
+        env: ${var.jb_env}
+      run_as:
+        user_name: ${var.jb_run_as}

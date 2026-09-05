@@ -1,0 +1,258 @@
+Process 1 — fsr_metadata_extraction.py
+
+This is a Databricks notebook that:
+
+Step 1A: Discover new PDFs — Read watermark from metadata table (MAX(ingested_at)), scan volumes via dbutils.fs.ls, filter by modificationTime > watermark
+
+Step 1B: MERGE stub rows — For each new file, MERGE into metadata table with metadata_status=pending, chunk_status=pending. Re-uploads get reset.
+
+Step 1C: Extract + normalize + enrich — For pending or failed rows, I'll extract first-page fields using pdfplumber, normalize them through an LLM via LiteLLM with gemini-3-flash, then enrich the data with IBAT and Event Vision integrations.
+
+Step 1D: Write results — Update the metadata table, marking rows as metadata_status=ok on success or metadata_status=failed if anything goes wrong.
+
+Key design decisions: I'm pulling all configuration from fsr_config.py, using stub rows per ADR-007 instead of a separate file registry, and tracking progress via the watermark approach.
+
+For the watermark strategy, I'll use the ingested_at column to track which batches have been processed. Document IDs are generated as SHA-256 hashes of the volume path, truncated to 16 characters. Failed files get retried automatically, and after hitting max retries they move to a dead-letter state with metadata_status=skipped. I'm also implementing adaptive concurrency for LLM calls and threaded batch execution based on the data science reference patterns.
+
+Now I'm reviewing fsr_config.py to confirm I have all the DDL and constants I need — I've already got the helper functions like get_runtime_param and make_document_id, plus the catalog/schema constants, PDF volume paths, and table names for metadata and chunks.
+
+I'm pulling in the remaining config pieces: reference tables like IBAT_EQUIPMENT_TABLE and EVENT_VISION_SOT_TABLE, secrets and LLM gateway configuration, embedding and vector store settings, tuning parameters for both processes, the chunking configuration, status enums for metadata and chunks, file skip patterns, and the DDL column definitions for both tables.
+
+Now I'm structuring the notebook as a Databricks Python file with the standard command separators, starting with pip installs and a Python restart.
+
+Setting up the notebook flow: I'll import everything and load shared config first, then define the AdaptiveSemaphore class for concurrency control, followed by the discovery step to find new PDFs using watermarks and volume scanning, then merge stub rows into the metadata table, run the three-stage pipeline for extraction and normalization, enrich with IBAT and Event Vision data, process any pending or failed rows with threaded batch execution, and wrap up with a summary preview.
+
+Now I'm working through the PDF discovery logic—reading the watermark file to track what's already been processed, scanning the volume for new PDFs, and identifying which ones need to be ingested. I'm querying the metadata table to get the latest ingestion timestamp as a watermark, then scanning through the PDF volumes to find new files that haven't been processed yet, skipping any that are older than the watermark or have extensions I want to ignore. Now I'm building stub rows for each new file by extracting the document ID, volume path, and PDF name to prepare them for insertion into the metadata table.
+
+Constructing the MERGE statement... Finishing the SQL statement...
+
+Actually, I need to reconsider the logic here. The ADR says matched rows should reset metadata_status to pending, which makes sense for re-uploads—if a file appears again with a new modification time, it means the content likely changed and needs reprocessing. The watermark filter ensures only truly new or modified files make it into the stub set, so normal reruns won't trigger unnecessary resets for already-processed files.
+
+Now for the extraction and enrichment phase, I need to query for all rows where metadata_status is either pending or failed and the retry count hasn't exceeded the limit, then process them in batches. I'll extract page-1 fields using pdfplumber, run LLM normalization, enrich with IBAT and EV data, and update the rows back in the metadata table. The threading approach should follow the DS reference pattern—batching PDFs with adaptive worker concurrency, processing each batch through the full pipeline, then writing updates.
+
+On success, I'll update all the extracted fields (title, ESN, equipment details, event info, dates, page count) along with setting metadata_status to 'ok' and clearing any error message. On failure, I'll mark the status as 'failed', store the error message, increment the retry counter, and check if we've hit the dead-letter threshold.
+
+Now I'm thinking about the overall structure—this should be a single Databricks notebook that handles all of Process 1, from PDF discovery through LLM normalization to IBAT/EV enrichment and writing to the Silver metadata table. For the ESN resolution, I need to follow the 4-layer approach: regex extraction first, then filename fallback, LLM normalization, and finally SOT reference lookup to backfill any missing values.
+
+Writing the implementation... I need to use %run ./fsr_config in the Databricks notebook to load the config file, since it's a notebook source file. Before I can do the MERGE operation for stub rows, I need to ensure the metadata table exists with a CREATE TABLE IF NOT EXISTS step. For the batch processing workflow, I'll extract fields from page 1 in parallel, then send batches to the LLM for normalization, and use Delta MERGE statements to update the metadata table with the processed results.
+
+Writing the MERGE statement...
+
+For failures, I'll track the failed document_ids and handle them in a separate update step. I also need to extract page_count from pdfplumber during the PDF extraction phase. Now I'm ready to write the implementation—I'll structure it as a clean Databricks notebook file, keeping the metadata-first approach with stub rows and adapting the reference code to fit our architecture, particularly around the watermark-based incremental processing.
+
+Writing the notebook implementation... I'm thinking through the error handling strategy — extraction failures can be tracked per-document, but LLM normalization and enrichment would fail at the batch level, so I'll process in batches to match the DS code's efficiency while tracking individual document successes where feasible.
+
+Now I'm setting up the implementation with the necessary dependencies and configuration...
+
+I need to structure the pipeline carefully: pdfplumber extracts the raw metadata including title and page count, then the LLM normalizes the structured fields, and finally we enrich with IBAT and EV data through batch processing with proper error handling at both the batch and document levels. Now I need to handle the pdf_name extraction — for FieldVision PDFs it's the S3 filename GUID, and for manual uploads it's the human-readable filename without the extension, so I'll just use the stem from the path. I also need to track which volume the file came from with source_volume. Let me start writing out the core functions I'll need: one to extract fields, title, and page count from the PDF itself, another to call the LLM with proper retry logic and rate limiting, and then the normalization step.
+
+Defining the extraction functions... I'm thinking through the update strategy after enrichment—for each document, I'll have the extracted fields like title, ESN, equipment details, and page count that need to go back into the metadata table. The most efficient approach is to batch these updates using a MERGE operation on a temporary DataFrame rather than individual UPDATE statements, and for failures I'll collect the document IDs and do a single batch update to mark them as failed with the error message.
+
+For handling failures, I need to distinguish between extraction failures (which are per-document with different errors) and LLM or enrichment failures (which affect the entire batch with the same error). So my refined approach is to extract each document's first page in parallel, then handle failures individually for extraction issues but batch them for LLM failures.
+
+Now I'm thinking through the enrichment step—I'll need to convert the normalized records into a Spark DataFrame, join them with IBAT and Event Vision data, then collect the results back. For updating the metadata table afterward, I'll use a MERGE statement to handle both successes and failures efficiently.
+
+I'm also mapping the LLM output fields to table columns using the same mapping from the DS code. One thing to clarify: the title comes directly from pdfplumber and bypasses LLM normalization, while the LLM handles the structured fields like ESN, dates, and IDs.
+
+So my approach is to extract the title from pdfplumber first, send the other fields to the LLM for normalization, then merge the title back with the normalized results before enriching with IBAT/EV data.
+
+I also need to capture the page_count from pdfplumber and include it in the extraction. Looking at the metadata table schema, I can see all the fields I need to populate, and there's no customer field in there. Now I'm reviewing the complete column list from the metadata table DDL to make sure I capture everything in my implementation. I also need to decide whether to use a %run directive or an import statement for the config file.
+
+Since this is a Databricks notebook and the config is a notebook source file, %run ./fsr_config will execute it and bring all variables into scope, though it needs to be in its own cell. For dependencies, I'll install pdfplumber and openpyxl like the existing code does, but I need to verify whether litellm is actually necessary or if I should just use requests directly for API calls.
+
+Now I'm thinking through how to handle file listing in Databricks — dbutils.fs.ls returns FileInfo objects with paths that may or may not have the dbfs: prefix depending on the volume type, so I'll need to filter out directories and handle both path formats appropriately.
+
+Setting up the notebook structure...
+
+I'm realizing the %run command needs its own cell and can't share space with imports, so I need to be careful about how I organize the dependencies to avoid duplication.
+
+Since fsr_config already brings in hashlib, os, base64, and the dataclass utilities, I'll only import what's missing—mainly the Spark SQL types and functions. I'm also accounting for the fact that Spark is already available in Databricks, so I won't need to initialize it.
+
+I'm going to include the AdaptiveSemaphore class from the DS code since the config references LLM concurrency, and I'll adapt the enrichment logic to handle the IBAT and Event Vision joins properly. Aiming for clean, well-structured code around 400-500 lines.
+
+Writing the implementation now...
+
+Now I'm thinking through how the LLM output maps back to the metadata table—the LLM can split a single PDF into multiple rows if it finds distinct ESN values, but our metadata table has one row per document_id, so I need to handle that mismatch carefully.
+
+Looking at the task plan, multi-ESN handling happens at the chunk level during processing, not at the metadata level. For the metadata table itself, I should probably store either the primary ESN or comma-separated ESNs since the schema just defines esn as a string field.
+
+The DS code outputs each ESN as a separate row for the same PDF, but since my metadata table uses document_id as the key (one row per physical file), I need to collapse those multi-ESN results. I'll take the first ESN from the LLM output for simplicity, though I could store them pipe-separated if needed later. Let me check what the DS code's LLM prompt actually says about splitting records with multiple ESN values. record into separate rows by pairing values positionally (first with first, second with second, etc.), while duplicating all other field values unchanged
+
+So the LLM is asked to split multi-ESN records. But for our metadata table (one row per file), we need to handle this differently. Options:
+
+Store first ESN only
+Store all ESNs pipe-separated
+Store primary ESN + flag multi-ESN
+I'll go with option 2 (pipe-separated) for now, since Process 2 can split them later. But actually, looking at the enrichment logic that joins on ESN with IBAT... if we have pipe-separated ESNs, the join won't work directly.
+
+Let me simplify: for the metadata table, I'll collapse multi-row LLM output back into a single record per PDF. I'll take the first row's values, and if there are multiple ESNs, I'll note them pipe-separated. The enrichment can work on the first ESN.
+
+OK this is getting complicated. Let me take a pragmatic approach: if the LLM returns 1 row per PDF, use it directly; if it returns N rows per PDF for multi-ESN cases, keep the first row and note the first ESN there, deferring multi-ESN handling to Process 2. For enrichment, the join on equipment_sys_id or esn will work fine with whatever single ESN we have.
+
+Actually, I just realized the DS code sends the batch as a list and gets back a list, with the PDF name field tying each output row back to its source. So for multi-ESN splits, there will be multiple rows with the same pdf_name—I need to group by pdf_name and take one representative row.
+
+Implementing this as: group by pdf_name (or document_id) and deduplicate by taking the first row when there are multiples. This keeps it simple and pragmatic.
+
+Now I'm ready to write the code. I've thought through all the edge cases. My final structure will be: pip install, restart Python, load config, add imports and helpers, ensure metadata table with FORCE_RESET, discover new PDFs, merge stub rows, select pending/failed rows for processing (exit early if none), extract PDFs with pdfplumber, call the LLM for normalization, load lookup tables and enrich with IBAT and EV data, then handle per-document processing and row updates before orchestrating the batch with threading.
+
+Writing the implementation...
+
+For the update step after processing, I'll collect successes as (document_id, metadata_dict) pairs and failures as (document_id, error_msg) pairs. For successes, I'll create a DataFrame and merge it into the metadata table using a SQL MERGE statement that updates all the metadata fields, sets the status to 'ok', and clears any error messages.
+
+For failures, I need to handle retries carefully—incrementing the retry count and marking documents as either 'failed' or 'skipped' depending on whether they've hit the max retry limit. But I should use parameterized queries or safe escaping to avoid SQL injection vulnerabilities, so instead of string interpolation I'll leverage Spark's temp views to safely pass the data.
+
+Building the batch update with a MERGE statement...
+
+I'm realizing there's a threading issue here—if multiple threads execute MERGE operations simultaneously, they could conflict with each other. I need to add a write lock to prevent that, similar to what the DS code does. And since the %run ./fsr_config already brings in the necessary variables and imports, I just need to add any additional modules that fsr_config doesn't already handle.
+
+Now I'm thinking through the notebook structure—Databricks notebooks need # COMMAND ---------- to separate cells, and magic commands like %pip and %run have to be isolated in their own cells. The %run ./fsr_config will pull in everything from that config file, so I don't need to re-import those dependencies.
+
+Writing the implementation...
+
+Actually, I'm realizing the extract_fields_from_pdf function in the existing code doesn't return page_count, so I need to add that to the result dictionary and capture it from the PDF object.
+
+Updating the extraction function... I'm realizing the LLM normalization expects the raw fields as JSON input, so I need to make sure I'm preserving that complete fields dictionary when I pass it to the language model for processing.
+
+Refactoring the extraction function... I'm realizing the error handling approach needs to change — instead of raising exceptions, I should return results as a structured dict so I can track extraction status per document. This way I can collect errors alongside successful extractions and handle them downstream.
+
+Now I'm mapping out the full pipeline: extract text with pdfplumber, batch-normalize the raw fields through the LLM, enrich with IBAT and EV data via Spark joins, then write to the table. On top of that I'm adding watermark-based discovery to find documents, stub rows for the MERGE operation, per-document error tracking with retry logic, and using MERGE to update rather than append.
+
+Let me think through the update strategy — when enrichment succeeds, I get back a Spark DataFrame that I need to MERGE back into the target table...
+
+Actually, I can use the pdf_name column from the enriched results to derive the document_id by applying the same make_document_id function, since pdf_name contains the volume_path that was passed through the LLM. I'll pass the volume_path to the LLM as the identifier, then use it to map back to document_id after normalization. My extraction function will iterate through the pending rows, extract fields from each PDF, and store the results keyed by document_id along with the volume_path for later matching. Completing the results mapping with page count and document ID, then I need to handle the enrichment step. I'm realizing the multi-ESN case could create duplicates if the LLM returns multiple rows for the same PDF, so I should deduplicate by taking the first result per document_id. Now I'm reconsidering whether to simplify the enrichment approach—maybe doing it per-document in Python rather than trying to replicate the complex Spark DataFrame joins.
+
+But actually, for production scale with 17K+ files, the Spark join approach is more efficient even though the batch size is small. The DS code already handles edge cases properly with this pattern, so I'll stick with that and write the enrichment logic using Spark DataFrame joins.
+
+Now I need to think through the metadata table write-back carefully. The enriched result has pdf_name as the full volume path from the LLM output, but the metadata table stores just the filename stem. I need to extract the document_id from that volume path and then store the actual stem as pdf_name in the table.
+
+Actually, I'm realizing the enrich_batch function might be a bottleneck here—it only returns the final columns, but I need to preserve the document_id and other fields for the merge back into metadata. Let me check what columns are actually available after enrichment and whether I need to modify that step. I need to track whether the ESN was originally set before the IBAT join so I can properly attribute the source, so I'll capture the original ESN value first and then use that to determine if the enrichment came from IBAT or was already present. Now I'm organizing the full notebook structure into 12 cells, starting with dependencies and configuration, then moving through PDF discovery, row merging, LLM normalization with the esn_source tracking, lookup table enrichment, and finally the success updates.
+
+I need to be careful about the enrich_batch function—it should follow the same pattern as the DS code by converting the normalized records to a Spark DataFrame, performing the joins, and returning the enriched DataFrame. For the update mechanism, I'll use MERGE with the write_lock to handle concurrent writes safely. And for FORCE_RESET, I need to skip the watermark check entirely when it's enabled, truncate the table, and reprocess all files from scratch.
+
+Writing the complete notebook file... Finishing the imports and initializing Spark, then printing out the configuration details for Process 1 — the metadata table name, volume paths, LLM model, batch size, and whether we're forcing a reset.
+
+Now I'm setting up the metadata table in Delta format with change data feed enabled, and if FORCE_RESET is true, I'll clear any existing rows; otherwise I'll just check how many records are already there.
+
+Next, I need to discover new PDFs by reading the watermark from the metadata table to know where I left off—if this isn't a forced reset, I'll query the maximum ingested_at timestamp to use as a cutoff point for finding new files. Now I'm cleaning up the file paths by stripping the "dbfs:" prefix and building a list of file metadata for each volume, then capping the total to the configured limit and printing a summary of how many files were found.
+
+For the next step, I'm creating stub rows from these files by generating document IDs, extracting the PDF names, converting modification timestamps, and structuring each row with the necessary fields like document ID, volume path, file size, and last modified time.
+
+Now I'm defining the schema for these stub rows and creating a temporary view, then executing a MERGE operation to upsert the new file metadata into the main metadata table, matching on document ID and updating existing records or inserting new ones. Completing the INSERT statement with the remaining values, then printing confirmation of the merge operation. After that, I'm querying for pending or failed metadata records that haven't exceeded the retry limit, so I can process them next. Extracting PDF metadata and text...
+
+Now I'm iterating through the lines to collect the title—everything before the first colon-delimited field—then parsing the remaining lines as key-value pairs, appending to existing fields if they already exist in the llm_fields dictionary.
+
+Handling continuation lines and wrapping up the PDF extraction with error handling, then returning the structured data along with the page count.
+
+Defining an adaptive semaphore class that manages threading capacity with configurable minimum and maximum limits.
+
+Still writing semaphore methods... I'm setting up a semaphore for managing LLM concurrency with adaptive capacity limits, then defining a system prompt that instructs the model to structure and normalize technical data from JSON inputs while maintaining factual accuracy and safety. Now I'm outlining the normalization schema with specific field mappings—routing different identifier prefixes like "EV-", "EVP-", and Oracle project IDs to their corresponding output fields. I need to handle record splitting when there are multiple distinct values in ESN and Equipment Sys ID fields, pairing them positionally while keeping other fields unchanged and clearing Equipment Type and Equipment Class/Code. I'm also validating that all dates conform to YYYY-MM-DD format and that Event Type values come from the specified allowed list, inferring missing information from context when possible and outputting empty strings when nothing's found.
+
+Writing the LLM call function... Setting up retry logic...
+
+Now I'm iterating through the available endpoints and making POST requests with the payload, checking for 404s to try the next URL, raising on other HTTP errors, and extracting the message content from a successful response. If all URLs fail or return 404s, I'll raise an error, and I'm also handling certificate verification failures in the exception handler.
+
+I'm also defining a helper function to strip markdown code fences from JSON text, and starting to set up a mapping between LLM output field names and our internal column names. Defining a function to send batches of records to the LLM for normalization, where it processes the raw response, strips JSON formatting, and handles cases where the parsed result might be wrapped in a "FSR_data" key or needs validation as a list. Continuing with the enrichment columns and defining a function to load the IBAT and Event Vision lookup tables for joining with the main dataset. Writing the data enrichment function... Continuing to clean up the project IDs by stripping their prefixes, then performing a left join with the IBAT dataframe using equipment system ID or ESN as matching keys.
+
+Now I'm filling in missing values across several columns—ESN, equipment system ID, equipment type, and equipment code—by pulling from the IBAT data when the original fields are null or empty.
+
+Next, I'm joining the enriched dataset with the Event Vision source of truth table using multiple matching conditions across project IDs, equipment event IDs, GTM IDs, and FSP project IDs, then backfilling the EV project ID field with a formatted value when it's missing. Filling in missing values for event type and outage dates by pulling from the source of truth columns when the primary fields are null or empty, then moving on to enrich the data with ESN source information.
+
+Now I'm determining the ESN source by checking if the pre-IBAT ESN exists first (marking it as "llm"), otherwise falling back to the standard ESN field (marking it as "ibat"), then selecting only the enrichment columns plus this new source field for the final output.
+
+After that, I'm setting up helper functions to write the enriched results back into the metadata table, starting with converting the results into a pandas DataFrame.
+
+Writing the merge logic... Finishing the field mappings and setting metadata status to OK with a null error field, then updating the timestamp. After that, I'm defining a function to handle failed rows by creating a DataFrame from the error tuples and preparing to write them to a temporary view.
+
+Now I'm merging those failed records back into the metadata table, checking if we've hit the retry limit to determine whether to mark them as skipped or failed, incrementing the retry count, and updating the error message and timestamp accordingly.
+
+Setting up adaptive worker concurrency with a semaphore that scales between a minimum and maximum thread count, then initializing tracking structures for batch outcomes and overall statistics to monitor success rates and document processing counts throughout the orchestration.
+
+Now I'm implementing the outcome recording function that tracks successes and failures in a sliding window, calculating error rates to dynamically adjust worker capacity—reducing threads when errors spike above 40% and increasing them when performance improves.
+
+Continuing with the adaptive logic...
+
+Then there's a function to calculate and log the estimated time remaining for batch processing, using the current completion rate and elapsed time.
+
+Now I'm defining the main batch processing function that will handle extraction, normalization, enrichment, and updates for each batch. I'm setting up the batch processing pipeline with extraction and normalization stages. First, I extract fields from each PDF in the batch, collecting successes and failures separately. If all extractions fail, I log the outcome and return early. Otherwise, I move into the LLM normalization stage where I prepare the extracted fields for batch processing.
+
+Now I'm handling the LLM normalization call—if it throws an error, I catch it, mark all documents in that batch as failed, and record the LLM error. Then I'm mapping the normalized results back to their original document IDs, deduplicating rows so each document keeps only its first entry.
+
+I'm also checking for any extraction results that didn't produce a normalized row and flagging those as failures. If nothing made it through normalization, I update the failure records and bail out early.
+
+Now moving into the enrichment stage — if enrichment is enabled and I have the IBAT and EV source-of-truth dataframes available, I'll enrich the normalized records with that data. Otherwise I'll just pass through the normalized data directly, mapping it to the enrichment columns and setting the source flag based on whether an ESN was extracted.
+
+If anything fails during enrichment, I'm catching the error, recording it against all documents in this batch, updating the failure stats, and returning early.
+
+Then I'm iterating through the enriched rows to build the final success dictionaries and update the metadata table, extracting the volume name and document ID from each enriched row.
+
+Now I'm constructing the success dictionary by pulling the extraction results and mapping all the enriched fields—handling both object attribute and dictionary key access patterns since the data could come in either format. I'm realizing this mixed access pattern is getting unwieldy, so I should standardize how I'm handling the row data.
+
+Converting the enriched Spark DataFrame to a clean list of dictionaries using pandas will eliminate the Row vs dict inconsistency. Then I can iterate through these records and build the success results with consistent dictionary access throughout. Adding the remaining event and date fields...
+
+I need to make sure pandas is imported at the top level since both the enrichment function and the update_rows_success function use it, though it's available by default in Databricks. I'm also thinking about applying the same ThreadPoolExecutor parallelism pattern from the DS code to handle PDF extraction within each batch efficiently.
+
+Looking more closely at the DS code though, extraction is actually sequential within each batch—the parallelism happens at the batch level where multiple batches run concurrently through worker threads. So I'll keep extraction sequential within batches and rely on the adaptive worker pool for batch-level concurrency.
+
+Now I'm ready to write out the complete implementation with the pip install command, restart, and the main code.
+
+Actually, I need to handle one more edge case in the batch processing logic.
+
+When enriching records through the IBAT and EV joins, I could end up with duplicate rows if a single record matches multiple lookup entries. The deduplication by document_id in the success results handles this for the final output, but I should explicitly deduplicate after enrichment using the pdf_name field to ensure the metadata table has exactly one row per document.
+
+I also need to account for the fact that pending_rows from the metadata table could contain hundreds or thousands of records, so I'll need to split them into batches using the batch size configuration.
+
+Defining the schema for the success DataFrame... Defining the schema fields...
+
+Now I'm thinking through the logic for building the success dictionary after enrichment. I have records from the enriched dataframe, and I need to map the pdf_name to a document_id, pull in the title and page_count from the extraction results, then update pdf_name to just the bare filename instead of the full volume path.
+
+Actually, I realize the metadata table already has pdf_name set from when I created the stub rows initially, so I don't need to touch that. What I really need to do is update all the enriched fields—title, esn, esn_source, equipment details, event information, project IDs, report dates, outage dates, page_count—along with setting metadata_status to 'ok', clearing any error message, and recording the update timestamp.
+
+Now I'm verifying the join logic: the enrichment function returns pdf_name which maps to volume_path, and when I derive document_id from that volume_path, it matches the document_id I used for the stub rows, so the mapping is consistent. Time to write the actual code.
+
+Writing the update logic... Writing the MERGE statement for failures...
+
+Now I'm realizing there's a potential race condition issue—if multiple threads execute the success and failure update functions at the same time, they could be writing to the same temporary views, which would cause data conflicts.
+
+But actually, the write lock I've implemented ensures that only one thread can run these updates at a time, so the temporary views are protected within that lock scope and won't get overwritten mid-operation.
+
+I'm satisfied with how this is structured. Time to write out the complete file with all the pieces organized together—I'll set up the notebook with the necessary imports, configuration loading, and all the core functions in a clean, well-commented format.
+
+Writing the complete notebook file... I'm mapping out the remaining pipeline steps—merging stub rows, selecting pending records, building the PDF extraction and LLM enrichment functions, then orchestrating batch processing with worker coordination. I'm realizing the .toPandas() conversion in the enrichment step could get expensive at scale, so I need to think through whether to optimize that or keep it simple for now.
+
+Actually, with a batch size of 4, the conversion should be manageable. I do need to handle NaN values properly though—I'll add .fillna("") before converting back to Spark to avoid issues. Now I'm organizing everything into clean sections with command separators and thinking through the notebook structure. The %run command for loading config needs its own cell, and after restartPython() all previous state clears, so I need to be careful about what gets reloaded.
+
+Writing the complete production file now... So pdfplumber, requests, and json need to come after the %run command since they're not defined in the config file. I also need to account for the # MAGIC  prefix that Databricks uses for magic commands in .py notebook format, so the pip install and other magic commands will need that prefix.
+
+Now I'm thinking through the deduplication logic for the enrichment step—when joining with IBAT and EV lookup tables, I could end up with duplicate rows if multiple records match. I'll deduplicate on pdf_name since each document has a unique volume path, ensuring one row per document in the final output.
+
+Writing the complete implementation...
+
+Converting the enriched Spark DataFrame back to a pandas DataFrame, then to a list of dictionaries so I can build the success response with document_id, title, page_count, and all the enriched fields.
+
+Let me double-check the design doc to make sure I'm covering all the steps correctly. I see the issue now — I need to distinguish between when ingested_at gets set. If I stamp it during stub creation, the watermark jumps forward immediately, which means files discovered after that point but before extraction completes could slip through and get missed on the next run. The real question is whether ingested_at should mark the stub discovery time or the successful extraction completion time, and looking at the design doc, it seems like it should only advance the watermark once extraction actually succeeds. I see the issue now—if I set ingested_at at stub creation time, the watermark jumps forward immediately, which could cause files that arrive between the watermark read and stub creation to be skipped on the next run. The sequence needs to be: read the current watermark, scan for files beyond it, then create stubs with the current timestamp as ingested_at. On the next run, the new watermark filters out everything up to that point, so only genuinely new files get picked up.
+
+But actually, using the stub creation timestamp as the watermark is risky because it's always >= the file's modification time, meaning files arriving after the watermark read but before stub creation could fall into a gap. The safer approach would be to use MAX(file_last_modified) of successfully processed files as the watermark instead of MAX(ingested_at), so I'm only advancing past files I've actually handled.
+
+Wait, but the design doc specifies MAX(ingestion_timestamp), not file modification time. Let me reconsider—in the original design without stubs, rows only get written on success, so MAX(ingestion_timestamp) effectively marks the last successful write. On the next run, scanning for files with modificationTime > last_success_timestamp should catch anything that failed, since failed files wouldn't have a row yet. The issue is whether the success timestamp is always >= all processed file modification times, which would create a gap for files that arrive in between.
+
+With stub rows, the approach shifts: stubs are created immediately with ingested_at = current_timestamp(), and the watermark reads MAX(ingested_at), so we're tracking discovery time rather than success time to avoid re-discovering known files while still being able to retry failures via the metadata_status field. which includes stub rows
+
+So on the next run, any files with modificationTime <= max_stub_creation_time are skipped
+But all pending/failed stubs are still picked up via metadata_status
+This is correct! The watermark ensures we don't re-discover files we already know about (have stubs for). Failed files are retried via their status. The only edge case is if a new file arrives on the volume between watermark read and stub creation, with modificationTime between the old watermark and the new stub creation time. But:
+
+The stub creation time is always after the watermark read
+Any file that arrives after the watermark was read would have modificationTime > watermark
+If it arrives during the scan, it gets picked up
+If it arrives after the scan, it'll be picked up on the next run
+OK, I think this is correct. Let me proceed.
+
+Actually, there's a subtle issue I need to think through. The watermark uses MAX(ingested_at) across all rows including failed stubs, so if extraction fails on a stub, the watermark still advances past that file's modificationTime. On the next run, the file won't be rediscovered from the volume since it's already past the watermark, but it will still be retried through the metadata_status = failed path. That's exactly what I want.
+
+Now I'm weighing whether to use MAX(ingested_at) or MAX(file_last_modified) for the watermark. Using ingested_at is simpler and always advancing, but there's a risk if stub creation is delayed—files modified between the old watermark and stub creation time could slip through if they arrive after the scan. With file_last_modified, I'd need to handle the case where metadata_status isn't failed, which adds complexity.
+
+Looking back at the design and Pranesh's sample code, they use a simple datetime watermark based on ingestion timestamp, so I'll stick with MAX(ingested_at) for consistency. Let me write the code now.
+
+Actually, I'm reconsidering the approach one more time. There's a potential race condition: if a file arrives on the volume between when we read the watermark and when we create stubs, its modification time could fall between the old and new watermark values, causing us to miss it on the next run. However, this scenario is unlikely in practice since files are typically uploaded before we process them.
+
+But wait—this actually could happen in

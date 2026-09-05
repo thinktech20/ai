@@ -1,0 +1,125 @@
+AI-generated content may be incorrect
+
+Nm, Vinayaka (GE Vernova) started transcription
+
+Ramnath, Akshay (GE Vernova)
+0 minutes 5 seconds0:05
+Ramnath, Akshay (GE Vernova) 0 minutes 5 seconds
+OK, I see the recording started. So before we get started, I know it's been some time based on wherever we left last time. So we had created. Let me just quickly open the documents so that I can.
+Ramnath, Akshay (GE Vernova) 0 minutes 25 seconds
+Forward it.
+Ramnath, Akshay (GE Vernova) 0 minutes 59 seconds
+Please let me know if you can see my screen.
+Ramnath, Akshay (GE Vernova) 1 minute 1 second
+OK.
+Ramnath, Akshay (GE Vernova) 1 minute 8 seconds
+Can you see my screen?
+NV
+
+Nm, Vinayaka (GE Vernova)
+1 minute 12 seconds1:12
+Nm, Vinayaka (GE Vernova) 1 minute 12 seconds
+Yeah, actually we can see your screen.
+
+Ramnath, Akshay (GE Vernova)
+1 minute 14 seconds1:14
+Ramnath, Akshay (GE Vernova) 1 minute 14 seconds
+Yeah. So in the previous call, basically we stopped at this point from a development perspective. So what we had just to give a quick recap, the thought process was whenever we have any new feature or bug fix coming in.
+Ramnath, Akshay (GE Vernova) 1 minute 30 seconds
+The branch naming convention based on that will change. So in the case of an enhancement or a new development, it'll be feature under score followed by the ADO user story number. In the case of a bug fix or a defect, it'll be bug fix under score T.
+Ramnath, Akshay (GE Vernova) 1 minute 47 seconds
+Bug or defect number. So the thought process was as we do the development we will be pushing our changes to these features or bug fix branches with multiple commits and then once we are at the end of the development.
+Ramnath, Akshay (GE Vernova) 2 minutes 3 seconds
+We will be squashing the commits depending on the comment structure that we want to follow and then we will have the final version of the development branch. It will be a bug fix or a feature. In either cases we will see something like this and once this is done.
+Nm, Vinayaka (GE Vernova) 20 minutes 44 seconds
+But for the sake of example, so this is the YML file, right? So here we go here. Let's open this.
+Nm, Vinayaka (GE Vernova) 21 minutes
+So if you look at this right, so this actually again has a standard structure to it, right? Where we put the task name and the notebook path where the.
+Nm, Vinayaka (GE Vernova) 21 minutes 18 seconds
+You know, for example, this is daily management summary task, right? So this is one of the SOTS tables that we load data to from a notebook, right? So that notebook has a SQL code in it, right? So that notebook path.
+Nm, Vinayaka (GE Vernova) 21 minutes 36 seconds
+Has to be mentioned here and similarly in your case you will have to, you know, create a notebook. Then that notebook path has to be, you know, linked in this YML file. OK and then Airflow will call this, you know, process.
+Nm, Vinayaka (GE Vernova) 21 minutes 54 seconds
+And the YML file and then the workbook will get executed in Databricks. OK, sorry, the notebook will get executed in the Databricks. OK, so this is a pretty simple, you know, standard.
+Nm, Vinayaka (GE Vernova) 22 minutes 11 seconds
+You know structure, I mean we just need to put the notebook path and task name, task key. OK, but what is important from the DAG setup is we need to.
+Nm, Vinayaka (GE Vernova) 22 minutes 27 seconds
+Created a tag ID that is named here.
+SA
+SAHU, ARUNANGSU (GE Vernova)
+22 minutes 30 seconds22:30
+SAHU, ARUNANGSU (GE Vernova) 22 minutes 30 seconds
+So this is the airflow tag, right?
+NV
+Nm, Vinayaka (GE Vernova)
+22 minutes 32 seconds22:32
+Nm, Vinayaka (GE Vernova) 22 minutes 32 seconds
+This is airflow tag, yes, correct. OK, so once you fill in all these details then you need to follow the you know similar you know git process. OK you need to create a. So this is my feature wrench right? So let let me just show you.
+SA
+SAHU, ARUNANGSU (GE Vernova)
+22 minutes 33 seconds22:33
+SAHU, ARUNANGSU (GE Vernova) 22 minutes 33 seconds
+Yeah, yeah.
+NV
+Nm, Vinayaka (GE Vernova)
+22 minutes 52 seconds22:52
+Nm, Vinayaka (GE Vernova) 22 minutes 52 seconds
+So if I just change this right, this will reflect in the changes right? So it just got now reflected in my git desktop right? So I can commit this.
+Nm, Vinayaka (GE Vernova) 23 minutes 9 seconds
+Right. And then commit to the dev and then I can create a pull request, right? And then after your peer review and approval, you can raise another peer request for, you know, main branch merge, OK.
+Nm, Vinayaka (GE Vernova) 23 minutes 27 seconds
+So very similar process which Akshay run through for DAG deployment. So once this you know file is deployed into the main branch, you can see that in the Airflow you can log into Airflow, you can see your DAG with all.
+Nm, Vinayaka (GE Vernova) 23 minutes 47 seconds
+The details like what time or what? What is the name that you have given to the tag, the schedule or when you have set up right? All those details will be reflected in the airflow.
+Nm, Vinayaka (GE Vernova) 24 minutes 2 seconds
+OK, so that is pretty much on the airflow. So like from the naming standpoints, I think you can follow the same standards what we discussed for the notebooks, right? So.
+Nm, Vinayaka (GE Vernova) 24 minutes 19 seconds
+For example for specs, right? So you can just prefix specs AI, you know, but table under score.
+Nm, Vinayaka (GE Vernova) 24 minutes 36 seconds
+No big swing, something like that, right? So we I can help you with the names, but you need to follow a similar naming standards which we ran through for, you know, Databricks notebooks. OK, so yeah, so that is pretty much on the airflow. So Akshay, you want to add anything?
+Nm, Vinayaka (GE Vernova) 24 minutes 54 seconds
+Here or.
+
+Ramnath, Akshay (GE Vernova)
+24 minutes 55 seconds24:55
+Ramnath, Akshay (GE Vernova) 24 minutes 55 seconds
+Yes, pretty much just one small thing. The naming convention of the branch will not be just underscored. I know this was just for the sake of demo, but the naming convention would be feature under score the user story number. That's the only thing. Otherwise you pretty much covered it.
+NV
+Nm, Vinayaka (GE Vernova)
+25 minutes 5 seconds25:05
+Nm, Vinayaka (GE Vernova) 25 minutes 5 seconds
+Mm.
+Nm, Vinayaka (GE Vernova) 25 minutes 8 seconds
+Yeah.
+Nm, Vinayaka (GE Vernova) 25 minutes 10 seconds
+Correct, correct.
+Nm, Vinayaka (GE Vernova) 25 minutes 12 seconds
+Yeah.
+Nm, Vinayaka (GE Vernova) 25 minutes 17 seconds
+OK.
+Nm, Vinayaka (GE Vernova) 25 minutes 22 seconds
+So yeah, so that is pretty much on the git process of both the the Databricks notebooks and the Airflow. Do you have any questions?
+SA
+SAHU, ARUNANGSU (GE Vernova)
+25 minutes 44 seconds25:44
+SAHU, ARUNANGSU (GE Vernova) 25 minutes 44 seconds
+No, it is a good one, I think Vinayaka and Akshay.
+NV
+Nm, Vinayaka (GE Vernova)
+25 minutes 50 seconds25:50
+Nm, Vinayaka (GE Vernova) 25 minutes 50 seconds
+OK. Yeah. So if you have any questions at a later point of time, so please feel free to reach out to us. We'll certainly help you through with the, you know, our development and also the develop deployment, OK.
+Nm, Vinayaka (GE Vernova) 26 minutes 21 seconds
+I hope we don't have any questions.
+Nm, Vinayaka (GE Vernova) 26 minutes 26 seconds
+Yeah. Thanks everyone. Have a good day.
+
+Ramnath, Akshay (GE Vernova)
+26 minutes 28 seconds26:28
+Ramnath, Akshay (GE Vernova) 26 minutes 28 seconds
+Thanks all. Bye.
+26:33
+26 minutes 33 seconds
+Thank you. Bye.
+
+Nm, Vinayaka (GE Vernova) stopped transcription

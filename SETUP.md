@@ -10,8 +10,7 @@ PYENV_VERSION=3.11.9 python -m venv .venv
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m ipykernel install --user --name ai-arch --display-name "Python (ai-arch)"
 
-# secrets
-cp .env.example .env   # already done; .env has the dev LiteLLM key
+cp .env.example .env   # already done; fill in the local gateway credentials
 ```
 
 ## Daily use
@@ -25,7 +24,7 @@ cp .env.example .env   # already done; .env has the dev LiteLLM key
 | Var | What it is |
 | --- | --- |
 | `LITELLM_BASE_URL` | GE Vernova LiteLLM gateway — OpenAI-compatible. Dev: `https://dev-gateway.apps.gevernova.net` |
-| `LITELLM_API_KEY` | Dev gateway key (from `pw_sdg_ai_ser_repo/databricks.yaml`) |
+| `LITELLM_API_KEY` | Dev gateway credential |
 | `EMBEDDING_MODEL` | `azure-text-embedding-3-large-1` (3072 dims) — same model prod uses |
 | `CHAT_MODEL` | `gemini-3-flash` — same model prod uses for ESN extraction |
 | `LLM_VERIFY_SSL` | `false` for corp networks without CA bundle |

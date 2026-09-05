@@ -1,0 +1,16 @@
+# Airflow DAG YAML: Safe FSR workflow test
+# Triggers the test-only Databricks workflow job via run-now.
+# This is for orchestration validation only and should remain manual.
+
+dag_id: pw.sdg.pw_sdg_fsr_ingestion_test
+tags: ['PW', 'SDG', 'Databricks', 'Test']
+fsso: 'TBD'
+schedule_interval: null
+tz: 'America/New_York'
+
+tasks:
+- method_name: databricks_connection
+  task_name: tsk_pw_sdg_fsr_ingestion_test
+  job_module: common.databricks_connection_module
+  task_id: 1
+  job_name: pw_sdg_fsr_ingestion_test

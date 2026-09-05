@@ -241,7 +241,7 @@ Read‑level depth is fine. Be ready to name:
 - **Identity & access**: *row‑level / column‑level security*, *attribute‑based access control (ABAC)*, *document‑level ACLs propagated to the index*.
 - **Compliance words**: *SOC 2*, *HIPAA*, *GDPR*, *data residency*, *PII / PHI*, *redaction*, *audit log*.
 - **Reference frameworks**: *OWASP Top 10 for LLM Applications*, *MITRE ATLAS*, *NIST AI RMF*.
-- **Databricks**: *Unity Catalog* (single governance layer for data + models + functions), *AI Gateway* (PII detection, payload logging, rate limits), *Lakeguard*, *secrets* / *service principals*, *MLflow Model Registry* permissions.
+- **Databricks**: *Unity Catalog* (single governance layer for data + models + functions), *AI Gateway* (PII detection, payload logging, rate limits), *Lakeguard*, *service principals*, *MLflow Model Registry* permissions.
 - **AWS**: *Bedrock Guardrails* (denied topics, content filters, sensitive‑information filters, contextual grounding check), *IAM* + *resource policies*, *KMS* (encryption), *PrivateLink / VPC endpoints* (no public internet to Bedrock), *Macie* (PII discovery in S3), *CloudTrail* (audit).
 
 **Say it (S):** "3 risks of ingesting customer FSRs and how you'd mitigate each."
