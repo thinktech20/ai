@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Track A backfill monitor — polls dev tables, drives P2/P3 kickoff, appends
 pulse entries, and flags when the Track A stop criteria (see
-backfill-monitoring-plan.md §2.4) are met. Does not auto-cancel jobs — it
+../backfill/backfill-monitoring-plan.md §2.4) are met. Does not auto-cancel jobs — it
 reports STOP-READY and leaves the cancel decision to a human.
 
 Usage: nohup python3 monitor_track_a.py > /tmp/track_a_monitor.log 2>&1 &
@@ -29,7 +29,10 @@ CHUNKS = "vaid.ai_std_con_field_service_report.fsr_chunks_v2"
 RUN_LOG = "vaid.ai_std_con_field_service_report.fsr_run_log_v2"
 DQ_LOG = "vaid.ai_std_con_field_service_report.fsr_data_quality_log_v2"
 
-PULSE_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "backfill-pulse-log.md")
+PULSE_LOG = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "backfill", "backfill-pulse-log.md",
+)
 
 POLL_SECONDS = 15 * 60  # 15 min between pulses
 MAX_HOURS = 6  # hard cap regardless of stop criteria

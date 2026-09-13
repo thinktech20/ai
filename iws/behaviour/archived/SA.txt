@@ -1,0 +1,81 @@
+Review the candidate’s resume to determine their technical strengths and current experience to probe
+You as an interviewer must be prepared for an L7 90-minute Phone Screen that includes LPs and Tech Depth and Breath. This means reviewing and becoming familiar the L7 Phone Screen Question bank in Qbert (listed below). Selecting the questions beforehand and ensuring that you have a synthetic problem statements or scenarios. Be prepared to pivot or create a custom question in the event the candidate is not comfortable answering your initial question.
+
+Candidate does not have to be fluent in AWS-specific technologies.
+
+For L7 candidates we are looking for their ability to:
+
+Think independently, analyze and evaluate an issue, understand logical connections between ideas
+Probe - When sufficient data points are not given, the L7 candidate should ask follow up questions to obtain more specific or in-depth information
+To be self-motivated and innovative
+Articulate communication, clarity of thought, and ability to engage at all levels of a customer organization (from a developer to C-level)
+
+
+
+A customer adopted a cloud-based data warehouse service you recommended. Query performance was fine for about six months. Then, performance really slowed down. They mentioned that they're using the database for reference lookups during ETL before inserting the finalized new data. What questions would you ask and what suggestions do you have?
+
+
+A customer wants to stream a large volume of data (> 2 mil messages/sec peak) coming from up to ten sources. They want to do some real-time enrichment and analysis on the stream for some applications. Can you model a solution that addresses the needs of consumers (real-time and batch analytics)? How would your design take into account an unknown future scale?
+
+
+A database is architected for 100 transactions/sec. In 3 months, the database will need to support 1000 t/s. Assuming you have a generous budget, what can you do to meet the performance requirement?
+
+A web-based application is running slow. How can you go about determining where it is spending most of its time? What would be your suggested improvements per tier?
+
+As the CTO, we have spent the last two years moving everything to the cloud and shutting down data centers. But I need to get our application teams to do better. We have a few exceptions, but mostly they're treating the cloud as a data center. I need them to think differently. Like DevOps, let go of their pet servers and software and deliver features faster. I would like to have to have a workshop with 4-5 of my leaders to lay out a roadmap of how we can get there. Can you facilitate this workshop? What topics would you cover workshop?
+
+Can you tell me what is ‘defense in depth’ for each tier in a web-based application in the cloud? For each tier explain the mechanisms that can be put in place to have a secure web application.
+
+Can you walk me through architecture issues you've experienced that show up while scaling and performance tuning large scale web applications?
+
+
+Describe a case when you were talking to technical leaders but realized that the technical goal needed business clarification and you had to approach business leaders to gain that or even challenge the business goal.
+
+
+Describe a situation where a design you recommended fell short of your (and others') expectations. How did you respond? In retrospect, what would you have done differently?
+
+
+Devops - What is it and how can it help companies? 
+	FOLLOW UP - What is the role of AWS in DevOps?
+	
+Explain two reasons why a "Cloud Native" design provides a business advantage for a customer and two reasons why it might represent a risk?
+
+Explain what it means to overfit data with a learning algorithm. Explain a situation where Linear regression would create a poor fit for data.
+
+How would you measure the success and influence of an SA organization? What do weak SA teams typically struggle with?
+
+If you are building a website, how do you count the number of visitors for the past 1 minute?
+
+
+
+Imagine you are presenting an architecture overview to a diverse team comprised of many disparate stakeholders - engineers, executives, business leaders, etc. Many stakeholders are nervous about giving up control in their respective areas or about some of the assumptions you've made, and there are political blockers between many of the teams that are hindering adoption. Most are familiar with the offerings you're presenting at least at a high level. How do you adjust your presentation/strategy to compensate?
+
+Last night a production report which usually runs for 30 min every day, took 90 minutes to finish. Tell us how you would systematically do a root cause analysis
+
+The pace of change in AWS is a challenge and often can create tough decisions as an architect. Customers need leadership on when to choose existing services, when to use Open-Source Software (OSS), and when to wait for something shiny and new. Tell me how you would personally navigate this situation with a customer.
+
+What does it mean when someone says a service is "flapping"? What are suitable design techniques to avoid this phenomenon? Is this something you see more often or less in a cloud architectures? Why?
+
+What is the difference between latency and bandwidth? FOLLOW UP - In an office complex, you have a set of users in one building, and a set of computing resources in another location. The users say "It is too slow." How do you figure out if the issue is latency, bandwidth, or something else? What simple things can you do to narrow it down?"
+
+What questions do you have for me?
+
+While on a technical visit with the customer, you've just been asked to spend 30 minutes with the CIO.  What do you talk to him/her about?
+
+You have a monolithic e-commerce system that has significant operational issues. Specifically, the system requires downtime for maintenance or new versions to be deployed, has a cumbersome process to integrate new features into the main code branch, and is experiencing vast volumes of data growth. Walk me through how you would optimize the architecture.
+
+
+You needed to design a system which analyzes data coming in from millions of sources in real time (for example, sensors in the field, traffic cameras, IoT, etc.). What technology components you would use? How can you provide a real-time/near real-time dashboard and a search capability for such a system?
+
+
+Your account manager secured an invitation for you to sit in on the customer’s architectural steering committee, which includes principal engineers, directors, and the CTO. When the CTO attends the meetings, she tends to dominate the conversation, yet she is not the most technically astute member of the committee. She is also getting frustrated that two of the principal engineers are not making headway on their latest projects, and this situation is reflecting poorly on her experience with AWS. How would you engage on this committee?
+
+Your team has just released a collaboration tool to enable idea sharing. Walk me through how you would begin measuring analytics for your new product. What metrics would you track and why? How would you build a system to enable this?
+
+
+
+
+
+
+
+

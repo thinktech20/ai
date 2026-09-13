@@ -1,0 +1,119 @@
+---------------------------------------------------------------------------
+The Python process exited with exit code 137 (SIGKILL: Killed). This may have been caused by an OOM error. Check your command's memory usage.
+
+
+
+The last 10 KB of the process's stderr and stdout can be found below. See driver logs for full logs.
+---------------------------------------------------------------------------
+Last messages on stderr:
+(89): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:21,621 [fsr.v2.p1] LLM batch 182 (10 docs)
+2026-09-05 14:11:21,625 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v1.0(87)(1)(1): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:21,628 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v1.0(9)(1): year=2013 < 2016 (job_start_date)
+2026-09-05 14:11:21,817 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v1.0(98): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:21,820 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v1.0(91): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:21,886 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(1): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:21,963 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(14): year=2015 < 2016 (job_start_date)
+2026-09-05 14:11:22,119 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(16): year=2015 < 2016 (job_start_date)
+2026-09-05 14:11:22,126 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(15): year=2015 < 2016 (job_start_date)
+/databricks/python/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'dev-gateway.apps.gevernova.net'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings" target="_blank" rel="noopener noreferrer">https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings</a></span>
+  warnings.warn(
+2026-09-05 14:11:22,302 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(17): year=2015 < 2016 (job_start_date)
+2026-09-05 14:11:22,323 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(18): year=2015 < 2016 (job_start_date)
+2026-09-05 14:11:22,447 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(22): year=2015 < 2016 (job_start_date)
+2026-09-05 14:11:22,583 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(22)(1): year=2015 < 2016 (job_start_date)
+2026-09-05 14:11:22,600 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(23): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:22,628 [fsr.v2.parsing]   [PARSED/pymupdf] 1_v2.0(21)(1)  pages=9  chars=7957
+2026-09-05 14:11:22,711 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(24): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:22,825 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(6): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:22,893 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(7): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:23,062 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v2.0(9): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:23,128 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v3.0: year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:23,524 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v3.0(4): year=2014 < 2016 (job_start_date)
+2026-09-05 14:11:23,549 [fsr.v2.p1]   [DATE-FILTER/page1-probe] 1_v3.0(6): year=2015 < 2016 (job_start_date)
+2026-09-05 14:11:23,725 [fsr.v2.parsing]   [PARSED/pymupdf] 1_v3.0(2)  pages=14  chars=9485
+2026-09-05 14:11:25,948 [fsr.v2.parsing]   [PARSED/pymupdf] 1_v4.0  pages=14  chars=9485
+2026-09-05 14:11:27,753 [fsr.v2.parsing]   [PARSED/pymupdf] 1a0084e0-0f33-410a-91a6-ac8f1aedc9c2  pages=29  chars=10250
+2026-09-05 14:11:27,837 [fsr.v2.parsing]   [PARSED/pymupdf] 1a0a7a7a-b7d3-4aee-b664-d7a1e3dc935d  pages=13  chars=4717
+2026-09-05 14:11:31,427 [fsr.v2.parsing]   [PARSED/pymupdf] 1a014243-dd33-433a-ba70-f7d0e855b820  pages=377  chars=27218
+2026-09-05 14:11:31,961 [fsr.v2.parsing]   [PARSED/pymupdf] 1a0dc9cf-0101-43d9-a197-421c951a8227  pages=55  chars=53429
+2026-09-05 14:11:35,431 [fsr.v2.parsing]   [PARSED/pymupdf] 1a1842e4-e9b6-4416-b64e-9fd5cb7134df  pages=40  chars=17808
+2026-09-05 14:11:37,616 [fsr.v2.parsing]   [PARSED/pymupdf] 1a0b6e17-64c5-4587-8b6e-1764c5e587b2  pages=301  chars=177951
+2026-09-05 14:11:41,659 [fsr.v2.parsing]   [PARSED/pymupdf] 1a13bfc8-015c-4303-b4da-cd974c509159  pages=196  chars=248113
+2026-09-05 14:11:45,941 [fsr.v2.parsing]   [PARSED/pymupdf] 1a1fe1dc-1dd9-4f4b-afa1-fe6656cab792  pages=91  chars=58455
+2026-09-05 14:11:53,573 [fsr.v2.parsing]   [PARSED/pymupdf] 1a1f6cca-79dd-427f-b607-b2e0c4d783fc  pages=165  chars=142219
+2026-09-05 14:11:53,605 [fsr.v2.parsing]   [PARSED/pymupdf] 1a35c712-672d-46fe-80e9-3e3262cf325a  pages=97  chars=52601
+2026-09-05 14:11:55,689 [fsr.v2.parsing]   [PARSED/pymupdf] 1a3f1c0c-1977-4938-bf1c-0c1977f93880  pages=5  chars=1873
+2026-09-05 14:12:00,715 [fsr.v2.parsing]   [PARSED/pymupdf] 1a481c11-6f4a-4901-8d27-5328322157bc  pages=89  chars=54597
+2026-09-05 14:12:03,234 [fsr.v2.parsing]   [PARSED/pymupdf] 1a4c7b6f-b76a-4c54-a51b-6fb0bc6cca82  pages=221  chars=87421
+2026-09-05 14:12:03,801 [fsr.v2.parsing]   [PARSED/pymupdf] 1a37fd18-d28f-4be7-9897-fdc29198822c  pages=246  chars=203305
+2026-09-05 14:12:06,542 [fsr.v2.parsing]   [PARSED/pymupdf] 1a5b89a2-378c-4a59-81ea-8ab7f2a92d96  pages=32  chars=22415
+2026-09-05 14:12:07,722 [fsr.v2.metadata_enrichment]   [MERGED] 2ef6914b-9e9e-4683-b322-be46cbc7b078  primary_esn=  equip_type=Gas Turbine
+2026-09-05 14:12:07,804 [fsr.v2.parsing]   [PARSED/pymupdf] 1a5eac11-23c8-4ad1-9eac-1123c89ad1a1  pages=35  chars=16491
+2026-09-05 14:12:10,247 [fsr.v2.parsing]   [PARSED/pymupdf] 1a6bfbd4-6ad0-4de1-8444-94d12daa2303  pages=8  chars=6378
+2026-09-05 14:12:10,590 [fsr.v2.parsing]   [PARSED/pymupdf] 1a63ff5b-2d20-4c7e-9b00-e4cdd749e353  pages=149  chars=14232
+2026-09-05 14:12:10,644 [fsr.v2.parsing]   [PARSED/pymupdf] 1a178c3e-5c30-4d9a-be3c-115b5765b65b  pages=557  chars=209794
+2026-09-05 14:12:10,705 [fsr.v2.parsing]   [PARSED/pymupdf] 1a565a9a-636b-4453-965a-9a636bf453c4  pages=217  chars=238008
+2026-09-05 14:12:15,731 [fsr.v2.parsing]   [PARSED/pymupdf] 1a72eaca-9657-4c41-a271-6cda559c9e81  pages=145  chars=55205
+2026-09-05 14:12:17,972 [fsr.v2.parsing]   [PARSED/pymupdf] 1a75aa86-d345-45cd-be47-aa956a2d7bf4  pages=57  chars=30280
+2026-09-05 14:12:24,623 [fsr.v2.parsing]   [PARSED/pymupdf] 1a7c28d7-eeb5-4575-9ec4-15b4767e9d45  pages=60  chars=66166
+2026-09-05 14:12:36,932 [fsr.v2.parsing]   [PARSED/pymupdf] 1a776d32-6083-4cfb-8ee1-8b810d68666e  pages=243  chars=148691
+2026-09-05 14:12:42,606 [fsr.v2.parsing]   [PARSED/pymupdf] 1a8b68b6-cfed-481b-8ebf-91dadaef99dd  pages=73  chars=13202
+2026-09-05 14:12:44,778 [fsr.v2.parsing]   [PARSED/pymupdf] 1a8611c0-1c57-4825-b0fa-6fa75bd9a38d  pages=189  chars=143161
+2026-09-05 14:12:50,476 [fsr.v2.metadata_enrichment]   [MERGED] 2f3c0d70-f43c-41aa-9ef6-c925cc34ba1a  primary_esn=270T528  equip_type=Steam Turbine
+2026-09-05 14:12:50,480 [fsr.v2.parsing]   [PARSED/pymupdf] 1a931233-90db-4454-aa53-aa1336e70f32  pages=206  chars=103700
+2026-09-05 14:12:52,499 [fsr.v2.parsing]   [PARSED/pymupdf] 1a95db0d-9370-49a5-95db-0d9370c9a5ef  pages=13  chars=11341
+2026-09-05 14:12:56,338 [fsr.v2.parsing]   [PARSED/pymupdf] 1a7d3af1-104a-45ce-9bb8-2531012e4ce4  pages=775  chars=425789
+2026-09-05 14:12:56,635 [fsr.v2.parsing]   [PARSED/pymupdf] 1a72b5d3-5364-4e88-838d-2666d55e55e2  pages=747  chars=1023474
+2026-09-05 14:13:01,874 [fsr.v2.parsing]   [PARSED/pymupdf] 1a974f7e-8ade-4606-bc2b-df74adb58403  pages=125  chars=88963
+2026-09-05 14:13:02,847 [fsr.v2.parsing]   [PARSED/pymupdf] 1a9738e0-68cc-45a7-bdc0-a828b7554cef  pages=440  chars=280044
+2026-09-05 14:13:02,855 [fsr.v2.parsing]   [PARSED/pymupdf] 1a976086-4979-422a-9760-864979a22a4b  pages=23  chars=10762
+2026-09-05 14:26:41,898 [fsr.v2.parsing]   [PARSED/pymupdf] 1aa0337c-4bc4-43e7-a033-7c4bc4b3e784  pages=14  chars=12753
+2026-09-05 14:26:43,232 [fsr.v2.parsing]   [PARSED/pymupdf] 1aa92573-5184-469e-99f1-c1071fc3edc9  pages=36  chars=4774
+2026-09-05 14:27:28.240 WARNING  DatabricksKernelApp.PythonLogging [driver_repl_id=3470481013271042527] Keepalive failure. This may represent a transient network error reaching the Spark server.
+Traceback (most recent call last):
+  File "/databricks/python_shell/lib/dbruntime/serverless/keepalive.py", line 132, in _send_single_keepalive
+    self._spark_version_request(client, spark)
+  File "/databricks/python_shell/lib/dbruntime/serverless/keepalive.py", line 109, in _spark_version_request
+    spark_version_response = client._stub.AnalyzePlan(
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_interceptor.py", line 277, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_interceptor.py", line 332, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_channel.py", line 440, in result
+    raise self
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_interceptor.py", line 315, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_interceptor.py", line 343, in with_call
+    return self._with_call(
+           ^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_interceptor.py", line 332, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_channel.py", line 440, in result
+    raise self
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_interceptor.py", line 315, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_channel.py", line 1198, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/grpc/_channel.py", line 1006, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.DEADLINE_EXCEEDED
+	details = "Deadline Exceeded"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"Deadline Exceeded", grpc_status:4, created_time:"2026-09-05T14:27:27.504145563+00:00"}"
+>
+
+2026-09-05 14:27:38,286 [fsr.v2.parsing]   [PARSED/pymupdf] 1ab43f89-324f-4ec1-96e7-aa45175b1488  pages=1075  chars=784092
+---------------------------------------------------------------------------
+Last messages on stdout:
+1
+Note: you may need to restart the kernel using %restart_python or dbutils.library.restartPython() to use updated packages.
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.

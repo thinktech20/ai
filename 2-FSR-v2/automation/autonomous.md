@@ -4,7 +4,7 @@
 permissions, environment facts, the tooling, and the traps that have already cost
 time. Everything here was verified by running it, not inferred from docs.
 
-**Last verified:** 2026-09-02 against `dev-dbr-profile`.
+**Last verified:** 2026-09-09 against `dev-dbr-profile` and `ai-qa-dbr`.
 
 ---
 
@@ -12,7 +12,6 @@ time. Everything here was verified by running it, not inferred from docs.
 
 Operate as an **FSR v2 pipeline and Databricks RAG expert**:
 
-- Know the P1 (metadata) → P2 (chunking) → P3 (VS index) flow and its state
   machine (`metadata_status`, `chunk_status`, claim/drain, idempotent MERGE).
 - Know the retrieval path: chunk → embedding → Vector Search → ESN-filtered
   lookup, and its failure modes (dimension mismatch, endpoint name drift, stale
@@ -44,6 +43,33 @@ something this file can grant.
 
 **Compute is serverless. Serverless runs Python 3.10.12.**
 
+### Profiles and environment selection
+
+Keep separate Databricks CLI profiles for each environment. The profiles are
+independent credentials and can coexist in `~/.databrickscfg`:
+
+| Environment | CLI profile | Use |
+|---|---|---|
+| Dev | `dev-dbr-profile` | sandbox and dev validation |
+| QA | `ai-qa-dbr` | QA backfill monitoring, repair, and validation |
+| Prod | `ai-prod-dbr` | production monitoring and controlled operations |
+
+Use the profile explicitly on every command. Never rely on the default profile
+when checking pipeline data or triggering a job:
+
+```bash
+databricks current-user me --profile ai-qa-dbr
+databricks current-user me --profile ai-prod-dbr
+```
+
+The same session can query both environments. This is useful for comparison,
+but keep the profile, warehouse, table names, job IDs, and volume paths paired
+with the same environment. Do not use a QA job ID with a prod profile or a QA
+table name in a prod SQL query.
+
+Prod profile status: configure `ai-prod-dbr` locally before using the prod
+commands. Do not paste PATs or other credentials into chat.
+
 | Thing | Value |
 |---|---|
 | Profile | `dev-dbr-profile` |
@@ -60,6 +86,28 @@ something this file can grant.
 | P1 | `PW_SDG_FSR_V2_Metadata` | 1003518188699476 | `silver/src/etl/nb_sdg_fsr_v2_metadata` |
 | P2 | `PW_SDG_FSR_V2_Chunking` | 185943124898155 | `gold/src/etl/nb_sdg_fsr_v2_chunks` |
 | P3 | `PW_SDG_FSR_V2_VS_Index` | 844746489495403 | `vs/src/etl/nb_sdg_fsr_v2_index` |
+
+**Jobs (QA), all `CAN_MANAGE`:**
+
+| Stage | Job | ID |
+|---|---|---|
+| DDL | `PW_SDG_FSR_V2_DDL` | 334275972250035 |
+| P1 | `PW_SDG_FSR_V2_Metadata` | 761501966564581 |
+| P2 | `PW_SDG_FSR_V2_Chunking` | 281692486694630 |
+| P3 | `PW_SDG_FSR_V2_VS_Index` | 21697534238749 |
+| Validation | `PW_SDG_FSR_V2_Validation` | 120006218056054 |
+
+**QA connection facts:**
+
+| Thing | Value |
+|---|---|
+| Profile | `ai-qa-dbr` |
+| Host | `gevernova-ai-qa-dbr.cloud.databricks.com` |
+| SQL warehouse | `ai-pw-ser-ds-qa-sqlw` = `7edab8ce9d0a056b` |
+
+**Prod facts:** use the `ai-prod-dbr` profile to discover and record the prod
+warehouse and job IDs before running any prod command. Do not copy QA or dev job
+IDs into the prod section.
 
 **CI/CD deploys only from the `dev` branch.** Check-ins to `fsr_v2` do **not**
 deploy. To run unmerged branch code, use the sandbox (§6).
@@ -140,6 +188,29 @@ inline shell quoting breaks constantly.
 ```bash
 databricks api post /api/2.0/sql/statements --profile dev-dbr-profile --json @/tmp/q.json
 ```
+
+Use the same SQL API for QA or prod by changing only the profile, warehouse ID,
+and environment-qualified table names:
+
+```bash
+databricks api post /api/2.0/sql/statements --profile ai-qa-dbr --json @/tmp/qa-q.json
+databricks api post /api/2.0/sql/statements --profile ai-prod-dbr --json @/tmp/prod-q.json
+```
+
+For a QA/prod comparison, run the same read-only aggregate query once per
+environment and label the output with its profile. At minimum compare:
+
+- metadata status counts
+- chunk status counts
+- equipment-map row and document counts
+- completed documents with known ESNs but no map row
+- chunk counts and embedding dimensions
+- recent run-log rows and throughput
+- DQ failure categories
+
+Never compare raw row totals without also comparing corpus scope and date
+filters. A different source-volume list or year range can make a healthy
+environment look incomplete.
 
 **Trigger jobs** — `run-now` + poll `runs/get`. **Use `job_parameters`, not
 `notebook_params`**; the legacy field is rejected outright, and undeclared names
@@ -330,10 +401,10 @@ Non-obvious constraints:
 
 ## 9. Current state (2026-09-02)
 
-**Dev backfill + incremental validation (§ new `backfill-monitoring-plan.md` /
-`backfill-pulse-log.md` in this folder): both tracks passed.** Full summary,
+**Dev backfill + incremental validation (`../backfill/backfill-monitoring-plan.md` /
+`../backfill/backfill-pulse-log.md`): both tracks passed.** Full summary,
 bugs found/fixed, and the `FSR_V2_P1_WORKERS` sweep (4 vs 8 vs 16 — flat
-throughput, no need to raise it) are in `backfill-pulse-log.md`'s closing
+throughput, no need to raise it) are in `../backfill/backfill-pulse-log.md`'s closing
 session summary. Headline fixes this session:
 
 - Stage 2-3/Stage 4 barrier in P1 (see §8) — fixed, verified continuous

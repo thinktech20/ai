@@ -1,0 +1,1 @@
+*"My recent work is on productionizing retrieval-augmented systems — both a RAG pipeline grounding a Q&A agent over field service reports, and the agent itself doing dynamic tool selection across structured + unstructured sources. Happy to go deep on retrieval design, eval, or the failure modes we hit in prod — whichever is most useful."

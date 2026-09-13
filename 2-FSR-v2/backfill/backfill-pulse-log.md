@@ -449,3 +449,94 @@ more before handing off.
 [backfill-monitoring-plan.md](backfill-monitoring-plan.md) and the updated
 [prod-hardening-items](../prod-hardening/prod-hardening-items) checklist.
 
+---
+
+## QA backfill (2016+) — started ~2026-09-06
+
+| Item | Value |
+|---|---|
+| Environment | qa (`gevernova-ai-qa-dbr.cloud.databricks.com`) |
+| Tables | `vaiq.ai_std_con_field_service_report.fsr_metadata_v2` / `fsr_chunks_v2` / `fsr_document_equipment_map_v2` |
+| Jobs run | `PW_SDG_FSR_V2_Metadata` and `PW_SDG_FSR_V2_Chunking`, in parallel |
+| Scope | full corpus, `FSR_V2_MIN_DOC_YEAR=2016`, no per-run cap |
+
+### Pulse — 2026-09-08 — Track QA — **incident: equipment map empty**
+
+> Full write-up: [equipment-map-gap-analysis.md](equipment-map-gap-analysis.md).
+
+- **P1 job:** cancelled after ~26h (restarted once mid-way after a driver OOM)
+- **P2 job:** cancelled after ~23h
+- **Observed:** ~8,000 docs inserted into `fsr_metadata_v2`, **zero rows in
+  `fsr_document_equipment_map_v2`**.
+- **Reported by:** Namruth, via Slack — analysis independently confirmed
+  against the code.
+
+**Root cause — confirmed in `silver/src/etl/nb_sdg_fsr_v2_metadata.py`:**
+
+Equipment-map rows were accumulated in an in-memory `map_rows` list across the
+entire run and written **once**, in a single bulk MERGE in the last cell
+(Stage 5). Metadata rows, by contrast, are MERGEd per document as each one
+completes (`write_enriched_metadata`). So the two tables had completely
+different durability:
+
+- Interrupt the run anywhere before that final cell → every doc already at
+  `metadata_status='completed'` has **no** equipment-map row.
+- Stage 1 only re-queues `pending` / retry-eligible `failed`. `completed` docs
+  are never revisited, so the gap is permanent without a manual backfill.
+
+Both interruptions this run (the OOM restart, then the cancel) hit before
+Stage 5, which is why the map is at zero rather than partially filled.
+
+**Two contributing defects found while confirming this:**
+
+1. **Driver OOM.** The `as_completed` loop kept every `Future` alive in
+   `_futures` for the whole run. Each future holds its result — including the
+   parsed PDF's full page text — so driver memory grew with corpus size rather
+   than staying bounded by `FSR_V2_P1_LLM_BATCH_SIZE`. Likely cause of the OOM
+   that forced the restart.
+2. **Unbounded MERGE predicate.** Stage 5 built
+   `WHEN NOT MATCHED BY SOURCE AND tgt.document_id IN (<every success_id>)`.
+   At 8K+ docs that is a multi-megabyte SQL string — a second, independent way
+   the same cell could fail at scale even if it were reached.
+
+**Also raised by Namruth, and valid:** v2 has no per-run document cap. v1 has
+`FSR_MAX_PDFS`; v2 had no equivalent, so the only option was "process all
+~50K in one run".
+
+**Fixes applied (branch `fsr_v2`, not yet merged/deployed):**
+
+| # | Fix | File |
+|---|---|---|
+| 1 | Equipment map written **per LLM batch**, in `_run_llm_batch`, alongside that batch's metadata writes. Worst-case loss on interruption drops from the whole run to one batch. | `silver/src/etl/nb_sdg_fsr_v2_metadata.py` |
+| 2 | Stage 5 is now reconciliation only — logs totals and warns if any `completed` doc has no map row. | same |
+| 3 | Futures released as their results are consumed, so parsed page text is no longer pinned for the whole run. | same |
+| 4 | New `FSR_V2_P1_MAX_DOCS` knob (blank = unlimited). Discovery still stub-registers the full queue as `pending`; the cap only bounds one run's slice. | same + `databricks.yaml`, `workflows/fsr_v2/pw_sdg_fsr_v2_p1_metadata.yml`, `pw_sdg_fsr_v2_ingestion.yml` |
+| 5 | Repair notebook to rebuild the map for already-affected docs. | `validation/fsr_v2/nb_fsr_v2_repair_equipment_map.py` |
+| 6 | Cross-table consistency queries + repair procedure + sizing guidance. | monitoring plan §9 |
+
+**Repair decision — rebuild, do not re-queue.** Everything the map is built
+from is already persisted on `fsr_metadata_v2`: `preprocessor_regions` (JSON,
+per-region ESN and equip type), `primary_esn`, `primary_equip_type`, `gt_esn`,
+`gen_esn`, `st_esn`, `inactive_esns`. The map is therefore reconstructable
+**exactly**, with no PDF parsing and no LLM calls. Resetting ~8K docs to
+`pending` would re-parse and re-LLM all of them — at ~300 docs/hr that is over
+a day of wall clock plus LLM spend — and would overwrite metadata that is
+already correct. Rebuilding is both cheaper and lower-risk.
+
+**Order of operations (data correctness first, jobs second):**
+
+1. Run monitoring plan §9.2 query A against QA — get the real
+   `missing_map_rows` and `missing_but_no_esn` numbers. *(Not yet done — no QA
+   profile configured on the dev box; needs a QA SQL editor or a profile.)*
+2. Run §9.2 queries B and C — confirm the chunk table and orphan counts are
+   clean, i.e. this is only an equipment-map problem.
+3. Run the repair notebook with `REPAIR_DRY_RUN=true`, review the assessment.
+4. Re-run with `REPAIR_DRY_RUN=false`; re-check query A until the gate
+   (`missing_map_rows - missing_but_no_esn = 0`) is met.
+5. Only then merge the code fixes to `dev`, deploy, and restart the backfill
+   with `FSR_V2_P1_MAX_DOCS=5000`.
+
+- **Action taken:** both jobs cancelled; code fixes + repair notebook written;
+  monitoring plan extended with cross-table checks (§9).
+- **Next check:** §9.2 query A against QA, before anything is re-triggered.
+

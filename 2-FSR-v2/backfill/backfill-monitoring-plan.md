@@ -1,7 +1,7 @@
 # FSR v2 — Backfill + Incremental Ingestion Validation Plan (DEV first)
 
 > **Status: draft, not yet run.** Modeled on the FSR v1 plan
-> ([`../../fsr-prod-ops/backfill-monitoring-plan.md`](../../fsr-prod-ops/backfill-monitoring-plan.md)),
+> ([`../../../fsr-prod-ops/backfill-monitoring-plan.md`](../../../fsr-prod-ops/backfill-monitoring-plan.md)),
 > adapted to FSR v2's schema, jobs, and tooling. **Scope: dev only.** Once this
 > is validated in dev and the branch is promoted (`fsr_v2` → `dev` → prod
 > deploy), repeat the same two tracks against prod tables and use
@@ -9,9 +9,9 @@
 > the full-scale, year-cohort prod backfill. Do not reuse this file's "stop
 > early" posture in prod — prod runs to completion.
 
-**Read [`autonomous.md`](autonomous.md) first** for environment facts, job
+**Read [`../automation/autonomous.md`](../automation/autonomous.md) first** for environment facts, job
 IDs, permissions, and the verification tooling (`dbx_client.py`, `checks.py`,
-`verify_fsr_v2.py`, `tracks.json`).
+`verify_fsr_v2.py`, `../automation/tracks.json`).
 
 ---
 
@@ -53,11 +53,11 @@ reach 22K completions in dev.
       decide and note which, since Track B needs a stable "already completed"
       baseline to diff against).
 - [ ] Confirm no other track/job is writing to the same dev tables
-      concurrently (see `autonomous.md` §3 ownership table — you cannot drop
+      concurrently (see `../automation/autonomous.md` §3 ownership table — you cannot drop
       the real `fsr_metadata_v2`/`fsr_chunks_v2`/`fsr_document_equipment_map_v2`,
       only `service.globalopsfsso` can).
 - [ ] `FSR_TARGET_PDF_NAMES` empty, `FSR_SOURCE_VOLUME_PATHS` set to all dev
-      volumes (see `tracks.json` track 1/2 `p1` params for the current list).
+      volumes (see `../automation/tracks.json` track 1/2 `p1` params for the current list).
 - [ ] `FSR_V2_MIN_DOC_YEAR=2016`, `FSR_V2_MAX_DOC_YEAR` unset (full range —
       do not partition by year cohort in dev; that's a prod-scale concern).
 - [ ] Note current `FSR_V2_P1_WORKERS` / `FSR_P2_BATCH_SIZE` / P2 concurrency
@@ -85,9 +85,9 @@ databricks jobs run-now 1003518188699476 --profile dev-dbr-profile \
 ### 2.3 Pulse checks — every 30–60 min during the observation window
 
 Reuse the query shapes from
-[`../../fsr-prod-ops/backfill-monitoring-plan.md`](../../fsr-prod-ops/backfill-monitoring-plan.md)
+[`../../../fsr-prod-ops/backfill-monitoring-plan.md`](../../../fsr-prod-ops/backfill-monitoring-plan.md)
 §3, adapted to the v2 schema (both statuses live on **`fsr_metadata_v2`**,
-not split across tables — see `autonomous.md` §7):
+not split across tables — see `../automation/autonomous.md` §7):
 
 ```sql
 -- 1. Queue state
@@ -271,7 +271,7 @@ test that directly:
 
 ## 4. Topology (dev)
 
-Reuse `autonomous.md` §3 and `tracks.json` verbatim — do not duplicate table
+Reuse `../automation/autonomous.md` §3 and `../automation/tracks.json` verbatim — do not duplicate table
 names here beyond what's needed for the queries above. Key ones:
 
 | Table | Full name |
@@ -284,7 +284,7 @@ names here beyond what's needed for the queries above. Key ones:
 | VS index | `vaid.ai_std_con_field_service_report.fsr_vs_index_v2` |
 | VS endpoint | `pw-ser-sdg-vector-search` |
 
-Jobs: see `autonomous.md` §3 table (DDL/P1/P2/P3 job IDs). If triggering via
+Jobs: see `../automation/autonomous.md` §3 table (DDL/P1/P2/P3 job IDs). If triggering via
 the chained `PW_SDG_FSR_V2_Ingestion` workflow instead of the 3 independent
 jobs, look up its job ID in the Databricks UI before scripting against it —
 it isn't in the automation tooling's `JOBS` dict yet.
@@ -298,6 +298,7 @@ it isn't in the automation tooling's `JOBS` dict yet.
 | `FSR_V2_P1_WORKERS` | 4 | conservative; raise to 8 only if no LLM 429/5xx over a sustained window |
 | `FSR_V2_P1_LLM_BATCH_SIZE` | 5–10 | tracks.json uses 5 (track 1) / 10 (track 2+); higher = fewer LLM calls, larger blast radius per batch failure |
 | `FSR_V2_MIN_DOC_YEAR` | 2016 | do not change for this test |
+| `FSR_V2_P1_MAX_DOCS` | unset in dev; **5000–10000 in qa/prod** | Max docs P1 processes per run. Discovery still stub-registers the whole queue as `pending`, so nothing is lost — re-trigger for the next slice. Keeps a run to hours instead of days and bounds driver memory. |
 | `FSR_V2_MAX_DOC_YEAR` | unset | leave unset in dev — year-cohort partitioning is a prod-scale concern (see backfill-runbook) |
 | `FSR_P2_BATCH_SIZE` | 20 | |
 | `FSR_P2_MAX_RETRIES` | 3 | |
@@ -309,7 +310,7 @@ it isn't in the automation tooling's `JOBS` dict yet.
 
 ## 6. Failure playbook
 
-Reuse the v1 playbook categories (`../../fsr-prod-ops/backfill-monitoring-plan.md`
+Reuse the v1 playbook categories (`../../../fsr-prod-ops/backfill-monitoring-plan.md`
 §6) — LLM gateway bursts, corrupt PDFs, embedding failures, stale claims,
 silent zero-progress — they apply unchanged. The one v2-specific addition:
 
@@ -320,6 +321,21 @@ caught individually, but a batch-level exception is not). If failures cluster
 in same-sized groups matching the batch size, that's this — not N independent
 corrupt PDFs. Check `fsr_run_log_v2.llm_batch_count` vs failure count to
 confirm the pattern before treating it as a data-quality signal.
+
+**Equipment map missing for completed docs.** Symptom: `fsr_metadata_v2` has
+thousands of `metadata_status='completed'` rows and
+`fsr_document_equipment_map_v2` is empty or far behind. Cause (fixed
+2026-09-08, see pulse log): P1 wrote the map once at the end of the run, so an
+interrupted run kept the metadata and dropped the map, and the Stage 1 retry
+query never revisits `completed` docs. The map is now written per LLM batch.
+For data already on disk, repair per §9.3 — rebuild from `preprocessor_regions`,
+do **not** reset status to `pending`.
+
+**Driver OOM on a large run.** P1 held every `Future` in `_futures` for the
+whole run, pinning each parsed PDF's full page text in driver memory. Fixed
+2026-09-08 by releasing each future as its result is consumed. If OOM recurs,
+lower `FSR_V2_P1_MAX_DOCS` before raising cluster memory — a smaller slice is
+the intended control.
 
 ---
 
@@ -362,7 +378,7 @@ session (see `prod-hardening-items` §2 for the tracked item).
    observed failure rate in the pulse log's closing entry. **Done** — see
    closing summary in `backfill-pulse-log.md`.
 2. Merge/deploy the validated branch to `dev` (CI/CD only deploys from
-   `dev` — see `autonomous.md` §3) so the prod bundle picks it up. **Code fix
+   `dev` — see `../automation/autonomous.md` §3) so the prod bundle picks it up. **Code fix
    for the Stage 2–3/4 barrier is committed to `fsr_v2` but confirm it has
    actually merged to `dev` and deployed before relying on it in prod.**
 3. Before the prod run: check `vaip.ai_std_con_field_service_report.fsr_run_log_v2`
@@ -382,3 +398,184 @@ session (see `prod-hardening-items` §2 for the tracked item).
    duplicates, a full untargeted discovery run could hit the same crash —
    worth a fix or at least a known-affected-doc list before running untargeted
    in prod.
+
+---
+
+## 9. QA backfill (2016+) — monitoring additions
+
+The QA backfill runs P1 (`PW_SDG_FSR_V2_Metadata`) and P2
+(`PW_SDG_FSR_V2_Chunking`) in parallel against the QA tables. Everything in
+§2–§7 applies; this section adds what dev didn't cover.
+
+> The 2026-09-08 equipment-map incident that prompted §9.2 and §9.3 is written
+> up in full in
+> [equipment-map-gap-analysis.md](equipment-map-gap-analysis.md). The
+> step-by-step recovery and continuation is in
+> [qa-backfill-autonomous-plan.md](qa-backfill-autonomous-plan.md) — use that
+> as the execution order; this section is the reference for the checks it runs.
+
+### 9.1 QA table names
+
+| Table | Full name |
+|---|---|
+| Metadata | `vaiq.ai_std_con_field_service_report.fsr_metadata_v2` |
+| Chunks | `vaiq.ai_std_con_field_service_report.fsr_chunks_v2` |
+| Equipment map | `vaiq.ai_std_con_field_service_report.fsr_document_equipment_map_v2` |
+| Run log | `vaiq.ai_sot_field_service_report.fsr_run_log_v2` |
+| DQ log | `vaiq.ai_sot_field_service_report.fsr_data_quality_log_v2` |
+
+There is no QA profile in `~/.databricksfg` on the dev box, so the automation
+tooling (`dbx_client.py`, `monitor_track_a.py`) cannot pulse QA. Run the
+queries below from a QA SQL editor, or add a QA profile first.
+
+### 9.2 Cross-table consistency checks — run these every pulse
+
+**Tooling:** these are now packaged as notebooks in `pw_sdg_ai_ser_repo`, so they
+deploy with the bundle and run against any env by widget:
+
+| Notebook | Purpose | Cadence |
+|---|---|---|
+| `validation/fsr_v2/nb_fsr_v2_01_pulse_check` | Heartbeat — queue, throughput, ETA, cross-table consistency, run log, DQ log, stale claims, failures, Slack-ready summary | Every 1–2h while a backfill is in flight |
+| `validation/fsr_v2/nb_fsr_v2_02_data_correctness_full` | End-to-end correctness gate; raises on any FAIL so it can be wired into a job | End of backfill, not during |
+| `validation/fsr_v2/nb_fsr_v2_repair_equipment_map` | Rebuild missing equipment-map rows | Only when the gate below fails |
+
+All three are read-only apart from the repair notebook, and none need
+credentials — every widget is a table name or a threshold.
+
+Prefer the notebooks over the raw SQL below; the SQL is kept so the checks are
+reviewable without a cluster. Note that `checks.py` in `../automation/` covers
+similar ground but is hardcoded to the dev profile and dev warehouse, so it
+cannot be pointed at QA or prod.
+
+§2.3's queries only look at one table at a time, which is exactly why the
+2026-09-08 equipment-map gap went unnoticed for two days. **A doc is only
+correct when all three tables agree.** Add these:
+
+```sql
+-- A. Completed metadata with NO equipment-map row.
+--    A doc with no ESN anywhere is legitimately unmapped; the second column
+--    separates those out. Anything in the difference is real data loss.
+SELECT
+    COUNT(*)                        AS completed_docs,
+    COUNT(e.document_id)            AS with_map_rows,
+    COUNT(*) - COUNT(e.document_id) AS missing_map_rows,
+    SUM(CASE WHEN e.document_id IS NULL
+              AND COALESCE(m.primary_esn,'')='' AND COALESCE(m.gt_esn,'')=''
+              AND COALESCE(m.gen_esn,'')=''     AND COALESCE(m.st_esn,'')=''
+         THEN 1 ELSE 0 END)         AS missing_but_no_esn
+FROM vaiq.ai_std_con_field_service_report.fsr_metadata_v2 m
+LEFT JOIN (SELECT DISTINCT document_id
+           FROM vaiq.ai_std_con_field_service_report.fsr_document_equipment_map_v2) e
+       ON m.document_id = e.document_id
+WHERE m.metadata_status = 'completed';
+
+-- B. Chunk-side mirror of the same idea.
+SELECT COUNT(*) AS completed_chunked_docs_with_no_chunks
+FROM vaiq.ai_std_con_field_service_report.fsr_metadata_v2 m
+LEFT ANTI JOIN vaiq.ai_std_con_field_service_report.fsr_chunks_v2 c
+  ON m.document_id = c.document_id
+WHERE m.chunk_status = 'completed';
+
+-- C. Orphan rows pointing at documents that no longer exist in metadata.
+SELECT 'equipment_map' AS tbl, COUNT(*) AS orphans
+FROM vaiq.ai_std_con_field_service_report.fsr_document_equipment_map_v2 e
+LEFT ANTI JOIN vaiq.ai_std_con_field_service_report.fsr_metadata_v2 m
+  ON e.document_id = m.document_id
+UNION ALL
+SELECT 'chunks', COUNT(*)
+FROM vaiq.ai_std_con_field_service_report.fsr_chunks_v2 c
+LEFT ANTI JOIN vaiq.ai_std_con_field_service_report.fsr_metadata_v2 m
+  ON c.document_id = m.document_id;
+
+-- D. Was the map keeping pace? Compare completions vs mapped docs over time.
+SELECT date_trunc('HOUR', m.scraped_at) AS hr,
+       COUNT(*) AS completed,
+       COUNT(DISTINCT e.document_id) AS mapped
+FROM vaiq.ai_std_con_field_service_report.fsr_metadata_v2 m
+LEFT JOIN vaiq.ai_std_con_field_service_report.fsr_document_equipment_map_v2 e
+       ON m.document_id = e.document_id
+WHERE m.metadata_status = 'completed'
+GROUP BY 1 ORDER BY 1;
+```
+
+**Gate:** `missing_map_rows - missing_but_no_esn` must be **0 when no P1 run is
+active.**
+
+**While P1 is running, a small non-zero value is normal and not a fault.**
+Metadata is MERGEd per document inside an LLM batch; the equipment-map write
+fires once at the end of that batch. So a check landing mid-batch sees up to
+`FSR_V2_P1_LLM_BATCH_SIZE` documents completed without map rows. Observed live
+in QA on 2026-09-08: the gap rose to 9, then dropped to 0 the moment the batch
+flushed.
+
+What actually indicates a problem:
+
+| Observation | Meaning |
+|---|---|
+| 0 when idle | healthy |
+| ≤ batch size while running, clears within a minute | in-flight batch, normal |
+| Non-zero while idle | real loss — repair per §9.3 |
+| Grows across consecutive checks, or far exceeds batch size | the per-batch write is failing — stop and investigate |
+
+### 9.3 Repair procedure — completed docs with no equipment-map rows
+
+**Do not reset `metadata_status` to `'pending'` to fix this.** Everything the
+equipment map is derived from is already persisted on `fsr_metadata_v2`:
+`preprocessor_regions` (JSON, carrying per-region `primary_esn` /
+`primary_equip_type` / `primary_technology_code`), plus `primary_esn`,
+`primary_equip_type`, `gt_esn`, `gen_esn`, `st_esn` and `inactive_esns`. The
+map is therefore reconstructable exactly, with no PDF parsing and no LLM calls.
+
+Re-queueing instead would re-parse and re-LLM every affected doc — at ~300
+docs/hr that is days of wall clock plus LLM spend — and would overwrite
+metadata that is already correct. That is a correctness risk, not a fix.
+
+Use `pw_sdg_ai_ser_repo/validation/fsr_v2/nb_fsr_v2_repair_equipment_map.py`:
+
+> **Also run this after any cancelled or crashed P1 run, not just after an
+> incident.** P1 writes the equipment map once per LLM batch, so an interruption
+> leaves the final in-flight batch's documents `completed` with no map rows —
+> observed on real data 2026-09-08, where a cancel left 5 such documents. They
+> are terminal, so nothing re-queues them. The repair is idempotent and takes
+> under a minute; treat it as routine post-interruption hygiene.
+
+1. Run with `REPAIR_DRY_RUN=true` (default) and read the assessment log line.
+2. Confirm `missing_but_no_esn` accounts for the docs it says it does.
+3. Re-run with `REPAIR_DRY_RUN=false`. The write is insert-only (`WHEN NOT
+   MATCHED THEN INSERT`) against docs selected by `LEFT ANTI JOIN`, so it
+   cannot update or delete an existing map row.
+4. Re-run query A in §9.2 and confirm the gate is met.
+
+The notebook duplicates `_build_map_rows` from
+`silver/src/etl/nb_sdg_fsr_v2_metadata.py`. **Keep the two in sync** — if the
+map's shape changes, both change.
+
+### 9.4 Sizing QA and prod runs
+
+Do not run the full 50K corpus in one trigger. Set `FSR_V2_P1_MAX_DOCS`
+(see §5) to 5,000–10,000 and run the job repeatedly.
+
+**This is not the same knob as `FSR_V2_P1_WORKERS`.** Workers set how many
+threads run Stage 2–3 concurrently *inside* one run — a speed lever, and a
+proven-flat one (4/8/16 all gave ~300 docs/hr, because Stage 4 is serial).
+`FSR_V2_P1_MAX_DOCS` sets how many documents a run attempts **at all**. No
+worker count makes a 50K-doc run finish in a reasonable window or survive a
+crash; capping the run does both.
+
+Concretely, at ~300 docs/hr:
+
+| | 50K in one run | 5K per run, 10 runs |
+|---|---|---|
+| Wall clock per run | ~7 days | ~17 hours |
+| Lost on a crash at 80% | the in-flight batch, and the run has to be restarted with 40K still to go | same, but only the current 5K run repeats |
+| Driver memory | grows with the whole queue | bounded per run |
+| Can you stop between units? | no | yes, after any run |
+
+**Re-running is how you continue, not how you restart.** Stage 1
+stub-registers every discovered document as `pending` *before* the cap is
+applied, and the retry query at the top of each run re-claims whatever is still
+`pending`. So triggering the job again picks up exactly where the last one
+stopped — no parameter changes, no list of "already done" documents to
+maintain, and no risk of reprocessing completed work (completed documents are
+never re-claimed). Repeat until §9.2 query A shows the queue drained.
+

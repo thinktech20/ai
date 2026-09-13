@@ -238,3 +238,17 @@ Working dir: /home/u560060992/dbx/pw_sdg_ai_ser_repo
 - Close out the remaining Generator ESN gap on scanned or image-only PDFs where doc-level extraction finds no Generator token; verify the ingestion job now wires the IBAT dependency end-to-end into P1 and confirm Generator regions resolve via the train-scoped path.
 - Continue MLflow experiment iteration on the probe set and extend the evaluation inputs to cover FSR retrieval accuracy, not just top-K coverage.
 - Start scoping an LLM preprocessor prototype against the ambiguity rules, focusing first on the highest-value cases (same-type multi-ESN and boundary exit) before broadening.
+
+## 2026-09-11 WSR Update
+
+### Last Week
+
+- Deployed FSR v2 and started document ingestion in QA and production with the pre-2016 filter applied.
+- Monitored the running ingestion jobs and applied fixes during backfill; QA reached ~95% screened and production reached ~70% screened.
+- Investigated the section-path issue where Section 2 is grouped into a broader region and confirmed that corrected regions require rechunking.
+
+### Next Week
+
+- Complete and monitor QA and production ingestion, including P2 chunking/embeddings and P3/vector sync follow-up.
+- Review the section-header detection issue with Xujin and assess document-specific preprocessing profiles versus global rule changes.
+- Define regression cases and the validation/rechunking approach for affected documents.

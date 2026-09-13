@@ -1,0 +1,23 @@
+Describe your experience working with customers in highly regulated industries like financial services or life sciences. How have you helped them solve specific business process challenges?
+
+STAR Answer:
+
+Situation: I have worked with customers in both financial-services-adjacent and life-sciences environments where reliability, traceability, and governance were not optional. One example was ICE Mortgage, where lenders depended on a high-volume loan-data product, but the reporting layer was slowing down and customer confidence was dropping. Another was iRhythm, a health-tech company using wearable cardiac-monitoring data, where the data platform was mid-transition from Redshift to Snowflake and there was no established ETL or ELT framework.
+
+Task: In both cases, my role was to be the architecture lead who translated technical platform issues into business-process outcomes. At ICE Mortgage, that meant improving reporting performance and platform efficiency for lender-facing analytics. At iRhythm, it meant creating a scalable path for faster, more reliable insights that could support both operational efficiency and patient outcomes.
+
+Action: At ICE Mortgage, I led the enterprise data-platform work for multiple data products, analyzed the performance bottlenecks across streaming and query layers, and redesigned parts of the architecture with Spark tuning and processing changes that better fit the workload. At iRhythm, I led a two-week discovery and assessment, mapped the risks created by the warehouse migration and immature extractors, and defined a practical future-state architecture for ingestion, transformation, and validation so the team had a clearer delivery path.
+
+Result: At ICE Mortgage, the changes drove a 60% reduction in EMR streaming cost and an 80% improvement in Athena query performance, which directly improved reporting timeliness for the business. At iRhythm, the workshop and architecture direction helped the client move forward with more confidence and led to an extended engagement. Across both, the common value was helping regulated customers solve business-process issues by making the data platform more reliable, auditable, and fit for the operational decisions they needed to make.
+
+This role acts as the technical anchor for our customers. Tell me about a time you built trust with a new client by demonstrating a deep understanding of their industry's architectural patterns and challenges.
+
+STAR Answer:
+
+Situation: A strong example was Salesforce, where I worked with their Global Incentive Compensation team. They were responsible for commission logic that determined how sellers got paid, but the process depended on data from around 10 source systems, more than 20 compensation programs, and a reporting model that required a lot of manual audit work. They were also facing SOX audit pressure, and the analytics team was dependent on other groups whose priorities did not always align with their timelines.
+
+Task: My role was to lead discovery, assess the current state, and become the architecture and data-strategy anchor for the engagement. I needed to build trust quickly by showing that I understood the patterns that matter in compensation and compliance-heavy environments: clear data ownership, controlled access, reliable lineage, and reporting that could stand up to audit scrutiny.
+
+Action: I worked across BT teams, upstream source-system owners, enterprise architects, managers, and the SOX compliance team to document more than 80 reports and trace their dependencies. I surfaced the real architecture gaps, especially ambiguous ownership and stewardship of compensation data, and used that to define a North Star architecture for more accurate, timely, and audit-ready reporting. I framed the recommendations in business terms, not just technical terms: who owned the data, where controls should live, how access should be managed, and how to reduce the manual effort required to prove accuracy and compliance.
+
+Result: That approach helped establish trust because the client saw that I understood both the architecture and the business risk behind compensation reporting. It gave them a scalable path to more accurate and audit-ready reporting, reduced compliance risk through clearer ownership and access controls, and strengthened the engagement because I became the person they could rely on to connect technical decisions to seller trust, reporting accuracy, and SOX expectations.

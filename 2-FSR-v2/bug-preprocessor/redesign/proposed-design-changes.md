@@ -21,6 +21,47 @@ Five structural problems in the current preprocessor drive all three bugs:
 
 ---
 
+## Deterministic Preprocessor Capabilities
+
+The redesigned preprocessor should provide these capabilities through rules,
+document structure, and deterministic reference-data lookups. It should not
+invent an ESN or equipment assignment when the available evidence is
+ambiguous.
+
+| Capability | Deterministic behavior | Output / contract |
+|---|---|---|
+| **Unnumbered equipment headings** | Detect anchored headings such as `GAS TURBINE`, `GENERATOR`, `STEAM TURBINE`, and `EXCITER` when they appear as standalone lines. | Creates an equipment-block boundary with source and confidence metadata. |
+| **Hierarchical sections** | Build parent/child spans from equipment headers, numbered headings, subsection depth, and heading context. | Each span has `start`, `end`, `level`, `heading_type`, parent context, and local equipment type. |
+| **Parent-context restoration** | End a child span at the next heading of the same or higher level; resume the parent span automatically after the child ends. | Prevents a Generator subsection from permanently changing the following Gas Turbine content. |
+| **Local ESN assignment** | Resolve in order: explicit ESN in the heading, parent inheritance, a unique active ESN for the equipment type, then a constrained IBAT lookup. | Emits `resolved_esn`, `esn_source`, and `esn_confidence`; unresolved ambiguity remains explicit. |
+| **Same-type multiple ESNs** | Keep ESNs local to their section instead of selecting one global ESN per equipment type. | Separate spans and regions can carry different ESNs of the same equipment type. |
+| **Unified TOC and body evidence** | Use TOC entries as summary and coarse-boundary signals, then refine positions against the full text. | One section-span model feeds both region attribution and document-summary extraction. |
+| **Attribution provenance** | Record why an assignment was made: local heading, parent inheritance, IBAT lookup, neighbor fallback, or no assignment. | Region metadata includes `esn_source`, `esn_confidence`, `region_source`, and `fallback_chain`. |
+| **Full text coverage** | Emit explicit front-matter, gap, and trailing regions so character intervals are contiguous and non-overlapping. | Every character belongs to exactly one region, including unattributed/shared text. |
+| **Ambiguous or unresolved ESNs** | Do not force a value when zero or multiple candidates remain after deterministic resolution. | Emit equipment type without ESN where justified, with `esn_confidence="none"` and an audit flag. |
+
+### Deterministic boundary and attribution rules
+
+1. Detect equipment and section headings from anchored patterns and full-text
+  context, not from an LLM classification step.
+2. Infer hierarchy from heading numbering and nearby open ancestors; numbering
+  is a hint and cannot override explicit parent context without evidence.
+3. Assign section ends before building regions. A span ends at the next heading
+  at the same or higher level, while an equipment block ends only at the next
+  equipment-block heading.
+4. Resolve local ESNs using persisted document evidence and constrained IBAT
+  lookups. If the result is not unique, preserve the ambiguity instead of
+  guessing.
+5. Build regions from the resolved spans and fill uncovered intervals with
+  explicit shared or fallback regions.
+
+This deterministic layer produces structured evidence for downstream consumers.
+An optional later LLM pass may use regions with `esn_confidence="none"` or
+`"low"`, but LLM inference is not part of the preprocessor's authoritative
+boundary or attribution contract.
+
+---
+
 ## Proposed Architecture
 
 Replace the current flat-boundary + dual-path model with a **three-phase section pipeline**:
