@@ -1,0 +1,5 @@
+b86542e9-9b79-4d39-a0a9-3534d271abd5 this document is showing for 337X351, which is should not be. Its because 337X351 is in active ESN list, as it appears here - ai-arch/2-FSR-v2/post-prod/mis-qualified-esn/ESn-mismatch.png
+
+I am wondering should we just use the union of region_primary_esn (for those document not all shared chunks) instead of the active esn?
+
+(this is retrieval problem)

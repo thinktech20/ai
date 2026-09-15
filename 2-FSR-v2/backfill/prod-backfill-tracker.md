@@ -134,3 +134,64 @@ review after the main backfill completes, while the jobs continue to move.
   not the equipment-map loss seen in QA.
 - P3/vector sync has not run yet; check or trigger it after P2 has caught up or
   at the planned sync point.
+
+---
+
+## Pulse - 2026-09-14 00:00 UTC
+
+### Current status
+
+| Item | Value |
+|---|---|
+| Current phase | Prod backfill effectively near completion; only residual pending and date-filtered rows remain |
+| Last checked | 2026-09-14 00:00 UTC |
+| P1 metadata job | No active metadata job observed in the live queue pulse; table state indicates near-finished P1 |
+| P2 chunking + embeddings job | No active chunk job observed in the live queue pulse; table state indicates most chunk work is already complete |
+| P3 / VS sync | No recent `PW_SDG_FSR_V2_VS_Index` run found yet |
+| Blocked on | No visible prod blocker; current queue is mostly residual/past-window docs |
+
+**One-line summary:** The live table state shows prod is mostly complete: P1 is effectively finished, P2 has already processed most completed docs, and the remaining rows are mostly expected `date_filtered` docs plus a tiny residual pending set.
+
+### Queue state
+
+| Metadata status | Chunking & embeddings status | Docs |
+|---|---|---:|
+| completed | completed | 25,394 |
+| completed | failed | 150 |
+| date_filtered | pending | 25,424 |
+| failed | pending | 52 |
+| pending | pending | 4 |
+
+`date_filtered` means docs fell outside the configured backfill year window and were intentionally marked terminal/out of scope.
+
+### Aggregate progress
+
+| Metric | Value |
+|---|---:|
+| Total metadata rows / distinct docs | 51,024 / 51,024 |
+| P1 pending | 4 |
+| P1 completed | 25,544 |
+| P1 failed | 52 |
+| P1 date-filtered | 25,424 |
+| P2 pending | 25,480 |
+| P2 in progress | 0 |
+| P2 completed | 25,394 |
+| P2 failed | 150 |
+| Chunk rows / distinct docs | live value pending refresh in notebook, but coverage indicates near-complete catch-up |
+| Equipment-map rows / distinct docs | live value pending refresh in notebook, map coverage at 84.02% for completed metadata |
+
+### Coverage and health checks
+
+| Check | Result |
+|---|---:|
+| Completed docs before 2016 | 0 |
+| Chunk coverage for completed metadata | 99.41% |
+| Map coverage for completed metadata | 84.02% |
+| Real equipment-map gap | not visible in current live check |
+
+### Notes
+
+- This is a fresh live snapshot from Databricks SQL and reflects a later point in the run than the historical 2026-09-11 tracker pulse.
+- The state now looks like a near-finished backfill rather than an active in-flight bottleneck.
+- The remaining `date_filtered` bucket is expected and not a functional failure.
+- The tiny `pending`/`failed` tail should be treated as residual cleanup rather than a broad pipeline problem.

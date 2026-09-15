@@ -1,551 +1,545 @@
-# Preprocessor Knobs & Layer Impact
+# FSR v2 Design
 
-## Table of Contents
+Last reconciled with code: 2026-09-15
 
-1. [The Problem (Current FSR prod pipeline)](#the-problem-current-fsr-prod-pipeline)
-2. [FSR v2 Pipeline Architecture (Context)](#fsr-v2-pipeline-architecture-context)
-3. [FSR v2 Pipeline Architecture (Detailed)](#fsr-v2-pipeline-architecture-detailed)
-4. [Metadata Table Schema Changes](#metadata-table-schema-changes)
-5. [Chunk Table metadata JSON (compatibility during transition)](#chunk-table-metadata-json-compatibility-during-transition)
-6. [Future Improvements / Knobs](#future-improvements--knobs)
-7. [Per-Chunk ESN Attribution Example (v1 vs v2)](#per-chunk-esn-attribution-example-v1-vs-v2)
-8. [Two-Phase Implementation Approach (Rollout Plan)](#two-phase-implementation-approach-rollout-plan)
-9. [Refrences](#refrences)
+Source of truth reviewed for this update:
+- `pw_sdg_ai_ser_repo/common/fsr_v2/preprocessor_v2.py`
+- `pw_sdg_ai_ser_repo/silver/src/etl/fsr_v2/metadata_processor.py`
+- `pw_sdg_ai_ser_repo/silver/src/etl/nb_sdg_fsr_v2_metadata.py`
+- `pw_sdg_ai_ser_repo/gold/src/etl/fsr_v2/chunking.py`
+- `pw_sdg_ai_ser_repo/common/fsr_v2/config.py`
+- `pw_sdg_ai_ser_repo/tests/fsr_v2/test_preprocessor_v2.py`
 
----
-
-## The Problem (Current FSR prod pipeline)
-
-Multi-equipment FSRs (Gas Turbine + Generator on same document) have **two failure modes**:
-
-1. **Retrieval miss** — User queries Generator ESN (e.g., `338X447`), but chunks are tagged with GT ESN → zero results. Affects ~17% of cross-ESN queries.
-
-2. **Wrong label** — Generator content (stator, rotor, field) is labeled "Gas Turbine" because the FSR listed the GT ESN first → LLM risk assessment confuses equipment type → wrong remediation recommendation.
+This document consolidates the previous design doc and the preprocessor redesign proposal into one place. It separates:
+- what is implemented now,
+- what changed during implementation,
+- what remains as follow-up work.
 
 ---
 
-## FSR v2 Pipeline Architecture (Context)
+## 1. Why FSR v2 exists
 
-### Core Pipeline (Simplified)
+The v2 pipeline fixes the core retrieval failure in multi-equipment FSRs.
 
-```
-┌─ P1: METADATA EXTRACTION (nb_sdg_fsr_v2_metadata.py) ─────────────────────────────────────┐
-│                                                                                            │
-│  Extract Text (pdf parser)                                                                 │
-│      knob: FSR_V2_PARSER_VERSION (pypdf2_v1.0 default | pdfplumber_v1.0 | v1)            │
-│             pypdf2_v1.0 applies heading marker injection before preprocessor              │
-│                                                                                            │
-│  → Preprocess (regions + hints + doc metadata)                                             │
-│      knob: FSR_V2_METADATA_PROCESSOR_VERSION (v1 baseline / v2 TOC-summary variant)       │
-│                                                                                            │
-│  → LLM Normalization (cover-page/admin fields)                                             │
-│      knob: FSR_LLM_EXTRACTION_PROMPT_VERSION (v2_with_hints default) + model + api-key   │
-│                                                                                            │
-│  → Document Merge & Enrich (preproc + llm fields, then IBAT/EV/PSOT lookups)             │
-│      knob: precedence/merge policy + reference-table availability                          │
-│                                                                                            │
-│  → Store (metadata_table_v2 row)                                                           │
-│                                                                                            │
-│  → Stage 5: Materialize document_equipment_map_v2 (batch-scoped MERGE)                    │
-│      scope:  success_ids from this P1 run only (not a full-table rebuild)                  │
-│      source: map_rows built in-memory during loop via _build_map_rows()                    │
-│              (processor_output.regions + post-enrichment rec — no SQL read-back)           │
-│      active: is_active derived from inactive_esns list                                     │
-│      cleanup: DELETE stale rows for docs in this batch that no longer have map entries     │
-└────────────────────────────────────────────────────────────────────────────────────────────┘
-                                         ↓
-┌─ P2: CHUNKING (nb_sdg_fsr_v2_chunks.py / gold stage) ─────────────────────────────────────┐
-│                                                                                            │
-│  Read metadata + regions                                                                   │
-│  → Merge (upload/doc/section/region precedence)                                            │
-│      knob: FSR_MERGE_STRATEGY (v2_4level_cascade default)                                 │
-│             FSR_REGION_ATTRIBUTION_METHOD (char_offset_max_overlap default)               │
-│  → Chunk                                                                                   │
-│      knob: FSR_CHUNKING_STRATEGY (default: v1_hierarchical)                                │
-│  → Embed                                                                                   │
-│      knob: FSR_EMBEDDING_MODEL + FSR_EMBEDDING_DIMENSION (default: 3072)                  │
-│  → Store (chunk_table_v2 rows)                                                             │
-└────────────────────────────────────────────────────────────────────────────────────────────┘
-                                         ↓
-┌─ P3: VECTOR INDEX (separate step) ─────────────────────────────────────────────────────────┐
-│                                                                                            │
-│  Create / Update index schema                                                              │
-│      knob: index name, FSR_EMBEDDING_DIMENSION (default: 3072), schema fields             │
-│  → Sync index from chunk_table_v2                                                          │
-│      knob: INDEX_MODE (create | sync)                                                      │
-└────────────────────────────────────────────────────────────────────────────────────────────┘
-```
+In v1, chunk attribution was effectively document-level. That created two bad outcomes:
 
-### Key FSR v2 Data Assets
+1. Retrieval miss
+   - A user queried a secondary ESN such as a Generator ESN, but the document or chunk was tagged only with the primary GT ESN.
 
-- `fsr_metadata_v2` (document-level source of truth)
-    - key columns: `document_id`, `pdf_name`, `primary_esn`, `primary_equip_type`, `preprocessor_regions`, `inactive_esns`, `chunk_status`
-    - `pdf_name` derivation: contextual composite `customer_equip_type_esn_outage_date` (from LLM/preprocessor-extracted fields); falls back to volume filename when fields are blank. No `fsr_pdf_ref` lookup (v1 used a curated reference table as the primary source; v2 does not).
-    - `title` column: set from LLM-extracted `document_name` (the preprocessor maps this to `ctx.filename`, i.e. the volume filename). Not extracted from PDF cover-page text as in v1.
-- `fsr_chunks_v2` (chunk-level retrieval dataset)
-    - key columns: `chunk_id`, `document_id`, `chunk_text`, `primary_esn`, `primary_equip_type`, `report_date`, `outage_start_date`, `chunk_embedding`, `metadata`
-- `fsr_document_equipment_map_v2` (helper map for document-to-ESN lookup)
-    - key columns: `document_id`, `esn`, `equip_type`, `is_primary_esn`, `is_active`
-- `fsr_vs_index_v2` (vector index synced from chunks)
-    - key fields synced from chunks: `chunk_id`, `chunk_text`, `primary_esn`, `primary_equip_type`, `active_esns`, `report_date`, `outage_start_date`, `metadata`
+2. Wrong equipment labeling
+   - Generator content could be labeled as Gas Turbine because the document-level equipment context leaked across sections.
 
-What goes into each chunk row `metadata` JSON:
-
-- `doc` block: doc-level fields (shared across chunks in the same doc)
-- `region` block: only that chunk's attributed `primary_esn` and `primary_equip_type`
-- `section` block: section info for that chunk
-- `chunk_context`: includes `chunk_start_char` for that chunk
-- plus any `upload_meta` baseline fields if provided
-
-### Knob Wiring Reality (Code)
-
-- Yes, major knobs are separately selectable and wired through notebook/config runtime parameters.
-- Some knobs are file/module swaps (for example Stage 3 processor v1 vs v2), and others are parameter-only (model, strategy, table paths).
-- Stage 3 processor version switch is already wired in metadata notebook runtime params.
-
-#### P1 (Metadata Extraction)
-| Step | Input | Output |
-|------|-------|--------|
-| Extract Text | PDF | Raw text (via `FSR_V2_PARSER_VERSION`; pypdf2_v1.0 default with heading marker injection) |
-| Preprocess | Raw text | metadata, preprocessor_regions (char ranges), hints |
-| LLM Extraction | Page-1 text + hints | LLM fields (customer, event_type, etc.) |
-| Document Merge & Enrich | Preprocessor metadata + LLM fields | One final document row (preprocessor > LLM, then IBAT/EV/PSOT enrichment) |
-| Derive `pdf_name` | Merged record (`customer`, `primary_equip_type`, `primary_esn`, `outage_start_date`) | Contextual composite name; falls back to volume filename if all fields blank. v1 additionally tried `fsr_pdf_ref` curated table first — v2 does not. |
-| Store | Merged metadata | metadata_table row |
-| Materialize ESN Map | metadata_table row with extracted attribution | document_equipment_map_v2 rows (one row per document_id + esn) |
-
-**P1 Overall:** Input = PDF | Output = metadata_table (doc-level metadata + preprocessor_regions + LLM fields) + document_equipment_map_v2 (serving helper rows built from real extracted data)
+The v2 fix is to make ESN and equipment attribution region-based and chunk-local, using parser-aligned character offsets.
 
 ---
 
-#### P2 (Chunking)
-| Step | Input | Output |
-|------|-------|--------|
-| Read Metadata | metadata_table row | Doc-level metadata + preprocessor_regions |
-| Merge (per chunk) | Upload meta + doc meta + section meta + regions | Per-chunk metadata (4-level cascade) |
-| Split Chunks | Raw text + strategy | Chunks with char offsets |
-| Embed | Chunks | Embeddings + dimension |
-| Store (Chunks) | Chunks + metadata | chunk_table row |
+## 2. Current Implemented Architecture
 
-**P2 Overall:** Input = metadata_table rows | Output = chunk_table (chunks + merged metadata + embeddings + run tracking)
+As of the current code, the active v2 flow is:
+
+```mermaid
+flowchart TD
+    A[Source PDFs] --> B[P1 Metadata notebook\nnb_sdg_fsr_v2_metadata.py]
+    B --> B1[Parse PDF\nPyMuPDF / persisted parsed artifact]
+    B1 --> B2[Preprocessor\npreprocessor_v2.py]
+    B2 --> B3[LLM normalization\nadmin fields only]
+    B3 --> B4[Deterministic enrichment\nIBAT / EV / PSOT]
+    B4 --> B5[Write fsr_metadata_v2]
+    B5 --> B6[Write fsr_document_equipment_map_v2\nper LLM batch]
+
+    B5 --> C[P2 Chunking notebook\nnb_sdg_fsr_v2_chunks.py]
+    C --> C1[Load parsed artifact or parse fallback]
+    C1 --> C2[Region-first chunk split]
+    C2 --> C3[Embed chunks]
+    C3 --> C4[Write fsr_chunks_v2]
+
+    C4 --> D[P3 Vector index sync\nfsr_vs_index_v2]
+    B6 --> E[SQL eligibility gate]
+    D --> F[Vector retrieval]
+    E --> F
+```
+
+### 2.1 P1 Metadata extraction
+
+P1 is implemented in `silver/src/etl/nb_sdg_fsr_v2_metadata.py`.
+
+High-level flow:
+- discover candidate PDFs,
+- parse the PDF text,
+- run the deterministic preprocessor,
+- run an LLM normalization pass for admin fields only,
+- merge deterministic and LLM outputs with the preprocessor as authority,
+- enrich from reference tables,
+- write one metadata row per document,
+- write document-to-equipment map rows per batch.
+
+#### Queue and status contract
+
+The queue contract is still central to the v2 design.
+
+Document processing state is tracked on `fsr_metadata_v2` through:
+- `metadata_status`
+- `chunk_status`
+
+Expected state values:
+- `pending`
+- `in_progress`
+- `completed`
+- `failed`
+
+Expected flow:
+- P1 metadata path: `pending -> in_progress -> completed|failed`
+- P2 chunk path: `pending -> in_progress -> completed|failed`
+- retries may move failed work back to `pending`
+
+Operational rules:
+- interrupted or partially processed documents must remain ineligible for retrieval,
+- retry and restart behavior must be idempotent,
+- error details, retry counts, and processing timestamps should remain part of the operational audit trail.
+
+Important implementation detail:
+- `silver/src/etl/fsr_v2/metadata_processor.py` is intentionally thin.
+- The real section, span, region, TOC, summary, and ESN resolution logic lives in `common/fsr_v2/preprocessor_v2.py`.
+
+### 2.2 P2 Chunking and embedding
+
+P2 is implemented in `gold/src/etl/nb_sdg_fsr_v2_chunks.py` and `gold/src/etl/fsr_v2/chunking.py`.
+
+High-level flow:
+- claim completed metadata docs with pending or failed chunk status,
+- load the persisted parsed artifact when available,
+- otherwise fall back to PyMuPDF extraction,
+- split text region-first using `preprocessor_regions`,
+- recursively sub-chunk within each region,
+- embed chunk text,
+- write one chunk row per chunk with chunk-local ESN and equipment metadata.
+
+This is not just a metadata patch on old chunks. The code now treats parser alignment between P1 and P2 as required for correctness.
+
+### 2.3 P3 Vector index sync
+
+The vector index is built from `fsr_chunks_v2` and stores the chunk embedding plus retrieval fields such as:
+- `chunk_id`
+- `document_id`
+- `chunk_text`
+- `primary_esn`
+- `primary_equip_type`
+- `active_esns`
+- `report_date`
+- `outage_start_date`
+- `metadata`
 
 ---
 
-#### P3 (Vector Index Creation & Sync)
-| Step | Input | Output |
-|------|-------|--------|
-| Create/Update Index | chunk_table schema + index config | Vector index definition |
-| Sync Index | chunk_table rows (embeddings + metadata) | Search-ready index |
+## 3. Current Preprocessor Design
 
-**P3 Overall:** Input = chunk_table rows | Output = synced vector index
+The previous redesign proposal is no longer just a proposal in broad terms. Most of the section-span model is already implemented in `common/fsr_v2/preprocessor_v2.py`.
 
-Note:
-- document_equipment_map_v2 materialization belongs to P1, and is created only when real attribution data is available.
-- No placeholder rows are written before attribution exists.
-- Retrieval candidate resolution should gate to documents with chunk status = completed.
+### 3.1 Deterministic contract
 
-### Merge Step Breakdown (Per-Chunk Attribution)
+The preprocessor is authoritative for:
+- `primary_esn`
+- `primary_equip_type`
+- `primary_technology_code`
+- `gt_esn`
+- `gen_esn`
+- `st_esn`
+- `inactive_esns`
+- `all_esns`
+- outage and report dates
+- `document_name`
+- per-region attribution metadata
 
-**Input:**
-- Upload metadata (optional: doc_type, priority, file_path) — **baseline**
-- Doc-level metadata (preprocessor + LLM combined)
-- Section metadata (only if using section strategy)
-- Preprocessor regions (char-offset boundaries with per-region metadata)
-- Chunk offsets (start_char, end_char in original PDF text)
+The LLM is not used to invent ESN or equipment attribution.
 
-**Merge Priority (applied in order; later overwrites earlier):**
-1. Upload-level metadata (lowest priority) — `{doc_type, priority, file_path, ...}`
-2. Doc-level metadata — `{**upload_meta, **preproc_meta, **llm_meta}` (preprocessor > LLM)
-3. Section metadata (if strategy=='section') — applies to whole chunk
-4. Region metadata (HIGHEST priority) — from best-overlapping region in preprocessor_regions
+### 3.2 Section and heading detection
 
-**Output:**
-- Per-chunk metadata JSON with final primary_esn, primary_equip_type, inactive_esns, etc.
+The active implementation collects heading candidates from multiple signals:
+- `HEADER`
+  - equipment header with ESN or SY context
+  - highest confidence
+  - treated as equipment block root
+- `SECTION_HDR`
+  - numbered equipment section headings
+- `SUBSEC`
+  - numbered subsections and keyword-based subsection patterns
+- `UNNUMBERED`
+  - bare all-caps equipment headings such as `GAS TURBINE` or `GENERATOR`
+- `TOC`
+  - table-of-contents seeded candidates and summary hints
 
-**Example:**
-```
-Doc says: primary_esn=338X447 (from preprocessor doc-level)
-Chunk at char 20,000 overlaps region [15,000-28,000] with primary_esn=298250
-→ Final chunk metadata: primary_esn=298250 (region wins)
-```
+This means the bug-3 style failure from numbered-only detection is already addressed in the current code and tests.
 
-### Scope Limitations (v2 Phase 1)
+### 3.3 Hierarchical spans and flip-back behavior
 
-- **Char-offset regions only** — standard ingest path; page-by-page ingest deferred
-- **No re-ingestion conflict logic** — if same doc is re-processed, regions are re-attributed but merge precedence is not re-ordered
-- **Embedding dimension** — tracked per-chunk in metadata JSON (`embedding_dimension`) and required for P3 index creation (`FSR_EMBEDDING_DIMENSION`, default: 3072)
+The active code builds hierarchical `SectionSpan` objects before emitting final regions.
 
-### Preprocessor Hints Usage
+The effective model is:
+- equipment-block root spans,
+- numbered root sections,
+- nested subsections,
+- explicit end offsets based on following headings,
+- parent-child structure used for context restoration.
 
-**P1 (Metadata Extraction):**
-- Preprocessor outputs `hints` alongside `metadata` and `regions`
-- Hints are **injected into LLM extraction prompt** as "known facts — do not contradict"
-- Example: `"Turbine ESN is 298250 (from section header)"`
+That parent-child structure is what gives the system the flip-back behavior. When a child subsection ends, the next sibling or parent context resumes naturally instead of permanently leaking the child equipment context into the rest of the document.
 
-**P2 (Chunking / Merge):**
-- Hints are not used in P2 merge; they are P1-only (guide LLM, not chunk merge)
+### 3.4 ESN resolution order
 
-### Replacement & Audit
+The current implementation resolves ESN per span using a local-first deterministic chain. The code-level order is:
 
-**On Re-Ingestion of Same Document:**
-- **Detection:** MERGE INTO uses chunk_id (derived from doc_id + chunk_index)
-- **Behavior:** Old chunks are updated in-place; use `replaced=true` flag in logs
-- **Audit trail:** Store in metadata_table.chunk_status transition logs (pending → in_progress → completed)
+1. local header ESN
+2. parent inheritance
+3. single active ESN for the equipment type
+4. IBAT train-scoped fallback
+5. neighbor-gap fallback
+6. document primary fallback
+7. unresolved
 
----
+Provenance is preserved in region metadata through fields such as:
+- `esn_confidence`
+- `esn_source`
+- `equip_type_source`
+- `fallback_chain`
 
-## FSR v2 Pipeline Architecture (Detailed)
+This is more advanced than the older design doc, which still described only simple region overrides.
 
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                        FSR INGESTION PIPELINE                               │
-└──────────────────────────────────────────────────────────────────────────────┘
+### 3.5 TOC and raw page usage
 
-STEP 1: METADATA EXTRACTION (P1 — nb_sdg_fsr_v2_metadata.py)
-├─ Discovers new PDFs from:
-│  • /Volumes/viud/ing_ud_fieldvision/fv_field_service_report
-│  • /Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports
-├─ Extracts text via configurable parser (`FSR_V2_PARSER_VERSION`; default: **pypdf2_v1.0** with heading marker injection)
-├─ Calls preprocessor on full PDF text + page_offsets
-├─ Stores preprocessor outputs in metadata_table
-│  • doc-level metadata
-│  • preprocessor_regions (char ranges)
-│  • inactive_esns
-├─ LLM extraction — ds-guru pattern (cover-page admin fields only)
-│  • Raw page-1 text slice (first 6000 chars) + schema-driven field spec sent to LLM
-│  • Scoped to admin fields: customer, prepared_by, approved_by, fsr_number, event_type, project IDs
-│  • ESN, equipment type, and dates are NOT asked of the LLM — preprocessor is authoritative for these
-│  • Preprocessor hints injected as authoritative context ("known facts — do not contradict")
-│  • LLM returns field names directly; no column mapping or pre-parsing of key:value pairs
-├─ Merge precedence: {**llm_meta, **preproc_non_empty} — preprocessor overrides LLM
-│  • preprocessor doc-level values win over LLM output for any overlapping fields
-│  • per-chunk region attribution (P2) applies on top: region tag > preprocessor-doc > LLM output
-├─ Enriches with IBAT + Event Vision
-│  • Deterministic table joins on primary_esn — no additional LLM call
-│
-├─ ┌─ NESTED: PRE-PARSING ENRICHMENT (preprocessor_v2_final.py — runs inside P1)
-│  │  ├─ Sandboxed execution (child process, no imports, no I/O)
-│  │  ├─ Scans full PDF text for section headers, TOC headers, form numbers, keyword signals, inactive markers,
-│  │  │  full-text header re-scan, and nested subsection patterns
-│  │  ├─ Outputs:
-│  │  │  • metadata (doc-level)
-│  │  │  • hints (for LLM normalization)
-│  │  │  • regions (start/end with metadata_per_region)
-│  │  └─ Runtime: < 1 sec per document
-│  └─
-│
-└─ Outputs → metadata_table + document_equipment_map_v2:
-    ├─ Existing columns: esn, equipment_type, equipment_sys_id, equipment_class_code, and related fields
-    ├─ LEGACY column: all_esns (deprecated; compatibility only)
-    ├─ NEW columns: preprocessor_regions (JSON), inactive_esns (string/array) [PHASE 1 foundation]
-    └─ Stage 5: document_equipment_map_v2 rows (batch-scoped MERGE from in-memory map_rows)
-        • one row per (document_id, esn) — covers primary and secondary ESNs
-        • is_active derived from inactive_esns list
-        • DELETE stale rows for docs in this batch that no longer have map entries
+The active preprocessor uses both normalized page text and raw page text.
 
-STEP 2: CHUNKING (P2 — nb_sdg_fsr_v2_chunks.py)
-├─ Change note (2026-07-16):
-│  • Originally, full re-chunk/re-embed was positioned as Phase 2.
-│  • During implementation, we found parser-aligned chunk attribution is required for v2 correctness.
-│  • Therefore, the v2 path now runs parser-aligned chunking + embedding for selected docs in current scope.
-├─ Reads completed metadata from metadata_table
-│
-├─ ┌─ NESTED: MERGE — PER-CHUNK METADATA ATTRIBUTION
-│  │  Purpose: Apply region-based metadata to each chunk, ensuring multi-ESN docs don't cross-contaminate chunks.
-│  │
-│  │  Input:
-│  │   • upload_meta = optional upload-level metadata (doc_type, priority, file_path, ...)
-│  │   • doc_metadata = document-level metadata from P1 (esn, equipment_type, llm_fields, ...)
-│  │   • preprocessor_regions = array from metadata_table: [{start, end, metadata}, ...]
-│  │   • chunk = (chunk_text, chunk_start_pos, chunk_end_pos)  [character offsets in original PDF text]
-│  │   • section_metadata = optional, from chunker if strategy=='section'
-│  │
-│  │  Merge Algorithm (per chunk):
-│  │   1. Start with base_metadata = {**upload_meta}  [upload-level baseline]
-│  │   2. Add: {**base_metadata, **doc_metadata}  [doc values override upload]
-│  │      Note: Within doc_metadata, preproc_meta > llm_meta (preprocessor authoritative)
-│  │   3. If strategy=='section': get section_metadata for chunk, then:
-│  │      {**base_metadata, **section_metadata}  [section values override doc-level]
-│  │   4. Find best-overlapping region = region where (overlap between [chunk_start_pos, chunk_end_pos] 
-│  │      and [region_start, region_end]) is maximum
-│  │   5. If best_overlapping_region exists:
-│  │      final_chunk_metadata = {**base_metadata, **region_meta}  [region wins ALL]
-│  │   6. Example: doc says primary_esn=338X447 but chunk overlaps region with primary_esn=298250 
-│  │      → use 298250
-│  │
-│  │  Merge Priority (final order):
-│  │      upload-level (lowest) < doc-level < section < region (highest)
-│  │
-│  │  Output per chunk:
-│  │   chunk_metadata = {
-│  │     "primary_esn": <from best region or doc-level>,
-│  │     "primary_equip_type": <from best region or doc-level>,
-│  │     "primary_technology_code": <from best region or doc-level>,
-│  │     "gt_esn": <from best region if applicable>,
-│  │     "gen_esn": <from best region if applicable>,
-│  │     "inactive_esns": <from best region or doc-level>,
-│  │     "chunk_index": <chunk sequence>,
-│  │     "chunk_size": <length in chars>,
-│  │     "chunk_strategy": <strategy name>,
-│  │     "embedding_model": <model name>,
-│  │     "embedding_dimension": <dimension>,
-│  │     ... other fields inherited from upload/doc level
-│  │   }
-│  │
-│  │  Pattern: Mirrors ds-guru/app/rag.py _region_metadata_for() — battle-tested production code.
-│  └─
-│
-├─ For existing chunk rows, attach enriched metadata where current chunk anchors / join strategy allow it [PHASE 1]
-│  • Goal: improve retrieval filters and enable QA validation without re-chunking or re-embedding
-│  • Candidate updates: corrected primary_equip_type, esn_details, related per-ESN metadata
-├─ For re-derived chunks [ORIGINAL PHASE 2; NOW REQUIRED FOR V2 CORRECTNESS]
-│  • parser alignment + chunking
-│  • merge step (per-chunk region attribution — see above)
-│  • full per-chunk attribution and embedding
-├─ Writes to chunk_table (Gold zone)
-│  • PHASE 1 for metadata-only updates on existing rows
-│  • PHASE 2 for re-derived chunks (includes merged metadata)
-└─ Triggers Vector Search index sync
-    • PHASE 1 after metadata updates
-    • PHASE 2 after re-derived chunks
+Current behavior:
+- `raw_pages` is passed through the preprocess context,
+- TOC entries are extracted from the first pages,
+- TOC anchors help validate section candidates,
+- page-aware fallback rescans raw pages when full-text formatting loses useful line breaks,
+- document summary is emitted inside the preprocessor itself.
 
-STEP 3: INDEXING & STORAGE (Vector Search — fsr_vs_index_v2)
-├─ Syncs from fsr_chunks_v2 via Delta Sync index
-├─ Key fields indexed:
-│  • chunk_id, document_id, pdf_name, chunk_text (for retrieval)
-│  • chunk_embedding ARRAY<DOUBLE> (3072-dim, self-managed — caller embeds at query time)
-│  • primary_esn, primary_equip_type (chunk-level attribution — the core v2 fix)
-│  • outage_start_date, active_esns (recency + doc-scope filters)
-│  • metadata (JSON blob with doc/region/section context)
-└─ Endpoint: pw-ser-sdg-vector-search
+This means the earlier redesign goal of moving summary generation and TOC logic into the preprocessor has already been realized.
 
-STEP 4: RETRIEVAL — DATA READINESS API (UC1: GET /equipment/{esn})
-├─ Input: requested_esn
-├─ SQL query on fsr_document_equipment_map_v2 ⨝ fsr_metadata_v2
-│  • WHERE UPPER(d.esn) = requested_esn
-│  •   AND d.is_active = true
-│  •   AND m.metadata_status = 'completed'
-│  •   AND m.chunk_status = 'completed'
-│  •   AND m.outage_start_date >= recency_threshold (default: 120 months)
-│  • fsr_document_equipment_map_v2.esn covers all ESNs in a doc (primary and secondary)
-│    → both GT ESN and Generator ESN return this doc if either was the requested ESN
-└─ Output: document list ordered by report_issued_date DESC
+### 3.6 Region materialization and full coverage
 
-STEP 5: RETRIEVAL — FSR RETRIEVAL API (UC2: POST /retrieve)
-├─ Input: requested_esn + query_text + top_k (default: 5)
-│
-├─ Step 1 — SQL eligibility gate (same tables as UC1, without metadata_status filter)
-│  • Returns candidate_doc_ids for this ESN (is_active=true, chunk_status=completed, recency)
-│  • If no eligible docs → return empty immediately (no VS call)
-│
-├─ Embed query_text via LiteLLM → query_vector (3072-dim, azure-text-embedding-3-large-1)
-│  • Self-managed embeddings: VS does NOT auto-embed at query time — caller must embed
-│
-├─ Step 2a — VS REST API query (high precision path)
-│  • POST /api/2.0/vector-search/indexes/{index}/query
-│  • filters_json: {"primary_esn": requested_esn}  ← chunk-level attribution, the core v2 fix
-│  • num_results: top_k × 3  (over-fetch for post-filter headroom)
-│  • Python post-filters:
-│    1. outage_start_date >= recency_threshold  (VS REST API rejects nested {"gte": val} filters)
-│    2. document_id IN candidate_doc_ids         (enforce is_active=true from Step 1)
-│  • Take [:top_k]
-│
-├─ Step 2b — Fallback VS query (only if len(Step 2a results) < 3)
-│  • Targets unattributed chunks (primary_esn = '') from eligible docs
-│  • filters_json: {"document_id": candidate_doc_ids}  (VS rejects empty string filter)
-│  • Python post-filters: date recency + primary_esn == ''
-│  • Merges with Step 2a results (Step 2a ranked first), dedup by chunk_id
-│  • Step 2b exists because P1 preprocessor has coverage gaps — some boundary/intro
-│    chunks land in unattributed spans (primary_esn = ''). Once P1 emits fallback
-│    regions covering all char spans, Step 2b can be removed.
-│
-└─ Output: top_k ranked chunks with chunk_text + metadata (section_title, equip_type, etc.)
+The current implementation emits contiguous char-offset regions with metadata.
 
-Why the preprocessor matters for retrieval:
-- Without fix: multi-ESN docs return mixed Gen+GT chunks labeled with wrong equipment type; LLM gets confused data and risks are wrong
-- With fix: each chunk is labeled with its actual equipment type; LLM gets clean equipment-specific data and risks are accurate
-```
+Key properties:
+- regions are parser-aligned to the same text representation used by chunking,
+- front matter, gaps, and trailing areas can be covered by synthetic regions,
+- each region carries its own attribution metadata,
+- region metadata includes section path and provenance fields,
+- inactive ESNs are tracked and later excluded from `active_esns` in P2.
+
+Representative region metadata fields now include:
+- `primary_esn`
+- `primary_equip_type`
+- `primary_technology_code`
+- `esn_confidence`
+- `esn_source`
+- `equip_type_source`
+- `region_source`
+- `section_path`
+- `fallback_chain`
 
 ---
 
-## Metadata Table Schema Changes
+## 4. Data Assets and Contracts
 
-Scope note: this section is only for METADATA_TABLE columns and lifecycle.
+### 4.1 `fsr_metadata_v2`
 
-### Existing Columns (no change)
-- equipment_sys_id, equipment_class_code, report_issued_date, outage dates, and related fields
+Document-level source of truth.
 
-### LEGACY Columns (deprecated)
+Important columns:
+- `document_id`
+- `pdf_name`
+- `title`
+- `primary_esn`
+- `primary_equip_type`
+- `primary_technology_code`
+- `gt_esn`
+- `gen_esn`
+- `st_esn`
+- `all_esns`
+- `inactive_esns`
+- `preprocessor_regions`
+- `metadata_status`
+- `chunk_status`
+- `parsed_volume_path`
 
-**Column: esn** (STRING, deprecated)
-- Legacy single-ESN compatibility field from current extraction flow.
-- No further format evolution is planned.
-- Drop esn later once confirmed unused by downstream consumers.
+Notes:
+- `preprocessor_regions` is stored as a JSON string and is the P1 to P2 attribution contract.
+- `inactive_esns` is stored as a JSON array string.
+- `pdf_name` is derived from merged metadata, with filename fallback.
+- queue eligibility depends on the status fields, not just data presence in the row.
 
-**Column: equipment_type** (STRING, deprecated)
-- Legacy doc-level compatibility field from LLM extraction.
-- Chunk-level `primary_equip_type` is the retrieval-facing field.
-- Drop equipment_type later once confirmed unused by downstream consumers.
+### 4.2 `fsr_document_equipment_map_v2`
 
-**Column: all_esns** (STRING, deprecated)
-- Legacy compatibility field only.
-- No further format evolution is planned.
-- Drop all_esns later once confirmed unused.
+Helper table used for document eligibility and ESN lookup.
 
-### NEW Columns (added for preprocessor integration in METADATA_TABLE)
+Important columns:
+- `document_id`
+- `esn`
+- `equip_type`
+- `technology_code`
+- `is_primary_esn`
+- `is_active`
+- `source_region_count`
 
-**preprocessor_regions** (STRING, nullable)
-- JSON array of boundaries with per-region metadata.
-- Used by chunk attribution logic.
+Current write behavior:
+- built from in-memory region data plus doc-level fallbacks,
+- written per LLM batch, not at notebook end,
+- stale rows for the batch documents are deleted during MERGE.
 
-**esn_details** (STRING, nullable)
-- Not emitted directly by `preprocessor_v2_final.py`.
-- If present, JSON array materialized downstream (P2/retriever) from preprocessor outputs (for example regions + doc-level ESN fields).
-- Used as optional retrieval helper during transition.
-- Example payload: [{"esn":"338X447","equip_type":"Generator","technology_code":"7FH2","is_primary":true}, ...]
+This changed because end-of-run materialization was leaving completed metadata rows without map rows when a run was interrupted.
 
-**inactive_esns** (STRING, nullable)
-- Comma-separated list or JSON array.
-- Used to exclude inactive ESNs from chunk emission and retrieval targeting.
+### 4.3 `fsr_chunks_v2`
 
-## Chunk Table metadata JSON (compatibility during transition)
+Chunk-level retrieval dataset.
 
-Scope note: this section is for CHUNK_TABLE metadata payload compatibility only.
+Important columns:
+- `chunk_id`
+- `chunk_index`
+- `document_id`
+- `pdf_name`
+- `page_number`
+- `chunk_text`
+- `region_primary_esn`
+- `region_primary_equip_type`
+- `active_esns`
+- `report_date`
+- `outage_start_date`
+- `chunk_embedding`
+- `embedding_dimension`
+- `metadata`
 
-Current state: `fsr_v2_chunk_metadata_v2` schema — assembled in P2 and stored as JSON string in `fsr_chunks_v2.metadata`.
-- `doc` block — document-level fields not promoted to first-class chunk columns
-- `region` block — ESN/equipment attribution resolved from `preprocessor_regions` char-offset overlap (optional; empty if no region covers the chunk)
-- `section` block — section title/path from chunker (optional; populated for `section` and `v1_hierarchical` strategies)
-- `chunk_context` block — chunk-only helper fields (e.g. `chunk_start_char`)
+The JSON `metadata` payload uses contract version:
+- `fsr_v2_chunk_metadata_v2`
 
-Example payload:
-```json
-{
-    "metadata_contract_version": "fsr_v2_chunk_metadata_v2",
-    "doc": {
-        "title": "Outage report",
-        "customer": "site-a",
-        "event_type": "Call-Out",
-        "outage_start_date": "2026-07-01",
-        "outage_end_date": "2026-07-05",
-        "inactive_esns": ["ABC123"]
-    },
-    "region": {
-        "primary_esn": "338X447",
-        "primary_equip_type": "Generator"
-    },
-    "section": {
-        "section_title": "GENERATOR"
-    },
-    "chunk_context": {
-        "chunk_start_char": 18240
-    }
-}
-```
+Current structure:
+- `doc`
+- `region`
+- `section`
+- `chunk_context`
 
-Contract version is `fsr_v2_chunk_metadata_v2` (see `common/fsr_v2/config.py`).
+### 4.4 `fsr_vs_index_v2`
 
----
+Vector search index synced from chunks.
 
-## Future Improvements / Knobs
-
-This section captures candidate knobs for later iterations. These are intentionally non-committal and require validation before adoption.
-
-### TODOs / Known Gaps
-
-- Sub-section header handling: when a lower-level section header indicates a different equipment type but does not include an ESN, first check whether there is exactly one active ESN for that equipment type and tag it; if there are multiple active ESNs, use the higher-level section ESN and match to the correct equipment type using IBAT train mapping.
-- ESN extraction + validation: adopt wider ESN candidate extraction (from regex or LLM), then validate against Event SOT and keep only ESNs that exist in Event SOT.
-- Cover page + TOC normalization: include cover page and table-of-contents pages in normalization scope, or run a focused LLM judgment step on these smaller page ranges.
-- Document summary extraction consistency: keep `document_summary` tied to the same parser-aligned metadata extraction path as other document-level fields, and avoid coupling it to v1 hierarchical chunking behavior so summaries remain consistent across chunking strategies.
-- Embedding dimension guardrail: keep tracking `embedding_dimension` in chunk rows and add a run-time validation check that all vectors in a run have the same dimension and match the expected model dimension; log mismatch counts and fail fast when configured.
-- Metadata completeness guardrail: when P1 finishes with blank `primary_esn` and/or blank `primary_equip_type`, record an explicit warning status/counter and expose these docs for review before P2 (for example, fail-fast by threshold or mark as completed_with_warnings).
-
-## Per-Chunk ESN Attribution Example (v1 vs v2)
-
-This illustrates how the **MERGE step** in STEP 2 (above) uses `preprocessor_regions` to enable 
-per-chunk ESN attribution in v2, replacing the doc-level fan-out in v1.
-
-**Document:** FSR with Gas Turbine (pages 1–12) + Generator (pages 13–22)
-
-**`preprocessor_regions`** stored in `fsr_metadata_v2` (produced by P1):
-```json
-[
-  {"start": 0,     "end": 15000, "metadata": {"primary_esn": "298250",  "primary_equip_type": "Gas Turbine"}},
-  {"start": 15000, "end": 28000, "metadata": {"primary_esn": "338X447", "primary_equip_type": "Generator"}}
-]
-```
-
-**MERGE Algorithm in P2:** During chunking, for each chunk at [chunk_start, chunk_end]:
-1. Find best-overlapping region (most overlap wins)
-2. Apply region metadata, overriding doc-level metadata
-3. Example: chunk at char 20,000 overlaps region [15,000–28,000] → use Generator region metadata
-
-**v1 P2 — fan-out (wrong):** every chunk produces one row per ESN, regardless of content:
-```
-chunk_id=abc  doc_id=docX          esn=298250  text="combustion liner..."  ← correct
-chunk_id=def  doc_id=docX_338X447  esn=338X447 text="combustion liner..."  ← WRONG (GT chunk tagged as Generator)
-```
-
-**v2 P2 — region attribution (correct):** each chunk gets one ESN based on which region its char offset falls in:
-```
-Chunk at char  5,000 → region [0–15,000]    → esn=298250,  equip_type=Gas Turbine
-Chunk at char 20,000 → region [15,000–28,000] → esn=338X447, equip_type=Generator
-```
-
-`metadata_json` in `fsr_chunks_v2` is **different per chunk**:
-```json
-// Chunk at char 5,000
-{"primary_esn": "298250",  "primary_equip_type": "Gas Turbine", "pdf_name": "...", ...}
-
-// Chunk at char 20,000
-{"primary_esn": "338X447", "primary_equip_type": "Generator",   "pdf_name": "...", ...}
-```
-
-This is the core v2 fix — ESN attribution is per-chunk by char offset, not a doc-level fan-out.
+This is the final retrieval surface for chunk similarity search after SQL gating has already narrowed the candidate document set.
 
 ---
 
-## Two-Phase Implementation Approach (Rollout Plan)
+## 5. Chunk Attribution Design in P2
 
-**Phase 1 (Immediate - In Progress):** Metadata UPDATE on existing chunks
-- **What:** Run preprocessor on all 458 multi-equipment FSRs.
-- **Output:** Page-range accuracy (82.6% to 86.7%+) via page-range scorer and SAGE smoke tests.
-- **Deployment:** SQL UPDATE statement on chunk_table metadata fields (for example, primary_equip_type, esn_details, and related retrieval metadata as finalized) with no re-chunking or re-ingestion.
-- **Timeline:** Days (reversible, low risk).
-- **Reference:** FSR_Retrieval_Fix_Plan.md
+The chunk merge model in the current code is a four-level cascade.
 
-**Phase 2 (Long-term - Pipeline Integration):** Preprocessor integrated into production pipeline for new documents
-- **What:** Integrate preprocessor into STEP 1, store per-region boundaries, and use char-offset matching in STEP 2.
-- **Implementation:** Preprocessor called in P1, per-chunk equipment attribution via char-offset matching in P2 (requires parser alignment).
-- **Benefit:** No retrospective fixing needed; forward-going documents are correct by design.
-- **Timeline:** Weeks (full pipeline refactor and testing).
+Priority order:
 
-### Implementation Delta (Realized During Stage 5, 2026-07-16)
+1. upload metadata
+2. document metadata
+3. section metadata
+4. region metadata
 
-This note is added to preserve traceability between the original shared design and what we learned during implementation.
+Later layers override earlier ones.
 
-- Original assumption in this doc:
-    - metadata-only updates on existing chunks could be enough for Phase 1
-    - parser replacement / re-chunk / re-embed could stay in Phase 2
-- What we realized while implementing v2 chunking:
-    - per-chunk attribution depends on `preprocessor_regions` char offsets from the P1 text representation
-    - if P2 uses a different extraction/chunking representation, chunk-to-region attribution becomes unreliable
-    - for v2 correctness, parser-aligned chunking plus embedding is required for the target v2 docs
-- Current execution approach:
-    - use the new v2 chunking + embedding path for selected v2 docs
-    - validate on a bounded SME-reviewed sample first, then ingest only required docs
+The highest-priority layer is always the best-matching preprocessor region.
 
-This is treated as an implementation-time change in sequencing, not a rewrite of the original proposal history.
+### 5.1 Region-first split
+
+Current chunking behavior:
+- fill coverage gaps if needed,
+- split the document by preprocessor regions first,
+- recursively sub-split within each region to meet chunk-size targets,
+- preserve absolute char offsets when emitting chunks.
+
+This avoids the old v1 fan-out problem where one chunk could be duplicated across ESNs regardless of its local content.
+
+### 5.2 Region attribution method knob
+
+Two attribution methods are wired:
+- `char_offset_max_overlap`
+- `char_offset_start_char`
+
+Default is `char_offset_max_overlap`.
+
+### 5.3 Active ESN computation
+
+`active_esns` is built from:
+- region ESNs,
+- document-level ESNs,
+- minus the `inactive_esns` set.
+
+That field is stored as an array on the chunk row to support downstream filtering.
 
 ---
 
-## Refrences
+## 6. Retrieval Behavior
 
-See [fsr-v2-implementation.md](fsr-v2-implementation.md) for:
-- implementation comparison
-- knobs and behavior details
-- layer-by-layer implementation mapping
-- expected accuracy and validation criteria
-- parser-alignment implementation notes
-- reference/code-location mapping
+### 6.1 Document eligibility gate
 
+Document eligibility uses the equipment map plus metadata status fields.
+
+The intended constraints are:
+- requested ESN must exist in `fsr_document_equipment_map_v2`,
+- `is_active = true`,
+- `metadata_status = 'completed'`,
+- `chunk_status = 'completed'`,
+- outage date recency filters still apply.
+
+This is how a secondary ESN on the same FSR becomes discoverable even when it is not the document primary ESN.
+
+Documents left in `pending`, `in_progress`, or `failed` are not retrieval-eligible, even if some intermediate artifacts already exist.
+
+### 6.2 Vector retrieval
+
+Vector retrieval then queries the chunk index using chunk-local metadata, especially:
+- `primary_esn`
+- `primary_equip_type`
+
+The intended high-precision path is to retrieve chunks whose local attribution matches the requested ESN. Fallback behavior can still use document eligibility plus unattributed chunks where needed, but the main v2 correctness path is chunk-local attribution.
+
+---
+
+## 7. Runtime Knobs Confirmed in Code
+
+### 7.1 P1 metadata knobs
+
+Confirmed in the metadata notebook and workflow config:
+- `INPUT_MODE`
+- `FSR_V2_PARSER_VERSION`
+- `FSR_V2_METADATA_PROCESSOR_VERSION`
+- `FSR_LLM_MODEL`
+- `FSR_V2_P1_WORKERS`
+- `FSR_V2_P1_MAX_RETRIES`
+- `FSR_V2_P1_LLM_BATCH_SIZE`
+- `FSR_V2_P1_SLICE_SIZE`
+- `FSR_V2_P1_MAX_DOCS`
+- `FSR_V2_P1_MAX_RUNTIME_MINUTES`
+- `FSR_V2_DQ_LOW_TEXT_MIN_PAGES`
+- `FSR_V2_DQ_LOW_TEXT_CHARS_PER_PAGE`
+- `FSR_IBAT_TABLE`
+- `FSR_EVENT_VISION_TABLE`
+- `FSR_PSOT_TABLE`
+- `FSR_PARSED_DOC_VOLUME_ROOT`
+
+### 7.2 P2 chunking knobs
+
+Confirmed in the chunking notebook and module:
+- `FSR_CHUNK_SIZE`
+- `FSR_CHUNK_OVERLAP`
+- `FSR_MIN_CHUNK_SIZE`
+- `FSR_P2_BATCH_SIZE`
+- `FSR_P2_MAX_RETRIES`
+- `FSR_P2_MAX_ITERATIONS`
+- `FSR_EMBEDDING_MODEL`
+- `FSR_EMBED_BATCH_SIZE`
+- `FSR_P2_EMBED_CONCURRENCY`
+- `FSR_EMBED_FAIL_THRESHOLD`
+- `FSR_STALE_CLAIM_MINUTES`
+- `FSR_MERGE_STRATEGY`
+- `FSR_REGION_ATTRIBUTION_METHOD`
+- `FSR_EMBEDDING_DIMENSION`
+
+---
+
+## 8. What From the Redesign Proposal Is Already Implemented
+
+The earlier `proposed-design-changes.md` described a deterministic redesign. Most of its core ideas are already in production code.
+
+Implemented now:
+- unnumbered equipment heading detection,
+- hierarchical span building,
+- parent-context restoration and flip-back behavior,
+- local-first ESN resolution,
+- type-constrained IBAT fallback,
+- TOC-assisted candidate validation,
+- raw-page-aware fallback scanning,
+- provenance metadata on regions,
+- document summary emission from the preprocessor,
+- metadata-processor thin adapter pattern,
+- region-first chunking,
+- per-batch equipment-map writes.
+
+This means the design doc should no longer describe those items as future state.
+
+---
+
+## 9. Remaining Follow-up Work
+
+The redesign proposal still contains a few useful follow-ups that are not fully closed in the active pipeline.
+
+### 9.1 Remaining open items
+
+1. Embedding dimension guardrail
+   - Dimension is stored per chunk, but stronger fail-fast validation can still be tightened.
+
+2. Re-ingestion conflict handling beyond normal MERGE semantics
+   - Current behavior handles rewrites through MERGE and batch cleanup, but there is no special conflict-policy layer beyond that.
+
+3. Additional appendix-heavy TOC patterns
+   - Core TOC support exists, but more appendix and mixed-TOC heuristics may still help specific docs.
+
+4. Explicit downstream handling for unresolved regions
+   - The preprocessor already marks low-confidence and unresolved attribution; downstream consumers can make more systematic use of that signal.
+
+5. Exciter-specific metadata separation
+   - If downstream logic needs Generator and Exciter to stay separate at top-level metadata, add a dedicated `exciter_esn` contract instead of using a shared bucket.
+
+### 9.2 Non-goals for deterministic preprocessing
+
+The preprocessor should still not guess an ESN when the evidence is ambiguous.
+
+Cases that may remain unresolved without later enrichment:
+- no local ESN and multiple valid candidates of the same type,
+- second same-type ESN never surfaced in document text,
+- text with too little equipment evidence to support deterministic attribution.
+
+Those cases should stay explicit through confidence and provenance metadata rather than being silently forced.
+
+---
+
+## 10. Implementation Notes That Changed the Original Rollout Plan
+
+The earlier rollout idea assumed:
+- metadata-only fixes could be enough as an immediate phase,
+- parser alignment and re-chunking could wait.
+
+Implementation proved otherwise.
+
+What the code now reflects:
+- `preprocessor_regions` are defined in the P1 text coordinate space,
+- chunk attribution is only trustworthy when P2 uses the same parse representation,
+- therefore parser-aligned chunking and embedding are part of the actual v2 correctness path, not a later optional cleanup.
+
+This is the main reason the current implementation moved from a document-metadata patch plan to a full parser-aligned chunking design.
+
+---
+
+## 11. Validation Anchors
+
+The active unit-test suite already covers several of the redesign goals.
+
+Examples confirmed in `tests/fsr_v2/test_preprocessor_v2.py`:
+- unnumbered equipment heading detection,
+- hierarchy end-offset handling,
+- flip-back behavior,
+- generator-vs-turbine subsection typing,
+- doc-inventory-assisted typing when explicit header context is missing,
+- thin-adapter behavior for `metadata_processor.py`.
+
+For any future preprocessor change, these are the minimum invariants to preserve:
+- region boundaries remain parser-aligned,
+- parent context restores correctly after child subsections,
+- same-type multi-ESN docs do not collapse to one global ESN anchor,
+- unresolved spans remain explicit instead of guessed,
+- chunk-local attribution remains the retrieval-facing contract.
+
+---
+
+## 12. Summary
+
+FSR v2 is now a deterministic, parser-aligned, region-first ingestion design.
+
+The most important current truths are:
+- the real preprocessor logic lives in `common/fsr_v2/preprocessor_v2.py`,
+- P1 writes both metadata and equipment-map rows as part of the durable pipeline,
+- P2 uses region-first chunking and chunk-local attribution,
+- the redesign proposal has been substantially implemented already,
+- remaining work is mostly guardrails and follow-up refinement, not a new architectural rewrite.
