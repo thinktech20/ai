@@ -1,1 +1,19 @@
 *"My recent work is on productionizing retrieval-augmented systems — both a RAG pipeline grounding a Q&A agent over field service reports, and the agent itself doing dynamic tool selection across structured + unstructured sources. Happy to go deep on retrieval design, eval, or the failure modes we hit in prod — whichever is most useful."
+
+
+Your loop should collectively demonstrate three versions of you:
+
+Technologist — architecture, RAG, retrieval, Spark, MLflow, scalability, trade-offs.
+
+Customer-facing architect — ambiguous requirements, understanding SMEs, influencing decisions, translating business problems.
+
+Senior leader — ownership, judgment, disagreement, navigating stakeholders, making decisions without authority, learning from failure, driving outcomes beyond your assigned task.
+
+===
+
+I am customer's "go-to" technical peer.
+==========
+
+“We needed reliable retrieval across decades of highly inconsistent engineering documents. I designed the ingestion, metadata enrichment, chunking, embedding and retrieval architecture, but the hard part wasn't embedding the PDFs—it was getting retrieval evidence reliable enough that engineers would trust it for maintenance decisions.”
+
+=================
