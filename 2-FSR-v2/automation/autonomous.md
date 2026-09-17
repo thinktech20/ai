@@ -259,6 +259,30 @@ Long runs: launch with `setsid nohup … > /tmp/run.log 2>&1 &` and poll the log
 
 Track 4 inherits track 3 via `"_inherits": "3"` and overrides only the tables.
 
+## 5A. Autonomous preprocessor regression workflow
+
+Every preprocessor change must be validated in three layers before it is treated as ready:
+
+1. **Focused local tests** — run the targeted tests for the changed heading or hierarchy behavior.
+2. **Full local preprocessor suite** — run `pw_sdg_ai_ser_repo/tests/fsr_v2/test_preprocessor_v2.py`; distinguish new failures from the documented open failures.
+3. **Document-level validation** — run `validation/fsr_v2/preprocessor/run-preprocessor-standalone.ipynb` in single-case or custom-batch mode using the same parser path as P1.
+
+For section-boundary changes, document-level checks must compare before/after:
+
+- candidate headings and section paths
+- parent context and equipment/ESN attribution
+- region coverage and overlap
+- chunk ownership and chunk counts
+- multiline/table/page-join artifact counts
+- low-confidence or ambiguous diagnostic reason codes
+
+Required follow-up cases for the current UUID work are documented in:
+
+- `pw_sdg_ai_ser_repo/validation/fsr_v2/preprocessor/README.md`
+- `ai-arch/2-FSR-v2/post-prod/issues/01-section-path-uuid/implementation-plan.md`
+
+Use the sandbox/track-4 path for dev validation when the branch has not been deployed. Do not claim a dev result from local tests alone. Record the commit, parser version, preprocessor version, run ID, document IDs, output artifact path, and any skipped or unavailable documents.
+
 `--snapshot capture` refuses to overwrite an existing baseline. That guard exists
 because capturing *after* a rerun and then comparing compares a state to itself
 and always passes — an easy way to fake an idempotency result.

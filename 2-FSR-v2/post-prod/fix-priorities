@@ -1,0 +1,88 @@
+FSR v2 post-prod fix priorities
+Updated: 2026-09-15
+
+Priority framing from the latest discussion:
+
+1. Chunking issue with section base -- UUID format ones
+2. master report
+3. Version based name docs
+
+22K ingest note clarification
+
+The 2026-09-01 note appears to refer to the `2016+` ingest scope for dev and QA. Later repo notes clarify that the `2016+` scope is real, but the `22K` count was an early estimate. The later measured corpus size is `50,177` eligible docs, not about `22,000`. The pending reclaim workflow is the separate path for bringing previously filtered pre-2016 docs back into processing.
+
+Issue tracker
+
+| # | Priority bucket | Issue | Date noted | Numbers | Issue note / doc | Status | Next step |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1 | Section-path / section-based chunking issue in UUID-format docs | 2026-09-14, updated 2026-09-16 | 18,340 UUID docs; 29 bad TOC docs; 4 materially important/manual exceptions | [Working folder](issues/01-section-path-uuid/README.md) | Open, but scoped down | Fix section-based chunk granularity so each smallest section becomes its own chunk unit and preserve full section labels. Keep current Generator/Turbine span and ESN logic unchanged. Treat the 4 meaningful no-TOC UUID cases as manual exceptions for now. |
+| 2 | 1 | Missing docs in QA for post-2016 check | 2026-09-14 | 2 docs reviewed; 1 pending QA chunking; 1 dev-only artifact | [Working folder](issues/02-missing-docs-qa/README.md) | Triaged | Trigger or confirm the next QA chunking run for the pending doc and remove the dev-only doc from the QA expectation list. |
+| 3 | 1 | Mis-qualified ESN causing wrong retrieval hit | 2026-09-15 | 1 doc; 1 wrongly surfaced ESN case (`337X351`) | [Working folder](issues/03-mis-qualified-esn/README.md) | Open | Validate current retrieval qualification logic on this doc and compare active-ESN gating vs `region_primary_esn`-based gating. |
+| 4 | 2 | Final master report format handling | 2026-09-14 | 4,923 docs; 1 candidate preprocessing profile | [Working folder](issues/04-final-master-report-format/README.md) | Open design item | Define preprocessor 2 for `final_master_report`, then test on representative docs before rollout. |
+| 5 | 2 | Final master report retrieval / data-readiness check | 2026-09-01 | 2 sample docs explicitly called out | [Working folder](issues/05-final-master-report-retrieval/README.md) | Open | Review the current URA retriever behavior for these docs and confirm whether shared retrieval logic is masking format-specific issues. |
+| 6 | 3 | Versioned and legacy doc-family handling | 2026-09-14 | 27,486 docs total; 18,422 legacy + 9,064 versioned; 178 pre-2017 ESN typo docs | [Working folder](issues/06-versioned-legacy-doc-family/README.md) | Open design item | Define preprocessor 3 for legacy + versioned families and include ESN typo handling in validation coverage. |
+| 7 | Cross-cutting | Title vs PDF-name mismatch in FSR v1 and FSR v2 | 2026-09-15 | Count TBD; spans v1 and v2 | [Working folder](issues/07-title-vs-pdf-name-mismatch/README.md) | Needs investigation | Sample affected docs from both versions, confirm where the mismatch originates, and decide whether the fix belongs in parsing, ingestion, or display metadata. |
+| 8 | Cross-cutting | Ambiguous sections requiring separate handling | 2026-09-01 | 5 flagged content groups | [Working folder](issues/08-ambiguous-sections/README.md) | Open exploration item | Decide whether ambiguity should be represented in metadata, routed to a separate retriever path, or handled by a separate LLM workflow. |
+| 9 | Cross-cutting | Front-matter attribution before first equipment boundary | 2026-09-17 | Count TBD; affects preamble regions before Turbine/Generator `-1` headings | [Working folder](issues/09-front-matter-shared-attribution/README.md) | Open investigation | Measure current attribution and validate changing preamble metadata to `shared` without backward equipment inheritance. |
+| 10 | Ops | Dev and QA ingest scope | 2026-09-01, clarified 2026-09-15 | Original estimate ~22K; later measured 50,177 eligible 2016+ docs; QA snapshot shows 50,177 corpus, 22,198 completed, 25,292 pre-2016 date-filtered, 2,614 pending | [Working folder](ops/09-dev-qa-ingest-scope/README.md) | In progress / dependent | Communicate this as the 2016+ ingest/backfill scope and use 50,177 as the latest known count unless a newer run supersedes it. |
+| 11 | Ops | Pre-2016 reclaim job pending deployment | 2026-09-15 | QA: 25,292 pre-2016 date-filtered docs; Prod: 22,608 date-filtered docs; 1 manual reclaim job defined | [Working folder](ops/10-pre-2016-reclaim-job/README.md) | Pending deployment / validation | Confirm bundle deployment, resolve the created job ID in QA, run dry-run first, then apply reclaim only after QA validation. |
+
+Issue briefs
+
+1. Section-path / UUID-format chunking
+
+- Source: `section-path-issue-discussion.md`
+- Main point: the current fix target is section-based chunk granularity and full section-label preservation, while keeping current Generator/Turbine span and ESN logic unchanged.
+- Scope update: among about 18,340 `36UUID` docs, 29 appear to have bad or missing TOC handling, and 4 are now tracked as materially important/manual exceptions after adding `92387bdc-55df-41ab-8db3-f7fec0b15fa5` on 2026-09-16.
+- Practical implication: this is still priority 1 because it affects chunk quality and retrieval behavior, but the latest direction is to fix chunk granularity and full section labels in the main path first and not build a separate UUID no-TOC fallback right now.
+
+2. Final master report
+
+- Sources: `section-path-issue-discussion.md`, `final-master-report-retrieval-note.md`
+- Main point: `final_master_report` is large enough to justify its own preprocessing profile and may also need a dedicated retrieval review.
+- Practical implication: this should stay high priority because it sits directly in the second priority bucket and also overlaps with the ambiguity notes.
+
+3. Versioned / legacy docs
+
+- Source: `section-path-issue-discussion.md`
+- Main point: version-based docs and older legacy docs look structurally different from UUID-format docs and appear to need their own preprocess path.
+- Practical implication: treat this as a designable family-level fix, not a one-off patch.
+
+4. Missing docs in QA
+
+- Source: `missing_docs_post_2016`
+- Main point: this is not one single failure mode. One doc is simply pending chunking in QA, while the other should never have been expected in QA because it is from a dev-only source path.
+- Practical implication: close the expectation gap first before treating this as ingestion failure.
+
+5. Front-matter shared attribution
+
+- Source: `issues/09-front-matter-shared-attribution/`
+- Main point: text before the first reliable Turbine/Generator `-1` boundary should remain `shared` unless it contains explicit local equipment evidence.
+- Practical implication: validate this as a separate metadata attribution policy because it can affect equipment-qualified retrieval without changing section detection.
+
+6. Mis-qualified ESN retrieval
+
+- Source: `mis-qualified-esn/issue`
+- Main point: active ESN membership may be too broad for some retrieval decisions and may be causing a wrong document-to-ESN association.
+- Practical implication: check whether region-level ESN evidence should carry more weight than the active ESN list for non-shared chunks.
+
+7. Title vs PDF-name mismatch
+
+- Source: `title-pdf-name-mismatch`
+- Main point: the issue is noted but not yet analyzed, so this needs a first-pass fact check before prioritization can be tightened.
+
+8. Ambiguous sections / LLM handling
+
+- Source: `ambiguous-sections-note.md`
+- Main point: some content types may be better treated as ambiguous than forced into standard section logic.
+- Practical implication: this can become either a metadata design decision or a retrieval/LLM routing decision.
+
+Suggested working order
+
+1. Close the priority 1 section-path decision for UUID-format docs and define the affected-doc rechunk plan.
+2. Resolve the QA missing-doc expectation gap and validate the mis-qualified ESN retrieval case.
+3. Split format work into explicit profiles for `final_master_report` and versioned/legacy families.
+4. Triage title/PDF-name mismatch and ambiguous-section handling after the higher-risk chunking and retrieval items.
+
+
+

@@ -1,0 +1,16 @@
+These documents haven't shown in QA-fsr_chunks_v2 yet -
+8675f3cf-c109-461b-b7b2-70d5f45adf87 and 7a977117-fe94-4387-bac0-de48a2e45f5c for 337X278.
+
+Analysis (2026-09-14):
+- Status of each document in the live QA v2 tables:
+  - `7a977117-fe94-4387-bac0-de48a2e45f5c` is present in `vaiq.ai_std_con_field_service_report.fsr_metadata_v2` with `metadata_status='completed'` and `chunk_status='pending'`.
+  - `8675f3cf-c109-461b-b7b2-70d5f45adf87` is not present in QA metadata at all.
+- Why there are no chunk rows for the pending doc:
+  - `chunk_status='pending'` means the document has reached metadata completion but has not yet been selected by the P2 chunking job.
+  - In other words, this is not an "error generating chunks" state; it is a queueing state where P2 has not processed it yet.
+  - If the chunk job is run again, it should be eligible to process it normally, because the metadata record already exists and the queue is still waiting for P2.
+- Why the other doc is not in metadata:
+  - it is not a QA-source document; it is a dev/test artifact listed in `ai-arch/2-FSR-v2/test/doc_ids_dev.csv` under `/Volumes/vaid/ai_std_con_field_service_report/fsr_v2_test/8675f3cf-c109-461b-b7b2-70d5f45adf87.pdf`.
+  - The QA bundle config in `pw_sdg_ai_ser_repo/databricks.yaml` points QA ingestion at `/Volumes/viud/.../fv_field_service_report` and never to the dev-only `fsr_v2_test` volume.
+- So the correct interpretation is: one doc is a valid QA backlog item waiting for P2; the other is a dev-only test artifact and should not have been expected to appear in QA metadata.
+- If the QA chunk job is triggered or resumed, `7a977117-fe94-4387-bac0-de48a2e45f5c` should be picked up because it is already in the metadata queue with `chunk_status='pending'`.

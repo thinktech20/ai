@@ -1,0 +1,34 @@
+# Title Vs PDF Name Mismatch
+
+Updated: 2026-09-15
+Date first noted: 2026-09-15
+
+## Summary
+
+There is an open question about whether the displayed document title and the underlying PDF filename are mismatching in both FSR v1 and FSR v2.
+
+## Current concern
+
+The original note flags this as something to check, but does not yet record:
+
+- how often it happens
+- whether the mismatch is in v1 only, v2 only, or both
+- whether the source of truth should be the parsed title, the filename, or another metadata field
+
+## Why this matters
+
+If title and filename diverge, the issue could affect debugging, user trust, retrieval result presentation, and any logic that assumes one field can stand in for the other.
+
+## Current status
+
+Needs investigation. No root cause is captured yet.
+
+## Next checks
+
+1. Sample affected docs from FSR v1 and FSR v2.
+2. Compare PDF filename, parsed title, stored metadata title, and UI-facing label.
+3. Confirm whether the mismatch is introduced during parsing, ingestion, metadata normalization, or display.
+
+## Source
+
+Derived from the post-prod issue note on 2026-09-15.
