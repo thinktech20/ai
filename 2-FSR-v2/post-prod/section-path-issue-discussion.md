@@ -32,15 +32,15 @@ This reinforces that the current defect is primarily a section-boundary and sect
 Latest clarification (2026-09-14):
 
 - Among the 36UUID-format documents (about 18,340 total), only 29 have a bad ToC format (no ToC or the preprocessor cannot detect it).
-- Of those 29, only 3 have meaningful context; the other 26 are short documents or just cover-page variants.
-- The three with meaningful context are rare edge cases and can be handled manually or ignored without materially affecting overall corpus quality.
+- Four are now tracked as meaningful/manual exceptions after `92387bdc-55df-41ab-8db3-f7fec0b15fa5` was added on 2026-09-16; the remaining cases are short documents or cover-page variants.
+- The four tracked documents are rare edge cases and can be handled manually without materially affecting overall corpus quality.
 - Operationally, this suggests the section-path issue is narrow and concentrated, rather than a broad failure mode across the entire FSR corpus.
 
 ## Format inventory
 
 The latest discussion also shared a rough inventory of the FSR corpus, which is useful for deciding whether to extend one global rule or route documents through multiple preprocessing profiles:
 
-- `36UUID` format: about 18,340 FSRs. All appear to use the regular TOC format that the current preprocessor can support except 29 documents, and only 3 of those 29 appear to have actual content. Current plan: ignore those outliers or attach tags manually.
+- `36UUID` format: about 18,340 FSRs. All appear to use the regular TOC format that the current preprocessor can support except 29 documents, and 4 are now tracked as meaningful/manual exceptions. Current plan: ignore the non-material outliers or attach tags manually to the tracked exceptions.
 - `final_master_report` format: about 4,923 FSRs. These appear to contain at most one Generator and one Turbine evidence item and share the same TOC format. Current direction: design preprocessor 2 for this family.
 - legacy format such as `090dbba` or `09001389`: about 18,422 FSRs. These also appear to contain at most one Generator and one Turbine evidence item and share the same TOC format. About 102 have ESN and associated ESN typos on the cover page, all before 2017.
 - versioned format such as `num_v...`: about 9,064 FSRs. These also appear to contain at most one Generator and one Turbine evidence item and share the same TOC format. About 76 have ESN and associated ESN typos on the cover page, all before 2017. Current direction: design preprocessor 3 for the legacy and versioned families.

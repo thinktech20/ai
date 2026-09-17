@@ -428,6 +428,39 @@ Reference docs/code for this cycle:
 - Bug list CSV:
   - 2-FSR-v2/bug-preprocessor/new-preprocessor-issues/Bugs_prepared_for_0803(Sheet1).csv
 
+## Uploaded Document Regression Check (2026-09-15)
+
+Input document:
+- `2-FSR-v2/bug-preprocessor/new-preprocessor-issues/90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7/90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7.pdf`
+
+### Before the latest hardening
+
+The current preprocessor reproduced the reported artifact class in this document:
+
+- measurement rows such as `25.0` followed by `Generator flange above (mils)` were promoted into section paths
+- TOC/footer text such as `7.1 Combustion` followed by an underline/page number was promoted as a subsection
+- multiple subsection patterns matched across line breaks because their whitespace expressions allowed newlines
+
+The existing multiline guard covered only the generic subsection loop. Specialized patterns such as Generator and Gas Turbine subsection detection could still admit the same cross-line artifacts.
+
+### Fix applied
+
+Multiline-match rejection is now applied consistently to all subsection candidate patterns. A subsection candidate containing a carriage return or newline is discarded before hierarchy construction. Single-line body headings remain eligible, while table rows, page-join artifacts, and TOC/footer lines are excluded.
+
+### After the fix
+
+Local validation used `fitz` to extract all 575 pages and ran the current preprocessor:
+
+- candidates: `133`
+- regions: `127`
+- candidates containing newlines: `0`
+- output section-path elements containing `Generator flange`: `0`
+- output section-path elements containing the malformed `Combustion` newline form: `0`
+
+Focused regression tests passed: `5 passed`.
+
+The full `test_preprocessor_v2.py` file currently reports `47 passed, 7 failed`. The seven failures are the existing open or test-contract issues listed above; they are not failures from the uploaded-document multiline-artifact check. The document-level check itself is passing.
+
 New issues in scope (8/12):
 - Doc b896cb9f-b70e-48c5-b9b1-477aa18bf03a:
   - Bare heading "1 Turbine" mapped to Gas Turbine under a Steam Turbine parent chain.
