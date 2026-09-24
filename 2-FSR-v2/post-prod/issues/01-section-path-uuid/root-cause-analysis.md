@@ -178,6 +178,18 @@ Xujin's prioritization is to try this improvement if the cause is easy to isolat
 
 These changes should be implemented as separate, testable slices. They should not be combined into a global relaxation of numbered heading detection.
 
+## 2026-09-21 implementation update
+
+The remaining preprocessor fixes reported to Xujin were implemented in the shared path:
+
+- narrow generic-root recognition now covers `OUTAGE DETAILS`, numbered `Summary`, and numbered `Technical` headings
+- heading labels are normalized before section spans and persisted `section_path` metadata are emitted, removing leading Markdown markers
+- explicit Turbine subsection titles are protected from inheriting a preceding Generator sibling's equipment type
+- numeric and table-like heading guardrails remain active for measurement rows such as `14.00 Mils`, `10.83 Mils`, and `33.3 rps` 
+- attachment and sub-report content remains retained under the existing local context handling
+
+The FSR v2 test suite passes with `75` tests passing and no failures. This establishes local regression coverage for the fixes, but does not replace end-to-end verification on the three affected PDFs. The remaining end-to-end checks are the exact sub-report path shape and the point at which any long-label truncation occurs.
+
 ## Dev Track-4 Validation RCA (2026-09-17)
 
 The sandbox regression run completed both pipeline stages successfully:
@@ -220,3 +232,72 @@ The verification assertion is useful for documents expected to have an ESN, but 
 ### Validation conclusion
 
 The dev run confirms pipeline execution and chunk integrity. The three failed checks are source-resolution and ESN/data-quality issues. No new failure in section boundaries, TOC handling, chunk creation, stale-chunk cleanup, or embeddings was observed from this change set.
+
+## Xujin 2026-09-18 Verification Addendum
+
+The current local code was compared with Xujin's standalone findings. The available 575-page document was rerun locally with the current PyMuPDF/preprocessor path. The cited documents `c9ed4e93-8408-4371-9f90-4e8641dd1ee6`, `27fa1fe0-369e-456f-b795-d9a9fc9cd52d`, and `3d156a24-2bb9-4ccd-a81e-c122c39aa3ac` are not present in the workspace, so those cases cannot yet be confirmed locally.
+
+### Confirmed or likely real gaps
+
+1. `OUTAGE DETAILS`, `1 Summary`, and generic root sections such as `2 Technical` are present in extracted body text but have no candidate pattern in the current preprocessor. `1.2 Executive Summary` is detected because dotted subsection patterns already cover it. This is a real heading-recognition gap, not evidence of short-section merging.
+2. The long-label case cannot be confirmed without `27fa1fe0-369e-456f-b795-d9a9fc9cd52d`. The current candidate code has no intentional 60-character truncation, so the source PDF is required to locate the truncation stage.
+
+### Not reproduced in the available 90d document
+
+1. `6.1 Attachments` and `8.1 Attachments` are detected locally and appear in section paths under `6 Quality Checkpoint (QCP)` and `8 Appendix`.
+2. The local run produces no `Generator flange` candidates or paths and no numeric noise candidates matching the reported `14.00 Mils`/`10.83 Mils` examples.
+3. The local candidate collection has no retained Markdown markers on section headings, while Xujin's output shows values such as `## 5 PIPO`. This may be a difference in her extraction/heading-normalization path rather than the current checked-in preprocessor. The current hierarchy level for `7 PIPO` is `0`; the visible `##` should not by itself be interpreted as a hierarchy level unless it is present in the actual candidate text.
+
+### Required source files for full confirmation
+
+Please attach these PDFs or parsed JSONs if available:
+
+- `c9ed4e93-8408-4371-9f90-4e8641dd1ee6`
+- `27fa1fe0-369e-456f-b795-d9a9fc9cd52d`
+- `3d156a24-2bb9-4ccd-a81e-c122c39aa3ac`
+
+Once available, compare raw parsed text, candidate headings, emitted paths, and chunk metadata before deciding whether the remaining issues are parser defects or differences in standalone extraction setup.
+
+### Local verification of the three uploaded PDFs (2026-09-18)
+
+The three PDFs were processed locally with PyMuPDF and the current checked-in preprocessor.
+
+#### `c9ed4e93-8408-4371-9f90-4e8641dd1ee6`
+
+- `5 PIPO` is emitted as a level-0 `SECTION_HDR`; no Markdown marker is present in the candidate text.
+- `4 Quality Checkpoint (QCP)` and `4.1 Attachments` are detected.
+- `6 Appendix`, `6.1 Attachments`, and the local sub-report headings including `5.0 Safety Performance` are detected.
+- `5.0 Safety Performance` is currently scoped under `6 Appendix`, which matches the intended local-context direction.
+- No newline-bearing candidates were observed.
+
+This document does not reproduce the reported wrong PIPO hierarchy in the current local run. The `##` shown in Xujin's output may come from a different extraction/marker-injection path, not the candidate text produced by this checked-in code.
+
+#### `27fa1fe0-369e-456f-b795-d9a9fc9cd52d`
+
+- `3.1 Attachments` is present in the primary TOC on page 10 and in the body.
+- The current TOC extractor does not include that final TOC continuation page because it stops when a continuation page has fewer than two leader/page-number lines. The resulting TOC list misses the valid `3.1 Attachments` entry, and the candidate collector then rejects the body occurrence through the TOC guard.
+- This is understood as a TOC continuation behavior, not evidence that the primary TOC lacks the entry. Based on Xujin's review, the two-leader threshold is intentionally retained for now. The missed final TOC section is accepted as a low-impact edge case and will not be changed in this fix cycle.
+- The long heading `3.1.3 packaged electrical / electronic control compartment` is captured completely by the candidate and section path locally. The reported truncation is therefore likely in Xujin's display/projection path or a different parser output, not the current candidate collector.
+
+The missing `3.1 Attachments` is a confirmed parser-policy gap and should be handled by the attachment-context rule rather than by dropping all non-TOC content.
+
+#### `3d156a24-2bb9-4ccd-a81e-c122c39aa3ac`
+
+- The numeric-noise reports are reproduced in the current local run:
+	- `33.3 rps).`
+	- `14.00 Mils`
+	- `10.83 Mils`
+- These are emitted as generic `SUBSEC` candidates and enter section paths, confirming a real false-positive heading problem.
+- The document also contains repeated standalone `Steam Turbine` and `Generator` lines that are emitted as unnumbered equipment candidates; these need separate table/body-context guardrails.
+- PyMuPDF emits `unknown cid font type` warnings while parsing this PDF, but still returns a usable text stream. The numeric candidates are present in that extracted text, so the issue is reproducible despite the font warnings.
+
+### Updated priority from the verified PDFs
+
+1. Reject numeric/table-like generic subsection candidates such as `14.00 Mils`, `10.83 Mils`, and `33.3 rps).` without dropping valid numbered headings.
+2. Add context-sensitive filtering for standalone `Generator`/`Steam Turbine` lines rather than treating every standalone occurrence as an equipment boundary.
+3. Preserve Appendix/sub-report content under the nearest reliable Appendix/Attachment context, using primary-TOC filtering only for low-confidence candidates if noise remains.
+4. Keep the long-label issue optional until the candidate-vs-display truncation difference is resolved.
+
+### Trade-off decision from Xujin's latest feedback
+
+The priority is to eliminate numeric/table noise and standalone equipment-word false positives. For sub-report or appendix content, the preferred fallback is to retain the content under the nearest reliable parent or an explicit attachment/appendix context, rather than hard-discarding it solely because TOC coverage is incomplete. If noise remains after the deterministic filters, a stricter primary-TOC guard can be applied to low-confidence candidates while preserving valid high-confidence body sections. The current two-leader continuation threshold remains unchanged by decision.

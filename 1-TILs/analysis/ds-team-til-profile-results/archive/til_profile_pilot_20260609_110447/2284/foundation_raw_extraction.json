@@ -1,0 +1,129 @@
+{
+  "status": "success",
+  "results": {
+    "1": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 1\nExtracted Text:\nGE\nGE POWER\nTIL 2284\nPRODUCT SERVICE\nPublish Date: 05 MAY 2021\nCompliance Category - S\nTiming Code - 4\nTECHNICAL INFORMATION LETTER\nF-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS\nAPPLICATION\n6F, 7F, and 9F Heavy Duty Gas Turbines.\nPURPOSE\nTo advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight\ngroove entry slots corner and perform blending operations.\nCOMPLIANCE CATEGORY\nTIMING CODE\n\u00a9 2021 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.\nDate Printed: 05 MAY 2021\n\n----------------------------------------\nEnd of Page 1\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| M - Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |\n| c - Compliance Required A Alert | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. |\n| S Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |\n\n----------------------------------------\nTable 2:\n|  |  |\n| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |\n| 2 | At First Opportunity (next shutdown) |\n| 3 | Prior to Operation of Affected System |\n| 4 | At First Exposure of Component |\n| 5 | At Scheduled Component Part Repair or Replacement. |\n| 6 | Next Scheduled Outage |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      }
+    ],
+    "2": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 2\nExtracted Text:\nBACKGROUND DISCUSSION\nA gas turbine rotor is an assembly of shafts, wheels, disks, and spacers. A means of balance is incorporated into each of\nthese rotor components and the various assemblies. A balance weight groove (BWG) is one example of a feature that is\nused to provide a means of balancing. The BWG is an annular channel that is machined into a rotor component that provides\na location for weights to be installed for balance purposes on either the piece part or as a rotor assembly. This annular\nchannel may contain two BWG entry slots, as shown in Figure 1, located approximately 180 degrees apart that allow for the\nbalance weights to be easily installed and located in the appropriate locations on the wheel or shaft.\nFigure 1: BWG Entry Slots - Correct Machining\nDuring non-destructive evaluation (NDE) of a distance piece (DP) as part of a rotor life extension (RLE), a crack-like\nindication was observed in the corner of a balance weight groove entry slot. Both grooves on the specific part showed similar\nindications as depicted in Figure 2. GE has inspected additional parts with similar features and observed similar indication\nfindings.\nFigure 2: Indications Found on DP During RLE - Observed Machining Issue\nUpon completion of a root cause investigation, GE determined the cause is associated with the variation in the corner\ncondition of the balance weight groove entry slots and interactions with the various stresses during gas turbine start-up,\nshutdown, and loaded operation (gravity sag, etc). Depending upon the specific nature of a units operation and the specific\ncondition of the part slot corner, crack-like indications may form over the lifetime of the component. If these crack-like\nindications propagate to a large enough size, it may be possible for continued rapid crack growth to occur associated with\ngravity sag related bending of the rotor as it rotates (high cycle fatigue related mechanism). If not mitigated, the fracture\npropagation may lead the CAS and/or DP to separate into two separate pieces. Separation of either shaft into two pieces\nmay create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO\nPERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment.\n\u00a9 2021 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.\nDate Printed: 05 MAY 2021\n\n----------------------------------------\nEnd of Page 2\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "image",
+        "content": [
+          "\nPir.\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      }
+    ],
+    "3": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 3\nExtracted Text:\nRECOMMENDATIONS\nIt is recommended to perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the\nnext planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of\n378,000 equivalent cold rotor turning time.\nFor case where FPI is clear of any indications - evaluate all the balance entry slot corner conditions with replication process.\nIf any balance weight entry slot corner condition presents with a <0.060\" fillet size - perform entry slot blending, FPI,\nand peening operations to mitigate the risk of crack initiation and propagation.\nCorner specific item - if any portion of a specific balance weight groove corner meets noted criteria, then\nperform modification machining on the entire balance weight groove entry slot corner.\nFillet > 0.060\" and uniformly this size over full length of the BWG entry slot corner - leave in as-found condition\nFor case with observable FPI indication/indications - contact GE engineering through an ER case for technical disposition.\nBWG\nEntry Slot\nLocation\nFigure 3: Relative Location of BWG Entry Slots\nEquivalent cold rotor turning time is defined as a spinning rotor in combination with cool metal temperatures (generally\nspeaking conditions with all wheelspace temperatures measuring less than 150 degrees F). Turning gear (TG) operation,\nforced cooling operation, offline water wash operation, and unit startups are the periods where cool rotor conditions exist and\ncontribute to the overall equivalent cold rotor turning time. Equivalent refers to a standardization of the # of high cycle fatigue\ncycles for a given hour and therefore has a component associated with the accumulation of cycles relative to the rotor speed.\nFor example, at purge speed (~20% speed) versus turning gear speed (~6 rpm) a higher # of stress cycles will occur per\nminute of operation due solely to the increased rotational speed of the rotor for a given period.\n\u00a9 2021 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.\nDate Printed: 05 MAY 2021\n\n----------------------------------------\nEnd of Page 3\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "image",
+        "content": [
+          "."
+        ],
+        "source": "textract",
+        "page_number": 3
+      }
+    ],
+    "4": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 4\nExtracted Text:\nTherefore, the equivalent cold rotor turning time impact is based around taking all cold rotational hours and converting it into\nan equivalent number of turning hours at typical turning gear speed. In order to calculate equivalent cold rotor turning time,\nGE recommends the following methods:\nEquivalent Cold Rotor Turning = ECRT (hours)\nECRT = TTG-((SFS-SFC) *X) + TFC*0.25* 20% Full Speed + (Swc* Y) + (Sww *3* 20% Full Speed )\n6\n6\nPath #1 (Unit historical recorded data through GE OSM connection or customer records)\nRecord the # of turning gear hours (some controllers display this value) - TTG\nRecord the total # of fired starts - SFS\nFor 7FAs - = 24\nFor 9FAs - = 24\nFor 6FAs - = 18\nRecord # of force cool downs\n- SFC\nRecord # of force cool down hours - TFC\nUnit Full Speed\nFor 7FAs - 3600 rpm\nFor 9FAs - 3000 rpm\nFor 6FAs - 5250 rpm\nRecord the # of cooler starts unit has completed (defined as the # of warm 2 and cold starts per the definitions in\nGER-3620 (latest revision - definition is provided in figure 22). - Swc\nStart Up Factor\nSimple Cycle Unit (SC)\nY = 72\nCombined Cycle Unit (CC) Y = 86\nRecord # of offline water wash operations Sww\nNote: If unit has greater than 50% of their operation covered by On-Site Monitoring (OSM) connection recorded data, then\nratio data up to cover 100% of operation with this data, if less than 50% utilize customer records or memory to determine if\n50% covered by OSM connected data is appropriate to cover overall unit operation.\nPath #2 (if do not have data available for path #1):\nRecord the # of turning gear hours (some controllers display this value) TTG\nRecord the total # of fired starts - SFS\nFor 7FAs - X = 24\nFor 9FAs - X = 24\nFor 6FAs - = 18\nUtilize average % of cooler starts value assumption - Swc= SFS*0.72\nStart Up Factor\nSimple Cycle Unit\nY = 72\nCombined Cycle Unit Y = 86\n\u00a9 2021 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.\nDate Printed: 05 MAY 2021\n\n----------------------------------------\nEnd of Page 4\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      }
+    ],
+    "5": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 5\nExtracted Text:\nUtilize average % of force cool downs value assumption - TFC= SFS*0.05*Z\nFor 7FAs - Z = 8\nFor 9FAs - Z = 12\nFor 6FAs - Z = 24\nExample ECRT Calculation:\nCombined Cycle 7FA.03\nECRT = 40,000 - (1,900-240) *24 + 4800*0.25* 20% of 3600 + (1300*86) +(40*3* 20% of 3600 )\n6\n6\nECRT = 270,360 hours\nThis TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified.\nPlease contact your GE Service Representative for any questions associated with the implementation of this TIL.\nPLANNING INFORMATION\nCompliance\nCompliance Category: S\nTiming Code: 4\nManpower Skills\nGE qualified specialist to perform FPI (in service center can substitute MPI inspection for FPI inspection based on\nservice center capability)\nGE qualified machinist with appropriate tooling to perform blending and peening operations\nSpecial Tooling\nBWG Entry Slot Portable Machining Tool\nFPI inspection capability\nFlapper peening kit\nScope of Work\nFPI to inspect BWG entry slot pre-blending condition\nSet up BWG Entry Slot tool and perform blending operation\nFPI to inspect BWG entry slot post-blending condition\nFlapper peen the modified geometry post machining and post machining successful FPI\n\u00a9 2021 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.\nDate Printed: 05 MAY 2021\n\n----------------------------------------\nEnd of Page 5\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| TTG | SFS | SFC | X | TFC | SWc | Y | Sww |\n| Turning Gear Time (hours) | Number of Fired Starts | Number of Forced Cool Downs | Frame Size Factor | Forced Cool Time (hours) | Number of Cool Starts | SC or CC Factor | Number of Offline Water Washes |\n| 40,000 | 1,900 | 240 | 24 | 4800 | 1300 | 86 | 40 |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      }
+    ],
+    "6": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 6\nExtracted Text:\nTIL DISPOSITION\nDisposition of TILs should be entered in local records and also in GE Power ServiceNow. Follow the below instructions for entering the\ndisposition record;\nLog into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/t using your GE SSO number and password.\nSelect \"TIL Disposition\".\nClick on the TIL for the serial number you want to update.\nChoose the most appropriate \"Disposition Status\" and enter \"Disposition Notes\".\nClick \"Save\".\nContact your local GE Services representative for assistance or for additional information\n\u00a9 2021 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.\nDate Printed: 05 MAY 2021\n\n----------------------------------------\nEnd of Page 6\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 6
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 6
+      }
+    ]
+  }
+}

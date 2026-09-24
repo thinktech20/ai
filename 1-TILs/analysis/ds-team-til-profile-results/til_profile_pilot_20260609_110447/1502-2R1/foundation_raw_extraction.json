@@ -1,0 +1,103 @@
+{
+  "status": "success",
+  "results": {
+    "1": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 1\nExtracted Text:\nTIL 1502-2R1\nGE ENERGY SERVICES TECHNOLOGY\nCUSTOMER TECHNOLOGY SERVICES\n1 NOVEMBER 2005\nCompliance Category - M\nTiming Code - 6\nTECHNICAL INFORMATION LETTER\n7F AND 9F AFT END COMPRESSOR RUBS\nAPPLICATION\nAll 7F and 9F Heavy Duty Gas Turbines\nPURPOSE\nTo inform users to monitor equipment operation and condition, and to identify the onset, occurrence, and effects of aft\nend compressor rubs (when the tip of the rotor blade rubs the casing). Rubs are evident when blade tip material is\nadversely affected. Information in this TIL is supplemental to information in the Inspection and Maintenance Manual\nprovided with the gas turbine.\nREASON FOR REVISION\nTo update the technical content of the TIL, including frequency of tip loss and recommendations when discovered.\nCompliance Category\nCOPYRIGHT 2005 GE\nThe information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant\nis in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for\nliability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying\nthis information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other\nrespects responsible for any alleged injury or damage sustained by your organization as a result of applying this information.\n\n----------------------------------------\nEnd of Page 1\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| o - Optional | Identifies changes that may be beneficial to some, but not necessarily all, operators. Accomplishment is at customer's discretion. |\n| M - Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |\n| c - Compliance Required | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability, efficiency, or safety. Compliance may be required within a specific operating time. |\n| A - Alert / Safety | Failure to comply with the TIL could result in equipment damage, facility damage, or personal injury. Compliance is mandated within a specific operating time. |\n\n----------------------------------------\nTable 2:\n| Timing Code |  |\n| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |\n| 2 | At First Opportunity (next shutdown) |\n| 3 | Prior to Operation of Affected System |\n| 4 | At First Exposure of Component |\n| 5 | At Scheduled Component Part Repair or Replacement |\n| 6 | Next Scheduled Outage |\n| 7 | Optional |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      }
+    ],
+    "2": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 2\nExtracted Text:\nTIL 1502-2R1\nBACKGROUND DISCUSSION\nRECOMMENDATIONS\nThe compressor section of F-Class gas turbines has 18\nFollow operating practices per GER 3620 to reduce the\n(0-17) stages of rotating components (rotor blades) and\npotential for rubs on aft end compressor blades. In\nstationary components (stator vanes).\naddition to the GER 3620 guidelines, the following\nrecommendations would also help minimize aft end\nSome F-class machines have experienced aft end\nrubs and tip loss occurrence.\ncompressor rubs. These rubs range from light scoring\non the casing to material loss at the blade tip. This\nKeep enclosure doors closed during\nphenomenon was concluded to be very low risk\nstartup, shutdown and normal operation.\nrelative to unit operation and reliability.\nNo\nperformance impact and no forced outages have been\nBe aware that restarting the gas turbine between\nexperienced as a result. Rotor blades in rows 13, 14,\ntwo (2) and eight (8) hours following a shutdown or\nand 15 are primarily affected.\ntrip will cause the clearances in the aft end to\ndecrease. If the unit operates this way now or has\nin the past, there is a potential for this clearance\nclosure to cause aft end tip rubs. As a result, the\narea should be included in the yearly borescope\ninspections.\nEliminate any potential pipe leaks that may cause\nquenching of the gas turbine compressor\ndischarge casing.\nFigure 1: F-Class Compressor Cross-Section\nEnsure vent fans and exhaust fans to the gas\nBased on the conclusion of Root Cause Analysis (RCA)\nturbine enclosure are functioning properly such\nand fleet experience, aft end rubs are primarily induced\nthat no local forced convection is taking place at or\nbecause of frequent restarts between two (2) to eight\nnear the compressor discharge casing.\n(8) hours after shutdown. During this transient period,\nthe thermal compression of the casing relative to the\nIntegrate the inspection for aft end compressor\nrotor can decrease clearances and can lead to rubs\nrubs with your yearly scheduled borescope\nupon restart. The heat generated from a rub can lower\ninspection per GER 3620. Observe rotor blade\nthe local material fatigue strength of the blade\nstages 13 through 17 and look for mushroomed\nresulting in material tip loss in the event of another rub.\nmaterial (see Figure 3), bluing at the blade tip,\nTypical material loss dimensions are less than\nand / or markings in the casing area.\n1/16 inch\u00b2 in area (see Figure 2).\nCasing\nMushrooming\nMaterial Tip\nRotating\nAirfoil\n1/4\"\nTypical Tip Loss\nFigure 2: Typical Blade Tip Loss\nFigure 3: Fractured Tip Surface\nRestarting a unit 2 to 8 hours after a shutdown or trip is\nwithin the operating envelope, but this may cause rubs\nin some cases. Aft end rubs and/or tip loss pose very\nlow risk to unit operation and reliability. No\nperformance impact and no forced outages have been\nexperienced due to this issue.\n2 of 5\n\n----------------------------------------\nEnd of Page 2\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "image",
+        "content": [
+          "Prana Se Canad / Trin f\n\nWad ei | \u00abVan bi Ge] \u201coe FF cons ysis) ata PON trenton i Ca Pee nceh gs iar ON ie aa ae Ee Ve"
+        ],
+        "source": "textract",
+        "page_number": 2
+      }
+    ],
+    "3": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 3\nExtracted Text:\nTIL 1502-2R1\nIf rubs or tip loss do occur, blending to increase\nclearances can be performed at Major Inspections (MI)\nor when the Compressor Discharge Casing (CDC) is\nremoved. During repairs, clearances of rotor blades can\nbe increased radially by tip grinding and polishing, and\ntip corners repaired by blade blending. Typically, 20\nmils radially of material can be removed to both\nincrease clearance and remove heat affected and\nrolled over material.\nFollowing this operation, a penetrant inspection must\nbe performed to ensure no tip cracks are present. If\nthe CDC is removed prior to the major inspection,\nclearances can also be increased to eliminate the\npotential for tip rubs should the customer desire.\nPlease contact your local GE service representative for\nassistance.\nPLANNING INFORMATION\nCompliance\nCompliance Category: M\nTiming Code: 6\nManpower Skills\nTrained GE Borescope technician to perform\nborescope inspection, approximately eight (8)\nhours.\nTrained GE Blade technician for rotor blade\nclearance increases, approximately 16 hours once\nthe casing has been removed.\nParts\nN/A\nSpecial Tooling\nN/A\nReference Documents\nN/A\nPrevious Modifications\nN/A\nScope of Work\nN/A\nContact your local GE Energy Services representative\nfor assistance or for additional information.\nNOTE: If you would like to receive future TILs by email,\ncontact your local GE Energy Services representative for\nassistance.\n3 of 5\n\n----------------------------------------\nEnd of Page 3\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      }
+    ],
+    "4": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 4\nExtracted Text:\nTIL 1502-2R1\nTIL COMPLIANCE RECORD\nCompliance with this TIL must be entered in local records. GE requests that the customer notify GE upon compliance of\nthis TIL.\nComplete the following TIL Compliance Record and FAX it to:\nTIL Compliance\nFAX: (678) 844-3451\nToll free FAX: 1-888-896-TILS (1-888-896-8457)\nTIL COMPLIANCE RECORD\nFor Internal Records Only #\nTurbine Serial Number(s):\nINSTALLED EQUIPMENT\nTIL Completed Date:\n100% TIL Completed:\nDescription:\nComments:\nNOTE: If there are any redlined drawings that pertain to this TIL implementation, please FAX the drawings along with\nthis TIL Compliance Record.\nFAX this form to:\nTIL Compliance\nFAX: (678) 844-3451\nToll free FAX: 1-888-896-TILS (1-888-896-8457)\n4 of 5\n\n----------------------------------------\nEnd of Page 4\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| Site Name: | Customer Name: |\n| Customer Contact Information | GE Contact Information |\n| Contact Name: | Contact Name: |\n| Address: | Address: |\n|  |  |\n| Email: | Email: |\n| Phone: | Phone: |\n| FAX: | FAX: |\n\n----------------------------------------\nTable 2:\n| Unit Numbers: | Part Description: | Part Number | MLI Number |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      }
+    ],
+    "5": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 5\nExtracted Text:\nTIL 1502-2R1\nUSER SATISFACTION SURVEY\nGE values your opinions and comments.\nGE requests that you complete the User Satisfaction Survey below to help us better serve you with accurate and timely\ninformation on your equipment.\nComplete the following TIL Compliance Record and FAX it to:\nTIL Survey\nGE Customer Technology Services\nFAX: (678) 844-6737\nToll free FAX: 1-866-604-2668\nUSER SATISFACTION SURVEY\nSerial Number:\nDate:\n1. How many days after TIL issue date did you receive this TIL?\n1 - 5 days\n6 - 10 days\n+ 10 days\nNOTE: If you would like to receive future TILs by email, contact your local GE Energy Services representative for assistance.\nRate the following based on a scale of 1 to 5, where 1 is Excellent and 5 is Poor.\nFAX this form to:\nTIL Survey\nGE Customer Technology Services\nFAX: (678) 844-6737\nToll free FAX: 1-866-604-2668\n5 of 5\n\n----------------------------------------\nEnd of Page 5\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| 2. Please rate how well | this document informed | you of the technical | issue. |  |\n| 1 | 2 | 3 | 4 | 5 |\n| 3. Please rate the overall | effectiveness of this TIL. |  |  |  |\n| 1 | 2 | 3 | 4 | 5 |\n| Comments / Suggestions: |  |  |  |  |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      }
+    ]
+  }
+}

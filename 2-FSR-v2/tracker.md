@@ -252,3 +252,16 @@ Working dir: /home/u560060992/dbx/pw_sdg_ai_ser_repo
 - Complete and monitor QA and production ingestion, including P2 chunking/embeddings and P3/vector sync follow-up.
 - Review the section-header detection issue with Xujin and assess document-specific preprocessing profiles versus global rule changes.
 - Define regression cases and the validation/rechunking approach for affected documents.
+
+## 2026-09-20 WSR Update
+
+### Last Week
+
+- Completed FSR v2 ingestion in both QA and production.
+- Fixed the section-path issue for affected UUID documents, where chunking was too coarse and some section labels were not preserved completely; validation is completed.
+
+### Next Week
+
+- Build the job for the affected UUID documents.
+- Ingest the affected UUID documents in QA and production.
+- Validate the QA and production results after the targeted ingestion.

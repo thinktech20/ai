@@ -1,0 +1,4 @@
+method_name,formula_density_per_1k_words,table_density_per_1k_words,content_coverage_score,latency_s,noise_ratio,parse_success
+databricks_ai,2.111,1.775,0.5971,12.3652,0.2774,1
+pdfplumber,2.1312,0.8176,0.4775,1.351,0.2512,1
+foundation,0,0,0,0.0042,0,0

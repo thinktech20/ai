@@ -1,0 +1,179 @@
+# TIL Profile Comparison Steps
+
+Quick reference for comparing DS (baseline) vs Pipeline (our) TIL profile extraction results.
+
+## Prerequisites
+
+- DS profiles: `/home/u560060992/dbx/1-TILs/analysis/ds-team-til-profile-results/til_profile_pilot_20260609_110447/`
+- Comparison script: `/home/u560060992/dbx/1-TILs/compare-til-profile/compare_til_profiles.py`
+- Pipeline results: CSV export from Databricks metadata table
+
+## Step 1: Export Pipeline Results from Databricks
+
+After running your TIL metadata extraction notebook in Databricks:
+
+1. Query the metadata table:
+   ```sql
+   SELECT 
+     matched_til_number,
+     parsed_profile_json,
+     raw_profile_json,
+     extraction_confidence,
+     metadata_status
+   FROM vaid.ai_sot_field_service_report.til_metadata
+   WHERE metadata_status = 'completed'
+   ORDER BY matched_til_number
+   ```
+
+2. Download as CSV to: `/home/u560060992/dbx/1-TILs/compare-til-profile/metadata-table-results/`
+   - Name it descriptively: `til-metadata-YYYY-MM-DD.csv` (e.g., `til-metadata-07-10.csv`)
+
+## Step 2: Run Comparison on Specific TILs
+
+### Compare 3 Critical TILs (1937-R2, 1945-R2, 2045-R2)
+
+```bash
+cd /home/u560060992/dbx
+
+python3 1-TILs/compare-til-profile/compare_til_profiles.py \
+  --ds-root /home/u560060992/dbx/1-TILs/analysis/ds-team-til-profile-results/til_profile_pilot_20260609_110447 \
+  --our-metadata-csv /home/u560060992/dbx/1-TILs/compare-til-profile/metadata-table-results/til-metadata-07-10.csv \
+  --tils 1937-R2 1945-R2 2045-R2
+```
+
+### Compare All Overlapping TILs
+
+```bash
+cd /home/u560060992/dbx
+
+python3 1-TILs/compare-til-profile/compare_til_profiles.py \
+  --ds-root /home/u560060992/dbx/1-TILs/analysis/ds-team-til-profile-results/til_profile_pilot_20260609_110447 \
+  --our-metadata-csv /home/u560060992/dbx/1-TILs/compare-til-profile/metadata-table-results/til-metadata-07-10.csv
+```
+
+### Compare Phase-Based Batch
+
+```bash
+python3 1-TILs/compare-til-profile/compare_til_profiles.py \
+  --ds-root /home/u560060992/dbx/1-TILs/analysis/ds-team-til-profile-results/til_profile_pilot_20260609_110447 \
+  --our-metadata-csv /home/u560060992/dbx/1-TILs/compare-til-profile/metadata-table-results/til-metadata-07-10.csv \
+  --phase 5 --offset 0
+```
+
+(Phase options: 1, 5, 10; offset determines starting index in overlap set)
+
+## Step 3: Review Output
+
+Comparison results are saved to: `/home/u560060992/dbx/1-TILs/compare-til-profile/outputs/compare_YYYYMMDD_HHMMSS/`
+
+Files generated:
+- `summary.csv` — High-level match/mismatch counts per TIL
+- `mismatch_details.jsonl` — Field-by-field differences (one line per field difference)
+- `run_info.json` — Metadata about the comparison run
+
+### Quick View Mismatches
+
+```bash
+cat /home/u560060992/dbx/1-TILs/compare-til-profile/outputs/compare_20260710_*/mismatch_details.jsonl | jq '.til, .field, .ds_value, .our_value' | head -50
+```
+
+### Count Mismatches by Field
+
+```bash
+cat /home/u560060992/dbx/1-TILs/compare-til-profile/outputs/compare_20260710_*/mismatch_details.jsonl | jq '.field' | sort | uniq -c | sort -rn
+```
+
+## Key Fields to Focus On (DS Feedback)
+
+From ds-feedback-summary.md, priority areas:
+
+1. **til_number** — Should match DS format (e.g., `TIL 1945` vs `TIL 1945-R2`)
+   - Dev pipeline currently splits revision suffix, creating drift
+   
+2. **coarse_outage_type** — Often "Next Scheduled Outage" in DS, "Any" in pipeline
+   - May need SOT override logic
+
+3. **parts_referenced** — Part numbers and source_location format
+   - DS has clean identifiers; pipeline may include range text or verbose context
+   - source_location format: DS prefers "Page X, Table Y" style
+
+4. **scope_of_work** and **service_recommendation_line_items** — Length and detail level
+   - DS may aggregate, pipeline may expand
+
+5. **extraction_confidence** — DS typically 0.93, pipeline often lower (0.78–0.86)
+   - Not blocking but indicates quality variance
+
+## Compare Output Notes
+
+- **Normalization applied**: til_number, revision, and other text fields are normalized for comparison (uppercase, whitespace collapsed, etc.)
+- **Exact match**: Fields match after normalization
+- **Mismatch**: Fields differ after normalization (indicates real difference)
+- **Parts_referenced**: Compared as normalized JSON (order-independent, sorted keys)
+
+## Interpretation Guide
+
+### Example 1: til_number Mismatch
+
+```json
+{"til": "1945-R2", "field": "til_number", "ds_value": "TIL 1945", "our_value": "TIL 1945-R2"}
+```
+
+**Issue**: Pipeline splits revision suffix in canonicalization.  
+**Fix location**: `pw_sdg_ai_ser_repo/silver/src/etl/nb_sdg_til_metadata.py` — remove revision-split logic in `canonicalize_profile_for_contract`.
+
+### Example 2: coarse_outage_type Mismatch
+
+```json
+{"til": "1937-R2", "field": "coarse_outage_type", "ds_value": "Next Scheduled Outage", "our_value": "Any"}
+```
+
+**Issue**: LLM extraction differs or prompt guidance differs.  
+**Action**: May require SOT override logic or prompt tightening.
+
+### Example 3: parts_referenced Mismatch
+
+```json
+{
+  "til": "2045-R2",
+  "field": "parts_referenced",
+  "ds_value": [
+    {"part_number": "146E1320", "context": "Affected (Uncooled) S3S Part Number", ...},
+    ...
+  ],
+  "our_value": [
+    {"part_number": "146E3626", "context": "...", ...},
+    ...
+  ]
+}
+```
+
+**Issue**: Part number digits differ (e.g., 146E1320 vs 146E3626).  
+**Root cause**: Parser or LLM extraction difference on table OCR.  
+**Investigation**: Compare raw_profile_json from both sides; check if error is in parser output or LLM interpretation.
+
+## Recent Comparison (2026-07-10)
+
+**Critical TILs tested**: 1937-R2, 1945-R2, 2045-R2  
+**Overlap count**: 3/3  
+**Summary**: 14 exact matches, 16 mismatches  
+**Output**: `/home/u560060992/dbx/1-TILs/compare-til-profile/outputs/compare_20260710_172905/`
+
+**Key findings**:
+1. **til_number format drift**: 1945-R2 split to "TIL 1945" (DS) vs "TIL 1945-R2" (ours)
+2. **coarse_outage_type**: All 3 TILs differ (DS="Next Scheduled Outage" or "At First Exposure", ours="Any" or null)
+3. **scope_of_work**: Content/length differences across all 3
+4. **extraction_confidence**: Lower in pipeline (0.78–0.86) vs DS (all 0.93)
+
+## Next Steps After Comparison
+
+1. Identify pattern in mismatches (e.g., is it systematic or per-TIL?)
+2. Compare raw_profile_json to isolate parser vs LLM extraction issues
+3. Update prompt or canonicalization logic per findings
+4. Re-run extraction with fixes and re-compare
+
+## References
+
+- Comparison script: [1-TILs/compare-til-profile/compare_til_profiles.py](../compare_til_profiles.py)
+- DS feedback: [1-TILs/input/DS-feedback/ds-feedback-summary.md](../input/DS-feedback/ds-feedback-summary.md)
+- DS profile results: [1-TILs/analysis/ds-team-til-profile-results/](../analysis/ds-team-til-profile-results/)
+- Pipeline code: [pw_sdg_ai_ser_repo/silver/src/etl/nb_sdg_til_metadata.py](../../pw_sdg_ai_ser_repo/silver/src/etl/nb_sdg_til_metadata.py)

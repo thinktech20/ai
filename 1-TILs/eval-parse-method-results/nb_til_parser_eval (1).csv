@@ -1,0 +1,4 @@
+method_name,char_count,formula_hits,latency_s,noise_ratio,parse_success,required_field_hits,table_count
+databricks_ai,23320.4,6,12.111,0.283,1,16,5.4
+foundation,0,0,0.007,0,0,0,0
+pdfplumber,18063.8,5.4,1.353,0.251,1,19.8,1.8

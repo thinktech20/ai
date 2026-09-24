@@ -1,0 +1,104 @@
+E6.5 - Standard Template Coverage and TIL Information-Only
+Tool Specs
+Scope and Audience
+This document describes the Step 6 pre-applicability dedup stage for:
+•	information-only TIL routing
+•	standard template coverage classification
+Audience:
+•	DS leads and SMEs reviewing scoping quality and dedup behavior
+•	step owners and teammates managing experiment execution
+•	architecture and dev teams preparing production workflow boundaries
+Primary goals:
+•	document where E6.5 sits in Step 6 flow
+•	explain the request/response contracts
+•	clarify skip and continue decision rules
+•	summarize current findings and known runtime gaps
+Active Anchors
+Primary runtime module:
+•	code_assets/runtime/template_coverage.py
+Main caller and orchestration:
+•	code_assets/experiments/step6/run_gt_til_applicability_eval.py
+Related plan note:
+•	docs/experiments/step6/Standard_Template_Coverage_Dedup_Implementation_Plan_2026-06-10.md
+Historical/template context helper lineage:
+•	code_assets/experiments/step5/reconciliation/ev_template_lookup.py
+Pipeline Map (Current)
+ 
+Data Workflow and Process
+1.	Step 6 computes TIL profile context and line items.
+2.	Information-only check runs first.
+3.	If information-only is true, row is short-circuited (information_only_skip).
+4.	Otherwise, template context is loaded for matched event via historical template mapping and Primavera task data.
+5.	Template coverage LLM compares TIL line items (or metadata-only fallback) against template activities.
+6.	Coverage result is returned with covered, gap, and unclear line-item partitions.
+7.	If template is fully covered and no gaps, row short-circuits (template_covered_skip).
+8.	Otherwise, only gap/net-new context proceeds to downstream evidence and applicability stages.
+Inputs and Contracts
+Information-only check inputs
+From profile context:
+•	service_recommendation_line_items
+•	scope_of_work
+•	extraction_confidence
+•	optional source snippets
+Template coverage request inputs
+•	matched_event_id, matched_esn, candidate_til_num, outage context
+•	template_context resolved from historical template + Primavera
+•	til_context with line items and metadata
+•	coverage_input_mode (line_items, metadata_only, no_til_context)
+•	coverage_limitations
+Template sources
+•	vgpd.fdc_std_views.fdc_primavera_project_psot_vw
+•	vgpd.fdc_std_views.fdc_primavera_wbs_psot_vw
+•	vgpd.fdc_std_views.fdc_primavera_task_activity_psot_vw
+•	historical scope helper context from step5 reconciliation path
+Outputs
+Template coverage result includes:
+•	status
+•	information_only_flag, information_only_reason, information_only_evidence
+•	template_coverage_class (already_covered, partially_covered, net_new, unclear)
+•	template_coverage_confidence
+•	template identifiers and activity references
+•	covered_til_line_items, gap_til_line_items, unclear_til_line_items
+•	template_overlap_reasoning, template_partial_coverage_notes
+•	template_review_flag
+•	LLM prompt artifacts and parse outputs
+Key Methods and Responsibilities
+From template_coverage.py:
+•	evaluate_information_only
+•	_load_template_context and load_template_context_for_event
+•	_normalize_template_activity_rows
+•	build_template_coverage_system_prompt
+•	build_template_coverage_user_prompt
+•	run_template_coverage_service
+From Step 6 runner:
+•	build_template_coverage_request
+•	routing logic for information_only_skip and template_covered_skip
+•	export of template_coverage_records artifacts
+Preliminary Experiment Findings
+1.	E6.5 is active in the current Step 6 flow and influences routing before completion review and final LLM call.
+2.	Information-only detection is deterministic and prevents unnecessary downstream processing.
+3.	Metadata-only template coverage is explicitly constrained to avoid overclaiming full coverage.
+4.	Coverage outputs are exported and auditable through dedicated template coverage artifacts.
+5.	Gap-based continuation improves focus by reducing template-covered noise in downstream reasoning.
+Runtime and Production Gaps / Uncertainties
+1.	Template identity dependency:
+•	historical template mapping quality can vary by event and project linkage.
+1.	Activity text quality:
+•	template activities can be broad; line-item granularity mismatch remains a risk.
+1.	LLM classification consistency:
+•	overlap judgments may vary across edge cases without stronger normalization and guardrails.
+1.	Metadata-only limitations:
+•	limited line-item evidence forces conservative outcomes and higher unclear rates.
+1.	Cross-stage governance:
+•	need clear policy ownership for when to force manual review vs continue automatically.
+Usage Guidance
+Use E6.5 outputs as:
+•	a pre-applicability dedup and routing stage
+•	a way to isolate net-new TIL scope from standard-template scope
+Do not use E6.5 outputs as:
+•	final applicability or implementation-status verdicts
+•	substitute for service-history evidence checks
+Suggested Next Validation Slice
+1.	Quantify skip rates (information_only_skip, template_covered_skip) by outage type and TIL family.
+2.	Review a sample of unclear cases with SMEs to tighten overlap criteria.
+3.	Add consistency checks for template activity source quality before running coverage classification.

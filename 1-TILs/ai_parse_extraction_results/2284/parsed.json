@@ -1,0 +1,1892 @@
+{
+    "document": {
+        "elements": [
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            86,
+                            242,
+                            214
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9988,
+                "content": "GE",
+                "description": "The image features a circular logo with a stylized \"GE\" design in white against a blue background.",
+                "id": 0,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            282,
+                            461,
+                            368
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "GE POWER\nPRODUCT SERVICE",
+                "description": null,
+                "id": 1,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1173,
+                            285,
+                            1577,
+                            371
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 1,
+                "content": "TIL 2284\nPublish Date: 05 MAY 2021",
+                "description": null,
+                "id": 2,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1310,
+                            381,
+                            1577,
+                            410
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Compliance Category - S",
+                "description": null,
+                "id": 3,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1404,
+                            415,
+                            1577,
+                            446
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 1,
+                "content": "Timing Code - 4",
+                "description": null,
+                "id": 4,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            517,
+                            457,
+                            1197,
+                            501
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "TECHNICAL INFORMATION LETTER",
+                "description": null,
+                "id": 5,
+                "type": "title"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            522,
+                            1245,
+                            556
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9987,
+                "content": "F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS",
+                "description": null,
+                "id": 6,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            585,
+                            306,
+                            613
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9966,
+                "content": "APPLICATION",
+                "description": null,
+                "id": 7,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            624,
+                            601,
+                            655
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 1,
+                "content": "6F, 7F, and 9F Heavy Duty Gas Turbines.",
+                "description": null,
+                "id": 8,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            679,
+                            256,
+                            705
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "PURPOSE",
+                "description": null,
+                "id": 9,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            715,
+                            1577,
+                            778
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight\ngroove entry slots corner and perform blending operations.",
+                "description": null,
+                "id": 10,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            822,
+                            469,
+                            851
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9992,
+                "content": "COMPLIANCE CATEGORY",
+                "description": null,
+                "id": 11,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            856,
+                            365,
+                            885
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9994,
+                "content": "M - Maintenance",
+                "description": null,
+                "id": 12,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            480,
+                            864,
+                            1360,
+                            895
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9993,
+                "content": "Identifies maintenance guidelines or best practices for reliable equipment operation.",
+                "description": null,
+                "id": 13,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            916,
+                            463,
+                            948
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "C - Compliance Required",
+                "description": null,
+                "id": 14,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            480,
+                            908,
+                            1509,
+                            1005
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9971,
+                "content": "Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced\nequipment reliability or efficiency. Compliance may be required within a specific operating time.\nFailure to comply with the TIL could result in equipment damage or facility damage. Compliance is",
+                "description": null,
+                "id": 15,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            984,
+                            275,
+                            1010
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9966,
+                "content": "A - Alert",
+                "description": null,
+                "id": 16,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            480,
+                            1010,
+                            922,
+                            1039
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "mandated within a specific operating time.",
+                "description": null,
+                "id": 17,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            1034,
+                            1577,
+                            1109
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9814,
+                "content": "<table><tr><td>S - Safety</td><td>Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.</td></tr></table>",
+                "description": null,
+                "id": 18,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            1112,
+                            306,
+                            1141
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "TIMING CODE",
+                "description": null,
+                "id": 19,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            1149,
+                            192,
+                            1177
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9988,
+                "content": "1",
+                "description": null,
+                "id": 20,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            334,
+                            1154,
+                            1135,
+                            1185
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9981,
+                "content": "Prior to Unit Startup / Prior to Continued Operation (forced outage condition)",
+                "description": null,
+                "id": 21,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            1198,
+                            192,
+                            1224
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.996,
+                "content": "2",
+                "description": null,
+                "id": 22,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            334,
+                            1206,
+                            718,
+                            1237
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9993,
+                "content": "At First Opportunity (next shutdown)",
+                "description": null,
+                "id": 23,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            1253,
+                            192,
+                            1282
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9986,
+                "content": "3",
+                "description": null,
+                "id": 24,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            334,
+                            1258,
+                            731,
+                            1290
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "Prior to Operation of Affected System",
+                "description": null,
+                "id": 25,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            1295,
+                            1577,
+                            1352
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9878,
+                "content": "<table><tr><td>4</td><td>At First Exposure of Component</td></tr></table>",
+                "description": null,
+                "id": 26,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            1360,
+                            192,
+                            1386
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9923,
+                "content": "5",
+                "description": null,
+                "id": 27,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            334,
+                            1360,
+                            913,
+                            1391
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9991,
+                "content": "At Scheduled Component Part Repair or Replacement.",
+                "description": null,
+                "id": 28,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            173,
+                            1404,
+                            192,
+                            1431
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.852,
+                "content": "6",
+                "description": null,
+                "id": 29,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            334,
+                            1410,
+                            590,
+                            1441
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "Next Scheduled Outage",
+                "description": null,
+                "id": 30,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            686,
+                            1924,
+                            1007,
+                            1953
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9988,
+                "content": "Â© 2021 General Electric Company",
+                "description": null,
+                "id": 31,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            1968,
+                            1577,
+                            2190
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9986,
+                "content": "The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.",
+                "description": null,
+                "id": 32,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1288,
+                            2211,
+                            1576,
+                            2240
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 1,
+                "content": "Date Printed: 05 MAY 2021",
+                "description": null,
+                "id": 33,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            84,
+                            502,
+                            110
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9887,
+                "content": "BACKGROUND DISCUSSION",
+                "description": null,
+                "id": 34,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            138,
+                            1576,
+                            326
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "A gas turbine rotor is an assembly of shafts, wheels, disks, and spacers. A means of balance is incorporated into each of\nthese rotor components and the various assemblies. A balance weight groove (BWG) is one example of a feature that is\nused to provide a means of balancing. The BWG is an annular channel that is machined into a rotor component that provides\na location for weights to be installed for balance purposes on either the piece part or as a rotor assembly. This annular\nchannel may contain two BWG entry slots, as shown in Figure 1, located approximately 180 degrees apart that allow for the\nbalance weights to be easily installed and located in the appropriate locations on the wheel or shaft.",
+                "description": null,
+                "id": 35,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            131,
+                            397,
+                            858,
+                            820
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 1,
+                "content": "",
+                "description": "A shiny, curved metal surface features a distinct, elongated indentation along its center.",
+                "id": 36,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            862,
+                            347,
+                            1557,
+                            869
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 1,
+                "content": "",
+                "description": "A close-up view reveals a curved, metallic surface with a prominent, angled protrusion extending from its edge.",
+                "id": 37,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            555,
+                            888,
+                            1138,
+                            919
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "Figure 1: BWG Entry Slots - Correct Machining",
+                "description": null,
+                "id": 38,
+                "type": "caption"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            984,
+                            1576,
+                            1107
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9986,
+                "content": "During non-destructive evaluation (NDE) of a distance piece (DP) as part of a rotor life extension (RLE), a crack-like\nindication was observed in the corner of a balance weight groove entry slot. Both grooves on the specific part showed similar\nindications as depicted in Figure 2. GE has inspected additional parts with similar features and observed similar indication\nfindings.",
+                "description": null,
+                "id": 39,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            398,
+                            1133,
+                            601,
+                            1355
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "",
+                "description": "The image displays a textured, vertically-oriented pattern in varying shades of green.",
+                "id": 40,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            624,
+                            1136,
+                            935,
+                            1355
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 1,
+                "content": "",
+                "description": "A blurred, vertical, rectangular shape dominates the image, with a darker, central section.",
+                "id": 41,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            956,
+                            1136,
+                            1290,
+                            1355
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.7662,
+                "content": "T",
+                "description": "A green, curved object features a red line highlighting a section along its edge.",
+                "id": 42,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            380,
+                            1389,
+                            1314,
+                            1417
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9985,
+                "content": "Figure 2: Indications Found on DP During RLE - Observed Machining Issue",
+                "description": null,
+                "id": 43,
+                "type": "caption"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1480,
+                            1576,
+                            1762
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9991,
+                "content": "Upon completion of a root cause investigation, GE determined the cause is associated with the variation in the corner\ncondition of the balance weight groove entry slots and interactions with the various stresses during gas turbine start-up,\nshutdown, and loaded operation (gravity sag, etc). Depending upon the specific nature of a units operation and the specific\ncondition of the part slot corner, crack-like indications may form over the lifetime of the component. If these crack-like\nindications propagate to a large enough size, it may be possible for continued rapid crack growth to occur associated with\ngravity sag related bending of the rotor as it rotates (high cycle fatigue related mechanism). If not mitigated, the fracture\npropagation may lead the CAS and/or DP to separate into two separate pieces. Separation of either shaft into two pieces\nmay create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO\nPERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment.",
+                "description": null,
+                "id": 44,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            686,
+                            1927,
+                            1005,
+                            1950
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9993,
+                "content": "Â© 2021 General Electric Company",
+                "description": null,
+                "id": 45,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1971,
+                            1576,
+                            2188
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9992,
+                "content": "The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.",
+                "description": null,
+                "id": 46,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1288,
+                            2214,
+                            1574,
+                            2237
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 1,
+                "content": "Date Printed: 05 MAY 2021",
+                "description": null,
+                "id": 47,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            81,
+                            408,
+                            112
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "RECOMMENDATIONS",
+                "description": null,
+                "id": 48,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            136,
+                            1577,
+                            232
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "It is recommended to perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the\nnext planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of\n378,000 equivalent cold rotor turning time.",
+                "description": null,
+                "id": 49,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            256,
+                            1564,
+                            290
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "For case where FPI is clear of any indications â€“ evaluate all the balance entry slot corner conditions with replication process.",
+                "description": null,
+                "id": 50,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            194,
+                            316,
+                            1576,
+                            501
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9934,
+                "content": "â€¢ If any balance weight entry slot corner condition presents with a <0.060\" fillet size - perform entry slot blending, FPI,\nand peening operations to mitigate the risk of crack initiation and propagation.\nâ€¢ Corner specific item - if any portion of a specific balance weight groove corner meets noted criteria, then\nperform modification machining on the entire balance weight groove entry slot corner.\nâ€¢ Fillet > 0.060\" and uniformly this size over full length of the BWG entry slot corner â€“ leave in as-found condition",
+                "description": null,
+                "id": 51,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            519,
+                            1535,
+                            553
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9982,
+                "content": "For case with observable FPI indication/indications - contact GE engineering through an ER case for technical disposition.",
+                "description": null,
+                "id": 52,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            362,
+                            621,
+                            1326,
+                            1530
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9754,
+                "content": "BWG\nEntry Slot\nLocation",
+                "description": "A cross-section view highlights a curved, slotted structure with an arrow pointing to an \"Entry Slot Location.\"",
+                "id": 53,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            552,
+                            1595,
+                            1142,
+                            1632
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9995,
+                "content": "Figure 3: Relative Location of BWG Entry Slots",
+                "description": null,
+                "id": 54,
+                "type": "caption"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            1650,
+                            1577,
+                            1874
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9967,
+                "content": "Equivalent cold rotor turning time is defined as a spinning rotor in combination with cool metal temperatures (generally\nspeaking conditions with all wheelspace temperatures measuring less than 150 degrees F). Turning gear (TG) operation,\nforced cooling operation, offline water wash operation, and unit startups are the periods where cool rotor conditions exist and\ncontribute to the overall equivalent cold rotor turning time. Equivalent refers to a standardization of the # of high cycle fatigue\ncycles for a given hour and therefore has a component associated with the accumulation of cycles relative to the rotor speed.\nFor example, at purge speed (~20% speed) versus turning gear speed (~6 rpm) a higher # of stress cycles will occur per\nminute of operation due solely to the increased rotational speed of the rotor for a given period.",
+                "description": null,
+                "id": 55,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            684,
+                            1924,
+                            1007,
+                            1953
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9984,
+                "content": "Â© 2021 General Electric Company",
+                "description": null,
+                "id": 56,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            116,
+                            1968,
+                            1577,
+                            2190
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9985,
+                "content": "The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.",
+                "description": null,
+                "id": 57,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1288,
+                            2211,
+                            1576,
+                            2240
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 1,
+                "content": "Date Printed: 05 MAY 2021",
+                "description": null,
+                "id": 58,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            84,
+                            1576,
+                            178
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 1,
+                "content": "Therefore, the equivalent cold rotor turning time impact is based around taking all cold rotational hours and converting it into\nan equivalent number of turning hours at typical turning gear speed. In order to calculate equivalent cold rotor turning time,\nGE recommends the following methods:",
+                "description": null,
+                "id": 59,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            211,
+                            664,
+                            243
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9994,
+                "content": "Equivalent Cold Rotor Turning = ECRT (hours)",
+                "description": null,
+                "id": 60,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            256,
+                            1184,
+                            313
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.957,
+                "content": "ECRT = TTG-(SFS-SFC) *X) + TFC*0.25* 20% Full Speed\n6 + (SWC* Y) + (SWW *3* 20% Full Speed\n6",
+                "description": null,
+                "id": 61,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            164,
+                            347,
+                            1271,
+                            379
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Path #1 (Unit historical recorded data through GE OSM connection or customer records)",
+                "description": null,
+                "id": 62,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            196,
+                            386,
+                            1127,
+                            454
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9691,
+                "content": "â€¢ Record the # of turning gear hours (some controllers display this value) - TTG\nâ€¢ Record the total # of fired starts â€“ SFS",
+                "description": null,
+                "id": 63,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            349,
+                            504,
+                            607,
+                            608
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9957,
+                "content": "â—¦ For 7FAs â€“ X = 24\nâ—¦ For 9FAs â€“ X = 24\nâ—¦ For 6FAs â€“ X = 18",
+                "description": null,
+                "id": 64,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            196,
+                            671,
+                            731,
+                            739
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9742,
+                "content": "â€¢ Record # of force cool downs â€“ SFC\nâ€¢ Record # of force cool down hours â€“ TFC",
+                "description": null,
+                "id": 65,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            196,
+                            788,
+                            563,
+                            929
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9861,
+                "content": "â€¢ Unit Full Speed\nâ—¦ For 7FAs â€“ 3600 rpm\nâ—¦ For 9FAs â€“ 3000 rpm\nâ—¦ For 6FAs â€“ 5250 rpm",
+                "description": null,
+                "id": 66,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            196,
+                            992,
+                            1576,
+                            1057
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.983,
+                "content": "â€¢ Record the # of cooler starts unit has completed (defined as the # of warm 2 and cold starts per the definitions in\nGER-3620 (latest revision â€“ definition is provided in figure 22). - SWC",
+                "description": null,
+                "id": 67,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            275,
+                            1065,
+                            762,
+                            1170
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.8882,
+                "content": "â—¦ Start Up Factor\nâ—¦ Simple Cycle Unit (SC)      Y = 72\nâ—¦ Combined Cycle Unit (CC)   Y = 86",
+                "description": null,
+                "id": 68,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            196,
+                            1230,
+                            803,
+                            1261
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9472,
+                "content": "â€¢ Record # of offline water wash operations â€“ Sww",
+                "description": null,
+                "id": 69,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1308,
+                            1576,
+                            1404
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "Note: If unit has greater than 50% of their operation covered by On-Site Monitoring (OSM) connection recorded data, then\nratio data up to cover 100% of operation with this data, if less than 50% utilize customer records or memory to determine if\n50% covered by OSM connected data is appropriate to cover overall unit operation.",
+                "description": null,
+                "id": 70,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            166,
+                            1431,
+                            790,
+                            1462
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Path #2 (if do not have data available for path #1):",
+                "description": null,
+                "id": 71,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            196,
+                            1493,
+                            1127,
+                            1671
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.974,
+                "content": "â€¢ Record the # of turning gear hours (some controllers display this value) - T TG\nâ€¢ Record the total # of fired starts â€“ SFs\nâ—¦ For 7FAs â€“ X = 24\nâ—¦ For 9FAs â€“ X = 24\nâ—¦ For 6FAs â€“ X = 18",
+                "description": null,
+                "id": 72,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            196,
+                            1731,
+                            1031,
+                            1765
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9121,
+                "content": "â€¢ Utilize average % of cooler starts value assumption - SWC=\nSFs*0.72",
+                "description": null,
+                "id": 73,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            275,
+                            1770,
+                            703,
+                            1874
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.867,
+                "content": "â—¦ Start Up Factor\nâ—¦ Simple Cycle Unit        Y = 72\nâ—¦ Combined Cycle Unit Y = 86",
+                "description": null,
+                "id": 74,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            688,
+                            1927,
+                            1005,
+                            1950
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9983,
+                "content": "Â© 2021 General Electric Company",
+                "description": null,
+                "id": 75,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1968,
+                            1576,
+                            2188
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9983,
+                "content": "The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.",
+                "description": null,
+                "id": 76,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1288,
+                            2214,
+                            1576,
+                            2237
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 1,
+                "content": "Date Printed: 05 MAY 2021",
+                "description": null,
+                "id": 77,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            190,
+                            81,
+                            1112,
+                            225
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9939,
+                "content": "â€¢ Utilize average % of force cool downs value assumption â€“ TFC= SFS*0.05*Z\nâ—¦ For 7FAs â€“ Z = 8\nâ—¦ For 9FAs â€“ Z = 12\nâ—¦ For 6FAs â€“ Z = 24",
+                "description": null,
+                "id": 78,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            290,
+                            446,
+                            321
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Example ECRT Calculation:",
+                "description": null,
+                "id": 79,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            376,
+                            404,
+                            407
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 1,
+                "content": "Combined Cycle 7FA.03",
+                "description": null,
+                "id": 80,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            131,
+                            454,
+                            1576,
+                            726
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9969,
+                "content": "<table><tr><th>T<sub>TG</sub></th><th>S<sub>FS</sub></th><th>S<sub>FC</sub></th><th>X</th><th>T<sub>FC</sub></th><th>S<sub>Wc</sub></th><th>Y</th><th>S<sub>WW</sub></th></tr><tr><td>Turning Gear Time (hours)</td><td>Number of Fired Starts</td><td>Number of Forced Cool Downs</td><td>Frame Size Factor</td><td>Forced Cool Time (hours)</td><td>Number of Cool Starts</td><td>SC or CC Factor</td><td>Number of Offline Water Washes</td></tr><tr><td>40,000</td><td>1,900</td><td>240</td><td>24</td><td>4800</td><td>1300</td><td>86</td><td>40</td></tr></table>",
+                "description": null,
+                "id": 81,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            820,
+                            1197,
+                            880
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9782,
+                "content": "ECRT = 40,000 â€“ (1,900-240) *24 + 4800*0.25*\n20% of 3600\n6\n+ (1300*86) +(40*3*\n20% of 3600\n6",
+                "description": null,
+                "id": 82,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            916,
+                            391,
+                            945
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "ECRT = 270,360 hours",
+                "description": null,
+                "id": 83,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1010,
+                            1576,
+                            1073
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9595,
+                "content": "This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified.\nPlease contact your GE Service Representative for any questions associated with the implementation of this TIL.",
+                "description": null,
+                "id": 84,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1102,
+                            465,
+                            1130
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "PLANNING INFORMATION",
+                "description": null,
+                "id": 85,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1156,
+                            268,
+                            1188
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "Compliance",
+                "description": null,
+                "id": 86,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1193,
+                            417,
+                            1261
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9994,
+                "content": "â€¢ Compliance Category: S\nâ€¢ Timing Code: 4",
+                "description": null,
+                "id": 87,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1300,
+                            323,
+                            1331
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Manpower Skills",
+                "description": null,
+                "id": 88,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            190,
+                            1334,
+                            1576,
+                            1444
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9983,
+                "content": "â€¢ GE qualified specialist to perform FPI (in service center can substitute MPI inspection for FPI inspection based on\nservice center capability)\nâ€¢ GE qualified machinist with appropriate tooling to perform blending and peening operations",
+                "description": null,
+                "id": 89,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1501,
+                            310,
+                            1532
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Special Tooling",
+                "description": null,
+                "id": 90,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            190,
+                            1538,
+                            708,
+                            1645
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9994,
+                "content": "â€¢ BWG Entry Slot Portable Machining Tool\nâ€¢ FPI inspection capability\nâ€¢ Flapper peening kit",
+                "description": null,
+                "id": 91,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1699,
+                            301,
+                            1731
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 1,
+                "content": "Scope of Work",
+                "description": null,
+                "id": 92,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            190,
+                            1736,
+                            1255,
+                            1882
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "â€¢ FPI to inspect BWG entry slot pre-blending condition\nâ€¢ Set up BWG Entry Slot tool and perform blending operation\nâ€¢ FPI to inspect BWG entry slot post-blending condition\nâ€¢ Flapper peen the modified geometry post machining and post machining successful FPI",
+                "description": null,
+                "id": 93,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            686,
+                            1924,
+                            1007,
+                            1953
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9989,
+                "content": "Â© 2021 General Electric Company",
+                "description": null,
+                "id": 94,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1968,
+                            1579,
+                            2190
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9989,
+                "content": "The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.",
+                "description": null,
+                "id": 95,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1288,
+                            2211,
+                            1574,
+                            2240
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 1,
+                "content": "Date Printed: 05 MAY 2021",
+                "description": null,
+                "id": 96,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            84,
+                            347,
+                            112
+                        ],
+                        "page_id": 5
+                    }
+                ],
+                "confidence": 0.9974,
+                "content": "TIL DISPOSITION",
+                "description": null,
+                "id": 97,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            157,
+                            1576,
+                            472
+                        ],
+                        "page_id": 5
+                    }
+                ],
+                "confidence": 0.9961,
+                "content": "Disposition of TILs should be entered in local records and also in GE Power ServiceNow. Follow the below instructions for entering the disposition record;\nâ€¢ Log into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/ using your GE SSO number and password.\nâ€¢ Select \"TIL Disposition\".\nâ€¢ Click on the TIL for the serial number you want to update.\nâ€¢ Choose the most appropriate \"Disposition Status\" and enter \"Disposition Notes\".\nâ€¢ Click \"Save\".",
+                "description": null,
+                "id": 98,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            499,
+                            1127,
+                            527
+                        ],
+                        "page_id": 5
+                    }
+                ],
+                "confidence": 1,
+                "content": "Contact your local GE Services representative for assistance or for additional information",
+                "description": null,
+                "id": 99,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            686,
+                            1927,
+                            1005,
+                            1950
+                        ],
+                        "page_id": 5
+                    }
+                ],
+                "confidence": 0.9993,
+                "content": "Â© 2021 General Electric Company",
+                "description": null,
+                "id": 100,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            118,
+                            1971,
+                            1576,
+                            2188
+                        ],
+                        "page_id": 5
+                    }
+                ],
+                "confidence": 0.9992,
+                "content": "The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your\norganization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e.\ndirect, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly\nliable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer\nsolely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.",
+                "description": null,
+                "id": 101,
+                "type": "page_footer"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1288,
+                            2214,
+                            1574,
+                            2237
+                        ],
+                        "page_id": 5
+                    }
+                ],
+                "confidence": 1,
+                "content": "Date Printed: 05 MAY 2021",
+                "description": null,
+                "id": 102,
+                "type": "page_footer"
+            }
+        ],
+        "pages": [
+            {
+                "id": 0,
+                "image_uri": null
+            },
+            {
+                "id": 1,
+                "image_uri": null
+            },
+            {
+                "id": 2,
+                "image_uri": null
+            },
+            {
+                "id": 3,
+                "image_uri": null
+            },
+            {
+                "id": 4,
+                "image_uri": null
+            },
+            {
+                "id": 5,
+                "image_uri": null
+            }
+        ]
+    },
+    "error_status": null,
+    "metadata": {
+        "file_metadata": null,
+        "id": "902d2fbb-7cc4-40df-8876-8149e74555e1",
+        "version": "2.0"
+    }
+}

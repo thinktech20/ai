@@ -1,0 +1,191 @@
+{
+  "til_number": "TIL 1972",
+  "revision": "R2",
+  "title": "F-CLASS CONICAL FLAT SLOT BOTTOM (FSB) COMPRESSOR WHEEL RECOMMENDATIONS",
+  "publish_date": "2017-07-07",
+  "reason_for_revision": "Included inspection recommendations for units which have Fast Ramp product installed. Update TIL to include following information: 1) Updated operational impact recommendations 2) Incorporated load swing as factor in re-inspection interval analysis 3) Incorporated forced cool recommendation statement 4) Removed inspection of CW12 and CW13 forward during UT inspections to eliminate need to remove mid-compressor case (only require CDC removal to complete UT inspection).",
+  "purpose": "Provide users with inspection, repair, rebuild, and operational recommendations for compressor rotors with Flat Slot Bottom (FSB) dovetails in the Stage 12-17 compressor wheels. Failure to comply with this TIL could result in compressor damage and potential material liberation through the casing.",
+  "compliance_category_code": "S",
+  "compliance_category_text": "Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Next Scheduled Outage",
+  "scope_of_work": [
+    "Identify applicability: units with 7FA.02, 7FA.03, 7FA.04, 9FA.02, 9FA.03, and 9FA.04 compressor configurations with one or more Stage 12-17 Flat Slot Bottom (FSB) compressor rotor wheels (not applicable to Round Slot Bottom (RSB) wheels/shafts).",
+    "Perform GE LES-led inspections for dovetail indications on affected Stage 12-17 compressor wheels using BI/digital microscope/FPI/UT depending on access (CDC installed vs upper half CDC removed), including cleaning prior to digital microscope inspection and traceable slot identification/recording for comparison at subsequent inspections.",
+    "If rotor is in a GE service shop, perform up-close inspection and measurement of dovetail indications on all Stage 12-17 wheels.",
+    "Where applicable and feasible, perform GE-developed repairs to remove indications on Stage 12-17 FSB compressor wheels; consider monitoring strategy constraints for Stage 17 shaft indications when only BI monitoring is available.",
+    "For permanent removal from applicability, rebuild by replacing existing FSB wheels with RSB wheels (Stages 12-17).",
+    "Implement operational actions to delay initiation/slow propagation (minimize start/stop, manage load swings, minimize forced cool-downs, FSNL hold on shutdown, warm restarts, minimize Fast Starts; avoid certain OpFlex Fast Start features such as Fast Acceleration and Fast Load on units with FSB Stage 12-17 wheels).",
+    "Apply decreasing load swing factors (Table 1) to re-inspection interval calculations only after indications/cracks have been observed, per stated rules (decreasing-only, >1 MW/min, based on % full load, with minimum 30-minute hold between decreasing moves)."
+  ],
+  "service_recommendation_line_items": [
+    "Units without OpFlex Fast Ramp installed: inspect affected rotors between 1,700 and 2,200 actual fired starts.",
+    "Units with OpFlex Fast Ramp installed: inspect affected rotors between 1,300 and 1,800 actual fired starts.",
+    "If only inspection possible with upper half of CDC installed: perform borescope inspection (BI) of aft rim face of Stage 17 wheel (and possibly forward rim face of Stage 17 and aft rim face of Stage 16).",
+    "If upper half of CDC can be removed: perform digital microscope inspection of aft rim face of Stage 17 wheel; if not possible, perform FPI; and perform UT of forward rim face of Stage 17 wheel and both rim faces of Stage 13 aft-16 wheels.",
+    "Prior to digital microscope inspection: thoroughly clean the aft rim face around dovetail slots and compressor wheel/shaft rims to ensure clear visibility of indications.",
+    "Identify and record dovetail slots in a traceable manner so subsequent inspection data can be compared.",
+    "If Stage 13-17 wheels have already exceeded 1,800 actual fired starts (with OpFlex Fast Ramp) or 2,200 actual fired starts (without OpFlex Fast Ramp), or there is a large difference in actual fired starts between Stage 17 and one or more of Stage 13-16 wheels: contact GE Power service representative for assistance.",
+    "When an affected rotor is in a GE service shop: inspect all Stage 12-17 wheels up close for dovetail indications and measure by shop personnel.",
+    "Operational: minimize start-up and shutdown; for sites with multiple FSB units, prioritize start-ups and shutdowns to units with lower start rotors.",
+    "Operational: utilize turndown when possible in lieu of shutting down; once indications have been detected, account for decreasing-direction load swings in re-inspection interval analysis using the stated load swing factors and rules.",
+    "Operational: minimize forced cool-downs; if forced cool is required, shutdown following a normal shutdown sequence and cool down at turning gear speed for 8 hours before placing into forced cool (or crank cool).",
+    "Operational: perform a Full Speed No Load (FSNL) hold upon shutdown when feasible (at least 30 minutes, up to 60 minutes).",
+    "Operational: perform warm restarts (within 8-10 hours of shutdown) to the maximum extent possible.",
+    "Operational: minimize Fast Starts as much as possible.",
+    "Operational: OpFlex Fast Start features (Fast Acceleration and Fast Load) are not recommended on units with FSB Stage 12-17 compressor wheels; contact GE Power representatives regarding installed/planned modifications.",
+    "Repairs: GE-developed repairs are available for Stage 12-17 FSB compressor wheels to remove indications; feasibility depends on component and rotor condition (disassembled in GE service center, at site on rotor stands, or in the unit).",
+    "Repairs (monitoring constraint): if rotor will not be disassembled and only option for monitoring indication growth on the Stage 17 shaft over an extended period is via BI, GE recommends not repairing Stage 17 shaft indications even if within repair limits.",
+    "Rebuild: replace existing FSB wheels with RSB wheels (Stages 12-17) to permanently remove rotor from applicability of this TIL."
+  ],
+  "completion_criteria_text": "Inspections performed will be certified as complete and accurate by GE. Dovetail slots shall be identified and recorded in a traceable manner such that subsequent inspection data can be compared.",
+  "maintenance_trigger_text": "Inspection requirement is based on accumulated actual fired starts on one or more of the Stage 12-17 compressor wheels, with different start-count windows depending on whether OpFlex Fast Ramp is installed. Load swing factoring is required only once indications/cracks have been observed in an inspection and applies to decreasing load swings per stated rules.",
+  "recommended_interval_or_trigger": [
+    "Inspect affected rotors accumulating between 1,300 and 2,200 actual fired starts on one or more of the Stage 12-17 compressor wheels (specific window depends on OpFlex Fast Ramp installation).",
+    "Apply decreasing load swing factors to dispositioned re-inspection intervals only after indications/cracks have been observed; factors apply only to decreasing load swings above 1 MW/min, based on % of full load, with minimum 30-minute hold between decreasing moves."
+  ],
+  "usage_counters_to_check_or_consider": [
+    "starts"
+  ],
+  "usage_counter_requirements_text": "Inspection windows are defined in terms of \"actual fired starts\" on one or more of the Stage 12-17 compressor wheels; GE can assist with determining the actual fired starts of the Stage 13-17 compressor rotor wheels if this figure differs from the unit fired starts. Once indications/cracks have been observed, decreasing load swings are factored as a \"Factor of an Actual Fired Start per Load Swing\" for re-inspection interval analysis.",
+  "frame_or_model_applicability_text": "Units with 7FA.02, 7FA.03, 7FA.04, 9FA.02, 9FA.03, and 9FA.04 compressor configurations in which one or more of the Stage 12-17 compressor rotor wheels have the Flat Slot Bottom (FSB) configuration.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Applies to compressor rotors with Flat Slot Bottom (FSB) dovetails in Stage 12-17 compressor wheels; does not apply to units with Round Slot Bottom (RSB) wheels/shafts. Inspection start-count windows differ for units with OpFlex Fast Ramp installed vs not installed. Inspection technique depends on whether the upper half of the Compressor Discharge Casing (CDC) can be removed.",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": "This notification does not apply to units with Round Slot Bottom (RSB) wheels/shafts.",
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Timing Code - 6 (Next Scheduled Outage). Inspection access conditions: if upper half of CDC is installed, BI is performed; if upper half of CDC can be removed, digital microscope/FPI and UT inspections may be utilized. Rotor may be inspected in the unit with upper half casings off with ability to turn the rotor, or out of the unit on stands.",
+  "sbom_dependency_flag": false,
+  "sbom_trigger_reason": null,
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "Stage 12-17 compressor rotor wheels with Flat Slot Bottom (FSB) dovetails (Flat Bottom Slot (FBS) terminology also used).",
+      "required_inspection_types": [],
+      "source_location": "APPLICATION / BACKGROUND DISCUSSION"
+    },
+    {
+      "part_number": null,
+      "context": "Round Slot Bottom (RSB) compressor wheels (Round Bottom Slot (RBS) terminology also used) referenced as rebuild replacement to permanently remove applicability.",
+      "required_inspection_types": [],
+      "source_location": "Rebuild section / Note on terminology"
+    },
+    {
+      "part_number": null,
+      "context": "Compressor Discharge Casing (CDC) referenced as access constraint for BI vs digital microscope/FPI/UT inspections.",
+      "required_inspection_types": [
+        "BI",
+        "FPI",
+        "UT"
+      ],
+      "source_location": "RECOMMENDATIONS – Inspections"
+    },
+    {
+      "part_number": null,
+      "context": "Stage 17 wheel aft rim face (and possibly Stage 17 forward rim face and Stage 16 aft rim face) referenced for BI/digital microscope/FPI inspections.",
+      "required_inspection_types": [
+        "BI",
+        "FPI"
+      ],
+      "source_location": "RECOMMENDATIONS – Inspections"
+    },
+    {
+      "part_number": null,
+      "context": "Stage 17 wheel forward rim face and both rim faces of the Stage 13 aft-16 wheels referenced for UT when upper half of CDC can be removed.",
+      "required_inspection_types": [
+        "UT"
+      ],
+      "source_location": "RECOMMENDATIONS – Inspections"
+    },
+    {
+      "part_number": null,
+      "context": "CW12 and CW13 forward referenced as no longer required for field UT inspection; CW12 must be changed out concurrently when CW13 thru CW17 flat slot bottom wheels are replaced.",
+      "required_inspection_types": [
+        "UT"
+      ],
+      "source_location": "RECOMMENDATIONS – Inspections (parenthetical note)"
+    },
+    {
+      "part_number": null,
+      "context": "Stage 17 shaft indications referenced for repair decision when only borescope monitoring is available.",
+      "required_inspection_types": [
+        "BI"
+      ],
+      "source_location": "Repairs section"
+    }
+  ],
+  "reference_documents": [],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Compressor wheel dovetail configuration: Flat Slot Bottom (FSB/FBS) vs Round Slot Bottom (RSB/RBS)",
+    "OpFlex Fast Ramp installed vs not installed",
+    "Inspection access condition: upper half of Compressor Discharge Casing (CDC) installed vs removable",
+    "Load movement direction (decreasing vs increasing) and load swing rate (>1 MW/min vs ≤1 MW/min) for applying load swing factors after indications are observed"
+  ],
+  "configuration_summary": "Applicability and inspection windows depend on whether Stage 12-17 wheels are FSB and whether OpFlex Fast Ramp is installed. Inspection method depends on CDC access. After indications are observed, re-inspection interval analysis depends on decreasing load swing magnitude (% of unit full load) and rate (>1 MW/min) per Table 1 rules.",
+  "severity_signals": [
+    "Dovetail indications can initiate after a few hundred start-up/shutdown cycles and may be measurable during inspection after approximately 1,700 to 2,200 starts on the rotor.",
+    "Recent empirical observations show appreciable crack dimensions in rotors having greater than 1,700 to 2,200 accumulated starts."
+  ],
+  "failure_consequences": [
+    "Compressor damage and potential material liberation through the casing.",
+    "Blade liberation due to weakened post between dovetail slots from axial crack growth.",
+    "High Cycle Fatigue (HCF) effects such as fretting wear on the wheel, blade cracking, and possible blade liberation.",
+    "Wheel burst that may not be contained by the casing if cracks propagate into the wheel web."
+  ],
+  "risk_summary": "Thermal transients during start-up and shutdown elevate stresses at acute corners of FSB dovetail slots in Stage 12-17 wheels, leading to crack initiation and propagation; progression can change blade retention characteristics and potentially result in blade liberation or an uncontained wheel burst.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Table 1: Decreasing Load Swing Factors",
+      "table_description": "Maps decreasing load swing % range (based on unit full load capability) to a factor of an actual fired start per load swing (e.g., 55%–70% => 0.13; 40%–<55% => 0.10; 25%–<40% => 0.07; 10%–<25% => 0.03; <10% => 0.00).",
+      "useful_for_downstream": true,
+      "reason": "Provides quantitative factors required for re-inspection interval analysis once indications/cracks have been observed."
+    }
+  ],
+  "missing_information_flags": [
+    "No explicit re-inspection interval values are provided; document states GE will evaluate inspection results and provide an operational recommendation and re-inspection interval.",
+    "No specific part numbers or kit numbers are provided for repairs or rebuild (document directs users to contact GE representatives for options).",
+    "No explicit criteria defining what constitutes a \"large difference\" in actual fired starts between Stage 17 and Stage 13-16 wheels."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "Provide users with inspection, repair, rebuild, and operational recommendations for compressor rotors with Flat Slot Bottom (FSB) dovetails in the Stage 12-17 compressor wheels. Failure to comply with this TIL could result in compressor damage and potential material liberation through the casing."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "Units without OpFlex Fast Ramp installed – Inspect between 1,700 and 2,200 actual fired starts\nUnits with OpFlex Fast Ramp installed – Inspect between 1,300 and 1,800 actual fired starts"
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "If the rotor can only be inspected with the upper half of the Compressor Discharge Casing (CDC) installed, then a borescope inspection (BI) will be performed of the aft rim face of the Stage 17 wheel."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "In addition to the digital microscope inspection or FPI, the forward rim face of the Stage 17 wheel – and both rim faces of the Stage 13 aft-16 wheels – should be inspected via ultrasonic testing (UT) when the upper half of the CDC can be removed."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "Dovetail slots shall be identified and recorded in a traceable manner such that subsequent inspection data can be compared."
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "Crack growth axially within the dovetail slot can eventually weaken the post between the dovetail slots, making the compressor susceptible to blade liberation."
+    },
+    {
+      "field": "failure_consequences",
+      "snippet": "In this scenario, the structural integrity of the wheel could be affected and potentially lead to a wheel burst that may not be contained by the casing."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "These load swing factors are only required to be applied to load swings that involve a load decrease (load increasing movements are not required to be factored and may be at normal load movement rates without any factor to apply)."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "These load swing factors apply for all load swing rates above 1 MW/min. Decreasing load movements completed at 1 MW/min or less have no applied factor regardless of the load swing amount."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

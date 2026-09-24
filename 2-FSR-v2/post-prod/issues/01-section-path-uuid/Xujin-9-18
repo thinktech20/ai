@@ -1,0 +1,72 @@
+(1) OUTAGE DETAILS and all Summary section (1 Summary) in body context is missing: c9ed4e93-8408-4371-9f90-4e8641dd1ee6. "2 Technical" missing in 27fa1fe0-369e-456f-b795-d9a9fc9cd52d
+ 
+p.s.: 1.2 Executive Summary is detected successfully, only 1 Summary is not there
+ 
+(2) c9ed4e93-8408-4371-9f90-4e8641dd1ee6: the 5 PIPO section got ##, which falls into the  a wrong hierarchy.  In 90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7 section "7 PIPO" also got ##, not sure if it is caused by after attachments, or caused by PIPO itself
+Page 283 | SECTION_HDR  | lvl= 0 | conf= 78 | Gas Turbine    | ESN: (fallback)   | "4 Quality Checkpoint (QCP)"
+
+  Page 284 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 4.1 Attachments"
+
+  Page 297 | SECTION_HDR  | lvl= 0 | conf= 78 | Gas Turbine    | ESN: (fallback)   | "## 5 PIPO"
+
+  Page 298 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 299 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 300 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 301 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 302 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 5.2 Hot Gas Path"
+ 
+(3) 27fa1fe0-369e-456f-b795-d9a9fc9cd52d: the cut off issue "3.1.3 packaged electrical / electronic control compartment (PEECC)"-->"### 3.1.3 packaged electrical / electronic control compartme" 
+ 
+(4) in 27fa1fe0-369e-456f-b795-d9a9fc9cd52d the last 3.1 Attachments is missing, in 90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7, 6.1 Attachments and 8.1Attachments are missing. However in c9ed4e93-8408-4371-9f90-4e8641dd1ee6, 4.1 attachments are there.
+Refer to screenshot - ai-arch/2-FSR-v2/post-prod/issues/01-section-path-uuid/reference/4th-point.png
+ 
+(5) in 90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7, there area a lot of Generator unnumbered noise, it might comes from those "Generator flange above (mils)"
+
+Refer to screenshot - ai-arch/2-FSR-v2/post-prod/issues/01-section-path-uuid/reference/5th-point.png
+ 
+Similarly in 3d156a24-2bb9-4ccd-a81e-c122c39aa3ac, There are noise like "Steam Turbine", "Generator", as well as :
+Page 104 | SUBSEC       | lvl= 1 | conf= 70 | Steam Turbine  | ESN: (fallback)   | "## 33.3 rps).",
+  Page 274 | SUBSEC       | lvl= 1 | conf= 70 | Steam Turbine  | ESN: (fallback)   | "## 14.00 Mils"
+
+  Page 274 | SUBSEC       | lvl= 1 | conf= 70 | Steam Turbine  | ESN: (fallback)   | "## 10.83 Mils"
+ 
+I feel there should be a way to discard those, as even if we don't look at the documents, we can know that those stuff between 3.9.3 and 3.9.4 are not very correct right?
+ 
+The noises are basically the only main issue, if we had to do some trade-off, I would prefer a more aggressive "guardrail", i.e., I can accept that the content in Appendix section/sub-reports (which does not exist in primary ToC) to be not detected. 
+ 
+But check on your PC first, On my local run, there might be some pymupdf error
+ 
+Zhou, Xujin (GE Vernova)
+The noises are basically the only main issue, if we had to do some trade-off, I would prefer a more aggressive "guardrail", i.e., I can accept that the content in Appendix section/sub-reports (which…
+Or we can throw every thing not in primary ToC detected to +1 level of the current section?
+
+Refer to screenshot - ai-arch/2-FSR-v2/post-prod/issues/01-section-path-uuid/reference/last-ques.png
+
+Like those noises + sub reports ToCs under 4.13.2, we just put it under 4.13.2, until we detect net 4.14, which matches Primary ToC, we continue regularly?
+ 
+like for c9ed4e93-8408-4371-9f90-4e8641dd1ee6, we are doing good in sub-report ToC detection, it successfully put them under section 6, although ideally it should be put under 6.1/
+ 
+  Page 327 | SECTION_HDR  | lvl= 0 | conf= 78 | Gas Turbine    | ESN: (fallback)   | "6 Appendix"
+
+  Page 328 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 6.1 Attachments"
+
+  Page 331 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 1.0 General Comments"
+
+  Page 331 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 1.1 General observations & events."
+
+  Page 332 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 2.0 Induction – Training / Certifications"
+
+  Page 332 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 3.0 EHS Meetings"
+
+  Page 332 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 4.0 Audits / Inspections"
+
+  Page 333 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 5.0 Safety Performance"
+
+  Page 333 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 6.0 Critical Lifts"
+
+  Page 334 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 7.0 Summary"
+ 

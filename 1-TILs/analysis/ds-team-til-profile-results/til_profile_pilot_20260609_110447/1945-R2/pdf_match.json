@@ -1,0 +1,11 @@
+{
+  "source": "workspace_sample_pdf",
+  "pdf_path": "C:\\Users\\560068861\\Code\\alexis_scoping\\context\\data\\workspace_notes\\samples\\TILs\\databricks_top25\\TIL 1945-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf",
+  "file_name": "TIL 1945-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf",
+  "til_number": "1945-R2",
+  "normalized_til_key": "1945-R2",
+  "base_til_num": "1945",
+  "revision_number": 2,
+  "match_type": "exact_til_number",
+  "requested_til_number": "1945-R2"
+}

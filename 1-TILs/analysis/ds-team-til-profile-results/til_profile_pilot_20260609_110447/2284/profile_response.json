@@ -1,0 +1,164 @@
+{
+  "requested_til": "2284",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 2284",
+    "revision": null,
+    "title": "F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS",
+    "publish_date": "2021-05-05",
+    "reason_for_revision": null,
+    "purpose": "To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations.",
+    "compliance_category_code": "S",
+    "compliance_category_text": "Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "HGP or MI",
+    "scope_of_work": [
+      "FPI to inspect BWG entry slot pre-blending condition",
+      "Set up BWG Entry Slot tool and perform blending operation",
+      "FPI to inspect BWG entry slot post-blending condition",
+      "Flapper peen the modified geometry post machining and post machining successful FPI"
+    ],
+    "service_recommendation_line_items": [
+      "Perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned HGP or MI outage at or before the rotor reaches 378,000 equivalent cold rotor turning time (ECRT) hours",
+      "For FPI clear cases - evaluate all balance entry slot corner conditions with replication process",
+      "If any balance weight entry slot corner condition presents with a <0.060\" fillet size - perform entry slot blending, FPI, and peening operations",
+      "If any portion of a specific balance weight groove corner meets the <0.060\" fillet criteria, perform modification machining on the entire BWG entry slot corner",
+      "Fillet >0.060\" and uniformly this size over full length of the BWG entry slot corner - leave in as-found condition",
+      "For cases with observable FPI indication/indications - contact GE engineering through an ER case for technical disposition",
+      "In service center, MPI inspection may be substituted for FPI inspection based on service center capability"
+    ],
+    "completion_criteria_text": "This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified.",
+    "maintenance_trigger_text": "At first exposure of component (Timing Code 4); next planned HGP or MI outage at or before rotor reaches 378,000 equivalent cold rotor turning time hours.",
+    "recommended_interval_or_trigger": [
+      "At first exposure of component (Timing Code 4)",
+      "Next planned HGP or MI outage at or before rotor reaches 378,000 equivalent cold rotor turning time (ECRT) hours"
+    ],
+    "usage_counters_to_check_or_consider": [
+      "turning_gear_hours",
+      "fired_starts",
+      "forced_cool_downs",
+      "forced_cool_hours",
+      "cool_starts",
+      "offline_water_washes",
+      "equivalent_cold_rotor_turning_time"
+    ],
+    "usage_counter_requirements_text": "Equivalent Cold Rotor Turning Time (ECRT) must be calculated using turning gear hours, fired starts, forced cool downs, forced cool hours, cool starts (warm 2 and cold starts per GER-3620), and offline water washes. ECRT = TTG - ((SFS-SFC)*X) + TFC*0.25*(20% Full Speed / 6) + (Swc*Y) + (Sww*3*(20% Full Speed / 6)). Inspection required at or before 378,000 ECRT hours.",
+    "frame_or_model_applicability_text": "6F, 7F, and 9F Heavy Duty Gas Turbines",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots. Applicable to components with BWG entry slots containing corner fillet size <0.060\".",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": "Fillet >0.060\" and uniformly this size over full length of the BWG entry slot corner - leave in as-found condition (no modification required).",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Requires rotor exposure during HGP or MI outage. Component must be accessible for FPI/MPI and potential machining operations.",
+    "sbom_dependency_flag": false,
+    "sbom_trigger_reason": null,
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Compressor Aft Shaft (CAS) - balance weight groove entry slots requiring FPI inspection and potential blending",
+        "required_inspection_types": [
+          "FPI",
+          "MPI"
+        ],
+        "source_location": "Recommendations section, page 3"
+      },
+      {
+        "part_number": null,
+        "context": "Distance Piece (DP) - balance weight groove entry slots requiring FPI inspection and potential blending",
+        "required_inspection_types": [
+          "FPI",
+          "MPI"
+        ],
+        "source_location": "Recommendations section, page 3"
+      },
+      {
+        "part_number": null,
+        "context": "BWG Entry Slot Portable Machining Tool - special tooling required for blending operation",
+        "required_inspection_types": [],
+        "source_location": "Planning Information - Special Tooling, page 5"
+      },
+      {
+        "part_number": null,
+        "context": "Flapper peening kit - required for peening modified geometry post machining",
+        "required_inspection_types": [],
+        "source_location": "Planning Information - Special Tooling, page 5"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "GER-3620",
+        "document_type": "Other",
+        "context": "Referenced for definition of warm 2 and cold starts (figure 22, latest revision) used in ECRT calculation"
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Frame size (6FA, 7FA, 9FA)",
+      "Simple Cycle vs Combined Cycle",
+      "BWG entry slot corner fillet size (<0.060\" vs >0.060\")",
+      "Unit full speed (3600, 3000, or 5250 rpm)"
+    ],
+    "configuration_summary": "ECRT calculation parameters vary by frame size (X factor: 6FA=18, 7FA=24, 9FA=24; full speed: 6FA=5250rpm, 7FA=3600rpm, 9FA=3000rpm; forced cool Z factor: 6FA=24, 7FA=8, 9FA=12) and by cycle type (SC Y=72, CC Y=86). Blending action depends on measured fillet size at BWG entry slot corners.",
+    "severity_signals": [
+      "Compliance Category S - Safety",
+      "INJURY TO PERSONNEL/INDIVIDUALS",
+      "substantial damage to adjacent equipment",
+      "Separation of either shaft into two separate pieces",
+      "components to exit the gas turbine",
+      "rapid crack growth",
+      "high cycle fatigue related mechanism"
+    ],
+    "failure_consequences": [
+      "Crack-like indications may form over the lifetime of the component at BWG entry slot corners",
+      "If crack-like indications propagate to large enough size, continued rapid crack growth may occur associated with gravity sag related bending (high cycle fatigue)",
+      "Fracture propagation may lead the CAS and/or DP to separate into two separate pieces",
+      "Separation may create possibility for components to exit the gas turbine",
+      "Possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment"
+    ],
+    "risk_summary": "Variation in BWG entry slot corner condition combined with operational stresses (gravity sag, startup/shutdown) can initiate crack-like indications that may propagate via high cycle fatigue, potentially leading to CAS or DP shaft separation, component ejection from the gas turbine, personnel injury, and substantial equipment damage.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "ECRT Calculation Parameters",
+        "table_description": "Table on page 5 showing ECRT calculation variables (TTG, SFS, SFC, X, TFC, Swc, Y, Sww) with definitions and example values for a Combined Cycle 7FA.03",
+        "useful_for_downstream": true,
+        "reason": "Required for calculating equivalent cold rotor turning time to determine inspection timing threshold of 378,000 hours"
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for CAS or DP",
+      "No MLI numbers referenced",
+      "No specific serial number applicability listed",
+      "No detailed blending geometry specifications provided in TIL text (likely requires GE specialist)"
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "If not mitigated, the fracture propagation may lead the CAS and/or DP to separate into two separate pieces. Separation of either shaft into two pieces may create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "It is recommended to perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If any balance weight entry slot corner condition presents with a <0.060\" fillet size - perform entry slot blending, FPI, and peening operations to mitigate the risk of crack initiation and propagation."
+      },
+      {
+        "field": "configuration_summary",
+        "snippet": "Simple Cycle Unit (SC) Y = 72; Combined Cycle Unit (CC) Y = 86"
+      }
+    ],
+    "extraction_confidence": 0.92
+  },
+  "raw_profile": "```json\n{\n  \"til_number\": \"TIL 2284\",\n  \"revision\": null,\n  \"title\": \"F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS\",\n  \"publish_date\": \"2021-05-05\",\n  \"reason_for_revision\": null,\n  \"purpose\": \"To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations.\",\n  \"compliance_category_code\": \"S\",\n  \"compliance_category_text\": \"Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.\",\n  \"recurring_indicator_if_found\": null,\n  \"coarse_outage_type\": \"HGP or MI\",\n  \"scope_of_work\": [\n    \"FPI to inspect BWG entry slot pre-blending condition\",\n    \"Set up BWG Entry Slot tool and perform blending operation\",\n    \"FPI to inspect BWG entry slot post-blending condition\",\n    \"Flapper peen the modified geometry post machining and post machining successful FPI\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"Perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned HGP or MI outage at or before the rotor reaches 378,000 equivalent cold rotor turning time (ECRT) hours\",\n    \"For FPI clear cases - evaluate all balance entry slot corner conditions with replication process\",\n    \"If any balance weight entry slot corner condition presents with a <0.060\\\" fillet size - perform entry slot blending, FPI, and peening operations\",\n    \"If any portion of a specific balance weight groove corner meets the <0.060\\\" fillet criteria, perform modification machining on the entire BWG entry slot corner\",\n    \"Fillet >0.060\\\" and uniformly this size over full length of the BWG entry slot corner - leave in as-found condition\",\n    \"For cases with observable FPI indication/indications - contact GE engineering through an ER case for technical disposition\",\n    \"In service center, MPI inspection may be substituted for FPI inspection based on service center capability\"\n  ],\n  \"completion_criteria_text\": \"This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified.\",\n  \"maintenance_trigger_text\": \"At first exposure of component (Timing Code 4); next planned HGP or MI outage at or before rotor reaches 378,000 equivalent cold rotor turning time hours.\",\n  \"recommended_interval_or_trigger\": [\n    \"At first exposure of component (Timing Code 4)\",\n    \"Next planned HGP or MI outage at or before rotor reaches 378,000 equivalent cold rotor turning time (ECRT) hours\"\n  ],\n  \"usage_counters_to_check_or_consider\": [\n    \"turning_gear_hours\",\n    \"fired_starts\",\n    \"forced_cool_downs\",\n    \"forced_cool_hours\",\n    \"cool_starts\",\n    \"offline_water_washes\",\n    \"equivalent_cold_rotor_turning_time\"\n  ],\n  \"usage_counter_requirements_text\": \"Equivalent Cold Rotor Turning Time (ECRT) must be calculated using turning gear hours, fired starts, forced cool downs, forced cool hours, cool starts (warm 2 and cold starts per GER-3620), and offline water washes. ECRT = TTG - ((SFS-SFC)*X) + TFC*0.25*(20% Full Speed / 6) + (Swc*Y) + (Sww*3*(20% Full Speed / 6)). Inspection required at or before 378,000 ECRT hours.\",\n  \"frame_or_model_applicability_text\": \"6F, 7F, and 9F Heavy Duty Gas Turbines\",\n  \"combustion_or_fuel_configuration_text\": null,\n  \"hardware_or_part_configuration_text\": \"Compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots. Applicable to components with BWG entry slots containing corner fillet size <0.060\\\".\",\n  \"serial_or_unit_applicability_text\": null,\n  \"exclusions_or_non_applicable_conditions_text\": \"Fillet >0.060\\\" and uniformly this size over full length of the BWG entry slot corner - leave in as-found condition (no modification required).\",\n  \"required_prior_modifications_text\": null,\n  \"prerequisite_outage_or_inspection_context_text\": \"Requires rotor exposure during HGP or MI outage. Component must be accessible for FPI/MPI and potential machining operations.\",\n  \"sbom_dependency_flag\": false,\n  \"sbom_trigger_reason\": null,\n  \"mli_numbers\": [],\n  \"parts_referenced\": [\n    {\n      \"part_number\": null,\n      \"context\": \"Compressor Aft Shaft (CAS) - balance weight groove entry slots requiring FPI inspection and potential blending\",\n      \"required_inspection_types\": [\"FPI\", \"MPI\"],\n      \"source_location\": \"Recommendations section, page 3\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Distance Piece (DP) - balance weight groove entry slots requiring FPI inspection and potential blending\",\n      \"required_inspection_types\": [\"FPI\", \"MPI\"],\n      \"source_location\": \"Recommendations section, page 3\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"BWG Entry Slot Portable Machining Tool - special tooling required for blending operation\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Planning Information - Special Tooling, page 5\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Flapper peening kit - required for peening modified geometry post machining\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Planning Information - Special Tooling, page 5\"\n    }\n  ],\n  \"reference_documents\": [\n    {\n      \"document_number\": \"GER-3620\",\n      \"document_type\": \"Other\",\n      \"context\": \"Referenced for definition of warm 2 and cold starts (figure 22, latest revision) used in ECRT calculation\"\n    }\n  ],\n  \"configuration_dependent\": true,\n  \"configuration_variables\": [\n    \"Frame size (6FA, 7FA, 9FA)\",\n    \"Simple Cycle vs Combined Cycle\",\n    \"BWG entry slot corner fillet size (<0.060\\\" vs >0.060\\\")\",\n    \"Unit full speed (3600, 3000, or 5250 rpm)\"\n  ],\n  \"configuration_summary\": \"ECRT calculation parameters vary by frame size (X factor: 6FA=18, 7FA=24, 9FA=24; full speed: 6FA=5250rpm, 7FA=3600rpm, 9FA=3000rpm; forced cool Z factor: 6FA=24, 7FA=8, 9FA=12) and by cycle type (SC Y=72, CC Y=86). Blending action depends on measured fillet size at BWG entry slot corners.\",\n  \"severity_signals\": [\n    \"Compliance Category S - Safety\",\n    \"INJURY TO PERSONNEL/INDIVIDUALS\",\n    \"substantial damage to adjacent equipment\",\n    \"Separation of either shaft into two separate pieces\",\n    \"components to exit the gas turbine\",\n    \"rapid crack growth\",\n    \"high cycle fatigue related mechanism\"\n  ],\n  \"failure_consequences\": [\n    \"Crack-like indications may form over the lifetime of the component at BWG entry slot corners\",\n    \"If crack-like indications propagate to large enough size, continued rapid crack growth may occur associated with gravity sag related bending (high cycle fatigue)\",\n    \"Fracture propagation may lead the CAS and/or DP to separate into two separate pieces\",\n    \"Separation may create possibility for components to exit the gas turbine\",\n    \"Possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment\"\n  ],\n  \"risk_summary\": \"Variation in BWG entry slot corner condition combined with operational stresses (gravity sag, startup/shutdown) can initiate crack-like indications that may propagate via high cycle fatigue, potentially leading to CAS or DP shaft separation, component ejection from the gas turbine, personnel injury, and substantial equipment damage.\",\n  \"safety_or_damage_language_found\": true,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"ECRT Calculation Parameters\",\n      \"table_description\": \"Table on page 5 showing ECRT calculation variables (TTG, SFS, SFC, X, TFC, Swc, Y, Sww) with definitions and example values for a Combined Cycle 7FA.03\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Required for calculating equivalent cold rotor turning time to determine inspection timing threshold of 378,000 hours\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific part numbers provided for CAS or DP\",\n    \"No MLI numbers referenced\",\n    \"No specific serial number applicability listed\",\n    \"No detailed blending geometry specifications provided in TIL text (likely requires GE specialist)\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"purpose\",\n      \"snippet\": \"To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations.\"\n    },\n    {\n      \"field\": \"failure_consequences\",\n      \"snippet\": \"If not mitigated, the fracture propagation may lead the CAS and/or DP to separate into two separate pieces. Separation of either shaft into two pieces may create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment.\"\n    },\n    {\n      \"field\": \"recommended_interval_or_trigger\",\n      \"snippet\": \"It is recommended to perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time.\"\n    },\n    {\n      \"field\": \"completion_criteria_text\",\n      \"snippet\": \"This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"If any balance weight entry slot corner condition presents with a <0.060\\\" fillet size - perform entry slot blending, FPI, and peening operations to mitigate the risk of crack initiation and propagation.\"\n    },\n    {\n      \"field\": \"configuration_summary\",\n      \"snippet\": \"Simple Cycle Unit (SC) Y = 72; Combined Cycle Unit (CC) Y = 86\"\n    }\n  ],\n  \"extraction_confidence\": 0.92\n}\n```"
+}

@@ -1,0 +1,287 @@
+document_id,unique_key,source_path,source_hash,source_system,requested_til_number,matched_til_number,match_type,parser_method,parser_name,parser_version,profile_found,parsed_profile_json,raw_profile_json,extracted_document_method,extracted_text_char_count,extracted_table_count,extraction_confidence,llm_model,metadata_status,metadata_retry_count,chunk_status,chunk_retry_count,error_code,error_message,ingest_ts,metadata_processed_ts,chunk_processed_ts,run_id
+til 1937-r2 - f-class turbine wheel inspection and maintenance recommendations,1937-R2__ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1937-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf,ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f,databricks_volume,1937-R2,1937-R2,pdf_name_match,databricks_ai,databricks_ai,v1,false,null,null,databricks_ai,35559,8,0,gemini-3-flash,llm_parse_failed,0,null,0,null,"LLM request exception: ReadTimeout: HTTPSConnectionPool(host='dev-gateway.apps.gevernova.net', port=443): Read timed out. (read timeout=300)",2026-06-26T05:20:23.375Z,2026-07-03T19:06:28.818Z,null,til_p1_20260703_184325_88c82e9e
+til 1945-r2 - f-class turbine wheel inspection and maintenance recommendations,1945-R2__132e4798d3db71bf7017eba04ab61c1e9d7fa14b37d0adbcb8c7638157fd4925,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1945-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf,132e4798d3db71bf7017eba04ab61c1e9d7fa14b37d0adbcb8c7638157fd4925,databricks_volume,1945-R2,1945-R2,pdf_name_match,databricks_ai,databricks_ai,v1,true,"{""til_number"": ""TIL 1945"", ""revision"": ""R2"", ""title"": ""F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS"", ""publish_date"": ""2024-07-15"", ""reason_for_revision"": ""1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels applicable to 7F and 6F. 2) Added a specific ECI inspection interval for Stage 1 contoured and enhanced wheels with 2 Step-Age heat treatment. 3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension."", ""purpose"": ""Advise users to perform routine inspections at a maintenance interval based on installed configuration. This TIL supersedes TILs 1280, 1327, 1434, 1539, 1540, and 1742."", ""compliance_category_code"": ""A"", ""compliance_category_text"": ""Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time."", ""recurring_indicator_if_found"": ""Yes"", ""coarse_outage_type"": ""Next Scheduled Outage"", ""scope_of_work"": [""Remove turbine blades prior to beginning inspections."", ""Clean turbine rotor using dry ice (CO2) blasting (preferred method, 12 hours)."", ""Perform Eddy Current Inspection (ECI) of Stage 1 and 2 turbine wheel dovetails (approx. 32 hours)."", ""Perform Visual and Borescope (BI) inspection of all exposed turbine rotor surfaces."", ""Perform Fluorescent Penetrant Inspection (FPI) on balance weights and lockwire tabs."", ""Perform Ultrasonic (UT) inspection of counterbore outside diameter ligaments on distance piece and turbine aft shaft."", ""Install dovetail modified (back cut) Stage 1 and 2 turbine blades.""], ""service_recommendation_line_items"": [""Perform ECI on Stage 1 and 2 turbine wheel dovetails at intervals specified by configuration (Material Heat Treatment, Peening, Cooling Slot Geometry)."", ""Perform Visual/BI inspection of broach slot fillets, slot bottoms, tangs, cooling slots, spacer rim seal tooth rubs, and balance weights."", ""Perform FPI on staked balance weight grooves at every Major inspection and when CDC is removed during HGPI."", ""Perform FPI on lock wire tab fillets when turbine blades are removed."", ""Perform UT on counterbore outside diameter ligaments on distance piece and turbine aft shaft."", ""Install dovetail modified (back cut) Stage 1 and 2 turbine blades at the next scheduled maintenance (HGPI or Major)."", ""Perform FPI on Stage 3 wheel and turbine aft shaft staked balance weight grooves every Major and when Exhaust Frame is removed during HGPI."", ""Perform FPI on Stage 3 wheel lockwire tabs (Original: every HGPI; Modified: every Major).""], ""completion_criteria_text"": ""This TIL is considered complete when the turbine wheels reach end of life and are removed from service."", ""maintenance_trigger_text"": ""Maintenance interval based on installed configuration (hours, starts, or outage type)."", ""recommended_interval_or_trigger"": [""7F Stage 1 (2SA, Non-Peened): every 24 hrs or 900 starts"", ""7F Stage 1 (2SA, Peened, Original Slot): every 48 hrs or 2,400 starts [every 24 hrs or 900 starts if back cut buckets not installed]"", ""7F Stage 1 (2SA, Peened, Contoured/Enhanced): at 96 hrs or 3,600 starts"", ""9F Stage 1 (2SA, Non-Peened): every 24 khrs or 900 starts"", ""9F Stage 1 (2SA, Peened, Original Slot): every 48 khrs or 2,400 starts"", ""Stage 2 Wheels (2SA, Peened): at first Major after TW2 Life Extension"", ""Staked Balance Weight Grooves: every Major and when CDC is removed during HGPI"", ""Lock Wire Tabs (Original): every HGPI when buckets are removed""], ""usage_counters_to_check_or_consider"": [""operating_hours"", ""starts""], ""usage_counter_requirements_text"": ""Intervals vary from 24 khrs/900 starts to 96 khrs/3,750 starts depending on configuration. Note: some tables specify 'hrs' while others specify 'khrs'."", ""frame_or_model_applicability_text"": ""Select F-class gas turbine rotors (7F, 9F, 6F)."", ""combustion_or_fuel_configuration_text"": null, ""hardware_or_part_configuration_text"": ""Material Heat Treatment (2 Step Age, 3 Step Age), Peening Condition (Fired without vs Never Fired without), Cooling Slot Geometry (Original, Contoured, Enhanced), Balance Rail & Lock Wire Tab (Original, Stakeless, Modified)."", ""serial_or_unit_applicability_text"": ""Contact GE Vernova representative with turbine serial number to determine peening condition."", ""exclusions_or_non_applicable_conditions_text"": ""Stakeless balance weight grooves do not require FPI."", ""required_prior_modifications_text"": ""Installation of back cut turbine blades is recommended to reduce stress levels."", ""prerequisite_outage_or_inspection_context_text"": ""Turbine blades must be removed. Rotor must be appropriately cleaned (CO2 blasting preferred) to facilitate ECI."", ""sbom_dependency_flag"": true, ""sbom_trigger_reason"": ""Inspection intervals and requirements are strictly dependent on specific turbine wheel part numbers and configurations (heat treat, peening, geometry)."", ""mli_numbers"": [], ""parts_referenced"": [{""part_number"": ""227C5762"", ""context"": ""7F Stage 1 Turbine Wheel"", ""required_inspection_types"": [""ECI"", ""Visual"", ""BI"", ""FPI"", ""UT""], ""source_location"": ""Table 1""}, {""part_number"": ""116E3967"", ""context"": ""7F Stage 1 Contoured Wheel"", ""required_inspection_types"": [""ECI""], ""source_location"": ""Table 1""}, {""part_number"": ""118T8421"", ""context"": ""7F Stage 2 Wheel"", ""required_inspection_types"": [""ECI""], ""source_location"": ""Table 2""}, {""part_number"": ""109E5254"", ""context"": ""9F Stage 1 Wheel"", ""required_inspection_types"": [""ECI"", ""BI""], ""source_location"": ""Table 3""}, {""part_number"": ""119T9404"", ""context"": ""9F Stage 2 Wheel"", ""required_inspection_types"": [""ECI""], ""source_location"": ""Table 4""}, {""part_number"": ""109E9194"", ""context"": ""6F Stage 1 Wheel"", ""required_inspection_types"": [""ECI"", ""BI"", ""FPI""], ""source_location"": ""Table 5""}], ""reference_documents"": [{""document_number"": ""TIL 1937"", ""document_type"": ""TIL"", ""context"": ""Rotors operating in high ambient and/or corrosive conditions.""}, {""document_number"": ""TIL 1280"", ""document_type"": ""TIL"", ""context"": ""Superseded document.""}], ""configuration_dependent"": true, ""configuration_variables"": [""Material Heat Treatment"", ""Peening Condition"", ""Cooling Slot Geometry"", ""Balance Rail & Lock Wire Tab Type"", ""Frame Size"", ""Stage Number""], ""configuration_summary"": ""Inspection types and intervals are determined by the specific combination of wheel material heat treatment (2SA vs 3SA), whether the wheel was fired without shot peening, the geometry of the cooling slots (Original, Contoured, Enhanced), and the type of balance rail/lock wire tab (Staked vs Stakeless/Modified)."", ""severity_signals"": [""Compliance Category - A"", ""Alert"", ""Failure to comply... could result in equipment damage or facility damage"", ""immediate wheel replacement will be recommended to avoid the risk of wheel post liberation""], ""failure_consequences"": [""intergranular crack initiation and propagation"", ""release of wheel section and/or adjacent turbine blades"", ""significant damage"", ""wheel post liberation""], ""risk_summary"": ""High stresses and temperatures in high nickel alloys can lead to intergranular cracking, particularly at cooling slots, lock wire tabs, and balance weight grooves. Undetected cracks can lead to catastrophic wheel failure and downstream damage."", ""safety_or_damage_language_found"": true, ""tables_found_summary"": [{""table_label"": ""Table 1-6"", ""table_description"": ""Detailed inspection recommendations and part numbers for 7F, 9F, 6F Stage 1 & 2 wheels."", ""useful_for_downstream"": true, ""reason"": ""Contains the primary configuration-to-interval mapping and part number applicability.""}, {""table_label"": ""Compliance Category"", ""table_description"": ""Definitions of TIL categories (M, C, A, S)."", ""useful_for_downstream"": false, ""reason"": ""Generic legend table.""}], ""missing_information_flags"": [], ""source_snippets"": [{""field"": ""failure_consequences"", ""snippet"": ""the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage.""}, {""field"": ""service_recommendation_line_items"", ""snippet"": ""If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to avoid the risk of wheel post liberation during operation.""}], ""extraction_confidence"": 0.98}","{
+  ""til_number"": ""TIL 1945"",
+  ""revision"": ""R2"",
+  ""title"": ""F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS"",
+  ""publish_date"": ""2024-07-15"",
+  ""reason_for_revision"": ""1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels applicable to 7F and 6F. 2) Added a specific ECI inspection interval for Stage 1 contoured and enhanced wheels with 2 Step-Age heat treatment. 3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension."",
+  ""purpose"": ""Advise users to perform routine inspections at a maintenance interval based on installed configuration. This TIL supersedes TILs 1280, 1327, 1434, 1539, 1540, and 1742."",
+  ""compliance_category_code"": ""A"",
+  ""compliance_category_text"": ""Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time."",
+  ""recurring_indicator_if_found"": ""Yes"",
+  ""coarse_outage_type"": ""Next Scheduled Outage"",
+  ""scope_of_work"": [
+    ""Remove turbine blades prior to beginning inspections."",
+    ""Clean turbine rotor using dry ice (CO2) blasting (preferred method, 12 hours)."",
+    ""Perform Eddy Current Inspection (ECI) of Stage 1 and 2 turbine wheel dovetails (approx. 32 hours)."",
+    ""Perform Visual and Borescope (BI) inspection of all exposed turbine rotor surfaces."",
+    ""Perform Fluorescent Penetrant Inspection (FPI) on balance weights and lockwire tabs."",
+    ""Perform Ultrasonic (UT) inspection of counterbore outside diameter ligaments on distance piece and turbine aft shaft."",
+    ""Install dovetail modified (back cut) Stage 1 and 2 turbine blades.""
+  ],
+  ""service_recommendation_line_items"": [
+    ""Perform ECI on Stage 1 and 2 turbine wheel dovetails at intervals specified by configuration (Material Heat Treatment, Peening, Cooling Slot Geometry)."",
+    ""Perform Visual/BI inspection of broach slot fillets, slot bottoms, tangs, cooling slots, spacer rim seal tooth rubs, and balance weights."",
+    ""Perform FPI on staked balance weight grooves at every Major inspection and when CDC is removed during HGPI."",
+    ""Perform FPI on lock wire tab fillets when turbine blades are removed."",
+    ""Perform UT on counterbore outside diameter ligaments on distance piece and turbine aft shaft."",
+    ""Install dovetail modified (back cut) Stage 1 and 2 turbine blades at the next scheduled maintenance (HGPI or Major)."",
+    ""Perform FPI on Stage 3 wheel and turbine aft shaft staked balance weight grooves every Major and when Exhaust Frame is removed during HGPI."",
+    ""Perform FPI on Stage 3 wheel lockwire tabs (Original: every HGPI; Modified: every Major).""
+  ],
+  ""completion_criteria_text"": ""This TIL is considered complete when the turbine wheels reach end of life and are removed from service."",
+  ""maintenance_trigger_text"": ""Maintenance interval based on installed configuration (hours, starts, or outage type)."",
+  ""recommended_interval_or_trigger"": [
+    ""7F Stage 1 (2SA, Non-Peened): every 24 hrs or 900 starts"",
+    ""7F Stage 1 (2SA, Peened, Original Slot): every 48 hrs or 2,400 starts [every 24 hrs or 900 starts if back cut buckets not installed]"",
+    ""7F Stage 1 (2SA, Peened, Contoured/Enhanced): at 96 hrs or 3,600 starts"",
+    ""9F Stage 1 (2SA, Non-Peened): every 24 khrs or 900 starts"",
+    ""9F Stage 1 (2SA, Peened, Original Slot): every 48 khrs or 2,400 starts"",
+    ""Stage 2 Wheels (2SA, Peened): at first Major after TW2 Life Extension"",
+    ""Staked Balance Weight Grooves: every Major and when CDC is removed during HGPI"",
+    ""Lock Wire Tabs (Original): every HGPI when buckets are removed""
+  ],
+  ""usage_counters_to_check_or_consider"": [
+    ""operating_hours"",
+    ""starts""
+  ],
+  ""usage_counter_requirements_text"": ""Intervals vary from 24 khrs/900 starts to 96 khrs/3,750 starts depending on configuration. Note: some tables specify 'hrs' while others specify 'khrs'."",
+  ""frame_or_model_applicability_text"": ""Select F-class gas turbine rotors (7F, 9F, 6F)."",
+  ""combustion_or_fuel_configuration_text"": null,
+  ""hardware_or_part_configuration_text"": ""Material Heat Treatment (2 Step Age, 3 Step Age), Peening Condition (Fired without vs Never Fired without), Cooling Slot Geometry (Original, Contoured, Enhanced), Balance Rail & Lock Wire Tab (Original, Stakeless, Modified)."",
+  ""serial_or_unit_applicability_text"": ""Contact GE Vernova representative with turbine serial number to determine peening condition."",
+  ""exclusions_or_non_applicable_conditions_text"": ""Stakeless balance weight grooves do not require FPI."",
+  ""required_prior_modifications_text"": ""Installation of back cut turbine blades is recommended to reduce stress levels."",
+  ""prerequisite_outage_or_inspection_context_text"": ""Turbine blades must be removed. Rotor must be appropriately cleaned (CO2 blasting preferred) to facilitate ECI."",
+  ""sbom_dependency_flag"": true,
+  ""sbom_trigger_reason"": ""Inspection intervals and requirements are strictly dependent on specific turbine wheel part numbers and configurations (heat treat, peening, geometry)."",
+  ""mli_numbers"": [],
+  ""parts_referenced"": [
+    {
+      ""part_number"": ""227C5762"",
+      ""context"": ""7F Stage 1 Turbine Wheel"",
+      ""required_inspection_types"": [
+        ""ECI"",
+        ""Visual"",
+        ""BI"",
+        ""FPI"",
+        ""UT""
+      ],
+      ""source_location"": ""Table 1""
+    },
+    {
+      ""part_number"": ""116E3967"",
+      ""context"": ""7F Stage 1 Contoured Wheel"",
+      ""required_inspection_types"": [
+        ""ECI""
+      ],
+      ""source_location"": ""Table 1""
+    },
+    {
+      ""part_number"": ""118T8421"",
+      ""context"": ""7F Stage 2 Wheel"",
+      ""required_inspection_types"": [
+        ""ECI""
+      ],
+      ""source_location"": ""Table 2""
+    },
+    {
+      ""part_number"": ""109E5254"",
+      ""context"": ""9F Stage 1 Wheel"",
+      ""required_inspection_types"": [
+        ""ECI"",
+        ""BI""
+      ],
+      ""source_location"": ""Table 3""
+    },
+    {
+      ""part_number"": ""119T9404"",
+      ""context"": ""9F Stage 2 Wheel"",
+      ""required_inspection_types"": [
+        ""ECI""
+      ],
+      ""source_location"": ""Table 4""
+    },
+    {
+      ""part_number"": ""109E9194"",
+      ""context"": ""6F Stage 1 Wheel"",
+      ""required_inspection_types"": [
+        ""ECI"",
+        ""BI"",
+        ""FPI""
+      ],
+      ""source_location"": ""Table 5""
+    }
+  ],
+  ""reference_documents"": [
+    {
+      ""document_number"": ""TIL 1937"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Rotors operating in high ambient and/or corrosive conditions.""
+    },
+    {
+      ""document_number"": ""TIL 1280"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Superseded document.""
+    }
+  ],
+  ""configuration_dependent"": true,
+  ""configuration_variables"": [
+    ""Material Heat Treatment"",
+    ""Peening Condition"",
+    ""Cooling Slot Geometry"",
+    ""Balance Rail & Lock Wire Tab Type"",
+    ""Frame Size"",
+    ""Stage Number""
+  ],
+  ""configuration_summary"": ""Inspection types and intervals are determined by the specific combination of wheel material heat treatment (2SA vs 3SA), whether the wheel was fired without shot peening, the geometry of the cooling slots (Original, Contoured, Enhanced), and the type of balance rail/lock wire tab (Staked vs Stakeless/Modified)."",
+  ""severity_signals"": [
+    ""Compliance Category - A"",
+    ""Alert"",
+    ""Failure to comply... could result in equipment damage or facility damage"",
+    ""immediate wheel replacement will be recommended to avoid the risk of wheel post liberation""
+  ],
+  ""failure_consequences"": [
+    ""intergranular crack initiation and propagation"",
+    ""release of wheel section and/or adjacent turbine blades"",
+    ""significant damage"",
+    ""wheel post liberation""
+  ],
+  ""risk_summary"": ""High stresses and temperatures in high nickel alloys can lead to intergranular cracking, particularly at cooling slots, lock wire tabs, and balance weight grooves. Undetected cracks can lead to catastrophic wheel failure and downstream damage."",
+  ""safety_or_damage_language_found"": true,
+  ""tables_found_summary"": [
+    {
+      ""table_label"": ""Table 1-6"",
+      ""table_description"": ""Detailed inspection recommendations and part numbers for 7F, 9F, 6F Stage 1 & 2 wheels."",
+      ""useful_for_downstream"": true,
+      ""reason"": ""Contains the primary configuration-to-interval mapping and part number applicability.""
+    },
+    {
+      ""table_label"": ""Compliance Category"",
+      ""table_description"": ""Definitions of TIL categories (M, C, A, S)."",
+      ""useful_for_downstream"": false,
+      ""reason"": ""Generic legend table.""
+    }
+  ],
+  ""missing_information_flags"": [],
+  ""source_snippets"": [
+    {
+      ""field"": ""failure_consequences"",
+      ""snippet"": ""the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage.""
+    },
+    {
+      ""field"": ""service_recommendation_line_items"",
+      ""snippet"": ""If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to avoid the risk of wheel post liberation during operation.""
+    }
+  ],
+  ""extraction_confidence"": 0.98
+}",databricks_ai,35185,8,0.98,gemini-3-flash,completed,0,null,0,null,null,2026-06-26T05:20:23.375Z,2026-07-03T19:06:28.818Z,null,til_p1_20260703_184325_88c82e9e
+til 1502-2r1 - 7f and 9f aft end compressor rubs,1502-2R1__c7ddcf810c8238892e38f075b8c76435d5986f612f0a1245f17ceabeeaa8d224,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1502-2R1 - 7F AND 9F AFT END COMPRESSOR RUBS.pdf,c7ddcf810c8238892e38f075b8c76435d5986f612f0a1245f17ceabeeaa8d224,databricks_volume,1502-2R1,1502-2R1,pdf_name_match,databricks_ai,databricks_ai,v1,true,"{""til_number"": ""TIL 1502-2"", ""revision"": ""R1"", ""title"": ""7F AND 9F AFT END COMPRESSOR RUBS"", ""publish_date"": ""2005-11-01"", ""reason_for_revision"": ""To update the technical content of the TIL, including frequency of tip loss and recommendations when discovered."", ""purpose"": ""To inform users to monitor equipment operation and condition, and to identify the onset, occurrence, and effects of aft end compressor rubs (when the tip of the rotor blade rubs the casing)."", ""compliance_category_code"": ""M"", ""compliance_category_text"": ""Maintenance"", ""recurring_indicator_if_found"": ""Yearly"", ""coarse_outage_type"": ""Next Scheduled Outage"", ""scope_of_work"": [""Borescope inspection of rotor blade stages 13 through 17"", ""Blade blending and tip grinding/polishing if rubs or tip loss are found"", ""Penetrant inspection of blade tips after grinding/polishing"", ""Clearance measurement and adjustment""], ""service_recommendation_line_items"": [""Keep enclosure doors closed during startup, shutdown and normal operation."", ""Eliminate any potential pipe leaks that may cause quenching of the gas turbine compressor discharge casing."", ""Ensure vent fans and exhaust fans to the gas turbine enclosure are functioning properly such that no local forced convection is taking place at or near the compressor discharge casing."", ""Integrate the inspection for aft end compressor rubs with your yearly scheduled borescope inspection per GER 3620."", ""Observe rotor blade stages 13 through 17 and look for mushroomed material, bluing at the blade tip, and / or markings in the casing area."", ""If rubs or tip loss do occur, perform blending to increase clearances at Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed."", ""Increase clearances of rotor blades radially by tip grinding and polishing (typically 20 mils) and repair tip corners by blade blending."", ""Perform a penetrant inspection after grinding/polishing to ensure no tip cracks are present.""], ""completion_criteria_text"": ""Compliance with this TIL must be entered in local records. GE requests that the customer notify GE upon compliance of this TIL."", ""maintenance_trigger_text"": ""Restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip."", ""recommended_interval_or_trigger"": [""Yearly borescope inspection"", ""Major Inspection (MI)"", ""When Compressor Discharge Casing (CDC) is removed"", ""Restarting 2 to 8 hours after shutdown or trip""], ""usage_counters_to_check_or_consider"": [""trips""], ""usage_counter_requirements_text"": ""Restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip will cause the clearances in the aft end to decrease."", ""frame_or_model_applicability_text"": ""All 7F and 9F Heavy Duty Gas Turbines"", ""combustion_or_fuel_configuration_text"": null, ""hardware_or_part_configuration_text"": ""F-Class gas turbines with 18 stages (0-17) of rotating components. Rotor blades in rows 13, 14, and 15 are primarily affected."", ""serial_or_unit_applicability_text"": null, ""exclusions_or_non_applicable_conditions_text"": null, ""required_prior_modifications_text"": null, ""prerequisite_outage_or_inspection_context_text"": ""Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed"", ""sbom_dependency_flag"": false, ""sbom_trigger_reason"": null, ""mli_numbers"": [], ""parts_referenced"": [], ""reference_documents"": [{""document_number"": ""GER 3620"", ""document_type"": ""Other"", ""context"": ""Follow operating practices and integrate inspection with yearly scheduled borescope inspection.""}], ""configuration_dependent"": true, ""configuration_variables"": [""Restart timing (2-8 hours after shutdown)"", ""Enclosure door status"", ""Vent/exhaust fan operation""], ""configuration_summary"": ""Aft end rubs are primarily induced because of frequent restarts between two (2) to eight (8) hours after shutdown due to thermal compression of the casing relative to the rotor."", ""severity_signals"": [""mushroomed material"", ""bluing at the blade tip"", ""markings in the casing area"", ""material loss at the blade tip""], ""failure_consequences"": [""material tip loss"", ""reduced local material fatigue strength"", ""light scoring on the casing""], ""risk_summary"": ""Aft end rubs and/or tip loss pose very low risk to unit operation and reliability. No performance impact and no forced outages have been experienced as a result."", ""safety_or_damage_language_found"": true, ""tables_found_summary"": [{""table_label"": ""Compliance Category"", ""table_description"": ""Definitions of O, M, C, and A compliance categories."", ""useful_for_downstream"": true, ""reason"": ""Defines the maintenance category (M) for this TIL.""}, {""table_label"": ""Timing Code"", ""table_description"": ""Definitions of timing codes 1-5 and 7."", ""useful_for_downstream"": true, ""reason"": ""Defines the scheduling priority (Code 6 - Next Scheduled Outage).""}], ""missing_information_flags"": [""Extracted tables were present but parts_referenced is empty; review whether table-derived parts/configuration details were lost.""], ""source_snippets"": [{""field"": ""frame_or_model_applicability_text"", ""snippet"": ""All 7F and 9F Heavy Duty Gas Turbines""}, {""field"": ""coarse_outage_type"", ""snippet"": ""6 Next Scheduled Outage""}, {""field"": ""maintenance_trigger_text"", ""snippet"": ""restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip will cause the clearances in the aft end to decrease.""}], ""extraction_confidence"": 0.95}","{
+  ""til_number"": ""TIL 1502-2"",
+  ""revision"": ""R1"",
+  ""title"": ""7F AND 9F AFT END COMPRESSOR RUBS"",
+  ""publish_date"": ""2005-11-01"",
+  ""reason_for_revision"": ""To update the technical content of the TIL, including frequency of tip loss and recommendations when discovered."",
+  ""purpose"": ""To inform users to monitor equipment operation and condition, and to identify the onset, occurrence, and effects of aft end compressor rubs (when the tip of the rotor blade rubs the casing)."",
+  ""compliance_category_code"": ""M"",
+  ""compliance_category_text"": ""Maintenance"",
+  ""recurring_indicator_if_found"": ""Yearly"",
+  ""coarse_outage_type"": ""Next Scheduled Outage"",
+  ""scope_of_work"": [
+    ""Borescope inspection of rotor blade stages 13 through 17"",
+    ""Blade blending and tip grinding/polishing if rubs or tip loss are found"",
+    ""Penetrant inspection of blade tips after grinding/polishing"",
+    ""Clearance measurement and adjustment""
+  ],
+  ""service_recommendation_line_items"": [
+    ""Keep enclosure doors closed during startup, shutdown and normal operation."",
+    ""Eliminate any potential pipe leaks that may cause quenching of the gas turbine compressor discharge casing."",
+    ""Ensure vent fans and exhaust fans to the gas turbine enclosure are functioning properly such that no local forced convection is taking place at or near the compressor discharge casing."",
+    ""Integrate the inspection for aft end compressor rubs with your yearly scheduled borescope inspection per GER 3620."",
+    ""Observe rotor blade stages 13 through 17 and look for mushroomed material, bluing at the blade tip, and / or markings in the casing area."",
+    ""If rubs or tip loss do occur, perform blending to increase clearances at Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed."",
+    ""Increase clearances of rotor blades radially by tip grinding and polishing (typically 20 mils) and repair tip corners by blade blending."",
+    ""Perform a penetrant inspection after grinding/polishing to ensure no tip cracks are present.""
+  ],
+  ""completion_criteria_text"": ""Compliance with this TIL must be entered in local records. GE requests that the customer notify GE upon compliance of this TIL."",
+  ""maintenance_trigger_text"": ""Restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip."",
+  ""recommended_interval_or_trigger"": [
+    ""Yearly borescope inspection"",
+    ""Major Inspection (MI)"",
+    ""When Compressor Discharge Casing (CDC) is removed"",
+    ""Restarting 2 to 8 hours after shutdown or trip""
+  ],
+  ""usage_counters_to_check_or_consider"": [
+    ""trips""
+  ],
+  ""usage_counter_requirements_text"": ""Restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip will cause the clearances in the aft end to decrease."",
+  ""frame_or_model_applicability_text"": ""All 7F and 9F Heavy Duty Gas Turbines"",
+  ""combustion_or_fuel_configuration_text"": null,
+  ""hardware_or_part_configuration_text"": ""F-Class gas turbines with 18 stages (0-17) of rotating components. Rotor blades in rows 13, 14, and 15 are primarily affected."",
+  ""serial_or_unit_applicability_text"": null,
+  ""exclusions_or_non_applicable_conditions_text"": null,
+  ""required_prior_modifications_text"": null,
+  ""prerequisite_outage_or_inspection_context_text"": ""Major Inspections (MI) or when the Compressor Discharge Casing (CDC) is removed"",
+  ""sbom_dependency_flag"": false,
+  ""sbom_trigger_reason"": null,
+  ""mli_numbers"": [],
+  ""parts_referenced"": [],
+  ""reference_documents"": [
+    {
+      ""document_number"": ""GER 3620"",
+      ""document_type"": ""Other"",
+      ""context"": ""Follow operating practices and integrate inspection with yearly scheduled borescope inspection.""
+    }
+  ],
+  ""configuration_dependent"": true,
+  ""configuration_variables"": [
+    ""Restart timing (2-8 hours after shutdown)"",
+    ""Enclosure door status"",
+    ""Vent/exhaust fan operation""
+  ],
+  ""configuration_summary"": ""Aft end rubs are primarily induced because of frequent restarts between two (2) to eight (8) hours after shutdown due to thermal compression of the casing relative to the rotor."",
+  ""severity_signals"": [
+    ""mushroomed material"",
+    ""bluing at the blade tip"",
+    ""markings in the casing area"",
+    ""material loss at the blade tip""
+  ],
+  ""failure_consequences"": [
+    ""material tip loss"",
+    ""reduced local material fatigue strength"",
+    ""light scoring on the casing""
+  ],
+  ""risk_summary"": ""Aft end rubs and/or tip loss pose very low risk to unit operation and reliability. No performance impact and no forced outages have been experienced as a result."",
+  ""safety_or_damage_language_found"": true,
+  ""tables_found_summary"": [
+    {
+      ""table_label"": ""Compliance Category"",
+      ""table_description"": ""Definitions of O, M, C, and A compliance categories."",
+      ""useful_for_downstream"": true,
+      ""reason"": ""Defines the maintenance category (M) for this TIL.""
+    },
+    {
+      ""table_label"": ""Timing Code"",
+      ""table_description"": ""Definitions of timing codes 1-5 and 7."",
+      ""useful_for_downstream"": true,
+      ""reason"": ""Defines the scheduling priority (Code 6 - Next Scheduled Outage).""
+    }
+  ],
+  ""missing_information_flags"": [],
+  ""source_snippets"": [
+    {
+      ""field"": ""frame_or_model_applicability_text"",
+      ""snippet"": ""All 7F and 9F Heavy Duty Gas Turbines""
+    },
+    {
+      ""field"": ""coarse_outage_type"",
+      ""snippet"": ""6 Next Scheduled Outage""
+    },
+    {
+      ""field"": ""maintenance_trigger_text"",
+      ""snippet"": ""restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip will cause the clearances in the aft end to decrease.""
+    }
+  ],
+  ""extraction_confidence"": 0.95
+}",databricks_ai,6712,5,0.95,gemini-3-flash,completed,0,null,0,null,null,2026-06-26T05:20:23.375Z,2026-07-03T19:06:28.818Z,null,til_p1_20260703_184325_88c82e9e

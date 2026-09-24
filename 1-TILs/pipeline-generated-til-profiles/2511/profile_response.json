@@ -1,0 +1,171 @@
+{
+  "til_number": "2511",
+  "revision": null,
+  "title": "F.05 & HA COMPRESSOR-SECTION RETENTION-KEY IMPROVEMENTS",
+  "publish_date": "2024-06-06",
+  "reason_for_revision": null,
+  "purpose": "To inform affected users about:\n1. The potential for keys retaining sub-assemblies such as stator vane segments, inducer, high pressure packing seal, air-inducer seal, and/or casing treatment ring to overcome staked retention, which can result in object drops during casing lifts.\n2. The availability of an improved key retention method, and the recommendation to install the improved key retention modification during a planned major inspection.",
+  "compliance_category_code": "S",
+  "compliance_category_text": "Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Next Scheduled Outage",
+  "scope_of_work": [
+    "Machine threaded holes and counterbores on the UH compressor-section casings at the HJ to accept retention screws.",
+    "Install new keys to retain stator-vanes, HPPS, AIS1, inducer2, and CT ring3; torque retention screws to specification.",
+    "Stake around the keys at 4x places to serve as secondary retention."
+  ],
+  "service_recommendation_line_items": [
+    "Apply the newly configured retention key modification at the next major inspection (MI) when all the compressor section upper-half (UH) casings will be removed.",
+    "Optionally apply the modification at an earlier opportunity, if all the affected compressor section UH casings are removed prior to an MI.",
+    "Prior to lifting any UH casing, take additional precautions and, if possible, inspect the retention keys for any potential abnormalities such as a displaced key; once the UH casing is separated, telescoping mirrors may be used to perform this inspection."
+  ],
+  "completion_criteria_text": "The TIL is considered as complete once the newly configured key retention modification is installed.",
+  "maintenance_trigger_text": "Next major inspection (MI) when all the compressor section upper-half (UH) casings will be removed; may optionally be applied at an earlier opportunity if all affected UH casings are removed prior to an MI.",
+  "recommended_interval_or_trigger": [
+    "Apply the newly configured retention key modification at the next major inspection (MI) when all the compressor section upper-half (UH) casings will be removed.",
+    "Optionally apply at an earlier opportunity if all the affected compressor section UH casings are removed prior to an MI."
+  ],
+  "usage_counters_to_check_or_consider": [],
+  "usage_counter_requirements_text": null,
+  "frame_or_model_applicability_text": "Applicable to all 7F.04-200, 7F.05, 7HA.01, 7HA.02, 7HA.03, 9F.05-18, 9HA.01, and 9HA.02 gas turbines.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Retention keys in the upper-half (UH) compressor-section casings retain stator vane segments, seals (high-pressure packing seal (HPPS) and aft inducer seal (AIS)), inducer, and casing treatment (CT) ring. AIS is installed only on HA.0x units. Inducer is installed only on HA.0x units with a double-wall compressor discharge casing. CT ring is installed only on 7HA.03 units.",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": "AIS, inducer, and CT ring are installed only on specific gas turbine models (AIS only on HA.0x units; inducer only on HA.0x units with a double-wall compressor discharge casing; CT ring only on 7HA.03 units).",
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Planned major inspection (MI) when all compressor section upper-half (UH) casings will be removed; earlier opportunity possible if all affected UH casings are removed prior to an MI. Prior to lifting any UH casing, inspect retention keys for abnormalities if possible; once UH casing is separated, telescoping mirrors may be used.",
+  "sbom_dependency_flag": false,
+  "sbom_trigger_reason": null,
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "Upgraded key primarily retained by flanged screws; key additionally staked as secondary retention (improved key retention method).",
+      "required_inspection_types": [],
+      "source_location": "RECOMMENDATIONS"
+    },
+    {
+      "part_number": null,
+      "context": "Retention screws (flanged screws) used to retain upgraded key; requires machining threaded holes on casing horizontal joint to accept retention screws; torque retention screws to specification.",
+      "required_inspection_types": [],
+      "source_location": "RECOMMENDATIONS; SCOPE OF WORK"
+    },
+    {
+      "part_number": null,
+      "context": "Stator vane segments retention keys (compressor stator keys).",
+      "required_inspection_types": [],
+      "source_location": "BACKGROUND DISCUSSION; PURPOSE; RECOMMENDATIONS; SCOPE OF WORK"
+    },
+    {
+      "part_number": null,
+      "context": "High-pressure packing seal (HPPS) retention key.",
+      "required_inspection_types": [],
+      "source_location": "BACKGROUND DISCUSSION; RECOMMENDATIONS; SCOPE OF WORK"
+    },
+    {
+      "part_number": null,
+      "context": "Aft inducer seal (AIS) retention key (installed only on HA.0x units).",
+      "required_inspection_types": [],
+      "source_location": "BACKGROUND DISCUSSION; RECOMMENDATIONS; applicability notes; SCOPE OF WORK"
+    },
+    {
+      "part_number": null,
+      "context": "Inducer retention key (installed only on HA.0x units with a double-wall compressor discharge casing).",
+      "required_inspection_types": [],
+      "source_location": "BACKGROUND DISCUSSION; RECOMMENDATIONS; applicability notes; SCOPE OF WORK"
+    },
+    {
+      "part_number": null,
+      "context": "Casing treatment (CT) ring retention key (CT ring installed only on 7HA.03 units).",
+      "required_inspection_types": [],
+      "source_location": "BACKGROUND DISCUSSION; RECOMMENDATIONS; applicability notes; SCOPE OF WORK"
+    }
+  ],
+  "reference_documents": [
+    {
+      "document_number": "PSSB 20210505A",
+      "document_type": "Other",
+      "context": "Two reported incidents where stator vane retention keys fell out during UH casing lifts are described in this PSSB."
+    }
+  ],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Gas turbine model/frame (7F.04-200, 7F.05, 7HA.01, 7HA.02, 7HA.03, 9F.05-18, 9HA.01, 9HA.02)",
+    "Presence of AIS (HA.0x units only)",
+    "Presence of inducer (HA.0x units with a double-wall compressor discharge casing only)",
+    "Presence of CT ring (7HA.03 units only)"
+  ],
+  "configuration_summary": "The modification applies to retention keys for stator vanes and HPPS on applicable units; AIS, inducer, and CT ring modifications depend on whether those components are installed on the specific gas turbine model/configuration.",
+  "severity_signals": [
+    "Compliance Category - S",
+    "If the retention stakes are not adequately applied, there is potential for keys and the sub-assemblies ... to drop during UH casing lifts, which can lead to personnel injury."
+  ],
+  "failure_consequences": [
+    "Keys retaining sub-assemblies ... can result in object drops during casing lifts.",
+    "Keys and the sub-assemblies ... to drop during UH casing lifts, which can lead to personnel injury."
+  ],
+  "risk_summary": "Inadequate staking can allow retention keys to fall out during upper-half compressor casing lifts, creating object-drop risk and potential personnel injury; GE Vernova recommends an improved retention method using flanged screws plus secondary staking.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Compliance category definitions (M/C/A/S)",
+      "table_description": "Defines Maintenance, Compliance Required, Alert, and Safety categories.",
+      "useful_for_downstream": false,
+      "reason": "General legend/definitions; does not provide equipment-specific actions or values."
+    },
+    {
+      "table_label": "Timing code definitions (1-6)",
+      "table_description": "Maps timing codes 1-6 to outage/action timing descriptions (e.g., Next Scheduled Outage).",
+      "useful_for_downstream": true,
+      "reason": "Provides operational timing meaning for the document's stated Timing Code - 6."
+    }
+  ],
+  "missing_information_flags": [
+    "No specific part numbers provided for upgraded keys, retention screws, or any modification kit components.",
+    "Torque value/specification for retention screws is referenced but not stated.",
+    "No detailed machining dimensions/locations for threaded holes and counterbores are provided in the extracted text."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "The potential for keys retaining sub-assemblies such as stator vane segments, inducer, high pressure packing seal, air-inducer seal, and/or casing treatment ring to overcome staked retention, which can result in object drops during casing lifts."
+    },
+    {
+      "field": "severity_signals",
+      "snippet": "If the retention stakes are not adequately applied, there is potential for keys and the sub-assemblies, such as stator vane segments, inducer, and seals to drop during UH casing lifts, which can lead to personnel injury."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "It is recommended that the newly configured retention key modification be applied to the unit at the next major inspection (MI) when all the compressor section upper-half (UH) casings will be removed."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "The modification may optionally be applied at an earlier opportunity, if all the affected compressor section UH casings are removed prior to an MI."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Machine threaded holes and counterbores on the UH compressor-section casings at the HJ to accept retention screws."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Install new keys to retain stator-vanes, HPPS, AIS1, inducer2, and CT ring3; torque retention screws to specification."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Stake around the keys at 4x places to serve as secondary retention."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "The TIL is considered as complete once the newly configured key retention modification is installed."
+    },
+    {
+      "field": "frame_or_model_applicability_text",
+      "snippet": "This TIL is applicable to all 7F.04-200, 7F.05, 7HA.01, 7HA.02, 7HA.03, 9F.05-18, 9HA.01, and 9HA.02 gas turbines."
+    },
+    {
+      "field": "hardware_or_part_configuration_text",
+      "snippet": "AIS is installed only on HA.0x units.\n2 Inducer is installed only on HA.0x units with a double-wall compressor discharge casing.\n3 CT ring is installed only on 7HA.03 units."
+    }
+  ],
+  "extraction_confidence": 0.86
+}

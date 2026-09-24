@@ -76,6 +76,8 @@ For sub-reports, retaining the content and preventing incorrect hierarchy inheri
 
 Long-label preservation is an optional, regression-gated improvement. First locate whether truncation happens in PDF extraction, preprocessor candidate capture, or downstream display/projection. Apply it only if the change is local and does not cause material regression across the representative document set.
 
+The existing two-leader/page-number threshold for recognizing multi-page TOC continuation pages remains unchanged. A sparse final TOC page may be missed, but this is accepted as a low-impact edge case for the current repair cycle.
+
 ### 4. Treat the no-TOC UUID outliers as controlled exceptions for now
 
 There is no need to design a second no-TOC parser immediately.

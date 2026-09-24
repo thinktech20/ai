@@ -1,0 +1,6 @@
+ok we will test the generated code for different parsers, by connecting databricks dev workspace and running the notebooks, or what is the suggested way to test? which file to test?
+
+
+we should test for 5 pdfs - TILs/analysis/sample-pdfs, they also exist in volume, so the code can test from there, and also we should look at eval metrics to compare these, could you generate a test step for the above plan here - TILs/eval-parse-method?
+
+we have run fsr pipeline in dev databricks workspace, so the same steps can be followed.

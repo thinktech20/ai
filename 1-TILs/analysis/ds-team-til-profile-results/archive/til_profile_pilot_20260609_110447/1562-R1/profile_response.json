@@ -1,0 +1,170 @@
+{
+  "requested_til": "1562-R1",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 1562-R1",
+    "revision": "R1",
+    "title": "HEAVY-DUTY GAS TURBINE SHIM MIGRATION AND LOSS",
+    "publish_date": "2009-08-20",
+    "reason_for_revision": "Revised to add additional gas turbine classes and to update recommendations.",
+    "purpose": "To inform users of the need to monitor the condition of compressor shims and corrective actions necessary to mitigate the risks of migrating shims.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+    "recurring_indicator_if_found": "Yes - annual borescope inspections and at regular maintenance outages (CI & HGPI)",
+    "coarse_outage_type": "MI",
+    "scope_of_work": [
+      "Borescope inspections requiring approximately 8-12 hours to complete, completed annually and at regular maintenance outages (CI & HGPI) as outlined in GER3620",
+      "Additional monitoring inspections may be required based on findings",
+      "Implementation of shim pinning modification during scheduled outages in which the compressor casing has been removed",
+      "Removal of stators varies greatly; worst-case requires destructive removal from casing",
+      "Once stators removed, modification may occupy two blade technicians for four shifts to complete"
+    ],
+    "service_recommendation_line_items": [
+      "Continue normal borescope and visual inspections per GER 3620, noting the condition of all shims",
+      "Inspect first four stages of B-class/E-class machines (first eight stages for 9E) and first five stages of F-class machines for shims located between stator segments, 60 degrees above and below left and right horizontal joints",
+      "Report any shim anomalies to local GE Service Manager or Contract Performance Manager for documentation and recommendations",
+      "For front-end segmented-stator shims with LESS than 50% height protruding: monitor movement based on historical knowledge of the shim (low-to-moderate risk)",
+      "For front-end shims with GREATER than 50% height protrusion: require disposition prior to restart of the unit",
+      "For continued movement of front-end shims: corrective action should take place as soon as possible to avoid liberation",
+      "Aft stage shim migration is considered low-risk and can typically be addressed at the scheduled major inspection interval",
+      "Remove protruding shim if it can be done without risk of damaging neighboring blades/vanes; operating with shim removed is acceptable until next planned casing removal outage",
+      "If removal proves difficult, grind shim flush with flow path without risk of damaging neighboring blades/vanes; then inspect for further movement after 25 starts",
+      "Implement shim pinning modification at next major inspection (MI) interval or next compressor maintenance outage in which the rotor is exposed",
+      "Replacement shims should be of no less than 80 mils thickness for robust retention",
+      "Order shim pinning modification kit through local GE Service Manager or Contract Performance Manager; allow 10 weeks for parts delivery",
+      "Do not use alternative concepts not approved by GE such as capturing shims between adjoined stators, as this may subject vane base to excessive forces beyond design intent"
+    ],
+    "completion_criteria_text": "Shim pinning modification implemented on all compressor stages at next MI or compressor maintenance outage with rotor exposed; ongoing borescope monitoring per GER 3620 with corrective action applied for any migrating shims.",
+    "maintenance_trigger_text": "Annual borescope inspections, regular maintenance outages (CI & HGPI), and additional monitoring inspections based on findings. Front-end shims >50% protrusion require disposition prior to restart. Continued front-end shim movement requires corrective action as soon as possible.",
+    "recommended_interval_or_trigger": [
+      "Annual borescope inspection",
+      "At regular maintenance outages (CI & HGPI) per GER 3620",
+      "After grinding: inspect for further movement after 25 starts",
+      "Shim modification at next MI interval or next compressor maintenance outage with rotor exposed",
+      "Front-end shims >50% protrusion: prior to restart",
+      "Aft stage shim migration: at scheduled major inspection interval"
+    ],
+    "usage_counters_to_check_or_consider": [
+      "starts"
+    ],
+    "usage_counter_requirements_text": "After grinding a shim flush, inspect for further movement after 25 starts.",
+    "frame_or_model_applicability_text": "All B, C, E, F, and H-Class gas turbines",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Stages 0-4 on 7H machine, 1-4 on 9H machine, and 1-2 on 6C machine do not have shims (these stages contain Variable Guide Vanes and do not use shims). First four stages of B-class/E-class (first eight stages for 9E), first five stages of F-class may have shims between stator segments 60 degrees above and below left and right horizontal joints.",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": "Stages 0-4 on 7H machine, 1-4 on 9H machine, and 1-2 on 6C machine do not have shims (VGV stages).",
+    "required_prior_modifications_text": "None",
+    "prerequisite_outage_or_inspection_context_text": "Shim modification requires scheduled outage with compressor casing removed and rotor exposed.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Shim pinning modification kit containing shims and pins must be ordered specific to unit configuration; replacement shim thickness requirement (no less than 80 mils); configuration-dependent shim locations vary by frame class and stage.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Shim pinning modification kit containing necessary shims and pins to complete the job; must be ordered through local GE Service Manager or Contract Performance Manager; allow 10 weeks for parts delivery",
+        "required_inspection_types": [],
+        "source_location": "Page 4, Parts section"
+      },
+      {
+        "part_number": null,
+        "context": "Replacement shims of no less than 80 mils thickness for robust retention",
+        "required_inspection_types": [],
+        "source_location": "Page 3, Modification section"
+      },
+      {
+        "part_number": null,
+        "context": "Drive pins used to align and mechanically attach each shim to an adjacent stator base/segment",
+        "required_inspection_types": [],
+        "source_location": "Page 3, Modification section"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "GER 3620",
+        "document_type": "Other",
+        "context": "Referenced for normal borescope and visual inspection guidelines and maintenance outage schedule (CI & HGPI)"
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Gas turbine class (B, C, E, F, H)",
+      "Specific frame model (7H, 9H, 6C, 9E)",
+      "Compressor stage number",
+      "Presence of Variable Guide Vanes (VGV)",
+      "Stator type (segmented-stator vs individual vanes)"
+    ],
+    "configuration_summary": "Shim locations and applicability vary by gas turbine class and frame model. VGV stages on 7H (stages 0-4), 9H (stages 1-4), and 6C (stages 1-2) do not use shims. Front stages of B/E-class (first 4, or first 8 for 9E) and F-class (first 5) have shims between stator segments at specific circumferential locations. Risk assessment and corrective action urgency depend on shim location (front vs aft) and protrusion percentage.",
+    "severity_signals": [
+      "Shim migration poses a risk of shim liberation, which could lead to compressor damage",
+      "Risks are greatest for front stages due to shim size and the number of stages that could be impacted by a liberated shim",
+      "Front-end shims with GREATER than 50% height protrusion pose a greater risk for liberation and require disposition prior to restart",
+      "Alternative concepts not approved by GE may subject the base of the vane to excessive forces beyond design intent and add new risks, potentially resulting in component failure",
+      "Recent changes in fleet operating characteristics have contributed to an increasing number of front-end shim migration occurrences"
+    ],
+    "failure_consequences": [
+      "Shim liberation leading to compressor damage",
+      "Flow disturbances from protruding shims further accelerating migration",
+      "Component failure from unapproved alternative shim retention methods subjecting vane base to excessive forces"
+    ],
+    "risk_summary": "Shim migration can lead to shim liberation into the compressor flow path, causing compressor damage. Front-end stages pose the greatest risk due to shim size and number of downstream stages affected. Risk increases with protrusion percentage and continued movement. Recent fleet operating changes have increased front-end migration occurrences.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "TIL Compliance Record - Installed Equipment",
+        "table_description": "Compliance record table with fields for Unit Numbers, Part Description, Part Number, and MLI Number (all blank/template)",
+        "useful_for_downstream": false,
+        "reason": "Template form with no populated data"
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for shim pinning modification kit",
+      "No MLI numbers provided in document",
+      "No specific serial number applicability listed",
+      "No reference documents listed in Planning Information section beyond GER 3620 in body text"
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To inform users of the need to monitor the condition of compressor shims and corrective actions necessary to mitigate the risks of migrating shims."
+      },
+      {
+        "field": "severity_signals",
+        "snippet": "Shim migration poses a risk of shim liberation, which could lead to compressor damage. These risks are greatest for front stages due to shim size and the number of stages that could be impacted by a liberated shim."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "Borescope inspections, requiring approximately 8-12 hours to complete, should be completed annually and at regular maintenance outages (CI & HGPI) as outlined in GER3620."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Front-end shims with GREATER than 50% height protrusion pose a greater risk for liberation, regardless of their history, and require disposition prior to restart of the unit."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If the shim is accessible for grinding, it is recommended to do so and then inspect for further movement after 25 starts."
+      },
+      {
+        "field": "configuration_dependent",
+        "snippet": "Note that stages 0-4 on the 7H machine, 1-4 on the 9H machine, and 1-2 on the 6C machine do not have shims. These stages contain Variable Guide Vanes (VGV) and do not use shims."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "A kit containing the necessary shims and pins to complete the job must be ordered for the modification. Contact your local GE Service Manager or Contract Performance Manager for assistance. Allow 10 weeks for parts delivery."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Replacement shims should be of no less than 80 mils thickness for robust retention."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Alternative concepts not approved by GE, such as capturing shims between adjoined stators, may subject the base of the vane to excessive forces beyond design intent and add new risks, potentially resulting in component failure."
+      },
+      {
+        "field": "coarse_outage_type",
+        "snippet": "GE recommends the shim modification be implemented at the next major inspection (MI) interval or the next compressor maintenance outage in which the rotor is exposed."
+      }
+    ],
+    "extraction_confidence": 0.92
+  },
+  "raw_profile": "```json\n{\n  \"til_number\": \"TIL 1562-R1\",\n  \"revision\": \"R1\",\n  \"title\": \"HEAVY-DUTY GAS TURBINE SHIM MIGRATION AND LOSS\",\n  \"publish_date\": \"2009-08-20\",\n  \"reason_for_revision\": \"Revised to add additional gas turbine classes and to update recommendations.\",\n  \"purpose\": \"To inform users of the need to monitor the condition of compressor shims and corrective actions necessary to mitigate the risks of migrating shims.\",\n  \"compliance_category_code\": \"M\",\n  \"compliance_category_text\": \"Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.\",\n  \"recurring_indicator_if_found\": \"Yes - annual borescope inspections and at regular maintenance outages (CI & HGPI)\",\n  \"coarse_outage_type\": \"MI\",\n  \"scope_of_work\": [\n    \"Borescope inspections requiring approximately 8-12 hours to complete, completed annually and at regular maintenance outages (CI & HGPI) as outlined in GER3620\",\n    \"Additional monitoring inspections may be required based on findings\",\n    \"Implementation of shim pinning modification during scheduled outages in which the compressor casing has been removed\",\n    \"Removal of stators varies greatly; worst-case requires destructive removal from casing\",\n    \"Once stators removed, modification may occupy two blade technicians for four shifts to complete\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"Continue normal borescope and visual inspections per GER 3620, noting the condition of all shims\",\n    \"Inspect first four stages of B-class/E-class machines (first eight stages for 9E) and first five stages of F-class machines for shims located between stator segments, 60 degrees above and below left and right horizontal joints\",\n    \"Report any shim anomalies to local GE Service Manager or Contract Performance Manager for documentation and recommendations\",\n    \"For front-end segmented-stator shims with LESS than 50% height protruding: monitor movement based on historical knowledge of the shim (low-to-moderate risk)\",\n    \"For front-end shims with GREATER than 50% height protrusion: require disposition prior to restart of the unit\",\n    \"For continued movement of front-end shims: corrective action should take place as soon as possible to avoid liberation\",\n    \"Aft stage shim migration is considered low-risk and can typically be addressed at the scheduled major inspection interval\",\n    \"Remove protruding shim if it can be done without risk of damaging neighboring blades/vanes; operating with shim removed is acceptable until next planned casing removal outage\",\n    \"If removal proves difficult, grind shim flush with flow path without risk of damaging neighboring blades/vanes; then inspect for further movement after 25 starts\",\n    \"Implement shim pinning modification at next major inspection (MI) interval or next compressor maintenance outage in which the rotor is exposed\",\n    \"Replacement shims should be of no less than 80 mils thickness for robust retention\",\n    \"Order shim pinning modification kit through local GE Service Manager or Contract Performance Manager; allow 10 weeks for parts delivery\",\n    \"Do not use alternative concepts not approved by GE such as capturing shims between adjoined stators, as this may subject vane base to excessive forces beyond design intent\"\n  ],\n  \"completion_criteria_text\": \"Shim pinning modification implemented on all compressor stages at next MI or compressor maintenance outage with rotor exposed; ongoing borescope monitoring per GER 3620 with corrective action applied for any migrating shims.\",\n  \"maintenance_trigger_text\": \"Annual borescope inspections, regular maintenance outages (CI & HGPI), and additional monitoring inspections based on findings. Front-end shims >50% protrusion require disposition prior to restart. Continued front-end shim movement requires corrective action as soon as possible.\",\n  \"recommended_interval_or_trigger\": [\n    \"Annual borescope inspection\",\n    \"At regular maintenance outages (CI & HGPI) per GER 3620\",\n    \"After grinding: inspect for further movement after 25 starts\",\n    \"Shim modification at next MI interval or next compressor maintenance outage with rotor exposed\",\n    \"Front-end shims >50% protrusion: prior to restart\",\n    \"Aft stage shim migration: at scheduled major inspection interval\"\n  ],\n  \"usage_counters_to_check_or_consider\": [\n    \"starts\"\n  ],\n  \"usage_counter_requirements_text\": \"After grinding a shim flush, inspect for further movement after 25 starts.\",\n  \"frame_or_model_applicability_text\": \"All B, C, E, F, and H-Class gas turbines\",\n  \"combustion_or_fuel_configuration_text\": null,\n  \"hardware_or_part_configuration_text\": \"Stages 0-4 on 7H machine, 1-4 on 9H machine, and 1-2 on 6C machine do not have shims (these stages contain Variable Guide Vanes and do not use shims). First four stages of B-class/E-class (first eight stages for 9E), first five stages of F-class may have shims between stator segments 60 degrees above and below left and right horizontal joints.\",\n  \"serial_or_unit_applicability_text\": null,\n  \"exclusions_or_non_applicable_conditions_text\": \"Stages 0-4 on 7H machine, 1-4 on 9H machine, and 1-2 on 6C machine do not have shims (VGV stages).\",\n  \"required_prior_modifications_text\": \"None\",\n  \"prerequisite_outage_or_inspection_context_text\": \"Shim modification requires scheduled outage with compressor casing removed and rotor exposed.\",\n  \"sbom_dependency_flag\": true,\n  \"sbom_trigger_reason\": \"Shim pinning modification kit containing shims and pins must be ordered specific to unit configuration; replacement shim thickness requirement (no less than 80 mils); configuration-dependent shim locations vary by frame class and stage.\",\n  \"mli_numbers\": [],\n  \"parts_referenced\": [\n    {\n      \"part_number\": null,\n      \"context\": \"Shim pinning modification kit containing necessary shims and pins to complete the job; must be ordered through local GE Service Manager or Contract Performance Manager; allow 10 weeks for parts delivery\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Page 4, Parts section\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Replacement shims of no less than 80 mils thickness for robust retention\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Page 3, Modification section\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Drive pins used to align and mechanically attach each shim to an adjacent stator base/segment\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Page 3, Modification section\"\n    }\n  ],\n  \"reference_documents\": [\n    {\n      \"document_number\": \"GER 3620\",\n      \"document_type\": \"Other\",\n      \"context\": \"Referenced for normal borescope and visual inspection guidelines and maintenance outage schedule (CI & HGPI)\"\n    }\n  ],\n  \"configuration_dependent\": true,\n  \"configuration_variables\": [\n    \"Gas turbine class (B, C, E, F, H)\",\n    \"Specific frame model (7H, 9H, 6C, 9E)\",\n    \"Compressor stage number\",\n    \"Presence of Variable Guide Vanes (VGV)\",\n    \"Stator type (segmented-stator vs individual vanes)\"\n  ],\n  \"configuration_summary\": \"Shim locations and applicability vary by gas turbine class and frame model. VGV stages on 7H (stages 0-4), 9H (stages 1-4), and 6C (stages 1-2) do not use shims. Front stages of B/E-class (first 4, or first 8 for 9E) and F-class (first 5) have shims between stator segments at specific circumferential locations. Risk assessment and corrective action urgency depend on shim location (front vs aft) and protrusion percentage.\",\n  \"severity_signals\": [\n    \"Shim migration poses a risk of shim liberation, which could lead to compressor damage\",\n    \"Risks are greatest for front stages due to shim size and the number of stages that could be impacted by a liberated shim\",\n    \"Front-end shims with GREATER than 50% height protrusion pose a greater risk for liberation and require disposition prior to restart\",\n    \"Alternative concepts not approved by GE may subject the base of the vane to excessive forces beyond design intent and add new risks, potentially resulting in component failure\",\n    \"Recent changes in fleet operating characteristics have contributed to an increasing number of front-end shim migration occurrences\"\n  ],\n  \"failure_consequences\": [\n    \"Shim liberation leading to compressor damage\",\n    \"Flow disturbances from protruding shims further accelerating migration\",\n    \"Component failure from unapproved alternative shim retention methods subjecting vane base to excessive forces\"\n  ],\n  \"risk_summary\": \"Shim migration can lead to shim liberation into the compressor flow path, causing compressor damage. Front-end stages pose the greatest risk due to shim size and number of downstream stages affected. Risk increases with protrusion percentage and continued movement. Recent fleet operating changes have increased front-end migration occurrences.\",\n  \"safety_or_damage_language_found\": true,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"TIL Compliance Record - Installed Equipment\",\n      \"table_description\": \"Compliance record table with fields for Unit Numbers, Part Description, Part Number, and MLI Number (all blank/template)\",\n      \"useful_for_downstream\": false,\n      \"reason\": \"Template form with no populated data\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific part numbers provided for shim pinning modification kit\",\n    \"No MLI numbers provided in document\",\n    \"No specific serial number applicability listed\",\n    \"No reference documents listed in Planning Information section beyond GER 3620 in body text\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"purpose\",\n      \"snippet\": \"To inform users of the need to monitor the condition of compressor shims and corrective actions necessary to mitigate the risks of migrating shims.\"\n    },\n    {\n      \"field\": \"severity_signals\",\n      \"snippet\": \"Shim migration poses a risk of shim liberation, which could lead to compressor damage. These risks are greatest for front stages due to shim size and the number of stages that could be impacted by a liberated shim.\"\n    },\n    {\n      \"field\": \"recommended_interval_or_trigger\",\n      \"snippet\": \"Borescope inspections, requiring approximately 8-12 hours to complete, should be completed annually and at regular maintenance outages (CI & HGPI) as outlined in GER3620.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"Front-end shims with GREATER than 50% height protrusion pose a greater risk for liberation, regardless of their history, and require disposition prior to restart of the unit.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"If the shim is accessible for grinding, it is recommended to do so and then inspect for further movement after 25 starts.\"\n    },\n    {\n      \"field\": \"configuration_dependent\",\n      \"snippet\": \"Note that stages 0-4 on the 7H machine, 1-4 on the 9H machine, and 1-2 on the 6C machine do not have shims. These stages contain Variable Guide Vanes (VGV) and do not use shims.\"\n    },\n    {\n      \"field\": \"parts_referenced\",\n      \"snippet\": \"A kit containing the necessary shims and pins to complete the job must be ordered for the modification. Contact your local GE Service Manager or Contract Performance Manager for assistance. Allow 10 weeks for parts delivery.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"Replacement shims should be of no less than 80 mils thickness for robust retention.\"\n    },\n    {\n      \"field\": \"failure_consequences\",\n      \"snippet\": \"Alternative concepts not approved by GE, such as capturing shims between adjoined stators, may subject the base of the vane to excessive forces beyond design intent and add new risks, potentially resulting in component failure.\"\n    },\n    {\n      \"field\": \"coarse_outage_type\",\n      \"snippet\": \"GE recommends the shim modification be implemented at the next major inspection (MI) interval or the next compressor maintenance outage in which the rotor is exposed.\"\n    }\n  ],\n  \"extraction_confidence\": 0.92\n}\n```"
+}

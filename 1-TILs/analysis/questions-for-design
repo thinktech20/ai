@@ -1,0 +1,6 @@
+
+1. Is there an incremental pattern needed for ingestion? How do we detect re-uploads/edits and trigger reprocessing?
+2. How are TIL numbers identified? Are they unique ina volume?
+3. For the chunking strategy - What chunk objective do we optimize for: precision, recall, latency, or storage?
+What chunk size/overlap/token caps are chosen, and why for this corpus?
+

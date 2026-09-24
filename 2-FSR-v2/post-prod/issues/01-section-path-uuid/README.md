@@ -1,6 +1,6 @@
 # 01. Section Path / UUID Chunking
 
-Updated: 2026-09-15
+Updated: 2026-09-21
 
 ## Brief
 
@@ -70,7 +70,10 @@ Review status:
 - targeted preprocessor changes implemented and locally validated against the uploaded 575-page PDF
 - broader rollout remains pending QA and downstream chunking validation
 - operationalization plan drafted for scope-table driven overwrite and batch reprocessing
-- follow-up fixes planned from Xujin review: Quality Checkpoint detection, guarded Generator generic subsections, sub-report hierarchy context, and optional regression-gated long-label preservation
+- follow-up fixes from Xujin review implemented in the shared preprocessor: generic root heading detection, persisted heading-label normalization, Turbine-after-Generator attribution correction, numeric/table noise guardrails, and attachment/sub-report retention
+- focused FSR v2 validation is green: `75 passed, 0 failed`
+- Xujin was updated on 2026-09-21 with the implemented fixes
+- end-to-end validation against the affected PDFs remains pending for exact sub-report hierarchy and long-label display/persistence behavior
 
 Latest document-level validation:
 
@@ -79,13 +82,12 @@ Latest document-level validation:
 - `7.1`, `7.2`, and `7.3` each appear once in the uploaded document after page-aware TOC exclusion.
 - Front matter before the first valid equipment boundary remains `shared` by design. This preserves full coverage without assigning cover/TOC text to an equipment section.
 
-Next implementation slices:
+Remaining validation slices:
 
-- detect `Quality Checkpoint (QCP)` as a valid root section
-- extend generic subsection detection under Generator `-1` headers only with structural confidence signals
-- retain sub-report content while separating reused local numbering from the main-report hierarchy
-- add local attachment/appendix/sub-report context; use ambiguity metadata rather than hard-discarding content when ownership is unclear
-- investigate long-label truncation; defer the change if regression risk is material
+- verify the affected PDFs end to end after the latest preprocessor changes
+- confirm whether sub-report paths should include the attachment heading itself, for example `[6 Appendix, 6.1 Attachments, 5.0 Safety Performance]`
+- trace the long-label value through extraction, preprocessing, persistence, and display
+- reprocess affected documents in QA only after those checks pass
 
 ## Components impacted
 

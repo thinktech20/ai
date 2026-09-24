@@ -1,0 +1,961 @@
+{
+  "requested_til": "1937-R2",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 1937",
+    "revision": "R2",
+    "title": "F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS",
+    "publish_date": "2024-04-10",
+    "reason_for_revision": "1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels. 2) Added a specific ECI inspection interval for Stage 1 enhanced wheels with 2 Step-Age heat treatment. 3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension.",
+    "purpose": "Advise users to perform routine inspections at a maintenance interval based on installed configuration for select F-class gas turbine rotors operating in high ambient and specific environmental conditions.",
+    "compliance_category_code": "A",
+    "compliance_category_text": "Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.",
+    "recurring_indicator_if_found": "Yes - recurring inspections at defined intervals until turbine wheels reach end of life",
+    "coarse_outage_type": "Next Scheduled Outage",
+    "scope_of_work": [
+      "Qualified vendor to perform CO\u2082 blast cleaning of turbine rotor",
+      "GE Vernova qualified personnel to perform rotor inspections",
+      "Back-cut stage 1 and stage 2 turbine blades",
+      "Rotor inspection equipment and blend/peen kit are provided and applied by GE Vernova",
+      "Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope",
+      "CO\u2082 blast cleaning of turbine rotor can be completed in one shift (12 hours), including a prior hand wiping to remove oil from the dovetail surfaces if necessary",
+      "ECI of first and second stages can be completed in three shifts or all three stages in four shifts",
+      "Total time between turbine blade removal and installation should be four shifts (two days)"
+    ],
+    "service_recommendation_line_items": [
+      "Perform ECI, Visual, BI, FPI, and UT inspections every 24 khrs or 900 starts for wheels fired without shot peening (original cooling slot, original LWT)",
+      "Perform ECI every 32 khrs or 1,200 starts for 2 Step Age wheels with original cooling slot (every 24 khrs or 900 starts if back cut buckets not installed)",
+      "Perform ECI at 96 khrs or 3,600 starts for 2 Step Age wheels with contoured/enhanced cooling slot (every 48 khrs or 2,400 starts if back cut buckets not installed)",
+      "Perform BI every HGPI when CDC is not removed",
+      "Perform FPI on LWT every HGPI when buckets are removed; on BWG every Major and when CDC is removed during HGPI",
+      "For Stage 2 wheels with 2 Step Age: perform ECI at first Major after TW2 Life Extension in addition to interval-based ECI",
+      "For 3 Step Age wheels with enhanced cooling slot and stakeless/modified tab: FPI on LWT every Major",
+      "TW3 balance weight grooves (if staked): FPI every Major Inspection and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary",
+      "TW3 lockwire tabs (if original): FPI every HGPI while buckets are removed; if modified: FPI every MI",
+      "TAS balance weight grooves (if staked): FPI every MI and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary",
+      "Install back cut (dovetail modified) Stage 1 and 2 turbine blades at next scheduled maintenance (HGPI or MI)",
+      "If cooling slot crack is detected during inspection, immediate wheel replacement is recommended",
+      "Contact GE Vernova representative to determine peening condition for Peening Modification category wheels",
+      "Prior to ECI, turbine rotor must be appropriately cleaned (preferred: CO\u2082 blasting; alternative: hand-cleaning 2-3 shifts)"
+    ],
+    "completion_criteria_text": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service.",
+    "maintenance_trigger_text": "Inspections triggered by operating hours, starts, outage type (HGPI/Major), bucket removal, CDC removal, and Rotor Life Extension milestones.",
+    "recommended_interval_or_trigger": [
+      "Every 24 khrs or 900 starts (fired without shot peening, original cooling slot)",
+      "Every 32 khrs or 1,200 starts (2 Step Age, original cooling slot, never fired without shot peening; reduces to 24 khrs/900 starts if back cut buckets not installed)",
+      "At 96 khrs or 3,600 starts (2 Step Age, contoured/enhanced cooling slot; every 48 khrs/2,400 starts if back cut buckets not installed)",
+      "Every HGPI when CDC is not removed (BI)",
+      "Every HGPI when buckets are removed (FPI on LWT)",
+      "Every Major and when CDC is removed during HGPI (FPI on BWG)",
+      "Every Major (FPI on LWT for modified tab / 3 Step Age configurations)",
+      "At first Major after TW2 Life Extension (ECI for Stage 2 wheels)"
+    ],
+    "usage_counters_to_check_or_consider": [
+      "operating_hours",
+      "starts"
+    ],
+    "usage_counter_requirements_text": "Inspection intervals are defined in thousands of operating hours (khrs) and number of starts. Specific thresholds vary by wheel configuration: 24 khrs/900 starts, 32 khrs/1,200 starts, 48 khrs/2,400 starts, or 96 khrs/3,600 starts depending on heat treatment, peening condition, cooling slot geometry, and whether back cut buckets are installed.",
+    "frame_or_model_applicability_text": "Select F-class gas turbine rotors: 6F, 7F, and 9F frames",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Applicability depends on material heat treatment (2 Step Age vs 3 Step Age), peening condition (fired without shot peening, peening modification, never fired without shot peening), cooling slot geometry (original, contoured, enhanced), and balance rail & lock wire tab configuration (original, stakeless & modified tab). Whether back cut buckets are installed affects ECI interval.",
+    "serial_or_unit_applicability_text": "Units operating in high ambient and humid or corrosive environmental conditions. For Peening Modification category wheels, contact GE Vernova representative with turbine rotor serial number to determine applicable peening condition.",
+    "exclusions_or_non_applicable_conditions_text": "Stakeless balance weight grooves on TW3 and TAS require no BWG inspections. Modified lock wire tabs on TW3 only require FPI every MI rather than every HGPI.",
+    "required_prior_modifications_text": "Back cut (dovetail modified) Stage 1 and 2 turbine blades recommended to be installed on all turbine rotors. Relief cut modifications incorporated into new production F-class turbine blades and performed as part of standard turbine blade repair/refurbishment.",
+    "prerequisite_outage_or_inspection_context_text": "Turbine blades must be removed prior to beginning inspections per hot gas path outage scope. Rotor must be cleaned (CO\u2082 blast preferred) prior to ECI. For Peening Modification wheels, until validated by GE Vernova representative, assume Fired without Shot Peening recommendations apply.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Inspection intervals and required inspection types are determined by specific turbine wheel part numbers, which must be validated against installed configuration. Multiple part numbers per frame/stage with different heat treatment, peening, cooling slot, and LWT configurations drive different maintenance requirements.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": "227C5762",
+        "context": "7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "103E5795",
+        "context": "7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "188D7369",
+        "context": "7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "109E3085",
+        "context": "7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "101E8627",
+        "context": "7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "109E3896",
+        "context": "7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "103E5773",
+        "context": "7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "193D2053",
+        "context": "7F Stage 1 wheel, peening modification, original cooling slot, original LWT - contact GE Vernova to determine peening condition",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "193D2063",
+        "context": "7F Stage 1 wheel, peening modification, original cooling slot, original LWT - contact GE Vernova to determine peening condition",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "243C1494",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "109E5612",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "188D7996",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "114E1228",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "196D1915",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "116E2434",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "199D3931",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "117E5673",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "109E5303",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "119E2398",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "109E5589",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "119E2621",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "116E3967",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "119E3771",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "119E4181",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "323E2241",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "144E7560",
+        "context": "7F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "146E3626",
+        "context": "7F Stage 1 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Table 1"
+      },
+      {
+        "part_number": "227C5763",
+        "context": "7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "103E5796",
+        "context": "7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "101E8629",
+        "context": "7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "108E4197",
+        "context": "7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "103E5775",
+        "context": "7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "109E3897",
+        "context": "7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "193D2055",
+        "context": "7F Stage 2 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "193D2064",
+        "context": "7F Stage 2 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "193D2400",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "199D3925",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "109E5591",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "109E5614",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "114E1229",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "116E2436",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "116E3968",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "119E6503",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "323E2240",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "144E7562",
+        "context": "7F Stage 2 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "146E3627",
+        "context": "7F Stage 2 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Table 2"
+      },
+      {
+        "part_number": "101E2274",
+        "context": "9F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "103E3969",
+        "context": "9F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "109E3982",
+        "context": "9F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "227C5743",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "193D2050",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "188D7864",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "193D2422",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "193D2023",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "196D1632",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "193D2036",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "198D1211",
+        "context": "9F Stage 1 wheel, peening modification, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "VT",
+          "BI",
+          "FPI",
+          "UT"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "109E5254",
+        "context": "9F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "111E3299",
+        "context": "9F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "119E6594",
+        "context": "9F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "133E8667",
+        "context": "9F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "146E2874",
+        "context": "9F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "131T7528",
+        "context": "9F Stage 1 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Table 3"
+      },
+      {
+        "part_number": "131T7534",
+        "context": "9F Stage 2 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Table 4"
+      },
+      {
+        "part_number": "109E9194",
+        "context": "6F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 5"
+      },
+      {
+        "part_number": "116E3992",
+        "context": "6F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 5"
+      },
+      {
+        "part_number": "323E1860",
+        "context": "6F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 5"
+      },
+      {
+        "part_number": "137E1002",
+        "context": "6F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT",
+        "required_inspection_types": [
+          "ECI",
+          "BI",
+          "FPI"
+        ],
+        "source_location": "Table 5"
+      },
+      {
+        "part_number": "141E4569",
+        "context": "6F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "ECI",
+          "FPI"
+        ],
+        "source_location": "Table 5"
+      },
+      {
+        "part_number": "131T7543",
+        "context": "6F Stage 1 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Table 5"
+      },
+      {
+        "part_number": "131T7549",
+        "context": "6F Stage 2 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "Table 6"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1280",
+        "document_type": "TIL",
+        "context": "Superseded by TIL 1937-R2"
+      },
+      {
+        "document_number": "TIL 1327",
+        "document_type": "TIL",
+        "context": "Superseded by TIL 1937-R2"
+      },
+      {
+        "document_number": "TIL 1434",
+        "document_type": "TIL",
+        "context": "Superseded by TIL 1937-R2"
+      },
+      {
+        "document_number": "TIL 1539",
+        "document_type": "TIL",
+        "context": "Superseded by TIL 1937-R2"
+      },
+      {
+        "document_number": "TIL 1540",
+        "document_type": "TIL",
+        "context": "Superseded by TIL 1937-R2"
+      },
+      {
+        "document_number": "TIL 1742",
+        "document_type": "TIL",
+        "context": "Superseded by TIL 1937-R2"
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Frame size (6F, 7F, 9F)",
+      "Turbine wheel stage (Stage 1, Stage 2, Stage 3)",
+      "Material heat treatment (2 Step Age, 3 Step Age)",
+      "Shot peening condition (fired without shot peening, peening modification, never fired without shot peening)",
+      "Cooling slot geometry (original, contoured, enhanced)",
+      "Balance rail & lock wire tab configuration (original, stakeless & modified tab)",
+      "Back cut bucket installation status",
+      "TW2 Life Extension status",
+      "Environmental conditions (high ambient, humid, corrosive)"
+    ],
+    "configuration_summary": "Inspection type, interval, and scope vary significantly based on the combination of frame size, wheel stage, material heat treatment, peening condition at first fire, cooling slot geometry, lock wire tab/balance rail configuration, and whether back cut buckets are installed. Older configurations (fired without shot peening, original cooling slot) require the most frequent and comprehensive inspections (every 24 khrs/900 starts with ECI, VT, BI, FPI, UT). Newer configurations (3 Step Age, enhanced cooling slot, stakeless & modified tab) require only FPI at every Major.",
+    "severity_signals": [
+      "Compliance Category A - Alert",
+      "Failure to comply could result in equipment damage or facility damage",
+      "Crack may propagate to critical length releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage",
+      "Partial wheel material liberation particularly when located on the stage 1 wheel",
+      "Immediate wheel replacement recommended if cooling slot crack is detected"
+    ],
+    "failure_consequences": [
+      "Undetected crack propagation to critical length releasing wheel section and/or turbine blades into hot gas path",
+      "Significant damage to turbine hot gas path section",
+      "Partial wheel material liberation (particularly Stage 1)",
+      "Equipment damage or facility damage"
+    ],
+    "risk_summary": "F-class turbine wheel disks made of high nickel alloy are sensitive to surface imperfections where intergranular cracks may initiate and propagate due to high stresses and temperatures. Rotors operating in high ambient and humid or corrosive conditions have increased risk. Undetected cracks can propagate to critical length causing wheel section liberation and significant downstream damage. Risk is highest for early generation rotors fired without shot peening with original cooling slot geometry.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Table 1",
+        "table_description": "Applicable 7F Stage 1 Turbine Wheel Configurations - maps heat treatment, peening condition, cooling slot geometry, and LWT configuration to required inspections, intervals, and applicable part numbers",
+        "useful_for_downstream": true,
+        "reason": "Defines inspection types and intervals by part number for 7F Stage 1 wheels; critical for outage scoping and SBOM validation"
+      },
+      {
+        "table_label": "Table 2",
+        "table_description": "Applicable 7F Stage 2 Turbine Wheel Configurations - same structure as Table 1 for Stage 2",
+        "useful_for_downstream": true,
+        "reason": "Defines inspection types and intervals by part number for 7F Stage 2 wheels including TW2 Life Extension ECI requirement"
+      },
+      {
+        "table_label": "Table 3",
+        "table_description": "Applicable 9F Stage 1 Turbine Wheel Configurations",
+        "useful_for_downstream": true,
+        "reason": "Defines inspection types and intervals by part number for 9F Stage 1 wheels"
+      },
+      {
+        "table_label": "Table 4",
+        "table_description": "Applicable 9F Stage 2 Turbine Wheel Configurations",
+        "useful_for_downstream": true,
+        "reason": "Defines inspection types and intervals by part number for 9F Stage 2 wheels including TW2 Life Extension ECI requirement"
+      },
+      {
+        "table_label": "Table 5",
+        "table_description": "Applicable 6F Stage 1 Turbine Wheel Configurations",
+        "useful_for_downstream": true,
+        "reason": "Defines inspection types and intervals by part number for 6F Stage 1 wheels"
+      },
+      {
+        "table_label": "Table 6",
+        "table_description": "Applicable 6F Stage 2 Turbine Wheel Configurations",
+        "useful_for_downstream": true,
+        "reason": "Defines inspection types and intervals by part number for 6F Stage 2 wheels including TW2 Life Extension ECI requirement"
+      }
+    ],
+    "missing_information_flags": [
+      "No specific MLI numbers referenced in document",
+      "No explicit list of serial numbers or site identifiers provided - applicability is by environmental condition and part number",
+      "Stage 3 wheel and TAS part numbers not listed - inspections apply regardless of frame size or part numbers",
+      "Specific environmental condition thresholds (temperature, humidity, corrosion levels) not quantified"
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "Advise users to perform routine inspections at a maintenance interval based on installed configuration."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage"
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL is considered completed when the turbine wheels reach end of life and are removed from service."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Qualified vendor to perform CO\u2082 blast cleaning of turbine rotor. GE Vernova qualified personnel to perform rotor inspections. Back-cut stage 1 and stage 2 turbine blades."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "Rotors operating in high ambient and humid or corrosive conditions have an increased risk of crack initiation and propagation."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation."
+      },
+      {
+        "field": "hardware_or_part_configuration_text",
+        "snippet": "Some rotors may have a combination of enhanced, contoured, and/or original configuration wheels, depending on rotor repair history. All wheels should follow their applicable inspection recommendations."
+      },
+      {
+        "field": "prerequisite_outage_or_inspection_context_text",
+        "snippet": "Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply."
+      }
+    ],
+    "extraction_confidence": 0.93
+  },
+  "raw_profile": "```json\n{\n  \"til_number\": \"TIL 1937\",\n  \"revision\": \"R2\",\n  \"title\": \"F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS\",\n  \"publish_date\": \"2024-04-10\",\n  \"reason_for_revision\": \"1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels. 2) Added a specific ECI inspection interval for Stage 1 enhanced wheels with 2 Step-Age heat treatment. 3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension.\",\n  \"purpose\": \"Advise users to perform routine inspections at a maintenance interval based on installed configuration for select F-class gas turbine rotors operating in high ambient and specific environmental conditions.\",\n  \"compliance_category_code\": \"A\",\n  \"compliance_category_text\": \"Alert - Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.\",\n  \"recurring_indicator_if_found\": \"Yes - recurring inspections at defined intervals until turbine wheels reach end of life\",\n  \"coarse_outage_type\": \"Next Scheduled Outage\",\n  \"scope_of_work\": [\n    \"Qualified vendor to perform CO\u2082 blast cleaning of turbine rotor\",\n    \"GE Vernova qualified personnel to perform rotor inspections\",\n    \"Back-cut stage 1 and stage 2 turbine blades\",\n    \"Rotor inspection equipment and blend/peen kit are provided and applied by GE Vernova\",\n    \"Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope\",\n    \"CO\u2082 blast cleaning of turbine rotor can be completed in one shift (12 hours), including a prior hand wiping to remove oil from the dovetail surfaces if necessary\",\n    \"ECI of first and second stages can be completed in three shifts or all three stages in four shifts\",\n    \"Total time between turbine blade removal and installation should be four shifts (two days)\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"Perform ECI, Visual, BI, FPI, and UT inspections every 24 khrs or 900 starts for wheels fired without shot peening (original cooling slot, original LWT)\",\n    \"Perform ECI every 32 khrs or 1,200 starts for 2 Step Age wheels with original cooling slot (every 24 khrs or 900 starts if back cut buckets not installed)\",\n    \"Perform ECI at 96 khrs or 3,600 starts for 2 Step Age wheels with contoured/enhanced cooling slot (every 48 khrs or 2,400 starts if back cut buckets not installed)\",\n    \"Perform BI every HGPI when CDC is not removed\",\n    \"Perform FPI on LWT every HGPI when buckets are removed; on BWG every Major and when CDC is removed during HGPI\",\n    \"For Stage 2 wheels with 2 Step Age: perform ECI at first Major after TW2 Life Extension in addition to interval-based ECI\",\n    \"For 3 Step Age wheels with enhanced cooling slot and stakeless/modified tab: FPI on LWT every Major\",\n    \"TW3 balance weight grooves (if staked): FPI every Major Inspection and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary\",\n    \"TW3 lockwire tabs (if original): FPI every HGPI while buckets are removed; if modified: FPI every MI\",\n    \"TAS balance weight grooves (if staked): FPI every MI and when Exhaust Frame is removed during HGPI; if stakeless: no inspections necessary\",\n    \"Install back cut (dovetail modified) Stage 1 and 2 turbine blades at next scheduled maintenance (HGPI or MI)\",\n    \"If cooling slot crack is detected during inspection, immediate wheel replacement is recommended\",\n    \"Contact GE Vernova representative to determine peening condition for Peening Modification category wheels\",\n    \"Prior to ECI, turbine rotor must be appropriately cleaned (preferred: CO\u2082 blasting; alternative: hand-cleaning 2-3 shifts)\"\n  ],\n  \"completion_criteria_text\": \"This TIL is considered completed when the turbine wheels reach end of life and are removed from service.\",\n  \"maintenance_trigger_text\": \"Inspections triggered by operating hours, starts, outage type (HGPI/Major), bucket removal, CDC removal, and Rotor Life Extension milestones.\",\n  \"recommended_interval_or_trigger\": [\n    \"Every 24 khrs or 900 starts (fired without shot peening, original cooling slot)\",\n    \"Every 32 khrs or 1,200 starts (2 Step Age, original cooling slot, never fired without shot peening; reduces to 24 khrs/900 starts if back cut buckets not installed)\",\n    \"At 96 khrs or 3,600 starts (2 Step Age, contoured/enhanced cooling slot; every 48 khrs/2,400 starts if back cut buckets not installed)\",\n    \"Every HGPI when CDC is not removed (BI)\",\n    \"Every HGPI when buckets are removed (FPI on LWT)\",\n    \"Every Major and when CDC is removed during HGPI (FPI on BWG)\",\n    \"Every Major (FPI on LWT for modified tab / 3 Step Age configurations)\",\n    \"At first Major after TW2 Life Extension (ECI for Stage 2 wheels)\"\n  ],\n  \"usage_counters_to_check_or_consider\": [\n    \"operating_hours\",\n    \"starts\"\n  ],\n  \"usage_counter_requirements_text\": \"Inspection intervals are defined in thousands of operating hours (khrs) and number of starts. Specific thresholds vary by wheel configuration: 24 khrs/900 starts, 32 khrs/1,200 starts, 48 khrs/2,400 starts, or 96 khrs/3,600 starts depending on heat treatment, peening condition, cooling slot geometry, and whether back cut buckets are installed.\",\n  \"frame_or_model_applicability_text\": \"Select F-class gas turbine rotors: 6F, 7F, and 9F frames\",\n  \"combustion_or_fuel_configuration_text\": null,\n  \"hardware_or_part_configuration_text\": \"Applicability depends on material heat treatment (2 Step Age vs 3 Step Age), peening condition (fired without shot peening, peening modification, never fired without shot peening), cooling slot geometry (original, contoured, enhanced), and balance rail & lock wire tab configuration (original, stakeless & modified tab). Whether back cut buckets are installed affects ECI interval.\",\n  \"serial_or_unit_applicability_text\": \"Units operating in high ambient and humid or corrosive environmental conditions. For Peening Modification category wheels, contact GE Vernova representative with turbine rotor serial number to determine applicable peening condition.\",\n  \"exclusions_or_non_applicable_conditions_text\": \"Stakeless balance weight grooves on TW3 and TAS require no BWG inspections. Modified lock wire tabs on TW3 only require FPI every MI rather than every HGPI.\",\n  \"required_prior_modifications_text\": \"Back cut (dovetail modified) Stage 1 and 2 turbine blades recommended to be installed on all turbine rotors. Relief cut modifications incorporated into new production F-class turbine blades and performed as part of standard turbine blade repair/refurbishment.\",\n  \"prerequisite_outage_or_inspection_context_text\": \"Turbine blades must be removed prior to beginning inspections per hot gas path outage scope. Rotor must be cleaned (CO\u2082 blast preferred) prior to ECI. For Peening Modification wheels, until validated by GE Vernova representative, assume Fired without Shot Peening recommendations apply.\",\n  \"sbom_dependency_flag\": true,\n  \"sbom_trigger_reason\": \"Inspection intervals and required inspection types are determined by specific turbine wheel part numbers, which must be validated against installed configuration. Multiple part numbers per frame/stage with different heat treatment, peening, cooling slot, and LWT configurations drive different maintenance requirements.\",\n  \"mli_numbers\": [],\n  \"parts_referenced\": [\n    {\n      \"part_number\": \"227C5762\",\n      \"context\": \"7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"103E5795\",\n      \"context\": \"7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"188D7369\",\n      \"context\": \"7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"109E3085\",\n      \"context\": \"7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"101E8627\",\n      \"context\": \"7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"109E3896\",\n      \"context\": \"7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"103E5773\",\n      \"context\": \"7F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"193D2053\",\n      \"context\": \"7F Stage 1 wheel, peening modification, original cooling slot, original LWT - contact GE Vernova to determine peening condition\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"193D2063\",\n      \"context\": \"7F Stage 1 wheel, peening modification, original cooling slot, original LWT - contact GE Vernova to determine peening condition\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"243C1494\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"109E5612\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"188D7996\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"114E1228\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"196D1915\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"116E2434\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"199D3931\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"117E5673\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"109E5303\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"119E2398\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"109E5589\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"119E2621\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"116E3967\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"119E3771\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"119E4181\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"323E2241\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"144E7560\",\n      \"context\": \"7F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"ECI\", \"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"146E3626\",\n      \"context\": \"7F Stage 1 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"FPI\"],\n      \"source_location\": \"Table 1\"\n    },\n    {\n      \"part_number\": \"227C5763\",\n      \"context\": \"7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"103E5796\",\n      \"context\": \"7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"101E8629\",\n      \"context\": \"7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"108E4197\",\n      \"context\": \"7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"103E5775\",\n      \"context\": \"7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"109E3897\",\n      \"context\": \"7F Stage 2 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"193D2055\",\n      \"context\": \"7F Stage 2 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"193D2064\",\n      \"context\": \"7F Stage 2 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"193D2400\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"199D3925\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"109E5591\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"109E5614\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"114E1229\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"116E2436\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"116E3968\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"119E6503\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"323E2240\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"144E7562\",\n      \"context\": \"7F Stage 2 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"ECI\", \"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"146E3627\",\n      \"context\": \"7F Stage 2 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"FPI\"],\n      \"source_location\": \"Table 2\"\n    },\n    {\n      \"part_number\": \"101E2274\",\n      \"context\": \"9F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"103E3969\",\n      \"context\": \"9F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"109E3982\",\n      \"context\": \"9F Stage 1 wheel, fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"227C5743\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"193D2050\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"188D7864\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"193D2422\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"193D2023\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"196D1632\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"193D2036\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"198D1211\",\n      \"context\": \"9F Stage 1 wheel, peening modification, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"VT\", \"BI\", \"FPI\", \"UT\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"109E5254\",\n      \"context\": \"9F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"111E3299\",\n      \"context\": \"9F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"119E6594\",\n      \"context\": \"9F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"133E8667\",\n      \"context\": \"9F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"146E2874\",\n      \"context\": \"9F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"ECI\", \"FPI\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"131T7528\",\n      \"context\": \"9F Stage 1 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"FPI\"],\n      \"source_location\": \"Table 3\"\n    },\n    {\n      \"part_number\": \"131T7534\",\n      \"context\": \"9F Stage 2 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"FPI\"],\n      \"source_location\": \"Table 4\"\n    },\n    {\n      \"part_number\": \"109E9194\",\n      \"context\": \"6F Stage 1 wheel, 2 Step Age, never fired without shot peening, original cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 5\"\n    },\n    {\n      \"part_number\": \"116E3992\",\n      \"context\": \"6F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 5\"\n    },\n    {\n      \"part_number\": \"323E1860\",\n      \"context\": \"6F Stage 1 wheel, 2 Step Age, never fired without shot peening, contoured cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 5\"\n    },\n    {\n      \"part_number\": \"137E1002\",\n      \"context\": \"6F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, original LWT\",\n      \"required_inspection_types\": [\"ECI\", \"BI\", \"FPI\"],\n      \"source_location\": \"Table 5\"\n    },\n    {\n      \"part_number\": \"141E4569\",\n      \"context\": \"6F Stage 1 wheel, 2 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"ECI\", \"FPI\"],\n      \"source_location\": \"Table 5\"\n    },\n    {\n      \"part_number\": \"131T7543\",\n      \"context\": \"6F Stage 1 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"FPI\"],\n      \"source_location\": \"Table 5\"\n    },\n    {\n      \"part_number\": \"131T7549\",\n      \"context\": \"6F Stage 2 wheel, 3 Step Age, never fired without shot peening, enhanced cooling slot, stakeless & modified tab\",\n      \"required_inspection_types\": [\"FPI\"],\n      \"source_location\": \"Table 6\"\n    }\n  ],\n  \"reference_documents\": [\n    {\n      \"document_number\": \"TIL 1280\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by TIL 1937-R2\"\n    },\n    {\n      \"document_number\": \"TIL 1327\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by TIL 1937-R2\"\n    },\n    {\n      \"document_number\": \"TIL 1434\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by TIL 1937-R2\"\n    },\n    {\n      \"document_number\": \"TIL 1539\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by TIL 1937-R2\"\n    },\n    {\n      \"document_number\": \"TIL 1540\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by TIL 1937-R2\"\n    },\n    {\n      \"document_number\": \"TIL 1742\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by TIL 1937-R2\"\n    }\n  ],\n  \"configuration_dependent\": true,\n  \"configuration_variables\": [\n    \"Frame size (6F, 7F, 9F)\",\n    \"Turbine wheel stage (Stage 1, Stage 2, Stage 3)\",\n    \"Material heat treatment (2 Step Age, 3 Step Age)\",\n    \"Shot peening condition (fired without shot peening, peening modification, never fired without shot peening)\",\n    \"Cooling slot geometry (original, contoured, enhanced)\",\n    \"Balance rail & lock wire tab configuration (original, stakeless & modified tab)\",\n    \"Back cut bucket installation status\",\n    \"TW2 Life Extension status\",\n    \"Environmental conditions (high ambient, humid, corrosive)\"\n  ],\n  \"configuration_summary\": \"Inspection type, interval, and scope vary significantly based on the combination of frame size, wheel stage, material heat treatment, peening condition at first fire, cooling slot geometry, lock wire tab/balance rail configuration, and whether back cut buckets are installed. Older configurations (fired without shot peening, original cooling slot) require the most frequent and comprehensive inspections (every 24 khrs/900 starts with ECI, VT, BI, FPI, UT). Newer configurations (3 Step Age, enhanced cooling slot, stakeless & modified tab) require only FPI at every Major.\",\n  \"severity_signals\": [\n    \"Compliance Category A - Alert\",\n    \"Failure to comply could result in equipment damage or facility damage\",\n    \"Crack may propagate to critical length releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage\",\n    \"Partial wheel material liberation particularly when located on the stage 1 wheel\",\n    \"Immediate wheel replacement recommended if cooling slot crack is detected\"\n  ],\n  \"failure_consequences\": [\n    \"Undetected crack propagation to critical length releasing wheel section and/or turbine blades into hot gas path\",\n    \"Significant damage to turbine hot gas path section\",\n    \"Partial wheel material liberation (particularly Stage 1)\",\n    \"Equipment damage or facility damage\"\n  ],\n  \"risk_summary\": \"F-class turbine wheel disks made of high nickel alloy are sensitive to surface imperfections where intergranular cracks may initiate and propagate due to high stresses and temperatures. Rotors operating in high ambient and humid or corrosive conditions have increased risk. Undetected cracks can propagate to critical length causing wheel section liberation and significant downstream damage. Risk is highest for early generation rotors fired without shot peening with original cooling slot geometry.\",\n  \"safety_or_damage_language_found\": true,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"Table 1\",\n      \"table_description\": \"Applicable 7F Stage 1 Turbine Wheel Configurations - maps heat treatment, peening condition, cooling slot geometry, and LWT configuration to required inspections, intervals, and applicable part numbers\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Defines inspection types and intervals by part number for 7F Stage 1 wheels; critical for outage scoping and SBOM validation\"\n    },\n    {\n      \"table_label\": \"Table 2\",\n      \"table_description\": \"Applicable 7F Stage 2 Turbine Wheel Configurations - same structure as Table 1 for Stage 2\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Defines inspection types and intervals by part number for 7F Stage 2 wheels including TW2 Life Extension ECI requirement\"\n    },\n    {\n      \"table_label\": \"Table 3\",\n      \"table_description\": \"Applicable 9F Stage 1 Turbine Wheel Configurations\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Defines inspection types and intervals by part number for 9F Stage 1 wheels\"\n    },\n    {\n      \"table_label\": \"Table 4\",\n      \"table_description\": \"Applicable 9F Stage 2 Turbine Wheel Configurations\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Defines inspection types and intervals by part number for 9F Stage 2 wheels including TW2 Life Extension ECI requirement\"\n    },\n    {\n      \"table_label\": \"Table 5\",\n      \"table_description\": \"Applicable 6F Stage 1 Turbine Wheel Configurations\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Defines inspection types and intervals by part number for 6F Stage 1 wheels\"\n    },\n    {\n      \"table_label\": \"Table 6\",\n      \"table_description\": \"Applicable 6F Stage 2 Turbine Wheel Configurations\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Defines inspection types and intervals by part number for 6F Stage 2 wheels including TW2 Life Extension ECI requirement\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific MLI numbers referenced in document\",\n    \"No explicit list of serial numbers or site identifiers provided - applicability is by environmental condition and part number\",\n    \"Stage 3 wheel and TAS part numbers not listed - inspections apply regardless of frame size or part numbers\",\n    \"Specific environmental condition thresholds (temperature, humidity, corrosion levels) not quantified\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"purpose\",\n      \"snippet\": \"Advise users to perform routine inspections at a maintenance interval based on installed configuration.\"\n    },\n    {\n      \"field\": \"failure_consequences\",\n      \"snippet\": \"the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage\"\n    },\n    {\n      \"field\": \"completion_criteria_text\",\n      \"snippet\": \"This TIL is considered completed when the turbine wheels reach end of life and are removed from service.\"\n    },\n    {\n      \"field\": \"scope_of_work\",\n      \"snippet\": \"Qualified vendor to perform CO\u2082 blast cleaning of turbine rotor. GE Vernova qualified personnel to perform rotor inspections. Back-cut stage 1 and stage 2 turbine blades.\"\n    },\n    {\n      \"field\": \"risk_summary\",\n      \"snippet\": \"Rotors operating in high ambient and humid or corrosive conditions have an increased risk of crack initiation and propagation.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation.\"\n    },\n    {\n      \"field\": \"hardware_or_part_configuration_text\",\n      \"snippet\": \"Some rotors may have a combination of enhanced, contoured, and/or original configuration wheels, depending on rotor repair history. All wheels should follow their applicable inspection recommendations.\"\n    },\n    {\n      \"field\": \"prerequisite_outage_or_inspection_context_text\",\n      \"snippet\": \"Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply.\"\n    }\n  ],\n  \"extraction_confidence\": 0.93\n}\n```"
+}

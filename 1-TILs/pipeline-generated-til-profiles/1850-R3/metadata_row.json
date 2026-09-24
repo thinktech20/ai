@@ -1,0 +1,348 @@
+{
+  "document_id": "til 1850-r3 - f-class compressor mechnically-attached shroud s17 inspection",
+  "unique_key": "1850-R3__bc681d4aed439f5bd749a3a641004c8f3db2e41b05ac06f7fe4b7753d3bde40b",
+  "source_path": "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1850-R3 - F-CLASS COMPRESSOR MECHNICALLY-ATTACHED SHROUD S17 INSPECTION.pdf",
+  "source_hash": "bc681d4aed439f5bd749a3a641004c8f3db2e41b05ac06f7fe4b7753d3bde40b",
+  "source_system": "databricks_volume",
+  "requested_til_number": "1850-R3",
+  "matched_til_number": "1850-R3",
+  "match_type": "pdf_name_match",
+  "parser_method": "databricks_ai",
+  "parser_name": "databricks_ai",
+  "parser_version": "v1",
+  "profile_found": true,
+  "parsed_profile_json": {
+    "til_number": "1850-R3",
+    "revision": "R3",
+    "title": "F-CLASS COMPRESSOR MECHNICALLY-ATTACHED SHROUD S17 INSPECTION",
+    "publish_date": "2024-01-17",
+    "reason_for_revision": "This revision is intended to communicate the availability of new configuration Gen-V S17 assembly and availability to modify earlier mechanically-attached shroud S17 generations to Gen-V S17 in GE designated service shop.",
+    "purpose": "This TIL advises operators to monitor the mechanically-attached shroud compressor S17 configurations and provides recommendations for mitigating any observed distress.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Inspection",
+    "scope_of_work": [
+      "Standard manpower for borescope inspection.",
+      "Manpower if replacement of S17 segment is required (these support personnel will already be onsite during MI): Two GE field technicians; One GE Field TA."
+    ],
+    "service_recommendation_line_items": [
+      "When S17s are NOT exposed: perform an annual borescope per GER 3620; also perform borescope inspection during scheduled outages such as planned Combustion Inspections (CI) or Hot Gas Path Inspections (HGPI) when the CDC is not removed.",
+      "During all borescope inspections: inspect 100% of the shrouded S17 for signs of distress (inspect along the vane towards the bushing area, shroud holes, and between vane tips and the shroud).",
+      "When S17s are exposed (Major Inspection (MI) or if the CDC is removed during a Hot Gas Path Inspection (HGPI)): visually inspect for bushing wear, tenon damage, shroud hole ovalization, and wear between the vane tips and the shroud; remove or borescope-inspect S17s in the lower half.",
+      "If significant distress, cracks, detached bushings, or ovalized shroud hole are found during Inspection Procedure 1 or 2: document with pictures and submit to your GE Services representative for engineering disposition.",
+      "If wear or damage is observed: order and install the latest Gen-V S17 configuration as a set for durability improvement; it is acceptable to replace only the damaged segment with the latest S17 segment (Gen-V configuration).",
+      "If desired: use GE refurbishment services to modify earlier mechanically-attached shroud S17 configurations to the latest Gen-V configuration based on approved repair instruction (consult service representative)."
+    ],
+    "completion_criteria_text": "This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage.",
+    "maintenance_trigger_text": "Annual borescope inspection; borescope during scheduled outages such as planned CI or HGPI when the CDC is not removed; visual inspection when S17s are exposed during MI or when CDC is removed during HGPI.",
+    "recommended_interval_or_trigger": [
+      "Annual borescope is recommended per GER 3620 (when S17s are NOT exposed).",
+      "Borescope inspection during scheduled outages such as planned Combustion Inspections (CI) or Hot Gas Path Inspections (HGPI), when the CDC is not removed; visual inspection when S17s are exposed during Major Inspection (MI) or if the CDC is removed during a Hot Gas Path Inspection (HGPI)."
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All 7F.03, 7F.04, 7FB, and 9F.05 (9FB) units with mechanically-attached shroud S17 segments.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Mechanically-attached shroud compressor S17 configurations including welded bolt configuration (bolt secured via one or two tack welds), staked bolt configuration (stake bolt 180° apart), staked bolt configuration with changed bushing material (2016 Gen-IV), and Gen-V S17 assembly with both bushing and shroud made of the same cobalt-chromium based alloy. Recommendations apply for Gen-IV and earlier mechanically-attached shroud configurations with and without compressor discharge casing (CDC) removal. All configurations of S17 shrouded segments are compatible and therefore individual segments may be replaced with the newer configuration.",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Inspection Procedure 1 applies when S17s are NOT exposed (CDC not removed). Inspection Procedure 2 applies when S17s are exposed (Major Inspection (MI) or if the CDC is removed during a Hot Gas Path Inspection (HGPI)).",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Document requires verification/installation of a specific configuration revision (Gen-V S17 assembly) and discusses multiple S17 generations (Gen-IV and earlier) with configuration-dependent inspection and replacement guidance.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Gen-V S17 assembly / latest Gen-V S17 configuration (S17 shrouded segments) recommended for installation across the entire stage; acceptable to replace only damaged segment with Gen-V segment.",
+        "required_inspection_types": [],
+        "source_location": "RECOMMENDATIONS; TIL COMPLETION CRITERIA"
+      },
+      {
+        "part_number": null,
+        "context": "Mechanically-attached shroud S17 hardware elements referenced in distress/inspection: bolts (welded bolt or staked bolt), bushings, shroud, tenon, shroud holes.",
+        "required_inspection_types": [],
+        "source_location": "BACKGROUND DISCUSSION; RECOMMENDATIONS"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1315-2R1",
+        "document_type": "TIL",
+        "context": "Referenced as recommending installing counterbore plugs and modifying the control system to reduce aft end distress."
+      },
+      {
+        "document_number": "TIL 1478-2",
+        "document_type": "TIL",
+        "context": "Referenced as recommending installing counterbore plugs and modifying the control system to reduce aft end distress."
+      },
+      {
+        "document_number": "GER 3620",
+        "document_type": "Other",
+        "context": "Annual borescope is recommended per GER 3620."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "S17 mechanically-attached shroud configuration generation (Gen-IV and earlier vs Gen-V)",
+      "Bolt retention method (welded bolt vs staked bolt)",
+      "Whether S17s are exposed / whether CDC is removed (CDC removed vs not removed)"
+    ],
+    "configuration_summary": "Inspection method and access depend on whether S17s are exposed (CDC removed) and on S17 mechanically-attached shroud generation/configuration; Gen-V S17 assembly is the recommended durability upgrade and is compatible with earlier S17 shrouded segments for segment-level replacement.",
+    "severity_signals": [
+      "significant distress",
+      "cracks",
+      "detached bushings",
+      "ovalized shroud hole",
+      "bushing wear",
+      "tenon damage",
+      "wear between the vane tips and the shroud",
+      "damage to the bolts, shrouds, and/or bushings"
+    ],
+    "failure_consequences": [
+      "Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud, and the S17 will act as a cantilever, increasing the stress on the vane.",
+      "Over time, this condition poses a risk, possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel."
+    ],
+    "risk_summary": "Observed distress/wear in mechanically-attached shrouded S17 configurations can progress to tip detachment and increased vane stress, with potential secondary damage to adjacent airfoils and possible migration forward into the R17 wheel.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance Category Definitions (M/C/A/S)",
+        "table_description": "Defines Maintenance, Compliance Required, Alert, and Safety compliance categories.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; does not provide equipment-specific inspection intervals, applicability matrices, or parts."
+      },
+      {
+        "table_label": "Timing Code Legend (1-3)",
+        "table_description": "Maps timing codes 1-3 to generic action timing (e.g., prior to startup, next shutdown).",
+        "useful_for_downstream": false,
+        "reason": "Generic legend; document already states Timing Code - 4 and provides specific inspection recommendations in text."
+      },
+      {
+        "table_label": "Timing Code Legend (4-6)",
+        "table_description": "Maps timing codes 4-6 to generic action timing (e.g., at first exposure of component).",
+        "useful_for_downstream": false,
+        "reason": "Generic legend; does not add equipment-specific values beyond the stated Timing Code - 4."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for Gen-V S17 assembly/segments, bolts, bushings, or shrouds.",
+      "No explicit recurring indicator stated (e.g., recurring vs one-time) beyond recommending annual borescope inspections.",
+      "til_number still contains a hyphen-delimited revision suffix while revision is separately populated."
+    ],
+    "source_snippets": [
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "All 7F.03, 7F.04, 7FB, and 9F.05 (9FB) units with mechanically-attached shroud S17 segments."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "An annual borescope is recommended per GER 3620."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "During all borescope inspections, it is recommended to inspect 100% of the shrouded S17 for signs of distress."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "It is recommended to visually inspect for any signs of bushing wear (Figure 8), tenon damage, shroud hole ovalization (Figure 9), and wear between the vane tips and the shroud."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If significant distress, cracks, detached bushings, or ovalized shroud hole are found during Inspection Procedure 1 or 2, the damage must be documented with pictures and submitted to your GE Services representative for engineering disposition."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If wear or damage is observed during the inspection above, it is recommended to order and install the latest Gen-V S17 configuration as a set for durability improvement."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud, and the S17 will act as a cantilever, increasing the stress on the vane. Over time, this condition poses a risk, possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Standard manpower for borescope inspection."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "raw_profile_json": {
+    "til_number": "1850-R3",
+    "revision": "R3",
+    "title": "F-CLASS COMPRESSOR MECHNICALLY-ATTACHED SHROUD S17 INSPECTION",
+    "publish_date": "2024-01-17",
+    "reason_for_revision": "This revision is intended to communicate the availability of new configuration Gen-V S17 assembly and availability to modify earlier mechanically-attached shroud S17 generations to Gen-V S17 in GE designated service shop.",
+    "purpose": "This TIL advises operators to monitor the mechanically-attached shroud compressor S17 configurations and provides recommendations for mitigating any observed distress.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Inspection",
+    "scope_of_work": [
+      "Standard manpower for borescope inspection.",
+      "Manpower if replacement of S17 segment is required (these support personnel will already be onsite during MI): Two GE field technicians; One GE Field TA."
+    ],
+    "service_recommendation_line_items": [
+      "When S17s are NOT exposed: perform an annual borescope per GER 3620; also perform borescope inspection during scheduled outages such as planned Combustion Inspections (CI) or Hot Gas Path Inspections (HGPI) when the CDC is not removed.",
+      "During all borescope inspections: inspect 100% of the shrouded S17 for signs of distress (inspect along the vane towards the bushing area, shroud holes, and between vane tips and the shroud).",
+      "When S17s are exposed (Major Inspection (MI) or if the CDC is removed during a Hot Gas Path Inspection (HGPI)): visually inspect for bushing wear, tenon damage, shroud hole ovalization, and wear between the vane tips and the shroud; remove or borescope-inspect S17s in the lower half.",
+      "If significant distress, cracks, detached bushings, or ovalized shroud hole are found during Inspection Procedure 1 or 2: document with pictures and submit to your GE Services representative for engineering disposition.",
+      "If wear or damage is observed: order and install the latest Gen-V S17 configuration as a set for durability improvement; it is acceptable to replace only the damaged segment with the latest S17 segment (Gen-V configuration).",
+      "If desired: use GE refurbishment services to modify earlier mechanically-attached shroud S17 configurations to the latest Gen-V configuration based on approved repair instruction (consult service representative)."
+    ],
+    "completion_criteria_text": "This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage.",
+    "maintenance_trigger_text": "Annual borescope inspection; borescope during scheduled outages such as planned CI or HGPI when the CDC is not removed; visual inspection when S17s are exposed during MI or when CDC is removed during HGPI.",
+    "recommended_interval_or_trigger": [
+      "Annual borescope is recommended per GER 3620 (when S17s are NOT exposed).",
+      "Borescope inspection during scheduled outages such as planned Combustion Inspections (CI) or Hot Gas Path Inspections (HGPI), when the CDC is not removed; visual inspection when S17s are exposed during Major Inspection (MI) or if the CDC is removed during a Hot Gas Path Inspection (HGPI)."
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All 7F.03, 7F.04, 7FB, and 9F.05 (9FB) units with mechanically-attached shroud S17 segments.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Mechanically-attached shroud compressor S17 configurations including welded bolt configuration (bolt secured via one or two tack welds), staked bolt configuration (stake bolt 180° apart), staked bolt configuration with changed bushing material (2016 Gen-IV), and Gen-V S17 assembly with both bushing and shroud made of the same cobalt-chromium based alloy. Recommendations apply for Gen-IV and earlier mechanically-attached shroud configurations with and without compressor discharge casing (CDC) removal. All configurations of S17 shrouded segments are compatible and therefore individual segments may be replaced with the newer configuration.",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Inspection Procedure 1 applies when S17s are NOT exposed (CDC not removed). Inspection Procedure 2 applies when S17s are exposed (Major Inspection (MI) or if the CDC is removed during a Hot Gas Path Inspection (HGPI)).",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Document requires verification/installation of a specific configuration revision (Gen-V S17 assembly) and discusses multiple S17 generations (Gen-IV and earlier) with configuration-dependent inspection and replacement guidance.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Gen-V S17 assembly / latest Gen-V S17 configuration (S17 shrouded segments) recommended for installation across the entire stage; acceptable to replace only damaged segment with Gen-V segment.",
+        "required_inspection_types": [],
+        "source_location": "RECOMMENDATIONS; TIL COMPLETION CRITERIA"
+      },
+      {
+        "part_number": null,
+        "context": "Mechanically-attached shroud S17 hardware elements referenced in distress/inspection: bolts (welded bolt or staked bolt), bushings, shroud, tenon, shroud holes.",
+        "required_inspection_types": [],
+        "source_location": "BACKGROUND DISCUSSION; RECOMMENDATIONS"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1315-2R1",
+        "document_type": "TIL",
+        "context": "Referenced as recommending installing counterbore plugs and modifying the control system to reduce aft end distress."
+      },
+      {
+        "document_number": "TIL 1478-2",
+        "document_type": "TIL",
+        "context": "Referenced as recommending installing counterbore plugs and modifying the control system to reduce aft end distress."
+      },
+      {
+        "document_number": "GER 3620",
+        "document_type": "Other",
+        "context": "Annual borescope is recommended per GER 3620."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "S17 mechanically-attached shroud configuration generation (Gen-IV and earlier vs Gen-V)",
+      "Bolt retention method (welded bolt vs staked bolt)",
+      "Whether S17s are exposed / whether CDC is removed (CDC removed vs not removed)"
+    ],
+    "configuration_summary": "Inspection method and access depend on whether S17s are exposed (CDC removed) and on S17 mechanically-attached shroud generation/configuration; Gen-V S17 assembly is the recommended durability upgrade and is compatible with earlier S17 shrouded segments for segment-level replacement.",
+    "severity_signals": [
+      "significant distress",
+      "cracks",
+      "detached bushings",
+      "ovalized shroud hole",
+      "bushing wear",
+      "tenon damage",
+      "wear between the vane tips and the shroud",
+      "damage to the bolts, shrouds, and/or bushings"
+    ],
+    "failure_consequences": [
+      "Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud, and the S17 will act as a cantilever, increasing the stress on the vane.",
+      "Over time, this condition poses a risk, possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel."
+    ],
+    "risk_summary": "Observed distress/wear in mechanically-attached shrouded S17 configurations can progress to tip detachment and increased vane stress, with potential secondary damage to adjacent airfoils and possible migration forward into the R17 wheel.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance Category Definitions (M/C/A/S)",
+        "table_description": "Defines Maintenance, Compliance Required, Alert, and Safety compliance categories.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; does not provide equipment-specific inspection intervals, applicability matrices, or parts."
+      },
+      {
+        "table_label": "Timing Code Legend (1-3)",
+        "table_description": "Maps timing codes 1-3 to generic action timing (e.g., prior to startup, next shutdown).",
+        "useful_for_downstream": false,
+        "reason": "Generic legend; document already states Timing Code - 4 and provides specific inspection recommendations in text."
+      },
+      {
+        "table_label": "Timing Code Legend (4-6)",
+        "table_description": "Maps timing codes 4-6 to generic action timing (e.g., at first exposure of component).",
+        "useful_for_downstream": false,
+        "reason": "Generic legend; does not add equipment-specific values beyond the stated Timing Code - 4."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for Gen-V S17 assembly/segments, bolts, bushings, or shrouds.",
+      "No explicit recurring indicator stated (e.g., recurring vs one-time) beyond recommending annual borescope inspections."
+    ],
+    "source_snippets": [
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "All 7F.03, 7F.04, 7FB, and 9F.05 (9FB) units with mechanically-attached shroud S17 segments."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "An annual borescope is recommended per GER 3620."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "During all borescope inspections, it is recommended to inspect 100% of the shrouded S17 for signs of distress."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "It is recommended to visually inspect for any signs of bushing wear (Figure 8), tenon damage, shroud hole ovalization (Figure 9), and wear between the vane tips and the shroud."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If significant distress, cracks, detached bushings, or ovalized shroud hole are found during Inspection Procedure 1 or 2, the damage must be documented with pictures and submitted to your GE Services representative for engineering disposition."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If wear or damage is observed during the inspection above, it is recommended to order and install the latest Gen-V S17 configuration as a set for durability improvement."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud, and the S17 will act as a cantilever, increasing the stress on the vane. Over time, this condition poses a risk, possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Standard manpower for borescope inspection."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "extracted_document_method": "databricks_ai",
+  "extracted_text_char_count": 18744,
+  "extracted_table_count": 3,
+  "extraction_confidence": 0.78,
+  "llm_model": "azure-gpt-5-2",
+  "metadata_status": "completed",
+  "metadata_retry_count": 0,
+  "chunk_status": null,
+  "chunk_retry_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ingest_ts": "2026-07-05 00:17:55.485394",
+  "metadata_processed_ts": "2026-07-05 00:17:55.485987",
+  "chunk_processed_ts": null,
+  "run_id": "til_p1_20260704_235852_30f3ba3a"
+}

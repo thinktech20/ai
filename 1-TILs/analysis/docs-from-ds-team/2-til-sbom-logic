@@ -1,0 +1,103 @@
+E6.3 - TIL SBOM Logic
+Tool Specs
+Scope and Audience
+This document describes the current Step 6 SBOM logic flow used for TIL applicability support.
+Audience:
+•	DS leads and SMEs
+•	step owners and teammate reviewers
+•	architecture and dev teams preparing production design
+Primary goals:
+•	explain what the SBOM stage does today
+•	show where it sits in the Step 6 workflow
+•	document script-level contracts (inputs, outputs, key methods)
+•	summarize preliminary findings and runtime uncertainties
+Active Anchors
+Main integration point:
+•	code_assets/experiments/step6/run_gt_til_applicability_eval.py
+Primary SBOM module:
+•	code_assets/experiments/step6/sbom_lookup.py
+Related design note:
+•	code_assets/experiments/step6/SBOM_CHECK_IMPLEMENTATION_PLAN.md
+Pipeline Map (Current)
+ 
+Data Workflow and Process
+1.	Step 6 runner builds the per-case payload.
+2.	Runner calls build_sbom_context(matched_esn, til_profile_context).
+3.	SBOM logic checks sbom_dependency_flag and strict part/MLI keys from profile context.
+4.	SBOM logic tries Databricks SOT lookup first.
+5.	If SOT rows are unavailable, logic falls back to local sample workbook parsing.
+6.	Deterministic matching runs against normalized part and MLI values.
+7.	sbom_context is returned with status, matches, condensed evidence, and notes.
+8.	Final applicability prompt receives SBOM as supporting configuration evidence (not a hard gate).
+Inputs and Contracts
+Step 6 -> SBOM request shape
+Key fields consumed from til_profile_context:
+•	sbom_dependency_flag
+•	sbom_trigger_reason
+•	parts_referenced[].part_number
+•	mli_numbers[].mli_number
+Other key input:
+•	matched_esn
+Data sources used
+Primary SOT sources:
+•	vgpd.plm_hcd_std_views.plm_sbom_explosion_sot_vw
+•	vgpd.plm_hcd_std_views.plm_sbom_deviation_details_sot_vw
+Fallback source:
+•	local sample SBOM workbook folder under context/data/source_examples/sbom
+Matching logic (current)
+•	deterministic normalization via normalize_cell
+•	part matching supports exact normalized equality and 8-char prefix family behavior
+•	MLI matching supports normalized variants through normalize_mli_variants
+•	no embedding-based fuzzy retrieval in the current E6.3 path
+Outputs
+Returned context block includes:
+•	status
+•	source_type, source_file, source_tables
+•	matched_esn, source_serial_numbers
+•	strict_part_numbers, strict_mli_numbers
+•	match_count, matched_sections
+•	condensed_matches, raw_matches
+•	notes
+Status values seen in logic:
+•	skipped_not_required
+•	skipped_missing_strict_part_numbers
+•	source_not_found
+•	parse_error
+•	no_match_found
+•	matched
+Key Methods and Responsibilities
+From sbom_lookup.py:
+•	extract_strict_part_numbers / extract_strict_mli_numbers: derive lookup keys from profile
+•	load_sbom_sections_from_sot: query Databricks SOT SBOM rows
+•	find_sample_workbook_for_esn + load_sbom_sections: local fallback parse
+•	match_rows: deterministic matching across explosion/deviations sections
+•	condense_matches: prompt-safe match compression
+•	build_sbom_context: orchestrates request, source selection, matching, and output contract
+Preliminary Experiment Findings
+1.	SBOM logic is now integrated in active Step 6 payload assembly, not only in design notes.
+2.	Databricks SOT-first with workbook fallback is implemented and resilient to missing-source cases.
+3.	Matching is explainable and auditable because it is deterministic and row-preserving.
+4.	Current design explicitly treats SBOM as supporting unit configuration evidence only.
+5.	No-match does not imply not-applicable; it only means current SBOM source did not confirm the key.
+Runtime and Production Gaps / Uncertainties
+1.	Source coverage gap:
+•	Some ESNs can fail both SOT and local fallback; production source SLAs are not yet formalized.
+1.	Key quality gap:
+•	SBOM lookup quality depends on profile extraction quality (part_number and MLI extraction completeness).
+1.	Schema and join assumptions:
+•	SOT column semantics and long-term stability should be validated with data owners.
+1.	Signal calibration:
+•	No documented confidence or strength weighting yet for different SBOM match types.
+1.	Governance and observability:
+•	Need explicit monitoring for SBOM source availability, parse errors, and match-rate drift.
+Current Usage Guidance
+Use E6.3 outputs as:
+•	supporting structured evidence for applicability reasoning
+•	a traceable context object for SME and CPM explainability
+Do not use E6.3 outputs as:
+•	hard exclusion logic when no matches are found
+•	final applicability or completion verdicts
+Suggested Next Validation Slice
+1.	Run a medium sample with mixed ESN coverage and compare SOT vs fallback hit behavior.
+2.	Profile which TIL families frequently have skipped_missing_strict_part_numbers.
+3.	Add summary-level export columns for SBOM source path and status distribution to support stakeholder review.

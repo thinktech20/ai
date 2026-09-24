@@ -1,0 +1,1437 @@
+path,clean_markdown_text
+/Workspace/Users/madhurima.saxena@gevernova.com/TILs/ai_parse_extraction_results/1937/parsed.json,"== page 0 ==  
+
+**GE**  
+**GE VERNova**  
+**PRODUCT SERVICE**  
+
+**TIL 1937‑R2**  
+Publish Date: 10 April 2024  
+
+Compliance Category – A  
+Timing Code – 6  
+
+# TECHNICAL INFORMATION LETTER  
+
+## F‑CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS  
+
+### APPLICATION  
+Select F‑class gas turbine rotors operating in high ambient and specific environmental conditions.  
+
+### PURPOSE  
+Advise users to perform routine inspections at a maintenance interval based on installed configuration.  
+
+This TIL supersedes TILs 1280, 1327, 1434, 1539, 1540, and 1742.  
+
+### REASON FOR REVISION  
+1. Added a new 3 Step‑Age Heat Treatment category for Stage 1 & Stage 2 wheels.  
+2. Added a specific ECI inspection interval for Stage 1 enhanced wheels with 2 Step‑Age heat treatment.  
+3. Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension.  
+
+### COMPLIANCE CATEGORY  
+
+| Category | Description |
+|---|---|
+| M – Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |
+| C – Compliance Required | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. |
+| A – Alert | Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. |
+| S – Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |
+
+### TIMING CODE  
+
+| Code | Description |
+|---|---|
+| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |
+| 2 | At First Opportunity (next shutdown) |
+| 3 | Prior to Operation of Affected System |
+| 4 | At First Exposure of Component |
+| 5 | At Scheduled Component Part Repair or Replacement. |
+| 6 | Next Scheduled Outage |
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 1 ==  
+
+### BACKGROUND DISCUSSION  
+
+The function of the turbine rotor in a heavy‑duty gas turbine engine includes carrying turbine blade loads, transmitting torque to the compressor and generator for power generation, as well as supplying the turbine blades with cooling air. Prior to assembly, the individual disks or wheels are balanced by the addition of weights installed in a groove. The weights are held in place by deforming the metal on either the balance weight or the balance weight groove. The turbine blades are retained axially by a snap‑ring type lock wire that is located in a machined groove passing through the turbine blades and turbine wheel. The portion of the wheel retaining the lock wire is known as the lock wire tab. The F‑class turbine blade cooling air supply is provided through cooling slots in the bottom of the stage 1 and 2 turbine wheel dovetails.  
+
+*Figure 1: F‑class Turbine Rotor Features*  
+*Description: A cross‑section diagram illustrates a wheel mechanism with labeled components like balance weight, cooling slot, and wheel post.*
+
+The disks in the turbine rotor are made of a high nickel alloy that is sensitive to surface imperfections where an intergranular crack may initiate and propagate due to high stresses and temperatures. Depending on the initiation location, an undetected crack may continue to propagate due to exposure to stress and temperature until either: 1‑ the crack is detected and either repaired or the rotor is removed from service, or 2‑ the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot gas path section potentially resulting in significant damage. Continuous improvements have been made to the turbine rotor wheels over time in order to improve their overall damage sensitivity.  
+
+Rotors operating in high ambient and humid or corrosive conditions have an increased risk of crack initiation and propagation. Recommended inspections and inspection intervals to mitigate crack propagation are provided based on wheel features, such as shot peening condition at first fire, cooling slot geometry, material heat treatment, and environmental conditions. In some cases, rotors may be swapped from site to site in order to expedite an outage. This TIL is being issued to all users in high ambient and/or corrosive environmental conditions in order to provide recommendations for the various configurations.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 2 ==  
+
+### Shot Peening Effect  
+
+Early generation turbine rotors have the highest sensitivity to surface imperfections. These rotors were manufactured and fired without full shot peen coverage of the turbine wheels. Shot peening leaves a residual compressive stress and decreases the risk of initiating a crack. Wheels that operated without shot peening have an increased risk of initiating and propagating a crack in the rim region of the turbine rotor and in the turbine wheel dovetail slots. After 1996, all F‑class turbine wheels shipped with full peening coverage; these wheels were never fired without shot peening.  
+
+### Cooling Slot  
+
+During operation, the intersection of the cooling slot and dovetail slot is subjected to high temperatures and tensile stresses caused by turbine blade pull. The high temperatures and stresses in conjunction with an adverse edge condition have been known to initiate cracks in this location.  
+
+*Figure 2: Crack at Broached Wheel Post and Original Cooling Slot Corner*  
+*Description: A red arrow points to a visible crack on a metallic, curved surface with a circular opening.*  
+
+Three cooling slot shapes exist including original, contoured, and enhanced. The contoured (released in 2002) and enhanced (released in 2006) cooling slot shapes were developed to lower stresses in the region where indications have been observed in original slot configuration wheels. Please see Tables 1 and 2 below for eddy current inspection recommendations for original, contour, and enhanced cooling slot configuration wheels. Some rotors may have a combination of enhanced, contoured, and/or original configuration wheels, depending on rotor repair history. All wheels should follow their applicable inspection recommendations. If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to help avoid the risk of wheel post liberation during operation.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 3 ==  
+
+### Lock Wire Tabs  
+
+Lock‑wire tab (LWT) cracks have also been detected on the turbine rotor wheels. These types of cracks can typically be repaired on site, subject to repair limits, without the need for rotor disassembly or wheel replacement.  
+
+*Figure 3: Original, Contoured, and Enhanced cooling slot profiles*  
+*Description: A diagram illustrates a wheel-like shape with three distinct contoured outlines shown in orange, purple, and green, connected by an arrow.*  
+
+*Figure 4: Potential LWT Crack Orientations*  
+
+Lock‑wire tab cracks may form in the upper corner of the lock‑wire tab groove, as shown in Figure 4. Cracks in this corner may be caused by either:  
+
+- Damage sustained during turbine blade installation/removal  
+- High stresses in the lock‑wire fillet  
+
+GE Vernova has developed specialized procedures and tooling to help mitigate the risk of damage to the wheel lock‑wire tabs during turbine blade installation and removal. These operations should always be performed by GE Vernova turbine blade technicians to ensure the appropriate blade installation and removal tools and techniques are utilized. Modified or back‑cut turbine blades reduce turbine blade loading into the tab. Wheels manufactured today have the extra fir trees removed in order to avoid turbine blade loading in the tab altogether, as shown in Figure 5.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 4 ==  
+
+### Balance Weight Groove  
+
+Cracking has been observed on several rotors at the balance weight groove (BWG) during routine inspections (Figure 6). It has been found that this cracking initiated at an adverse edge condition because of the variability in the balance weight retention method or at a location where the wheel surface was affected by an assembly or disassembly process that may have locally altered the stress state. Cracks in the forward wheel web, if left unaddressed, could result in a partial wheel material liberation, particularly when located on the stage 1 wheel.  
+
+*Figure 5: Lock Wire Tabs with and without Fir Tree (Modified Tab)*  
+
+*Figure 6: Balance Weight Groove Stake Mark Cracking*  
+
+Production turbine wheels have been improved, such that the balance weight groove is no longer staked or peened to deform material around the balance weight. The stakeless balance rail can be seen in Figure 7.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 5 ==  
+
+*Figure 7: Stakeless BWG and Modified LWT*  
+
+### Material Heat Treatment  
+
+Recently, a new heat treatment – designated as three‑step‑age (3SA) vs two‑step‑age (2SA) previously – was implemented. It creates “engineered grain boundaries” that improve the hold‑time fatigue capability of the turbine wheel alloy.  
+
+### RECOMMENDATIONS  
+
+Units addressed by this communication have been identified as operating in a specific environment resulting in increased risk. Event prevention and rotor health is best maintained through regular maintenance and inspections. Tables below provide recommended inspections based on the turbine rotor shot peening condition and geometric features. In addition to these inspections, it is recommended that back‑cut turbine blades always be installed on all turbine rotors.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 6 ==  
+
+<table><tr><th>Material Heat Treatment</th><th>Peening Condition</th><th>Cooling Slot Geometry</th><th>Balance Rail & Lock Wire Tab</th><th colspan=""2"">Recommendations</th><th colspan=""2"">Applicable Part Numbers</th></tr><tr><th></th><th></th><th></th><th></th><th>Inspection</th><th>Interval</th><th>Frame</th><th>Stage 1</th></tr><tr><td rowspan=""10"">2 Step Age</td><td>Fired without Shot Peening</td><td>Original</td><td>Original</td><td>ECI Visual BI FPI UT</td><td>every 24 hrs or 900 starts</td><td>7F</td><td>227C5762 103E5795<br>188D7369 109E3085<br>101E8627 109E3896<br>103E5773</td></tr><tr><td>Peening Modification</td><td>Original</td><td>Original</td><td colspan=""2"">May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine the applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply.</td><td>7F</td><td>193D2053<br>193D2063</td></tr><tr><td rowspan=""8"">Never Fired without Shot Peening</td><td rowspan=""3"">Original</td><td rowspan=""3"">Original</td><td>ECI</td><td>every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]</td><td rowspan=""3"">7F</td><td>243C1494 109E5612<br>188D7996 114E1228<br>196D1915 116E2434<br>199D3931 117E5673<br>109E5303 119E2398<br>109E5589 119E2621</td></tr><tr><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>FPI</td><td>LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI</td></tr><tr><td rowspan=""2"">Contoured</td><td rowspan=""2"">Original</td><td>ECI</td><td>at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]</td><td rowspan=""2"">7F</td><td>116E3967<br>119E4181</td></tr><tr><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td rowspan=""3"">Enhanced</td><td rowspan=""3"">Original</td><td>FPI</td><td>LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI</td><td rowspan=""3"">7F</td><td rowspan=""3"">323E2241</td></tr><tr><td>ECI</td><td>at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]</td></tr><tr><td>Stakeless & Modified Tab</td><td>FPI</td><td>LWT : every Major</td><td>7F</td><td>144E7560</td></tr></table>  
+
+**Table 1: Applicable 7F Stage 1 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 7 ==  
+
+<table><tr><th>Material Heat Treatment</th><th>Peening Condition</th><th>Cooling Slot Geometry</th><th>Balance Rail & Lock Wire Tab</th><th colspan=""2"">Recommendations</th><th colspan=""2"">Applicable Part Numbers</th></tr><tr><th></th><th></th><th></th><th></th><th>Inspection</th><th>Interval</th><th>Frame</th><th>Stage 2</th></tr><tr><td rowspan=""8"">2 Step Age</td><td>Fired without Shot Peening</td><td>Original</td><td>Original</td><td>ECI Visual, BI FPI UT</td><td>every 24 hrs or 900 starts</td><td>7F</td><td>227C5763 103E5796<br>101E8629 108E4197<br>103E5775 109E3897</td></tr><tr><td>Peening Modification</td><td>Original</td><td>Original</td><td colspan=""2"">May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine the applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply.</td><td>7F</td><td>193D2055<br>193D2064</td></tr><tr><td rowspan=""6"">Never Fired without Shot Peening</td><td rowspan=""3"">Original</td><td rowspan=""3"">Original</td><td>ECI</td><td>every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]</td><td rowspan=""3"">7F</td><td>193D2400<br>199D3925<br>109E5591<br>109E5614<br>114E1229<br>116E2436</td></tr><tr><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>FPI</td><td>LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI</td></tr><tr><td rowspan=""2"">Contoured</td><td rowspan=""2"">Original</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td rowspan=""2"">7F</td><td>116E3968<br>119E6503</td></tr><tr><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td rowspan=""3"">Enhanced</td><td rowspan=""3"">Original</td><td>FPI</td><td>LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI</td><td rowspan=""3"">7F</td><td rowspan=""3"">323E2240</td></tr><tr><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed] and at first Major after TW2 Life Extension</td></tr><tr><td>Stakeless & Modified Tab</td><td>FPI</td><td>LWT : every Major</td><td>7F</td><td>323E2240</td></tr></table>  
+
+**Table 2: Applicable 7F Stage 2 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 8 ==  
+
+<table><tr><th>Material Heat Treatment</th><th>Peening Condition</th><th>Cooling Slot Geometry</th><th>Balance Rail & Lock Wire Tab</th><th colspan=""2"">Recommendations</th><th colspan=""2"">Applicable Part Numbers</th></tr><tr><th></th><th></th><th></th><th></th><th>Inspection</th><th>Interval</th><th>Frame</th><th>Stage 1</th></tr><tr><td rowspan=""8"">2 Step Age</td><td>Fired without Shot Peening</td><td>Original</td><td>Original</td><td>ECI Visual, BI FPI UT</td><td>every 24 hrs or 900 starts</td><td>9F</td><td>101E2274<br>103E3969<br>109E3982</td></tr><tr><td>Peening Modification</td><td>Original</td><td>Original</td><td colspan=""2"">May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply.</td><td>9F</td><td>227C5743<br>188D7864<br>193D2023<br>193D2036<br>193D2050<br>193D2422<br>196D1632<br>198D1211</td></tr><tr><td rowspan=""6"">Never Fired without Shot Peening</td><td>Original</td><td>Original</td><td>ECI</td><td>every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]</td><td rowspan=""2"">9F</td><td rowspan=""2"">109E5254</td></tr><tr><td></td><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td></td><td>FPI</td><td>LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI</td><td>111E3299</td></tr><tr><td>Contoured</td><td>Original</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td rowspan=""2"">9F</td><td rowspan=""2"">119E6594</td></tr><tr><td></td><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>Enhanced</td><td>Original</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td>9F</td><td>133E8667</td></tr><tr><td>Stakeless & Modified Tab</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td>9F</td><td>146E2874</td></tr></table>  
+
+**Table 3: Applicable 9F Stage 1 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 9 ==  
+
+<table><tr><th>Material Heat Treatment</th><th>Peening Condition</th><th>Cooling Slot Geometry</th><th>Balance Rail & Lock Wire Tab</th><th colspan=""2"">Recommendations</th><th colspan=""2"">Applicable Part Numbers</th></tr><tr><th></th><th></th><th></th><th></th><th>Inspection</th><th>Interval</th><th>Frame</th><th>Stage 2</th></tr><tr><td rowspan=""8"">2 Step Age</td><td>Fired without Shot Peening</td><td>Original</td><td>Original</td><td>ECI Visual, BI FPI UT</td><td>every 24 hrs or 900 starts</td><td>9F</td><td>101E2274<br>103E3969<br>109E3982</td></tr><tr><td>Peening Modification</td><td>Original</td><td>Original</td><td colspan=""2"">May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply.</td><td>9F</td><td>227C5743<br>188D7864<br>193D2050<br>193D2422<br>193D2023<br>196D1632<br>193D2036<br>198D1211</td></tr><tr><td rowspan=""6"">Never Fired without Shot Peening</td><td>Original</td><td>Original</td><td>ECI</td><td>every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]</td><td rowspan=""2"">9F</td><td rowspan=""2"">109E5254</td></tr><tr><td></td><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td></td><td>FPI</td><td>LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI</td><td>111E3299</td></tr><tr><td>Contoured</td><td>Original</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td rowspan=""2"">9F</td><td rowspan=""2"">119E6594</td></tr><tr><td></td><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>Enhanced</td><td>Original</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td>9F</td><td>133E8667</td></tr><tr><td>Stakeless & Modified Tab</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td>9F</td><td>146E2874</td></tr></table>  
+
+**Table 4: Applicable 9F Stage 2 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 10 ==  
+
+<table><tr><th>Material Heat Treatment</th><th>Peening Condition</th><th>Cooling Slot Geometry</th><th>Balance Rail & Lock Wire Tab</th><th colspan=""2"">Recommendations</th><th colspan=""2"">Applicable Part Numbers</th></tr><tr><th></th><th></th><th></th><th></th><th>Inspection</th><th>Interval</th><th>Frame</th><th>Stage 1</th></tr><tr><td rowspan=""9"">2 Step Age</td><td rowspan=""9"">Never Fired without Shot Peening</td><td rowspan=""3"">Original</td><td rowspan=""3"">Original</td><td>ECI</td><td>every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]</td><td rowspan=""3"">6F</td><td rowspan=""3"">109E9194</td></tr><tr><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>FPI</td><td>LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI</td></tr><tr><td rowspan=""3"">Contoured</td><td rowspan=""3"">Original</td><td>ECI</td><td>at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]</td><td rowspan=""3"">6F</td><td rowspan=""3"">116E3992</td></tr><tr><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>FPI</td><td>LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI</td></tr><tr><td rowspan=""3"">Enhanced</td><td rowspan=""3"">Original</td><td>ECI</td><td>at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]</td><td rowspan=""3"">6F</td><td rowspan=""3"">137E1002</td></tr><tr><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>FPI</td><td>LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI</td></tr><tr><td>Stakeless & Modified Tab</td><td>ECI</td><td>at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed]</td><td>6F</td><td>141E4569</td></tr></table>  
+
+**Table 5: Applicable 6F Stage 1 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 11 ==  
+
+<table><tr><th>Material Heat Treatment</th><th>Peening Condition</th><th>Cooling Slot Geometry</th><th>Balance Rail & Lock Wire Tab</th><th colspan=""2"">Recommendations</th><th colspan=""2"">Applicable Part Numbers</th></tr><tr><th></th><th></th><th></th><th></th><th>Inspection</th><th>Interval</th><th>Frame</th><th>Stage 2</th></tr><tr><td rowspan=""9"">2 Step Age</td><td rowspan=""9"">Never Fired without Shot Peening</td><td rowspan=""3"">Original</td><td rowspan=""3"">Original</td><td>ECI Visual, BI FPI UT</td><td>every 24 hrs or 900 starts</td><td>9F</td><td>101E2274<br>103E3969<br>109E3982</td></tr><tr><td>Peening Modification</td><td>Original</td><td>Original</td><td colspan=""2"">May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply.</td><td>9F</td><td>227C5743<br>188D7864<br>193D2050<br>193D2422<br>193D2023<br>196D1632<br>193D2036<br>198D1211</td></tr><tr><td rowspan=""6"">Never Fired without Shot Peening</td><td>Original</td><td>Original</td><td>ECI</td><td>every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed]</td><td rowspan=""2"">9F</td><td rowspan=""2"">109E5254</td></tr><tr><td></td><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td></td><td>FPI</td><td>LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI</td><td>111E3299</td></tr><tr><td>Contoured</td><td>Original</td><td>ECI</td><td>at 96 khrs or 3,600 starts [Every 48 khrs or 2,400 starts if back cut buckets not installed]</td><td rowspan=""2"">9F</td><td rowspan=""2"">119E6594</td></tr><tr><td></td><td>BI</td><td>every HGPI when CDC is not removed</td></tr><tr><td>Enhanced</td><td>Original</td><td>Stakeless & Modified Tab</td><td>FPI</td><td>LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI</td><td>9F</td><td>133E8667<br>146E2874</td></tr></table>  
+
+**Table 6: Applicable 6F Stage 2 Turbine Wheel Configurations**  
+
+**Stage 3 Wheel and Turbine Aft Shaft Inspections**  
+
+For the stage 3 turbine wheel (TW3) and turbine aft shaft (TAS), the following inspections apply regardless of frame size or part numbers:  
+
+1. **TW3 balance weight grooves**  
+   - If staked: FPI every Major Inspection (MI) and when the Exhaust Frame is removed during Hot Gas Path Inspection (HGPI)  
+   - If stakeless: no inspections necessary  
+
+2. **TW3 lockwire tabs**  
+   - If original: FPI every HGPI while buckets are removed  
+   - If modified: FPI every MI  
+
+3. **TAS balance weight grooves**  
+   - If staked: FPI every MI and when the Exhaust Frame is removed during HGPI  
+   - If stakeless: no inspections necessary  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 12 ==  
+
+### Visual (VT), Borescope (BI), and Ultrasonic (UT)  
+
+A visual inspection of all exposed turbine rotor surfaces is recommended for all non‑shot peened rotors; however, it is a good practice for all users to evaluate the surface of their rotor when available. In order to complete a visual inspection, observe and borescope all of the accessible rotor surfaces. Specifically, look for overall surface conditions such as dents, dings, nicks, scratches, crack‑like indications, raised material, etc.  
+
+**Key features to examine:**  
+
+- Broach slot fillets, slot bottoms, tangs, and cooling slots (Visual)  
+- Turbine blade cooling slots in wheel broach slots (Visual/BI)  
+- Spacer rim seal tooth rubs/coating (Visual)  
+- Balance weights: looseness/migration, staking quality, tight set screw (Visual/BI)  
+- Nut damage or surface indications in flanges and webs (BI)  
+- Counterbore outside diameter ligaments on distance piece and turbine aft shaft (UT)  
+
+### Fluorescent Penetrant Inspection  
+
+Fluorescent penetrant inspection (FPI) is recommended to detect cracks on balance weights and lockwire tabs. However, it is not recommended for the wheel posts, as cracks under the dovetail tangs are typically closed.  
+
+**Recommended features to inspect:**  
+
+- Staked balance weight grooves: at all major inspection intervals and when the CDC is removed during a Hot Gas Path inspection.  
+- Lock wire tab fillets: When turbine blades are removed during routine maintenance intervals.  
+
+If crack‑like indications are found, please contact your local GE Vernova service representative for disposition. In most cases, an in‑situ repair procedure can be used to remove cracked lock wire tabs or balance weight stake marks. A few isolated instances have occurred where wheel replacement was necessary as the repair limits were exceeded.  
+
+### Eddy Current Inspection  
+
+GE Vernova has developed an ECI method with advanced detection devices and techniques for turbine dovetail inspection (Figure 8). This method is currently the most effective non‑destructive test (NDT) for identifying indications in the wheel dovetails.  
+
+*Figure 8: Eddy current inspection*  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 13 ==  
+
+Dovetail ECI should be performed until rotor retirement at the frequency defined in Table 1. ECI is available and recommended for all wheel posts identified in Table 1 and 2. Third stage wheel posts and turbine wheels with any cooling slot configuration may also be inspected with the same equipment, if elected.  
+
+Prior to the ECI, the turbine rotor must be appropriately cleaned to facilitate proper functioning of the ECI equipment and accurate readings. A preferred method for cleaning is by dry ice (CO₂) blasting. This cleaning typically requires a single 12‑hour shift to clean the rotor after turbine blade removal and also requires the surfaces be free of oil beforehand. In the event that CO₂ blast is not available, a more arduous and lengthy hand‑cleaning process is acceptable (2‑3 shifts). The rotor inspection then takes approximately three shifts (~32 hours) to complete Stages 1 and 2. Both the rotor cleaning (performed by qualified vendor) and the turbine rotor inspection can be scheduled through your local GE Vernova representative.  
+
+**Modified Stage 1 and 2 Turbine Blades**  
+
+The potential for crack initiation at the cooling slot location and lock wire tabs can be improved by reducing the amount of turbine blade load passing through this area of the wheel. GE Vernova has developed a turbine blade modification to change the load distribution in the wheel post, thereby decreasing the stress level at the cooling slot. This modification is accomplished by machining a tapered relief into the turbine blade dovetail pressure faces adjacent to the cooling slot (see Figure 9). Relief cut modifications have been incorporated into new production F‑class turbine blades.  
+
+*Figure 9: Turbine blade dovetail modification*  
+
+The “back‑cut” modifications are also performed as a part of the standard turbine blade repair/refurbishment process and should be applied to any inventory parts by a GE Vernova Service Center. It is recommended to apply dovetail modified Stage 1 and 2 turbine blades at the next scheduled maintenance (hot gas path inspection or major inspection).  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024  
+
+---  
+
+== page 14 ==  
+
+### SCOPE OF WORK  
+
+- Qualified vendor to perform CO₂ blast cleaning of turbine rotor.  
+- GE Vernova qualified personnel to perform rotor inspections.  
+- Back‑cut stage 1 and stage 2 turbine blades.  
+- Rotor inspection equipment and blend/peen kit are provided and applied by GE Vernova.  
+- Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope. CO₂ blast cleaning of turbine rotor can be completed in one shift (12 hours), including a prior hand wiping to remove oil from the dovetail surfaces if necessary. ECI of first and second stages can be completed in three shifts or all three stages in four shifts. Total time between turbine blade removal and installation should be four shifts (two days). These durations are estimates only.  
+
+### TIL COMPLETION CRITERIA  
+This TIL is considered completed when the turbine wheels reach end of life and are removed from service.  
+
+### TIL DISPOSITION  
+Disposition of TILs should be entered in local records and also in GE Vernova ServiceNow. Follow the below instructions for entering the disposition record:  
+
+- Log into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/ using your GE Vernova SSO number and password.  
+- Select “TIL Disposition.”  
+- Click on the TIL for the serial number you want to update.  
+- Choose the most appropriate “Disposition Status” and enter “Disposition Notes.”  
+- Click “Save.”  
+
+Contact your local GE Vernova Services representative for assistance or for additional information.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 10 April 2024"
+/Workspace/Users/madhurima.saxena@gevernova.com/TILs/ai_parse_extraction_results/1945/parsed.json,"== page 0 ==
+
+**GE VERNova**  
+**PRODUCT SERVICE**  
+
+**TIL 1945‑R2**  
+Publish Date: 15 JULY 2024  
+
+**Compliance Category – A**  
+**Timing Code – 6**  
+
+### TECHNICAL INFORMATION LETTER  
+
+#### F‑CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS  
+
+**APPLICATION**  
+Select F‑class gas turbine rotors.  
+
+**PURPOSE**  
+Advise users to perform routine inspections at a maintenance interval based on installed configuration. This TIL supersedes TILs 1280, 1327, 1434, 1539, 1540, and 1742.  
+
+**REASON FOR REVISION**  
+1. Added a new 3 Step‑Age Heat Treatment category for Stage 1 & Stage 2 wheels applicable to 7F and 6F.  
+2. Added a specific ECI inspection interval for Stage 1 contoured and enhanced wheels with 2 Step‑Age heat treatment.  
+3. Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension.  
+
+**COMPLIANCE CATEGORY**  
+
+| Category | Description |
+|----------|-------------|
+| M – Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |
+| C – Compliance Required | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. |
+| A – Alert | Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. |
+| S – Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |
+
+**TIMING CODE**  
+
+| Code | Description |
+|------|-------------|
+| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |
+| 2 | At First Opportunity (next shutdown) |
+| 3 | Prior to Operation of Affected System |
+| 4 | At First Exposure of Component |
+| 5 | At Scheduled Component Part Repair or Replacement. |
+| 6 | Next Scheduled Outage |
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 1 ==
+
+**BACKGROUND DISCUSSION**  
+
+The function of the turbine rotor in a heavy‑duty gas turbine engine includes carrying turbine blade loads, transmitting torque to the compressor and generator for power generation, as well as supplying the turbine blades with cooling air. Prior to assembly, the individual disks or wheels are balanced by the addition of weights installed in a groove. The weights are held in place by deforming the metal on either the balance weight or the balance weight groove. The turbine blades are retained axially by a snap‑ring type lock wire that is located in a machined groove passing through the turbine blades and turbine wheel. The portion of the wheel retaining the lock wire is known as the lock wire tab. The F‑class turbine blade cooling air supply is provided through cooling slots in the bottom of the stage 1 and 2 turbine wheel dovetails.  
+
+**Figure 1: F‑class Turbine Rotor Features**  
+
+The disks in the turbine rotor are made of a high nickel alloy that is sensitive to surface imperfections where an intergranular crack may initiate and propagate due to high stresses and temperatures. Depending on the initiation location, an undetected crack may continue to propagate due to exposure to stress and temperature until either:  
+
+1. the crack is detected and either repaired or the rotor is removed from service, or  
+2. the crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot‑gas path section potentially resulting in significant damage.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 2 ==
+
+Continuous improvements have been made to the turbine rotor wheels over time in order to improve their overall damage sensitivity.  
+
+Rotors operating in high ambient and humid or corrosive conditions have an increased risk of crack initiation and propagation. Recommended inspections and inspection intervals to help mitigate crack propagation are provided based on wheel features, such as: shot peening condition at first fire, cooling slot geometry, material heat treatment, and environmental conditions. In some cases, rotors may be swapped from site to site in order to expedite an outage. This TIL is being issued to all general F‑Class turbine rotors in order to provide recommendations for the various configurations. Rotors operating in high ambient and/or corrosive conditions have an increased risk of crack initiation and propagation and are addressed in TIL 1937.  
+
+**Shot Peening Effect**  
+
+Early generation turbine rotors have the highest sensitivity to surface imperfections. These rotors were manufactured and fired without full shot peen coverage of the turbine wheels. Shot peening leaves a residual compressive stress and decreases the risk of initiating a crack. Wheels that operated without shot peening have an increased risk of initiating and propagating a crack in the rim region of the turbine rotor and in the turbine wheel dovetail slots. After 1996, all F‑class turbine wheels shipped with full peening coverage; these wheels were never fired without shot peening.  
+
+**Cooling Slot**  
+
+During operation, the intersection of the cooling slot and dovetail slot is subjected to high temperatures and tensile stresses caused by turbine blade pull. The high temperatures and stresses in conjunction with an adverse edge condition have been known to initiate cracks in this location.  
+
+**Figure 2: Crack at Broached Wheel Post and Original Cooling Slot Corner**  
+
+Three cooling slot shapes exist including original, contoured, and enhanced. The contoured (released in 2002) and enhanced (released in 2006) cooling slot shapes were developed to lower stresses in the region where indications have been observed in original slot configuration wheels. Please see Tables 1 to 6 below for eddy current inspection recommendations for original, contour, and enhanced cooling slot configuration wheels. Some rotors may have a combination of enhanced, contoured, and/or original configuration wheels, depending on rotor repair history. All wheels should follow their applicable inspection recommendations. If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to avoid the risk of wheel post liberation during operation.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 3 ==
+
+**Combination of enhanced, contoured, and/or original configuration wheels, depending on rotor repair history. All wheels should follow their applicable inspection recommendations. If a cooling slot crack is detected during the inspection, immediate wheel replacement will be recommended to avoid the risk of wheel post liberation during operation.**  
+
+**Stage 1 Wheel** – Original (1995) – Contoured (2002) – Enhanced (2006)  
+
+**Figure 3: Original, Contoured, and Enhanced cooling slot profiles**  
+
+**Lock Wire Tabs**  
+
+Lock‑wire tab (LWT) cracks have also been detected on the turbine rotor wheels. These types of cracks can typically be repaired on site, subject to repair limits, without the need for rotor disassembly or wheel replacement.  
+
+**Figure 4: Potential LWT Crack Orientations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 4 ==
+
+Lock wire tab cracks may form in the upper corner of the lock wire tab groove, as shown in Figure 4. Cracks in this corner may be caused by either of the following:  
+
+• Damage sustained during turbine blade installation/removal  
+• High stresses in the lock wire fillet  
+
+GE Vernova has developed specialized procedures and tooling to help mitigate the risk of damage to the wheel lock wire tabs during turbine blade installation and removal. These operations should always be performed by GE Vernova turbine blade technicians to ensure the appropriate blade installation and removal tools and techniques are utilized. Modified or back cut turbine blades reduce turbine blade loading into the tab. Wheels manufactured today have the extra fir trees removed in order to avoid turbine blade loading in the tab altogether, as shown in Figure 5.  
+
+**Figure 5: Lock Wire Tabs with and without Fir Tree (Modified Tab)**  
+
+**Balance Weight Groove**  
+
+Cracking has been observed on several rotors at the balance weight groove (BWG) during routine inspections (Figure 6). It has been found that this cracking initiated at an adverse edge condition because of the variability in the balance weight retention method or at a location where the wheel surface was affected by an assembly or disassembly process that may have locally altered the stress state. Cracks in the forward wheel web, if left unaddressed, could result in a partial wheel material liberation, particularly when located on the stage 1 wheel.  
+
+**Figure 6: Balance Weight Groove Stake Mark Cracking**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 5 ==
+
+Production turbine wheels have been improved, such that the balance weight groove is no longer staked or peened to deform material around the balance weight. The stakeless balance rail can be seen in Figure 7.  
+
+**Figure 7: Stakeless BWG and Modified LWT**  
+
+**Material Heat Treatment**  
+
+Recently, a new heat treatment – designated as three‑step‑age (3SA) vs two‑step‑age (2SA) previously – was implemented. It creates “engineered grain boundaries” that improve the hold‑time fatigue capability of the turbine wheel alloy.  
+
+**RECOMMENDATIONS**  
+
+Event prevention and rotor health is best maintained through regular maintenance and inspections. Tables below provide recommended inspections based on the turbine rotor shot peening condition and geometric features. In addition to these inspections, it is recommended that back cut turbine blades always be installed on all turbine rotors.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 6 ==
+
+| Material Heat Treatment | Peening Condition | Cooling Slot Geometry | Balance Rail & Lock Wire Tab | Inspection | Interval | Frame | Stage 1 |
+|------------------------|-------------------|-----------------------|-----------------------------|------------|----------|-------|---------|
+| 2 Step Age | Fired without Shot Peening | Original | Original | ECI Visual, BIFPI UT | every 24 hrs or 900 starts | 7F | 227C5762 103E5795<br>188D7369 109E3085<br>101E8627 109E3896<br>103E5773 |
+| 2 Step Age | Peening Modification | Original | Original | May have been peened prior to first fire. Contact your GE Vernova representative with your turbine serial number to determine the applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply. | | 7F<br>193D2053<br>193D2063 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | ECI | every 48 hrs or 2,400 starts [every 24 hrs or 900 starts if back cut buckets not installed] | 7F | 243C1494 109E5612<br>188D7996 114E1228<br>196D1915 116E2434<br>199D3931 117E5673<br>109E5303 119E2398<br>109E5589 119E2621 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | BI | every HGPI when CDC is not removed | 7F | |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 7F | |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | ECI | at 96 khrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] | 7F | 116E3967 |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | BI | every HGPI when CDC is not removed | 7F | 119E3771 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 7F | 119E4181 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | ECI | at 96 khrs or 3,600 starts | 7F | 323E2241 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | BI | every HGPI when CDC is not removed | 7F | |
+| 2 Step Age | Never Fired without Shot Peening | Stakeless & Modified Tab | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 7F | 144E7560 |
+| 3 Step Age | Never Fired without Shot Peening | Enhanced | Stakeless & Modified Tab | FPI | LWT : every Major | 7F | 144E7560 |
+
+**Table 1: Applicable 7F Stage 1 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 7 ==
+
+| Material Heat Treatment | Peening Condition | Cooling Slot Geometry | Balance Rail & Lock Wire Tab | Inspection | Interval | Frame | Stage 2 |
+|------------------------|-------------------|-----------------------|-----------------------------|------------|----------|-------|---------|
+| 2 Step Age | Fired without Shot Peening | Original | Original | ECI Visual, BIFPI UT | every 24 hrs or 900 starts | 7F | 227C5763 103E5796<br>101E8629 108E4197<br>103E5775 109E3897 |
+| 2 Step Age | Peening Modification | Original | Original | May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine the applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply. | | 7F | 193D2055<br>193D2064 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | ECI | if S2B P/N 118T8421 or 122T9656 installed, inspect at 96 khrs or 3,750 starts [inspection window is 80‑104 khrs] | 7F | 193D2400<br>199D3925<br>109E5591<br>109E5614<br>114E1229<br>116E2436 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 7F | |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | BI | every HGPI when CDC is not removed | 7F | |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | ECI | at first Major after TW2 Life Extension | 7F | 116E3968<br>119E6503 |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | BI | every HGPI when CDC is not removed | 7F | 119E3771 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 7F | 119E4181 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | ECI | at first Major after TW2 Life Extension | 7F | 323E2240 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | BI | every HGPI when CDC is not removed | 7F | |
+| 2 Step Age | Never Fired without Shot Peening | Stakeless & Modified Tab | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 7F | 144E7562 |
+| 2 Step Age | Never Fired without Shot Peening | Stakeless & Modified Tab | ECI | at first Major after TW2 Life Extension | 7F | 144E7562 |
+| 2 Step Age | 3 Step Age | Never Fired without Shot Peening | Enhanced | Stakeless & Modified Tab | FPI | LWT : every Major | 7F | 146E3601 |
+
+**Table 2: Applicable 7F Stage 2 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 8 ==
+
+| Material Heat Treatment | Peening Condition | Cooling Slot Geometry | Balance Rail & Lock Wire Tab | Inspection | Interval | Frame | Stage 1 |
+|------------------------|-------------------|-----------------------|-----------------------------|------------|----------|-------|---------|
+| 2 Step Age | Fired without Shot Peening | Original | Original | ECI Visual, BIFPI UT | every 24 hrs or 900 starts | 9F | 101E2274 103E3969 109E3982 |
+| 2 Step Age | Peening Modification | Original | Original | May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply. | | 9F | 227C5743 188D7864 193D2050 193D2422 193D2023 196D1632 193D2036 198D1211 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | ECI | every 48 hrs or 2,400 starts [every 24 hrs or 900 starts if back cut buckets not installed] | 9F | 109E5254 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | BI | every HGPI when CDC is not removed | 9F | |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 9F | |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | ECI | at 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] | 9F | 119E6594 |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | BI | every HGPI when CDC is not removed | 9F | |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 9F | |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | ECI | at 96 hrs or 3,600 starts | 9F | 323E1860 |
+| 2 Step Age | Never Fired without Shot Peening | Stakeless & Modified Tab | FPI | LWT : every HGPI when buckets are removed<br>BWG : every Major and when CDC is removed during HGPI | 9F | 146E2874 113T0325 |
+| 2 Step Age | 3 Step Age | Never Fired without Shot Peening | Enhanced | Stakeless & Modified Tab | FPI | LWT : every Major | 9F | 131T7543 |
+
+**Table 3: Applicable 9F Stage 1 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 9 ==
+
+| Material Heat Treatment | Peening Condition | Cooling Slot Geometry | Balance Rail & Lock Wire Tab | Inspection | Interval | Frame | Stage 2 |
+|------------------------|-------------------|-----------------------|-----------------------------|------------|----------|-------|---------|
+| 2 Step Age | Fired without Shot Peening | Original | Original | ECI Visual, BI FPI UT | every 24 hrs or 900 starts | 9F | 101E2276 103E3971 109E3893 |
+| 2 Step Age | Peening Modification | Original | Original | May have been peened prior to first fire. Contact your GE Vernova representative with your turbine rotor serial number to determine applicable peening condition. Until validated by your GE Vernova representative, assume Fired without Shot Peening recommendations apply. | | 9F | 188D7848 193D2106 188D7895 193D2025 193D2037 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | ECI | if S2B P/N 119T9404 or 122T0124 installed, inspect at 96 hrs or 3,750 starts [inspection window is 80‑104 hrs] | 9F | 109E5256 111E3298 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every HGPI | 9F | |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | ECI | at first Major after TW2 Life Extension | 9F | 119E6597 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | FPI | LWT : every HGPI when buckets are removed<br>BWG : every HGPI | 9F | |
+| 2 Step Age | Never Fired without Shot Peening | Stakeless & Modified Tab | ECI | at first Major after TW2 Life Extension | 9F | 146E1078 146E2875 113T0328 |
+| 2 Step Age | 3 Step Age | Never Fired without Shot Peening | Enhanced | Stakeless & Modified Tab | FPI | LWT : every Major | 9F | 131T7549 |
+
+**Table 4: Applicable 9F Stage 2 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 10 ==
+
+| Material Heat Treatment | Peening Condition | Cooling Slot Geometry | Balance Rail & Lock Wire Tab | Inspection | Interval | Frame | Stage 1 |
+|------------------------|-------------------|-----------------------|-----------------------------|------------|----------|-------|---------|
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | ECI | every 48 khrs or 2,400 starts [every 24 khrs or 900 starts if back cut buckets not installed] | 6F | 109E9194 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | BI | every HGPI when CDC is not removed | 6F | |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | FPI | LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI | 6F | 323E1860 |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | ECI | at 96 khrs or 3,600 starts [every 48 khrs or 2,400 starts if back cut buckets not installed] | 6F | 116E3992 |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | BI | every HGPI when CDC is not removed | 6F | |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | FPI | LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI | 6F | 323E1860 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | FPI | LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI | 6F | 137E1002 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | ECI | at 96 khrs or 3,600 starts | 6F | 323E1860 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | BI | every HGPI when CDC is not removed | 6F | |
+| 2 Step Age | Never Fired without Shot Peening | Stakeless & Modified Tab | FPI | LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI | 6F | 141E4569 121T7210 |
+| 2 Step Age | 3 Step Age | Never Fired without Shot Peening | Enhanced | Stakeless & Modified Tab | FPI | LWT : every Major | 6F | 131T7543 |
+
+**Table 5: Applicable 6F Stage 1 Turbine Wheel Configurations**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 11 ==
+
+| Material Heat Treatment | Peening Condition | Cooling Slot Geometry | Balance Rail & Lock Wire Tab | Inspection | Interval | Frame | Stage 2 |
+|------------------------|-------------------|-----------------------|-----------------------------|------------|----------|-------|---------|
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | ECI | if S2B P/N 120T1387 or 123T0809 installed, inspect at 96 khrs or 3,750 starts [inspection window is 80‑104 khrs] | 6F | 109E9196 |
+| 2 Step Age | Never Fired without Shot Peening | Original | Original | FPI | LWT : every HGPI when buckets are removed BWG : every HGPI | 6F | 323E1916 |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | ECI | at first Major after TW2 Life Extension | 6F | 116E3994 |
+| 2 Step Age | Never Fired without Shot Peening | Contoured | Original | FPI | LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI | 6F | 323E1916 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | FPI | LWT : every HGPI when buckets are removed BWG : every Major and when CDC is removed during HGPI | 6F | 137E1062 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | ECI | at first Major after TW2 Life Extension | 6F | 323E1916 |
+| 2 Step Age | Never Fired without Shot Peening | Enhanced | Original | BI | every HGPI when CDC is not removed | 6F | |
+| 2 Step Age | Never Fired without Shot Peening | Stakeless & Modified Tab | ECI | at first Major after TW2 Life Extension | 6F | 141E4586 126T7211 |
+| 2 Step Age | 3 Step Age | Never Fired without Shot Peening | Enhanced | Stakeless & Modified Tab | FPI | LWT : every Major | 6F | 131T7549 |
+
+**Table 6: Applicable 6F Stage 2 Turbine Wheel Configurations**  
+
+**Stage 3 Wheel and Turbine Aft Shaft Inspections**  
+
+For the stage 3 turbine wheel (TW3) and turbine aft shaft (TAS), the following inspections apply regardless of frame size or part numbers:  
+
+1. TW3 balance weight grooves  
+   * If staked: FPI every Major Inspection (MI) and when the Exhaust Frame is removed during Hot Gas Path Inspection (HGPI)  
+   * If stakeless: no inspections necessary  
+
+2. TW3 lockwire tabs  
+   * If original: FPI every HGPI while buckets are removed  
+   * If modified: FPI every MI  
+
+3. TAS balance weight grooves  
+   * If staked: FPI every MI and when the Exhaust Frame is removed during HGPI  
+   * If stakeless: no inspections necessary  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 12 ==
+
+**Visual, Borescope (BI), and Ultrasonic (UT)**  
+
+A visual inspection of all exposed turbine rotor surfaces is recommended for all non‑shot‑peened rotors; however, it is a good practice for all users to evaluate the surface of their rotor when available. In order to complete a visual inspection, observe and borescope all of the accessible rotor surfaces. Specifically, look for overall surface conditions such as dents, dings, nicks, scratches, crack‑like indications, raised material, etc.  
+
+**Key features to examine:**  
+
+• Broach slot fillets, slot bottoms, tangs, and cooling slots (Visual)  
+• Turbine blade cooling slots in wheel broach slots (Visual/BI)  
+• Spacer rim seal tooth rubs/coating (Visual)  
+• Balance weights: looseness/migration, staking quality, tight set screw (Visual/BI)  
+• Nut damage or surface indications in flanges and webs (BI)  
+• Counterbore outside diameter ligaments on distance piece and turbine aft shaft (UT)  
+
+**Fluorescent Penetrant Inspection**  
+
+Fluorescent penetrant inspection (FPI) is recommended to detect cracks on balance weights and lockwire tabs. However, it is not recommended for the wheel posts, as cracks under the dovetail tangs are typically closed.  
+
+**Recommended features to inspect:**  
+
+• Staked balance weight grooves: at all major inspection intervals and when the CDC is removed during a HGPI.  
+• Lock wire tab fillets: When turbine blades are removed during routine maintenance intervals.  
+
+If crack‑like indications are found, please contact your local GE Vernova service representative for disposition. In most cases, an in‑situ repair procedure can be used to remove cracked lock wire tabs or balance weight stake marks. A few isolated instances have occurred where wheel replacement was necessary as the repair limits were exceeded.  
+
+**Eddy Current Inspection**  
+
+GE Vernova has developed an ECI method with advanced detection devices and techniques for turbine dovetail inspection (Figure 8). This method is currently the most effective non‑destructive test (NDT) for identifying indications in the wheel dovetails.  
+
+**Figure 8: Eddy current inspection**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 13 ==
+
+Dovetail ECI is recommended for all wheel posts until rotor retirement at the frequency defined in Tables 1‑6. Third stage wheel posts and turbine wheels with any cooling slot configuration may also be inspected with the same equipment, if elected.  
+
+Prior to the ECI, the turbine rotor must be appropriately cleaned to facilitate proper functioning of the ECI equipment and accurate readings. A preferred method for cleaning is by dry ice (CO₂) blasting. This cleaning typically requires a single 12‑hour shift to clean the rotor after turbine blade removal, and also requires the surfaces be free of oil beforehand. In the event that CO₂ blast is not available, a more arduous and lengthy hand‑cleaning process is acceptable (2‑3 shifts). The rotor inspection then takes approximately three shifts (~32 hours) to complete Stages 1 and 2. Both the rotor cleaning (performed by qualified vendor) and the turbine rotor inspection can be scheduled through your local GE Vernova representative.  
+
+**Modified Stage 1 and 2 Turbine Blades**  
+
+The potential for crack initiation at the cooling slot location and lock wire tabs can be improved by reducing the amount of turbine blade load passing through this area of the wheel. GE Vernova has developed a turbine blade modification to change the load distribution in the wheel post, thereby decreasing the stress level at the cooling slot. This modification is accomplished by machining a tapered relief into the turbine blade dovetail pressure faces adjacent to the cooling slot (see Figure 9). Relief cut modifications have been incorporated into new production F‑class turbine blades.  
+
+**Figure 9: Turbine blade dovetail modification**  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024  
+
+== page 14 ==
+
+**SCOPE OF WORK**  
+
+Turbine blades should be removed prior to beginning these inspections per hot gas path outage scope. CO₂ blast cleaning of turbine rotor can be completed in one shift (12 hours), including a prior hand wiping to remove oil from the dovetail surfaces if necessary. ECI of first and second stages can be completed in three shifts, or all three stages in four shifts. Total time between turbine blade removal and installation should be four shifts (two days). These durations are estimates only.  
+
+**TIL COMPLETION CRITERIA**  
+
+This TIL is considered complete when the turbine wheels reach end of life and are removed from service.  
+
+**TIL DISPOSITION**  
+
+Disposition of TILs should be entered in local records and also in GE Vernova ServiceNow. Follow the below instructions for entering the disposition record;  
+
+• Log into the Power ServiceNow at https://gepowerpac.service‑now.com/til_new/ using your GE Vernova SSO number and password.  
+• Select “TIL Disposition”.  
+• Click on the TIL for the serial number you want to update.  
+• Choose the most appropriate “Disposition Status” and enter “Disposition Notes”.  
+• Click “Save”.  
+
+Contact your local GE Vernova Services representative for assistance or for additional information.  
+
+© 2024 GE Vernova  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.  
+
+Date Printed: 15 JULY 2024"
+/Workspace/Users/madhurima.saxena@gevernova.com/TILs/ai_parse_extraction_results/2284/parsed.json,"== page 0 ==
+
+**GE POWER  
+PRODUCT SERVICE**
+
+**TIL 2284**  
+Publish Date: 05 MAY 2021  
+
+**Compliance Category – S**  
+**Timing Code – 4**
+
+# TECHNICAL INFORMATION LETTER
+
+## F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS
+
+### APPLICATION  
+6F, 7F, and 9F Heavy Duty Gas Turbines.
+
+### PURPOSE  
+To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations.
+
+### COMPLIANCE CATEGORY  
+
+#### M – Maintenance  
+Identifies maintenance guidelines or best practices for reliable equipment operation.
+
+#### C – Compliance Required  
+Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.  
+Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is
+
+#### A – Alert  
+mandated within a specific operating time.
+
+| S – Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------|
+
+### TIMING CODE  
+
+#### 1  
+Prior to Unit Startup / Prior to Continued Operation (forced outage condition)
+
+#### 2  
+At First Opportunity (next shutdown)
+
+#### 3  
+Prior to Operation of Affected System
+
+| 4 | At First Exposure of Component |
+|---|--------------------------------|
+
+#### 5  
+At Scheduled Component Part Repair or Replacement.
+
+#### 6  
+Next Scheduled Outage
+
+© 2021 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.
+
+Date Printed: 05 MAY 2021
+
+== page 1 ==
+
+## BACKGROUND DISCUSSION
+
+A gas turbine rotor is an assembly of shafts, wheels, disks, and spacers. A means of balance is incorporated into each of these rotor components and the various assemblies. A balance weight groove (BWG) is one example of a feature that is used to provide a means of balancing. The BWG is an annular channel that is machined into a rotor component that provides a location for weights to be installed for balance purposes on either the piece part or as a rotor assembly. This annular channel may contain two BWG entry slots, as shown in Figure 1, located approximately 180 degrees apart that allow for the balance weights to be easily installed and located in the appropriate locations on the wheel or shaft.
+
+**Figure 1: BWG Entry Slots – Correct Machining**
+
+During non‑destructive evaluation (NDE) of a distance piece (DP) as part of a rotor life extension (RLE), a crack‑like indication was observed in the corner of a balance weight groove entry slot. Both grooves on the specific part showed similar indications as depicted in Figure 2. GE has inspected additional parts with similar features and observed similar indication findings.
+
+**Figure 2: Indications Found on DP During RLE – Observed Machining Issue**
+
+Upon completion of a root cause investigation, GE determined the cause is associated with the variation in the corner condition of the balance weight groove entry slots and interactions with the various stresses during gas turbine start‑up, shutdown, and loaded operation (gravity sag, etc). Depending upon the specific nature of a unit’s operation and the specific condition of the part slot corner, crack‑like indications may form over the lifetime of the component. If these crack‑like indications propagate to a large enough size, it may be possible for continued rapid crack growth to occur associated with gravity sag related bending of the rotor as it rotates (high cycle fatigue related mechanism). If not mitigated, the fracture propagation may lead the CAS and/or DP to separate into two separate pieces. Separation of either shaft into two pieces may create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment.
+
+© 2021 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.
+
+Date Printed: 05 MAY 2021
+
+== page 2 ==
+
+## RECOMMENDATIONS
+
+It is recommended to perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time.
+
+For case where FPI is clear of any indications – evaluate all the balance entry slot corner conditions with replication process.
+
+- If any balance weight entry slot corner condition presents with a <0.060"" fillet size – perform entry slot blending, FPI, and peening operations to mitigate the risk of crack initiation and propagation.
+- Corner specific item – if any portion of a specific balance weight groove corner meets noted criteria, then perform modification machining on the entire balance weight groove entry slot corner.
+- Fillet > 0.060"" and uniformly this size over full length of the BWG entry slot corner – leave in as‑found condition
+
+For case with observable FPI indication/indications – contact GE engineering through an ER case for technical disposition.
+
+**Figure 3: Relative Location of BWG Entry Slots**
+
+Equivalent cold rotor turning time is defined as a spinning rotor in combination with cool metal temperatures (generally speaking conditions with all wheelspace temperatures measuring less than 150 degrees F). Turning gear (TG) operation, forced cooling operation, offline water wash operation, and unit startups are the periods where cool rotor conditions exist and contribute to the overall equivalent cold rotor turning time. Equivalent refers to a standardization of the # of high cycle fatigue cycles for a given hour and therefore has a component associated with the accumulation of cycles relative to the rotor speed. For example, at purge speed (~20% speed) versus turning gear speed (~6 rpm) a higher # of stress cycles will occur per minute of operation due solely to the increased rotational speed of the rotor for a given period.
+
+© 2021 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.
+
+Date Printed: 05 MAY 2021
+
+== page 3 ==
+
+The equivalent cold rotor turning time impact is based around taking all cold rotational hours and converting it into an equivalent number of turning hours at typical turning gear speed. In order to calculate equivalent cold rotor turning time, GE recommends the following methods:
+
+**Equivalent Cold Rotor Turning = ECRT (hours)**  
+
+ECRT = TTG – (SFS – SFC) * X) + TFC*0.25* 20% Full Speed 6 + (SWC* Y) + (SWW *3* 20% Full Speed 6
+
+### Path #1 (Unit historical recorded data through GE OSM connection or customer records)
+
+- Record the # of turning gear hours (some controllers display this value) – TTG
+- Record the total # of fired starts – SFS
+  - For 7FAs – X = 24
+  - For 9FAs – X = 24
+  - For 6FAs – X = 18
+- Record # of force cool downs – SFC
+- Record # of force cool down hours – TFC
+- Unit Full Speed
+  - For 7FAs – 3600 rpm
+  - For 9FAs – 3000 rpm
+  - For 6FAs – 5250 rpm
+- Record the # of cooler starts unit has completed (defined as the # of warm 2 and cold starts per the definitions in GER-3620 (latest revision – definition is provided in figure 22). – SWC
+- Start Up Factor
+  - Simple Cycle Unit (SC) Y = 72
+  - Combined Cycle Unit (CC) Y = 86
+- Record # of offline water wash operations – Sww
+
+Note: If unit has greater than 50% of their operation covered by On‑Site Monitoring (OSM) connection recorded data, then ratio data up to cover 100% of operation with this data, if less than 50% utilize customer records or memory to determine if 50% covered by OSM connected data is appropriate to cover overall unit operation.
+
+### Path #2 (if do not have data available for path #1):
+
+- Record the # of turning gear hours (some controllers display this value) – T TG
+- Record the total # of fired starts – SFs
+  - For 7FAs – X = 24
+  - For 9FAs – X = 24
+  - For 6FAs – X = 18
+- Utilize average % of cooler starts value assumption – SWC = SFs*0.72
+- Start Up Factor
+  - Simple Cycle Unit Y = 72
+  - Combined Cycle Unit Y = 86
+
+© 2021 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.
+
+Date Printed: 05 MAY 2021
+
+== page 4 ==
+
+- Utilize average % of force cool downs value assumption – TFC= SFS*0.05*Z
+  - For 7FAs – Z = 8
+  - For 9FAs – Z = 12
+  - For 6FAs – Z = 24
+
+**Example ECRT Calculation:**  
+
+**Combined Cycle 7FA.03**
+
+| T<sub>TG</sub> | S<sub>FS</sub> | S<sub>FC</sub> | X | T<sub>FC</sub> | S<sub>Wc</sub> | Y | S<sub>WW</sub> |
+|----------------|----------------|----------------|---|----------------|----------------|---|----------------|
+| Turning Gear Time (hours) | Number of Fired Starts | Number of Forced Cool Downs | Frame Size Factor | Forced Cool Time (hours) | Number of Cool Starts | SC or CC Factor | Number of Offline Water Washes |
+| 40,000 | 1,900 | 240 | 24 | 4,800 | 1,300 | 86 | 40 |
+
+ECRT = 40,000 – (1,900–240) *24 + 4,800*0.25* 20% of 3600 6 + (1,300*86) + (40*3* 20% of 3600 6  
+
+ECRT = 270,360 hours  
+
+This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified.  
+Please contact your GE Service Representative for any questions associated with the implementation of this TIL.
+
+### PLANNING INFORMATION  
+
+#### Compliance  
+- Compliance Category: S  
+- Timing Code: 4  
+
+#### Manpower Skills  
+- GE qualified specialist to perform FPI (in service center can substitute MPI inspection for FPI inspection based on service center capability)  
+- GE qualified machinist with appropriate tooling to perform blending and peening operations  
+
+#### Special Tooling  
+- BWG Entry Slot Portable Machining Tool  
+- FPI inspection capability  
+- Flapper peening kit  
+
+#### Scope of Work  
+- FPI to inspect BWG entry slot pre‑blending condition  
+- Set up BWG Entry Slot tool and perform blending operation  
+- FPI to inspect BWG entry slot post‑blending condition  
+- Flapper peen the modified geometry post machining and post machining successful FPI  
+
+© 2021 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.
+
+Date Printed: 05 MAY 2021
+
+== page 5 ==
+
+## TIL DISPOSITION
+
+Disposition of TILs should be entered in local records and also in GE Power ServiceNow. Follow the below instructions for entering the disposition record;  
+- Log into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/ using your GE SSO number and password.  
+- Select “TIL Disposition”.  
+- Click on the TIL for the serial number you want to update.  
+- Choose the most appropriate “Disposition Status” and enter “Disposition Notes”.  
+- Click “Save”.
+
+Contact your local GE Services representative for assistance or for additional information
+
+© 2021 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE. All rights reserved.
+
+Date Printed: 05 MAY 2021"
+/Workspace/Users/madhurima.saxena@gevernova.com/TILs/ai_parse_extraction_results/1502/parsed.json,"== page 1 ==
+
+**TIL 1502-2R1**  
+**GE ENERGY SERVICES TECHNOLOGY**  
+**CUSTOMER TECHNOLOGY SERVICES**  
+*1 NOVEMBER 2005*
+
+**Compliance Category – M**  
+**Timing Code – 6**
+
+# TECHNICAL INFORMATION LETTER
+
+## 7F AND 9F AFT END COMPRESSOR RUBS
+
+### APPLICATION  
+All 7F and 9F Heavy Duty Gas Turbines
+
+### PURPOSE  
+To inform users to monitor equipment operation and condition, and to identify the onset, occurrence, and effects of aft‑end compressor rubs (when the tip of the rotor blade rubs the casing). Rubs are evident when blade tip material is adversely affected. Information in this TIL is supplemental to information in the Inspection and Maintenance Manual provided with the gas turbine.
+
+### REASON FOR REVISION  
+To update the technical content of the TIL, including frequency of tip loss and recommendations when discovered.
+
+### Compliance Category  
+
+| Category | Description |
+|---|---|
+| O - Optional | Identifies changes that may be beneficial to some, but not necessarily all, operators. Accomplishment is at customer's discretion. |
+| M - Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |
+
+### Compliance Category  
+
+| Category | Description |
+|---|---|
+| C - Compliance Required | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability, efficiency, or safety. Compliance may be required within a specific operating time. |
+| A - Alert / Safety | Failure to comply with the TIL could result in equipment damage, facility damage, or personal injury. Compliance is mandated within a specific operating time. |
+
+### Timing Code  
+
+| Timing Code | Description |
+|---|---|
+| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |
+| 2 | At First Opportunity (next shutdown) |
+| 3 | Prior to Operation of Affected System |
+| 4 | At First Exposure of Component |
+| 5 | At Scheduled Component Part Repair or Replacement |
+
+### 6 Next Scheduled Outage  
+
+### Timing Code  
+
+| Timing Code | Description |
+|---|---|
+| 7 | Optional |
+
+**COPYRIGHT 2005 GE**
+
+> The information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as a result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information.
+
+== page 2 ==
+
+**TIL 1502-2R1**
+
+## BACKGROUND DISCUSSION  
+
+The compressor section of F‑Class gas turbines has 18 (0‑17) stages of rotating components (rotor blades) and stationary components (stator vanes).
+
+Some F‑class machines have experienced aft end compressor rubs. These rubs range from light scoring on the casing to material loss at the blade tip. This phenomenon was concluded to be very low risk relative to unit operation and reliability. No performance impact and no forced outages have been experienced as a result. Rotor blades in rows 13, 14, and 15 are primarily affected.
+
+> *Figure 1: F‑Class Compressor Cross‑Section*  
+> A cross‑section diagram shows a series of vertical and horizontal lines, with two highlighted pink rectangles in the lower center.
+
+To inform users to monitor equipment operation and condition, and to identify the onset, occurrence, and effects of aft‑end compressor rubs (when the tip of the rotor blade rubs the casing). Rubs are evident when blade tip material is adversely affected. Information in this TIL is supplemental to information in the Inspection and Maintenance Manual provided with the gas turbine.
+
+> *Figure 2: Typical Blade Tip Loss*  
+> Typical Tip Loss 1/4″
+
+Based on the conclusion of Root Cause Analysis (RCA) and fleet experience, aft end rubs are primarily induced because of frequent restarts between two (2) to eight (8) hours after shutdown. During this transient period, the thermal compression of the casing relative to the rotor can decrease clearances and can lead to rubs upon restart. The heat generated from a rub can lower the local material fatigue strength of the blade resulting in material tip loss in the event of another rub. Typical material loss dimensions are less than 1/16 inch² in area (see Figure 2).
+
+Restarting a unit 2 to 8 hours after a shutdown or trip is within the operating envelope, but this may cause rubs in some cases. Aft end rubs and/or tip loss pose very low risk to unit operation and reliability. No performance impact and no forced outages have been experienced due to this issue.
+
+## RECOMMENDATIONS  
+
+Follow operating practices per GER 3620 to reduce the potential for rubs on aft end compressor blades. In addition to the GER 3620 guidelines, the following recommendations would also help minimize aft end rubs and tip loss occurrence.
+
+- Keep enclosure doors closed during startup, shutdown and normal operation.  
+- Be aware that restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip will cause the clearances in the aft end to decrease. If the unit operates this way now or has in the past, there is a potential for this clearance closure to cause aft end tip rubs. As a result, the area should be included in the yearly borescope inspections.  
+- Eliminate any potential pipe leaks that may cause quenching of the gas turbine compressor discharge casing.  
+- Ensure vent fans and exhaust fans to the gas turbine enclosure are functioning properly such that no local forced convection is taking place at or near the compressor discharge casing.  
+- Integrate the inspection for aft end compressor rubs with your yearly scheduled borescope inspection per GER 3620. Observe rotor blade stages 13 through 17 and look for mushroomed material (see Figure 3), bluing at the blade tip, and / or markings in the casing area.
+
+> *Figure 3: Fractured Tip Surface*  
+> Casing Mushrooming Material Tip Rotating Airfoil
+
+== page 3 ==
+
+**TIL 1502-2R1**
+
+All 7F and 9F Heavy Duty Gas Turbines
+
+Following this operation, a penetrant inspection must be performed to ensure no tip cracks are present. If the CDC is removed prior to the major inspection, clearances can also be increased to eliminate the potential for tip rubs should the customer desire. Please contact your local GE service representative for assistance.
+
+### PLANNING INFORMATION  
+
+#### Compliance  
+- Compliance Category: M  
+- Timing Code: 6  
+
+#### Manpower Skills  
+- Trained GE Borescope technician to perform borescope inspection, approximately eight (8) hours.  
+- Trained GE Blade technician for rotor blade clearance increases, approximately 16 hours once the casing has been removed.  
+
+#### Parts  
+N/A  
+
+#### Special Tooling  
+N/A  
+
+#### Reference Documents  
+N/A  
+
+#### Previous Modifications  
+N/A  
+
+#### Scope of Work  
+N/A  
+
+#### Contact your local GE Energy Services representative for assistance or for additional information.  
+
+NOTE: If you would like to receive future TILs by email, contact your local GE Energy Services representative for assistance.
+
+== page 4 ==
+
+**TIL 1502-2R1**
+
+## TIL COMPLIANCE RECORD  
+
+The information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as a result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information.
+
+### Complete the following TIL Compliance Record and FAX it to:  
+
+TIL Compliance  
+FAX: (678) 844-3451  
+Toll free FAX: 1-888-896-TILS (1-888-896-8457)
+
+| TIL COMPLIANCE RECORD | | For Internal Records Only # | |
+|---|---|---|---|
+| Site Name: | Customer Name: | | |
+| Customer Contact Information | | GE Contact Information | |
+| Contact Name: | Contact Name: | | |
+| Address: | Address: | | |
+| Email: | Email: | | |
+| Phone: | Phone: | | |
+| FAX: | FAX: | | |
+| Turbine Serial Number(s): | | | |
+| | | | |
+| INSTALLED EQUIPMENT | TIL Completed Date: | | |
+| Description: | 100% TIL Completed: | | |
+
+| Unit Numbers | Part Description | Part Number | MLI Number |
+|---|---|---|---|
+| | | | |
+| | | | |
+| | | | |
+| | | | |
+
+| Comments: |
+|---|
+| |
+| |
+
+NOTE: If there are any redlined drawings that pertain to this TIL implementation, please FAX the drawings along with this TIL Compliance Record.
+
+| FAX this form to: | TIL Compliance |
+|---|---|
+| | |
+| FAX: (678) 844-3451 | |
+| Toll free FAX: 1-888-896-TILS (1-888-896-8457) | |
+
+== page 5 ==
+
+**TIL 1502-2R1**
+
+## USER SATISFACTION SURVEY  
+
+GE values your opinions and comments.
+
+GE requests that you complete the User Satisfaction Survey below to help us better serve you with accurate and timely information on your equipment.
+
+### Complete the following TIL Compliance Record and FAX it to:  
+
+TIL Survey  
+GE Customer Technology Services  
+FAX: (678) 844-6737  
+Toll free FAX: 1-866-604-2668
+
+| Serial Number | | Date | |
+|---|---|---|---|
+
+| 1. How many days after TIL issue date did you receive this TIL? | |
+|---|---|
+| 1 - 5 days | 6 - 10 days | + 10 days |
+
+| 2. Please rate how well this document informed you of the technical issue. | |
+|---|---|
+| 1 | 2 | 3 | 4 | 5 |
+
+| 3. Please rate the overall effectiveness of this TIL. | |
+|---|---|
+| 1 | 2 | 3 | 4 | 5 |
+
+| Comments / Suggestions: |
+|---|
+| |
+| |
+| |
+| |
+| |
+
+NOTE: If you would like to receive future TILs by email, contact your local GE Energy Services representative for assistance.
+
+| FAX this form to: | TIL Survey<br>GE Customer Technology Services<br>FAX: (678) 844-6737<br>Toll free FAX: 1-866-604-2668 |
+|---|---|
+
+---"
+/Workspace/Users/madhurima.saxena@gevernova.com/TILs/ai_parse_extraction_results/1603/parsed.json,"== page 0 ==  
+
+[Figure: GE logo] (GE)  
+
+**POWER SERVICES ENGINEERING PRODUCT SERVICE**  
+
+**GE Power**  
+
+**TIL 1603‑R2**  
+
+**12 FEBRUARY 2019**  
+
+**Compliance Category – C**  
+
+**Timing Code – 5**  
+
+# TECHNICAL INFORMATION LETTER  
+
+## R0 EROSION AND WATER INGESTION RECOMMENDATIONS  
+
+### APPLICATION  
+All F‑class gas turbines excluding 6F.01, 7F.04‑200 and 7F.05.  
+
+### PURPOSE  
+To advise operators of the inspection and maintenance considerations necessary to mitigate R0 erosion effects, and to inform them of a new online water wash (OnWW) system that reduces the rate of erosion in the principal area of concern. Failure to properly monitor or repair R0 erosion could result in cracking of the R0 blades and risks of compressor damage.  
+
+### REASON FOR REVISION  
+The reason for this revision is to improve the clarity of the recommendations regarding online water wash frequency and mold inspections for specific F‑class compressor configurations.  
+
+### COMPLIANCE CATEGORY  
+
+**M – Maintenance**  
+Identifies maintenance guidelines or best practices for reliable equipment operation.  
+
+**C – Compliance**  
+Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.  
+
+2013年世界羽毛球锦标赛男子双打比赛2013年世界羽毛球锦标赛男子双打比赛于2013年8月21日至8月25日在印度新德里举行。  
+
+Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time.  
+
+**S – Safety**  
+Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.  
+
+### TIMING CODE  
+
+1 – Prior to Unit Startup / Prior to Continued Operation (forced outage condition)  
+
+2 – At First Opportunity (next shutdown)  
+
+3 – Prior to Operation of Affected System  
+
+4 – At First Exposure of Component  
+
+5 – At Scheduled Component Part Repair or Replacement.  
+
+6 – Next Scheduled Outage  
+
+© 2019 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.  
+
+== page 1 ==  
+
+## BACKGROUND DISCUSSION  
+
+As the forward‑most rotating blade in an F‑class gas turbine compressor, the R0 (Rotor stage 0 blade) is the first to see airborne materials ingested through the inlet (see Figure 1). In addition to solid objects that may create immediate and substantial impact damage, ingested fluids and liquid droplets may also affect the blades, though more gradually, accumulating erosion primarily along the leading edge of the R0 (see Figure 2).  
+
+[Figure: Diagram of inlet and forward compressor] (A diagram illustrates a curved structure with a large blue section, a smaller pink section, and a series of vertical lines at the right.)  
+
+**Figure 1: Schematic of Inlet and Forward Compressor**  
+
+Common sources of water ingested through the gas turbine compressor inlet during operation include OnWW, fogging/SPRITS system output, and evaporative cooling system carry‑over. Water ingestion could also result from unintended sources such as the leakage of rainwater through compromised inlet ducting seals or malfunctioning accessory equipment.  
+
+[Figure: Crowd image] (A large crowd of people is densely packed together, viewed from a high angle.)  
+
+**Figure 2: R0 Leading Edge Erosion**  
+
+Leading edge erosion degrades the blade's material capability by creating a dense network of surface pits (see Figure 3) and has resulted in compressor event forced outages, with cracks initiating from erosion pits at the root of the R0 airfoil.  
+
+This TIL supersedes prior TILs 1303, 1389, 1400 and 1401, and provides consolidated recommendations regarding monitoring R0 erosion levels and repairing or mitigating such erosion. Failure to follow these recommendations could result in excessive erosion, which, in turn, could lead to subsequent cracking and possible liberation of R0 blades with potential downstream damage to the gas turbine.  
+
+© 2019 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.  
+
+== page 2 ==  
+
+## RECOMMENDATIONS  
+
+Recommendations for monitoring erosion levels caused by known sources of potential water droplet introduction to the inlet air stream are given in the following section. The recommended method for erosion quantification is through mold impressions and GE Power Services provides a process for evaluating these molds. The accumulation of erosion may at some point require leading edge surface renewal prior to reaching a degradation limit. Typically this activity may be performed at Major Inspection intervals, but additional inspections at regular intervals may be necessary to confirm a modest degradation rate. Contact your GE Power Services provider for scheduling of this activity.  
+
+### On‑line Water Wash  
+
+Compressor fouling results from the depositing of airborne contaminants onto the compressor flow path surfaces and it affects a decline in aerodynamic efficiency and, thus, gas turbine performance. Water washing of the compressor is necessary to reduce the fouling effects and maintain a desired level of output. However, water washing performed on‑line inherently injects water droplets into the compressor at a high relative velocity, thereby creating a source of R0 leading edge erosion.  
+
+TIL 1323 advises performing a modification to the original online water wash system to reduce the volume of water impinging on the R0 leading edge root location (the area susceptible to cracking from erosion). With this modification, erosion rates are improved, but still require special maintenance intervals. GE has now engineered and validated a new online water wash system that imparts significantly reduced erosion at the R0 root and requires no maintenance for up to 1000 cumulative hours of washing. This allows for daily water washing (15 minutes per 48 fired hours) with no R0 erosion maintenance necessary until the scheduled Major Inspection interval. The new configuration has been validated through accelerated field testing which confirmed the reduced rate of erosion while maintaining the same cleaning effectiveness as the baseline system. The system has been introduced into GE F‑class production as well as retrofitted into field units as a system upgrade. Contact your GE Power Services representative for information on this upgrade.  
+
+[Figure: Original vs New Nozzle] (A diagram illustrates a side‑view comparison of an original and a new nozzle within a curved housing.)  
+
+**Figure 4: Relocated and Redesigned Spray Nozzles as Part of Upgraded OnWW System**  
+
+© 2019 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.  
+
+== page 3 ==  
+
+## For current F‑class units operating with the original OnWW system (which should be modified per TIL 1323), erosion levels should be inspected at regular intervals of OnWW by taking mold impressions of the R0 leading‑edge root location.  See “Combined Wet Inlet Operation” for inspection interval information.  Contact your GE Power Services representative to arrange this inspection.  Mold inspections should be followed by fluorescent penetrant inspection (FPI) to ensure against existing cracks.  
+
+OnWW should be performed based on desired output degradation limits as well as environmental effects to the forward compressor. When fouling deposits contain corrosive elements, washing can help minimize corrosive attack.  
+
+### General guidelines for OnWW duration and frequency are as follows:  
+
+- 5 minutes per 48 Fired Hours, if standard R0's and the Gen‑1 WW system are in place  
+- 15 minutes per 48 Fired Hours, if standard R0's and the Gen‑2 WW system are in place (available through CM&U)  
+- 15 minutes per 48 Fired Hours, if enhanced R0s (ECP 2, 2+3, 4, 5) are installed with either the Gen‑1 WW or the Gen‑2 WW system  
+
+These durations are advised to balance erosion rates and output degradation. Shorter durations or longer intervals between washing may be scheduled at the operator’s discretion based on minimal performance degradation or corrosion concerns. Conversely, longer or more frequent water washes could result in a greater rate of erosion, requiring more frequent repairs. For this reason, the upgraded OnWW system now available generally limits daily washes through control system permissives.  
+
+### Inlet Fogging/SPRITS Operation  
+
+Water carry‑over into the compressor may originate from inlet fogging systems. These systems introduce water droplets into the air stream that may coalesce and contribute to R0 leading edge erosion. Erosion rates will vary based on spray ratio, maintenance practices and operating frequency.  
+
+For units utilizing fogging systems, GE recommends that R0 blades be inspected with mold impressions and FPI at regular intervals of cumulative hours of fogger operation as defined in “Combined Wet Inlet Operation”.  
+
+### Evaporative Cooler Operation  
+
+Though evaporative cooler systems are intended to cool the air and introduce moisture (not water droplets) for increased mass flow and efficiency, inadvertent water carry‑over from this system may affect R0 erosion. GE recommends monitoring the evaporative coolers for proper operation and any evidence of water carry‑over. This evidence may include water stains, puddles, or streaking in the filter inlet house or bell mouth area; deposits on filter or cycle deck material; or missing, damaged, or misaligned filter or cycle deck material.  
+
+Any evidence of water carry‑over should be dispositioned and eliminated by GE or the manufacturing vendor. Refer to TILs 1285 and 1399 for additional information on evaporative cooler maintenance and annual commissioning.  
+
+R0 erosion molds and FPI should be performed between 100 and 300 hours of cumulative operation of the evap system. For units with identified water carry‑over, the inspection should be repeated at this interval or as determined based on the mold impressions. If there is no significant erosion and it is continually verified that the evap system is generating no carry‑over, no continual R0 mold inspection is necessary.  
+
+### Combined Wet Inlet Operation  
+
+Many operators may use a combination of water‑introducing systems. R0 erosion inspections should include both mold impressions and FPI and should be performed when cumulative wet inlet operation time reaches 100 hours as defined by the following formula:  
+
+Combined Wet Time = 4 × (OnWW hours [A]) + 0.1 × (OnWW hours [B]) + (Fogger hours [C]) + 0.2 × (SPRITS hours [D]) + (Evap hours [E])  
+
+Where [A] pertains to the legacy OnWW system, [B] pertains to the upgraded OnWW system, [C] applies for non‑GE foggers, [D] applies for GE fogging/SPRIT'S systems, and [E] applies only if carry‑over has been present or the evaporative cooler system has not been commissioned or maintained per TILs 1285 and 1399.  
+
+From this, it can be seen that if an upgraded OnWW system is applied and evaporative coolers have been commissioned and maintained, then recurring mold inspections are primarily dependent on the accumulation of Fogging/SPRITS operation. These systems may have significant variability based on manufacturer, vintage, system tuning and modifications. As such, following initial inspections, parameters C and D may be adjusted per GE disposition (see Figure 5).  
+
+© 2019 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.  
+
+== page 4 ==  
+
+These interval recommendations do not apply to unit operation with p‑cut R0 blades. For these blades, erosion repairs can be performed at Major Inspection intervals or earlier as preferred.  
+
+|  | System | Usage Guidelines | Stand‑Alone Mold Inspection Interval | Combined Operational Mold Inspection Interval |
+|---|--------|------------------|--------------------------------------|----------------------------------------------|
+| A | Original OLWW (Gen‑1) | 5 min / 48 FH | 23‑30 hrs OnWW or annually | Accumulated wet conditioning time: 4A + B/10 + C + D[1]/5 + E[2] = 100 hrs<br>[1]May be adjusted based on initial inspections<br>[2]Not applicable once no carry‑over verified |
+| B | Upgraded OLWW (Gen‑2) | 15 min / 48 FH | 1000 hrs OnWW or MI's |  |
+| C | Non‑GE Fogging | N/A | 100 hrs fogging [1] |  |
+| D | GE Fogging / SPRITS | Per GE Specs | 500 hrs fogging [1] |  |
+| E | Evaporative Cooling | TIL1285, TIL1389 | Initial commissioning: 100‑300 hrs evaps<br>Repeat if carry‑over is observed |  |
+
+**Figure 5: Standard R0 Inspection Guidelines for Wet Inlet Conditioning**  
+
+As accumulated wet conditioning time approaches the specified interval limit, the erosion inspection (FPI & molds) should be scheduled with your GE Services representative. The Service Representative will facilitate evaluation and disposition of the findings.  
+
+It should be anticipated that wet inlet operation will result in some level of R0 erosion for which the disposition could be a reduced interval for subsequent inspection or even discontinuance of further wet inlet operation until the R0s can be blend repaired by qualified GE Energy Services technicians. The intent is to avoid continued erosion beyond a threshold for cracking risk. Design analysis and field experience have defined this threshold at a measured erosion depth of 0.008 inches. Blade repairs performed by GE Services may be conducted in‑situ; however, with a seed set of R0s, removal and repair in a GE Service Center will often minimize outage delays.  
+
+The leading edge R0 inspections and molds highlighted in this TIL are no longer recommended if the unit has enhanced R0 blades.  
+
+## PLANNING INFORMATION  
+
+**Compliance**  
+
+- Compliance Category: C  
+- Timing Code: 5  
+
+**Manpower Skills**  
+
+For R0 erosion molds, a GE Field Engineer or GE LES Inspector should perform the procedure per GE specifications.  
+
+R0 FPI should be performed by qualified inspectors from GE Services, LES or a qualified vendor.  
+
+For R0 erosion blending, the work should be performed by qualified GE Service Center blade technicians. Shot peening is also required post‑blending, and a qualified vendor should be used for this operation.  
+
+For OnWW upgrade to Gen‑2, the CM&U process should be followed for quoting of labor and parts. On‑site machining will be necessary (and can be sourced by GE Power Services manager).  
+
+© 2019 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved.  
+
+== page 5 ==  
+
+## Parts  
+
+A molding kit will be necessary to conduct the R0 erosion replications. Contact your GE Services representative to procure materials and resources for the inspection and to set up proper evaluation and disposition by GE Engineering.  
+
+Likewise, for OnWW upgrade to Gen‑2, contact your GE Services representative to commence the quotation process.  
+
+## Special Tooling  
+
+FPI chemicals should be provided by the contracted inspectors.  
+
+Erosion molding materials are provided in the referenced kit. See Parts.  
+
+Tooling for erosion blending supplied and utilized by GE Service Center blade technicians.  
+
+## Reference Documents  
+
+TILs 1285, 1323, and 1399  
+
+## Scope of Work  
+
+R0 erosion molds and FPI can be performed concurrently with TIL 1509 inspections.  
+
+- R0 erosion molds typically take at most ½ shift or 6 man‑hours to complete.  
+- FPI of R0s typically requires one 12‑hour shift.  
+
+Leading edge blending for R0 erosion can be done at site or with the blades sent to a GE Service Center. Typical duration for blending in the unit is four days and requires, at a minimum, that the inlet bellmouth be jacked approximately two feet. Therefore, if performed outside of an MI, a spare set of R0s may be preferred. Alternatively, the blending may be performed in a GE Service Center in as little as two days.  
+
+## TIL DISPOSITION  
+
+Disposition of TILs should be entered in local records and also in GE Power ServiceNow. Follow the below instructions for entering the disposition record;  
+
+- Log into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/ using your GE SSO number and password.  
+- Select “TIL Disposition”.  
+- Click on the TIL for the serial number you want to update.  
+- Choose the most appropriate “Disposition Status” and enter “Disposition Notes”:  
+- Click “Save”.  
+
+Contact your local GE Services representative for assistance or for additional information.  
+
+© 2019 General Electric Company  
+
+The proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information. This Technical Information Letter contains proprietary information of General Electric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Power Services Engineering. All rights reserved."

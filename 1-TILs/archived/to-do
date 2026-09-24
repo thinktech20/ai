@@ -1,0 +1,31 @@
+Current Week (06/08-06/12)
+
+Review TIL extraction/parsing method provided by the DS team, and check and compare against ai_parse_document of Databricks.
+
+Notes:
+1. DS did experimentaion on 25 TILs and shared for SME review
+2. There are 300 or so TIL numbers in teh vilume. There are TILs in teh power Now table which have more TILs. whether they will add more in future is unknown. 
+3. TIL pdf doc structures vary. Some challeneges :
+different format and types.
+4. A few gaps that would need to be hardened by dev/architecture for run-time: production parsing service (OCR tool), persistence strategy (for JSON and/or Markdown files).
+5. Xujin has some detailed info/requirements regarding document parsing quality that she's been working with that may be helpful in choosing the optimal parsing service.
+6. Passing on SME's preferences regarding output persistence so far: prefer Markdown files for human review and for LLM readability, neutral to JSON outputs, avoid structured SQL column retrieval. - the main idea seems to be leaning towards making it easy for human review/audit, and building context for LLM.
+7. Challenges with current DS extraction method:
+Equations with fractions
+Double column page, ts extracting first row , left to rihgt
+
+
+References:
+
+Databricks Volume path: /Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_New/
+Imp TILs with edge use cases: 2284, 1603, 1502, 1937/1945 are some typical edge cases.
+DS code for extraction-
+https://github.apps.gevernova.net/gev-genai/SDG_Scoping_Feedback_Loop/blob/feature/experiment-7-osa/experiments/e6_2/read_1b_FoundationService.py
+Attached here - TILs/input/ds-code/read_1b_FoundationService.py
+
+Results for parsing for 1603 are stored here- 
+TILs/input/ds-code-and-results/1603-R2
+
+Review of code and results - TILs/analysis/foundation-service-parsing-ds-code
+
+

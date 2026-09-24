@@ -1,0 +1,32 @@
+Questions for DS Team (Step 6)
+
+1. Parser evaluation
+- Did you use any formal method to compare parser options (`foundation`, `pdfplumber`, `auto`, others)?
+- Which metrics did you use to pick a parser? (for example: field accuracy, completeness, table quality, formula quality, failure rate, latency, cost)
+- Did you define any minimum thresholds to qualify a parser before downstream stages?
+
+2. Gold dataset for parser checks
+- Do we already have a labeled gold set for parser-only evaluation?
+- If yes, what is the current size and coverage (narrative-heavy, table-heavy, formula-heavy, image-heavy)?
+
+3. Unique key and identity
+- In your current Step 6 flow, what is the logical unique key for a TIL document?
+- Is `document_id` enough in your view, or should we use a separate `unique_key` for idempotent MERGE?
+- Do you recommend content-hash based identity (`source_hash`) as part of `unique_key`?
+
+4. Multi-source volume behavior
+- Is there one official source volume for TIL PDFs, or can there be multiple active volumes?
+- If the same PDF appears in multiple source locations, what is the expected dedupe rule?
+- Is there a preferred source-priority order (volume vs local sample vs SQL fallback)?
+
+5. Incremental MERGE rules
+- For an existing document with unchanged content hash, should we only refresh metadata (no status reset)?
+- For changed content hash, should we reset statuses and re-run extraction/chunking?
+
+6. Profile extraction contract stability
+- Which profile fields are mandatory for v1 pipeline output?
+- Which fields are experimental and may change soon?
+
+7. App vs pipeline boundary confirmation
+- Can we treat template coverage, service-history completion review, SBOM interpretation, and final disposition as app-layer only for v1?
+- Any Step 6 output that you think must stay in pipeline storage from day 1?

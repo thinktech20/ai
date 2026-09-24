@@ -1,0 +1,17 @@
+Screenshot: ai-arch/2-FSR-v2/post-prod/issues/04-final-master-report-format/master-reports-issue.png
+
+Review comments:
+
+They all have these category in section 2 already, I think we can first just assign all sections other than section 2 into shared, and then in section 2, UNCATEGORIZED-->shared, others just follow the label itself. In Section 2, only if we detect a capitalized word "GAS TURBINE" or "STEAM TURBINE" or "GENERATOR" or "UNCATEGORIZED", we tag all the content to that label until next detection, no parents or other flips.
+
+Also, FYI, in the parsed files, for final master reports, the content number comes before the content title, just in case that can help you.
+
+Latest follow-up:
+
+1. Labels such as `GAS TURBINE - BEARINGS` and `GAS TURBINE - CLEARANCES` map to `Gas Turbine` based on the leading phrase.
+2. The rule applies only to the `COMPONENTS` section. It may be numbered `2. COMPONENTS` or `3. COMPONENTS`; do not assume a fixed section number. Reports without a Components section, including short reports, are assigned entirely to `shared`. All other sections are also `shared`.
+3. Unlabeled content inside Components should use the easy path and remain `shared`. Some of this content may be text or scanned sub-reports. An `ambiguous` label with page fallback remains a possible future option, not part of the initial rule.
+4. If Components is missing or cannot be detected, the whole document falls back to `shared`.
+5. Validation should include the listed Gas Turbine, Steam Turbine, Generator, Uncategorized, sub-report, Components-as-section-3, and short-report examples from the latest review.
+
+The initial label vocabulary is limited to Gas Turbine, Steam Turbine, Generator, and Uncategorized (`shared`).

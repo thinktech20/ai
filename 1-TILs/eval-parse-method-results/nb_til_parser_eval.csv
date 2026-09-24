@@ -1,0 +1,16 @@
+til_number,method_name,char_count,formula_hits,latency_s,noise_ratio,parse_success,required_field_hits,table_count,word_count
+1502-2R1,databricks_ai,6725,0,15.733,0.0743,1,20,6,1082
+1502-2R1,foundation,0,0,0.021,0,0,0,0,0
+1502-2R1,pdfplumber,8691,1,0.732,0.0895,1,27,3,1404
+1603-R2,databricks_ai,22435,1,12.349,0.2154,1,17,1,3446
+1603-R2,foundation,0,0,0.003,0,0,0,0,0
+1603-R2,pdfplumber,21182,1,1.826,0.1515,1,21,2,3265
+1937-R2,databricks_ai,35536,0,11.407,0.4101,1,15,8,5539
+1937-R2,foundation,0,0,0.004,0,0,0,0,0
+1937-R2,pdfplumber,22183,0,1.58,0.3803,1,17,1,3500
+1945-R2,databricks_ai,35162,0,12.236,0.4301,1,17,8,5486
+1945-R2,foundation,0,0,0.005,0,0,0,0,0
+1945-R2,pdfplumber,22560,0,1.5,0.4049,1,19,1,3563
+2284,databricks_ai,16744,29,8.832,0.2836,1,11,4,2721
+2284,foundation,0,0,0.004,0,0,0,0,0
+2284,pdfplumber,15703,25,1.129,0.23,1,15,2,2594

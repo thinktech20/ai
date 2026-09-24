@@ -1,0 +1,4 @@
+til,exact_fields,mismatch_fields,critical_identity_pass,overall_pass
+1937-R2,5,5,True,False
+1945-R2,4,6,False,False
+2045-R2,5,5,True,False

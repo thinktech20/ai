@@ -1,0 +1,16 @@
+til_number,method_name,parse_success,formula_density_per_1k_words,table_density_per_1k_words,content_coverage_score
+1502-2R1,databricks_ai,1,0,4.621,0.3966
+1502-2R1,foundation,0,0,0,0
+1502-2R1,pdfplumber,1,0.712,2.137,0.4403
+1603-R2,databricks_ai,1,0.29,0.29,0.4681
+1603-R2,foundation,0,0,0,0
+1603-R2,pdfplumber,1,0.306,0.613,0.5148
+1937-R2,databricks_ai,1,0,1.444,0.7889
+1937-R2,foundation,0,0,0,0
+1937-R2,pdfplumber,1,0,0.286,0.4649
+1945-R2,databricks_ai,1,0,1.458,0.8029
+1945-R2,foundation,0,0,0,0
+1945-R2,pdfplumber,1,0,0.281,0.4883
+2284,databricks_ai,1,10.265,1.062,0.5292
+2284,foundation,0,0,0,0
+2284,pdfplumber,1,9.638,0.771,0.4792

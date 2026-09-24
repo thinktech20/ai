@@ -1,0 +1,212 @@
+document_id,unique_key,source_path,source_hash,source_system,requested_til_number,matched_til_number,match_type,parser_method,parser_name,parser_version,profile_found,parsed_profile_json,raw_profile_json,extracted_document_method,extracted_text_char_count,extracted_table_count,extraction_confidence,llm_model,metadata_status,metadata_retry_count,chunk_status,chunk_retry_count,error_code,error_message,ingest_ts,metadata_processed_ts,chunk_processed_ts,run_id
+til 1937-r2 - f-class turbine wheel inspection and maintenance recommendations,1937-R2__ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1937-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf,ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f,databricks_volume,1937-R2,1937-R2,pdf_name_match,databricks_ai,databricks_ai,v1,true,"{""til_number"": ""TIL 1937"", ""revision"": ""R2"", ""title"": ""F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS"", ""publish_date"": ""2024-04-10"", ""reason_for_revision"": ""1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels. 2) Added a specific ECI inspection interval for Stage 1 enhanced wheels with 2 Step-Age heat treatment. 3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension."", ""purpose"": ""Advise users to perform routine inspections at a maintenance interval based on installed configuration."", ""compliance_category_code"": ""A"", ""compliance_category_text"": ""Alert"", ""recurring_indicator_if_found"": ""Yes"", ""coarse_outage_type"": ""Next Scheduled Outage"", ""scope_of_work"": [""Qualified vendor to perform CO2 blast cleaning of turbine rotor."", ""GE Vernova qualified personnel to perform rotor inspections (ECI, Visual, BI, FPI, UT)."", ""Install back-cut stage 1 and stage 2 turbine blades."", ""Rotor inspection equipment and blend/peen kit application by GE Vernova.""], ""service_recommendation_line_items"": [""Perform Eddy Current Inspection (ECI) on Stage 1 and Stage 2 wheel dovetails at intervals defined by configuration (Heat Treatment, Peening, Slot Geometry)."", ""Perform Visual Inspection (VT) and Borescope Inspection (BI) of all exposed turbine rotor surfaces, specifically broach slot fillets, cooling slots, and spacer rim seal teeth."", ""Perform Fluorescent Penetrant Inspection (FPI) on staked balance weight grooves (BWG) at every Major Inspection and when CDC is removed during HGPI."", ""Perform FPI on Lock Wire Tabs (LWT) when turbine blades are removed during routine maintenance."", ""Perform Ultrasonic Inspection (UT) on counterbore outside diameter ligaments on distance piece and turbine aft shaft."", ""Install dovetail 'back-cut' modified Stage 1 and 2 turbine blades at the next scheduled maintenance (HGPI or Major)."", ""Clean turbine rotor using CO2 blasting (preferred) or hand-cleaning prior to ECI to ensure accurate readings."", ""Inspect Stage 3 wheel balance weight grooves (if staked) and lockwire tabs (original or modified) at HGPI/Major intervals."", ""Inspect Turbine Aft Shaft (TAS) balance weight grooves (if staked) at Major Inspection and when Exhaust Frame is removed during HGPI.""], ""completion_criteria_text"": ""This TIL is considered completed when the turbine wheels reach end of life and are removed from service."", ""maintenance_trigger_text"": ""Intervals are based on operating hours, starts, or specific outage types (HGPI/Major) depending on the hardware configuration."", ""recommended_interval_or_trigger"": [""Every 24 hrs or 900 starts (Fired without Shot Peening configuration)"", ""Every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed] (Never Fired without Shot Peening, Original Slot)"", ""At 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Contoured/Enhanced Slot)"", ""Every HGPI when CDC is not removed (BI)"", ""Every Major and when CDC is removed during HGPI (FPI for BWG)"", ""Every HGPI when buckets are removed (FPI for LWT)"", ""At first Major after TW2 Life Extension (ECI for specific Stage 2 configurations)""], ""usage_counters_to_check_or_consider"": [""operating_hours"", ""starts""], ""usage_counter_requirements_text"": ""Inspection intervals for ECI vary significantly (24/32/96 hours or 900/1,200/3,600 starts) based on the wheel's shot peening history and cooling slot geometry."", ""frame_or_model_applicability_text"": ""7F, 9F, 6F"", ""combustion_or_fuel_configuration_text"": null, ""hardware_or_part_configuration_text"": ""Material Heat Treatment (2 Step Age, 3 Step Age), Peening Condition (Fired without Shot Peening, Never Fired without Shot Peening), Cooling Slot Geometry (Original, Contoured, Enhanced), Balance Rail & Lock Wire Tab (Original, Stakeless, Modified Tab)."", ""serial_or_unit_applicability_text"": ""Select F-class gas turbine rotors operating in high ambient and specific environmental conditions."", ""exclusions_or_non_applicable_conditions_text"": ""Stakeless balance weight grooves on Stage 3 wheels and Turbine Aft Shafts require no inspections."", ""required_prior_modifications_text"": ""Installation of back-cut turbine blades is recommended to reduce stress and may extend ECI intervals."", ""prerequisite_outage_or_inspection_context_text"": ""Turbine blades must be removed prior to ECI. Rotor must be cleaned (CO2 blasting requires ~12 hours; hand cleaning 2-3 shifts)."", ""sbom_dependency_flag"": true, ""sbom_trigger_reason"": ""Inspection intervals and applicability are strictly tied to specific wheel part numbers and configuration features like heat treatment and slot geometry."", ""mli_numbers"": [], ""parts_referenced"": [{""part_number"": ""227C5762"", ""context"": ""7F Stage 1 Wheel (2 Step Age, Fired without Shot Peening)"", ""required_inspection_types"": [""ECI"", ""Visual"", ""BI"", ""FPI"", ""UT""], ""source_location"": ""Table 1""}, {""part_number"": ""103E5795"", ""context"": ""7F Stage 1 Wheel (2 Step Age, Fired without Shot Peening)"", ""required_inspection_types"": [""ECI"", ""Visual"", ""BI"", ""FPI"", ""UT""], ""source_location"": ""Table 1""}, {""part_number"": ""116E3967"", ""context"": ""7F Stage 1 Wheel (2 Step Age, Contoured Slot)"", ""required_inspection_types"": [""ECI"", ""BI"", ""FPI""], ""source_location"": ""Table 1""}, {""part_number"": ""145E3626"", ""context"": ""7F Stage 1 Wheel (3 Step Age, Enhanced Slot)"", ""required_inspection_types"": [""FPI""], ""source_location"": ""Table 1""}, {""part_number"": ""109E5254"", ""context"": ""9F Stage 1 Wheel (2 Step Age, Original Slot)"", ""required_inspection_types"": [""ECI"", ""BI"", ""FPI""], ""source_location"": ""Table 3""}, {""part_number"": ""131T7543"", ""context"": ""6F Stage 1 Wheel (3 Step Age, Enhanced Slot)"", ""required_inspection_types"": [""FPI""], ""source_location"": ""Table 5""}], ""reference_documents"": [{""document_number"": ""TIL 1280"", ""document_type"": ""TIL"", ""context"": ""Superseded by TIL 1937""}, {""document_number"": ""TIL 1327"", ""document_type"": ""TIL"", ""context"": ""Superseded by TIL 1937""}, {""document_number"": ""TIL 1434"", ""document_type"": ""TIL"", ""context"": ""Superseded by TIL 1937""}, {""document_number"": ""TIL 1539"", ""document_type"": ""TIL"", ""context"": ""Superseded by TIL 1937""}, {""document_number"": ""TIL 1540"", ""document_type"": ""TIL"", ""context"": ""Superseded by TIL 1937""}, {""document_number"": ""TIL 1742"", ""document_type"": ""TIL"", ""context"": ""Superseded by TIL 1937""}], ""configuration_dependent"": true, ""configuration_variables"": [""Material Heat Treatment"", ""Peening Condition"", ""Cooling Slot Geometry"", ""Balance Rail & Lock Wire Tab design"", ""Frame Size (7F, 9F, 6F)"", ""Stage Number""], ""configuration_summary"": ""Inspection requirements and intervals are determined by the specific combination of wheel material heat treatment (2SA vs 3SA), shot peening status at first fire, cooling slot profile (Original, Contoured, Enhanced), and the presence of stakeless or modified tabs."", ""severity_signals"": [""Compliance Category - A"", ""Timing Code - 6"", ""Failure to comply with the TIL could result in equipment damage or facility damage.""], ""failure_consequences"": [""Intergranular crack initiation and propagation"", ""Release of wheel section and/or adjacent turbine blades into the hot gas path"", ""Significant damage to the turbine"", ""Wheel post liberation during operation"", ""Partial wheel material liberation""], ""risk_summary"": ""High nickel alloy turbine wheels are sensitive to surface imperfections where intergranular cracks can initiate due to high stress and temperature. Rotors in high ambient, humid, or corrosive conditions are at increased risk. Undetected cracks can lead to catastrophic wheel failure."", ""safety_or_damage_language_found"": true, ""tables_found_summary"": [{""table_label"": ""Table 1 & 2"", ""table_description"": ""7F Stage 1 and Stage 2 Wheel Configurations, Recommendations, and Part Numbers."", ""useful_for_downstream"": true, ""reason"": ""Contains critical mapping of PNs to ECI/FPI intervals.""}, {""table_label"": ""Table 3 & 4"", ""table_description"": ""9F Stage 1 and Stage 2 Wheel Configurations, Recommendations, and Part Numbers."", ""useful_for_downstream"": true, ""reason"": ""Contains critical mapping of PNs to ECI/FPI intervals.""}, {""table_label"": ""Table 5 & 6"", ""table_description"": ""6F Stage 1 and Stage 2 Wheel Configurations, Recommendations, and Part Numbers."", ""useful_for_downstream"": true, ""reason"": ""Contains critical mapping of PNs to ECI/FPI intervals.""}], ""missing_information_flags"": [], ""source_snippets"": [{""field"": ""risk_summary"", ""snippet"": ""The disks in the turbine rotor are made of a high nickel alloy that is sensitive to surface imperfections where an intergranular crack may initiate and propagate due to high stresses and temperatures.""}, {""field"": ""recommended_interval_or_trigger"", ""snippet"": ""ECI Visual BI FPI UT: every 24 hrs or 900 starts""}, {""field"": ""completion_criteria_text"", ""snippet"": ""This TIL is considered completed when the turbine wheels reach end of life and are removed from service.""}], ""extraction_confidence"": 0.96}","{
+  ""til_number"": ""TIL 1937"",
+  ""revision"": ""R2"",
+  ""title"": ""F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS"",
+  ""publish_date"": ""2024-04-10"",
+  ""reason_for_revision"": ""1) Added a new 3 Step-Age Heat Treatment category for Stage 1 & Stage 2 wheels. 2) Added a specific ECI inspection interval for Stage 1 enhanced wheels with 2 Step-Age heat treatment. 3) Added a specific ECI inspection interval for Stage 2 wheels post Rotor Life Extension."",
+  ""purpose"": ""Advise users to perform routine inspections at a maintenance interval based on installed configuration."",
+  ""compliance_category_code"": ""A"",
+  ""compliance_category_text"": ""Alert"",
+  ""recurring_indicator_if_found"": ""Yes"",
+  ""coarse_outage_type"": ""Next Scheduled Outage"",
+  ""scope_of_work"": [
+    ""Qualified vendor to perform CO2 blast cleaning of turbine rotor."",
+    ""GE Vernova qualified personnel to perform rotor inspections (ECI, Visual, BI, FPI, UT)."",
+    ""Install back-cut stage 1 and stage 2 turbine blades."",
+    ""Rotor inspection equipment and blend/peen kit application by GE Vernova.""
+  ],
+  ""service_recommendation_line_items"": [
+    ""Perform Eddy Current Inspection (ECI) on Stage 1 and Stage 2 wheel dovetails at intervals defined by configuration (Heat Treatment, Peening, Slot Geometry)."",
+    ""Perform Visual Inspection (VT) and Borescope Inspection (BI) of all exposed turbine rotor surfaces, specifically broach slot fillets, cooling slots, and spacer rim seal teeth."",
+    ""Perform Fluorescent Penetrant Inspection (FPI) on staked balance weight grooves (BWG) at every Major Inspection and when CDC is removed during HGPI."",
+    ""Perform FPI on Lock Wire Tabs (LWT) when turbine blades are removed during routine maintenance."",
+    ""Perform Ultrasonic Inspection (UT) on counterbore outside diameter ligaments on distance piece and turbine aft shaft."",
+    ""Install dovetail 'back-cut' modified Stage 1 and 2 turbine blades at the next scheduled maintenance (HGPI or Major)."",
+    ""Clean turbine rotor using CO2 blasting (preferred) or hand-cleaning prior to ECI to ensure accurate readings."",
+    ""Inspect Stage 3 wheel balance weight grooves (if staked) and lockwire tabs (original or modified) at HGPI/Major intervals."",
+    ""Inspect Turbine Aft Shaft (TAS) balance weight grooves (if staked) at Major Inspection and when Exhaust Frame is removed during HGPI.""
+  ],
+  ""completion_criteria_text"": ""This TIL is considered completed when the turbine wheels reach end of life and are removed from service."",
+  ""maintenance_trigger_text"": ""Intervals are based on operating hours, starts, or specific outage types (HGPI/Major) depending on the hardware configuration."",
+  ""recommended_interval_or_trigger"": [
+    ""Every 24 hrs or 900 starts (Fired without Shot Peening configuration)"",
+    ""Every 32 hrs or 1,200 starts [every 24 hrs or 900 starts if back cut buckets not installed] (Never Fired without Shot Peening, Original Slot)"",
+    ""At 96 hrs or 3,600 starts [every 48 hrs or 2,400 starts if back cut buckets not installed] (Contoured/Enhanced Slot)"",
+    ""Every HGPI when CDC is not removed (BI)"",
+    ""Every Major and when CDC is removed during HGPI (FPI for BWG)"",
+    ""Every HGPI when buckets are removed (FPI for LWT)"",
+    ""At first Major after TW2 Life Extension (ECI for specific Stage 2 configurations)""
+  ],
+  ""usage_counters_to_check_or_consider"": [
+    ""operating_hours"",
+    ""starts""
+  ],
+  ""usage_counter_requirements_text"": ""Inspection intervals for ECI vary significantly (24/32/96 hours or 900/1,200/3,600 starts) based on the wheel's shot peening history and cooling slot geometry."",
+  ""frame_or_model_applicability_text"": ""7F, 9F, 6F"",
+  ""combustion_or_fuel_configuration_text"": null,
+  ""hardware_or_part_configuration_text"": ""Material Heat Treatment (2 Step Age, 3 Step Age), Peening Condition (Fired without Shot Peening, Never Fired without Shot Peening), Cooling Slot Geometry (Original, Contoured, Enhanced), Balance Rail & Lock Wire Tab (Original, Stakeless, Modified Tab)."",
+  ""serial_or_unit_applicability_text"": ""Select F-class gas turbine rotors operating in high ambient and specific environmental conditions."",
+  ""exclusions_or_non_applicable_conditions_text"": ""Stakeless balance weight grooves on Stage 3 wheels and Turbine Aft Shafts require no inspections."",
+  ""required_prior_modifications_text"": ""Installation of back-cut turbine blades is recommended to reduce stress and may extend ECI intervals."",
+  ""prerequisite_outage_or_inspection_context_text"": ""Turbine blades must be removed prior to ECI. Rotor must be cleaned (CO2 blasting requires ~12 hours; hand cleaning 2-3 shifts)."",
+  ""sbom_dependency_flag"": true,
+  ""sbom_trigger_reason"": ""Inspection intervals and applicability are strictly tied to specific wheel part numbers and configuration features like heat treatment and slot geometry."",
+  ""mli_numbers"": [],
+  ""parts_referenced"": [
+    {
+      ""part_number"": ""227C5762"",
+      ""context"": ""7F Stage 1 Wheel (2 Step Age, Fired without Shot Peening)"",
+      ""required_inspection_types"": [
+        ""ECI"",
+        ""Visual"",
+        ""BI"",
+        ""FPI"",
+        ""UT""
+      ],
+      ""source_location"": ""Table 1""
+    },
+    {
+      ""part_number"": ""103E5795"",
+      ""context"": ""7F Stage 1 Wheel (2 Step Age, Fired without Shot Peening)"",
+      ""required_inspection_types"": [
+        ""ECI"",
+        ""Visual"",
+        ""BI"",
+        ""FPI"",
+        ""UT""
+      ],
+      ""source_location"": ""Table 1""
+    },
+    {
+      ""part_number"": ""116E3967"",
+      ""context"": ""7F Stage 1 Wheel (2 Step Age, Contoured Slot)"",
+      ""required_inspection_types"": [
+        ""ECI"",
+        ""BI"",
+        ""FPI""
+      ],
+      ""source_location"": ""Table 1""
+    },
+    {
+      ""part_number"": ""145E3626"",
+      ""context"": ""7F Stage 1 Wheel (3 Step Age, Enhanced Slot)"",
+      ""required_inspection_types"": [
+        ""FPI""
+      ],
+      ""source_location"": ""Table 1""
+    },
+    {
+      ""part_number"": ""109E5254"",
+      ""context"": ""9F Stage 1 Wheel (2 Step Age, Original Slot)"",
+      ""required_inspection_types"": [
+        ""ECI"",
+        ""BI"",
+        ""FPI""
+      ],
+      ""source_location"": ""Table 3""
+    },
+    {
+      ""part_number"": ""131T7543"",
+      ""context"": ""6F Stage 1 Wheel (3 Step Age, Enhanced Slot)"",
+      ""required_inspection_types"": [
+        ""FPI""
+      ],
+      ""source_location"": ""Table 5""
+    }
+  ],
+  ""reference_documents"": [
+    {
+      ""document_number"": ""TIL 1280"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Superseded by TIL 1937""
+    },
+    {
+      ""document_number"": ""TIL 1327"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Superseded by TIL 1937""
+    },
+    {
+      ""document_number"": ""TIL 1434"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Superseded by TIL 1937""
+    },
+    {
+      ""document_number"": ""TIL 1539"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Superseded by TIL 1937""
+    },
+    {
+      ""document_number"": ""TIL 1540"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Superseded by TIL 1937""
+    },
+    {
+      ""document_number"": ""TIL 1742"",
+      ""document_type"": ""TIL"",
+      ""context"": ""Superseded by TIL 1937""
+    }
+  ],
+  ""configuration_dependent"": true,
+  ""configuration_variables"": [
+    ""Material Heat Treatment"",
+    ""Peening Condition"",
+    ""Cooling Slot Geometry"",
+    ""Balance Rail & Lock Wire Tab design"",
+    ""Frame Size (7F, 9F, 6F)"",
+    ""Stage Number""
+  ],
+  ""configuration_summary"": ""Inspection requirements and intervals are determined by the specific combination of wheel material heat treatment (2SA vs 3SA), shot peening status at first fire, cooling slot profile (Original, Contoured, Enhanced), and the presence of stakeless or modified tabs."",
+  ""severity_signals"": [
+    ""Compliance Category - A"",
+    ""Timing Code - 6"",
+    ""Failure to comply with the TIL could result in equipment damage or facility damage.""
+  ],
+  ""failure_consequences"": [
+    ""Intergranular crack initiation and propagation"",
+    ""Release of wheel section and/or adjacent turbine blades into the hot gas path"",
+    ""Significant damage to the turbine"",
+    ""Wheel post liberation during operation"",
+    ""Partial wheel material liberation""
+  ],
+  ""risk_summary"": ""High nickel alloy turbine wheels are sensitive to surface imperfections where intergranular cracks can initiate due to high stress and temperature. Rotors in high ambient, humid, or corrosive conditions are at increased risk. Undetected cracks can lead to catastrophic wheel failure."",
+  ""safety_or_damage_language_found"": true,
+  ""tables_found_summary"": [
+    {
+      ""table_label"": ""Table 1 & 2"",
+      ""table_description"": ""7F Stage 1 and Stage 2 Wheel Configurations, Recommendations, and Part Numbers."",
+      ""useful_for_downstream"": true,
+      ""reason"": ""Contains critical mapping of PNs to ECI/FPI intervals.""
+    },
+    {
+      ""table_label"": ""Table 3 & 4"",
+      ""table_description"": ""9F Stage 1 and Stage 2 Wheel Configurations, Recommendations, and Part Numbers."",
+      ""useful_for_downstream"": true,
+      ""reason"": ""Contains critical mapping of PNs to ECI/FPI intervals.""
+    },
+    {
+      ""table_label"": ""Table 5 & 6"",
+      ""table_description"": ""6F Stage 1 and Stage 2 Wheel Configurations, Recommendations, and Part Numbers."",
+      ""useful_for_downstream"": true,
+      ""reason"": ""Contains critical mapping of PNs to ECI/FPI intervals.""
+    }
+  ],
+  ""missing_information_flags"": [],
+  ""source_snippets"": [
+    {
+      ""field"": ""risk_summary"",
+      ""snippet"": ""The disks in the turbine rotor are made of a high nickel alloy that is sensitive to surface imperfections where an intergranular crack may initiate and propagate due to high stresses and temperatures.""
+    },
+    {
+      ""field"": ""recommended_interval_or_trigger"",
+      ""snippet"": ""ECI Visual BI FPI UT: every 24 hrs or 900 starts""
+    },
+    {
+      ""field"": ""completion_criteria_text"",
+      ""snippet"": ""This TIL is considered completed when the turbine wheels reach end of life and are removed from service.""
+    }
+  ],
+  ""extraction_confidence"": 0.96
+}",databricks_ai,35559,8,0.96,gemini-3-flash,completed,0,null,0,null,null,2026-06-26T05:20:23.375Z,2026-07-03T21:59:59.573Z,null,til_p1_20260703_215212_31b29196
+til 1945-r2 - f-class turbine wheel inspection and maintenance recommendations,1945-R2__132e4798d3db71bf7017eba04ab61c1e9d7fa14b37d0adbcb8c7638157fd4925,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1945-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf,132e4798d3db71bf7017eba04ab61c1e9d7fa14b37d0adbcb8c7638157fd4925,databricks_volume,1945-R2,1945-R2,pdf_name_match,databricks_ai,databricks_ai,v1,false,null,null,databricks_ai,35185,8,0,gemini-3-flash,llm_parse_failed,0,null,0,null,"LLM returned 200 but no text (finish_reason=length, prompt_tokens=13288, completion_tokens=65532)",2026-06-26T05:20:23.375Z,2026-07-03T21:59:59.573Z,null,til_p1_20260703_215212_31b29196
+til 1502-2r1 - 7f and 9f aft end compressor rubs,1502-2R1__c7ddcf810c8238892e38f075b8c76435d5986f612f0a1245f17ceabeeaa8d224,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1502-2R1 - 7F AND 9F AFT END COMPRESSOR RUBS.pdf,c7ddcf810c8238892e38f075b8c76435d5986f612f0a1245f17ceabeeaa8d224,databricks_volume,1502-2R1,1502-2R1,pdf_name_match,databricks_ai,databricks_ai,v1,false,null,null,databricks_ai,6713,5,0,gemini-3-flash,llm_parse_failed,0,null,0,null,"LLM returned 200 but no text (finish_reason=content_filter, prompt_tokens=0, completion_tokens=0)",2026-06-26T05:20:23.375Z,2026-07-03T21:59:59.573Z,null,til_p1_20260703_215212_31b29196

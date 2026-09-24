@@ -1,0 +1,1438 @@
+{
+    "document": {
+        "elements": [
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            169,
+                            157,
+                            313,
+                            302
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9967,
+                "content": "GE",
+                "description": "A circular logo features the letters \"GE\" in a stylized design within a black and white circular border.",
+                "id": 0,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1015,
+                            103,
+                            1539,
+                            253
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9992,
+                "content": "TIL 1502-2R1\nGE ENERGY SERVICES TECHNOLOGY\nCUSTOMER TECHNOLOGY SERVICES\n1 NOVEMBER 2005",
+                "description": null,
+                "id": 1,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1281,
+                            287,
+                            1539,
+                            349
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "Compliance Category - M\nTiming Code - 6",
+                "description": null,
+                "id": 2,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            474,
+                            354,
+                            1224,
+                            403
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "TECHNICAL INFORMATION LETTER",
+                "description": null,
+                "id": 3,
+                "type": "title"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            467,
+                            823,
+                            501
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9971,
+                "content": "7F AND 9F AFT END COMPRESSOR RUBS",
+                "description": null,
+                "id": 4,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            543,
+                            345,
+                            575
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9924,
+                "content": "APPLICATION",
+                "description": null,
+                "id": 5,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            582,
+                            603,
+                            614
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "All 7F and 9F Heavy Duty Gas Turbines",
+                "description": null,
+                "id": 6,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            651,
+                            285,
+                            680
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "PURPOSE",
+                "description": null,
+                "id": 7,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            688,
+                            1552,
+                            818
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9993,
+                "content": "To inform users to monitor equipment operation and condition, and to identify the onset, occurrence, and effects of aft\nend compressor rubs (when the tip of the rotor blade rubs the casing).  Rubs are evident when blade tip material is\nadversely affected. Information in this TIL is supplemental to information in the Inspection and Maintenance Manual\nprovided with the gas turbine.",
+                "description": null,
+                "id": 8,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            852,
+                            482,
+                            884
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.999,
+                "content": "REASON FOR REVISION",
+                "description": null,
+                "id": 9,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            889,
+                            1484,
+                            921
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9995,
+                "content": "To update the technical content of the TIL, including frequency of tip loss and recommendations when discovered.",
+                "description": null,
+                "id": 10,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            955,
+                            414,
+                            987
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "Compliance Category",
+                "description": null,
+                "id": 11,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            245,
+                            1014,
+                            1556,
+                            1181
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9823,
+                "content": "<table><tr><td>O - Optional</td><td>Identifies changes that may be beneficial to some, but not necessarily all, operators. Accomplishment is at customer's discretion.</td></tr><tr><td>M - Maintenance</td><td>Identifies maintenance guidelines or best practices for reliable equipment operation.</td></tr></table>",
+                "description": null,
+                "id": 12,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            245,
+                            1208,
+                            1556,
+                            1434
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9932,
+                "content": "<table><tr><td>C - Compliance Required</td><td>Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability, efficiency, or safety. Compliance may be required within a specific operating time.</td></tr><tr><td>A - Alert / Safety</td><td>Failure to comply with the TIL could result in equipment damage, facility damage, or personal injury. Compliance is mandated within a specific operating time.</td></tr></table>",
+                "description": null,
+                "id": 13,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            1466,
+                            304,
+                            1498
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Timing Code",
+                "description": null,
+                "id": 14,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            245,
+                            1522,
+                            1239,
+                            1800
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9989,
+                "content": "<table><tr><td>1</td><td>Prior to Unit Startup / Prior to Continued Operation (forced outage condition)</td></tr><tr><td>2</td><td>At First Opportunity (next shutdown)</td></tr><tr><td>3</td><td>Prior to Operation of Affected System</td></tr><tr><td>4</td><td>At First Exposure of Component</td></tr><tr><td>5</td><td>At Scheduled Component Part Repair or Replacement</td></tr></table>",
+                "description": null,
+                "id": 15,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            245,
+                            1829,
+                            626,
+                            1864
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9994,
+                "content": "6 Next Scheduled Outage",
+                "description": null,
+                "id": 16,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            245,
+                            1893,
+                            450,
+                            1925
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9983,
+                "content": "<table><tr><td>7</td><td>Optional</td></tr></table>",
+                "description": null,
+                "id": 17,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            749,
+                            1959,
+                            951,
+                            1984
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9956,
+                "content": "COPYRIGHT 2005 GE",
+                "description": null,
+                "id": 18,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            1986,
+                            1552,
+                            2144
+                        ],
+                        "page_id": 0
+                    }
+                ],
+                "confidence": 0.9985,
+                "content": "The information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant\nis in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for\nliability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying\nthis information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other\nrespects responsible for any alleged injury or damage sustained by your organization as a result of applying this information.",
+                "description": null,
+                "id": 19,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1393,
+                            103,
+                            1554,
+                            130
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 1,
+                "content": "TIL 1502-2R1",
+                "description": null,
+                "id": 20,
+                "type": "page_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            184,
+                            548,
+                            211
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9939,
+                "content": "BACKGROUND DISCUSSION",
+                "description": null,
+                "id": 21,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            221,
+                            803,
+                            317
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9995,
+                "content": "The compressor section of F-Class gas turbines has 18\n(0-17) stages of rotating components (rotor blades) and\nstationary components (stator vanes).",
+                "description": null,
+                "id": 22,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            346,
+                            803,
+                            604
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9989,
+                "content": "Some F-class machines have experienced aft end\ncompressor rubs. These rubs range from light scoring\non the casing to material loss at the blade tip. This\nphenomenon was concluded to be very low risk\nrelative to unit operation and reliability. No\nperformance impact and no forced outages have been\nexperienced as a result. Rotor blades in rows 13, 14,\nand 15 are primarily affected.",
+                "description": null,
+                "id": 23,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            629,
+                            814,
+                            881
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9982,
+                "content": "",
+                "description": "A cross-section diagram shows a series of vertical and horizontal lines, with two highlighted pink rectangles in the lower center.",
+                "id": 24,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            891,
+                            717,
+                            921
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "Figure 1: F-Class Compressor Cross-Section",
+                "description": null,
+                "id": 25,
+                "type": "caption"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            950,
+                            803,
+                            1304
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9992,
+                "content": "Based on the conclusion of Root Cause Analysis (RCA)\nand fleet experience, aft end rubs are primarily induced\nbecause of frequent restarts between two (2) to eight\n(8) hours after shutdown. During this transient period,\nthe thermal compression of the casing relative to the\nrotor can decrease clearances and can lead to rubs\nupon restart. The heat generated from a rub can lower\nthe local material fatigue strength of the blade\nresulting in material tip loss in the event of another rub.\nTypical material loss dimensions are less than\n1/16 inch2 in area (see Figure 2).",
+                "description": null,
+                "id": 26,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            144,
+                            1390,
+                            806,
+                            1758
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9187,
+                "content": "Typical Tip Loss\n1/4\"",
+                "description": "A green, rectangular object is positioned above a circular image with an arrow pointing towards a labeled section.",
+                "id": 27,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1768,
+                            567,
+                            1800
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.993,
+                "content": "Figure 2: Typical Blade Tip Loss",
+                "description": null,
+                "id": 28,
+                "type": "caption"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1834,
+                            803,
+                            2026
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9994,
+                "content": "Restarting a unit 2 to 8 hours after a shutdown or trip is\nwithin the operating envelope, but this may cause rubs\nin some cases. Aft end rubs and/or tip loss pose very\nlow risk to unit operation and reliability. No\nperformance impact and no forced outages have been\nexperienced due to this issue.",
+                "description": null,
+                "id": 29,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            184,
+                            1207,
+                            211
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "RECOMMENDATIONS",
+                "description": null,
+                "id": 30,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            221,
+                            1552,
+                            378
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "Follow operating practices per GER 3620 to reduce the\npotential for rubs on aft end compressor blades. In\naddition to the GER 3620 guidelines, the following\nrecommendations would also help minimize aft end\nrubs and tip loss occurrence.",
+                "description": null,
+                "id": 31,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            417,
+                            1552,
+                            479
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9888,
+                "content": "â€¢ Keep enclosure doors closed during\nstartup, shutdown and normal operation.",
+                "description": null,
+                "id": 32,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            513,
+                            1552,
+                            769
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9967,
+                "content": "â€¢ Be aware that restarting the gas turbine between two (2) and eight (8) hours following a shutdown or trip will cause the clearances in the aft end to decrease. If the unit operates this way now or has in the past, there is a potential for this clearance closure to cause aft end tip rubs. As a result, the area should be included in the yearly borescope inspections.",
+                "description": null,
+                "id": 33,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            800,
+                            1552,
+                            896
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "â€¢ Eliminate any potential pipe leaks that may cause\nquenching of the gas turbine compressor\ndischarge casing.",
+                "description": null,
+                "id": 34,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            931,
+                            1552,
+                            1056
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9756,
+                "content": "â€¢ Ensure vent fans and exhaust fans to the gas turbine enclosure are functioning properly such\nthat no local forced convection is taking place at or\nnear the compressor discharge casing.",
+                "description": null,
+                "id": 35,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            1088,
+                            1552,
+                            1279
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9906,
+                "content": "â€¢ Integrate the inspection for aft end compressor rubs with your yearly scheduled borescope inspection per GER 3620. Observe rotor blade stages 13 through 17 and look for mushroomed material (see Figure 3), bluing at the blade tip,\nand / or markings in the casing area.",
+                "description": null,
+                "id": 36,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            1306,
+                            1552,
+                            1751
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.979,
+                "content": "Casing\nMushrooming\nMaterial Tip\nRotating\nAirfoil",
+                "description": "A close-up view of a metallic surface shows a mushrooming tip and rotating airfoil, with labels pointing to each feature.",
+                "id": 37,
+                "type": "figure"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            899,
+                            1763,
+                            1313,
+                            1792
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 0.9995,
+                "content": "Figure 3: Fractured Tip Surface",
+                "description": null,
+                "id": 38,
+                "type": "caption"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            823,
+                            2119,
+                            877,
+                            2139
+                        ],
+                        "page_id": 1
+                    }
+                ],
+                "confidence": 1,
+                "content": "2 of 5",
+                "description": null,
+                "id": 39,
+                "type": "page_number"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1393,
+                            101,
+                            1552,
+                            130
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 1,
+                "content": "TIL 1502-2R1",
+                "description": null,
+                "id": 40,
+                "type": "page_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            146,
+                            145,
+                            803,
+                            435
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9989,
+                "content": "If rubs or tip loss do occur, blending to increase clearances can be performed at Major Inspections (MI)\nor when the Compressor Discharge Casing (CDC) is\nremoved. During repairs, clearances of rotor blades can\nbe increased radially by tip grinding and polishing, and\ntip corners repaired by blade blending. Typically, 20\nmils radially of material can be removed to both\nincrease clearance and remove heat affected and\nrolled over material.",
+                "description": null,
+                "id": 41,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            146,
+                            471,
+                            789,
+                            695
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "Following this operation, a penetrant inspection must\nbe performed to ensure no tip cracks are present. If\nthe CDC is removed prior to the major inspection,\nclearances can also be increased to eliminate the\npotential for tip rubs should the customer desire.\nPlease contact your local GE service representative for\nassistance.",
+                "description": null,
+                "id": 42,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            734,
+                            522,
+                            764
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "PLANNING INFORMATION",
+                "description": null,
+                "id": 43,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            805,
+                            296,
+                            835
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "Compliance",
+                "description": null,
+                "id": 44,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            199,
+                            840,
+                            548,
+                            872
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9965,
+                "content": "â€¢ Compliance Category: M",
+                "description": null,
+                "id": 45,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            199,
+                            874,
+                            427,
+                            904
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9972,
+                "content": "â€¢ Timing Code: 6",
+                "description": null,
+                "id": 46,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            940,
+                            349,
+                            972
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Manpower Skills",
+                "description": null,
+                "id": 47,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            975,
+                            803,
+                            1066
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9778,
+                "content": "â€¢ Trained GE Borescope technician to perform\nborescope inspection, approximately eight (8)\nhours.",
+                "description": null,
+                "id": 48,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            1102,
+                            803,
+                            1198
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "â€¢ Trained GE Blade technician for rotor blade\nclearance increases, approximately 16 hours once\nthe casing has been removed.",
+                "description": null,
+                "id": 49,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1233,
+                            216,
+                            1260
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Parts",
+                "description": null,
+                "id": 50,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1267,
+                            195,
+                            1292
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 1,
+                "content": "N/A",
+                "description": null,
+                "id": 51,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1331,
+                            336,
+                            1363
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Special Tooling",
+                "description": null,
+                "id": 52,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1365,
+                            195,
+                            1390
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "N/A",
+                "description": null,
+                "id": 53,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1429,
+                            419,
+                            1456
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "Reference Documents",
+                "description": null,
+                "id": 54,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1463,
+                            195,
+                            1488
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "N/A",
+                "description": null,
+                "id": 55,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1527,
+                            427,
+                            1554
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9985,
+                "content": "Previous Modifications",
+                "description": null,
+                "id": 56,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1562,
+                            195,
+                            1586
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 1,
+                "content": "N/A",
+                "description": null,
+                "id": 57,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1625,
+                            328,
+                            1657
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 1,
+                "content": "Scope of Work",
+                "description": null,
+                "id": 58,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1660,
+                            195,
+                            1684
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9999,
+                "content": "N/A",
+                "description": null,
+                "id": 59,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1719,
+                            803,
+                            1780
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9942,
+                "content": "Contact your local GE Energy Services representative for assistance or for additional information.",
+                "description": null,
+                "id": 60,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            1812,
+                            803,
+                            1903
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 0.9975,
+                "content": "NOTE: If you would like to receive future TILs by email,\ncontact your local GE Energy Services representative for\nassistance.",
+                "description": null,
+                "id": 61,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            823,
+                            2114,
+                            878,
+                            2139
+                        ],
+                        "page_id": 2
+                    }
+                ],
+                "confidence": 1,
+                "content": "3 of 5",
+                "description": null,
+                "id": 62,
+                "type": "page_number"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1393,
+                            103,
+                            1552,
+                            130
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 1,
+                "content": "TIL 1502-2R1",
+                "description": null,
+                "id": 63,
+                "type": "page_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            182,
+                            524,
+                            211
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "TIL COMPLIANCE RECORD",
+                "description": null,
+                "id": 64,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            219,
+                            1552,
+                            280
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9856,
+                "content": "Compliance with this TIL must be entered in local records. GE requests that the customer notify GE upon compliance of\nthis TIL.",
+                "description": null,
+                "id": 65,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            312,
+                            882,
+                            344
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9692,
+                "content": "Complete the following TIL Compliance Record and FAX it to:",
+                "description": null,
+                "id": 66,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            199,
+                            378,
+                            753,
+                            474
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "TIL Compliance\nFAX: (678) 844-3451\nToll free FAX: 1-888-896-TILS (1-888-896-8457)",
+                "description": null,
+                "id": 67,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            148,
+                            503,
+                            1565,
+                            2072
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 0.962,
+                "content": "<table><tr><td colspan=\"2\">TIL COMPLIANCE RECORD</td><td colspan=\"2\">For Internal Records Only #</td></tr><tr><td>Site Name:</td><td>Customer Name:</td></tr><tr><td colspan=\"2\">Customer Contact Information</td><td colspan=\"2\">GE Contact Information</td></tr><tr><td>Contact Name:</td><td>Contact Name:</td></tr><tr><td>Address:</td><td>Address:</td></tr><tr><td>Email:</td><td>Email:</td></tr><tr><td>Phone:</td><td>Phone:</td></tr><tr><td>FAX:</td><td>FAX:</td></tr></thead><tbody><tr><td colspan=\"4\">Turbine Serial Number(s):</td></tr><tr><td colspan=\"4\"></td></tr><tr><td colspan=\"2\">INSTALLED EQUIPMENT</td><td>TIL Completed Date:</td><td></td></tr><tr><td colspan=\"2\">Description:</td><td>100% TIL Completed:</td><td></td></tr></tbody></table><table><tr><th>Unit Numbers:</th><th>Part Description:</th><th>Part Number</th><th>MLI Number</th></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr></tbody></table><table><tr><td>Comments:</td></tr></thead><tbody><tr><td></td></tr><tr><td></td></tr></tbody></table><p>NOTE: If there are any redlined drawings that pertain to this TIL implementation, please FAX the drawings along with this TIL Compliance Record.</p><table><tr><td>FAX this form to:</td><td>TIL Compliance</td></tr><tr><td></td><td>FAX: (678) 844-3451</td></tr><tr><td></td><td>Toll free FAX: 1-888-896-TILS (1-888-896-8457)</td></tr></thead><tbody></tbody></table>",
+                "description": null,
+                "id": 68,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            822,
+                            2117,
+                            878,
+                            2139
+                        ],
+                        "page_id": 3
+                    }
+                ],
+                "confidence": 1,
+                "content": "4 of 5",
+                "description": null,
+                "id": 69,
+                "type": "page_number"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            1393,
+                            103,
+                            1552,
+                            130
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 1,
+                "content": "TIL 1502-2R1",
+                "description": null,
+                "id": 70,
+                "type": "page_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            182,
+                            564,
+                            211
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9997,
+                "content": "USER SATISFACTION SURVEY",
+                "description": null,
+                "id": 71,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            219,
+                            622,
+                            250
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9996,
+                "content": "GE values your opinions and comments.",
+                "description": null,
+                "id": 72,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            280,
+                            1552,
+                            344
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9988,
+                "content": "GE requests that you complete the User Satisfaction Survey below to help us better serve you with accurate and timely\ninformation on your equipment.",
+                "description": null,
+                "id": 73,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            150,
+                            373,
+                            882,
+                            403
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9971,
+                "content": "Complete the following TIL Compliance Record and FAX it to:",
+                "description": null,
+                "id": 74,
+                "type": "section_header"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            199,
+                            440,
+                            600,
+                            562
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9998,
+                "content": "TIL Survey\nGE Customer Technology Services\nFAX: (678) 844-6737\nToll free FAX: 1-866-604-2668",
+                "description": null,
+                "id": 75,
+                "type": "text"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            152,
+                            594,
+                            1571,
+                            1925
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 0.9754,
+                "content": "<table><tr><td colspan=\"4\">USER SATISFACTION SURVEY</td></tr><tr><td>Serial Number:</td><td></td><td>Date:</td><td></td></tr></table><table><tr><td colspan=\"4\">1. How many days after TIL issue date did you receive this TIL?</td></tr><tr><td>1 - 5 days</td><td>6 - 10 days</td><td colspan=\"2\">+ 10 days</td></tr></table><p>NOTE: If you would like to receive future TILs by email, contact your local GE Energy Services representative for assistance.</p><p>Rate the following based on a scale of 1 to 5, where 1 is Excellent and 5 is Poor.</p><table><tr><td colspan=\"5\">2. Please rate how well this document informed you of the technical issue.</td></tr><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr></table><table><tr><td colspan=\"5\">3. Please rate the overall effectiveness of this TIL.</td></tr><tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr></table><p>Comments / Suggestions:</p><table><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table><table><tr><td>FAX this form to:</td><td>TIL Survey<br>GE Customer Technology Services<br>FAX: (678) 844-6737<br>Toll free FAX: 1-866-604-2668</td></tr></table>",
+                "description": null,
+                "id": 76,
+                "type": "table"
+            },
+            {
+                "bbox": [
+                    {
+                        "coord": [
+                            823,
+                            2114,
+                            877,
+                            2139
+                        ],
+                        "page_id": 4
+                    }
+                ],
+                "confidence": 1,
+                "content": "5 of 5",
+                "description": null,
+                "id": 77,
+                "type": "page_number"
+            }
+        ],
+        "pages": [
+            {
+                "id": 0,
+                "image_uri": "/Volumes/vaid/ai_std_con_field_service_report/test_tils/parsed_images/til_2284_dbr_dev/acc4d845a7b4c823d7f478224a68ec67fdfd60d8c2694742b9d0018abfcbc11e.jpg"
+            },
+            {
+                "id": 1,
+                "image_uri": "/Volumes/vaid/ai_std_con_field_service_report/test_tils/parsed_images/til_2284_dbr_dev/357c7e7b00423f9d9cbcb544f96237a6365dc91a938d593f7270f297b574ef8c.jpg"
+            },
+            {
+                "id": 2,
+                "image_uri": "/Volumes/vaid/ai_std_con_field_service_report/test_tils/parsed_images/til_2284_dbr_dev/0e261aea70be0cd1a4a3ed1b0d577f17cec395e4487abccb808ea689b66bd309.jpg"
+            },
+            {
+                "id": 3,
+                "image_uri": "/Volumes/vaid/ai_std_con_field_service_report/test_tils/parsed_images/til_2284_dbr_dev/9d7e4658e6e19faacf1bd838400f0a25c2176ed7b09c0063e0717e8ba7b96438.jpg"
+            },
+            {
+                "id": 4,
+                "image_uri": "/Volumes/vaid/ai_std_con_field_service_report/test_tils/parsed_images/til_2284_dbr_dev/bb784e7a826fc649e5a415ef1214d966c0ce768503826e1c906f992dc1c68ec4.jpg"
+            }
+        ]
+    },
+    "error_status": null,
+    "metadata": {
+        "file_metadata": null,
+        "id": "697f14a5-420c-4e02-aa3a-d447f9db262a",
+        "version": "2.0"
+    }
+}

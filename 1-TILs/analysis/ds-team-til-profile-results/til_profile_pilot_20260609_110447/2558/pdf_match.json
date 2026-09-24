@@ -1,0 +1,11 @@
+{
+  "source": "workspace_sample_pdf",
+  "pdf_path": "C:\\Users\\560068861\\Code\\alexis_scoping\\context\\data\\workspace_notes\\samples\\TILs\\databricks_top25\\TIL 2558 - 7F.05 & 7FA.04-200 TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf",
+  "file_name": "TIL 2558 - 7F.05 & 7FA.04-200 TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf",
+  "til_number": "2558",
+  "normalized_til_key": "2558",
+  "base_til_num": "2558",
+  "revision_number": -1,
+  "match_type": "exact_til_number",
+  "requested_til_number": "2558"
+}

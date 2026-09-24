@@ -1,0 +1,85 @@
+{
+  "status": "success",
+  "results": {
+    "1": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 1\nExtracted Text:\nGE\nGE\nEnergy\nENERGY SERVICES ENGINEERING\nTIL 1584-R1\nPRODUCT SERVICE\n8 MARCH 2011\nCompliance Category - S\nTiming Code - 2\nTECHNICAL INFORMATION LETTER\n7FA TURBINE SHELL INLET BLEED HEAT (IBH) EXTRACTION PIPE WELD CRACKING\nAPPLICATION\nAll 7F, 7FA, 7FA+ and 7FA+e Gas Turbines.\nPURPOSE\nTo recommend inspection of 7FA turbine shell IBH extraction port cover flange pipes for potential weld cracking, and to\nspecify corrective action if required.\nREASON FOR REVISION\nThe purpose of revision is to provide recommended inspection intervals and update the affected unit list and\napplication to include 7F, 7FA and 7FA+.\nCompliance Category\nTiming Code\n1\nPrior to Unit Startup / Prior to Continued Operation (forced outage condition)\n2\nAt First Opportunity (next shutdown)\n3\nPrior to Operation of Affected System\n4\nAt First Exposure of Component\n5\nAt Scheduled Component Part Repair or Replacement\n6\nNext Scheduled Outage\n7\nOptional\n\u00a9 2011 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service\nrelationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation\nof the plant is in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any\nresponsibility for liability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as\nresult of applying this information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or\nis in other respects responsible for any alleged injury or damage sustained by your organization as a result of applying this information.\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering. All\nrights reserved.\n\n----------------------------------------\nEnd of Page 1\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| o - Optional | Identifies changes that may be beneficial to some, but not necessarily all, operators. Accomplishment is at customer's discretion. |\n| M - Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |\n| c - Compliance Required | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. |\n| A Alert | Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. |\n| S - Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      }
+    ],
+    "2": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 2\nExtracted Text:\nTIL 1584-R1\nBACKGROUND DISCUSSION\nThe turbine shell is a part of the general stator tube structure, and supports nozzles and shrouds. It contains high-\npressure combustion gases and compressor discharge air. The forward end of turbine shell is equipped with\ncompressor discharge air extraction ports for the inlet bleed heat (IBH) system. These ports are located on both sides of\nthe upper and lower half turbine shell, as shown in Figure 1.\nFigure 1:\nIBH cover flange locations on turbine shell\nThe first cracking incident was reported in 2005 after four years of operation. The crack initiated at the pipe to cover\nflange weld as shown in Figure 2, and resulted in substantial hot air leakage.\nFigure 2:\nPhoto of Pipe crack location on cover flange\nThis type of leakage can cause elevated turbine compartment temperatures that could lead to a forced outage\ncondition, and are also a safety concern.\nThis TIL is being issued to alert all 7FA customers of the potential for cracks to develop at this weld, and to provide GE's\nrecommendations regarding the frequency of inspections and corrective actions to be performed.\nRECOMMENDATIONS\nNOTE: All personnel must remain outside the gas turbine compartment while the gas turbine is fired and running, unless\nabsolutely necessary, in accordance with the GE Operation and Maintenance manual.\n1. GE recommends dye penetrant inspection of the weld joint by a certified level II NDT inspector at the following\nintervals:\na. First inspection at the first Hot Gas Path inspection (HGPI). If beyond first HGPI, then at the next planned\nshutdown opportunity.\n\u00a9 2010 General Electric Company\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering. All\nrights reserved.\nPage 2 of 4\n\n----------------------------------------\nEnd of Page 2\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "image",
+        "content": [
+          "\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      }
+    ],
+    "3": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 3\nExtracted Text:\nTIL 1584-R1\nb. Re-inspection at every HGPI/Major inspection, or at a convenient planned outage.\n2. If inspections indicate cracks on the pipe or on the weld, corrective action is recommended per the following\noptions:\nOption 1: Repair\nGrind off the cracked section of the structure. Use GE weld specification P8A-AG3 or equivalent to perform\nrepair welding.\nOption 2: Replacement\nReplace the flange with a new part. A new flange gasket will also be required. Install per the MLI-0705 assembly\ndrawing.\n3. Re-inspect repaired, replaced, and original IBH weld joint per schedule in item 1 above.\nPLANNING INFORMATION\nCompliance\nCompliance Category: S\nTiming Code: 2\nManpower Skills\nCertified NDT level II inspectors per SNT-TC-1A\nParts\nPart affected: 213C1469G001\nSpecial Tooling\nNone\nReference Documents\nNA\nPrevious Modifications\nTIL 1584\nScope of Work\nEstimated time to complete: 2 hours for NDT inspection, after unit is shut down and all safety requirements are\nimplemented. 1 Shift to remove the flanges and repair the weld.\nContact your local GE Service Manager or Contract Performance Manager for assistance or for additional\ninformation.\nContact your local GE Service Manager or Contract Performance Manager in order to update GE unit record sheets\nfor changes incurred by this TIL.\nNOTE: If you would like to receive future TILs by email, contact your local GE Service Manager or Contract Performance\nManager for assistance.\n\u00a9 2010 General Electric Company\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering. All\nrights reserved.\nPage 3 of 4\n\n----------------------------------------\nEnd of Page 3\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      }
+    ],
+    "4": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 4\nExtracted Text:\nTIL 1584-R1\nTIL COMPLIANCE RECORD\nCompliance with this TIL must be entered in local records. GE requests that the customer notify GE upon compliance of\nthis TIL.\nComplete the following TIL Compliance Record and FAX it to:\nTIL Compliance\nFAX: (678) 844-3451\nToll free FAX: 1-888-896-TILS (1-888-896-8457)\nTIL COMPLIANCE RECORD\nFor Internal Records Only #\nSite Name:\nCustomer Name:\nCustomer Contact Information\nGE Contact Information\nContact Name:\nContact Name:\nAddress:\nAddress:\nEmail:\nEmail:\nPhone:\nPhone:\nFAX:\nFAX:\nTurbine Serial Number(s):\nINSTALLED EQUIPMENT\nTIL Completed Date:\n100% TIL Completed:\nDescription:\nComments:\nNOTE: If there are any redlined drawings that pertain to this TIL implementation, please FAX the drawings along with\nthis TIL Compliance Record.\nFAX this form to:\nTIL Compliance\nFAX: (678) 844-3451\nToll free FAX: 1-888-896-TILS (1-888-896-8457)\n\u00a9 2010 General Electric Company\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or\ndistributed in whole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering. All\nrights reserved.\nPage 4 of 4\n\n----------------------------------------\nEnd of Page 4\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| Unit Numbers: | Part Description: | Part Number | MLI Number |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      }
+    ]
+  }
+}

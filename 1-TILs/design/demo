@@ -1,0 +1,109 @@
+arch, tables,
+
+What is working now:
+P1 pipeline is reliably discovering docs, extracting text/tables, and writing auditable metadata rows plus element-level trace rows.
+
+Concrete proof point:
+For 4 sample TILs, every doc produced extraction artifacts, and 1 doc produced a high-confidence structured profile (0.98 confidence).
+==============
+
+impl
+parsers, interfaces
+
+evaluation results
+
+-- comparing parsers
+
+
+=====
+show:
+Metadata table:
+what is parsed_profile_json and raw_profile_json
+
+parsed_profile_json:
+This is the cleaned, normalized, schema-aligned profile that pipeline uses downstream.
+It is only set when parsing succeeds.
+parsed_profile_json stores the full normalized JSON string when parsing succeeds.
+
+
+raw_profile_json: 
+This is the raw response payload from the LLM before normalization/validation. 
+Useful for debugging why a parse failed or fields were transformed.
+raw_profile_json stores the full raw LLM text response returned by the client. 
+===================================
+
+
+til elements
+
+We store one section element from raw_text
+The code writes only a single section record using the first 10,000 chars of extracted text, not page-by-page text blocks.
+See nb_sdg_til_metadata.py:181.
+
+We store table elements only where parser detected tables
+For table elements, we iterate over parsed raw_tables and create one row per table. So pages appear only if a table was detected there.
+
+show 1937 - 7th page
+
+==============================
+nb parser
+
+%md
+## How to read the results
+
+This notebook compares parser output on the same set of TIL PDFs. The metrics below help you judge whether a parser is usable and what it is good at.
+
+| Metric | What it means | How to read it |
+|---|---|---|
+| `parse_success` | Whether the parser completed without error | `1.0` means success, `0.0` means failure |
+| `char_count` | Total characters extracted into text | Higher usually means more content was captured |
+| `word_count` | Total words extracted into text | Useful as a second check on overall extraction volume |
+| `required_field_hits` | Count of required-field keyword hits in extracted text | Current check counts keyword matches for `title`, `section`, `field`, `value` (regex-based and configurable) |
+| `table_count` | Number of tables captured | Higher is useful when tables matter for downstream extraction |
+| `formula_hits` | Count of formula-like or numeric-expression regex matches | Count is computed on combined parser output (`raw_text` + table content + elements) to keep comparison fair across parser formats; still a proxy signal, not formula correctness |
+| `noise_ratio` | Fraction of repeated non-empty lines in extracted text | Computed as `duplicate_non_empty_lines / total_non_empty_lines`; lower is better (`0.00` is clean, around `0.10-0.30` means moderate repetition, `>0.30` means noisy/repetitive output) |
+| `latency_s` | Time taken to parse one PDF | Lower is faster |
+
+## Simple way to interpret parser quality
+
+Use the metrics together, not one by one.
+
+- Start with `parse_success`. If this is low, the parser is not usable as-is.
+- Then check `char_count`, `word_count`, and `required_field_hits` to see whether the parser is capturing enough content.
+- Check `table_count` if table extraction matters for your downstream workflow.
+- Check `formula_hits` for TILs that contain formulas or technical calculations.
+- Check `noise_ratio` to see whether the extracted text is too repetitive or messy.
+- Use `latency_s` only after quality looks acceptable.
+
+
+## What this notebook does not measure yet
+
+These are still proxy metrics. They tell you whether extraction looks strong, but they do not prove every field is correct.
+
+## What "gold labels" means
+
+If later you create a small truth set for a few TILs, you can compare extracted fields against known correct values.
+
+Example:
+- TIL number = `2284`
+- compliance category = `S`
+- timing code = `4`
+
+That truth set is what we mean by "gold labels".
+
+If you attach those expected field values to each evaluation case, the evaluator can compute an additional metric called `field_exact_match`, which tells you how often extracted fields exactly match the known correct values.
+
+In simple terms:
+- current notebook = compares parser quality using proxy signals
+- gold-label evaluation = compares parser output against known correct answers
+
+## Current practical next step
+
+Use this notebook to decide which parser is strongest on:
+- reliability
+- content coverage
+- table extraction
+- formula extraction
+- speed
+
+If needed later, add a small manually verified truth set for a few TILs and use that for stricter field-level validation.
+

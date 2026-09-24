@@ -1,0 +1,3 @@
+There are some critical issues, I am organizing those, but for a quick glance, your 1937-R2 extracted 145E3626, while in the Til document it should be 146E3626
+
+Here is the conclusion on disagreements on Til profile. The most critical one is in section 2.1, your version is reading 6 to 5, 8 to 3 in Til 1937/1945, other disagreements either just affect format, or won't affect following analysis, or can be solved by prompting. Another thing to notice is the confidence level is on average lower on your side. And here is the updated system prompt, I embedded your changes to our latest version, with modified format, and made some edition to incorporate disagreements I found below.

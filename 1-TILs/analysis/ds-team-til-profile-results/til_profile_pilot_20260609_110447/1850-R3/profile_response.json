@@ -1,0 +1,165 @@
+{
+  "requested_til": "1850-R3",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 1850-R3",
+    "revision": "R3",
+    "title": "F-CLASS COMPRESSOR MECHANICALLY-ATTACHED SHROUD S17 INSPECTION",
+    "publish_date": "2024-01-17",
+    "reason_for_revision": "This revision is intended to communicate the availability of new configuration Gen-V S17 assembly and availability to modify earlier mechanically-attached shroud S17 generations to Gen-V S17 in GE designated service shop.",
+    "purpose": "This TIL advises operators to monitor the mechanically-attached shroud compressor S17 configurations and provides recommendations for mitigating any observed distress.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+    "recurring_indicator_if_found": "Yes - annual borescope and inspection at each exposure until Gen-V installed across entire stage",
+    "coarse_outage_type": "MI",
+    "scope_of_work": [
+      "Standard manpower for borescope inspection",
+      "Manpower if replacement of S17 segment is required (these support personnel will already be onsite during MI): Two GE field technicians, One GE Field TA"
+    ],
+    "service_recommendation_line_items": [
+      "Perform annual borescope inspection per GER 3620; inspect 100% of shrouded S17 for signs of distress when S17s are NOT exposed (Inspection Procedure 1)",
+      "Perform borescope inspection during scheduled CI or HGPI when CDC is not removed",
+      "During MI or HGPI with CDC removed (Inspection Procedure 2): visually inspect for bushing wear, tenon damage, shroud hole ovalization, and wear between vane tips and shroud",
+      "S17s in the lower half should be either removed or inspected by borescope during MI",
+      "If significant distress, cracks, detached bushings, or ovalized shroud hole are found, document with pictures and submit to GE Services representative for engineering disposition",
+      "If wear or damage is observed, order and install the latest Gen-V S17 configuration as a set for durability improvement",
+      "It is acceptable to replace only the damaged segment of S17 with the latest S17 segment (Gen-V configuration)",
+      "GE offers refurbishment services to modify earlier mechanically-attached shroud S17 configurations to the latest Gen-V configuration based on approved repair instruction"
+    ],
+    "completion_criteria_text": "This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage.",
+    "maintenance_trigger_text": "At First Exposure of Component (Timing Code 4)",
+    "recommended_interval_or_trigger": [
+      "Annual borescope inspection per GER 3620",
+      "Borescope inspection during scheduled CI or HGPI when CDC is not removed",
+      "Visual inspection during MI or HGPI when CDC is removed (S17s exposed)",
+      "At first exposure of component (Timing Code 4)"
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All 7F.03, 7F.04, 7FB, and 9F.05 (9FB) units with mechanically-attached shroud S17 segments.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Applicable to Gen-IV and earlier mechanically-attached shroud S17 configurations including: welded bolt configuration (introduced 2004), staked bolt configuration (introduced 2008), staked bolt with changed bushing material Gen-IV (introduced 2016). Gen-V S17 assembly (2023) with self-mated cobalt-chromium based alloy bushing and shroud is the replacement configuration.",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": "Units already equipped with Gen-V S17 configuration across the entire stage are considered complete.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Inspection Procedure 1 applies when S17s are NOT exposed (borescope). Inspection Procedure 2 applies during MI or HGPI when CDC is removed and S17s are exposed.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "TIL requires identification of installed S17 configuration generation (welded bolt 2004, staked bolt 2008, Gen-IV 2016, or Gen-V 2023) to determine applicability and completion status. Configuration-dependent hardware verification is required.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Gen-V S17 assembly - latest configuration with both bushing and shroud made of the same cobalt-chromium based alloy, available to order as replacement",
+        "required_inspection_types": [
+          "VT",
+          "BI"
+        ],
+        "source_location": "Recommendations section, page 5-6"
+      },
+      {
+        "part_number": null,
+        "context": "S17 mechanically-attached shroud segment - bolt, bushing, washer, tenon, shroud components",
+        "required_inspection_types": [
+          "VT",
+          "BI"
+        ],
+        "source_location": "Background Discussion, page 2"
+      },
+      {
+        "part_number": null,
+        "context": "Counterbore plugs referenced in TILs 1315-2R1 and 1478-2 for inner barrel counterbore cavity",
+        "required_inspection_types": [],
+        "source_location": "Background Discussion, page 2"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1315-2R1",
+        "document_type": "TIL",
+        "context": "Recommends installing counterbore plugs and modifying control system to reduce aft end distress"
+      },
+      {
+        "document_number": "TIL 1478-2",
+        "document_type": "TIL",
+        "context": "Recommends installing counterbore plugs and modifying control system to reduce aft end distress"
+      },
+      {
+        "document_number": "GER 3620",
+        "document_type": "Other",
+        "context": "Annual borescope inspection recommended per GER 3620"
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "S17 shroud generation (welded bolt 2004, staked bolt 2008, Gen-IV 2016, Gen-V 2023)",
+      "Bushing material (316 SST vs cobalt-chromium based alloy)",
+      "Bolt attachment method (welded vs staked)",
+      "Frame type (7F.03, 7F.04, 7FB, 9F.05/9FB)"
+    ],
+    "configuration_summary": "Applicable to all F-class units with mechanically-attached shroud S17 segments of Gen-IV or earlier configurations. Different generations have different failure modes: welded bolt (2004) loses preload due to weld heat; staked bolt (2008) experiences bushing wear from flow-induced vibration with sacrificial 316 SST bushing; Gen-IV (2016) has thermal range mismatch in bushing-shroud material couple. Gen-V (2023) with self-mated cobalt-chromium alloy is the recommended replacement.",
+    "severity_signals": [
+      "Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud",
+      "S17 will act as a cantilever, increasing the stress on the vane",
+      "Possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel",
+      "Bolt losing pre-load, causing the bushing to become detached and causing vane wear"
+    ],
+    "failure_consequences": [
+      "S17 tip detachment from shroud",
+      "Vane acting as cantilever with increased stress",
+      "Secondary damage to adjacent airfoils",
+      "Possible migration of debris forward into R17 wheel",
+      "Bushing detachment",
+      "Shroud hole ovalization"
+    ],
+    "risk_summary": "Mechanically-attached shroud S17 configurations (Gen-IV and earlier) are susceptible to bushing wear, bolt preload loss, and shroud damage. If uncorrected, excessive wear can cause S17 tip detachment, converting the vane to a cantilever configuration with increased stress, potentially resulting in secondary damage to adjacent airfoils and debris migration into the R17 wheel.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance Category Legend",
+        "table_description": "Defines M, C, A, S compliance categories and their implications",
+        "useful_for_downstream": false,
+        "reason": "Standard legend table, not operationally specific to this TIL"
+      },
+      {
+        "table_label": "Timing Code Legend",
+        "table_description": "Defines timing codes 1-6 for TIL compliance timing",
+        "useful_for_downstream": true,
+        "reason": "Confirms Timing Code 4 = At First Exposure of Component"
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for Gen-V S17 assembly or earlier configurations",
+      "No MLI numbers referenced",
+      "No quantitative wear limits or dimensional acceptance criteria provided",
+      "No specific operating hour or start count intervals specified for inspection frequency"
+    ],
+    "source_snippets": [
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud, and the S17 will act as a cantilever, increasing the stress on the vane. Over time, this condition poses a risk, possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If wear or damage is observed during the inspection above, it is recommended to order and install the latest Gen-V S17 configuration as a set for durability improvement."
+      },
+      {
+        "field": "hardware_or_part_configuration_text",
+        "snippet": "In 2023, a new configuration Gen-V S17 assembly with both bushing and shroud made of the same cobalt-chromium based alloy has been developed and is now available to order."
+      },
+      {
+        "field": "reason_for_revision",
+        "snippet": "This revision is intended to communicate the availability of new configuration Gen-V S17 assembly and availability to modify earlier mechanically-attached shroud S17 generations to Gen-V S17 in GE designated service shop."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Standard manpower for borescope inspection. Manpower if replacement of S17 segment is required (these support personnel will already be onsite during MI): Two GE field technicians, One GE Field TA"
+      }
+    ],
+    "extraction_confidence": 0.91
+  },
+  "raw_profile": "```json\n{\n  \"til_number\": \"TIL 1850-R3\",\n  \"revision\": \"R3\",\n  \"title\": \"F-CLASS COMPRESSOR MECHANICALLY-ATTACHED SHROUD S17 INSPECTION\",\n  \"publish_date\": \"2024-01-17\",\n  \"reason_for_revision\": \"This revision is intended to communicate the availability of new configuration Gen-V S17 assembly and availability to modify earlier mechanically-attached shroud S17 generations to Gen-V S17 in GE designated service shop.\",\n  \"purpose\": \"This TIL advises operators to monitor the mechanically-attached shroud compressor S17 configurations and provides recommendations for mitigating any observed distress.\",\n  \"compliance_category_code\": \"M\",\n  \"compliance_category_text\": \"Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.\",\n  \"recurring_indicator_if_found\": \"Yes - annual borescope and inspection at each exposure until Gen-V installed across entire stage\",\n  \"coarse_outage_type\": \"MI\",\n  \"scope_of_work\": [\n    \"Standard manpower for borescope inspection\",\n    \"Manpower if replacement of S17 segment is required (these support personnel will already be onsite during MI): Two GE field technicians, One GE Field TA\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"Perform annual borescope inspection per GER 3620; inspect 100% of shrouded S17 for signs of distress when S17s are NOT exposed (Inspection Procedure 1)\",\n    \"Perform borescope inspection during scheduled CI or HGPI when CDC is not removed\",\n    \"During MI or HGPI with CDC removed (Inspection Procedure 2): visually inspect for bushing wear, tenon damage, shroud hole ovalization, and wear between vane tips and shroud\",\n    \"S17s in the lower half should be either removed or inspected by borescope during MI\",\n    \"If significant distress, cracks, detached bushings, or ovalized shroud hole are found, document with pictures and submit to GE Services representative for engineering disposition\",\n    \"If wear or damage is observed, order and install the latest Gen-V S17 configuration as a set for durability improvement\",\n    \"It is acceptable to replace only the damaged segment of S17 with the latest S17 segment (Gen-V configuration)\",\n    \"GE offers refurbishment services to modify earlier mechanically-attached shroud S17 configurations to the latest Gen-V configuration based on approved repair instruction\"\n  ],\n  \"completion_criteria_text\": \"This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage.\",\n  \"maintenance_trigger_text\": \"At First Exposure of Component (Timing Code 4)\",\n  \"recommended_interval_or_trigger\": [\n    \"Annual borescope inspection per GER 3620\",\n    \"Borescope inspection during scheduled CI or HGPI when CDC is not removed\",\n    \"Visual inspection during MI or HGPI when CDC is removed (S17s exposed)\",\n    \"At first exposure of component (Timing Code 4)\"\n  ],\n  \"usage_counters_to_check_or_consider\": [],\n  \"usage_counter_requirements_text\": null,\n  \"frame_or_model_applicability_text\": \"All 7F.03, 7F.04, 7FB, and 9F.05 (9FB) units with mechanically-attached shroud S17 segments.\",\n  \"combustion_or_fuel_configuration_text\": null,\n  \"hardware_or_part_configuration_text\": \"Applicable to Gen-IV and earlier mechanically-attached shroud S17 configurations including: welded bolt configuration (introduced 2004), staked bolt configuration (introduced 2008), staked bolt with changed bushing material Gen-IV (introduced 2016). Gen-V S17 assembly (2023) with self-mated cobalt-chromium based alloy bushing and shroud is the replacement configuration.\",\n  \"serial_or_unit_applicability_text\": null,\n  \"exclusions_or_non_applicable_conditions_text\": \"Units already equipped with Gen-V S17 configuration across the entire stage are considered complete.\",\n  \"required_prior_modifications_text\": null,\n  \"prerequisite_outage_or_inspection_context_text\": \"Inspection Procedure 1 applies when S17s are NOT exposed (borescope). Inspection Procedure 2 applies during MI or HGPI when CDC is removed and S17s are exposed.\",\n  \"sbom_dependency_flag\": true,\n  \"sbom_trigger_reason\": \"TIL requires identification of installed S17 configuration generation (welded bolt 2004, staked bolt 2008, Gen-IV 2016, or Gen-V 2023) to determine applicability and completion status. Configuration-dependent hardware verification is required.\",\n  \"mli_numbers\": [],\n  \"parts_referenced\": [\n    {\n      \"part_number\": null,\n      \"context\": \"Gen-V S17 assembly - latest configuration with both bushing and shroud made of the same cobalt-chromium based alloy, available to order as replacement\",\n      \"required_inspection_types\": [\"VT\", \"BI\"],\n      \"source_location\": \"Recommendations section, page 5-6\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"S17 mechanically-attached shroud segment - bolt, bushing, washer, tenon, shroud components\",\n      \"required_inspection_types\": [\"VT\", \"BI\"],\n      \"source_location\": \"Background Discussion, page 2\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Counterbore plugs referenced in TILs 1315-2R1 and 1478-2 for inner barrel counterbore cavity\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Background Discussion, page 2\"\n    }\n  ],\n  \"reference_documents\": [\n    {\n      \"document_number\": \"TIL 1315-2R1\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Recommends installing counterbore plugs and modifying control system to reduce aft end distress\"\n    },\n    {\n      \"document_number\": \"TIL 1478-2\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Recommends installing counterbore plugs and modifying control system to reduce aft end distress\"\n    },\n    {\n      \"document_number\": \"GER 3620\",\n      \"document_type\": \"Other\",\n      \"context\": \"Annual borescope inspection recommended per GER 3620\"\n    }\n  ],\n  \"configuration_dependent\": true,\n  \"configuration_variables\": [\n    \"S17 shroud generation (welded bolt 2004, staked bolt 2008, Gen-IV 2016, Gen-V 2023)\",\n    \"Bushing material (316 SST vs cobalt-chromium based alloy)\",\n    \"Bolt attachment method (welded vs staked)\",\n    \"Frame type (7F.03, 7F.04, 7FB, 9F.05/9FB)\"\n  ],\n  \"configuration_summary\": \"Applicable to all F-class units with mechanically-attached shroud S17 segments of Gen-IV or earlier configurations. Different generations have different failure modes: welded bolt (2004) loses preload due to weld heat; staked bolt (2008) experiences bushing wear from flow-induced vibration with sacrificial 316 SST bushing; Gen-IV (2016) has thermal range mismatch in bushing-shroud material couple. Gen-V (2023) with self-mated cobalt-chromium alloy is the recommended replacement.\",\n  \"severity_signals\": [\n    \"Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud\",\n    \"S17 will act as a cantilever, increasing the stress on the vane\",\n    \"Possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel\",\n    \"Bolt losing pre-load, causing the bushing to become detached and causing vane wear\"\n  ],\n  \"failure_consequences\": [\n    \"S17 tip detachment from shroud\",\n    \"Vane acting as cantilever with increased stress\",\n    \"Secondary damage to adjacent airfoils\",\n    \"Possible migration of debris forward into R17 wheel\",\n    \"Bushing detachment\",\n    \"Shroud hole ovalization\"\n  ],\n  \"risk_summary\": \"Mechanically-attached shroud S17 configurations (Gen-IV and earlier) are susceptible to bushing wear, bolt preload loss, and shroud damage. If uncorrected, excessive wear can cause S17 tip detachment, converting the vane to a cantilever configuration with increased stress, potentially resulting in secondary damage to adjacent airfoils and debris migration into the R17 wheel.\",\n  \"safety_or_damage_language_found\": true,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"Compliance Category Legend\",\n      \"table_description\": \"Defines M, C, A, S compliance categories and their implications\",\n      \"useful_for_downstream\": false,\n      \"reason\": \"Standard legend table, not operationally specific to this TIL\"\n    },\n    {\n      \"table_label\": \"Timing Code Legend\",\n      \"table_description\": \"Defines timing codes 1-6 for TIL compliance timing\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Confirms Timing Code 4 = At First Exposure of Component\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific part numbers provided for Gen-V S17 assembly or earlier configurations\",\n    \"No MLI numbers referenced\",\n    \"No quantitative wear limits or dimensional acceptance criteria provided\",\n    \"No specific operating hour or start count intervals specified for inspection frequency\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"completion_criteria_text\",\n      \"snippet\": \"This TIL can be marked completed when the latest Gen-V S17 configuration has been installed across the entire stage.\"\n    },\n    {\n      \"field\": \"failure_consequences\",\n      \"snippet\": \"Excessive wear between the vane and bushing may cause S17 tip to detach from the shroud, and the S17 will act as a cantilever, increasing the stress on the vane. Over time, this condition poses a risk, possibly resulting in secondary damages to the adjacent airfoils and possible migration forward into the R17 wheel.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"If wear or damage is observed during the inspection above, it is recommended to order and install the latest Gen-V S17 configuration as a set for durability improvement.\"\n    },\n    {\n      \"field\": \"hardware_or_part_configuration_text\",\n      \"snippet\": \"In 2023, a new configuration Gen-V S17 assembly with both bushing and shroud made of the same cobalt-chromium based alloy has been developed and is now available to order.\"\n    },\n    {\n      \"field\": \"reason_for_revision\",\n      \"snippet\": \"This revision is intended to communicate the availability of new configuration Gen-V S17 assembly and availability to modify earlier mechanically-attached shroud S17 generations to Gen-V S17 in GE designated service shop.\"\n    },\n    {\n      \"field\": \"scope_of_work\",\n      \"snippet\": \"Standard manpower for borescope inspection. Manpower if replacement of S17 segment is required (these support personnel will already be onsite during MI): Two GE field technicians, One GE Field TA\"\n    }\n  ],\n  \"extraction_confidence\": 0.91\n}\n```"
+}

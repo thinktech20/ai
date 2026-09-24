@@ -31,6 +31,7 @@ Implement the section-based chunking and heading-quality fix in the shared path 
 16. Add explicit sub-report/attachment context handling so reused local section numbers do not inherit an unrelated main-report sibling, while retaining the content for chunking.
 17. Trace the long-label example through extraction, preprocessing, and persistence. Keep any fix only if it is local and passes the broader regression set; otherwise defer it.
 18. Validate sub-report context on `N Attachments`, `N Appendix`, and `N Sub Reports` examples, including local numbers absent from the primary TOC.
+19. Keep the existing two-leader/page-number TOC continuation threshold unchanged; do not expand TOC continuation detection in this cycle.
 
 ## Code areas expected to change
 
@@ -55,6 +56,7 @@ Implementation should only be accepted if all of these are true:
 - sub-report content remains chunkable but is not assigned a misleading reused main-report path
 - local sub-report numbering is scoped under an attachment/appendix/sub-report context when detected
 - incomplete primary TOC coverage does not cause valid sub-report content to be discarded
+- sparse final TOC continuation pages remain an accepted low-impact edge case for this cycle
 - long-label preservation is optional and must not introduce material regression
 
 ## Rollout scope

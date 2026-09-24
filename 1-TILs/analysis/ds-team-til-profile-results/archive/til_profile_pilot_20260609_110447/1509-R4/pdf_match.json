@@ -1,0 +1,11 @@
+{
+  "source": "workspace_sample_pdf",
+  "pdf_path": "C:\\Users\\560068861\\Code\\alexis_scoping\\context\\data\\workspace_notes\\samples\\TILs\\databricks_top25\\TIL 1509-R4 - F-CLASS FRONT END (R0, S0, AND R1) COMPRESSOR INSPECTIONS.pdf",
+  "file_name": "TIL 1509-R4 - F-CLASS FRONT END (R0, S0, AND R1) COMPRESSOR INSPECTIONS.pdf",
+  "til_number": "1509-R4",
+  "normalized_til_key": "1509-R4",
+  "base_til_num": "1509",
+  "revision_number": 4,
+  "match_type": "exact_til_number",
+  "requested_til_number": "1509-R4"
+}

@@ -1,0 +1,101 @@
+E6.6 - TIL Disposition Evaluation End-to-End
+Tool Specs
+Scope and Audience
+This document describes the active Step 6 end-to-end TIL disposition evaluation flow.
+Audience:
+•	DS leads and SMEs socializing experiment behavior and findings
+•	teammates maintaining scripts and interpreting outputs
+•	architecture and dev teams preparing runtime and production handoff
+Primary goals:
+•	explain the full data workflow from candidate rows to final outputs
+•	identify main entry scripts, helper modules, and source systems
+•	summarize preliminary outcomes and known hardening gaps
+Primary Entry and Supporting Modules
+Main entry:
+•	code_assets/experiments/step6/run_gt_til_applicability_eval.py
+Upstream candidate inputs:
+•	code_assets/experiments/step6/build_gt_til_candidate_pool.py
+•	code_assets/experiments/step6/enhance_candidate_til_availability.py
+Core helper lanes invoked by the runner:
+•	TIL profile/document context: 
+o	run_til_profile_extraction_pilot.py
+o	til_pdf_utils.py
+•	E6.3 SBOM logic: 
+o	sbom_lookup.py
+•	E6.4 evidence cross-check: 
+o	runtime/service_history_completion.py
+o	runtime/fsr_completion.py
+•	E6.5 template coverage and info-only: 
+o	runtime/template_coverage.py
+•	LLM call layer: 
+o	runtime/llm.py
+End-to-End Flow (Current)
+ 
+Data Workflow and Process (Narrative)
+1.	Runner loads candidate rows and filters out removed candidates.
+2.	Runner enriches unit context from EV event/equipment and IBAT lookups.
+3.	Runner loads TIL profile and optional document text/table context.
+4.	Information-only gate runs first.
+5.	Template coverage stage runs for non-information-only rows.
+6.	If template is fully covered (no gaps), row stops before completion/applicability.
+7.	Otherwise, service-history evidence retrieval and completion review run.
+8.	SBOM context is built from profile keys and matched ESN.
+9.	Final case payload is assembled with all context lanes.
+10.	Final applicability LLM generates verdict and reasoning fields.
+11.	Runner writes summary, line-item exports, prompt payload artifacts, and markdown companions.
+Inputs
+Primary run inputs:
+•	candidate CSV from Step 6 candidate pool pipeline
+•	optional profile cache directory (til_profile_pilot_*)
+•	optional TIL document extraction modes and limits
+•	prompt pack and optional system prompt file
+•	retrieval depth hints for service-history stage
+Data sources used by the run:
+•	Databricks EV and unit context tables
+•	TIL PDF sources (volume, local sample, SQL fallback)
+•	FSR and ER evidence retrieval backends
+•	Primavera template activity sources
+•	SBOM SOT and sample fallback workbooks
+Outputs and Artifacts
+Per-run output folder includes:
+•	summary workbook and CSV views
+•	records.jsonl and payload snapshots
+•	completion line-item CSV
+•	template line-item CSV
+•	prompt inputs/prompts/artifact sheets
+•	run markdown companions for summary and context artifacts
+•	template coverage records artifact
+Key exported fields include:
+•	pipeline and final disposition
+•	template coverage class and status
+•	prior service evidence and completion review metrics
+•	SBOM status and evidence fields
+•	LLM verdict, confidence, and evidence snippets
+Preliminary Experiment Findings
+1.	E6.6 runner is now a multi-stage orchestration, not a single final-LLM step.
+2.	Skip pathways (information_only_skip, template_covered_skip) reduce unnecessary downstream work.
+3.	Service-history lane has policy-aware retrieval depth behavior for recurring and non-recurring completion patterns.
+4.	SBOM lane is integrated as supporting configuration evidence with deterministic matching.
+5.	Final payload and exports are rich enough for post-run QA and SME walkthroughs.
+Known Gaps and Uncertainties for Runtime/Production
+1.	Environment dependency:
+•	Databricks permissions and source availability can still block parts of the flow.
+1.	Cross-lane calibration:
+•	interactions between template coverage, completion review, and final verdict need continued SME calibration.
+1.	Prior-outage scoping context:
+•	design logic is documented, but full runtime integration is still a planned implementation slice.
+1.	Quality governance:
+•	run-level quality KPIs and acceptance thresholds are not yet formalized for production readiness.
+1.	Operational hardening:
+•	retry/fallback behavior exists but centralized health checks and source readiness checks are still limited.
+What This End-to-End Stage Should and Should Not Decide
+Should decide:
+•	structured, evidence-aware recommendation support for Step 6 disposition evaluation
+•	whether a row should be skipped, reviewed as net-new, or flagged as uncertain
+Should not decide:
+•	absolute proof of implementation completion from one evidence source
+•	hard exclusions based on single missing signals (for example, no SBOM match only)
+Suggested Next Validation Slice
+1.	Build a stakeholder review packet from one mixed run showing each major routing path.
+2.	Add run-level metrics table for skip rates, evidence statuses, and verdict confidence bands.
+3.	Define acceptance checks for architecture handoff (source readiness, parse stability, output contract stability).

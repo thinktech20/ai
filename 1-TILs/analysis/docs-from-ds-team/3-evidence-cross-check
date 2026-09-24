@@ -1,0 +1,108 @@
+E6.4 - Evidence Cross-Check for Implementation Status
+Tool Specs
+Scope and Audience
+This document explains the current Step 6 evidence cross-check flow used to assess prior implementation status.
+Audience:
+•	DS leads and SMEs reviewing evidence quality
+•	step owners and teammates maintaining experiment logic
+•	architecture and dev teams planning runtime hardening
+Primary goals:
+•	show the active retrieval and completion-review workflow
+•	clarify where FSR and ER evidence are used
+•	describe entry points, helper modules, and output contracts
+•	capture current findings and open uncertainties
+Active Anchors
+Primary service-history orchestrator:
+•	code_assets/runtime/service_history_completion.py
+Shared retrieval and completion helpers:
+•	code_assets/runtime/fsr_completion.py
+Step 6 caller:
+•	code_assets/experiments/step6/run_gt_til_applicability_eval.py
+Reference probe module (diagnostic, not current mainline):
+•	code_assets/experiments/step6/fsr_cross_reference/step6_til_fsr.py
+Pipeline Map (Current)
+ 
+Data Workflow and Process
+1.	Step 6 builds a service-history request from case row, profile context, and template coverage context.
+2.	Service-history module derives retrieval policy from disposition and recurring indicators.
+3.	Module runs multi-branch retrieval query construction (identifier, line items, completion criteria cues).
+4.	Vector retrieval attempts FSR and ER branches.
+5.	If FSR is missing in vector results, SQL fallback fetches FSR rows from chunk table.
+6.	Evidence rows are merged, reranked, grouped to report-level, and summarized.
+7.	Completion-review LLM evaluates prior completion/open/deferred signals from summarized evidence.
+8.	Final payload contains prior_service_evidence and completion_review as separate but related tracks.
+Inputs and Contracts
+Main request fields
+•	source_identifier (candidate TIL)
+•	matched_esn
+•	matched_event_id
+•	service_history_source_systems (default FSR, ER)
+•	service_line_items
+•	completion_criteria_text
+•	maintenance_trigger_text
+•	disposition_status, disposition_notes
+•	recurring indicators and profile cues
+Retrieval backends
+Vector path:
+•	react_tools_step567.query_documents with source=FSR|ER
+SQL fallback path:
+•	main.gp_services_sdg_poc.field_service_report
+Outputs
+Primary output object includes:
+•	prior_service_evidence (alias service_history_evidence)
+•	completion_review
+•	completion_review_raw_response
+•	prompt artifacts for completion review call
+Evidence metadata includes:
+•	status, source, evidence_count, report_count
+•	evidence_source_systems, evidence_source_counts
+•	retrieval_query, retrieval_queries, retrieval_sql_tokens
+•	retrieval_policy, retrieval_policy_reason, retrieval_depth_hint_used
+Important Current Logic (SME-aligned update)
+The retrieval policy currently varies search depth and report selection:
+•	complete + recurring: latest report only policy
+•	incomplete: backsearch until completion evidence policy
+•	complete + non-recurring: backsearch until completion evidence policy
+•	otherwise: bounded full-history default
+This behavior is implemented in:
+•	derive_prior_service_retrieval_policy in fsr_completion.py
+•	policy application in run_service_history_completion_service and report selection in evidence summarization
+Key Methods and Responsibilities
+From service_history_completion.py:
+•	_normalize_source_systems
+•	fetch_service_history_evidence_rows_via_vector
+•	run_service_history_completion_service
+From fsr_completion.py:
+•	build_fsr_completion_query_pack
+•	fetch_prior_service_evidence_rows_via_sql_multibranch
+•	rerank_prior_service_rows and aggregate_prior_service_reports
+•	summarize_prior_service_evidence
+•	run_completion_review
+Preliminary Experiment Findings
+1.	Evidence cross-check has moved from single-source FSR assumptions to FSR+ER capable orchestration.
+2.	The strongest current value is report-level evidence synthesis, not raw chunk retrieval alone.
+3.	Completion review explicitly treats disposition fields as supporting, not authoritative.
+4.	Recent policy update aligns retrieval horizon with recurring vs non-recurring and complete/incomplete behavior.
+5.	Separation of scoping outcome and physical completion evidence is now explicit in design and runtime behavior.
+Runtime and Production Gaps / Uncertainties
+1.	Retrieval quality variability:
+•	Vector availability and source coverage differ by environment and permissions.
+1.	Evidence precision risk:
+•	Completion language in reports can be ambiguous; mixed-signal reports are common.
+1.	ER completeness uncertainty:
+•	ER source is wired but real contribution rates vary by case set.
+1.	Prompt dependency:
+•	Completion-review quality still depends on LLM response robustness and parse reliability.
+1.	Governance and explainability:
+•	Need stable quality metrics for false-positive and false-negative completion inference.
+Usage Guidance
+Use E6.4 outputs as:
+•	a structured evidence layer for prior completion/open/deferred reasoning
+•	an input to final Step 6 applicability decisioning
+Do not use E6.4 outputs as:
+•	deterministic proof of completion in all cases
+•	replacement for SME adjudication in mixed or conflicting evidence scenarios
+Suggested Next Validation Slice
+1.	Run a labeled subset and compare completion-review outcomes against SME judgments.
+2.	Quantify ER incremental value vs FSR-only for the same cases.
+3.	Add run-level reporting for retrieval policy usage frequencies and resulting evidence statuses.

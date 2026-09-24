@@ -1,0 +1,111 @@
+{
+  "status": "success",
+  "results": {
+    "1": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 1\nExtracted Text:\nGE\nGE\nEnergy\nENERGY SERVICES ENGINEERING\nTIL 1562-R1\nPRODUCT SERVICE\n20 AUGUST 2009\nCompliance Category - M\nTiming Code - 5\nTECHNICAL INFORMATION LETTER\nHEAVY-DUTY GAS TURBINE SHIM MIGRATION AND LOSS\nAPPLICATION\nAll B, C, E, F, and H-Class gas turbines\nPURPOSE\nTo inform users of the need to monitor the condition of compressor shims and corrective actions necessary to mitigate\nthe risks of migrating shims.\nREASON FOR REVISION\nRevised to add additional gas turbine classes and to update recommendations.\nCompliance Category\nCOPYRIGHT 2009 GE\nThe information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant\nis in your control and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for\nliability based on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying\nthis information regardless of whether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other\nrespects responsible for any alleged injury or damage sustained by your organization as a result of applying this information.\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced in\nwhole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering.\n\n----------------------------------------\nEnd of Page 1\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| o - Optional | Identifies changes that may be beneficial to some, but not necessarily all, operators. Accomplishment is at customer's discretion. |\n| M - Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |\n| c - Compliance Required | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. |\n| A Alert | Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. |\n| S - Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |\n\n----------------------------------------\nTable 2:\n| Timing Code |  |\n| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |\n| 2 | At First Opportunity (next shutdown) |\n| 3 | Prior to Operation of Affected System |\n| 4 | At First Exposure of Component |\n| 5 | At Scheduled Component Part Repair or Replacement |\n| 6 | Next Scheduled Outage |\n| 7 | Optional |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      }
+    ],
+    "2": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 2\nExtracted Text:\nTIL 1562-R1\nBACKGROUND DISCUSSION\nShim migration poses a risk of shim liberation, which\nAll gas turbines utilize a compressor section that serves\ncould lead to compressor damage. These risks are\nto compress incoming air to an appropriate pressure\ngreatest for front stages due to shim size and the\nfor the combustion process. The compressor flow path\nnumber of stages that could be impacted by a\nliberated shim.\ncontains rotating components known as rotor blades\nand stationary components known as stator vanes.\nRECOMMENDATIONS\nDuring unit assembly, shims are often necessary to\nInspection\nachieve the proper circumferential gaps between\nOperators should continue normal borescope and\nstator bases, which allow for transient relative growth\nvisual inspections per GER 3620, noting the condition of\nwhile helping to maintain optimum flow efficiency.\nall shims. The first four stages of B-class/E-class\nStator bases retained in a ring segment, as well as\nmachines (first eight stages for 9E), and the first five\nindividual vanes, use these shims to correct for\nstages of F-class machines may have shims located\nvariation in case diameter and lengths of stator rings\nbetween the stator segments, 60 degrees above and\nand bases. Each shim is held in place via two retention\nbelow the left and right horizontal joints. Shims for all\nhooks (see Figure 1).\nremaining stages will be located between the first few\nstator vane bases adjacent to the horizontal joints of\nthe upper and lower half cases. It is normal for some\nstages to be without shims.\nRetention Hooks\nNote that stages 0-4 on the 7H machine, 1-4 on the 9H\nmachine, and 1-2 on the 6C machine do not have\nshims. These stages contain Variable Guide Vanes\n(VGV) and do not use shims. Shims for all remaining\nstages will be located between the first few stator vane\nbases adjacent to the horizontal joints of the upper and\nlower half cases.\nFigure 1: Typical Compressor Front-End Shim\nDue to manufacturing variation, shims may not be\nnecessary for every stage. Any shim anomalies found\nOn B, C, E, F and H-class machines, GE has identified\nshould be reported to your local GE Service Manager or\nmovement of these shims out of the stator grooves and\nContract Performance Manager for documentation and\ninto the flow path (shim migration) during routine\nrecommendations.\nborescope inspections and major outages (See Figure\n2). Shim migration in the past has been seen primarily\nEvidence of shim migration should have corrective\nin the aft end of the compressor, however recent\naction applied to minimize unit risk. GE will provide\nchanges in fleet operating characteristics have\nrecommendations based on the stage at which the\ncontributed to an increasing number of front-end shim\nshim is located, the amount of protrusion into the\nmigration occurrences.\nairflow, and the rate at which the shim is migrating.\nFollow-up inspections may be necessary to evaluate\nthe migration rate.\nUnder circumstances where protruding shims are\naccessible, GE recommends the following procedures\nto reduce and/or eliminate the risk of shim liberation\nuntil corrective action can be applied:\nRemove the shim, if it can be done without risk\nof damaging neighboring blades/vanes.\nOperating with a shim removed is acceptable\nuntil the next planned casing removal outage,\nat which time re-shimming can be performed.\nGrind the shim flush with the flow path. This\nshould be attempted if removal proves\nFigure 2: Borescope Image of Shim Migration\ndifficult and grinding can be done without risk\nof damaging neighboring blades/vanes.\nCOPYRIGHT 2009 GE\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced in\nwhole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering.\nPage 2 of 5\n\n----------------------------------------\nEnd of Page 2\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "image",
+        "content": [
+          "S >\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      }
+    ],
+    "3": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 3\nExtracted Text:\nTIL 1562-R1\nGrinding of the shim will reduce potential\ncompressor damage should the shim liberate\nprior to application of corrective action, and\nwill prevent flow disturbances from further\naccelerating the migration of the shim. If the\nshim is accessible for grinding, it is\nrecommended to do so and then inspect for\nfurther movement after 25 starts.\nContact your local GE Service Manager or Contract\nPerformance Manager for assistance with performing\nthese procedures.\nFront end, segmented-stator shims, with LESS than\n50% of their height protruding, are considered low-to-\nmoderate risk. Inspection criteria will be provided to\nFigure 3: Shim Pin Modification - Square Base\nmonitor movement based on the historical knowledge\nof the shim.\nContinued movement of front-end shims elevates the\nrisk. If this is observed, corrective action should take\nplace as soon as possible to avoid liberation.\nFront-end shims with GREATER than 50% height\nprotrusion pose a greater risk for liberation, regardless\nof their history, and require disposition prior to restart\nof the unit.\nAft stage shim migration is considered low-risk and can\ntypically be addressed at the scheduled major\ninspection interval.\nFigure 4: Shim Pinning - Segment Base\nModification\nReplacement shims should be of no less than 80 mils\nFor all B, C, E, F, and H-Class gas turbines, GE\nthickness for robust retention.\nrecommends the shim modification be implemented at\nthe next major inspection (MI) interval or the next\nGE has developed a shim attachment modification that\ncompressor maintenance outage in which the rotor is\nhas been implemented on new unit manufacturing.\nexposed. This modification, available for all compressor\nThis process has been leveraged for field units and is\nstages, eliminates the potential for shim liberation and\navailable as an enhancement for all effected units to\nthus improves long-term unit reliability. This method of\nhelp eliminate shim migration.\nattachment is the preferred solution to shim migration.\nIt provides for nominal stator gaps with maximum\nThe enhancement uses drive pins to align and\nretention, without compromising the design\nmechanically attach each shim to an adjacent stator\ncharacteristics of the stator vanes or rings. Alternative\nbase/segment (See Figures 3 & 4).\nconcepts not approved by GE, such as capturing shims\nbetween adjoined stators, may subject the base of the\nvane to excessive forces beyond design intent and add\nnew risks, potentially resulting in component failure.\nThe shim pinning modification kit can be ordered by\ncontacting your local GE Service Manager or Contract\nPerformance Manager.\nCOPYRIGHT 2009 GE\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced in\nwhole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering.\nPage 3 of 5\n\n----------------------------------------\nEnd of Page 3\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "image",
+        "content": [
+          "\n, 2"
+        ],
+        "source": "textract",
+        "page_number": 3
+      }
+    ],
+    "4": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 4\nExtracted Text:\nTIL 1562-R1\nPLANNING INFORMATION\nPrevious Modifications\nCompliance\nNone\nCompliance Category: M\nTiming Code: 5\nScope of Work\nBorescope inspections, requiring approximately 8-12\nManpower Skills\nhours to complete, should be completed annually and\nTrained GE Borescope technician to perform borescope\nat regular maintenance outages (CI & HGPI) as outlined\ninspection capable of linear measurement.\nin GER3620. Additional monitoring inspections may be\nrequired based on the findings.\nShim replacement and/or modification will require GE\nPower Services for unit disassembly.\nImplementation of the shim modification will be carried\nout during scheduled outages in which the compressor\nTwo GE P&RS technicians to facilitate vane removal\ncasing has been removed. The time required for\nand to implement modifications.\nremoval of the stators varies greatly from one unit to\nthe next and is proportional to the amount of time the\nParts\nstators have had penetrating/loosening agents applied.\nA kit containing the necessary shims and pins to\nWorst-case circumstances would require the segments\ncomplete the job must be ordered for the modification.\nbe destructively removed from the casing. Once the\nContact your local GE Service Manager or Contract\nstators have been removed from the unit, the\nPerformance Manager for assistance. Allow 10 weeks\nmodification may occupy two blade technicians for\nfor parts delivery.\nfour shifts to complete.\nContact your local GE Service Manager or Contract\nSpecial Tooling\nPerformance Manager for assistance or for\nContact your local GE Service Manager or Contract\nadditional information.\nPerformance Manager for assistance.\nNOTE: If you would like to receive future TILs by email,\nReference Documents\ncontact your local GE Service Manager or Contract\nNone\nPerformance Manager for assistance.\nCOPYRIGHT 2009 GE\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced in\nwhole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering.\nPage 4 of 5\n\n----------------------------------------\nEnd of Page 4\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      }
+    ],
+    "5": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 5\nExtracted Text:\nTIL 1562-R1\nTIL COMPLIANCE RECORD\nCompliance with this TIL must be entered in local records. GE requests that the customer notify GE upon compliance of\nthis TIL.\nComplete the following TIL Compliance Record and FAX it to:\nTIL Compliance\nFAX: (678) 844-3451\nToll free FAX: 1-888-896-TILS (1-888-896-8457)\nTurbine Serial Number(s):\nINSTALLED EQUIPMENT\nTIL Completed Date:\n100% TIL Completed:\nDescription:\nComments:\nNOTE: If there are any redlined drawings that pertain to this TIL implementation, please FAX the drawings along with\nthis TIL Compliance Record.\nFAX this form to:\nTIL Compliance\nFAX: (678) 844-3451\nToll free FAX: 1-888-896-TILS (1-888-896-8457)\nCOPYRIGHT 2009 GE\nThis Technical Information Letter contains proprietary information of the General Electric Company, USA and is furnished to its customer solely to\nassist that customer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced in\nwhole or in part nor shall its contents be disclosed to any third party without the written approval of GE Energy Services Engineering.\nPage 5 of 5\n\n----------------------------------------\nEnd of Page 5\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| TIL COMPLIANCE RECORD | For Internal Records Only # |\n| Site Name: | Customer Name: |\n| Customer Contact Information | GE Contact Information |\n| Contact Name: | Contact Name: |\n| Address: | Address: |\n|  |  |\n| Email: | Email: |\n| Phone: | Phone: |\n| FAX: | FAX: |\n\n----------------------------------------\nTable 2:\n| Unit Numbers: | Part Description: | Part Number | MLI Number |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+DS code for extraction-
+https://github.apps.gevernova.net/gev-genai/SDG_Scoping_Feedback_Loop/blob/feature/experiment-7-osa/experiments/e6_2/read_1b_FoundationService.py
+Attached here - TILs/input/ds-code/read_1b_FoundationService.py
+
+High-level flow
+Takes one TIL base number (currently hardcoded as 1603).
+Looks up matching TIL PDF path in Databricks Volumes.
+Downloads that PDF bytes.
+Sends the PDF to GE Foundation Service PDF extraction API.
+Parses API output into:
+combined text content (text + image descriptions + unlabeled tables),
+labeled table objects (only when table labels like “Table N:” are detected).
+Saves 3 JSON files under a per-TIL results folder:
+parsed text,
+parsed labeled tables,
+raw API response.
+What each main function does
+call_foundation_service:
+builds multipart request with PDF + params (mode, process_mode, etc.),
+calls the extraction endpoint,
+returns JSON on HTTP 200, else prints error and returns empty dict.
+parse_foundation_response:
+loops page-by-page through response results,
+collects text, table, image blocks,
+detects labeled tables by regex from page text: Table <number>: ...,
+sends labeled tables to structured table output,
+pushes unlabeled tables and image descriptions into main text body.
+read_til_1b_foundation:
+orchestrates end-to-end run,
+handles basic failure states (pdf_not_found, download fail, API fail),
+writes timestamped output files in results/<til_base_num>/.
+Output shape
+You get a practical split:
+
+Text JSON: full content for downstream LLM/profile extraction.
+Tables JSON: only explicitly labeled tables with page, label, description, source, content.
+Raw JSON: full Foundation response for debugging/replay.
+Notable assumptions / risks
+It only processes the first matched PDF (pdf_paths[0]), not all matches.
+SSL verification is disabled (verify=False) and warnings are suppressed.
+Proxy bypass is forced (proxies={"http": "", "https": ""}).
+Table label detection currently uses one regex search on page text, so multiple labels on one page may not be fully captured.
+Non-200 API handling is basic (no retry/backoff).
+
+
+====================
+
+Results stored here -
+TILs/input/ds-code-and-results/1603-R2/1603-R2
+
+Files reviewed in 1603-R2:
+
+pdf_match.json:1
+pdf_match.md:1
+foundation_raw_extraction.json:1
+extracted_document.json:1
+extracted_document.md:1
+profile_response.json:1
+profile_response.md:1
+What output looks like:
+
+Matching layer:
+
+Confirms requested TIL and matched PDF path.
+Includes normalized key, base TIL number, revision, and match type.
+Markdown version is a small human-readable table.
+Raw extraction layer:
+
+Page-wise structure under results with keys like 1, 2, 3.
+Each page has typed blocks: text, table, image.
+Table content is markdown-like text blobs; image content is OCR/vision description text.
+This is the closest artifact to foundation service native output.
+Normalized extracted document layer:
+
+Flattened text content across pages into one long body.
+Includes inline markers such as unlabeled table from page N and image description from page N.
+Metadata includes text length and labeled table count.
+For this sample: text_length is 24256, labeled_table_count is 0.
+Markdown version is review-friendly and includes field table plus full extracted text.
+Profile layer:
+
+Structured semantic profile built from extracted text.
+Includes fields like compliance category, outage trigger, scope of work, service recommendations, intervals, risk/failure consequences, reference docs, configuration dependencies, source snippets, confidence.
+For this sample, extraction_confidence is 0.78, SBOM dependency is false, and parts_referenced is empty.
+Markdown version is very readable for SME review; JSON version is downstream-consumable.
+Observed quality characteristics in this 1603 sample:
+
+Strengths:
+
+Good capture of narrative content and planning logic.
+Useful structured profile fields for applicability reasoning.
+Both human-readable and machine-usable outputs are present.
+Gaps/noise visible:
+
+Some image descriptions are noisy/gibberish text.
+Labeled table count in extracted_document is 0 even though raw extraction has table blocks; indicates strict label detection behavior in normalization.
+Boilerplate legal text is repeated heavily across pages.

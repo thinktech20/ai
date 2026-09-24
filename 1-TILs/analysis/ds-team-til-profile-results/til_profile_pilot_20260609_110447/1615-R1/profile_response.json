@@ -1,0 +1,132 @@
+{
+  "requested_til": "1615-R1",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 1615-R1",
+    "revision": "R1",
+    "title": "RO COMPRESSOR BLADE AXIAL RETENTION (STAKING) ALTERNATIVES",
+    "publish_date": "2016-05-17",
+    "reason_for_revision": "To update the 7F and 9F casing lifting and removal requirements.",
+    "purpose": "To inform operators of the limitations of traditional means of axial retention (peening/staking) for compressor stage 0 rotor blades (ROs) resulting from successive R0 change-outs, and to notify users of a recommended wheel modification to apply when the traditional means of retention is no longer available. This alternative method uses replacement inserts as a staking medium that has no limitation on the number of times it can be replaced.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "At Scheduled Component Part Repair or Replacement",
+    "scope_of_work": [
+      "For 6F units: Removal of the UH inlet bellmouth is required",
+      "For 7F and 9F units: The UH of the inlet bellmouth must be jacked ~18\" off the horizontal joint or may be removed",
+      "Machining of FSS R0 dovetail slots (1x to 32x depending on scope) for the staking inserts",
+      "R0 removal/installation and staking performed by blade technicians from a GE Service Center",
+      "Estimated duration is 3-4 shifts",
+      "Two milling technicians from GE certified repair shop per shift",
+      "One NDT technician needed per shift",
+      "One Field Engineer and scaffolding crew (three craft laborers) needed",
+      "Turning gear/rotating fixture operator (dedicated person) needed"
+    ],
+    "service_recommendation_line_items": [
+      "Apply replacement staking insert modification to any operator planning to change R0 blades for the third or greater time, if the modification has not previously been applied",
+      "Modification should be performed in conjunction with the planned R0 change-out, or at a suitable maintenance opportunity preceding this",
+      "Depending on scope and unit conditions, all blades in the stage may need to be removed for tooling access",
+      "Do not use pressure face staking marks or blade platform flow path surface staking as alternative staking locations - these are no longer recommended",
+      "Contact GE Services representative to initiate the CM&U process for R0 wheel modification"
+    ],
+    "completion_criteria_text": "This TIL is considered complete when the biscuit modification has been installed.",
+    "maintenance_trigger_text": "Third or greater replacement of the R0 blades, when traditional staking locations on the Forward Stub Shaft are exhausted.",
+    "recommended_interval_or_trigger": [
+      "At Scheduled Component Part Repair or Replacement (Timing Code 5)",
+      "Third or greater R0 blade replacement"
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All commissioned F-class gas turbines (6F, 7F, 9F)",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Compressor stage 0 rotor blades (R0), Forward Stub Shaft (FSS), R0 dovetail slots, replaceable staking inserts",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": "Modification is usually needed on the third or greater replacement of the R0 blades; units that have not yet exhausted traditional staking locations may not require this modification.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "Modification should be performed in conjunction with the planned R0 change-out, or at a suitable maintenance opportunity preceding this. For 7F and 9F units, inlet bellmouth must be jacked ~18\" or removed. For 6F units, inlet bellmouth must be removed.",
+    "sbom_dependency_flag": false,
+    "sbom_trigger_reason": null,
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Replaceable staking inserts installed in wheel slots for R0 axial retention - contact local GE Service Representative for parts",
+        "required_inspection_types": [],
+        "source_location": "Page 4, Parts section"
+      },
+      {
+        "part_number": null,
+        "context": "Controlled milling machinery and special milling fixtures required for accurate drilling of pockets; dual-staking tool for proper staking geometry and placement - provided by GE Service Center technicians",
+        "required_inspection_types": [],
+        "source_location": "Page 4, Special Tooling section"
+      }
+    ],
+    "reference_documents": [],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "F-class frame type (6F, 7F, 9F)",
+      "Number of prior R0 blade replacements",
+      "Number of R0 blades requiring modification (1x to 32x)"
+    ],
+    "configuration_summary": "The scope of work differs by frame type: 6F units require inlet bellmouth removal, while 7F and 9F units require the inlet bellmouth to be jacked ~18\" or removed. The modification is applicable when traditional staking locations are exhausted, typically after two prior R0 replacements. If staking locations are exhausted from all 32 R0 blades, replacing a single R0 blade may warrant removal of all 32 for the modification.",
+    "severity_signals": [
+      "Compliance Category M - Maintenance",
+      "Traditional staking methods no longer recommended",
+      "Alternative staking locations (pressure face, platform flow path) no longer recommended practice"
+    ],
+    "failure_consequences": [
+      "Loss of axial retention for compressor stage 0 rotor blades if traditional staking locations are exhausted and no alternative is applied",
+      "Reduced equipment reliability if interim staking methods (pressure face or platform flow path) are used instead of the recommended insert modification"
+    ],
+    "risk_summary": "If traditional staking locations on the Forward Stub Shaft are exhausted after successive R0 blade replacements and the recommended insert modification is not applied, there is risk of inadequate axial retention of compressor R0 blades. Previously used alternative staking locations (pressure face and platform flow path surface) are no longer recommended.",
+    "safety_or_damage_language_found": false,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance Category Legend",
+        "table_description": "Defines M, C, A, S compliance categories",
+        "useful_for_downstream": false,
+        "reason": "Standard legend table, does not contain unit-specific operational data"
+      },
+      {
+        "table_label": "Timing Code Legend",
+        "table_description": "Defines timing codes 1-6 for TIL compliance",
+        "useful_for_downstream": false,
+        "reason": "Standard legend table"
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for staking inserts or tooling",
+      "No MLI references found",
+      "No specific operating hour or start count thresholds provided"
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To inform operators of the limitations of traditional means of axial retention (peening/staking) for compressor stage 0 rotor blades (ROs) resulting from successive R0 change-outs"
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL is considered complete when the biscuit modification has been installed."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "GE recommends this modification to any operator planning to change RO blades for the third or greater time, if the modification has not previously been applied."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "For 7F and 9F units: The UH of the inlet bellmouth must be jacked ~ 18\" off the horizontal joint or may be removed."
+      },
+      {
+        "field": "configuration_summary",
+        "snippet": "if staking locations are exhausted from all 32 R0 blades, the need to replace a single R0 blade may warrant removal of all 32 such that the modification can be conducted on the entire wheel."
+      },
+      {
+        "field": "reason_for_revision",
+        "snippet": "To update the 7F and 9F casing lifting and removal requirements."
+      }
+    ],
+    "extraction_confidence": 0.92
+  },
+  "raw_profile": "```json\n{\n  \"til_number\": \"TIL 1615-R1\",\n  \"revision\": \"R1\",\n  \"title\": \"RO COMPRESSOR BLADE AXIAL RETENTION (STAKING) ALTERNATIVES\",\n  \"publish_date\": \"2016-05-17\",\n  \"reason_for_revision\": \"To update the 7F and 9F casing lifting and removal requirements.\",\n  \"purpose\": \"To inform operators of the limitations of traditional means of axial retention (peening/staking) for compressor stage 0 rotor blades (ROs) resulting from successive R0 change-outs, and to notify users of a recommended wheel modification to apply when the traditional means of retention is no longer available. This alternative method uses replacement inserts as a staking medium that has no limitation on the number of times it can be replaced.\",\n  \"compliance_category_code\": \"M\",\n  \"compliance_category_text\": \"Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.\",\n  \"recurring_indicator_if_found\": null,\n  \"coarse_outage_type\": \"At Scheduled Component Part Repair or Replacement\",\n  \"scope_of_work\": [\n    \"For 6F units: Removal of the UH inlet bellmouth is required\",\n    \"For 7F and 9F units: The UH of the inlet bellmouth must be jacked ~18\\\" off the horizontal joint or may be removed\",\n    \"Machining of FSS R0 dovetail slots (1x to 32x depending on scope) for the staking inserts\",\n    \"R0 removal/installation and staking performed by blade technicians from a GE Service Center\",\n    \"Estimated duration is 3-4 shifts\",\n    \"Two milling technicians from GE certified repair shop per shift\",\n    \"One NDT technician needed per shift\",\n    \"One Field Engineer and scaffolding crew (three craft laborers) needed\",\n    \"Turning gear/rotating fixture operator (dedicated person) needed\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"Apply replacement staking insert modification to any operator planning to change R0 blades for the third or greater time, if the modification has not previously been applied\",\n    \"Modification should be performed in conjunction with the planned R0 change-out, or at a suitable maintenance opportunity preceding this\",\n    \"Depending on scope and unit conditions, all blades in the stage may need to be removed for tooling access\",\n    \"Do not use pressure face staking marks or blade platform flow path surface staking as alternative staking locations - these are no longer recommended\",\n    \"Contact GE Services representative to initiate the CM&U process for R0 wheel modification\"\n  ],\n  \"completion_criteria_text\": \"This TIL is considered complete when the biscuit modification has been installed.\",\n  \"maintenance_trigger_text\": \"Third or greater replacement of the R0 blades, when traditional staking locations on the Forward Stub Shaft are exhausted.\",\n  \"recommended_interval_or_trigger\": [\n    \"At Scheduled Component Part Repair or Replacement (Timing Code 5)\",\n    \"Third or greater R0 blade replacement\"\n  ],\n  \"usage_counters_to_check_or_consider\": [],\n  \"usage_counter_requirements_text\": null,\n  \"frame_or_model_applicability_text\": \"All commissioned F-class gas turbines (6F, 7F, 9F)\",\n  \"combustion_or_fuel_configuration_text\": null,\n  \"hardware_or_part_configuration_text\": \"Compressor stage 0 rotor blades (R0), Forward Stub Shaft (FSS), R0 dovetail slots, replaceable staking inserts\",\n  \"serial_or_unit_applicability_text\": null,\n  \"exclusions_or_non_applicable_conditions_text\": \"Modification is usually needed on the third or greater replacement of the R0 blades; units that have not yet exhausted traditional staking locations may not require this modification.\",\n  \"required_prior_modifications_text\": null,\n  \"prerequisite_outage_or_inspection_context_text\": \"Modification should be performed in conjunction with the planned R0 change-out, or at a suitable maintenance opportunity preceding this. For 7F and 9F units, inlet bellmouth must be jacked ~18\\\" or removed. For 6F units, inlet bellmouth must be removed.\",\n  \"sbom_dependency_flag\": false,\n  \"sbom_trigger_reason\": null,\n  \"mli_numbers\": [],\n  \"parts_referenced\": [\n    {\n      \"part_number\": null,\n      \"context\": \"Replaceable staking inserts installed in wheel slots for R0 axial retention - contact local GE Service Representative for parts\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Page 4, Parts section\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Controlled milling machinery and special milling fixtures required for accurate drilling of pockets; dual-staking tool for proper staking geometry and placement - provided by GE Service Center technicians\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Page 4, Special Tooling section\"\n    }\n  ],\n  \"reference_documents\": [],\n  \"configuration_dependent\": true,\n  \"configuration_variables\": [\n    \"F-class frame type (6F, 7F, 9F)\",\n    \"Number of prior R0 blade replacements\",\n    \"Number of R0 blades requiring modification (1x to 32x)\"\n  ],\n  \"configuration_summary\": \"The scope of work differs by frame type: 6F units require inlet bellmouth removal, while 7F and 9F units require the inlet bellmouth to be jacked ~18\\\" or removed. The modification is applicable when traditional staking locations are exhausted, typically after two prior R0 replacements. If staking locations are exhausted from all 32 R0 blades, replacing a single R0 blade may warrant removal of all 32 for the modification.\",\n  \"severity_signals\": [\n    \"Compliance Category M - Maintenance\",\n    \"Traditional staking methods no longer recommended\",\n    \"Alternative staking locations (pressure face, platform flow path) no longer recommended practice\"\n  ],\n  \"failure_consequences\": [\n    \"Loss of axial retention for compressor stage 0 rotor blades if traditional staking locations are exhausted and no alternative is applied\",\n    \"Reduced equipment reliability if interim staking methods (pressure face or platform flow path) are used instead of the recommended insert modification\"\n  ],\n  \"risk_summary\": \"If traditional staking locations on the Forward Stub Shaft are exhausted after successive R0 blade replacements and the recommended insert modification is not applied, there is risk of inadequate axial retention of compressor R0 blades. Previously used alternative staking locations (pressure face and platform flow path surface) are no longer recommended.\",\n  \"safety_or_damage_language_found\": false,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"Compliance Category Legend\",\n      \"table_description\": \"Defines M, C, A, S compliance categories\",\n      \"useful_for_downstream\": false,\n      \"reason\": \"Standard legend table, does not contain unit-specific operational data\"\n    },\n    {\n      \"table_label\": \"Timing Code Legend\",\n      \"table_description\": \"Defines timing codes 1-6 for TIL compliance\",\n      \"useful_for_downstream\": false,\n      \"reason\": \"Standard legend table\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific part numbers provided for staking inserts or tooling\",\n    \"No MLI references found\",\n    \"No specific operating hour or start count thresholds provided\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"purpose\",\n      \"snippet\": \"To inform operators of the limitations of traditional means of axial retention (peening/staking) for compressor stage 0 rotor blades (ROs) resulting from successive R0 change-outs\"\n    },\n    {\n      \"field\": \"completion_criteria_text\",\n      \"snippet\": \"This TIL is considered complete when the biscuit modification has been installed.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"GE recommends this modification to any operator planning to change RO blades for the third or greater time, if the modification has not previously been applied.\"\n    },\n    {\n      \"field\": \"scope_of_work\",\n      \"snippet\": \"For 7F and 9F units: The UH of the inlet bellmouth must be jacked ~ 18\\\" off the horizontal joint or may be removed.\"\n    },\n    {\n      \"field\": \"configuration_summary\",\n      \"snippet\": \"if staking locations are exhausted from all 32 R0 blades, the need to replace a single R0 blade may warrant removal of all 32 such that the modification can be conducted on the entire wheel.\"\n    },\n    {\n      \"field\": \"reason_for_revision\",\n      \"snippet\": \"To update the 7F and 9F casing lifting and removal requirements.\"\n    }\n  ],\n  \"extraction_confidence\": 0.92\n}\n```"
+}

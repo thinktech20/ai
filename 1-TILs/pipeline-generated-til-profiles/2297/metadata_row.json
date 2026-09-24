@@ -1,0 +1,351 @@
+{
+  "document_id": "til 2297 - flared 7f & 9f pre-enhanced compressor r1 blade recommendations",
+  "unique_key": "2297__bb2988a221610c1dce18f0718e4a88f567476e2729192fa682ff731a3ad6620e",
+  "source_path": "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 2297 - FLARED 7F & 9F PRE-ENHANCED COMPRESSOR R1 BLADE RECOMMENDATIONS.pdf",
+  "source_hash": "bb2988a221610c1dce18f0718e4a88f567476e2729192fa682ff731a3ad6620e",
+  "source_system": "databricks_volume",
+  "requested_til_number": "2297",
+  "matched_til_number": "2297",
+  "match_type": "pdf_name_match",
+  "parser_method": "databricks_ai",
+  "parser_name": "databricks_ai",
+  "parser_version": "v1",
+  "profile_found": true,
+  "parsed_profile_json": {
+    "til_number": "2297",
+    "revision": null,
+    "title": "FLARED 7F & 9F PRE-ENHANCED COMPRESSOR R1 BLADE RECOMMENDATIONS",
+    "publish_date": "2021-08-02",
+    "reason_for_revision": null,
+    "purpose": "To purpose of this TIL is to inform affected users of the risk of R1 tip cracks, or tip corner liberations and to provide recommendations to help improve unit availability and reliability.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Repair",
+    "scope_of_work": [
+      "Inspection and maintenance scope per the listed reference documents in the field.",
+      "Compressor rotor unstack and R1 blade replacement at repair shop."
+    ],
+    "service_recommendation_line_items": [
+      "Follow the operational and maintenance best practices to avoid or limit the likelihood of heavy tip rubs as described in TIL 1509.",
+      "During planned or annual borescope inspections, monitor the R1 blade tips for indications of rubs and evidence of corrosion pitting.",
+      "If R1 tip rubs are identified, or if R1 tips had previously rubbed or repaired, or if the rotor has previously operated with or currently operating with uniform spaced S0 and S1 vanes, perform a non-destructive inspection (NDI) of all R1 blades as described in TIL 1509.",
+      "If new R1 tip rubs or indications are identified, or if R1 tip indications are repaired, perform repeat R1 tip NDI per the schedule described in TIL 1509.",
+      "Consider installing a full set of enhanced R1 blades whenever the unit rotor is sent to a GE repair shop and scope requires unstacking the compressor rotor.",
+      "Optionally, consider unstacking the compressor rotor to replace the R1 blades at the next opportunity the unit rotor is sent to a GE repair shop.",
+      "Until the full set of R1 blades are replaced, continue with the operation, maintenance, and inspection guidelines per this TIL and TIL 1509."
+    ],
+    "completion_criteria_text": "This TIL can be considered complete when the above recommendations are incorporated into the site's maintenance planning practices, or when the full set of R1 blades are replaced.",
+    "maintenance_trigger_text": "Applicable to flared 7F and 9F gas turbines operating with pre-enhanced (standard) rotor stage-1 (R1) blades that meet any of the following criteria: prior R1 tip rubs/tip indications/tip corner loss/tip repairs; currently operating with or previously operated with uniform spaced S0 and S1 vanes; visible signs of corrosion pitting in the forward compressor.",
+    "recommended_interval_or_trigger": [
+      "During planned or annual borescope inspections, monitor the R1 blade tips for indications of rubs and evidence of corrosion pitting.",
+      "If new R1 tip rubs or indications are identified, or if R1 tip indications are repaired, perform repeat R1 tip NDI per the schedule described in TIL 1509."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "starts"
+    ],
+    "usage_counter_requirements_text": "It could take several start-stop cycles following the rub event before an indication is identified.",
+    "frame_or_model_applicability_text": "Applicable to flared 7F and 9F gas turbines operating with pre-enhanced (standard) rotor stage-1 (R1) blades.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Pre-enhanced (standard) rotor stage-1 (R1) blades; higher risk noted for units with current or previous operation with uniform spaced S0 and S1 vanes; recommendation to replace with enhanced R1 blades (full airfoil shot-peened).",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "During planned or annual borescope inspections; NDI per TIL 1509; enhanced R1 blade replacement when unit rotor is sent to a GE repair shop and scope requires unstacking the compressor rotor.",
+    "sbom_dependency_flag": false,
+    "sbom_trigger_reason": null,
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Enhanced R1 blades (full airfoil shot-peened) recommended for installation when rotor is sent to a GE repair shop and scope requires unstacking the compressor rotor.",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts; RECOMMENDATIONS (enhanced R1 blades discussion)"
+      },
+      {
+        "part_number": null,
+        "context": "Borescope tool, and fluorescent penetrant inspection or red dye penetrant inspection consumables for in-situ inspections per TIL 1509.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "PLANNING INFORMATION > Special Tooling"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1509",
+        "document_type": "TIL",
+        "context": "Referenced for R1 tip distress mechanism description, operational/maintenance best practices, and NDI/inspection scope and schedule."
+      },
+      {
+        "document_number": "TIL 1638",
+        "document_type": "TIL",
+        "context": "Referenced regarding R1 dovetail ultrasonic testing scope being eliminated by installing enhanced R1 blades; listed as reference document."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Pre-enhanced (standard) rotor stage-1 (R1) blades vs enhanced R1 blades",
+      "Current or previous operation with uniform spaced S0 and S1 vanes",
+      "History of R1 tip rubs / tip indications / tip corner loss / tip repairs",
+      "Visible signs of corrosion pitting in the forward compressor"
+    ],
+    "configuration_summary": "Recommendations apply to flared 7F/9F units with pre-enhanced R1 blades meeting specific risk criteria (prior rub/repair/indications, uniform spaced S0/S1 vane operation history, and/or forward compressor corrosion pitting).",
+    "severity_signals": [
+      "R1 blade tip crack",
+      "tip corner loss / liberated tip corner",
+      "visible signs of corrosion pitting in the forward compressor",
+      "heat affected zone, up to .100\" deep, at the blade tip",
+      "considerable distress to the downstream compressor section"
+    ],
+    "failure_consequences": [
+      "The liberated R1 tip corners resulted in considerable distress to the downstream compressor section.",
+      "Owing to the extent of distress, the compressor rotor required replacement.",
+      "Multiple stator vanes were also replaced as a part of unit rebuild activities."
+    ],
+    "risk_summary": "Risk of R1 tip cracks and tip corner liberations; investigation concluded cracking initiated due to combined effect of degraded material properties at the blade tip from prior rubs and corrosion pitting, and previous operation with uniform spaced S0 and S1 vanes.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance category definitions (M/C/A/S)",
+        "table_description": "Defines Maintenance, Compliance Required, Alert, and Safety compliance categories.",
+        "useful_for_downstream": false,
+        "reason": "General legend/definitions; does not provide equipment-specific actions or intervals."
+      },
+      {
+        "table_label": "Timing code definitions (1-6)",
+        "table_description": "Defines timing codes including 'At Scheduled Component Part Repair or Replacement' for code 5.",
+        "useful_for_downstream": false,
+        "reason": "General legend/definitions; does not provide TIL-specific interval beyond the timing code already stated."
+      }
+    ],
+    "missing_information_flags": [
+      "No explicit NDI method(s) (e.g., FPI/ECI/UT) specified for the R1 blade NDI in this TIL; it defers to TIL 1509.",
+      "No part numbers provided for enhanced R1 blades or any replacement hardware.",
+      "No explicit inspection interval/schedule details provided in this TIL for repeat R1 tip NDI; it defers to TIL 1509."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To purpose of this TIL is to inform affected users of the risk of R1 tip cracks, or tip corner liberations and to provide recommendations to help improve unit availability and reliability."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "During planned or annual borescope inspections, monitor the R1 blade tips for indications of rubs and evidence of corrosion pitting."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If R1 tip rubs are identified, or if R1 tips had previously rubbed or repaired, or if the rotor has previously operated with or currently operating with uniform spaced S0 and S1 vanes, perform a non-destructive inspection (NDI) of all R1 blades as described in TIL 1509."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If new R1 tip rubs or indications are identified, or if R1 tip indications are repaired, perform repeat R1 tip NDI per the schedule described in TIL 1509."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "The liberated R1 tip corners resulted in considerable distress to the downstream compressor section."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Owing to the extent of distress, the compressor rotor required replacement. Multiple stator vanes were also replaced as a part of unit rebuild activities."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "The investigation concluded that the R1 tip cracking initiated due to the combined effect of degraded material properties at the blade tip from prior rubs and corrosion pitting, and previous operation with uniform spaced S0 and S1 vanes."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be considered complete when the above recommendations are incorporated into the site's maintenance planning practices, or when the full set of R1 blades are replaced."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Enhanced R1 blades, in case of part replacement at repair shop."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Borescope tool, and fluorescent penetrant inspection or red dye penetrant inspection consumables for in-situ inspections per TIL 1509."
+      },
+      {
+        "field": "usage_counter_requirements_text",
+        "snippet": "it could take several start-stop cycles following the rub event before an indication is identified."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "raw_profile_json": {
+    "til_number": "2297",
+    "revision": null,
+    "title": "FLARED 7F & 9F PRE-ENHANCED COMPRESSOR R1 BLADE RECOMMENDATIONS",
+    "publish_date": "2021-08-02",
+    "reason_for_revision": null,
+    "purpose": "To purpose of this TIL is to inform affected users of the risk of R1 tip cracks, or tip corner liberations and to provide recommendations to help improve unit availability and reliability.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Repair",
+    "scope_of_work": [
+      "Inspection and maintenance scope per the listed reference documents in the field.",
+      "Compressor rotor unstack and R1 blade replacement at repair shop."
+    ],
+    "service_recommendation_line_items": [
+      "Follow the operational and maintenance best practices to avoid or limit the likelihood of heavy tip rubs as described in TIL 1509.",
+      "During planned or annual borescope inspections, monitor the R1 blade tips for indications of rubs and evidence of corrosion pitting.",
+      "If R1 tip rubs are identified, or if R1 tips had previously rubbed or repaired, or if the rotor has previously operated with or currently operating with uniform spaced S0 and S1 vanes, perform a non-destructive inspection (NDI) of all R1 blades as described in TIL 1509.",
+      "If new R1 tip rubs or indications are identified, or if R1 tip indications are repaired, perform repeat R1 tip NDI per the schedule described in TIL 1509.",
+      "Consider installing a full set of enhanced R1 blades whenever the unit rotor is sent to a GE repair shop and scope requires unstacking the compressor rotor.",
+      "Optionally, consider unstacking the compressor rotor to replace the R1 blades at the next opportunity the unit rotor is sent to a GE repair shop.",
+      "Until the full set of R1 blades are replaced, continue with the operation, maintenance, and inspection guidelines per this TIL and TIL 1509."
+    ],
+    "completion_criteria_text": "This TIL can be considered complete when the above recommendations are incorporated into the site's maintenance planning practices, or when the full set of R1 blades are replaced.",
+    "maintenance_trigger_text": "Applicable to flared 7F and 9F gas turbines operating with pre-enhanced (standard) rotor stage-1 (R1) blades that meet any of the following criteria: prior R1 tip rubs/tip indications/tip corner loss/tip repairs; currently operating with or previously operated with uniform spaced S0 and S1 vanes; visible signs of corrosion pitting in the forward compressor.",
+    "recommended_interval_or_trigger": [
+      "During planned or annual borescope inspections, monitor the R1 blade tips for indications of rubs and evidence of corrosion pitting.",
+      "If new R1 tip rubs or indications are identified, or if R1 tip indications are repaired, perform repeat R1 tip NDI per the schedule described in TIL 1509."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "starts"
+    ],
+    "usage_counter_requirements_text": "It could take several start-stop cycles following the rub event before an indication is identified.",
+    "frame_or_model_applicability_text": "Applicable to flared 7F and 9F gas turbines operating with pre-enhanced (standard) rotor stage-1 (R1) blades.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Pre-enhanced (standard) rotor stage-1 (R1) blades; higher risk noted for units with current or previous operation with uniform spaced S0 and S1 vanes; recommendation to replace with enhanced R1 blades (full airfoil shot-peened).",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "During planned or annual borescope inspections; NDI per TIL 1509; enhanced R1 blade replacement when unit rotor is sent to a GE repair shop and scope requires unstacking the compressor rotor.",
+    "sbom_dependency_flag": false,
+    "sbom_trigger_reason": null,
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Enhanced R1 blades (full airfoil shot-peened) recommended for installation when rotor is sent to a GE repair shop and scope requires unstacking the compressor rotor.",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts; RECOMMENDATIONS (enhanced R1 blades discussion)"
+      },
+      {
+        "part_number": null,
+        "context": "Borescope tool, and fluorescent penetrant inspection or red dye penetrant inspection consumables for in-situ inspections per TIL 1509.",
+        "required_inspection_types": [
+          "FPI"
+        ],
+        "source_location": "PLANNING INFORMATION > Special Tooling"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1509",
+        "document_type": "TIL",
+        "context": "Referenced for R1 tip distress mechanism description, operational/maintenance best practices, and NDI/inspection scope and schedule."
+      },
+      {
+        "document_number": "TIL 1638",
+        "document_type": "TIL",
+        "context": "Referenced regarding R1 dovetail ultrasonic testing scope being eliminated by installing enhanced R1 blades; listed as reference document."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Pre-enhanced (standard) rotor stage-1 (R1) blades vs enhanced R1 blades",
+      "Current or previous operation with uniform spaced S0 and S1 vanes",
+      "History of R1 tip rubs / tip indications / tip corner loss / tip repairs",
+      "Visible signs of corrosion pitting in the forward compressor"
+    ],
+    "configuration_summary": "Recommendations apply to flared 7F/9F units with pre-enhanced R1 blades meeting specific risk criteria (prior rub/repair/indications, uniform spaced S0/S1 vane operation history, and/or forward compressor corrosion pitting).",
+    "severity_signals": [
+      "R1 blade tip crack",
+      "tip corner loss / liberated tip corner",
+      "visible signs of corrosion pitting in the forward compressor",
+      "heat affected zone, up to .100\" deep, at the blade tip",
+      "considerable distress to the downstream compressor section"
+    ],
+    "failure_consequences": [
+      "The liberated R1 tip corners resulted in considerable distress to the downstream compressor section.",
+      "Owing to the extent of distress, the compressor rotor required replacement.",
+      "Multiple stator vanes were also replaced as a part of unit rebuild activities."
+    ],
+    "risk_summary": "Risk of R1 tip cracks and tip corner liberations; investigation concluded cracking initiated due to combined effect of degraded material properties at the blade tip from prior rubs and corrosion pitting, and previous operation with uniform spaced S0 and S1 vanes.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance category definitions (M/C/A/S)",
+        "table_description": "Defines Maintenance, Compliance Required, Alert, and Safety compliance categories.",
+        "useful_for_downstream": false,
+        "reason": "General legend/definitions; does not provide equipment-specific actions or intervals."
+      },
+      {
+        "table_label": "Timing code definitions (1-6)",
+        "table_description": "Defines timing codes including 'At Scheduled Component Part Repair or Replacement' for code 5.",
+        "useful_for_downstream": false,
+        "reason": "General legend/definitions; does not provide TIL-specific interval beyond the timing code already stated."
+      }
+    ],
+    "missing_information_flags": [
+      "No explicit NDI method(s) (e.g., FPI/ECI/UT) specified for the R1 blade NDI in this TIL; it defers to TIL 1509.",
+      "No part numbers provided for enhanced R1 blades or any replacement hardware.",
+      "No explicit inspection interval/schedule details provided in this TIL for repeat R1 tip NDI; it defers to TIL 1509."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To purpose of this TIL is to inform affected users of the risk of R1 tip cracks, or tip corner liberations and to provide recommendations to help improve unit availability and reliability."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "During planned or annual borescope inspections, monitor the R1 blade tips for indications of rubs and evidence of corrosion pitting."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If R1 tip rubs are identified, or if R1 tips had previously rubbed or repaired, or if the rotor has previously operated with or currently operating with uniform spaced S0 and S1 vanes, perform a non-destructive inspection (NDI) of all R1 blades as described in TIL 1509."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If new R1 tip rubs or indications are identified, or if R1 tip indications are repaired, perform repeat R1 tip NDI per the schedule described in TIL 1509."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "The liberated R1 tip corners resulted in considerable distress to the downstream compressor section."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Owing to the extent of distress, the compressor rotor required replacement. Multiple stator vanes were also replaced as a part of unit rebuild activities."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "The investigation concluded that the R1 tip cracking initiated due to the combined effect of degraded material properties at the blade tip from prior rubs and corrosion pitting, and previous operation with uniform spaced S0 and S1 vanes."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be considered complete when the above recommendations are incorporated into the site's maintenance planning practices, or when the full set of R1 blades are replaced."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Enhanced R1 blades, in case of part replacement at repair shop."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Borescope tool, and fluorescent penetrant inspection or red dye penetrant inspection consumables for in-situ inspections per TIL 1509."
+      },
+      {
+        "field": "usage_counter_requirements_text",
+        "snippet": "it could take several start-stop cycles following the rub event before an indication is identified."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "extracted_document_method": "databricks_ai",
+  "extracted_text_char_count": 13796,
+  "extracted_table_count": 2,
+  "extraction_confidence": 0.78,
+  "llm_model": "azure-gpt-5-2",
+  "metadata_status": "completed",
+  "metadata_retry_count": 0,
+  "chunk_status": null,
+  "chunk_retry_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ingest_ts": "2026-07-05 00:17:55.485394",
+  "metadata_processed_ts": "2026-07-05 00:17:55.485987",
+  "chunk_processed_ts": null,
+  "run_id": "til_p1_20260704_235852_30f3ba3a"
+}

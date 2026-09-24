@@ -1,0 +1,120 @@
+document_id,unique_key,source_path,source_hash,source_system,requested_til_number,matched_til_number,match_type,parser_method,parser_name,parser_version,profile_found,parsed_profile_json,raw_profile_json,extracted_document_method,extracted_text_char_count,extracted_table_count,extraction_confidence,llm_model,metadata_status,metadata_retry_count,chunk_status,chunk_retry_count,error_code,error_message,ingest_ts,metadata_processed_ts,chunk_processed_ts,run_id
+til 1945-r2 - f-class turbine wheel inspection and maintenance recommendations,1945-R2__132e4798d3db71bf7017eba04ab61c1e9d7fa14b37d0adbcb8c7638157fd4925,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1945-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf,132e4798d3db71bf7017eba04ab61c1e9d7fa14b37d0adbcb8c7638157fd4925,databricks_volume,1945-R2,1945-R2,pdf_name_match,databricks_ai,databricks_ai,v1,false,null,null,databricks_ai,40000,8,0,gemini-3-flash,llm_parse_failed,0,null,0,null,LLM returned no parseable profile,2026-06-26T05:20:23.375Z,2026-06-26T05:37:23.064Z,null,til_p1_20260626_053348_c2e611d7
+til 2284 - f-class balance weight groove entry slot recommendations,2284__d6501670396d0ae787f545a387376f53dc377c483c4e7968b90f4273b47726fb,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 2284 - F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS.pdf,d6501670396d0ae787f545a387376f53dc377c483c4e7968b90f4273b47726fb,databricks_volume,2284,2284,pdf_name_match,databricks_ai,databricks_ai,v1,true,"{""til_number"": ""TIL 2284"", ""revision"": null, ""title"": ""F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS"", ""publish_date"": ""2021-05-05"", ""reason_for_revision"": null, ""purpose"": ""To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations."", ""compliance_category_code"": ""S"", ""compliance_category_text"": ""Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time."", ""recurring_indicator_if_found"": null, ""coarse_outage_type"": ""HGP or Major Inspection"", ""scope_of_work"": [""FPI to inspect BWG entry slot pre-blending condition"", ""Set up BWG Entry Slot tool and perform blending operation"", ""FPI to inspect BWG entry slot post-blending condition"", ""Flapper peen the modified geometry post machining and post machining successful FPI""], ""service_recommendation_line_items"": [""Perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned HGP or MI."", ""Evaluate all balance entry slot corner conditions with replication process if FPI is clear."", ""Perform entry slot blending, FPI, and peening operations if any balance weight entry slot corner condition presents with a <0.060\"" fillet size."", ""Contact GE engineering through an ER case for technical disposition if observable FPI indications are found."", ""Leave in as-found condition if fillet is > 0.060\"" and uniform over full length.""], ""completion_criteria_text"": ""This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified."", ""maintenance_trigger_text"": ""Next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time."", ""recommended_interval_or_trigger"": [""Next planned HGP or Major Inspection"", ""Before rotor reaches 378,000 equivalent cold rotor turning time (ECRT)""], ""usage_counters_to_check_or_consider"": [""Turning Gear Time (T_TG)"", ""Number of Fired Starts (S_FS)"", ""Number of Forced Cool Downs (S_FC)"", ""Forced Cool Time (T_FC)"", ""Number of Cool Starts (S_WC)"", ""Number of Offline Water Washes (S_WW)""], ""usage_counter_requirements_text"": ""Equivalent Cold Rotor Turning (ECRT) hours must be calculated using specific formulas for Path #1 (recorded data) or Path #2 (assumptions). The limit is 378,000 ECRT hours."", ""frame_or_model_applicability_text"": ""6F, 7F, and 9F Heavy Duty Gas Turbines."", ""combustion_or_fuel_configuration_text"": null, ""hardware_or_part_configuration_text"": ""Compressor aft shaft (CAS) and distance piece (DP) containing balance weight groove (BWG) entry slots."", ""serial_or_unit_applicability_text"": null, ""exclusions_or_non_applicable_conditions_text"": ""Fillet > 0.060\"" and uniformly this size over full length of the BWG entry slot corner \u2013 leave in as-found condition."", ""required_prior_modifications_text"": null, ""prerequisite_outage_or_inspection_context_text"": ""Timing Code 4: At First Exposure of Component."", ""sbom_dependency_flag"": true, ""sbom_trigger_reason"": ""Requires verification of specific hardware features (BWG entry slot fillet size) and calculation of ECRT based on unit-specific operational history and frame factors."", ""mli_numbers"": [], ""parts_referenced"": [{""part_number"": null, ""context"": ""Compressor Aft Shaft (CAS)"", ""required_inspection_types"": [""FPI""], ""source_location"": ""RECOMMENDATIONS""}, {""part_number"": null, ""context"": ""Distance Piece (DP)"", ""required_inspection_types"": [""FPI""], ""source_location"": ""RECOMMENDATIONS""}], ""reference_documents"": [{""document_number"": ""GER-3620"", ""document_type"": ""Other"", ""context"": ""Definition of cooler starts (warm 2 and cold starts)""}], ""configuration_dependent"": true, ""configuration_variables"": [""Frame Size (6F, 7F, 9F)"", ""Unit Type (Simple Cycle vs Combined Cycle)"", ""Operational History (Starts, TG hours, Water Washes)""], ""configuration_summary"": ""The calculation of Equivalent Cold Rotor Turning (ECRT) time is dependent on the frame size (X factor: 7FA/9FA=24, 6FA=18), unit type (Y factor: SC=72, CC=86), and specific operational counters like forced cool downs and water washes."", ""severity_signals"": [""Compliance Category - S"", ""Timing Code - 4"", ""INJURY TO PERSONNEL/INDIVIDUALS"", ""substantial damage to adjacent equipment""], ""failure_consequences"": [""Fracture propagation leading to CAS and/or DP separation into two pieces"", ""Components exiting the gas turbine"", ""Injury to personnel"", ""Substantial damage to adjacent equipment""], ""risk_summary"": ""Crack-like indications may form in the corner of balance weight groove entry slots due to machining variations and operational stresses. If not mitigated, these can propagate via high cycle fatigue (gravity sag bending) leading to rotor separation."", ""safety_or_damage_language_found"": true, ""tables_found_summary"": [{""table_label"": ""ECRT Calculation Factors"", ""table_description"": ""Table providing example values for T_TG, S_FS, S_FC, X, T_FC, S_WC, Y, and S_WW for a 7FA.03 unit."", ""useful_for_downstream"": true, ""reason"": ""Provides the specific factors and example calculation for the ECRT limit.""}], ""missing_information_flags"": [], ""source_snippets"": [{""field"": ""maintenance_trigger_text"", ""snippet"": ""at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time.""}, {""field"": ""failure_consequences"", ""snippet"": ""Separation of either shaft into two pieces may create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment.""}], ""extraction_confidence"": 0.98}","{
+  ""til_number"": ""TIL 2284"",
+  ""revision"": null,
+  ""title"": ""F-CLASS BALANCE WEIGHT GROOVE ENTRY SLOT RECOMMENDATIONS"",
+  ""publish_date"": ""2021-05-05"",
+  ""reason_for_revision"": null,
+  ""purpose"": ""To advise users of the recommendation to inspect compressor aft shaft (CAS) and distance piece (DP) balance weight groove entry slots corner and perform blending operations."",
+  ""compliance_category_code"": ""S"",
+  ""compliance_category_text"": ""Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time."",
+  ""recurring_indicator_if_found"": null,
+  ""coarse_outage_type"": ""HGP or Major Inspection"",
+  ""scope_of_work"": [
+    ""FPI to inspect BWG entry slot pre-blending condition"",
+    ""Set up BWG Entry Slot tool and perform blending operation"",
+    ""FPI to inspect BWG entry slot post-blending condition"",
+    ""Flapper peen the modified geometry post machining and post machining successful FPI""
+  ],
+  ""service_recommendation_line_items"": [
+    ""Perform fluorescent penetrant inspection (FPI) for all BWG entry slots on the CAS and DP during the next planned HGP or MI."",
+    ""Evaluate all balance entry slot corner conditions with replication process if FPI is clear."",
+    ""Perform entry slot blending, FPI, and peening operations if any balance weight entry slot corner condition presents with a <0.060\"" fillet size."",
+    ""Contact GE engineering through an ER case for technical disposition if observable FPI indications are found."",
+    ""Leave in as-found condition if fillet is > 0.060\"" and uniform over full length.""
+  ],
+  ""completion_criteria_text"": ""This TIL may be considered complete after completion of the FPI/MPI inspection and the CAS and DP geometry is modified."",
+  ""maintenance_trigger_text"": ""Next planned outage for the unit Hot Gas Path (HGP) or Major Inspection (MI) at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time."",
+  ""recommended_interval_or_trigger"": [
+    ""Next planned HGP or Major Inspection"",
+    ""Before rotor reaches 378,000 equivalent cold rotor turning time (ECRT)""
+  ],
+  ""usage_counters_to_check_or_consider"": [
+    ""Turning Gear Time (T_TG)"",
+    ""Number of Fired Starts (S_FS)"",
+    ""Number of Forced Cool Downs (S_FC)"",
+    ""Forced Cool Time (T_FC)"",
+    ""Number of Cool Starts (S_WC)"",
+    ""Number of Offline Water Washes (S_WW)""
+  ],
+  ""usage_counter_requirements_text"": ""Equivalent Cold Rotor Turning (ECRT) hours must be calculated using specific formulas for Path #1 (recorded data) or Path #2 (assumptions). The limit is 378,000 ECRT hours."",
+  ""frame_or_model_applicability_text"": ""6F, 7F, and 9F Heavy Duty Gas Turbines."",
+  ""combustion_or_fuel_configuration_text"": null,
+  ""hardware_or_part_configuration_text"": ""Compressor aft shaft (CAS) and distance piece (DP) containing balance weight groove (BWG) entry slots."",
+  ""serial_or_unit_applicability_text"": null,
+  ""exclusions_or_non_applicable_conditions_text"": ""Fillet > 0.060\"" and uniformly this size over full length of the BWG entry slot corner – leave in as-found condition."",
+  ""required_prior_modifications_text"": null,
+  ""prerequisite_outage_or_inspection_context_text"": ""Timing Code 4: At First Exposure of Component."",
+  ""sbom_dependency_flag"": true,
+  ""sbom_trigger_reason"": ""Requires verification of specific hardware features (BWG entry slot fillet size) and calculation of ECRT based on unit-specific operational history and frame factors."",
+  ""mli_numbers"": [],
+  ""parts_referenced"": [
+    {
+      ""part_number"": null,
+      ""context"": ""Compressor Aft Shaft (CAS)"",
+      ""required_inspection_types"": [
+        ""FPI""
+      ],
+      ""source_location"": ""RECOMMENDATIONS""
+    },
+    {
+      ""part_number"": null,
+      ""context"": ""Distance Piece (DP)"",
+      ""required_inspection_types"": [
+        ""FPI""
+      ],
+      ""source_location"": ""RECOMMENDATIONS""
+    }
+  ],
+  ""reference_documents"": [
+    {
+      ""document_number"": ""GER-3620"",
+      ""document_type"": ""Other"",
+      ""context"": ""Definition of cooler starts (warm 2 and cold starts)""
+    }
+  ],
+  ""configuration_dependent"": true,
+  ""configuration_variables"": [
+    ""Frame Size (6F, 7F, 9F)"",
+    ""Unit Type (Simple Cycle vs Combined Cycle)"",
+    ""Operational History (Starts, TG hours, Water Washes)""
+  ],
+  ""configuration_summary"": ""The calculation of Equivalent Cold Rotor Turning (ECRT) time is dependent on the frame size (X factor: 7FA/9FA=24, 6FA=18), unit type (Y factor: SC=72, CC=86), and specific operational counters like forced cool downs and water washes."",
+  ""severity_signals"": [
+    ""Compliance Category - S"",
+    ""Timing Code - 4"",
+    ""INJURY TO PERSONNEL/INDIVIDUALS"",
+    ""substantial damage to adjacent equipment""
+  ],
+  ""failure_consequences"": [
+    ""Fracture propagation leading to CAS and/or DP separation into two pieces"",
+    ""Components exiting the gas turbine"",
+    ""Injury to personnel"",
+    ""Substantial damage to adjacent equipment""
+  ],
+  ""risk_summary"": ""Crack-like indications may form in the corner of balance weight groove entry slots due to machining variations and operational stresses. If not mitigated, these can propagate via high cycle fatigue (gravity sag bending) leading to rotor separation."",
+  ""safety_or_damage_language_found"": true,
+  ""tables_found_summary"": [
+    {
+      ""table_label"": ""ECRT Calculation Factors"",
+      ""table_description"": ""Table providing example values for T_TG, S_FS, S_FC, X, T_FC, S_WC, Y, and S_WW for a 7FA.03 unit."",
+      ""useful_for_downstream"": true,
+      ""reason"": ""Provides the specific factors and example calculation for the ECRT limit.""
+    }
+  ],
+  ""missing_information_flags"": [],
+  ""source_snippets"": [
+    {
+      ""field"": ""maintenance_trigger_text"",
+      ""snippet"": ""at or before the rotor reaches a total of 378,000 equivalent cold rotor turning time.""
+    },
+    {
+      ""field"": ""failure_consequences"",
+      ""snippet"": ""Separation of either shaft into two pieces may create the possibility for components to exit the gas turbine leading to the possibility for INJURY TO PERSONNEL/INDIVIDUALS and substantial damage to adjacent equipment.""
+    }
+  ],
+  ""extraction_confidence"": 0.98
+}",databricks_ai,18437,4,0.98,gemini-3-flash,completed,0,null,0,null,null,2026-06-26T05:47:03.343Z,2026-06-26T05:47:03.343Z,null,til_p1_20260626_054315_5d9adab9
+til 1937-r2 - f-class turbine wheel inspection and maintenance recommendations,1937-R2__ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1937-R2 - F-CLASS TURBINE WHEEL INSPECTION AND MAINTENANCE RECOMMENDATIONS.pdf,ee7e0717bf5ca8fafb416ef9dfaa5e79bad89d97d5e8b7f5f69a60b02216631f,databricks_volume,1937-R2,1937-R2,pdf_name_match,databricks_ai,databricks_ai,v1,false,null,null,databricks_ai,40000,8,0,gemini-3-flash,llm_parse_failed,0,null,0,null,LLM returned no parseable profile,2026-06-26T05:20:23.375Z,2026-06-26T05:47:03.343Z,null,til_p1_20260626_054315_5d9adab9
+til 1502-2r1 - 7f and 9f aft end compressor rubs,1502-2R1__c7ddcf810c8238892e38f075b8c76435d5986f612f0a1245f17ceabeeaa8d224,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1502-2R1 - 7F AND 9F AFT END COMPRESSOR RUBS.pdf,c7ddcf810c8238892e38f075b8c76435d5986f612f0a1245f17ceabeeaa8d224,databricks_volume,1502-2R1,1502-2R1,pdf_name_match,databricks_ai,databricks_ai,v1,false,null,null,databricks_ai,11412,6,0,gemini-3-flash,llm_parse_failed,0,null,0,null,LLM returned no parseable profile,2026-06-26T05:20:23.375Z,2026-06-26T05:47:03.343Z,null,til_p1_20260626_054315_5d9adab9

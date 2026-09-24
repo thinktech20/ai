@@ -1,0 +1,189 @@
+{
+  "requested_til": "1603-R2",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 1603-R2",
+    "revision": "R2",
+    "title": "R0 EROSION AND WATER INGESTION RECOMMENDATIONS",
+    "publish_date": "2019-02-12",
+    "reason_for_revision": "The reason for this revision is to improve the clarity of the recommendations regarding online water wash frequency and mold inspections for specific F-class compressor configurations.",
+    "purpose": "To advise operators of the inspection and maintenance considerations necessary to mitigate R0 erosion effects, and to inform them of a new online water wash (OnWW) system that reduces the rate of erosion in the principal area of concern. Failure to properly monitor or repair R0 erosion could result in cracking of the R0 blades and risks of compressor damage.",
+    "compliance_category_code": "C",
+    "compliance_category_text": "Compliance Required",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "At Scheduled Component Part Repair or Replacement",
+    "scope_of_work": [
+      "Perform R0 erosion quantification using mold impressions of the R0 leading-edge root location (recommended method for erosion quantification).",
+      "Perform fluorescent penetrant inspection (FPI) following mold inspections to ensure against existing cracks.",
+      "Monitor/inspect evaporative cooler systems for evidence of water carry-over (water stains, puddles, streaking, deposits, missing/damaged/misaligned filter or cycle deck material) and disposition/eliminate carry-over.",
+      "Schedule and perform recurring R0 erosion inspections (molds + FPI) based on cumulative wet inlet operation time using the Combined Wet Time formula.",
+      "If erosion approaches cracking-risk threshold, disposition may include reduced inspection interval, discontinuance of wet inlet operation, and/or leading edge blend repair by qualified GE Energy Services technicians; shot peening required post-blending.",
+      "For units operating with original OnWW system, modify per TIL 1323 and inspect erosion at regular intervals of OnWW via molds at R0 leading-edge root location.",
+      "Consider upgrade to the new/upgraded online water wash system (Gen-2) with relocated/redesigned spray nozzles; contact GE Power Services representative for upgrade information and quotation."
+    ],
+    "service_recommendation_line_items": [
+      "For current F-class units operating with the original OnWW system: modify the original online water wash system per TIL 1323, then inspect R0 erosion at regular intervals of OnWW by taking mold impressions of the R0 leading-edge root location; follow mold inspections with FPI.",
+      "Perform OnWW per guidelines to balance erosion rates and output degradation: 5 minutes per 48 Fired Hours (standard R0s + Gen-1 WW); 15 minutes per 48 Fired Hours (standard R0s + Gen-2 WW); 15 minutes per 48 Fired Hours (enhanced R0s (ECP 2, 2+3, 4, 5) + Gen-1 or Gen-2 WW).",
+      "For units utilizing fogging systems: inspect R0 blades with mold impressions and FPI at regular intervals of cumulative hours of fogger operation as defined in Combined Wet Inlet Operation.",
+      "For evaporative cooler operation: monitor for proper operation and any evidence of water carry-over; disposition and eliminate any evidence of carry-over; perform R0 erosion molds and FPI between 100 and 300 hours of cumulative operation of the evap system; repeat at this interval if carry-over is identified or as determined based on mold impressions; if no significant erosion and continually verified no carry-over, no continual R0 mold inspection is necessary.",
+      "For combined wet inlet operation: perform R0 erosion inspections (mold impressions + FPI) when cumulative wet inlet operation time reaches 100 hours per Combined Wet Time formula; following initial inspections, parameters C and D may be adjusted per GE disposition.",
+      "If measured erosion depth approaches the cracking-risk threshold (.008 inches): disposition may include reduced interval for subsequent inspection and/or discontinuance of further wet inlet operation until R0s can be blend repaired by qualified GE Energy Services technicians; perform shot peening post-blending using a qualified vendor.",
+      "Note configuration exclusions: interval recommendations do not apply to unit operation with p-cut R0 blades (erosion repairs can be performed at Major Inspection intervals or earlier as preferred); leading edge R0 inspections and molds highlighted in this TIL are no longer recommended if the unit has enhanced R0 blades.",
+      "Consider upgrading to the new/upgraded online water wash system (Gen-2) which requires no maintenance for up to 1000 cumulative hours of washing and allows daily water washing (15 minutes per 48 fired hours) with no R0 erosion maintenance necessary until the scheduled Major Inspection interval; contact GE Power Services representative for upgrade."
+    ],
+    "completion_criteria_text": "Design analysis and field experience have defined this threshold at a measured erosion depth of .008 inches.",
+    "maintenance_trigger_text": "R0 erosion inspections should include both mold impressions and FPI and should be performed when cumulative wet inlet operation time reaches 100 hours as defined by the following formula: Combined Wet Time = 4*(OnWW hours[A]) + 1*(OnWW hours[B]) + (Fogger hours[C]) + 2*(SPRITS hours[D]) + (Evap hours[E]).",
+    "recommended_interval_or_trigger": [
+      "Combined Wet Inlet Operation: perform R0 erosion inspections (FPI & molds) when cumulative wet inlet operation time reaches 100 hours per Combined Wet Time formula.",
+      "Original OLWW (Gen-1) stand-alone mold inspection interval: 23-30 hrs OnWW or annually (usage guideline: 5 min / 48 FH).",
+      "Upgraded OLWW (Gen-2) stand-alone mold inspection interval: 1000 hrs OnWW or MI's (usage guideline: 15 min / 48 FH).",
+      "Non-GE Fogging stand-alone mold inspection interval: 100 hrs fogging (may be adjusted).",
+      "GE Fogging / SPRITS stand-alone mold inspection interval: 500 hrs fogging (may be adjusted).",
+      "Evaporative Cooling: initial commissioning inspection between 100 and 300 hrs evaps; repeat if carry-over is observed; not applicable once no carry-over verified."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "operating_hours"
+    ],
+    "usage_counter_requirements_text": "Intervals are based on cumulative hours of wet inlet operation (OnWW hours, Fogger hours, SPRITS hours, Evap hours) and a calculated Combined Wet Time trigger at 100 hours: Combined Wet Time = 4*(OnWW hours[A]) + 1*(OnWW hours[B]) + (Fogger hours[C]) + 2*(SPRITS hours[D]) + (Evap hours[E]). OnWW frequency guidance is expressed per 48 Fired Hours.",
+    "sbom_dependency_flag": false,
+    "sbom_trigger_reason": null,
+    "parts_referenced": [],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1303",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1389",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL; also referenced in evaporative cooling table usage guidelines (\"TIL1285, TIL1389\")."
+      },
+      {
+        "document_number": "TIL 1400",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1401",
+        "document_type": "TIL",
+        "context": "Superseded by this TIL."
+      },
+      {
+        "document_number": "TIL 1323",
+        "document_type": "TIL",
+        "context": "Advises modification to the original online water wash system; referenced for original OnWW system modification and in Reference Documents list."
+      },
+      {
+        "document_number": "TIL 1285",
+        "document_type": "TIL",
+        "context": "Referenced for evaporative cooler maintenance and annual commissioning; included in Reference Documents list."
+      },
+      {
+        "document_number": "TIL 1399",
+        "document_type": "TIL",
+        "context": "Referenced for evaporative cooler maintenance and annual commissioning; included in Reference Documents list."
+      },
+      {
+        "document_number": "TIL 1509",
+        "document_type": "TIL",
+        "context": "R0 erosion molds and FPI can be performed concurrently with TIL 1509 inspections."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "F-class gas turbine model applicability: All F-class gas turbines excluding 6F.01, 7F.04-200 and 7F.05",
+      "OnWW system configuration: legacy/original OLWW (Gen-1) vs upgraded OLWW (Gen-2)",
+      "R0 blade type/configuration: standard R0 vs enhanced R0 blades (ECP 2, 2+3, 4, 5) vs p-cut R0 blades",
+      "Wet inlet conditioning systems present and their operating hours: fogging, SPRITS, evaporative cooling (and whether evap carry-over has been present / commissioning & maintenance status per TILs 1285 and 1399)",
+      "Fogging system type: non-GE foggers vs GE fogging/SPRITS systems"
+    ],
+    "configuration_summary": "Inspection intervals and applicability depend on wet inlet conditioning configuration (legacy vs upgraded OnWW, fogging/SPRITS, evaporative cooling carry-over/commissioning status) and R0 blade configuration (standard vs enhanced vs p-cut). Combined Wet Time weights differ by system type (A-E).",
+    "severity_signals": [
+      "compressor event forced outages",
+      "cracking of the R0 blades",
+      "possible liberation of R0 blades with potential downstream damage to the gas turbine",
+      "cracking risk threshold at a measured erosion depth of .008 inches"
+    ],
+    "failure_consequences": [
+      "cracks initiating from erosion pits at the root of the R0 airfoil",
+      "compressor damage",
+      "possible liberation of R0 blades with potential downstream damage to the gas turbine"
+    ],
+    "risk_summary": "Water ingestion and wet inlet conditioning can cause R0 leading edge erosion; erosion pits can initiate cracks at the R0 root and have resulted in compressor event forced outages. Excessive erosion can lead to cracking and possible liberation of R0 blades with downstream gas turbine damage; cracking-risk threshold is defined at .008 inches measured erosion depth.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Page 1 Table 1",
+        "table_description": "Compliance category definitions (M, C, A, S).",
+        "useful_for_downstream": true,
+        "reason": "Clarifies meaning of compliance category code shown on the TIL (\"Compliance Category - c\")."
+      },
+      {
+        "table_label": "Page 1 Table 2",
+        "table_description": "Timing code definitions (1-6), including Timing Code 5 = \"At Scheduled Component Part Repair or Replacement.\"",
+        "useful_for_downstream": true,
+        "reason": "Maps the TIL's Timing Code 5 to an outage/planning trigger."
+      },
+      {
+        "table_label": "Page 5 Table 1 (Standard R0 Inspection Guidelines for Wet Inlet Conditioning)",
+        "table_description": "System-specific usage guidelines and stand-alone mold inspection intervals for Original OLWW (Gen-1), Upgraded OLWW (Gen-2), Non-GE Fogging, GE Fogging/SPRITS, and Evaporative Cooling; includes notes about adjustability and carry-over verification.",
+        "useful_for_downstream": true,
+        "reason": "Provides the actionable inspection intervals and conditions needed to schedule molds/FPI based on wet inlet system usage."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for molding kit or Gen-2 OnWW upgrade components (only described generically).",
+      "No explicit recurring indicator field stated (e.g., 'Recurring: Yes/No').",
+      "No explicit coarse outage type field stated beyond Timing Code mapping."
+    ],
+    "source_snippets": [
+      {
+        "field": "til_number",
+        "snippet": "TIL 1603-R2"
+      },
+      {
+        "field": "publish_date",
+        "snippet": "12 FEBRUARY 2019"
+      },
+      {
+        "field": "compliance_category_code",
+        "snippet": "Compliance Category - c"
+      },
+      {
+        "field": "coarse_outage_type",
+        "snippet": "Timing Code - 5"
+      },
+      {
+        "field": "purpose",
+        "snippet": "Failure to properly monitor or repair R0 erosion could result in cracking of the R0 blades and risks of compressor damage."
+      },
+      {
+        "field": "reason_for_revision",
+        "snippet": "The reason for this revision is to improve the clarity of the recommendations regarding online water wash frequency and mold inspections for specific F-class compressor configurations."
+      },
+      {
+        "field": "maintenance_trigger_text",
+        "snippet": "R0 erosion inspections should include both mold impressions and FPI and should be performed when cumulative wet inlet operation time reaches 100 hours as defined by the following formula:\nCombined Wet Time = 4*(OnWW hours[A]) + 1*(OnWW hours[B]) + (Fogger hours[C]) + 2*(SPRITS hours[D]) +\n(Evap hours[E])"
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "Design analysis and field experience have defined this threshold at a measured erosion depth of .008 inches."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "General guidelines for OnWW duration and frequency are as follows:\n5 minutes per 48 Fired Hours, if standard R0's and the Gen-1 WW system are in place\n15 minutes per 48 Fired Hours, if standard R0's and the Gen-2 WW system are in place (available through\nCM&U)\n15 minutes per 48 Fired Hours, if enhanced R0s (ECP 2, 2+3, 4, 5) are installed with either the Gen-1 WW\nor the Gen-2 WW system"
+      },
+      {
+        "field": "configuration_dependent",
+        "snippet": "These interval recommendations do not apply to unit operation with p-cut R0 blades."
+      },
+      {
+        "field": "configuration_dependent",
+        "snippet": "The leading edge R0 inspections and molds highlighted in this TIL are no longer recommended if the unit\nhas enhanced R0 blades."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "raw_profile": "{\n  \"til_number\": \"TIL 1603-R2\",\n  \"revision\": \"R2\",\n  \"title\": \"R0 EROSION AND WATER INGESTION RECOMMENDATIONS\",\n  \"publish_date\": \"2019-02-12\",\n  \"reason_for_revision\": \"The reason for this revision is to improve the clarity of the recommendations regarding online water wash frequency and mold inspections for specific F-class compressor configurations.\",\n  \"purpose\": \"To advise operators of the inspection and maintenance considerations necessary to mitigate R0 erosion effects, and to inform them of a new online water wash (OnWW) system that reduces the rate of erosion in the principal area of concern. Failure to properly monitor or repair R0 erosion could result in cracking of the R0 blades and risks of compressor damage.\",\n  \"compliance_category_code\": \"C\",\n  \"compliance_category_text\": \"Compliance Required\",\n  \"recurring_indicator_if_found\": null,\n  \"coarse_outage_type\": \"At Scheduled Component Part Repair or Replacement\",\n  \"scope_of_work\": [\n    \"Perform R0 erosion quantification using mold impressions of the R0 leading-edge root location (recommended method for erosion quantification).\",\n    \"Perform fluorescent penetrant inspection (FPI) following mold inspections to ensure against existing cracks.\",\n    \"Monitor/inspect evaporative cooler systems for evidence of water carry-over (water stains, puddles, streaking, deposits, missing/damaged/misaligned filter or cycle deck material) and disposition/eliminate carry-over.\",\n    \"Schedule and perform recurring R0 erosion inspections (molds + FPI) based on cumulative wet inlet operation time using the Combined Wet Time formula.\",\n    \"If erosion approaches cracking-risk threshold, disposition may include reduced inspection interval, discontinuance of wet inlet operation, and/or leading edge blend repair by qualified GE Energy Services technicians; shot peening required post-blending.\",\n    \"For units operating with original OnWW system, modify per TIL 1323 and inspect erosion at regular intervals of OnWW via molds at R0 leading-edge root location.\",\n    \"Consider upgrade to the new/upgraded online water wash system (Gen-2) with relocated/redesigned spray nozzles; contact GE Power Services representative for upgrade information and quotation.\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"For current F-class units operating with the original OnWW system: modify the original online water wash system per TIL 1323, then inspect R0 erosion at regular intervals of OnWW by taking mold impressions of the R0 leading-edge root location; follow mold inspections with FPI.\",\n    \"Perform OnWW per guidelines to balance erosion rates and output degradation: 5 minutes per 48 Fired Hours (standard R0s + Gen-1 WW); 15 minutes per 48 Fired Hours (standard R0s + Gen-2 WW); 15 minutes per 48 Fired Hours (enhanced R0s (ECP 2, 2+3, 4, 5) + Gen-1 or Gen-2 WW).\",\n    \"For units utilizing fogging systems: inspect R0 blades with mold impressions and FPI at regular intervals of cumulative hours of fogger operation as defined in Combined Wet Inlet Operation.\",\n    \"For evaporative cooler operation: monitor for proper operation and any evidence of water carry-over; disposition and eliminate any evidence of carry-over; perform R0 erosion molds and FPI between 100 and 300 hours of cumulative operation of the evap system; repeat at this interval if carry-over is identified or as determined based on mold impressions; if no significant erosion and continually verified no carry-over, no continual R0 mold inspection is necessary.\",\n    \"For combined wet inlet operation: perform R0 erosion inspections (mold impressions + FPI) when cumulative wet inlet operation time reaches 100 hours per Combined Wet Time formula; following initial inspections, parameters C and D may be adjusted per GE disposition.\",\n    \"If measured erosion depth approaches the cracking-risk threshold (.008 inches): disposition may include reduced interval for subsequent inspection and/or discontinuance of further wet inlet operation until R0s can be blend repaired by qualified GE Energy Services technicians; perform shot peening post-blending using a qualified vendor.\",\n    \"Note configuration exclusions: interval recommendations do not apply to unit operation with p-cut R0 blades (erosion repairs can be performed at Major Inspection intervals or earlier as preferred); leading edge R0 inspections and molds highlighted in this TIL are no longer recommended if the unit has enhanced R0 blades.\",\n    \"Consider upgrading to the new/upgraded online water wash system (Gen-2) which requires no maintenance for up to 1000 cumulative hours of washing and allows daily water washing (15 minutes per 48 fired hours) with no R0 erosion maintenance necessary until the scheduled Major Inspection interval; contact GE Power Services representative for upgrade.\"\n  ],\n  \"completion_criteria_text\": \"Design analysis and field experience have defined this threshold at a measured erosion depth of .008 inches.\",\n  \"maintenance_trigger_text\": \"R0 erosion inspections should include both mold impressions and FPI and should be performed when cumulative wet inlet operation time reaches 100 hours as defined by the following formula: Combined Wet Time = 4*(OnWW hours[A]) + 1*(OnWW hours[B]) + (Fogger hours[C]) + 2*(SPRITS hours[D]) + (Evap hours[E]).\",\n  \"recommended_interval_or_trigger\": [\n    \"Combined Wet Inlet Operation: perform R0 erosion inspections (FPI & molds) when cumulative wet inlet operation time reaches 100 hours per Combined Wet Time formula.\",\n    \"Original OLWW (Gen-1) stand-alone mold inspection interval: 23-30 hrs OnWW or annually (usage guideline: 5 min / 48 FH).\",\n    \"Upgraded OLWW (Gen-2) stand-alone mold inspection interval: 1000 hrs OnWW or MI's (usage guideline: 15 min / 48 FH).\",\n    \"Non-GE Fogging stand-alone mold inspection interval: 100 hrs fogging (may be adjusted).\",\n    \"GE Fogging / SPRITS stand-alone mold inspection interval: 500 hrs fogging (may be adjusted).\",\n    \"Evaporative Cooling: initial commissioning inspection between 100 and 300 hrs evaps; repeat if carry-over is observed; not applicable once no carry-over verified.\"\n  ],\n  \"usage_counters_to_check_or_consider\": [\n    \"operating_hours\"\n  ],\n  \"usage_counter_requirements_text\": \"Intervals are based on cumulative hours of wet inlet operation (OnWW hours, Fogger hours, SPRITS hours, Evap hours) and a calculated Combined Wet Time trigger at 100 hours: Combined Wet Time = 4*(OnWW hours[A]) + 1*(OnWW hours[B]) + (Fogger hours[C]) + 2*(SPRITS hours[D]) + (Evap hours[E]). OnWW frequency guidance is expressed per 48 Fired Hours.\",\n  \"sbom_dependency_flag\": false,\n  \"sbom_trigger_reason\": null,\n  \"parts_referenced\": [],\n  \"reference_documents\": [\n    {\n      \"document_number\": \"TIL 1303\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by this TIL.\"\n    },\n    {\n      \"document_number\": \"TIL 1389\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by this TIL; also referenced in evaporative cooling table usage guidelines (\\\"TIL1285, TIL1389\\\").\"\n    },\n    {\n      \"document_number\": \"TIL 1400\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by this TIL.\"\n    },\n    {\n      \"document_number\": \"TIL 1401\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Superseded by this TIL.\"\n    },\n    {\n      \"document_number\": \"TIL 1323\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Advises modification to the original online water wash system; referenced for original OnWW system modification and in Reference Documents list.\"\n    },\n    {\n      \"document_number\": \"TIL 1285\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Referenced for evaporative cooler maintenance and annual commissioning; included in Reference Documents list.\"\n    },\n    {\n      \"document_number\": \"TIL 1399\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Referenced for evaporative cooler maintenance and annual commissioning; included in Reference Documents list.\"\n    },\n    {\n      \"document_number\": \"TIL 1509\",\n      \"document_type\": \"TIL\",\n      \"context\": \"R0 erosion molds and FPI can be performed concurrently with TIL 1509 inspections.\"\n    }\n  ],\n  \"configuration_dependent\": true,\n  \"configuration_variables\": [\n    \"F-class gas turbine model applicability: All F-class gas turbines excluding 6F.01, 7F.04-200 and 7F.05\",\n    \"OnWW system configuration: legacy/original OLWW (Gen-1) vs upgraded OLWW (Gen-2)\",\n    \"R0 blade type/configuration: standard R0 vs enhanced R0 blades (ECP 2, 2+3, 4, 5) vs p-cut R0 blades\",\n    \"Wet inlet conditioning systems present and their operating hours: fogging, SPRITS, evaporative cooling (and whether evap carry-over has been present / commissioning & maintenance status per TILs 1285 and 1399)\",\n    \"Fogging system type: non-GE foggers vs GE fogging/SPRITS systems\"\n  ],\n  \"configuration_summary\": \"Inspection intervals and applicability depend on wet inlet conditioning configuration (legacy vs upgraded OnWW, fogging/SPRITS, evaporative cooling carry-over/commissioning status) and R0 blade configuration (standard vs enhanced vs p-cut). Combined Wet Time weights differ by system type (A-E).\",\n  \"severity_signals\": [\n    \"compressor event forced outages\",\n    \"cracking of the R0 blades\",\n    \"possible liberation of R0 blades with potential downstream damage to the gas turbine\",\n    \"cracking risk threshold at a measured erosion depth of .008 inches\"\n  ],\n  \"failure_consequences\": [\n    \"cracks initiating from erosion pits at the root of the R0 airfoil\",\n    \"compressor damage\",\n    \"possible liberation of R0 blades with potential downstream damage to the gas turbine\"\n  ],\n  \"risk_summary\": \"Water ingestion and wet inlet conditioning can cause R0 leading edge erosion; erosion pits can initiate cracks at the R0 root and have resulted in compressor event forced outages. Excessive erosion can lead to cracking and possible liberation of R0 blades with downstream gas turbine damage; cracking-risk threshold is defined at .008 inches measured erosion depth.\",\n  \"safety_or_damage_language_found\": true,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"Page 1 Table 1\",\n      \"table_description\": \"Compliance category definitions (M, C, A, S).\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Clarifies meaning of compliance category code shown on the TIL (\\\"Compliance Category - c\\\").\"\n    },\n    {\n      \"table_label\": \"Page 1 Table 2\",\n      \"table_description\": \"Timing code definitions (1-6), including Timing Code 5 = \\\"At Scheduled Component Part Repair or Replacement.\\\"\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Maps the TIL's Timing Code 5 to an outage/planning trigger.\"\n    },\n    {\n      \"table_label\": \"Page 5 Table 1 (Standard R0 Inspection Guidelines for Wet Inlet Conditioning)\",\n      \"table_description\": \"System-specific usage guidelines and stand-alone mold inspection intervals for Original OLWW (Gen-1), Upgraded OLWW (Gen-2), Non-GE Fogging, GE Fogging/SPRITS, and Evaporative Cooling; includes notes about adjustability and carry-over verification.\",\n      \"useful_for_downstream\": true,\n      \"reason\": \"Provides the actionable inspection intervals and conditions needed to schedule molds/FPI based on wet inlet system usage.\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific part numbers provided for molding kit or Gen-2 OnWW upgrade components (only described generically).\",\n    \"No explicit recurring indicator field stated (e.g., 'Recurring: Yes/No').\",\n    \"No explicit coarse outage type field stated beyond Timing Code mapping.\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"til_number\",\n      \"snippet\": \"TIL 1603-R2\"\n    },\n    {\n      \"field\": \"publish_date\",\n      \"snippet\": \"12 FEBRUARY 2019\"\n    },\n    {\n      \"field\": \"compliance_category_code\",\n      \"snippet\": \"Compliance Category - c\"\n    },\n    {\n      \"field\": \"coarse_outage_type\",\n      \"snippet\": \"Timing Code - 5\"\n    },\n    {\n      \"field\": \"purpose\",\n      \"snippet\": \"Failure to properly monitor or repair R0 erosion could result in cracking of the R0 blades and risks of compressor damage.\"\n    },\n    {\n      \"field\": \"reason_for_revision\",\n      \"snippet\": \"The reason for this revision is to improve the clarity of the recommendations regarding online water wash frequency and mold inspections for specific F-class compressor configurations.\"\n    },\n    {\n      \"field\": \"maintenance_trigger_text\",\n      \"snippet\": \"R0 erosion inspections should include both mold impressions and FPI and should be performed when cumulative wet inlet operation time reaches 100 hours as defined by the following formula:\\nCombined Wet Time = 4*(OnWW hours[A]) + 1*(OnWW hours[B]) + (Fogger hours[C]) + 2*(SPRITS hours[D]) +\\n(Evap hours[E])\"\n    },\n    {\n      \"field\": \"completion_criteria_text\",\n      \"snippet\": \"Design analysis and field experience have defined this threshold at a measured erosion depth of .008 inches.\"\n    },\n    {\n      \"field\": \"recommended_interval_or_trigger\",\n      \"snippet\": \"General guidelines for OnWW duration and frequency are as follows:\\n5 minutes per 48 Fired Hours, if standard R0's and the Gen-1 WW system are in place\\n15 minutes per 48 Fired Hours, if standard R0's and the Gen-2 WW system are in place (available through\\nCM&U)\\n15 minutes per 48 Fired Hours, if enhanced R0s (ECP 2, 2+3, 4, 5) are installed with either the Gen-1 WW\\nor the Gen-2 WW system\"\n    },\n    {\n      \"field\": \"configuration_dependent\",\n      \"snippet\": \"These interval recommendations do not apply to unit operation with p-cut R0 blades.\"\n    },\n    {\n      \"field\": \"configuration_dependent\",\n      \"snippet\": \"The leading edge R0 inspections and molds highlighted in this TIL are no longer recommended if the unit\\nhas enhanced R0 blades.\"\n    }\n  ],\n  \"extraction_confidence\": 0.78\n}"
+}

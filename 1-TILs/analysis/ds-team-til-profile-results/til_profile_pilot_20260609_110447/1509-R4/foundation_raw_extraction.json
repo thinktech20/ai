@@ -1,0 +1,183 @@
+{
+  "status": "success",
+  "results": {
+    "1": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 1\nExtracted Text:\nGE POWER\nTIL 1509-R4\nPRODUCT SERVICE\nPublish Date: 23 SEPTEMBER 2020\nCompliance Category - c\nTiming Code - 6\nTECHNICAL INFORMATION LETTER\nF-CLASS FRONT END (R0, S0, AND R1) COMPRESSOR INSPECTIONS\nAPPLICATION\nThis TIL is applicable to all 6F, 7F, and 9F gas turbines with an 18-stage axial compressor.\nPURPOSE\nThe purpose of this TIL is to provide compressor front-end (R0, S0, R1) inspection recommendations to help improve\nunit availability and reliability.\nREASON FOR REVISION\nTo update the criteria that warrants R1 blade tip non-destructive inspections, to recommend performing the described\nnon-destructive inspections during major inspections, and to update TIL language for improved clarity.\nCOMPLIANCE CATEGORY\nM - Maintenance\nIdentifies maintenance guidelines or best practices for reliable equipment operation.\nTIMING CODE\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 1\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| c - Compliance Required | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. |\n| A Alert S Safety | Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |\n\n----------------------------------------\nTable 2:\n|  |  |\n| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |\n| 2 | At First Opportunity (next shutdown) |\n| 3 | Prior to Operation of Affected System |\n| 4 | At First Exposure of Component |\n| 5 | At Scheduled Component Part Repair or Replacement. |\n| 6 | Next Scheduled Outage |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      }
+    ],
+    "2": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 2\nExtracted Text:\nBACKGROUND DISCUSSION\nOn GE F-class units with an 18-stage compressor, the row starts with rotor stage-0 (R0) and ends with stator stage-17\n(S17). Figure 1 shows a cross-section of the F-class compressor front-end.\nTOO\nIGV\nS0\nS1\nRO\nR1\nFigure 1 - F-class compressor front-end cross-section\nSome F-class gas turbines have experienced front end compressor distress in the past. The noted distress falls into\nthree distinct categories as listed below.\n1. R0 leading edge (LE) root distress.\n2. R0 and R1 blade tip distress.\n3. S0 trailing edge (TE) distress.\nNote: Field data suggests the 6F compressor is at lower risk for front end compressor distress.\n1. R0 LE Root Distress:\nR0 LE root distress has been attributed to the following:\nObject damage, either foreign or other, leading to stress concentration.\nLE erosion from water ingestion that is not inspected or maintained per recommendations described in\nthe latest revisions of TILs 1323, 1399, 1603, 1518 and operation and maintenance (O&M) manuals. This\nTIL does not modify those recommendations.\nCorrosion pitting due to ingestion of corrosive elements through the inlet.\nOnce a crack has initiated, it propagates during the start and stop cycles of normal operation. Subsequently, the crack\ncan propagate at full speed operation due to high cycle fatigue and potentially lead to blade liberation. The liberation of\nan R0 blade from the root region can cause collateral damage to the gas turbine. Figure 2 shows examples of R0 LE\nroot distress.\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 2\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "image",
+        "content": [
+          "&, 4 eal, a es ig Ae TT"
+        ],
+        "source": "textract",
+        "page_number": 2
+      }
+    ],
+    "3": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 3\nExtracted Text:\nFigure 2 - Examples of R0 LE root distress\n2. R0 and R1 Blade Tip Distress:\nR0 and R1 blade tip distress has been attributed to the following:\nTip rubs.\nCorrosion pitting.\nDuring unit operation, the blades and rotor wheels elongate due to centrifugal forces and due to thermal expansion.\nThe blade tips can rub against the casings if the thermal growth of the casing does not match with the radial growth of\nthe rotor. The rubs are typically light but can be heavy in some conditions. Heavy tip rubs result in rolled-over metal\nburrs with potential material properties degradation. In this condition, tip cracks could initiate during start-up and shut-\ndown cycles. Subsequent starts could propagate this crack and may eventually result in a tip corner loss. A tip corner\nloss may result in a forced outage to repair the affected downstream blades. Figure 3 shows examples of tip rubs with\nrolled over metal and tip crack.\nFigure 3 - Examples of blade tip rubs with rolled over metal and tip crack\nAlthough it is expected that some rubs will occur in the normal course of operation, it is imperative to limit the number\nand magnitude of heavy tip rubs. The following factors can aggravate tip rubs.\nOverspeed trip tests: Overspeed trip tests can cause casing distortion if not performed per TIL 1345.\nImproper start-up procedures for faster start-up times: Starting the unit outside the provided control\nprocedure may lead to inadequate blade clearances. Refer to TIL 1348 for select 7F units.\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 3\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "image",
+        "content": [
+          "\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      }
+    ],
+    "4": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 4\nExtracted Text:\nOpening of turbine compartment doors during unit operation: The turbine compartment ventilation system\nregulates the casings' temperature during all aspects of unit operation. Opening the compartment doors during\nunit operation disturbs the natural convection currents, which may distort the casings.\nFluid spills on casings: Fluid spills on casings during operation can cause distortion. It is recommended that\nroutine maintenance of the piping and tubing within the turbine enclosure is performed as detailed in TIL 1579.\nFoundation distress: Improper construction of the turbine foundation or uneven settling of the earth may lead\nto turbine foundation cracks or displacement. This can lead to mechanical distortion of the gas turbine casings\nand misalignment of the rotor. It is recommended that routine inspections of the foundation for cracking and gas\nturbine support key clearances be conducted. Contact your GE Gas Power Services representative for\nassistance.\nWet operation: Visible water droplets from poorly maintained evaporative coolers or inlet foggers, or\nrainwater from poorly maintained inlet filtration systems may enter the unit and can collect and coalesce on inlet\nsurfaces causing local thermal distortion of the inlet casing and compressor casing. These systems must be\ninspected and maintained per the O&M manual recommendations.\n3. S0 TE Distress:\nS0 TE distress has been attributed to damping loss due to vane lock-up. The distress location varies from the vane\nroot to approximately 50% span. Multiple cracks may be observed on a single vane, and several vanes may be\ncracked in one unit.\nThe S0 vanes installed at the bottom-dead-centre are more likely to experience distress, however, the distress is not\nlimited to this location. The cracks are driven by starts. Figure 4 shows examples of S0 TE distress.\nFigure 4 - Examples of SO TE distress\nRECOMMENDATIONS\nThe following maintenance program is recommended to reduce the risk of front-end compressor distress. It includes\nfour types of inspections:\nVisual inspection of the R0 LE root, R0 and R1 tip, and S0 TE.\nNon-destructive inspection (NDI) of the R0 LE root.\nNDI of the R0 and R1 tip.\nNDI of the S0 TE.\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 4\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      }
+    ],
+    "5": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 5\nExtracted Text:\nFor the purposes of this TIL, NDI is considered as a red dye penetrant inspection. When florescent penetrant\ninspection (FPI) is available, it is the preferred method for R0, S0 and R1 NDI.\nFor the 7F and 9F, the above inspections can be performed in-situ through the inlet plenum without casing removal.\nFor the 6F, an NDI cannot be performed on the S0 TE, or R1 tips through the inlet. The recommended NDI frequency\nfor the 6F is at the major inspection (MI).\nTable 1 and Table 2 below describe the specific inspections and the inspection schedule depending on the\ncompressor configuration.\nTip\nSuction Side\nPressure Side\n(Opposite Side)\nLeading\nTrailing\nEdge\nEdge\nRoot\nFigure 5 - Blade nomenclature\nTable 1: Recommended inspections and schedule for 7F and 9F\n*R0 tip NDI is required per the above schedule only if the blades have experienced previous rubs.\n**R1 tip NDI is required per the above schedule if ANY of the below conditions are met:\n- R1 blades have had prior tip rubs, tip cracks, or tip loss (flared or unflared compressor).\n- Rotor has previously operated with uniform vane spacing (UVS) S0 and S1 (flared compressor only).\n- Rotor was shipped prior to 2006 (flared compressor only).\nS0 TE NDI is required only for flared compressors.\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 5\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| 7F and 9F Compressor Configuration | Visual or Borescope | R0 Root NDI | R0 Tip NDI* | R1 Tip NDI** | SO TE NDI |\n| Standard (non-enhanced) compressor | Annual | Annual | Annual | Annual | Annual |\n| Enhanced compressor package 1 | Annual | Annual | Annual | Annual | Annual |\n| Enhanced compressor package 2 | Annual | - | - | Annual | Annual |\n| Enhanced compressor package 2+, 3, 4 | Annual | - | - | Annual | - |\n| Enhanced compressor package 5 | Annual | - | - | - | - |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      }
+    ],
+    "6": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 6\nExtracted Text:\nNote: During MI, or another opportunity where the 7F or 9F compressor front-end is exposed, it is recommended the\nR0 root, R0 tip, S0 TE, and R1 tip NDI be performed, irrespective of previous findings.\nTable 2: Recommended inspections and schedule for 6F\n*S0 TE NDI is required only for flared compressors.\nNote: If the 6F compressor front-end is exposed prior to MI, it is recommended the R0 root, R0 tip, S0 TE, and R1 tip\nNDI be performed.\nIf the visual inspections or NDI identify any distress, please report them to your GE Gas Power Services representative\nfor evaluation.\n1. Visual Inspections:\nAn annual visual inspection of the compressor front end is recommended as part of the annual borescope inspection.\nVisually inspect the R0 LE root region for cracks, nicks, dents, erosion or corrosion pitting. The LE root\nregion extends 1\" above the platform, and 2\" downstream from the LE on both the pressure and suction side.\nVisually inspect the R0 and R1 blades for missing tips, corrosion pits, visible cracks, rolled over material or\nburrs, and other evidence of rubs.\nVisually inspect the S0 TE for cracks. Cracks may initiate between the root and approximately 50% span.\nNote: Care should be taken to prevent foreign material inclusion into the inlet plenum during inlet entry and closure.\nDuring the visual inspection:\nIf R0 LE root cracks are observed, perform an NDI of all R0 root locations immediately. If R0 LE root cracks\nexist and are confirmed by NDI, do not restart the unit.\nIf R0 or R1 tip corner loss is observed, perform an NDI of all R0 and R1 tips immediately. If R0 or R1\nindications exist and are confirmed by NDI, do not restart the unit. Additionally, perform a borescope inspection\nof the entire compressor at the first opportunity.\nIf S0 TE cracks are observed, perform an NDI of all S0 TE immediately. If S0 trailing edge cracks exist and\nare confirmed by NDI, do not restart the machine.\nNDI of the R0 root, R0 and R1 tip, and S0 TE may be performed in lieu of a visual inspection.\n2. NDI on standard (non-enhanced) R0 LE root:\nThe below recommendations are for standard (non-enhanced) R0 blades only. If the unit has received enhanced\ncompressor package 2, or higher, then R0 LE root NDI is not required.\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 6\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 6
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| 6F Compressor Configuration | Visual or Borescope | R0 Root NDI | R0 Tip NDI | R1 Tip NDI | SO TE NDI* |\n| Standard (non-enhanced) compressor | Annual | MI | MI | MI | MI |\n| Enhanced compressor package 1 | Annual | MI | MI | MI | MI |\n| Enhanced compressor package 2 | Annual | - | - | MI | MI |\n| Enhanced compressor package 3, 4 | Annual | - | - | MI | - |\n| Enhanced compressor package 5 | Annual | - | - | - | - |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 6
+      }
+    ],
+    "7": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 7\nExtracted Text:\nPerform a visual inspection and NDI of the R0 LE roots after the first 50 actual fired starts on the R0 blades.\nRepeat the R0 LE root NDI after an additional 25 actual fired starts from the first inspection. If an NDI cannot\nbe performed, it is recommended to perform a visual inspection every 25 fired starts until the NDI is performed.\nFollowing these initial inspections, perform annual R0 LE root NDI per schedule described in Table 1 for 7F\nand 9F, and Table 2 for 6F.\nIf R0 LE root cracks exist and are confirmed by NDI, do not restart the unit. Contact your GE Gas Power Services\nrepresentative for evaluation. Replacing the R0 blades requires lifting, or jacking the upper-half inlet casing.\n3. NDI on standard (non enhanced) R0 and R1 blade tip:\nThe below recommendations are for standard (non-enhanced) R0 and R1 blades only. If the unit has received\nenhanced compressor package 2, or higher, then R0 tip NDI is not required. If the unit has received enhanced\ncompressor package 5, then R1 tip NDI is not required.\nIf no rub indications are present on R0 or R1 blade tips on units with more than 100 total actual fired starts,\ncontinue to monitor with visual inspections.\nOn units with fewer than 100 actual fired starts perform visual or borescope inspection on R0 and R1 blade\ntips at the next planned outage after accumulating 100 actual fired starts.\nIf rubs are identified, perform an NDI of the R0 and R1 tips during first discovery and then again after 25, 50,\nand 100 actual fired starts to verify that tip cracks have not formed.\nIf rolled-over metal, burrs, cracks, or tip loss is noted, repairs should be completed at the first opportunity.\nUntil repairs are completed, an NDI of the R0 and R1 tips should be performed every 12 actual fired starts to\navoid tip corner loss. Tip grinding may be required to improve blade tip clearances to help prevent future rubs.\nFollowing the repair, a repeat NDI of the R0 and R1 tips is recommended at 25, 50, and 100 actual fired starts\nfrom the time of the repair to verify that tip cracks have not formed.\nOnce the initial inspections and, or repairs are complete, continue to perform NDI of the R0 and R1 blade\ntips per schedule described in Table 1 for 7F and 9F, and Table 2 for 6F.\nIf the unit is suspected to be in a corrosive environment and the unit is not equipped with non-uniform vane\nspacing (NUVS) S0 and S1 vanes, it is recommended to perform an NDI on the R0 and R1 blade tips every 40\nto 50 starts. Also inspect for corrosion pits and any other linear indications on the R0 and R1 blades.\nIf R0 or R1 tip indications exist and are confirmed by NDI, contact your GE Gas Power Services representative for\nevaluation.\n7F and 9F R0 blends or repairs may be performed in situ through the inlet. 7F and 9F R1 blends or repairs requires\nlifting the upper-half compressor casing. 6F R0 and R1 repairs requires lifting the upper half mid compressor casing.\n4. NDI on standard (non enhanced) SO TE:\nThe below recommendations are for flared, standard (non-enhanced) S0 vanes only. If the unit has received enhanced\ncompressor package 2+, or higher, then S0 TE NDI is not required. S0 TE NDI is also not required for unflared\ncompressors.\nPerform an NDI of the S0 vanes per schedule described in Table 1 for 7F and 9F, and Table 2 for 6F.\nThe entire trailing edge of every S0 vane should be inspected, including both pressure side and suction side.\nIf cracks are observed on any S0 TE, it is recommended the entire stage be replaced.\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 7\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 7
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 7
+      }
+    ],
+    "8": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 8\nExtracted Text:\nIf S0 TE cracks exist and are confirmed by NDI, do not restart the unit. Contact your GE Gas Power Services\nrepresentative for evaluation.\nReplacing the S0 vanes requires lifting the upper-half compressor casing.\n5. Corrosive environment concerns (all F-class compressors):\nCorrosion poses two risks to the compressor. Firstly, corrosion pitting can lead to airfoil distress. Additionally, corrosion\nbuild up at the stator ring segment may cause the vane to lock up in the ring, leading to damping loss. Evidence of a\ncorrosive environment would include but is not limited to:\nSignificantly damaged, degraded, or continually wet filter media.\nSigns of corrosion on inlet and upstream components or structure.\nVisible signs of any deposits or residue in the inlet or on the filter media.\nFleet experience has shown that cracks can initiate from corrosion pits present on airfoils. The potential for cracking is\ndependent on size, severity and location of pitting on the airfoils. If pitting or cracks are observed on any airfoils,\nplease submit inspection results to your GE Gas Power Services representative for evaluation.\nPLANNING INFORMATION\nCompliance\nCompliance Category: c\nTiming Code:\n6\nManpower Skills\nLevel Il certified blade inspector (for NDI).\nQualified confined space entry personnel.\nSpecial Tooling\nBorescope tool.\nFluorescent penetrant inspection or red dye penetrant inspection.\nRemote penetrant system for in-situ NDI of S0 and R1.\nDigital camera.\nReference Documents\nFor detailed guidelines on operating environment, installation, operation and maintenance of the inlet system and\nwater removal systems for corrosion reduction, please refer to the following documentation:\nGEK 111330: Operations and Maintenance for Inlet Filter Compartment.\nGEK 116269: Gas Turbine Inlet Air Specification.\nGEK 111331: Operation and Maintenance Recommendations for Air Evaporative Coolers.\nGEK 111332: Operations and Maintenance Recommendations for Gas Turbine Inlet Duct and Plenum.\nTIL 1622: Water Removal Systems for Corrosion Reduction.\nTIL 1518: Maintenance and Inspection Requirements for Gas Turbine Air Filter Compartments.\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 8\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 8
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 8
+      }
+    ],
+    "9": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 9\nExtracted Text:\nScope of Work\nEstimated time for inspections:\nTwo hours to complete the visual inspection after unit shutdown and completion of all safety requirements.\nOne 12-hour shift to complete NDI of R0 roots after unit shutdown and completion of all safety requirements.\nThree 12-hour shifts to complete NDI of R0 and R1 blade tips after unit shutdown and completion of all\nsafety requirements.\nTwo 12-hour shifts to complete NDI of S0 TE after unit shutdown and completion of all safety requirements.\nTIL DISPOSITION\nDisposition of TILs should be entered in local records and also in GE Power ServiceNow. Follow the below instructions for entering\nthe disposition record;\nLog into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/ using your GE SSO number and password.\nSelect \"TIL Disposition\".\nClick on the TIL for the serial number you want to update.\nChoose the most appropriate \"Disposition Status\" and enter \"Disposition Notes\".\nClick \"Save\".\nContact your local GE Services representative for assistance or for additional information\n\u00a9 2020 General Electric Company\nThe proprietary information published in this Technical Information Letter is offered to you by GE in consideration of its ongoing sales and service relationship\nwith your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your\ncontrol and ultimate responsibility for its continuing successful operation rests with you, GE specifically disclaims any responsibility for liability based on claims\nfor damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of\nwhether it is claimed that GE is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or\ndamage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary information of General\nElectric Company and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written\napproval of GE. All rights reserved.\nDate Printed: 23 SEPTEMBER 2020\n\n----------------------------------------\nEnd of Page 9\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 9
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 9
+      }
+    ]
+  }
+}

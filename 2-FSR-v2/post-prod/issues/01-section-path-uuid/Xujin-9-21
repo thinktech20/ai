@@ -1,0 +1,56 @@
+(4) in 27fa1fe0-369e-456f-b795-d9a9fc9cd52d the last 3.1 Attachments is missing, in 90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7, 6.1 Attachments and 8.1Attachments are missing. However in c9ed4e93-8408-4371-9f90-4e8641dd1ee6, 4.1 attachments are there.
+
+Xujin latest comment - "in 90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7, 6.1 Attachments and 8.1Attachments are missing" - solved
+
+(5) in 90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7, there area a lot of Generator unnumbered noise, it might comes from those "Generator flange above (mils)"
+
+Xujin latest comment - solved
+
+"like for c9ed4e93-8408-4371-9f90-4e8641dd1ee6, we are doing good in sub-report ToC detection, it successfully put them under section 6, although ideally it should be put under 6.1/"
+Xujin latest comment  - did not affect the sub-report detection here in c9ed4e93-8408-4371-9f90-4e8641dd1ee6
+subreport headers still under 6, with ##, not under 6.1 with ###
+
+(1) OUTAGE DETAILS and all Summary section (1 Summary) in body context is missing: c9ed4e93-8408-4371-9f90-4e8641dd1ee6. "2 Technical" missing in 27fa1fe0-369e-456f-b795-d9a9fc9cd52d
+ 
+p.s.: 1.2 Executive Summary is detected successfully, only 1 Summary is not there
+Xujin latest comment - remains (still exist)
+ 
+(2) c9ed4e93-8408-4371-9f90-4e8641dd1ee6: the 5 PIPO section got ##, which falls into the  a wrong hierarchy.  In 90d2b6a7-0f1e-4b2c-98c1-d7d9f254a5c7 section "7 PIPO" also got ##, not sure if it is caused by after attachments, or caused by PIPO itself
+Page 283 | SECTION_HDR  | lvl= 0 | conf= 78 | Gas Turbine    | ESN: (fallback)   | "4 Quality Checkpoint (QCP)"
+
+  Page 284 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 4.1 Attachments"
+
+  Page 297 | SECTION_HDR  | lvl= 0 | conf= 78 | Gas Turbine    | ESN: (fallback)   | "## 5 PIPO"
+
+  Page 298 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 299 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 300 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 301 | SUBSEC       | lvl= 1 | conf= 75 | Gas Turbine    | ESN: (fallback)   | "## 5.1 Combustion"
+
+  Page 302 | SUBSEC       | lvl= 1 | conf= 70 | Gas Turbine    | ESN: (fallback)   | "## 5.2 Hot Gas Path"
+ 
+
+ Xujin latest comment - remains (still exist)
+
+## 2026-09-21 update
+
+The following fixes were implemented in the shared FSR v2 preprocessor and communicated to Xujin:
+
+- added narrow detection for `OUTAGE DETAILS`, `1 Summary`, and `2 Technical`
+- removed leading Markdown markers such as `##` and `###` from persisted section labels
+- fixed Turbine subsections after Generator subsections inheriting the Generator equipment type
+- retained numeric/table noise guardrails for values such as `14.00 Mils`, `10.83 Mils`, and `33.3 rps`
+- retained attachment and sub-report handling
+
+Validation completed:
+
+- all FSR v2 tests pass: `75 passed, 0 failed`
+- changed files have no diagnostics
+
+Still requiring end-to-end confirmation on the affected PDFs:
+
+- exact sub-report hierarchy, including whether local numbering should appear under the attachment heading itself
+- long-label behavior through extraction, persistence, and display
