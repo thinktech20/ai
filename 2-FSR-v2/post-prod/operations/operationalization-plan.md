@@ -289,6 +289,75 @@ A dedicated audit table is recommended later if operators need long-term reporti
 6. Do not process overlapping active scopes concurrently; combine overlapping
 	documents into one run when both fixes are included.
 
+### Post-merge dev verification corpus
+
+After the repair code is merged and deployed to the dev bundle, use a new
+candidate table and new `run_id` for this exact ten-document verification
+scope. Do not reuse the smoke-test run ID.
+
+### Dev deployment verified 2026-09-24
+
+ICD created both expected jobs in the dev workspace using
+`dev-dbr-profile`:
+
+- `PW_SDG_FSR_V2_Prepare_Repair_Scope` — job ID `661313870227575`
+- `PW_SDG_FSR_V2_Document_Repair` — job ID `58807500594750`
+
+The scope-preparation job contains the expected DDL bootstrap followed by
+scope population task. The document-repair job contains the regular FSRv2
+metadata, chunking, and vector-index notebooks in dependency order, with the
+canonical `FSR_V2_REPAIR_*` parameters. The completed Xujin run is recorded
+below.
+
+```text
+42944a96-6210-4f8a-ba54-fa1d5cd2a29b_605015096-47162-152296-Final_Master_Report
+768c7c3f-b8f2-4603-8f4a-f5c5a4e0976f_605001793-17435-297129-Final_Master_Report
+00f23784-d121-4595-b61d-49d223253a05_605011513-188120-198090-Final_Master_Report
+153595df-646d-410b-8ee5-371fa057c1f4_212369717-36105-SY0048243-Final_Master_Report
+d72f404c-7d35-49e9-a341-40266e687652_605010863-54129-875064-Final_Master_Report
+93c2180b-f866-4521-b090-b88442c6dcf1_204006084-2510-297422-Final_Master_Report
+9ecb1354-1f3a-4634-8a74-12943aff45a9_605003354-23849-298081-Final_Master_Report.pdf
+8ff5a231-c213-4441-b4ed-e39ed1988c8d_605030072-50465-298364-Final_Master_Report.pdf
+af693a98-1e5c-499d-aa10-cccc54885c64
+796f4d53-a8ad-42e1-af4d-53a8add2e1a4
+017bd409-e1e7-4080-bbd4-09e1e7e08008
+```
+
+Run sequence after deployment:
+
+1. Confirm the two repair jobs are present in dev and the merged notebooks are deployed.
+2. Run `PW_SDG_FSR_V2_Prepare_Repair_Scope` with `REPAIR_DRY_RUN=true` and review resolved, missing, duplicate, and source-path counts.
+3. Run the same preparation job with a new `run_id` and `REPAIR_DRY_RUN=false`.
+4. Run `PW_SDG_FSR_V2_Document_Repair` with the new `run_id`, first in dry-run mode and then apply mode.
+5. Verify P1/P2/P3 scope statuses, metadata profile/strategy, before/after fingerprints, rollback artifacts, stale-chunk replacement, and DQ warnings.
+6. For final-master-report documents, verify Components/Appendix attribution, page-fallback settings/reasons, and representative retrieval results.
+7. Do not run P3 against the real dev index unless the scope uses the approved dev chunk source and the index-sync impact has been reviewed.
+
+### Xujin Dev end-to-end run completed 2026-09-24
+
+The ten-document Xujin corpus was executed through the deployed Dev jobs with
+run ID `xujin-dev-apply-20260924`:
+
+- preparation dry run: `132732281081245` - succeeded
+- preparation apply: `654189125001659` - succeeded
+- document repair dry run: `747069254649341` - succeeded
+- document repair apply: `691758332012210` - succeeded
+
+Final scope result:
+
+- 10/10 documents: `p1_status=completed`, `p2_status=completed`, `p3_status=completed`
+- 10/10 documents: `rollback_status=available`
+- all three repair tasks succeeded: metadata, chunking, and vector-index sync
+- actual profiles: 8 `final_master_report`, 2 `shared`
+- actual strategies: 8 `components_labels_and_appendix_fallback`, 2 `shared_section_preprocessor`
+- replacement chunks written: 361
+- overwrite audit rows: 10 with `check_name=p1_target_overwrite`
+- rollback snapshots: 1 metadata snapshot and 4 chunk snapshot groups recorded for the run
+
+The run used the real Dev repair scope table and real Dev FSRv2 metadata/chunk
+tables. The source-resolved missing metadata targets were inserted through the
+regular P1 MERGE, then chunked and synchronized through the regular P2/P3 path.
+
 ### Phase 3: Controlled broader rollout
 
 1. Load the approved document population into a new scope run.
@@ -319,6 +388,46 @@ Use the same approved document list and a new environment-specific scope table/r
 4. **QA dry run:** copy only the approved scope IDs into the QA scope table under a new run ID; review counts before writes.
 5. **QA apply and checks:** repeat the apply and validation sequence; stop if QA shows unexplained metadata or retrieval drift.
 6. **Promotion decision:** retain the scope and audit rows from both environments; do not reuse a completed `run_id`.
+
+### Dev smoke test completed 2026-09-24
+
+The first three-document smoke test was executed in the dev sandbox using the
+`dev-dbr-profile` and user-owned `ms_test_*` metadata, chunk, equipment-map, and
+DQ tables. The deployed repair jobs were not used because the current
+`fsr_v2` branch is not deployed to the dev bundle; bundle deployment is
+currently blocked by existing Databricks job permissions. The sandbox ran the
+same notebooks referenced by the two new jobs.
+
+Test documents:
+
+- `5b688732-39f2-48d2-a887-3239f258d28b`
+- `fcb1511e-596a-4a56-b151-1e596afa569c`
+- `35803273-2440-4d36-87fe-e45f7f0e5467_605011422-40815-270T483-Final_Master_Report.pdf`
+
+Test scope and candidate objects:
+
+- candidate table: `vaid.ai_sot_field_service_report.ms_test_fsr_repair_candidates_20260924`
+- scope table: `vaid.ai_sot_field_service_report.ms_test_fsr_v2_repair_scope_20260924`
+- rollback table: `vaid.ai_sot_field_service_report.ms_test_fsr_v2_repair_rollback_20260924`
+- apply run ID: `repair-smoke-apply-20260924`
+
+Results:
+
+- scope preparation dry run succeeded: run `366815487130806`
+- scope preparation apply succeeded: run `120446913866720`
+- regular P1 repair succeeded after correcting the P1 claim-ID correlation: run `431102360897622`
+- all three P1 scope rows completed
+- three metadata snapshots and `279` chunk snapshot rows were captured
+- three `p1_target_overwrite` DQ warnings were written
+- regular P2 repair succeeded: run `755630577236348`
+- all three P2 scope rows completed and metadata `chunk_status` returned to `completed`
+- replacement chunk counts were `162`, `110`, and `6`
+- P3 repair dry-run guard succeeded: run `234127829810543`
+
+Actual P3 synchronization remains pending until a user-owned dev Vector Search
+index is provisioned for the `ms_test_fsr_chunks_v2` source. The real dev index
+must not be used for this smoke test because it is not isolated from the test
+chunk table.
 
 ## Acceptance checks
 

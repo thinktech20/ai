@@ -1,0 +1,67 @@
+Throwing some findings here, will re-organize them later if needed
+ 
+(1) MIssing context: in 00f23784-d121-4595-b61d-49d223253a05:
+<image>
+Page 4, this 1.3 Work Scope is missing in body text
+<image (1)>
+This Page 6 is also missing in body text. Other pages in this document are missing as well.
+
+ 
+This is some general behavior, in 153595df-646d-410b-8ee5-371fa057c1f4, there are nothing in the chunk table after ToC, but there are actually some text, for example:
+<image (2)>
+ 
+But I see this type of title in chunk text in  93c2180b-f866-4521-b090-b88442c6dcf1, so I believe its not because we are removing some header or footers, its more about we are missing some pages
+<image (3)>
+ 
+(2) Section-based/recursive chunking question: in 00f23784-d121-4595-b61d-49d223253a05, the section 1-5 are null, but the chunks do not have overlap. Wondering if it is doing section based chunking or recursive fall back.
+ 
+Similar issue for other documents, they seems to be chunked by section, but there are not section 1-5 information. There is another general weird fact, the section headers appears at the end of each chunk_text in these reports:  for example in 42944a96-6210-4f8a-ba54-fa1d5cd2a29b:
+<image (4)>
+ 
+(3) Generator ESN not added: In 00f23784-d121-4595-b61d-49d223253a05, there are only one Turbine ESN, but actually this document does not contain labels in Components section, so should go to page fallback, and it does have "generator"x12 in text, but Generator ESN is not added to gen_esn or active_esn. By the way, in metadata table, the primary equipment type for this document is actually generator.
+ 
+Also in d72f404c-7d35-49e9-a341-40266e687652, there is a Generator header in Component section, but no Generator ESN was added
+ 
+(4) For 153595df-646d-410b-8ee5-371fa057c1f4, there are no record in metadata_v2 (similar for 42944a96-6210-4f8a-ba54-fa1d5cd2a29b), but there are records in chunk_v2, also, 4.14 is missing, but page 658 is here, again in final master report parsing report, the page number comes first and the section tiltle comes next, so it is something like 658/n, 4.14xxx. Maybe this is why we missed the last section header
+ 
+<image (5)>
+(5) In 42944a96-6210-4f8a-ba54-fa1d5cd2a29b, the all the STEAM TURBINE - sections in body text did not assign to steam turbine, but assigned to shared, also, part of the ToC was assigned to Steam Turbine. 
+ 
+Zhou, Xujin (GE Vernova)
+(1) MIssing context: in 00f23784-d121-4595-b61d-49d223253a05: 📷 Page 4, this 1.3 Work Scope is missing in body text 📷 This Page 6 is also missing in body text. Other pages in this document are miss…
+Similarly In 93c2180b-f866-4521-b090-b88442c6dcf1
+<image (6)>
+<image (7)>
+And the weird thing is there are a 2.43 generator chunk assigned to page 558
+ 
+Zhou, Xujin (GE Vernova)
+(5) In 42944a96-6210-4f8a-ba54-fa1d5cd2a29b, the all the STEAM TURBINE - sections in body text did not assign to steam turbine, but assigned to shared, also, part of the ToC was assigned to Steam Tur…
+However, in 93c2180b-f866-4521-b090-b88442c6dcf1, the region_primary_equip_type tagging is working, I see shared for UNCATEGORIZED, GT for GT, Gen for Gen. However, region_primary_esn are missing
+ 
+(6) In 9ecb1354-1f3a-4634-8a74-12943aff45a9, here is an expected mistake caused by bad example:
+<image (8)>
+this GENERATOR  label do not have that "GENERATOR -"
+I think we can either ignore this unless we observed a lot of these cases
+ 
+============================
+Separately, for 36UUID twos:
+(1) Most of the vertical words issue are fixed except: The FROMs, which I think should be fine. Also,  there are some chunks that the front section header is in one line, but at the end there is another vertical section header for the next chunk, but in next chunk, this vertical headers are in one line already. Feels like this vertical one at the end of the previous chunk should be deleted if possible (also acceptable if that's not possible)
+<image (9)><image (10)>
+(2) the section based chunking and recursive fall back is working, but the recursive threshold feels too short for me, i see DC leakage test report be separated into two chunks. Lets X1.5 the recursive chunk size threshold, and X1.5 the overlap in case we cut the data table into two chunks
+<image (11)>
+(3) the section path issue: All others are correct, but all the section 1 is a "generator" in this document, which we'd better to fix, otherwise we can just in system prompt, say something like, always follow the larger section header information when conflict
+ 
+Zhou, Xujin (GE Vernova)
+(6) In 9ecb1354-1f3a-4634-8a74-12943aff45a9, here is an expected mistake caused by bad example: 📷 this GENERATOR  label do not have that "GENERATOR -" I think we can either ignore this unless we obs…
+Explored a little and here is the information:
+ 
+Standard format: GENERATOR - <subsection>, Irregular format: GENERATOR ASSEMBLED,
+ 
+GENERATOR ASSEMBLED: Found in 338 documents, most dominant one
+GENERATOR EXCITATION: 167 documents
+GENERATOR ALIGNMENT: 100 documents
+GENERATOR COOLERS: 24 documents
+GENERATOR VISUAL: 4 documents
+ 
+Seems that we can just add those five to Generator labels detection in Component section, even in the case where there are no other regular label format like "Gas Turbine -", and if we detected a GENERATOR ASSEMBLED section header and add generator esn to the esn list, assign the chunk to shared, its not conflicting
+ 
