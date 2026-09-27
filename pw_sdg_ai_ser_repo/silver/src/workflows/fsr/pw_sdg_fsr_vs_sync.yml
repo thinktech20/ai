@@ -1,0 +1,44 @@
+resources:
+  jobs:
+
+    # ── FSR Vector Search Sync (scheduled + on-demand) ────────────────────
+    # Standalone job that triggers a sync of the FSR VS index from its
+    # configured source chunk table. Does NOT touch chunk or metadata tables.
+    # Use cases:
+    #   • Daily scheduled safety-net sync
+    #   • Manual catch-up after backfill if end-of-job sync was missed
+    #   • Recovery if the chunking job's sync step fails or bails
+    #   • On-demand operational sync without re-running ingestion
+    PW_SDG_FSR_VS_Sync:
+      name: PW_SDG_FSR_VS_Sync
+
+      tasks:
+        - task_key: vs_sync
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/etl/nb_sdg_fsr_vs_sync
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      # Daily scheduled sync — safety net independent of P2's in-pipeline trigger.
+      # VS sync must run more often than the source chunk table's
+      # delta.deletedFileRetentionDuration (set to 30 days in nb_sdg_fsr_ddl.py;
+      # Databricks default is 7 days). Daily run keeps interval << retention.
+      # Slot: 11:00 ET — comfortably after the Airflow-side FSR ingestion DAG
+      # completes (P1 metadata + P2 chunks) so the safety-net sync sees the
+      # day's new commits. Confirm with the Airflow team before changing.
+      schedule:
+        quartz_cron_expression: "0 0 11 * * ?"
+        timezone_id: "America/New_York"
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: FSR_VS_ENDPOINT
+          default: ${var.fsr_vs_endpoint}
+        - name: FSR_VS_INDEX
+          default: ${var.fsr_vs_index}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

@@ -1,0 +1,36 @@
+resources:
+  jobs:
+
+    # ── FSR v2 P3: vector index create/sync (independent) ──────────────────
+    PW_SDG_FSR_V2_VS_Index:
+      name: PW_SDG_FSR_V2_VS_Index
+
+      tasks:
+        - task_key: vector_index_sync_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/vs/src/etl/nb_sdg_fsr_v2_index
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+
+        - name: CHUNK_TABLE_V2
+          default: ${var.fsr_chunk_table_v2}
+        - name: VS_ENDPOINT_V2
+          default: ${var.fsr_vs_endpoint_v2}
+        - name: VS_INDEX_V2
+          default: ${var.fsr_vs_index_v2}
+        - name: INDEX_MODE
+          default: "sync"
+
+        - name: FSR_DATABRICKS_VERIFY_SSL
+          default: "false"
+        - name: FSR_EMBEDDING_DIMENSION
+          default: ${var.fsr_embedding_dimension}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

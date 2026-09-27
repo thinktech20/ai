@@ -1,0 +1,61 @@
+resources:
+  jobs:
+
+    # ── Process 1 (P1): TIL Metadata Extraction ──────────────────────────────
+    # Extract TIL PDFs, parse, normalize with LLM, store metadata.
+    # Parameters control scope: all discovered, or specific TIL numbers.
+    PW_SDG_TIL_P1_Metadata:
+      name: PW_SDG_TIL_P1_Metadata
+
+      tasks:
+        - task_key: til_metadata_extraction
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_til_metadata
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: TIL_CATALOG
+          default: ${var.til_catalog}
+        - name: TIL_SCHEMA
+          default: ${var.til_schema}
+        - name: TIL_METADATA_TABLE
+          default: ${var.til_metadata_table}
+        - name: TIL_ELEMENTS_TABLE
+          default: ${var.til_elements_table}
+        - name: TIL_CHUNKS_TABLE
+          default: ${var.til_chunks_table}
+        - name: TIL_VALIDATION_RESULTS_TABLE
+          default: ${var.til_validation_results_table}
+        - name: TIL_PIPELINE_RUN_AUDIT_TABLE
+          default: ${var.til_pipeline_run_audit_table}
+        - name: TIL_EVALUATION_RESULTS_TABLE
+          default: ${var.til_evaluation_results_table}
+        - name: TIL_SOURCE_VOLUME_PATHS
+          default: ${var.til_source_volume_paths}
+        - name: PARSER_METHOD
+          default: "foundation"
+        - name: TIL_P1_MAX_PDFS
+          default: ""
+        - name: TIL_P1_TARGET_PDF_NAMES
+          default: ${var.til_p1_target_pdf_names}
+        - name: TIL_P1_BATCH_SIZE
+          default: "10"
+        - name: TIL_LLM_CONCURRENCY
+          default: "2"
+        - name: TIL_P1_MAX_RETRIES
+          default: "2"
+        # LLM gateway (FSR-aligned: same vars as ${var.litellm_*})
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+
+      tags:
+        domain: til
+        process: p1
+        environment: ${var.jb_env}

@@ -1,0 +1,67 @@
+resources:
+  jobs:
+
+    # ── Metadata backfill (manual, bulk P1) ──────────────────────────────
+    # P1 only — run for large initial loads or re-extractions.
+    PW_SDG_FSR_Metadata_Backfill:
+      name: PW_SDG_FSR_Metadata_Backfill
+
+      tasks:
+        - task_key: metadata_extraction
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_fsr_metadata
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: FORCE_RESET
+          default: "false"
+        - name: FSR_METADATA_TABLE
+          default: ${var.fsr_metadata_table}
+        - name: FSR_CHUNK_TABLE
+          default: ${var.fsr_chunk_table}
+        - name: FSR_RUN_LOG_TABLE
+          default: ${var.fsr_run_log_table}
+        - name: FSR_DQ_LOG_TABLE
+          default: ${var.fsr_dq_log_table}
+        - name: FSR_VS_ENDPOINT
+          default: ${var.fsr_vs_endpoint}
+        - name: FSR_VS_INDEX
+          default: ${var.fsr_vs_index}
+        - name: FSR_SOURCE_VOLUME_PATHS
+          default: ${var.fsr_source_volume_paths}
+        - name: FSR_MAX_PDFS
+          default: ""
+        - name: FSR_TARGET_PDF_NAMES
+          default: ""
+        - name: FSR_BATCH_SIZE
+          default: "4"
+        - name: FSR_PDF_EXTRACT_WORKERS
+          default: "16"
+        - name: FSR_LLM_CONCURRENCY
+          default: "3"
+        - name: FSR_LLM_CONCURRENCY_MAX
+          default: "6"
+        - name: FSR_BATCH_THREADS
+          default: "4"
+        - name: FSR_BATCH_THREADS_START
+          default: "2"
+        - name: FSR_BATCH_THREAD_RAMP_SECONDS
+          default: "10"
+        - name: FSR_MAX_RETRIES
+          default: "3"
+        - name: FSR_P1_COMMIT_BATCH
+          default: "500"
+        - name: FSR_P1_LLM_DELAY
+          default: "0"
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

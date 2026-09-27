@@ -1,0 +1,62 @@
+resources:
+  jobs:
+
+    # ── FSR v2 P2: chunking and embedding (independent) ────────────────────
+    PW_SDG_FSR_V2_Chunking:
+      name: PW_SDG_FSR_V2_Chunking
+
+      tasks:
+        - task_key: chunking_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/etl/nb_sdg_fsr_v2_chunks
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+
+        - name: METADATA_TABLE_V2
+          default: ${var.fsr_metadata_table_v2}
+        - name: CHUNK_TABLE_V2
+          default: ${var.fsr_chunk_table_v2}
+        - name: RUN_LOG_TABLE_V2
+          default: ${var.fsr_run_log_table_v2}
+        - name: FSR_P2_BATCH_SIZE
+          default: ${var.fsr_p2_batch_size}
+        - name: FSR_P2_MAX_ITERATIONS
+          default: ${var.fsr_p2_max_iterations}
+        - name: FSR_P2_MAX_RETRIES
+          default: ${var.fsr_p2_max_retries}
+        - name: FSR_EMBEDDING_MODEL
+          default: ${var.fsr_embedding_model}
+        - name: FSR_CHUNK_SIZE
+          default: ${var.fsr_chunk_size}
+        - name: FSR_CHUNK_OVERLAP
+          default: ${var.fsr_chunk_overlap}
+        - name: FSR_MIN_CHUNK_SIZE
+          default: ${var.fsr_min_chunk_size}
+        - name: FSR_EMBED_BATCH_SIZE
+          default: ${var.fsr_embed_batch_size}
+        - name: FSR_P2_EMBED_CONCURRENCY
+          default: ${var.fsr_p2_embed_concurrency}
+        - name: FSR_EMBED_FAIL_THRESHOLD
+          default: ${var.fsr_embed_fail_threshold}
+        - name: FSR_STALE_CLAIM_MINUTES
+          default: ${var.fsr_stale_claim_minutes}
+        - name: FSR_MERGE_STRATEGY
+          default: ${var.fsr_merge_strategy}
+        - name: FSR_REGION_ATTRIBUTION_METHOD
+          default: ${var.fsr_region_attribution_method}
+
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

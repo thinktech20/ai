@@ -1,0 +1,54 @@
+resources:
+  jobs:
+
+    # ── ESN Backfill — Tier 3 LLM ESN Frequency Analysis ──────────────────
+    # Re-processes all completed docs to find ESNs not captured by fsr_pdf_ref.
+    # Uses LLM frequency analysis (DS team method) to qualify ESNs.
+    # Resume-capable: skips docs with esn_detect_status=completed.
+    # Run in batches (FSR_BACKFILL_LIMIT); re-trigger until all docs done.
+    PW_SDG_FSR_ESN_Backfill:
+      name: PW_SDG_FSR_ESN_Backfill
+
+      max_concurrent_runs: 1
+
+      tasks:
+        - task_key: esn_backfill
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/etl/nb_sdg_fsr_esn_backfill
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: FSR_METADATA_TABLE
+          default: ${var.fsr_metadata_table}
+        - name: FSR_CHUNK_TABLE
+          default: ${var.fsr_chunk_table}
+        - name: FSR_PDF_REF_VIEW
+          default: ${var.fsr_pdf_ref_view}
+        - name: DRY_RUN
+          default: "true"
+        - name: FSR_BACKFILL_LIMIT
+          default: "100"
+        - name: FSR_BACKFILL_RESET
+          default: "false"
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+        - name: FSR_ESN_DETECT_ENABLED
+          default: "true"
+        - name: FSR_ESN_LLM_MODEL
+          default: "gemini-3-flash"
+        - name: FSR_ESN_MIN_COUNT
+          default: "5"
+        - name: FSR_ESN_MIN_FRACTION
+          default: "0.10"
+        - name: FSR_LLM_VERIFY_SSL
+          default: "false"
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

@@ -1,0 +1,35 @@
+resources:
+  jobs:
+    jb_fsr_adhoc_script_bronze:
+      name: jb_fsr_adhoc_script_bronze
+      email_notifications:
+        on_success:
+          - service.globalopsfsso@ge.com
+        on_failure:
+          - service.globalopsfsso@ge.com
+      tasks:
+        - task_key: tsk_fsr_adhoc_script_bronze
+          notebook_task:
+            notebook_path: ${var.filename_param}/bronze/src/etl/ddl-adhoc-script
+            base_parameters:
+              filename: ${var.filename_param}/bronze/src/ddl/nb_doc_metadata_field_sevice_report_ddl,${var.filename_param}/bronze/src/ddl/nb_doc_metadata_manual_field_service_report_ddl,${var.filename_param}/bronze/src/ddl/nb_doc_metadata_spec_boroscope_insp_field_service_report_ddl
+            source: WORKSPACE
+          job_cluster_key: Job_cluster
+      job_clusters:
+        - job_cluster_key: Job_cluster
+          new_cluster:
+            cluster_name: ""
+            spark_version: 13.3.x-scala2.12
+            instance_pool_id: ${var.instance_pool_id}
+            policy_id: ${var.policy_id}
+            driver_instance_pool_id: ${var.driver_instance_pool_id}
+            data_security_mode: USER_ISOLATION
+            runtime_engine: STANDARD
+            autoscale:
+              min_workers: 1
+              max_workers: 4
+      queue:
+        enabled: true
+      run_as:
+        user_name: service.globalopsfsso@ge.com
+        

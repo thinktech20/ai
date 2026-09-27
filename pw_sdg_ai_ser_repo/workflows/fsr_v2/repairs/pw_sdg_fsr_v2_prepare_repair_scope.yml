@@ -1,0 +1,51 @@
+resources:
+  jobs:
+
+    # Validates and populates the repair manifest. This job never writes
+    # fsr_metadata_v2, fsr_chunks_v2, embeddings, or the vector index.
+    PW_SDG_FSR_V2_Prepare_Repair_Scope:
+      name: PW_SDG_FSR_V2_Prepare_Repair_Scope
+      max_concurrent_runs: 1
+
+      tasks:
+        - task_key: create_repair_scope_table
+          notebook_task:
+            notebook_path: ${var.filename_param}/ddls/fsr_v2/nb_sdg_fsr_v2_repair_scope_ddl
+            source: WORKSPACE
+
+        - task_key: prepare_repair_scope
+          depends_on:
+            - task_key: create_repair_scope_table
+          notebook_task:
+            notebook_path: ${var.filename_param}/validation/fsr_v2/nb_sdg_fsr_v2_prepare_repair_scope
+            source: WORKSPACE
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: REPAIR_SCOPE_TABLE
+          default: ${var.fsr_v2_repair_scope_table}
+        - name: REPAIR_CANDIDATE_TABLE
+          default: ${var.fsr_v2_repair_candidate_table}
+        - name: REPAIR_RUN_ID
+          default: ""
+        - name: REPAIR_REASON
+          default: ""
+        - name: EXPECTED_PREPROCESSOR_PROFILE
+          default: ""
+        - name: PAGE_FALLBACK_ENABLED
+          default: ""
+        - name: PAGE_FALLBACK_VERSION
+          default: ""
+        - name: REQUESTED_BY
+          default: ""
+        - name: REPAIR_DRY_RUN
+          default: "true"
+        - name: METADATA_TABLE_V2
+          default: ${var.fsr_metadata_table_v2}
+
+      queue:
+        enabled: true
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

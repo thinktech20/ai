@@ -1,0 +1,29 @@
+resources:
+  jobs:
+
+    # Manual one-time migration job. Deploy to QA/prod, run dry-run first, then
+    # explicitly set RECLAIM_DRY_RUN=false to return legacy filtered rows to P1.
+    PW_SDG_FSR_V2_Reclaim_Date_Filtered:
+      name: PW_SDG_FSR_V2_Reclaim_Date_Filtered
+
+      tasks:
+        - task_key: reclaim_date_filtered
+          notebook_task:
+            notebook_path: ${var.filename_param}/repairs/fsr_v2/nb_fsr_v2_reclaim_date_filtered
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: METADATA_TABLE_V2
+          default: ${var.fsr_metadata_table_v2}
+        - name: RECLAIM_DRY_RUN
+          default: "true"
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

@@ -1,0 +1,26 @@
+{
+resources:
+  jobs:
+    jb_ehs_driver_csot:
+      name: jb_ehs_driver_csot
+      tasks:
+        - task_key: tsk_ehs_driver_csot
+          notebook_task:
+            notebook_path: /Repos/EHS/gp_ehs_repo/silver/src/etl/nb_ehs_driver_csot
+            source: WORKSPACE
+          existing_cluster_id: 1218-125227-572cdjwi
+          email_notifications:
+            on_success:
+              - prabakar.veerappan@ge.com
+              - biswajit.routray@ge.com
+            on_failure:
+              - prabakar.veerappan@ge.com
+              - biswajit.routray@ge.com
+      git_source:
+        git_url: https://github.build.ge.com/vernova-gp-dbr/gp_ehs_repo/tree/feature_f36122_s1_p2/silver/src/workflows
+        git_provider: gitHubEnterprise
+        git_branch: feature_f36122_s1_p2
+      queue:
+        enabled: true
+
+}

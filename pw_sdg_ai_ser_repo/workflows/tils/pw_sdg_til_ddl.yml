@@ -1,0 +1,44 @@
+resources:
+  jobs:
+
+    # ── TIL Pipeline DDL Setup (one-time, or re-run for schema updates) ────
+    # Creates all core pipeline tables with idempotent CREATE TABLE IF NOT EXISTS.
+    # Safe to run multiple times; no destructive operations.
+    PW_SDG_TIL_DDL:
+      name: PW_SDG_TIL_DDL
+      
+      tasks:
+        - task_key: create_til_tables
+          notebook_task:
+            notebook_path: ${var.filename_param}/ddls/tils/nb_til_pipeline_ddl
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: TIL_CATALOG
+          default: ${var.til_catalog}
+        - name: TIL_SCHEMA
+          default: ${var.til_schema}
+        - name: TIL_METADATA_TABLE
+          default: ${var.til_metadata_table}
+        - name: TIL_ELEMENTS_TABLE
+          default: ${var.til_elements_table}
+        - name: TIL_CHUNKS_TABLE
+          default: ${var.til_chunks_table}
+        - name: TIL_VALIDATION_RESULTS_TABLE
+          default: ${var.til_validation_results_table}
+        - name: TIL_EVALUATION_RESULTS_TABLE
+          default: ${var.til_evaluation_results_table}
+        - name: TIL_PIPELINE_RUN_AUDIT_TABLE
+          default: ${var.til_pipeline_run_audit_table}
+        - name: TIL_PROFILE_TABLE
+          default: ${var.til_profile_table}
+
+      tags:
+        domain: til
+        purpose: ddl
+        environment: ${var.jb_env}

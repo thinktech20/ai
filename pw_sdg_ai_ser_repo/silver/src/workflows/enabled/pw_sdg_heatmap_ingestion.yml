@@ -1,0 +1,81 @@
+resources:
+  jobs:
+
+    # ── Heatmap Embedding Pipeline ───────────────────────────────────────
+    # DDL → Ingestion (extract+embed+write) → Validate
+    #
+    # Source: vgpp.fsr_std_views.fsr_unit_risk_matrix_view (managed by DBR team)
+    # Target: HEATMAP_EMBEDDING_TABLE (issue_prompt embeddings)
+    PW_SDG_Heatmap_Ingestion:
+      name: PW_SDG_Heatmap_Ingestion
+
+      tasks:
+        - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/ddl/nb_sdg_heatmap_ddl
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+        - task_key: ingestion
+          depends_on:
+            - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_heatmap_ingestion
+            source: WORKSPACE
+          timeout_seconds: 7200
+
+        - task_key: validate
+          depends_on:
+            - task_key: ingestion
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/validation/nb_sdg_heatmap_validate
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+      # schedule:
+      #   quartz_cron_expression: "0 0 7 * * ?"
+      #   timezone_id: "America/New_York"
+      #   pause_status: PAUSED
+
+      queue:
+        enabled: true
+
+      # email_notifications:
+      #   on_failure:
+      #     - ${var.alert_email}
+
+      parameters:
+        - name: FORCE_RESET
+          default: "false"
+        - name: FORCE_RESET_CONFIRM
+          default: "false"
+        - name: HEATMAP_SOURCE_VIEW
+          default: ${var.heatmap_source_view}
+        - name: HEATMAP_EMBEDDING_TABLE
+          default: ${var.heatmap_embedding_table}
+        - name: HEATMAP_EQUIPMENT_TYPES
+          default: ""
+        - name: HEATMAP_PERSONAS
+          default: ""
+        # ── Embedding / gateway tuning ──
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: HEATMAP_SECRET_SCOPE
+          default: "fsr-pipeline"
+        - name: HEATMAP_LITELLM_MODEL
+          default: "azure-text-embedding-3-large-1"
+        - name: HEATMAP_EMBEDDING_DIMENSION
+          default: "3072"
+        - name: HEATMAP_EMBEDDING_REQUEST_PATH
+          default: "/v1/embeddings"
+        - name: HEATMAP_EMBEDDING_BATCH_SIZE
+          default: "100"
+        - name: HEATMAP_MAX_RETRIES
+          default: "3"
+        - name: HEATMAP_LLM_VERIFY_SSL
+          default: "false"
+
+      run_as:
+        user_name: ${var.run_as_user}

@@ -1,0 +1,11 @@
+"""Prompt variants for FSR v2 pipeline components."""
+
+from .normalization_prompt import (
+	NORMALIZATION_PROMPT_SUFFIX as NORMALIZATION_PROMPT_SUFFIX_V2_WITH_HINTS,
+	SYSTEM_PROMPT as SYSTEM_PROMPT_V2_WITH_HINTS,
+)
+
+__all__ = [
+	"SYSTEM_PROMPT_V2_WITH_HINTS",
+	"NORMALIZATION_PROMPT_SUFFIX_V2_WITH_HINTS",
+]

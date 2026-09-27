@@ -1,0 +1,134 @@
+resources:
+  jobs:
+
+    # ── FSR v2 ingestion: P1 → P2 → P3 in one job ──────────────────────────
+    # Single chained workflow for daily incremental ingestion and targeted runs.
+    # Leave FSR_TARGET_PDF_NAMES empty for incremental ingestion; set it for a
+    # targeted validation/backfill run. Each phase is its own task, so failures
+    # land in the Jobs UI with per-task logs and retries.
+    PW_SDG_FSR_V2_Ingestion:
+      name: PW_SDG_FSR_V2_Ingestion
+
+      tasks:
+        - task_key: metadata_extraction_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_fsr_v2_metadata
+            source: WORKSPACE
+
+        - task_key: chunking_v2
+          depends_on:
+            - task_key: metadata_extraction_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/etl/nb_sdg_fsr_v2_chunks
+            source: WORKSPACE
+
+        - task_key: vector_index_sync_v2
+          depends_on:
+            - task_key: chunking_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/vs/src/etl/nb_sdg_fsr_v2_index
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+
+        # ── Tables (shared across phases) ──
+        - name: METADATA_TABLE_V2
+          default: ${var.fsr_metadata_table_v2}
+        - name: CHUNK_TABLE_V2
+          default: ${var.fsr_chunk_table_v2}
+        - name: DOC_EQUIPMENT_MAP_TABLE_V2
+          default: ${var.fsr_doc_equipment_map_table_v2}
+        - name: RUN_LOG_TABLE_V2
+          default: ${var.fsr_run_log_table_v2}
+        - name: DQ_LOG_TABLE_V2
+          default: ${var.fsr_dq_log_table_v2}
+
+        # ── P1: input + parsing + metadata ──
+        - name: INPUT_MODE
+          default: "volume_list"
+        - name: FSR_SOURCE_VOLUME_PATHS
+          default: ${var.fsr_source_volume_paths}
+        - name: FSR_PARSED_DOC_VOLUME_ROOT
+          default: ${var.fsr_parsed_doc_volume_root}
+        - name: FSR_TARGET_PDF_NAMES
+          default: ${var.fsr_target_pdf_names}
+        - name: FSR_V2_P1_WORKERS
+          default: ${var.fsr_v2_p1_workers}
+        - name: FSR_V2_P1_LLM_BATCH_SIZE
+          default: ${var.fsr_v2_p1_llm_batch_size}
+        - name: FSR_V2_P1_LLM_DELAY_S
+          default: ${var.fsr_v2_p1_llm_delay_s}
+        - name: FSR_V2_P1_MAX_DOCS
+          default: ${var.fsr_v2_p1_max_docs}
+        - name: FSR_V2_DQ_LOW_TEXT_MIN_PAGES
+          default: ${var.fsr_v2_dq_low_text_min_pages}
+        - name: FSR_V2_DQ_LOW_TEXT_CHARS_PER_PAGE
+          default: ${var.fsr_v2_dq_low_text_chars_per_page}
+        - name: FSR_V2_PARSER_VERSION
+          default: ${var.fsr_v2_parser_version}
+        - name: FSR_V2_METADATA_PROCESSOR_VERSION
+          default: ${var.fsr_v2_metadata_processor_version}
+        - name: FSR_LLM_EXTRACTION_PROMPT_VERSION
+          default: ${var.fsr_llm_extraction_prompt_version}
+        - name: FSR_IBAT_TABLE
+          default: ${var.fsr_ibat_table}
+        - name: FSR_EVENT_VISION_TABLE
+          default: ${var.fsr_event_vision_table}
+        - name: FSR_PSOT_TABLE
+          default: ${var.fsr_psot_table}
+        - name: FSR_LLM_MODEL
+          default: ${var.fsr_llm_model}
+
+        # ── P2: chunking + embedding ──
+        - name: FSR_P2_BATCH_SIZE
+          default: ${var.fsr_p2_batch_size}
+        - name: FSR_P2_MAX_ITERATIONS
+          default: ${var.fsr_p2_max_iterations}
+        - name: FSR_P2_MAX_RETRIES
+          default: ${var.fsr_p2_max_retries}
+        - name: FSR_EMBEDDING_MODEL
+          default: ${var.fsr_embedding_model}
+        - name: FSR_CHUNK_SIZE
+          default: ${var.fsr_chunk_size}
+        - name: FSR_CHUNK_OVERLAP
+          default: ${var.fsr_chunk_overlap}
+        - name: FSR_MIN_CHUNK_SIZE
+          default: ${var.fsr_min_chunk_size}
+        - name: FSR_EMBED_BATCH_SIZE
+          default: ${var.fsr_embed_batch_size}
+        - name: FSR_P2_EMBED_CONCURRENCY
+          default: ${var.fsr_p2_embed_concurrency}
+        - name: FSR_EMBED_FAIL_THRESHOLD
+          default: ${var.fsr_embed_fail_threshold}
+        - name: FSR_STALE_CLAIM_MINUTES
+          default: ${var.fsr_stale_claim_minutes}
+        - name: FSR_MERGE_STRATEGY
+          default: ${var.fsr_merge_strategy}
+        - name: FSR_REGION_ATTRIBUTION_METHOD
+          default: ${var.fsr_region_attribution_method}
+
+        # ── P3: vector index ──
+        - name: VS_ENDPOINT_V2
+          default: ${var.fsr_vs_endpoint_v2}
+        - name: VS_INDEX_V2
+          default: ${var.fsr_vs_index_v2}
+        - name: INDEX_MODE
+          default: "sync"
+        - name: FSR_EMBEDDING_DIMENSION
+          default: ${var.fsr_embedding_dimension}
+        - name: FSR_DATABRICKS_VERIFY_SSL
+          default: "false"
+
+        # ── Gateway ──
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

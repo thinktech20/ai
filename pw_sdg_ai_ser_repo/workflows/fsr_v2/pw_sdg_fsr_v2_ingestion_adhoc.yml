@@ -1,0 +1,191 @@
+resources:
+  jobs:
+
+    # ── FSR v2 ingestion (ADHOC): process PDFs from a single ad-hoc Volume ──
+    # Scoped, isolated counterpart to PW_SDG_FSR_V2_Ingestion — processes only
+    # the PDFs present in FSR_ADHOC_SOURCE_VOLUME_PATH, using the SAME shared
+    # tables (fsr_metadata_v2, fsr_chunks_v2, run log, DQ log) and the SAME
+    # vector index as the main pipeline.
+    #
+    # Reuse strategy — 3 tasks, every one always completes as Succeeded (no
+    # condition_task, never "Skipped"):
+    #   - metadata_extraction_v2: NEW notebook (nb_sdg_fsr_v2_adhoc_metadata) that
+    #     scans FSR_ADHOC_SOURCE_VOLUME_PATH via the unmodified fsr_v2.input.load()
+    #     scan logic, filters out docs already 'completed'/'date_filtered'/
+    #     retry-exhausted, and — only if anything is eligible — invokes the
+    #     UNMODIFIED main P1 notebook (nb_sdg_fsr_v2_metadata.py) via
+    #     dbutils.notebook.run(), passing the eligible ids as FSR_TARGET_PDF_NAMES
+    #     ("target mode", already a first-class parameter of the main pipeline;
+    #     it skips the unscoped pending/failed retry-backlog query, so this run
+    #     never touches documents from other volumes). If nothing is eligible,
+    #     this task no-ops and still completes as Succeeded.
+    #   - chunking_v2: NEW notebook (nb_sdg_fsr_v2_adhoc_chunks) that invokes the
+    #     UNMODIFIED main P2 notebook (nb_sdg_fsr_v2_chunks.py) via
+    #     dbutils.notebook.run(), scoped via its FSR_TARGET_DOCUMENT_IDS parameter
+    #     (an additive, backward-compatible addition to chunking.run() — default
+    #     unset preserves the main pipeline's existing unscoped queue-drain
+    #     behavior). Mirrors the P1 target-mode pattern exactly, so any future fix
+    #     to the main P2 orchestration is picked up automatically here too.
+    #   - vector_index_sync_v2: REUSES vs/src/etl/nb_sdg_fsr_v2_index.py
+    #     unmodified — a Delta Sync trigger over the whole shared chunk table,
+    #     safe to run repeatedly/incrementally.
+    #
+    # No trigger of its own — invoked by another job (e.g. a "Run Job" task)
+    # that decides when to process the volume; this job's only duty is to
+    # process the PDFs currently in FSR_ADHOC_SOURCE_VOLUME_PATH without
+    # touching any other volume's PDFs during metadata extraction or chunking.
+    PW_SDG_FSR_V2_Ingestion_Adhoc:
+      name: PW_SDG_FSR_V2_Ingestion_Adhoc
+
+      tasks:
+        # Always completes as Succeeded — internally decides whether to invoke
+        # the main P1 notebook, so there is no condition_task/"Skipped" task here.
+        - task_key: metadata_extraction_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_fsr_v2_adhoc_metadata
+            source: WORKSPACE
+            base_parameters:
+              # dag_run_id/pdf_name/esn are NOT passed by the triggering DAG —
+              # this task discovers them itself by querying execution_table for
+              # rows at current_stage='FILE_INGESTED'/status='IN_PROGRESS'.
+              # bucket/object_key/upload_date/uploaded_by are not read by this
+              # notebook today — kept here so they're available if a future
+              # task needs them without a DAG-side change.
+              bucket: "{{ dag_run.conf['bucket'] }}"
+              object_key: "{{ dag_run.conf['object_key'] }}"
+              upload_date: "{{ dag_run.conf['upload_date'] }}"
+              uploaded_by: "{{ dag_run.conf['uploaded_by'] }}"
+
+        - task_key: chunking_v2
+          depends_on:
+            - task_key: metadata_extraction_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/etl/nb_sdg_fsr_v2_adhoc_chunks
+            source: WORKSPACE
+            base_parameters:
+              FSR_ADHOC_TARGET_PDF_NAMES: "{{tasks.metadata_extraction_v2.values.all_document_ids}}"
+              FSR_ADHOC_READY_PAIRS: "{{tasks.metadata_extraction_v2.values.ready_pdf_dag_pairs}}"
+
+        - task_key: vector_index_sync_v2
+          depends_on:
+            - task_key: chunking_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/vs/src/etl/nb_sdg_fsr_v2_adhoc_index
+            source: WORKSPACE
+            base_parameters:
+              FSR_ADHOC_READY_PAIRS: "{{tasks.chunking_v2.values.ready_pdf_dag_pairs}}"
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+
+        # ── Tables (shared with main v2 pipeline — same tables/logs/DQ) ──
+        - name: METADATA_TABLE_V2
+          default: ${var.fsr_metadata_table_v2}
+        - name: CHUNK_TABLE_V2
+          default: ${var.fsr_chunk_table_v2}
+        - name: DOC_EQUIPMENT_MAP_TABLE_V2
+          default: ${var.fsr_doc_equipment_map_table_v2}
+        - name: RUN_LOG_TABLE_V2
+          default: ${var.fsr_run_log_table_v2}
+        - name: DQ_LOG_TABLE_V2
+          default: ${var.fsr_dq_log_table_v2}
+
+        # ── Adhoc scope ──
+        - name: FSR_ADHOC_SOURCE_VOLUME_PATH
+          default: ${var.fsr_adhoc_source_volume_path}
+        - name: FSR_ADHOC_MAX_RETRIES
+          default: ${var.fsr_adhoc_max_retries}
+        - name: FSR_ADHOC_P1_TIMEOUT_SECONDS
+          default: ${var.fsr_adhoc_p1_timeout_seconds}
+        - name: FSR_ADHOC_P2_TIMEOUT_SECONDS
+          default: ${var.fsr_adhoc_p2_timeout_seconds}
+        - name: FSR_ADHOC_P3_TIMEOUT_SECONDS
+          default: ${var.fsr_adhoc_p3_timeout_seconds}
+        # SDG execution-state table default — the triggering Airflow DAG's
+        # dag_run.conf['execution_table'] (see task base_parameters below)
+        # takes precedence when set; this is the per-environment fallback.
+        - name: FSR_SDG_EXECUTION_TABLE
+          default: ${var.fsr_sdg_execution_table}
+
+        # ── P1: input + parsing + metadata (unmodified notebook, invoked via
+        #      dbutils.notebook.run() from nb_sdg_fsr_v2_adhoc_metadata; INPUT_MODE
+        #      and FSR_SOURCE_VOLUME_PATHS are set there, not as job parameters) ──
+        - name: FSR_PARSED_DOC_VOLUME_ROOT
+          default: ${var.fsr_parsed_doc_volume_root}
+        - name: FSR_V2_P1_MAX_RETRIES
+          default: ${var.fsr_adhoc_max_retries}
+        - name: FSR_V2_P1_WORKERS
+          default: ${var.fsr_v2_p1_workers}
+        - name: FSR_V2_P1_LLM_BATCH_SIZE
+          default: ${var.fsr_v2_p1_llm_batch_size}
+        - name: FSR_V2_P1_LLM_DELAY_S
+          default: ${var.fsr_v2_p1_llm_delay_s}
+        - name: FSR_V2_MIN_DOC_YEAR
+          default: ${var.fsr_v2_min_doc_year}
+        - name: FSR_V2_MAX_DOC_YEAR
+          default: ${var.fsr_v2_max_doc_year}
+        - name: FSR_V2_DQ_LOW_TEXT_MIN_PAGES
+          default: ${var.fsr_v2_dq_low_text_min_pages}
+        - name: FSR_V2_DQ_LOW_TEXT_CHARS_PER_PAGE
+          default: ${var.fsr_v2_dq_low_text_chars_per_page}
+        - name: FSR_V2_PARSER_VERSION
+          default: ${var.fsr_v2_parser_version}
+        - name: FSR_V2_METADATA_PROCESSOR_VERSION
+          default: ${var.fsr_v2_metadata_processor_version}
+        - name: FSR_LLM_EXTRACTION_PROMPT_VERSION
+          default: ${var.fsr_llm_extraction_prompt_version}
+        - name: FSR_IBAT_TABLE
+          default: ${var.fsr_ibat_table}
+        - name: FSR_EVENT_VISION_TABLE
+          default: ${var.fsr_event_vision_table}
+        - name: FSR_PSOT_TABLE
+          default: ${var.fsr_psot_table}
+        - name: FSR_LLM_MODEL
+          default: ${var.fsr_llm_model}
+
+        # ── P2: chunking + embedding (adhoc notebook, scoped to target docs) ──
+        - name: FSR_P2_MAX_RETRIES
+          default: ${var.fsr_adhoc_max_retries}
+        - name: FSR_EMBEDDING_MODEL
+          default: ${var.fsr_embedding_model}
+        - name: FSR_CHUNK_SIZE
+          default: ${var.fsr_chunk_size}
+        - name: FSR_CHUNK_OVERLAP
+          default: ${var.fsr_chunk_overlap}
+        - name: FSR_MIN_CHUNK_SIZE
+          default: ${var.fsr_min_chunk_size}
+        - name: FSR_EMBED_BATCH_SIZE
+          default: ${var.fsr_embed_batch_size}
+        - name: FSR_P2_EMBED_CONCURRENCY
+          default: ${var.fsr_p2_embed_concurrency}
+        - name: FSR_EMBED_FAIL_THRESHOLD
+          default: ${var.fsr_embed_fail_threshold}
+        - name: FSR_MERGE_STRATEGY
+          default: ${var.fsr_merge_strategy}
+        - name: FSR_REGION_ATTRIBUTION_METHOD
+          default: ${var.fsr_region_attribution_method}
+        - name: FSR_EMBEDDING_DIMENSION
+          default: ${var.fsr_embedding_dimension}
+
+        # ── P3: vector index (reused notebook, same index as main pipeline) ──
+        - name: VS_ENDPOINT_V2
+          default: ${var.fsr_vs_endpoint_v2}
+        - name: VS_INDEX_V2
+          default: ${var.fsr_vs_index_v2}
+        - name: INDEX_MODE
+          default: "sync"
+        - name: FSR_DATABRICKS_VERIFY_SSL
+          default: "false"
+
+        # ── Gateway ──
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

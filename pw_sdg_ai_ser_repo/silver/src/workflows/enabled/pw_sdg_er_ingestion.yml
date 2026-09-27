@@ -1,0 +1,116 @@
+resources:
+  jobs:
+
+    # ── ER Ingestion Pipeline ────────────────────────────────────────────
+    # DDL → Ingestion (extract+chunk+embed+write+VS sync) → Validate
+    PW_SDG_ER_Ingestion:
+      name: PW_SDG_ER_Ingestion
+
+      tasks:
+        - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/ddl/nb_sdg_er_ddl
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+        - task_key: ingestion
+          depends_on:
+            - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_er_ingestion
+            source: WORKSPACE
+          timeout_seconds: 28800  # 8 h — increased from 2 h; large backfills need more headroom
+
+        - task_key: validate
+          depends_on:
+            - task_key: ingestion
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/validation/nb_sdg_er_validate
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+      # schedule:
+      #   quartz_cron_expression: "0 0 6 * * ?"
+      #   timezone_id: "America/New_York"
+      #   pause_status: PAUSED
+
+      queue:
+        enabled: true
+
+      # email_notifications:
+      #   on_failure:
+      #     - ${var.alert_email}
+
+      parameters:
+        - name: FORCE_RESET
+          default: "false"
+        - name: FORCE_RESET_CONFIRM
+          default: "false"
+        - name: ER_SOURCE_TABLE
+          default: ${var.er_source_table}
+        - name: ER_CHUNK_TABLE
+          default: ${var.er_chunk_table}
+        - name: ER_VS_ENDPOINT
+          default: ${var.er_vs_endpoint}
+        - name: ER_VS_INDEX
+          default: ${var.er_vs_index}
+        - name: ER_RUN_LOG_TABLE
+          default: ${var.er_run_log_table}
+        - name: ER_FAILED_RECORDS_TABLE
+          default: ${var.er_failed_records_table}
+        - name: ER_MAX_RECORD_ATTEMPTS
+          default: "3"
+        # Backfill audit mode — when true, pipeline finds source records below
+        # the current watermark with no chunks, seeds them into the failed-records
+        # table for retry, and exits. Default false = normal incremental run.
+        - name: ER_BACKFILL_AUDIT
+          default: "false"
+        # Optional comma-separated er_case_numbers — when set together with
+        # ER_BACKFILL_AUDIT=true, the audit bypasses the source-vs-chunks
+        # query and the backfill marker, and seeds ONLY these IDs.
+        - name: ER_BACKFILL_RECORD_IDS
+          default: ""
+        # Date-range re-ingestion: seeds ALL source records in the range for
+        # re-processing. Chunk MERGE ensures no duplicates. Marker not advanced.
+        - name: ER_BACKFILL_DATE_FROM
+          default: ""
+        - name: ER_BACKFILL_DATE_TO
+          default: ""
+        - name: ER_CUTOFF_DATE
+          default: "2016-01-01"
+        - name: ER_SERIAL_NUMBERS
+          default: ""
+        - name: ER_MAX_RECORDS
+          default: "0"
+        # ── Embedding / gateway tuning ──
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: ER_SECRET_SCOPE
+          default: "fsr-pipeline"
+        - name: ER_LITELLM_MODEL
+          default: "azure-text-embedding-3-large-1"
+        - name: ER_EMBEDDING_DIMENSION
+          default: "3072"
+        - name: ER_EMBEDDING_REQUEST_PATH
+          default: "/v1/embeddings"
+        - name: ER_EMBEDDING_BATCH_SIZE
+          default: "50"
+        - name: ER_EMBEDDING_CONCURRENCY
+          default: "4"
+        - name: ER_MAX_RETRIES
+          default: "3"
+        - name: ER_LLM_VERIFY_SSL
+          default: "false"
+        # ── Micro-batching (OOM prevention) ──
+        - name: ER_RECORD_BATCH_SIZE
+          default: "5000"
+        # ── Chunking tuning ──
+        - name: ER_CHUNK_SIZE
+          default: "4096"
+        - name: ER_CHUNK_OVERLAP_PCT
+          default: "0.10"
+
+      run_as:
+        user_name: ${var.run_as_user}

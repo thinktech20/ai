@@ -1,0 +1,46 @@
+resources:
+  jobs:
+
+    # ── TIL Profile Daily Ingestion ─────────────────────────────────────────
+    # Discovers TIL files, skips already-ingested TIL numbers found in the
+    # output table, runs profile extraction for new files, and appends rows.
+    PW_SDG_TIL_Profile_Ingestion:
+      name: PW_SDG_TIL_Profile_Ingestion
+
+      tasks:
+        - task_key: til_profile_ingestion
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_til_profile
+            source: WORKSPACE
+
+      # Daily schedule (06:00 ET)
+      schedule:
+        quartz_cron_expression: "0 0 6 * * ?"
+        timezone_id: "America/New_York"
+        pause_status: UNPAUSED
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: TIL_LLM_MAX_TOKENS
+          default: ""
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+        - name: PARSER_HOST
+          default: ${var.parser_host}
+        - name: TIL_PROFILE_OUTPUT_TABLE
+          default: ${var.til_profile_table}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com
+
+      tags:
+        domain: til
+        process: profile
+        cadence: daily
+        environment: ${var.jb_env}

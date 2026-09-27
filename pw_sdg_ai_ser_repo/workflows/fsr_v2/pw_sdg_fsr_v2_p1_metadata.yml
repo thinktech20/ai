@@ -1,0 +1,79 @@
+resources:
+  jobs:
+
+    # ── FSR v2 P1: metadata extraction (independent) ───────────────────────
+    PW_SDG_FSR_V2_Metadata:
+      name: PW_SDG_FSR_V2_Metadata
+
+      tasks:
+        - task_key: metadata_extraction_v2
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_fsr_v2_metadata
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      # Load-bearing, not a default: P1 has no claim mechanism, so two concurrent
+      # runs would both read the same pending rows and process every doc twice.
+      max_concurrent_runs: 1
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+
+        - name: METADATA_TABLE_V2
+          default: ${var.fsr_metadata_table_v2}
+        - name: RUN_LOG_TABLE_V2
+          default: ${var.fsr_run_log_table_v2}
+        - name: DQ_LOG_TABLE_V2
+          default: ${var.fsr_dq_log_table_v2}
+        - name: INPUT_MODE
+          default: "volume_list"
+        - name: FSR_SOURCE_VOLUME_PATHS
+          default: ${var.fsr_source_volume_paths}
+        - name: FSR_PARSED_DOC_VOLUME_ROOT
+          default: ${var.fsr_parsed_doc_volume_root}
+        - name: FSR_TARGET_PDF_NAMES
+          default: ${var.fsr_target_pdf_names}
+        - name: FSR_V2_PARSER_VERSION
+          default: ${var.fsr_v2_parser_version}
+        - name: FSR_V2_METADATA_PROCESSOR_VERSION
+          default: ${var.fsr_v2_metadata_processor_version}
+        - name: FSR_LLM_EXTRACTION_PROMPT_VERSION
+          default: ${var.fsr_llm_extraction_prompt_version}
+
+        - name: FSR_IBAT_TABLE
+          default: ${var.fsr_ibat_table}
+        - name: FSR_EVENT_VISION_TABLE
+          default: ${var.fsr_event_vision_table}
+        - name: FSR_PSOT_TABLE
+          default: ${var.fsr_psot_table}
+        - name: DOC_EQUIPMENT_MAP_TABLE_V2
+          default: ${var.fsr_doc_equipment_map_table_v2}
+
+        - name: FSR_LLM_MODEL
+          default: ${var.fsr_llm_model}
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+        - name: FSR_V2_P1_WORKERS
+          default: ${var.fsr_v2_p1_workers}
+        - name: FSR_V2_P1_LLM_BATCH_SIZE
+          default: ${var.fsr_v2_p1_llm_batch_size}
+        - name: FSR_V2_P1_LLM_DELAY_S
+          default: ${var.fsr_v2_p1_llm_delay_s}
+        - name: FSR_V2_P1_MAX_DOCS
+          default: ${var.fsr_v2_p1_max_docs}
+        - name: FSR_V2_P1_SLICE_SIZE
+          default: ${var.fsr_v2_p1_slice_size}
+        - name: FSR_V2_P1_MAX_RUNTIME_MINUTES
+          default: ${var.fsr_v2_p1_max_runtime_minutes}
+        - name: FSR_V2_DQ_LOW_TEXT_MIN_PAGES
+          default: ${var.fsr_v2_dq_low_text_min_pages}
+        - name: FSR_V2_DQ_LOW_TEXT_CHARS_PER_PAGE
+          default: ${var.fsr_v2_dq_low_text_chars_per_page}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

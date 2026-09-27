@@ -1,0 +1,59 @@
+resources:
+  jobs:
+
+    # ── Multi-ESN Revert (#664196) ───────────────────────────────────────
+    # Reverts the repair run by reading audit tables and undoing all changes.
+    # Only works AFTER a successful repair run (audit tables must exist).
+    #
+    # Default: DRY_RUN=true (preview only). Set DRY_RUN=false to execute.
+    PW_SDG_FSR_Revert_Multi_ESN:
+      name: PW_SDG_FSR_Revert_Multi_ESN
+
+      tasks:
+        - task_key: revert
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/etl/nb_sdg_fsr_revert_multi_esn
+            source: WORKSPACE
+          timeout_seconds: 14400  # 4 h — matching repair timeout
+
+        - task_key: verify
+          depends_on:
+            - task_key: revert
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/validation/nb_sdg_fsr_repair_verify
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+      max_concurrent_runs: 1
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: DRY_RUN
+          default: "true"
+        - name: REVERT_RUN_ID
+          # #664326 — incremental mode:
+          #   ""     → revert latest run_id in chunk audit (default)
+          #   "ALL"  → revert every recorded run (earlier one-shot behavior)
+          #   "<id>" → revert that specific repair run only
+          default: ""
+        - name: FSR_METADATA_TABLE
+          default: ${var.fsr_metadata_table}
+        - name: FSR_CHUNK_TABLE
+          default: ${var.fsr_chunk_table}
+        - name: FSR_RUN_LOG_TABLE
+          default: ${var.fsr_run_log_table}
+        - name: FSR_DQ_LOG_TABLE
+          default: ${var.fsr_dq_log_table}
+        - name: FSR_VS_ENDPOINT
+          default: ${var.fsr_vs_endpoint}
+        - name: FSR_VS_INDEX
+          default: ${var.fsr_vs_index}
+        - name: FSR_PDF_REF_VIEW
+          default: ${var.fsr_pdf_ref_view}
+
+      run_as:
+        user_name: ${var.run_as_user}

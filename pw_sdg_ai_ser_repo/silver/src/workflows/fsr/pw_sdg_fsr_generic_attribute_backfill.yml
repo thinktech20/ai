@@ -1,0 +1,51 @@
+resources:
+  jobs:
+
+    # ── Generic Attribute Backfill (extensible framework) ────────────────
+    # Runs Python-based attribute backfills against metadata table.
+    # Add new backfill strategies in silver/src/backfill/generic_attribute_backfill.py
+    # and trigger by setting FSR_BACKFILL_NAME.
+    #
+    # Quick usage:
+    # 1) Dry run preview (recommended first):
+    #    FSR_BACKFILL_DRY_RUN=true, set FSR_BACKFILL_SAMPLE_LIMIT (e.g. 50)
+    # 2) Apply on sample:
+    #    FSR_BACKFILL_DRY_RUN=false, keep same sample limit and validate output
+    # 3) Full execution:
+    #    FSR_BACKFILL_DRY_RUN=false, FSR_BACKFILL_SAMPLE_LIMIT=0
+    PW_SDG_FSR_Generic_Attribute_Backfill:
+      name: PW_SDG_FSR_Generic_Attribute_Backfill
+
+      max_concurrent_runs: 1
+
+      tasks:
+        - task_key: generic_attribute_backfill
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/backfill/nb_sdg_fsr_generic_attribute_backfill
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: FSR_METADATA_TABLE
+          default: ${var.fsr_metadata_table}
+        - name: FSR_BACKFILL_NAME
+          default: "document_summary_toc"
+        - name: FSR_BACKFILL_BATCH_SIZE
+          default: "200"
+        - name: FSR_BACKFILL_SAMPLE_LIMIT
+          default: "0"
+        - name: FSR_BACKFILL_DRY_RUN
+          default: "false"
+        - name: FSR_DQ_LOG_TABLE
+          default: ${var.fsr_dq_log_table}
+        - name: FSR_RUN_LOG_TABLE
+          default: ${var.fsr_run_log_table}
+        - name: FSR_CHUNK_TABLE
+          default: ${var.fsr_chunk_table}
+
+      run_as:
+        user_name: ${var.run_as_user}

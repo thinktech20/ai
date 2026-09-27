@@ -1,0 +1,52 @@
+resources:
+  jobs:
+
+    # ── Chunking backfill (manual, bulk P2) ──────────────────────────────
+    # P2 only — run in parallel with metadata backfill.
+    # Claims rows as P1 produces them (no conflict via claim-based locking).
+    PW_SDG_FSR_Chunking_Backfill:
+      name: PW_SDG_FSR_Chunking_Backfill
+
+      tasks:
+        - task_key: chunk_ingestion
+          notebook_task:
+            notebook_path: ${var.filename_param}/gold/src/etl/nb_sdg_fsr_chunks
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: FSR_METADATA_TABLE
+          default: ${var.fsr_metadata_table}
+        - name: FSR_CHUNK_TABLE
+          default: ${var.fsr_chunk_table}
+        - name: FSR_RUN_LOG_TABLE
+          default: ${var.fsr_run_log_table}
+        - name: FSR_DQ_LOG_TABLE
+          default: ${var.fsr_dq_log_table}
+        - name: FSR_VS_ENDPOINT
+          default: ${var.fsr_vs_endpoint}
+        - name: FSR_VS_INDEX
+          default: ${var.fsr_vs_index}
+        - name: FSR_MAX_PDFS
+          default: ""
+        - name: FSR_TARGET_PDF_NAMES
+          default: ""
+        - name: FSR_P2_BATCH_SIZE
+          default: "20"
+        - name: FSR_P2_MAX_ITERATIONS
+          default: "0"
+        - name: FSR_P2_PDF_WORKERS
+          default: "4"
+        - name: FSR_P2_MAX_RETRIES
+          default: "3"
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

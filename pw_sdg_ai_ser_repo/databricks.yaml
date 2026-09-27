@@ -1,0 +1,654 @@
+#Filename: databricks.yml
+
+bundle:
+  name: FSR
+include:
+  - "silver/src/workflows/fsr/*.yml"
+  - "silver/src/workflows/fsr/repairs/*.yml"
+  - "workflows/fsr_v2/*.yml"
+  - "workflows/fsr_v2/repairs/*.yml"
+  - "silver/src/workflows/enabled/pw_sdg_er_*.yml"
+  - "silver/src/workflows/enabled/pw_sdg_heatmap_*.yml"
+  - "workflows/mnd/*.yml"
+  - "bronze/src/workflows/jb_ser_adhoc_script_bronze.yml"
+  - "workflows/tils/*.yml"
+variables:
+  instance_pool_id:
+    default: "0515-102017-give91-pool-ryu7cz68"
+  policy_id:
+    default: "000056AB6FA94EB8"
+  driver_instance_pool_id:
+    default: "0515-102017-give91-pool-ryu7cz68"
+  jb_business_unit_name: 
+    default: "gas-power"
+  jb_domain_name:
+    default: "Operations and SWE"
+  jb_sub_domain_code:
+    default: "FSR"
+  jb_env:
+    default: "Dev"
+  jb_owner:
+    default: "502799799"
+  jb_domain:
+    default: "FSR"
+  filename_param:  
+    default: "/Users/d44c1af5-e99e-4010-8302-464e74d13ba1/.bundle/FSR/files"
+  catalog:
+    default: "vaid"
+  run_as_user:
+    default: ""
+  alert_email:
+    default: ""
+  fsr_metadata_table:
+    default: "vaid.ai_sot_field_service_report.biz_metadata_field_service_report"
+  fsr_chunk_table:
+    default: "vaid.ai_std_con_field_service_report.vec_field_service_report"
+  fsr_run_log_table:
+    default: "vaid.ai_sot_field_service_report.fsr_run_log_af_test"
+  fsr_dq_log_table:
+    default: "vaid.ai_sot_field_service_report.fsr_data_quality_log"
+  fsr_vs_endpoint:
+    default: "pw-ser-sdg-vector-search_af_test"
+  fsr_vs_index:
+    default: "vaid.ai_std_con_field_service_report.vs_vec_field_service_report_af_test"
+  fsr_metadata_table_v2:
+    default: "vaid.ai_sot_field_service_report.fsr_metadata_v2"
+  fsr_chunk_table_v2:
+    default: "vaid.ai_std_con_field_service_report.fsr_chunks_v2"
+  fsr_doc_equipment_map_table_v2:
+    default: "vaid.ai_sot_field_service_report.fsr_document_equipment_map_v2"
+  fsr_run_log_table_v2:
+    default: "vaid.ai_std_con_field_service_report.fsr_run_log_v2"
+  fsr_dq_log_table_v2:
+    default: "vaid.ai_std_con_field_service_report.fsr_data_quality_log_v2"
+  fsr_vs_endpoint_v2:
+    default: "pw-ser-sdg-vector-search_af_test"
+  fsr_vs_index_v2:
+    default: "vaid.ai_std_con_field_service_report.fsr_vs_index_v2"
+  fsr_parsed_doc_volume_root:
+    default: "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs"
+  fsr_v2_parser_version:
+    default: "pymupdf_v1.0"
+  fsr_v2_metadata_processor_version:
+    default: "v2"
+  fsr_llm_model:
+    default: "azure-gpt-5-2"
+  fsr_llm_extraction_prompt_version:
+    default: "v2_with_hints"
+  fsr_embedding_model:
+    default: "azure-text-embedding-3-large-1"
+  fsr_embedding_dimension:
+    default: "3072"
+  fsr_chunk_size:
+    default: "3800"
+  fsr_chunk_overlap:
+    default: "150"
+  fsr_min_chunk_size:
+    default: "450"
+  fsr_p2_batch_size:
+    default: "20"
+  fsr_p2_max_iterations:
+    default: "0"
+  fsr_p2_max_retries:
+    default: "3"
+  fsr_embed_batch_size:
+    default: "32"
+  fsr_p2_embed_concurrency:
+    default: "4"
+  fsr_embed_fail_threshold:
+    default: "0.0"
+  fsr_stale_claim_minutes:
+    default: "30"
+  fsr_merge_strategy:
+    default: "v2_4level_cascade"
+  fsr_region_attribution_method:
+    default: "char_offset_max_overlap"
+  fsr_mapping_miss_fail_threshold:
+    default: "0.0"
+  fsr_v2_p1_workers:
+    default: "4"
+  fsr_v2_p1_llm_batch_size:
+    default: "10"
+  fsr_v2_p1_llm_delay_s:
+    default: "1"
+  # Optional hard cap on docs P1 processes in one run (blank = whole queue).
+  # Not a speed knob — that is fsr_v2_p1_workers.
+  fsr_v2_p1_max_docs:
+    default: ""
+  # Docs submitted to the thread pool at once. P1 walks the queue in slices of
+  # this size until drained, so one trigger completes a backfill. Bounds how much
+  # parsed page text is in driver memory, nothing else.
+  fsr_v2_p1_slice_size:
+    default: "2000"
+  # Safety valve for long unattended runs, checked between slices (blank = none).
+  fsr_v2_p1_max_runtime_minutes:
+    default: ""
+  # P1 DQ WARN thresholds: a doc with >= min_pages that yields fewer than
+  # chars_per_page characters is almost certainly an image-only/scanned PDF
+  # with no text layer. It still completes, so it is logged as WARN, not FAIL.
+  fsr_v2_dq_low_text_min_pages:
+    default: "20"
+  fsr_v2_dq_low_text_chars_per_page:
+    default: "200"
+  # Referenced by workflows/fsr_v2/pw_sdg_fsr_v2_ddl.yml; drops and recreates the
+  # v2 tables and VS index, so it must stay "false" outside a deliberate reset.
+  fsr_v2_reset:
+    default: "false"
+  fsr_pdf_ref_view:
+    default: "vgpp.fsr_std_views.fsr_pdf_ref"
+  fsr_v2_repair_scope_table:
+    default: "vaid.ai_sot_field_service_report.fsr_v2_repair_scope"
+  fsr_v2_repair_candidate_table:
+    default: ""
+  fsr_v2_repair_rollback_table:
+    default: "vaid.ai_sot_field_service_report.fsr_v2_repair_rollback"
+  fsr_v2_repair_stale_claim_minutes:
+    default: "60"
+  fsr_repair_input_path:
+    default: ""
+  # FSR source PDF volumes — comma-separated list of full /Volumes/... paths.
+  # The ingestion catalog (viud / viup / viuq) differs per env, so this must
+  # be set per target.  Each path is scanned non-recursively by P1.
+  fsr_source_volume_paths:
+    default: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports"
+  fsr_target_pdf_names:
+    default: ""
+  # ── FSR v2 Adhoc ingestion (PW_SDG_FSR_V2_Ingestion_Adhoc) ──
+  # Single Volume path processed by the adhoc job
+  fsr_adhoc_source_volume_path:
+    default: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/sdg"
+  # Independent retry cap for the adhoc job's own documents (P1 + P2)
+  fsr_adhoc_max_retries:
+    default: "3"
+  # dbutils.notebook.run() timeout for the wrapped P1 invocation (seconds)
+  fsr_adhoc_p1_timeout_seconds:
+    default: "14400"
+  # dbutils.notebook.run() timeout for the wrapped P2 invocation (seconds)
+  fsr_adhoc_p2_timeout_seconds:
+    default: "14400"
+  # dbutils.notebook.run() timeout for the wrapped P3 invocation (seconds)
+  fsr_adhoc_p3_timeout_seconds:
+    default: "3600"
+  # SDG user-attachments execution-state table — updated by the adhoc job's
+  # 3 tasks at each stage (METADATA_EXTRACTED / CHUNKED_AND_EMBEDDED / SYNCED).
+  # Catalog (viud/viup/viuq) differs per env, same as fsr_source_volume_paths.
+  fsr_sdg_execution_table:
+    default: "vaid.ai_std_con_field_service_report.sdg_user_attachments_execution_log_psot"
+  fsr_max_pdfs:
+    default: ""
+  fsr_ibat_table:
+    default: "vgpp.prm_std_views.ibat_equipment_mst"
+  fsr_event_vision_table:
+    default: "vgpp.fsr_std_views.eventmgmt_event_vision_sot"
+  fsr_psot_table:
+    default: "vgpp.fsr_std_views.fsr_field_vision_field_services_report_psot"
+  # ── TIL variables ──
+  til_catalog:
+    default: "vaid"
+  til_schema:
+    default: "ai_sot_field_service_report"
+  til_metadata_table:
+    default: "vaid.ai_sot_field_service_report.til_metadata"
+  til_elements_table:
+    default: "vaid.ai_sot_field_service_report.til_elements"
+  til_chunks_table:
+    default: "vaid.ai_sot_field_service_report.til_chunks"
+  til_validation_results_table:
+    default: "vaid.ai_sot_field_service_report.til_validation_results"
+  til_evaluation_results_table:
+    default: "vaid.ai_sot_field_service_report.til_evaluation_results"
+  til_pipeline_run_audit_table:
+    default: "vaid.ai_sot_field_service_report.til_pipeline_run_audit"
+  til_profile_table:
+    default: "vaid.ai_sot_field_service_report.til_profile"
+  til_source_volume_paths:
+    default: "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new"
+  # Optional targeted-ingestion filter for P1. Comma-separated list of PDF
+  # file names or distinctive substrings (case-insensitive). Empty = process
+  # every discovered PDF. Strict match: an ambiguous substring fails that
+  # target with an ``ambiguous_match`` audit row rather than processing all.
+  til_p1_target_pdf_names:
+    default: ""
+  parser_host:
+    default: ""
+  # ── ER variables ──
+  er_source_table:
+    default: "vgpp.qlt_std_views.u_pac"
+  er_chunk_table:
+    default: "vaid.ai_std_con_field_service_report.vec_engineering_report"
+  er_run_log_table:
+    default: "vaid.ai_std_con_field_service_report.er_run_log"
+  er_failed_records_table:
+    default: "vaid.ai_std_con_field_service_report.er_failed_records"
+  er_vs_endpoint:
+    default: "pw-ser-sdg-vector-search"
+  er_vs_index:
+    default: "vaid.ai_std_con_field_service_report.vs_vec_engineering_report"
+  # ── Heatmap variables ──
+  heatmap_source_view:
+    default: "vgpp.fsr_std_views.fsr_unit_risk_matrix_view"
+  heatmap_embedding_table:
+    default: "vaid.ai_std_con_field_service_report.vec_risk_matrix"
+  # ── M&D (Monitoring & Diagnostics) variables ──
+  mnd_source_table:
+    default: "vgpd.qlt_std_views.u_mandd"
+  mnd_preprocessed_table:
+    default: "vaid.ai_sot_monitoring_diagnostics.stg_mnd_preprocessed"
+  mnd_chunk_table:
+    default: "vaid.ai_std_con_monitoring_diagnostics.vec_mnd_chunks"
+  mnd_run_log_table:
+    default: "vaid.ai_std_con_monitoring_diagnostics.mnd_run_log"
+  mnd_failed_records_table:
+    default: "vaid.ai_std_con_monitoring_diagnostics.mnd_failed_records"
+  mnd_vs_endpoint:
+    default: "pw-ser-sdg-vector-search"
+  mnd_vs_index:
+    default: "vaid.ai_std_con_monitoring_diagnostics.vs_vec_mnd_chunks"
+  mnd_cluster_id:
+    default: ""
+  # LLM gateway base URL — per-env. Empty string falls through to env var /
+  # secret scope inside fsr_config.py.
+  litellm_base_url:
+    default: ""
+  # LiteLLM API key — never commit a real value here. Pass at deploy time:
+  #   databricks bundle deploy -t <env> --var="litellm_api_key=$LITELLM_API_KEY"
+  # or via env: BUNDLE_VAR_litellm_api_key=...
+  litellm_api_key:
+    default: ""
+targets:
+  dev:
+    mode: production
+    workspace:
+      host: "https://gevernova-ai-dev-dbr.cloud.databricks.com/"
+      root_path: /Users/d44c1af5-e99e-4010-8302-464e74d13ba1/.bundle/${bundle.name}
+    variables:
+      jb_env: "dev"
+      catalog: "vaid"
+      run_as_user: "service.globalopsfsso@gevernova.com"
+      fsr_metadata_table: "vaid.ai_sot_field_service_report.biz_metadata_field_service_report"
+      fsr_chunk_table: "vaid.ai_std_con_field_service_report.vec_field_service_report"
+      fsr_run_log_table: "vaid.ai_sot_field_service_report.fsr_run_log"
+      fsr_dq_log_table: "vaid.ai_sot_field_service_report.fsr_data_quality_log"
+      fsr_vs_endpoint: "pw-ser-sdg-vector-search"
+      fsr_vs_index: "vaid.ai_std_con_field_service_report.vs_vec_field_service_report"
+      fsr_pdf_ref_view: "vgpp.fsr_std_views.fsr_pdf_ref"
+      # Testing FSR Attachment feature
+      # fsr_source_volume_paths: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/sdg"
+      fsr_source_volume_paths: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual,/Volumes/vaid/ai_std_con_field_service_report/fsr_v2_test"
+      fsr_target_pdf_names: ""
+      fsr_ibat_table: "vgpd.prm_std_views.ibat_equipment_mst"
+      fsr_event_vision_table: "vgpd.fsr_std_views.eventmgmt_event_vision_sot"
+      fsr_psot_table: "vgpd.fsr_std_views.fsr_field_vision_field_services_report_psot"
+      # ── FSR v2) ──
+      fsr_metadata_table_v2: "vaid.ai_std_con_field_service_report.fsr_metadata_v2"
+      fsr_chunk_table_v2: "vaid.ai_std_con_field_service_report.fsr_chunks_v2"
+      fsr_doc_equipment_map_table_v2: "vaid.ai_std_con_field_service_report.fsr_document_equipment_map_v2"
+      fsr_run_log_table_v2: "vaid.ai_sot_field_service_report.fsr_run_log_v2"
+      fsr_dq_log_table_v2: "vaid.ai_sot_field_service_report.fsr_data_quality_log_v2"
+      fsr_v2_repair_scope_table: "vaid.ai_sot_field_service_report.fsr_v2_repair_scope"
+      fsr_vs_endpoint_v2: "pw-ser-sdg-vector-search"
+      fsr_vs_index_v2: "vaid.ai_std_con_field_service_report.fsr_vs_index_v2"
+      fsr_parsed_doc_volume_root: "/Volumes/vaid/ai_sot_field_service_report/fsr_parsed_docs"
+      fsr_v2_reset: "false"
+      # ── FSR v2 Adhoc (dev) ──
+      fsr_adhoc_source_volume_path: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/sdg"
+      fsr_sdg_execution_table: "vaid.ai_std_con_field_service_report.sdg_user_attachments_execution_log_psot"
+      # ── TIL (dev) ──
+      til_catalog: "vaid"
+      til_schema: "ai_sot_field_service_report"
+      til_metadata_table: "vaid.ai_sot_field_service_report.til_metadata"
+      til_elements_table: "vaid.ai_sot_field_service_report.til_elements"
+      til_chunks_table: "vaid.ai_sot_field_service_report.til_chunks"
+      til_validation_results_table: "vaid.ai_sot_field_service_report.til_validation_results"
+      til_evaluation_results_table: "vaid.ai_sot_field_service_report.til_evaluation_results"
+      til_pipeline_run_audit_table: "vaid.ai_sot_field_service_report.til_pipeline_run_audit"
+      til_profile_table: "vaid.ai_sot_field_service_report.til_profile"
+      til_source_volume_paths: "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new"
+      fsr_repair_input_path: "/Volumes/vaid/ai_sot_field_service_report/ocr_feild_service_report/752869_290T532_Missing_FSR_Report.xlsx"
+      # ── ER (dev) ──
+      er_chunk_table: "vaid.ai_std_con_field_service_report.vec_engineering_report"
+      er_run_log_table: "vaid.ai_std_con_field_service_report.er_run_log"
+      er_failed_records_table: "vaid.ai_std_con_field_service_report.er_failed_records"
+      er_vs_endpoint: "pw-ser-sdg-vector-search"
+      er_vs_index: "vaid.ai_std_con_field_service_report.vs_vec_engineering_report"
+      # ── Heatmap (dev) ──
+      heatmap_embedding_table: "vaid.ai_std_con_field_service_report.vec_risk_matrix"
+      # ── M&D (dev) ──
+      mnd_source_table: "vgpd.qlt_std_views.u_mandd"
+      mnd_preprocessed_table: "vaid.ai_sot_monitoring_diagnostics.stg_mnd_preprocessed"
+      mnd_chunk_table: "vaid.ai_std_con_monitoring_diagnostics.vec_mnd_chunks"
+      mnd_run_log_table: "vaid.ai_std_con_monitoring_diagnostics.mnd_run_log"
+      mnd_failed_records_table: "vaid.ai_std_con_monitoring_diagnostics.mnd_failed_records"
+      mnd_vs_endpoint: "pw-ser-sdg-vector-search"
+      mnd_vs_index: "vaid.ai_std_con_monitoring_diagnostics.vs_vec_mnd_chunks"
+      mnd_cluster_id: ""  # ai-pw-ser-ds-dev-apc (cluster: 0202-145937-0kcq6uxc)
+      litellm_base_url: "https://dev-gateway.apps.gevernova.net"
+      litellm_api_key: "sk-cjRRha3Ejczz8AmnJKyQxA" # Danger & to be roated. But approval is taken for Prod readiness
+    permissions:
+      - level: CAN_MANAGE
+        user_name: service.globalopsfsso@gevernova.com
+      - level: CAN_VIEW
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_MANAGE
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_VIEW
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_MANAGE
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_VIEW
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_MANAGE
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_MANAGE
+        user_name: namruth.sp@gevernova.com
+      - level: CAN_MANAGE
+        user_name: vyshnavi.ravula@gevernova.com
+      - level: CAN_MANAGE
+        user_name: abhinaya.dutta@gevernova.com
+      - level: CAN_MANAGE
+        user_name: Sai.Rakesh@gevernova.com
+      - level: CAN_MANAGE
+        user_name: EkambaraJayendra.Tumpudi@gevernova.com
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Operations Team"
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Admin Team"
+    presets:
+      tags:
+        jb_business_unit_name: "gaspower"
+        jb_domain_code: "gp_ser"
+        jb_sub_domain_code: "fsr"
+        jb_owner: "502799799"
+        jb_env: "dev"
+  prod:
+    mode: production
+    workspace:
+      host: "https://gevernova-ai-dbr.cloud.databricks.com/"
+      root_path: /Users/d44c1af5-e99e-4010-8302-464e74d13ba1/.bundle/${bundle.name}
+    variables:
+      jb_env: "prod"
+      catalog: "vaip"
+      run_as_user: "service.globalopsfsso@gevernova.com"
+      fsr_metadata_table: "vaip.ai_sot_field_service_report.biz_metadata_field_service_report"
+      fsr_chunk_table: "vaip.ai_std_con_field_service_report.vec_field_service_report"
+      fsr_run_log_table: "vaip.ai_sot_field_service_report.fsr_run_log"
+      fsr_dq_log_table: "vaip.ai_sot_field_service_report.fsr_data_quality_log"
+      # NOTE: actual prod endpoint name has no '-prod' suffix.
+      # Mismatch caused chunking job's sync_vector_search() to silently bail
+      # with HTTP 404 throughout the prod backfill (May 1–2, 2026).
+      fsr_vs_endpoint: "pw-ser-sdg-vector-search"
+      fsr_vs_index: "vaip.ai_std_con_field_service_report.vs_vec_field_service_report"
+      fsr_metadata_table_v2: "vaip.ai_std_con_field_service_report.fsr_metadata_v2"
+      fsr_chunk_table_v2: "vaip.ai_std_con_field_service_report.fsr_chunks_v2"
+      fsr_doc_equipment_map_table_v2: "vaip.ai_std_con_field_service_report.fsr_document_equipment_map_v2"
+      fsr_run_log_table_v2: "vaip.ai_sot_field_service_report.fsr_run_log_v2"
+      fsr_dq_log_table_v2: "vaip.ai_sot_field_service_report.fsr_data_quality_log_v2"
+      fsr_v2_repair_scope_table: "vaip.ai_sot_field_service_report.fsr_v2_repair_scope"
+      fsr_vs_endpoint_v2: "pw-ser-sdg-vector-search"
+      fsr_vs_index_v2: "vaip.ai_std_con_field_service_report.fsr_vs_index_v2"
+      fsr_parsed_doc_volume_root: "/Volumes/vaip/ai_sot_field_service_report/fsr_parsed_docs"
+      fsr_pdf_ref_view: "vgpp.fsr_std_views.fsr_pdf_ref"
+      fsr_source_volume_paths: "/Volumes/viup/ing_ud_fieldvision/fv_field_service_report,/Volumes/viup/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viup/ing_ud_fsr_manual/manual_field_service_report/FSR_manual"
+      # ── FSR v2 Adhoc (prod) ──
+      fsr_adhoc_source_volume_path: "/Volumes/viup/ing_ud_fieldvision/fv_field_service_report/sdg"
+      fsr_sdg_execution_table: "vaip.ai_std_con_field_service_report.sdg_user_attachments_execution_log_psot"
+      # ── TIL (prod) ──
+      til_catalog: "vaip"
+      til_schema: "ai_sot_field_service_report"
+      til_metadata_table: "vaip.ai_sot_field_service_report.til_metadata"
+      til_elements_table: "vaip.ai_sot_field_service_report.til_elements"
+      til_chunks_table: "vaip.ai_sot_field_service_report.til_chunks"
+      til_validation_results_table: "vaip.ai_sot_field_service_report.til_validation_results"
+      til_evaluation_results_table: "vaip.ai_sot_field_service_report.til_evaluation_results"
+      til_pipeline_run_audit_table: "vaip.ai_sot_field_service_report.til_pipeline_run_audit"
+      til_profile_table: "vaip.ai_sot_field_service_report.til_profile"
+      til_source_volume_paths: "/Volumes/viup/ing_ud_fsr_manual/manual_field_service_report/TILS_new"
+      fsr_repair_input_path: "/Volumes/vaip/ai_sot_field_service_report/ocr_feild_service_report/752869_290T532_Missing_FSR_Report.xlsx"
+      # ── ER (prod) ──
+      er_chunk_table: "vaip.ai_std_con_field_service_report.vec_engineering_report"
+      er_run_log_table: "vaip.ai_std_con_field_service_report.er_run_log"
+      er_failed_records_table: "vaip.ai_std_con_field_service_report.er_failed_records"
+      er_vs_endpoint: "pw-ser-sdg-vector-search"
+      er_vs_index: "vaip.ai_std_con_field_service_report.vs_vec_engineering_report"
+      # ── Heatmap (prod) ──
+      heatmap_embedding_table: "vaip.ai_std_con_field_service_report.vec_risk_matrix"
+      # ── M&D (prod) ──
+      mnd_source_table: "vgpp.qlt_std_views.u_mandd"
+      mnd_preprocessed_table: "vaip.ai_std_con_monitoring_diagnostics.stg_mnd_preprocessed"
+      mnd_chunk_table: "vaip.ai_std_con_monitoring_diagnostics.vec_mnd_chunks"
+      mnd_run_log_table: "vaip.ai_sot_monitoring_diagnostics.mnd_run_log"
+      mnd_failed_records_table: "vaip.ai_sot_monitoring_diagnostics.mnd_failed_records"
+      mnd_vs_endpoint: "pw-ser-sdg-vector-search"
+      mnd_vs_index: "vaip.ai_std_con_monitoring_diagnostics.vs_vec_mnd_chunks"
+      mnd_cluster_id: ""  # ai-pw-ser-ds-prod-apc (cluster: 0217-153108-zn9bolcw)
+      # TODO: confirm PROD gateway URL with Databricks team
+      litellm_base_url: "https://prd-gateway.apps.gevernova.net"
+      litellm_api_key: "sk-kzwSILEo3r1RXntxcuaCAA" # Danger & to be roated. But approval is taken for Prod readiness
+    permissions:
+      - level: CAN_MANAGE
+        user_name: service.globalopsfsso@gevernova.com
+      - level: CAN_VIEW
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_MANAGE
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_VIEW
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_MANAGE
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_VIEW
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_MANAGE
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_VIEW
+        user_name: namruth.sp@gevernova.com
+      - level: CAN_VIEW
+        user_name: vyshnavi.ravula@gevernova.com
+      - level: CAN_VIEW
+        user_name: abhinaya.dutta@gevernova.com
+      - level: CAN_VIEW
+        user_name: Sai.Rakesh@gevernova.com
+      - level: CAN_VIEW
+        user_name: EkambaraJayendra.Tumpudi@gevernova.com
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Operations Team"
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Admin Team"
+
+    presets:
+      tags:
+        jb_business_unit_name: "gaspower"
+        jb_domain_code: "gp_ser"
+        jb_sub_domain_code: "fsr"
+        jb_owner: "502799799"
+        jb_env: "prod"
+
+  qa:
+    mode: production
+    workspace:
+      host: "https://gevernova-ai-qa-dbr.cloud.databricks.com/"
+      root_path: /Users/d44c1af5-e99e-4010-8302-464e74d13ba1/.bundle/${bundle.name}
+    variables:
+      jb_env: "qa"
+      catalog: "vaiq"
+      run_as_user: "service.globalopsfsso@gevernova.com"
+      fsr_metadata_table: "vaiq.ai_sot_field_service_report.biz_metadata_field_service_report"
+      fsr_chunk_table: "vaiq.ai_std_con_field_service_report.vec_field_service_report"
+      fsr_run_log_table: "vaiq.ai_sot_field_service_report.fsr_run_log"
+      fsr_dq_log_table: "vaiq.ai_sot_field_service_report.fsr_data_quality_log"
+      fsr_vs_endpoint: "pw-ser-sdg-vector-search-qa"
+      fsr_vs_index: "vaiq.ai_std_con_field_service_report.vs_vec_field_service_report"
+      # ── FSR v2 (qa) ──
+      fsr_metadata_table_v2: "vaiq.ai_std_con_field_service_report.fsr_metadata_v2"
+      fsr_chunk_table_v2: "vaiq.ai_std_con_field_service_report.fsr_chunks_v2"
+      fsr_doc_equipment_map_table_v2: "vaiq.ai_std_con_field_service_report.fsr_document_equipment_map_v2"
+      fsr_run_log_table_v2: "vaiq.ai_sot_field_service_report.fsr_run_log_v2"
+      fsr_dq_log_table_v2: "vaiq.ai_sot_field_service_report.fsr_data_quality_log_v2"
+      fsr_v2_repair_scope_table: "vaiq.ai_sot_field_service_report.fsr_v2_repair_scope"
+      fsr_vs_endpoint_v2: "pw-ser-sdg-vector-search-qa"
+      fsr_vs_index_v2: "vaiq.ai_std_con_field_service_report.fsr_vs_index_v2"
+      fsr_parsed_doc_volume_root: "/Volumes/vaiq/ai_sot_field_service_report/fsr_parsed_docs"
+      fsr_v2_reset: "false"
+      # Explicitly set P1 enrichment dependencies for QA readiness.
+      fsr_ibat_table: "vgpd.prm_std_views.ibat_equipment_mst"
+      fsr_event_vision_table: "vgpd.fsr_std_views.eventmgmt_event_vision_sot"
+      fsr_psot_table: "vgpd.fsr_std_views.fsr_field_vision_field_services_report_psot"
+      fsr_pdf_ref_view: "vgpd.fsr_std_views.fsr_pdf_ref"
+      # TODO: confirm QA ingestion catalog (likely viuq) with Databricks team
+      fsr_source_volume_paths: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual"
+      fsr_target_pdf_names: ""
+      fsr_max_pdfs: ""
+      # ── FSR v2 Adhoc (qa) ──
+      fsr_adhoc_source_volume_path: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/sdg"
+      fsr_sdg_execution_table: "vaiq.ai_std_con_field_service_report.sdg_user_attachments_execution_log_psot"
+      # ── TIL (qa) ──
+      til_catalog: "vaiq"
+      til_schema: "ai_sot_field_service_report"
+      til_metadata_table: "vaiq.ai_sot_field_service_report.til_metadata"
+      til_elements_table: "vaiq.ai_sot_field_service_report.til_elements"
+      til_chunks_table: "vaiq.ai_sot_field_service_report.til_chunks"
+      til_validation_results_table: "vaiq.ai_sot_field_service_report.til_validation_results"
+      til_evaluation_results_table: "vaiq.ai_sot_field_service_report.til_evaluation_results"
+      til_pipeline_run_audit_table: "vaiq.ai_sot_field_service_report.til_pipeline_run_audit"
+      til_source_volume_paths: "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new"
+      fsr_repair_input_path: "/Volumes/vaiq/ai_sot_field_service_report/ocr_feild_service_report/752869_290T532_Missing_FSR_Report.xlsx"
+      # ── ER (qa) ──
+      er_chunk_table: "vaiq.ai_std_con_field_service_report.vec_engineering_report"
+      er_run_log_table: "vaiq.ai_std_con_field_service_report.er_run_log"
+      er_failed_records_table: "vaiq.ai_std_con_field_service_report.er_failed_records"
+      er_vs_endpoint: "pw-ser-sdg-vector-search-qa"
+      er_vs_index: "vaiq.ai_std_con_field_service_report.vs_vec_engineering_report"
+      # ── Heatmap (qa) ──
+      heatmap_embedding_table: "vaiq.ai_std_con_field_service_report.vec_risk_matrix"
+      # ── M&D (qa) ──
+      mnd_source_table: "vgpd.qlt_std_views.u_mandd"
+      mnd_preprocessed_table: "vaiq.ai_sot_monitoring_diagnostics.stg_mnd_preprocessed"
+      mnd_chunk_table: "vaiq.ai_std_con_monitoring_diagnostics.vec_mnd_chunks"
+      mnd_run_log_table: "vaiq.ai_std_con_monitoring_diagnostics.mnd_run_log"
+      mnd_failed_records_table: "vaiq.ai_std_con_monitoring_diagnostics.mnd_failed_records"
+      mnd_vs_endpoint: "pw-ser-sdg-vector-search-qa"
+      mnd_vs_index: "vaiq.ai_std_con_monitoring_diagnostics.vs_vec_mnd_chunks"
+      mnd_cluster_id: ""  # ai-pw-ser-ds-qa-apc (cluster: 0406-112901-fgzh026o)
+      # TODO: confirm QA gateway URL with Databricks team
+      litellm_base_url: "https://dev-gateway.apps.gevernova.net"
+      litellm_api_key: "sk-cjRRha3Ejczz8AmnJKyQxA" # Danger & to be roated. But approval is taken for Prod readiness
+    permissions:
+      - level: CAN_MANAGE
+        user_name: service.globalopsfsso@gevernova.com
+      - level: CAN_VIEW
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_MANAGE
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_VIEW
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_MANAGE
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_VIEW
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_MANAGE
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_MANAGE
+        user_name: namruth.sp@gevernova.com
+      - level: CAN_MANAGE
+        user_name: Sai.Rakesh@gevernova.com
+      - level: CAN_MANAGE
+        user_name: EkambaraJayendra.Tumpudi@gevernova.com
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Operations Team"
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Admin Team"
+    presets:
+      tags:
+        jb_business_unit_name: "gaspower"
+        jb_domain_code: "gp_ser"
+        jb_sub_domain_code: "fsr"
+        jb_owner: "502799799"
+        jb_env: "qa"
+
+  stg:
+    mode: production
+    workspace:
+      host: "https://gevernova-ai-stg-dbr.cloud.databricks.com/"
+      root_path: /Users/d44c1af5-e99e-4010-8302-464e74d13ba1/.bundle/${bundle.name}
+    variables:
+      jb_env: "stg"
+      run_as_user: "service.globalopsfsso@gevernova.com"
+      # TODO: confirm STG catalog names, VS endpoint, and cluster ID with Databricks team.
+      fsr_metadata_table: "vais.ai_sot_field_service_report.biz_metadata_field_service_report"
+      fsr_chunk_table: "vais.ai_std_con_field_service_report.vec_field_service_report"
+      fsr_run_log_table: "vais.ai_sot_field_service_report.fsr_run_log"
+      fsr_dq_log_table: "vais.ai_sot_field_service_report.fsr_data_quality_log"
+      fsr_vs_endpoint: "pw-ser-sdg-vector-search-stg"
+      fsr_vs_index: "vais.ai_std_con_field_service_report.vs_vec_field_service_report"
+      fsr_metadata_table_v2: "vais.ai_sot_field_service_report.fsr_metadata_v2"
+      fsr_chunk_table_v2: "vais.ai_std_con_field_service_report.fsr_chunks_v2"
+      fsr_doc_equipment_map_table_v2: "vais.ai_sot_field_service_report.fsr_document_equipment_map_v2"
+      fsr_run_log_table_v2: "vais.ai_std_con_field_service_report.fsr_run_log_v2"
+      fsr_dq_log_table_v2: "vais.ai_std_con_field_service_report.fsr_data_quality_log_v2"
+      fsr_v2_repair_scope_table: "vais.ai_sot_field_service_report.fsr_v2_repair_scope"
+      fsr_vs_endpoint_v2: "pw-ser-sdg-vector-search-stg"
+      fsr_vs_index_v2: "vais.ai_std_con_field_service_report.fsr_vs_index_v2"
+      fsr_parsed_doc_volume_root: "/Volumes/vais/ai_sot_field_service_report/fsr_parsed_docs"
+      fsr_pdf_ref_view: "vgpp.fsr_std_views.fsr_pdf_ref"
+      # TODO: confirm STG ingestion catalog with Databricks team
+      fsr_source_volume_paths: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report,/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/ecrt_reports"
+      # ── FSR v2 Adhoc (stg) ──
+      fsr_adhoc_source_volume_path: "/Volumes/viud/ing_ud_fieldvision/fv_field_service_report/sdg"
+      fsr_sdg_execution_table: "vais.ai_std_con_field_service_report.sdg_user_attachments_execution_log_psot"
+      # ── TIL (stg) ──
+      til_catalog: "vais"
+      til_schema: "ai_sot_field_service_report"
+      til_metadata_table: "vais.ai_sot_field_service_report.til_metadata"
+      til_elements_table: "vais.ai_sot_field_service_report.til_elements"
+      til_chunks_table: "vais.ai_sot_field_service_report.til_chunks"
+      til_validation_results_table: "vais.ai_sot_field_service_report.til_validation_results"
+      til_evaluation_results_table: "vais.ai_sot_field_service_report.til_evaluation_results"
+      til_pipeline_run_audit_table: "vais.ai_sot_field_service_report.til_pipeline_run_audit"
+      til_source_volume_paths: "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new"
+      # ── ER (stg) ──
+      er_chunk_table: "vais.ai_std_con_field_service_report.vec_engineering_report"
+      er_run_log_table: "vais.ai_std_con_field_service_report.er_run_log"
+      er_failed_records_table: "vais.ai_std_con_field_service_report.er_failed_records"
+      er_vs_endpoint: "pw-ser-sdg-vector-search-stg"
+      er_vs_index: "vais.ai_std_con_field_service_report.vs_vec_engineering_report"
+      # ── Heatmap (stg) ──
+      heatmap_embedding_table: "vais.ai_std_con_field_service_report.vec_risk_matrix"
+      # ── M&D (stg) ──
+      mnd_source_table: "vgpd.qlt_std_views.u_mandd"
+      mnd_preprocessed_table: "vais.ai_sot_monitoring_diagnostics.stg_mnd_preprocessed"
+      mnd_chunk_table: "vais.ai_std_con_monitoring_diagnostics.vec_mnd_chunks"
+      mnd_run_log_table: "vais.ai_std_con_monitoring_diagnostics.mnd_run_log"
+      mnd_failed_records_table: "vais.ai_std_con_monitoring_diagnostics.mnd_failed_records"
+      mnd_vs_endpoint: "pw-ser-sdg-vector-search-stg"
+      mnd_vs_index: "vais.ai_std_con_monitoring_diagnostics.vs_vec_mnd_chunks"
+      mnd_cluster_id: ""  # ai-pw-ser-ds-stg-apc (cluster: 0407-101000-baxnm1hs)
+      # TODO: confirm STG gateway URL with Databricks team
+      litellm_base_url: "https://stg-gateway.apps.gevernova.net"
+      litellm_api_key: "sk-aw6f93-Va0jFChhzct5MRQ" # Danger to be roated. But approval is taken for Prod readiness
+    permissions:
+      - level: CAN_MANAGE
+        user_name: service.globalopsfsso@gevernova.com
+      - level: CAN_VIEW
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_MANAGE
+        user_name: vasvee.singh@gevernova.com
+      - level: CAN_VIEW
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_MANAGE
+        user_name: madhurima.saxena@gevernova.com
+      - level: CAN_VIEW
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_MANAGE
+        user_name: Chaithra.K@gevernova.com
+      - level: CAN_VIEW
+        user_name: namruth.sp@gevernova.com
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Operations Team"
+      - level: CAN_MANAGE
+        group_name: "@GE Vernova Databricks Admin Team"
+    presets:
+      tags:
+        jb_business_unit_name: "gaspower"
+        jb_domain_code: "gp_ser"
+        jb_sub_domain_code: "fsr"
+        jb_owner: "502799799"
+        jb_env: "stg"

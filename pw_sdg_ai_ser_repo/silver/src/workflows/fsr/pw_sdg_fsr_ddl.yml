@@ -1,0 +1,37 @@
+resources:
+  jobs:
+
+    # ── DDL provisioning (manual, infra-only) ────────────────────────────
+    # Run for first-time setup, schema changes, or controlled reset.
+    PW_SDG_FSR_DDL_Provision:
+      name: PW_SDG_FSR_DDL_Provision
+
+      tasks:
+        - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/ddl/nb_sdg_fsr_ddl
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+        - name: FORCE_RESET
+          default: "false"
+        - name: FSR_METADATA_TABLE
+          default: ${var.fsr_metadata_table}
+        - name: FSR_CHUNK_TABLE
+          default: ${var.fsr_chunk_table}
+        - name: FSR_RUN_LOG_TABLE
+          default: ${var.fsr_run_log_table}
+        - name: FSR_DQ_LOG_TABLE
+          default: ${var.fsr_dq_log_table}
+        - name: FSR_VS_ENDPOINT
+          default: ${var.fsr_vs_endpoint}
+        - name: FSR_VS_INDEX
+          default: ${var.fsr_vs_index}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

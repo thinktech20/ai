@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    jb_ser_adhoc_script_bronze:
+      name: jb_ser_adhoc_script_bronze
+
+      tasks:
+        - task_key: tsk_ser_adhoc_script_bronze
+          notebook_task:
+            notebook_path: ${var.filename_param}/bronze/src/etl/ddl-adhoc-script
+            base_parameters:
+              filename: ${var.filename_param}/silver/src/etl/nb_ser_adhoc_script_bronze
+            source: WORKSPACE
+          
+      queue:
+        enabled: true
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com
+        

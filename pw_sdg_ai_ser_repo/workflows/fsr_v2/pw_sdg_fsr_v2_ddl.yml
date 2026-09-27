@@ -1,0 +1,45 @@
+resources:
+  jobs:
+
+    # -- FSR v2 DDL: create pipeline tables (idempotent) ---------------------
+    PW_SDG_FSR_V2_DDL:
+      name: PW_SDG_FSR_V2_DDL
+
+      tasks:
+        - task_key: create_fsr_v2_tables
+          notebook_task:
+            notebook_path: ${var.filename_param}/ddls/fsr_v2/nb_sdg_fsr_v2_ddl
+            source: WORKSPACE
+
+      queue:
+        enabled: true
+
+      parameters:
+        - name: jb_env
+          default: ${var.jb_env}
+
+        - name: METADATA_TABLE_V2
+          default: ${var.fsr_metadata_table_v2}
+        - name: CHUNK_TABLE_V2
+          default: ${var.fsr_chunk_table_v2}
+        - name: DOC_EQUIPMENT_MAP_TABLE_V2
+          default: ${var.fsr_doc_equipment_map_table_v2}
+        - name: RUN_LOG_TABLE_V2
+          default: ${var.fsr_run_log_table_v2}
+        - name: DQ_LOG_TABLE_V2
+          default: ${var.fsr_dq_log_table_v2}
+        - name: FSR_ATTACHMENT_EXECUTION_TABLE
+          default: ${var.fsr_sdg_execution_table}
+        - name: VS_INDEX_V2
+          default: ${var.fsr_vs_index_v2}
+        - name: VS_ENDPOINT_V2
+          default: ${var.fsr_vs_endpoint_v2}
+        - name: FSR_PARSED_DOC_VOLUME_ROOT
+          default: ${var.fsr_parsed_doc_volume_root}
+        - name: FSR_V2_PARSER_VERSION
+          default: ${var.fsr_v2_parser_version}
+        - name: RESET_FSR_V2
+          default: ${var.fsr_v2_reset}
+
+      run_as:
+        user_name: service.globalopsfsso@gevernova.com

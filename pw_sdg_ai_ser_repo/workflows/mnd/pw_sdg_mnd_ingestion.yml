@@ -1,0 +1,160 @@
+resources:
+  jobs:
+
+    # ── M&D (Monitoring & Diagnostics) Ingestion Pipeline ────────────────
+    # DDL → Ingestion (extract + preprocess + PII + chunk + embed + write
+    #                  + VS sync) → Validate
+    #
+    # The ingestion task is the heavyweight one — Presidio + Flair PII
+    # redaction is slow (Spark→Pandas→Spark per micro-batch, Flair NER
+    # model is ~1.5 GB).  An 8h timeout matches the ER pipeline; long
+    # backfills may need to be split via MND_BACKFILL_DATE_FROM/_TO.
+    PW_SDG_MND_Ingestion:
+      name: PW_SDG_MND_Ingestion
+# ── Heavy compute for initial backfill ─────────────────
+      # Uses existing cluster ai-pw-ser-ds-dev-apc (i3.2xlarge, autoscale 1-4)
+      # Cluster ID: 0202-145937-0kcq6uxc
+      # This avoids cluster-create permission errors for the service account.
+
+      tasks:
+        - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/ddls/mnd/nb_sdg_mnd_ddl
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+        - task_key: ingestion
+          depends_on:
+            - task_key: ddl
+          existing_cluster_id: ${var.mnd_cluster_id}
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_mnd_ingestion
+            source: WORKSPACE
+          timeout_seconds: 79200  # 22 h — Presidio + Flair are slow
+
+        - task_key: validate
+          depends_on:
+            - task_key: ingestion
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/validation/nb_sdg_mnd_validate
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+      # schedule:
+      #   quartz_cron_expression: "0 0 6 * * ?"
+      #   timezone_id: "America/New_York"
+      #   pause_status: PAUSED
+
+      queue:
+        enabled: true
+
+      # email_notifications:
+      #   on_failure:
+      #     - ${var.alert_email}
+
+      parameters:
+        # ── Reset (must set both to actually reset) ──
+        - name: FORCE_RESET
+          default: "false"
+        - name: FORCE_RESET_CONFIRM
+          default: "false"
+        - name: jb_env
+          default: ${var.jb_env}
+
+        # ── Tables ──
+        - name: MND_SOURCE_TABLE
+          default: ${var.mnd_source_table}
+        - name: MND_PREPROCESSED_TABLE
+          default: ${var.mnd_preprocessed_table}
+        - name: MND_CHUNK_TABLE
+          default: ${var.mnd_chunk_table}
+        - name: MND_RUN_LOG_TABLE
+          default: ${var.mnd_run_log_table}
+        - name: MND_FAILED_RECORDS_TABLE
+          default: ${var.mnd_failed_records_table}
+
+        # ── Vector Search ──
+        - name: MND_VS_ENDPOINT
+          default: ${var.mnd_vs_endpoint}
+        - name: MND_VS_INDEX
+          default: ${var.mnd_vs_index}
+        - name: MND_VS_INDEX_TYPE
+          default: "HYBRID"
+        - name: MND_VS_EMBEDDING_MODEL_ENDPOINT
+          default: "text-embedding-3-large"
+
+        # ── Per-record retry ──
+        - name: MND_MAX_RECORD_ATTEMPTS
+          default: "5"
+
+        # ── Backfill audit mode ──
+        # When MND_BACKFILL_AUDIT=true: find source records below the
+        # watermark that have no chunks, seed them into the failed-records
+        # table for retry, then exit.  Default false = normal incremental.
+        - name: MND_BACKFILL_AUDIT
+          default: "true"
+        # Comma-separated mnd_case_numbers — with MND_BACKFILL_AUDIT=true,
+        # the audit bypasses the source-vs-chunks query and seeds ONLY these.
+        - name: MND_BACKFILL_RECORD_IDS
+          default: ""
+        # Date-range re-ingestion: seeds ALL source records in range.
+        # Chunk MERGE ensures no duplicates. Marker not advanced.
+        - name: MND_BACKFILL_DATE_FROM
+          default: ""
+        - name: MND_BACKFILL_DATE_TO
+          default: ""
+
+        # ── Scope filters ──
+        - name: MND_FILTER_U_TYPE
+          default: "Ops Center,Op Center- Trips,Ops Center-Internal Investigation"
+        - name: MND_FILTER_U_RESOLUTION_CATEGORY
+          default: "1. Prior to Continued Operation,2. At First Opportunity or Next Shutdown,3. At Next Planned Inspection or Outage,4. At Next Exposure to Affected System"
+        - name: MND_CUTOFF_DATE
+          default: ""
+        - name: MND_SERIAL_NUMBERS
+          default: ""
+        - name: MND_MAX_RECORDS
+          default: "15000"
+
+        # ── LLM / gateway ──
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: MND_SECRET_SCOPE
+          default: "mnd-pipeline"
+        - name: MND_LITELLM_MODEL
+          default: "azure-text-embedding-3-large-1"
+        - name: MND_EMBEDDING_DIMENSION
+          default: "3072"
+        - name: MND_EMBEDDING_REQUEST_PATH
+          default: "/v1/embeddings"
+        - name: MND_EMBEDDING_BATCH_SIZE
+          default: "20"
+        - name: MND_EMBEDDING_CONCURRENCY
+          default: "4"
+        - name: MND_MAX_RETRIES
+          default: "3"
+        - name: MND_LLM_VERIFY_SSL
+          default: "false"
+
+        # ── Micro-batching (OOM + PII speed) ──
+        # Bound the driver-side Pandas DF Presidio operates on.  500 cases
+        # × ~10 KB text each ≈ 5 MB — comfortable for Flair NER.
+        - name: MND_RECORD_BATCH_SIZE
+          default: "500"
+
+        # ── Chunking thresholds (research-validated) ──
+        - name: MND_CHUNK_MIN_TOKENS
+          default: "256"
+        - name: MND_CHUNK_MAX_TOKENS
+          default: "512"
+        - name: MND_CHUNK_TINY_TOKENS
+          default: "200"
+
+        # ── PII model ──
+        - name: MND_FLAIR_MODEL
+          default: "flair/ner-english-large"
+
+      run_as:
+        user_name: ${var.run_as_user}

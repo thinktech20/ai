@@ -1,0 +1,98 @@
+resources:
+  jobs:
+
+    # ── ER Backfill Audit ────────────────────────────────────────────────
+    # Sibling job to PW_SDG_ER_Ingestion.  Same notebook, same params, but
+    # ER_BACKFILL_AUDIT defaults to "true" so the run executes the audit
+    # block and exits before extract/embed/write.
+    #
+    # Purpose: discover source records below the ingestion watermark that
+    # have no chunks, seed them into ER_FAILED_RECORDS_TABLE, and advance
+    # the backfill marker so the same range is not re-scanned.  Pattern 2
+    # retry on the next normal ingestion run picks up the seeded records.
+    #
+    # Run cadence: weekly (paused by default — un-pause when ready).
+    #
+    # Manual targeted re-audit: trigger with override
+    #   ER_BACKFILL_RECORD_IDS = "ER001,ER002,..."
+    # The marker is ignored on the override path.
+    PW_SDG_ER_Backfill_Audit:
+      name: PW_SDG_ER_Backfill_Audit
+
+      tasks:
+        - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/ddl/nb_sdg_er_ddl
+            source: WORKSPACE
+          timeout_seconds: 1800
+
+        - task_key: backfill_audit
+          depends_on:
+            - task_key: ddl
+          notebook_task:
+            notebook_path: ${var.filename_param}/silver/src/etl/nb_sdg_er_ingestion
+            source: WORKSPACE
+          timeout_seconds: 3600
+
+      # schedule:
+      #   # Weekly — Sunday 02:00 ET.  Un-comment and un-pause once
+      #   # operators are comfortable with the audit semantics.
+      #   quartz_cron_expression: "0 0 2 ? * SUN"
+      #   timezone_id: "America/New_York"
+      #   pause_status: PAUSED
+
+      queue:
+        enabled: true
+
+      parameters:
+        # Audit-mode toggle — overrides the notebook default.
+        - name: ER_BACKFILL_AUDIT
+          default: "true"
+        # Manual override hatch — leave empty for normal incremental audit.
+        - name: ER_BACKFILL_RECORD_IDS
+          default: ""
+        # Date-range re-ingestion (seeds all records in range for re-process).
+        - name: ER_BACKFILL_DATE_FROM
+          default: ""
+        - name: ER_BACKFILL_DATE_TO
+          default: ""
+        # Hard guard: never let the audit job perform a destructive reset.
+        - name: FORCE_RESET
+          default: "false"
+        - name: FORCE_RESET_CONFIRM
+          default: "false"
+        # ── Tables / endpoints (must match ingestion job) ──
+        - name: ER_SOURCE_TABLE
+          default: ${var.er_source_table}
+        - name: ER_CHUNK_TABLE
+          default: ${var.er_chunk_table}
+        - name: ER_VS_ENDPOINT
+          default: ${var.er_vs_endpoint}
+        - name: ER_VS_INDEX
+          default: ${var.er_vs_index}
+        - name: ER_RUN_LOG_TABLE
+          default: ${var.er_run_log_table}
+        - name: ER_FAILED_RECORDS_TABLE
+          default: ${var.er_failed_records_table}
+        - name: ER_MAX_RECORD_ATTEMPTS
+          default: "3"
+        - name: ER_CUTOFF_DATE
+          default: "2016-01-01"
+        # ── Embedding config (notebook preflight requires these) ──
+        - name: LITELLM_API_KEY
+          default: ${var.litellm_api_key}
+        - name: LITELLM_BASE_URL
+          default: ${var.litellm_base_url}
+        - name: ER_SECRET_SCOPE
+          default: "fsr-pipeline"
+        - name: ER_LITELLM_MODEL
+          default: "azure-text-embedding-3-large-1"
+        - name: ER_EMBEDDING_DIMENSION
+          default: "3072"
+        - name: ER_EMBEDDING_REQUEST_PATH
+          default: "/v1/embeddings"
+        - name: ER_LLM_VERIFY_SSL
+          default: "false"
+
+      run_as:
+        user_name: ${var.run_as_user}
