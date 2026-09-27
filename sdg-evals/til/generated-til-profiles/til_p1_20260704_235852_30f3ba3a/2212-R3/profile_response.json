@@ -1,0 +1,162 @@
+{
+  "til_number": "2212-R3",
+  "revision": "R3",
+  "title": "7F.05 COMPRESSOR T-FAIRING DISTRESS",
+  "publish_date": "2022-08-03",
+  "reason_for_revision": "Document release of the enhanced T-fairing with springs configuration for units with T-fairings installed on the GT compressor rotor. Update recommendations associated with risk understanding gained from fleet operational observations, low speed turning gear, and T-fairings with springs.",
+  "purpose": "Inform 7F.05 users with T-fairings of front end compressor inspections and recommendations to improve availability and reliability.",
+  "compliance_category_code": "C",
+  "compliance_category_text": "Compliance Required - Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.",
+  "recurring_indicator_if_found": "The above borescope inspections are recurring.",
+  "coarse_outage_type": "Next Scheduled Outage",
+  "scope_of_work": [
+    "Increased T-Fairing inspections during borescope inspections.",
+    "Enhanced T-faring with spring replacement or Low Speed Turning Gear installation depending on specific situation."
+  ],
+  "service_recommendation_line_items": [
+    "Calculate Equivalent Turning Gear Hours (ETG) using: ETG = [TG6 * (TG6S/6)] + [TGLS * (1/60)] + [FS *4] + [PC*4], and project ETG for planned hot gas path and/or major inspection outages for planning/procurement purposes.",
+    "For units with original T-fairings (without springs) and without Low Speed Turning Gear installed: if projected to reach first major inspection before 5,000 ETG hours, perform normal borescope inspections and install enhanced T-fairings with springs during the unit's first planned major inspection.",
+    "For units with original T-fairings (without springs) and without Low Speed Turning Gear installed: if projected to exceed 5,000 ETG prior to first planned major inspection interval, install Low Speed Turning Gear at first available opportunity.",
+    "For units with original T-fairings (without springs) and without Low Speed Turning Gear installed: during any planned borescope inspections performed after accumulating >5,000 ETG hours, perform detailed inspection: (1) Inspect 100% of the 1-2 T-Fairings and 2-3 T-Fairings for edge distress, circumferential gaps, misalignments, tilting, and rubs; take borescope measurements. (2) Inspect 100% of the VSV1s and VSV2s for evidence of tip rubs, tip indications, or tip loss. Document the condition of each T-Fairing so rubs and measurements can be monitored over time.",
+    "For units with original T-fairings (without springs) (with or without Low Speed Turning Gear installed): if projected to exceed 10,000 ETG prior to first planned major inspection interval, order a set of enhanced T-fairings with springs and have them available at site for installation based on specific borescope results and risk present for shingling to occur.",
+    "For units with replaced set of original T-fairings (without springs) and with Low Speed Turning Gear installed: order a set of enhanced T-fairings with springs and have them available at site for installation based on specific borescope results and risk present for shingling to occur.",
+    "For units with replaced set of original T-fairings (without springs) and with Low Speed Turning Gear installed: once the unit has accumulated >1,000 ETG hours since T-fairing replacement activity, perform detailed inspection: (1) Inspect 100% of the 1-2 T-Fairings and 2-3 T-Fairings for edge distress, circumferential gaps, misalignments, tilting, and rubs; take borescope measurements. (2) Inspect 100% of the VSV1s and VSV2s for evidence of tip rubs, tip indications, or tip loss. Document the condition of each T-Fairing so rubs and measurements can be monitored over time.",
+    "If T-Fairing edge distress is severe, replace the T-Fairings; use borescope inspections to monitor condition and plan for replacement.",
+    "For only units on the specific affected units list (AUL) for TIL-2167 (only specific 7FA.05 & 7F.04-200 units), perform VSV2 and 2-3 TF inspections recommended per TIL-2167 during the activities for this current TIL."
+  ],
+  "completion_criteria_text": "This TIL is considered completed, with no further actions required, once either modified original T-fairings with springs or enhanced T-fairings with springs have been installed in the rotor.",
+  "maintenance_trigger_text": "Recommendations are based on projected and accumulated Equivalent Turning Gear Hours (ETG) and planned borescope inspections; additional actions are triggered at ETG thresholds (e.g., >5,000 ETG hours, >10,000 ETG hours, and >1,000 ETG hours since T-fairing replacement activity).",
+  "recommended_interval_or_trigger": [
+    "During any planned borescope inspections performed after accumulating greater than 5,000 ETG hours (for units with original T-fairings without springs).",
+    "Once the unit has accumulated greater than 1,000 ETG hours since T-fairing replacement activity (for units with replaced set of original T-fairings without springs and with Low Speed Turning Gear installed).",
+    "If projected to exceed 10,000 ETG prior to reaching the unit's first planned major inspection interval, order enhanced T-fairings with springs and have them available at site.",
+    "Install enhanced T-fairings with springs during the unit's first planned major inspection if projected to reach that outage before completing 5,000 ETG hours."
+  ],
+  "usage_counters_to_check_or_consider": [
+    "operating_hours",
+    "starts"
+  ],
+  "usage_counter_requirements_text": "ETG calculation uses TG time at normal TG speed (TG6, hours), normal turning gear speed (TG6S, rpm), TG time at Low speed TG speed (TGLS, hours), number of fired starts (FS, #), and number of purge cycles without completing a fired start (PC, #).",
+  "frame_or_model_applicability_text": "Specific gas turbines with 7F.05 compressors with T-fairings installed. Background discussion also references associated 7F.04-200 compressors (same compressor as the 7F.04-200).",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Applies to units with T-fairings installed; recommendations are separated by: (1) original T-fairings (without springs) with/without Low Speed Turning Gear installed, and (2) units with replaced set of original T-fairings (without springs) with Low Speed Turning Gear installed. Enhanced T-fairings with springs (and modified original T-fairings with springs) are referenced as corrective configurations.",
+  "serial_or_unit_applicability_text": "For only units on the specific affected units list (AUL) for TIL-2167 (only specific 7FA.05 & 7F.04-200 units), ensure to perform VSV2 and 2-3 TF inspections recommended per TIL-2167 during the activities for this current TIL.",
+  "exclusions_or_non_applicable_conditions_text": null,
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Recommendations reference planned borescope inspections and the unit's first major inspection of the GT where the compressor case will be removed as part of the planned outage.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "Document references specific hardware configurations requiring installed-configuration verification (original T-fairings without springs vs enhanced/modified T-fairings with springs; Low Speed Turning Gear installed vs not installed) and calls for procurement/installation of enhanced T-fairings with springs and Low Speed Turning Gear.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "Enhanced T-fairings with springs (replacement set) for installation based on inspection results and ETG projections.",
+      "required_inspection_types": [],
+      "source_location": "RECOMMENDATIONS / PLANNING INFORMATION - Parts"
+    },
+    {
+      "part_number": null,
+      "context": "T-Fairing lockers (referenced as parts for instances as noted for replacement).",
+      "required_inspection_types": [],
+      "source_location": "PLANNING INFORMATION - Parts"
+    },
+    {
+      "part_number": null,
+      "context": "Low Speed Turning Gear solution (installation recommended for certain units projected to exceed 5,000 ETG prior to first planned major inspection interval).",
+      "required_inspection_types": [],
+      "source_location": "RECOMMENDATIONS / PLANNING INFORMATION - Manpower Skills"
+    },
+    {
+      "part_number": null,
+      "context": "Borescope camera with 3D phase measurement capability (special tooling).",
+      "required_inspection_types": [],
+      "source_location": "PLANNING INFORMATION - Special Tooling"
+    },
+    {
+      "part_number": null,
+      "context": "Special tooling to install enhanced T-Fairings with springs (GE tooling center order/rental).",
+      "required_inspection_types": [],
+      "source_location": "PLANNING INFORMATION - Special Tooling"
+    }
+  ],
+  "reference_documents": [
+    {
+      "document_number": "TIL-2167",
+      "document_type": "TIL",
+      "context": "For only units on the specific affected units list (AUL) for TIL-2167 (only specific 7FA.05 & 7F.04-200 units), ensure to perform VSV2 and 2-3 TF inspections recommended per TIL-2167 during the activities for this current TIL; corrective actions in TIL-2167 are independent of this TIL."
+    }
+  ],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "T-fairing configuration: original T-fairings (without springs) vs modified original T-fairings with springs vs enhanced T-fairings with springs",
+    "Low Speed Turning Gear installed vs not installed",
+    "ETG projection relative to thresholds (5,000 ETG; 10,000 ETG; 1,000 ETG since replacement)",
+    "Unit on AUL for TIL-2167 vs not on AUL"
+  ],
+  "configuration_summary": "Recommendations vary based on whether the unit has original T-fairings without springs, whether Low Speed Turning Gear is installed, whether T-fairings have been replaced, and ETG accumulation/projection thresholds; completion is achieved once T-fairings with springs are installed in the rotor.",
+  "severity_signals": [
+    "seismic vibrations levels that cause the unit to be unable to startup due to vibrations reaching runback/trip levels",
+    "VSV tip loss",
+    "T-Fairing material loss",
+    "T-Fairing shingle (neighboring T-fairings overlap each other)"
+  ],
+  "failure_consequences": [
+    "T-Fairing distress may cause T-Fairing to VSV rubs.",
+    "Rubs may result in VSV tip loss or T-Fairing material loss.",
+    "T-fairings may shingle ... lead to seismic vibrations levels that cause the unit to be unable to startup due to vibrations reaching runback/trip levels.",
+    "risk of TF and/or VSV material liberation"
+  ],
+  "risk_summary": "Fleet observations identified T-Fairing misalignment, circumferential gaps, and edge distress that can lead to TF-to-VSV rubs, material loss, shingling, and vibration/runback/trip startup prevention; risk increases with higher Equivalent Turning Gear Hours driven by turning gear time and low-speed operation during start/shutdown and purge activities.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Compliance category definitions (M/C/A/S)",
+      "table_description": "Defines Maintenance, Compliance Required, Alert, and Safety categories.",
+      "useful_for_downstream": false,
+      "reason": "Terminology/legend only; does not provide equipment-specific actions or values."
+    },
+    {
+      "table_label": "Timing code definitions (1-6)",
+      "table_description": "Defines timing codes including '6 Next Scheduled Outage'.",
+      "useful_for_downstream": true,
+      "reason": "Provides the operational timing interpretation for the document's stated Timing Code - 6."
+    }
+  ],
+  "missing_information_flags": [
+    "No specific part numbers provided for enhanced T-fairings with springs, T-fairing lockers, or Low Speed Turning Gear solution.",
+    "No explicit definition of 'normal borescope inspections' scope/criteria beyond the detailed inspection steps triggered by ETG thresholds.",
+    "No explicit acceptance limits/measurement thresholds stated for circumferential gaps, misalignments, tilting, rubs, or wear levels beyond qualitative 'severe' edge distress.",
+    "til_number still contains a hyphen-delimited revision suffix while revision is separately populated."
+  ],
+  "source_snippets": [
+    {
+      "field": "failure_consequences",
+      "snippet": "T-Fairing distress may cause T-Fairing to VSV rubs. Rubs may result in VSV tip loss or T-Fairing material loss."
+    },
+    {
+      "field": "severity_signals",
+      "snippet": "it is possible that the T-fairings may shingle (condition where neighboring T-fairings overlap each other), which has at certain instances lead to seismic vibrations levels that cause the unit to be unable to startup due to vibrations reaching runback/trip levels."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "GE has observed that units with greater than 5,000 ETG hours have seen distress requiring inspection management to occur and units with greater than 10,000 ETG hours have observed wear reaching levels of risk that may require imminent T-fairing replacement to occur."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "during any planned borescope inspections on this unit performed after accumulating greater than 5,000 ETG hours, it is recommended to perform a detailed T-fairing inspection as follows: 1. Inspect 100% of the 1-2 T-Fairings and 2-3 T-Fairings for edge distress, circumferential gaps, misalignments, tilting, and rubs. Borescope measurements are required to be taken. 2. Inspect 100% of the VSV1s and VSV2s for evidence of tip rubs, tip indications, or tip loss."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "This TIL is considered completed, with no further actions required, once either modified original T-fairings with springs or enhanced T-fairings with springs have been installed in the rotor."
+    },
+    {
+      "field": "usage_counter_requirements_text",
+      "snippet": "ETG = [TG6 * (TG6S/6)] + [TGLS * (1/60)] + [FS *4] + [PC*4]"
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Increased T-Fairing inspections during borescope inspections. Enhanced T-faring with spring replacement or Low Speed Turning Gear installation depending on specific situation."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

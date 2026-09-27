@@ -1,0 +1,329 @@
+{
+  "document_id": "til 1638-r3 - f-class r0 and r1 platform ultrasonic testing",
+  "unique_key": "1638-R3__6faf6e2a97e3ca8219b1be9a77d776efc05e89fc2e8cb507aaefa2e1b210d5f4",
+  "source_path": "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1638-R3 - F-CLASS R0 AND R1 PLATFORM ULTRASONIC TESTING.pdf",
+  "source_hash": "6faf6e2a97e3ca8219b1be9a77d776efc05e89fc2e8cb507aaefa2e1b210d5f4",
+  "source_system": "databricks_volume",
+  "requested_til_number": "1638-R3",
+  "matched_til_number": "1638-R3",
+  "match_type": "pdf_name_match",
+  "parser_method": "databricks_ai",
+  "parser_name": "databricks_ai",
+  "parser_version": "v1",
+  "profile_found": true,
+  "parsed_profile_json": {
+    "til_number": "TIL 1638",
+    "revision": "R3",
+    "title": "F-CLASS R0 AND R1 PLATFORM ULTRASONIC TESTING",
+    "publish_date": "2021-01-19",
+    "reason_for_revision": "To communicate about updated recommendations specific to 7F and 9F R1 platform ultrasonic inspection interval and to update TIL language for clarity.",
+    "purpose": "To inform affected users about the recommendation to perform in-situ ultrasonic inspection of the R0 and R1 blade platforms for evidence of dovetail distress.",
+    "compliance_category_code": "C",
+    "compliance_category_text": "Compliance Required - Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.",
+    "recurring_indicator_if_found": "recurrent basis",
+    "coarse_outage_type": "Next Scheduled Outage",
+    "scope_of_work": [
+      "Perform in-situ dovetail ultrasonic testing (DT-UT) of R0 and R1 blade platforms to detect dovetail distress.",
+      "DT-UT may be performed concurrently with TIL 1509 and TIL 1603 inspections; ultrasonic testing requires rotor rotation."
+    ],
+    "service_recommendation_line_items": [
+      "For applicable units with standard/non-enhanced R0 (including P-cut R0) and R1 blades without the platform undercut feature: perform recurrent in-situ DT-UT of R0 suction side and pressure side, and R1 suction side.",
+      "For 7F and 9F units: perform R0 and R1 DT-UT at the sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS); for peaking units performing more than 150 actual fired starts in a year, conduct DT-UT just before and after the peak season.",
+      "For 6F units: perform R0 and R1 DT-UT during the Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed.",
+      "For units with Enhanced Compressor Packages (ECP) 2, 2+, 3 or 4 installed: perform only R1 DT-UT (enhanced R0 blades have the platform undercut feature).",
+      "For units with ECP 5 installed: this TIL is not applicable (both enhanced R0 and R1 blades included in ECP 5 have the platform undercut feature).",
+      "If DT-UT yields a positive indication: contact GE Gas Power Services to evaluate results; if indications are identified as dovetail cracks, replacement of the entire set of blades may be recommended (R0); if R1 indications are confirmed, send rotor to a GE Service Center to replace the full set of R1 blades."
+    ],
+    "completion_criteria_text": "This TIL can be considered complete when the R0 and R1 blades are replaced with blades with platform undercut feature.",
+    "maintenance_trigger_text": "Dovetail distress attributed to fretting at the edge of contact region can lead to crack initiation/propagation and increased potential for blade liberation; visual or penetrant inspection may not be suitable to detect the distress.",
+    "recommended_interval_or_trigger": [
+      "7F and 9F: sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS).",
+      "Peaking units (>150 actual fired starts in a year): conduct DT-UT just before and after the peak season.",
+      "6F: during Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "operating_hours",
+      "starts"
+    ],
+    "usage_counter_requirements_text": "For 7F and 9F units, perform DT-UT the sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS); for peaking units performing more than 150 actual fired starts in a year, conduct DT-UT just before and after the peak season.",
+    "frame_or_model_applicability_text": "Applicable to select 6F, 7F, and 9F gas turbines with an 18-stage compressor operating with rotor Stage 0 (R0) and Stage 1 (R1) blades that do not have the platform undercut feature.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Applies only to the standard or non-enhanced R0 (including the P-cut R0) and R1 blades without the platform undercut feature. For units with Enhanced Compressor Packages (ECP) 2, 2+, 3 or 4 installed, only the R1 DT-UT is necessary; for ECP 5, this TIL is not applicable.",
+    "serial_or_unit_applicability_text": "Applicable to select 6F, 7F, and 9F gas turbines with an 18-stage compressor operating with R0 and R1 blades that do not have the platform undercut feature.",
+    "exclusions_or_non_applicable_conditions_text": "For units that have installed ECP 5, this TIL is not applicable since both the enhanced R0 and R1 blades included in ECP 5 have the platform undercut feature.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "6F: DT-UT during Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed. DT-UT may be incorporated during annual borescope inspection, or during forward compressor inspections per TIL 1509 and TIL 1603, when access and expertise are available. Ultrasonic testing requires rotor rotation and applicable cool down and inlet entry requirements.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Applicability depends on installed compressor package/blade configuration (standard/non-enhanced vs Enhanced Compressor Packages ECP 2/2+/3/4/5 and presence/absence of platform undercut feature), requiring installed-configuration verification.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Rotor Stage 0 (R0) blades (standard or non-enhanced, including P-cut R0) without the platform undercut feature; DT-UT recommended on suction side and pressure side.",
+        "required_inspection_types": [
+          "UT"
+        ],
+        "source_location": "RECOMMENDATIONS (bullet list and applicability statement)"
+      },
+      {
+        "part_number": null,
+        "context": "Rotor Stage 1 (R1) blades without the platform undercut feature; DT-UT recommended on suction side.",
+        "required_inspection_types": [
+          "UT"
+        ],
+        "source_location": "RECOMMENDATIONS (bullet list and applicability statement)"
+      },
+      {
+        "part_number": null,
+        "context": "Enhanced Compressor Packages (ECP) 2, 2+, 3, 4, and 5 referenced for applicability/exclusion and inspection scope (R1-only for ECP 2/2+/3/4; not applicable for ECP 5).",
+        "required_inspection_types": [
+          "UT"
+        ],
+        "source_location": "Recommendations for units with Enchanced Compressor Packages Installed"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1509",
+        "document_type": "TIL",
+        "context": "DT-UT may be beneficial to incorporate during forward compressor inspections per TIL 1509 when access and expertise are available; DT-UT may be performed concurrently with TIL 1509 inspections."
+      },
+      {
+        "document_number": "TIL 1603",
+        "document_type": "TIL",
+        "context": "DT-UT may be beneficial to incorporate during forward compressor inspections per TIL 1603 when access and expertise are available; DT-UT may be performed concurrently with TIL 1603 inspections."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Gas turbine frame/model (6F vs 7F vs 9F)",
+      "18-stage compressor presence",
+      "Installed R0/R1 blade design feature: platform undercut feature present vs absent",
+      "Installed compressor package type: standard/non-enhanced vs Enhanced Compressor Package (ECP) 2, 2+, 3, 4, or 5",
+      "Operating profile: peaking units exceeding 150 actual fired starts per year"
+    ],
+    "configuration_summary": "DT-UT scope and applicability depend on whether R0/R1 blades have the platform undercut feature and whether an Enhanced Compressor Package (ECP) is installed (ECP 2/2+/3/4 require R1-only DT-UT; ECP 5 is not applicable). Inspection interval differs for 7F/9F vs 6F and for peaking operation.",
+    "severity_signals": [
+      "compressor event due to R0 distress",
+      "increased potential for a blade liberation",
+      "downstream compressor distress"
+    ],
+    "failure_consequences": [
+      "blade liberation",
+      "downstream compressor distress",
+      "compressor event"
+    ],
+    "risk_summary": "Dovetail distress attributed to fretting at the edge of contact region can initiate and propagate cracks; once cracks reach a critical depth there is increased potential for blade liberation, and failure to comply may result in downstream compressor distress.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [],
+    "missing_information_flags": [
+      "No specific blade part numbers or kit part numbers provided for R0/R1 blades or platform-undercut replacement blades.",
+      "No explicit acceptance/rejection criteria thresholds for DT-UT indications are provided (only qualitative guidance to contact GE for evaluation).",
+      "No explicit interval stated for recurrent DT-UT beyond the 7F/9F FH/FS trigger and 6F MI/opportunity guidance."
+    ],
+    "source_snippets": [
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "This TIL is applicable to select 6F, 7F, and 9F gas turbines with an 18-stage compressor operating with rotor Stage 0 (R0) and Stage 1 (R1) blades that do not have the platform undercut feature."
+      },
+      {
+        "field": "purpose",
+        "snippet": "To inform affected users about the recommendation to perform in-situ ultrasonic inspection of the R0 and R1 blade platforms for evidence of dovetail distress."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "GE recommends performing in-situ dovetail ultrasonic testing (DT-UT) of R0 and R1 blades on a recurrent basis to help mitigate the risk of blade liberation due to dovetail distress."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "For 7F and 9F units, it is recommended that the R0 and R1 DT-UT be performed the sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS). For peaking units performing more than 150 actual fired starts in a year, it is recommended to conduct the DT-UT just before and after the peak season."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "For 6F units, it is recommended the R0 and R1 DT-UT be performed during the Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed."
+      },
+      {
+        "field": "exclusions_or_non_applicable_conditions_text",
+        "snippet": "For units that have installed ECP 5, this TIL is not applicable since both the enhanced R0 and R1 blades included in ECP 5 have the platform undercut feature."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Failure to comply with these recommendations may result in blade liberation and potentially result in downstream compressor distress."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be considered complete when the R0 and R1 blades are replaced with blades with platform undercut feature."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Scope of Work\nDovetail ultrasonic testing (DT-UT) may be performed concurrently with TIL 1509 and TIL 1603 inspections. These inspections typically require one to two 12-hour shifts. Ultrasonic testing requires rotor rotation."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "raw_profile_json": {
+    "til_number": "TIL 1638-R3",
+    "revision": "R3",
+    "title": "F-CLASS R0 AND R1 PLATFORM ULTRASONIC TESTING",
+    "publish_date": "2021-01-19",
+    "reason_for_revision": "To communicate about updated recommendations specific to 7F and 9F R1 platform ultrasonic inspection interval and to update TIL language for clarity.",
+    "purpose": "To inform affected users about the recommendation to perform in-situ ultrasonic inspection of the R0 and R1 blade platforms for evidence of dovetail distress.",
+    "compliance_category_code": "C",
+    "compliance_category_text": "Compliance Required",
+    "recurring_indicator_if_found": "recurrent basis",
+    "coarse_outage_type": "Next Scheduled Outage",
+    "scope_of_work": [
+      "Perform in-situ dovetail ultrasonic testing (DT-UT) of R0 and R1 blade platforms to detect dovetail distress.",
+      "DT-UT may be performed concurrently with TIL 1509 and TIL 1603 inspections; ultrasonic testing requires rotor rotation."
+    ],
+    "service_recommendation_line_items": [
+      "For applicable units with standard/non-enhanced R0 (including P-cut R0) and R1 blades without the platform undercut feature: perform recurrent in-situ DT-UT of R0 suction side and pressure side, and R1 suction side.",
+      "For 7F and 9F units: perform R0 and R1 DT-UT at the sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS); for peaking units performing more than 150 actual fired starts in a year, conduct DT-UT just before and after the peak season.",
+      "For 6F units: perform R0 and R1 DT-UT during the Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed.",
+      "For units with Enhanced Compressor Packages (ECP) 2, 2+, 3 or 4 installed: perform only R1 DT-UT (enhanced R0 blades have the platform undercut feature).",
+      "For units with ECP 5 installed: this TIL is not applicable (both enhanced R0 and R1 blades included in ECP 5 have the platform undercut feature).",
+      "If DT-UT yields a positive indication: contact GE Gas Power Services to evaluate results; if indications are identified as dovetail cracks, replacement of the entire set of blades may be recommended (R0); if R1 indications are confirmed, send rotor to a GE Service Center to replace the full set of R1 blades."
+    ],
+    "completion_criteria_text": "This TIL can be considered complete when the R0 and R1 blades are replaced with blades with platform undercut feature.",
+    "maintenance_trigger_text": "Dovetail distress attributed to fretting at the edge of contact region can lead to crack initiation/propagation and increased potential for blade liberation; visual or penetrant inspection may not be suitable to detect the distress.",
+    "recommended_interval_or_trigger": [
+      "7F and 9F: sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS).",
+      "Peaking units (>150 actual fired starts in a year): conduct DT-UT just before and after the peak season.",
+      "6F: during Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed."
+    ],
+    "usage_counters_to_check_or_consider": [
+      "operating_hours",
+      "starts"
+    ],
+    "usage_counter_requirements_text": "For 7F and 9F units, perform DT-UT the sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS); for peaking units performing more than 150 actual fired starts in a year, conduct DT-UT just before and after the peak season.",
+    "frame_or_model_applicability_text": "Applicable to select 6F, 7F, and 9F gas turbines with an 18-stage compressor operating with rotor Stage 0 (R0) and Stage 1 (R1) blades that do not have the platform undercut feature.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Applies only to the standard or non-enhanced R0 (including the P-cut R0) and R1 blades without the platform undercut feature. For units with Enhanced Compressor Packages (ECP) 2, 2+, 3 or 4 installed, only the R1 DT-UT is necessary; for ECP 5, this TIL is not applicable.",
+    "serial_or_unit_applicability_text": "Applicable to select 6F, 7F, and 9F gas turbines with an 18-stage compressor operating with R0 and R1 blades that do not have the platform undercut feature.",
+    "exclusions_or_non_applicable_conditions_text": "For units that have installed ECP 5, this TIL is not applicable since both the enhanced R0 and R1 blades included in ECP 5 have the platform undercut feature.",
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "6F: DT-UT during Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed. DT-UT may be incorporated during annual borescope inspection, or during forward compressor inspections per TIL 1509 and TIL 1603, when access and expertise are available. Ultrasonic testing requires rotor rotation and applicable cool down and inlet entry requirements.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Applicability depends on installed compressor package/blade configuration (standard/non-enhanced vs Enhanced Compressor Packages ECP 2/2+/3/4/5 and presence/absence of platform undercut feature), requiring installed-configuration verification.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Rotor Stage 0 (R0) blades (standard or non-enhanced, including P-cut R0) without the platform undercut feature; DT-UT recommended on suction side and pressure side.",
+        "required_inspection_types": [
+          "UT"
+        ],
+        "source_location": "RECOMMENDATIONS (bullet list and applicability statement)"
+      },
+      {
+        "part_number": null,
+        "context": "Rotor Stage 1 (R1) blades without the platform undercut feature; DT-UT recommended on suction side.",
+        "required_inspection_types": [
+          "UT"
+        ],
+        "source_location": "RECOMMENDATIONS (bullet list and applicability statement)"
+      },
+      {
+        "part_number": null,
+        "context": "Enhanced Compressor Packages (ECP) 2, 2+, 3, 4, and 5 referenced for applicability/exclusion and inspection scope (R1-only for ECP 2/2+/3/4; not applicable for ECP 5).",
+        "required_inspection_types": [
+          "UT"
+        ],
+        "source_location": "Recommendations for units with Enchanced Compressor Packages Installed"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1509",
+        "document_type": "TIL",
+        "context": "DT-UT may be beneficial to incorporate during forward compressor inspections per TIL 1509 when access and expertise are available; DT-UT may be performed concurrently with TIL 1509 inspections."
+      },
+      {
+        "document_number": "TIL 1603",
+        "document_type": "TIL",
+        "context": "DT-UT may be beneficial to incorporate during forward compressor inspections per TIL 1603 when access and expertise are available; DT-UT may be performed concurrently with TIL 1603 inspections."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Gas turbine frame/model (6F vs 7F vs 9F)",
+      "18-stage compressor presence",
+      "Installed R0/R1 blade design feature: platform undercut feature present vs absent",
+      "Installed compressor package type: standard/non-enhanced vs Enhanced Compressor Package (ECP) 2, 2+, 3, 4, or 5",
+      "Operating profile: peaking units exceeding 150 actual fired starts per year"
+    ],
+    "configuration_summary": "DT-UT scope and applicability depend on whether R0/R1 blades have the platform undercut feature and whether an Enhanced Compressor Package (ECP) is installed (ECP 2/2+/3/4 require R1-only DT-UT; ECP 5 is not applicable). Inspection interval differs for 7F/9F vs 6F and for peaking operation.",
+    "severity_signals": [
+      "compressor event due to R0 distress",
+      "increased potential for a blade liberation",
+      "downstream compressor distress"
+    ],
+    "failure_consequences": [
+      "blade liberation",
+      "downstream compressor distress",
+      "compressor event"
+    ],
+    "risk_summary": "Dovetail distress attributed to fretting at the edge of contact region can initiate and propagate cracks; once cracks reach a critical depth there is increased potential for blade liberation, and failure to comply may result in downstream compressor distress.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [],
+    "missing_information_flags": [
+      "No specific blade part numbers or kit part numbers provided for R0/R1 blades or platform-undercut replacement blades.",
+      "No explicit acceptance/rejection criteria thresholds for DT-UT indications are provided (only qualitative guidance to contact GE for evaluation).",
+      "No explicit interval stated for recurrent DT-UT beyond the 7F/9F FH/FS trigger and 6F MI/opportunity guidance."
+    ],
+    "source_snippets": [
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "This TIL is applicable to select 6F, 7F, and 9F gas turbines with an 18-stage compressor operating with rotor Stage 0 (R0) and Stage 1 (R1) blades that do not have the platform undercut feature."
+      },
+      {
+        "field": "purpose",
+        "snippet": "To inform affected users about the recommendation to perform in-situ ultrasonic inspection of the R0 and R1 blade platforms for evidence of dovetail distress."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "GE recommends performing in-situ dovetail ultrasonic testing (DT-UT) of R0 and R1 blades on a recurrent basis to help mitigate the risk of blade liberation due to dovetail distress."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "For 7F and 9F units, it is recommended that the R0 and R1 DT-UT be performed the sooner of 8,000 actual fired hours (FH) or 150 actual fired starts (FS). For peaking units performing more than 150 actual fired starts in a year, it is recommended to conduct the DT-UT just before and after the peak season."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "For 6F units, it is recommended the R0 and R1 DT-UT be performed during the Major Inspection (MI), or at any opportunity when the upper-half compressor casing is removed."
+      },
+      {
+        "field": "exclusions_or_non_applicable_conditions_text",
+        "snippet": "For units that have installed ECP 5, this TIL is not applicable since both the enhanced R0 and R1 blades included in ECP 5 have the platform undercut feature."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "Failure to comply with these recommendations may result in blade liberation and potentially result in downstream compressor distress."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be considered complete when the R0 and R1 blades are replaced with blades with platform undercut feature."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Scope of Work\nDovetail ultrasonic testing (DT-UT) may be performed concurrently with TIL 1509 and TIL 1603 inspections. These inspections typically require one to two 12-hour shifts. Ultrasonic testing requires rotor rotation."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "extracted_document_method": "databricks_ai",
+  "extracted_text_char_count": 15364,
+  "extracted_table_count": 0,
+  "extraction_confidence": 0.78,
+  "llm_model": "azure-gpt-5-2",
+  "metadata_status": "completed",
+  "metadata_retry_count": 0,
+  "chunk_status": null,
+  "chunk_retry_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ingest_ts": "2026-07-05 00:17:55.485394",
+  "metadata_processed_ts": "2026-07-05 00:17:55.485987",
+  "chunk_processed_ts": null,
+  "run_id": "til_p1_20260704_235852_30f3ba3a"
+}

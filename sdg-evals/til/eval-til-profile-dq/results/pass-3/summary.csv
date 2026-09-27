@@ -1,0 +1,5 @@
+til,status,identity_pass,fields_matched,fields_total,match_rate,run_id
+1502-2R1,completed,True,18,40,0.45,til_p1_20260704_202737_93e034fd
+1937-R2,completed,False,14,40,0.35,til_p1_20260704_202737_93e034fd
+1945-R2,completed,True,15,40,0.375,til_p1_20260704_202737_93e034fd
+2284,completed,True,16,40,0.4,til_p1_20260704_202737_93e034fd

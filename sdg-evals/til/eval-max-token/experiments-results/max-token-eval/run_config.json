@@ -1,0 +1,16 @@
+{
+  "metadata_table": "vaid.ai_sot_field_service_report.til_metadata",
+  "run_specs": "32000=run_id:til_p1_20260704_091213_e4003ff0;gateway_default=run_id:til_p1_20260704_154439_992cd191",
+  "target_tils": [
+    "1502-2R1",
+    "1937-R2",
+    "1945-R2",
+    "2284"
+  ],
+  "gold_root": "/Workspace/Users/madhurima.saxena@gevernova.com/sdg-evals/til/til-profile-gold-set",
+  "recommendation": "32000",
+  "run_labels": [
+    "32000",
+    "gateway_default"
+  ]
+}

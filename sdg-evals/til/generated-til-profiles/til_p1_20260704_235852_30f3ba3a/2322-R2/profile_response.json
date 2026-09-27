@@ -1,0 +1,146 @@
+{
+  "til_number": "TIL 2322",
+  "revision": "R2",
+  "title": "HA AND .05 COMPRESSOR STATOR VANE RING DISTRESS",
+  "publish_date": "2024-12-26",
+  "reason_for_revision": "Fleet findings showed wear mainly on unloaded segments. This TIL revision is issued to inform the users of the updated fleet findings and of the availability of a new vane kit that contains fully coated vane and ring unloaded segments.",
+  "purpose": "The purpose of this TIL is to inform affected users about the potential for Vane Ring distress and the inspections needed to monitor the said distress at the next scheduled outages. Failure to comply with this requirement may result in domestic object damage to compressor airfoils.",
+  "compliance_category_code": "C",
+  "compliance_category_text": "Compliance Required - Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Next Scheduled Outage",
+  "scope_of_work": [
+    "Borescope inspection: Qualified and competent LES borescope technician. Inspect 100% of Vane and Ring platforms and first two segments from upper half right side and lower half left side horizontal joint segments Vane tips.",
+    "Major inspection and other planned/unplanned outage: Two blade millwrights. Inspect Vane and Ring platform, Vane tips, Ring tabs and Casing slots. Replace unloaded segments of S11 to S13 during Major Inspection."
+  ],
+  "service_recommendation_line_items": [
+    "During planned annual borescope inspections: inspect 100% of the affected stage Vane and ring platforms (ring forward side interface with casing) for signs of material cracking and chipping; inspect Vane tips on the first two segments from the upper half right horizontal joint and the first two segments from the lower half left horizontal joint (forward looking aft), focusing on pressure side trailing edge squealer tip region for signs of rubs; if rub is noted, continue inspecting the adjacent segments; document distress conditions for monitoring over time.",
+    "During planned major inspections: replace unloaded segments of S11 to S13 during a Major Inspection; plan ordering replacement part well in advance due to high lead time (in some cases longer than 1 year); inspect segments that are not being replaced.",
+    "During any planned/unplanned outages when the compressor stages under CDC are exposed: inspect 100% of affected stage vane and ring platforms for cracking/chipping and pull out cracked/chipped segments for inspection; inspect 100% of affected stage vane tips for rubs (pressure side trailing edge squealer tip region) and pull out worn TE tips segments for inspection; inspect stator ring tabs for wear starting with unloaded segments and continue to adjacent segments until no findings (including adjacent non coated segments if unloaded segments were replaced with “fully coated” parts); pull segments and measure ring tab thickness (forward and aft) along three circumferential locations; report ring tab measurements and pictures to GE Vernova Engineering for disposition; inspect casing slot for distress and document condition; order stator keys in advance because uninstalling stator segments may require key replacement; segment removal can be done with rotor installed and care should be taken during S14 removal/installation to avoid damages to brush seal.",
+    "Limit blending of any casing wear only to remove high metal that protrudes above the original casing slot, ensuring that the overall casing slot width is not increased; reinstall acceptable removed parts back in the same position from which they were removed; contact GE Vernova representative/Engineering with inspection results for evaluation and disposition."
+  ],
+  "completion_criteria_text": "With the replacement of new vane kit of unloaded segments for S11 to S13, this TIL can be considered compliant, however affected users should continue inspecting the remaining affected segments as per Table 1 during planned annual BI and other planned or unplanned outages when CDC is exposed.",
+  "maintenance_trigger_text": "Next Scheduled Outage; planned annual borescope inspections; planned major inspections; any planned/unplanned outages when the compressor stages under CDC are exposed.",
+  "recommended_interval_or_trigger": [
+    "During planned annual borescope inspections",
+    "During planned major inspections",
+    "During any planned/unplanned outages when the compressor stages under CDC are exposed (planned exposure)"
+  ],
+  "usage_counters_to_check_or_consider": [],
+  "usage_counter_requirements_text": null,
+  "frame_or_model_applicability_text": "Applicable to all 7F.04-200, 7F.05, 9F.05-18, 7HA.01, 7HA.02, 7HA.03, 9HA.01, and 9HA.02 units.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Affected vane ring stages are those that interface with the Compressor Discharge Case (CDC). Variable vanes and forward vane ring stages that interface with the Mid Compressor Casing are not affected. Wear and tip rubs are predominantly seen on the unloaded segments (first two segments each on upper half right horizontal joint and lower half left horizontal joint). GE Vernova has developed a new vane kit consisting of four \"unloaded segments\"; segments in these kits are \"fully coated\" (coating applied on stator ring and vane dovetail forward and aft faces and stator ring forward and aft tabs).",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": "Variable vanes and forward vane ring stages that interface with the Mid Compressor Casing are not affected.",
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Recommendations apply at next scheduled outages and when compressor stages under CDC are exposed; segment removal can be done with the rotor installed; care should be taken during S14 removal or installation to avoid damages to brush seal.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "TIL introduces/depends on a specific replacement configuration: a new vane kit of unloaded segments that are \"fully coated\" and requires determining whether unloaded segments were replaced with \"fully coated\" parts (configuration verification). Also references ordering/replacing stator keys.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "New vane kit consisting of four \"unloaded segments\"; segments are \"fully coated\" parts (coating applied on stator ring and vane dovetail forward and aft faces and stator ring forward and aft tabs). Available for each stage in the CDC; replacement recommended for unloaded segments of S11 to S13 during a Major Inspection.",
+      "required_inspection_types": [],
+      "source_location": "BACKGROUND DISCUSSION / RECOMMENDATIONS / TIL COMPLETION CRITERIA"
+    },
+    {
+      "part_number": null,
+      "context": "Stator keys: recommended to order in advance because uninstalling stator segments may require key replacement.",
+      "required_inspection_types": [],
+      "source_location": "RECOMMENDATIONS (planned/unplanned outages when CDC exposed) and SCOPE OF WORK notes"
+    },
+    {
+      "part_number": null,
+      "context": "Brush seal: care should be taken during S14 removal or installation to avoid damages to brush seal.",
+      "required_inspection_types": [],
+      "source_location": "RECOMMENDATIONS (planned/unplanned outages when CDC exposed)"
+    }
+  ],
+  "reference_documents": [],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Engine model/frame (7F.04-200, 7F.05, 9F.05-18, 7HA.01, 7HA.02, 7HA.03, 9HA.01, 9HA.02)",
+    "Affected vane ring stages that interface with the Compressor Discharge Case (CDC) (stage range varies by engine per Table 1)",
+    "Whether \"unloaded segments\" have been replaced with \"fully coated\" parts (drives ring tab inspection process map)",
+    "Outage/inspection context (planned annual borescope vs major inspection vs planned/unplanned outage with CDC exposure)"
+  ],
+  "configuration_summary": "Applicability and inspection scope depend on engine model and which stator stages interface with the CDC; inspection process depends on whether unloaded segments were replaced with the \"fully coated\" vane kit.",
+  "severity_signals": [
+    "material cracking and chipping",
+    "zero-tab thickness",
+    "zero squealer tip height",
+    "Airfoil TE tip wear or notch",
+    "tab thickness loss > 40%"
+  ],
+  "failure_consequences": [
+    "domestic object damage to compressor airfoils",
+    "equipment damage or facility damage"
+  ],
+  "risk_summary": "Relative motion between the ring segment and casing slot during normal operation may contribute to wear/distress at interfaces with the Compressor Discharge Casing; distress can progress to cracking/chipping, zero-tab thickness, and loss of squealer tip height, increasing risk of domestic object damage.",
+  "safety_or_damage_language_found": true,
+  "tables_found_summary": [
+    {
+      "table_label": "Table 1: Affected Vane Ring Stages",
+      "table_description": "Engine vs number of affected stages (stage range Sx–EGV) for 7F.05/7F.04-200, 9F.05-18, 7HA.01/.02/.03, 9HA.01/.02.",
+      "useful_for_downstream": true,
+      "reason": "Defines which stator stages are affected by engine model, which drives inspection and replacement scope."
+    }
+  ],
+  "missing_information_flags": [
+    "No specific part numbers provided for the new vane kit, unloaded segments, fully coated segments, or stator keys.",
+    "No explicit definition of \"planned annual borescope inspections\" interval (e.g., hours/starts) beyond the phrase \"annual\"."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "The purpose of this TIL is to inform affected users about the potential for Vane Ring distress and the inspections needed to monitor the said distress at the next scheduled outages. Failure to comply with this requirement may result in domestic object damage to compressor airfoils."
+    },
+    {
+      "field": "frame_or_model_applicability_text",
+      "snippet": "Applicable to all 7F.04-200, 7F.05, 9F.05-18, 7HA.01, 7HA.02, 7HA.03, 9HA.01, and 9HA.02 units."
+    },
+    {
+      "field": "exclusions_or_non_applicable_conditions_text",
+      "snippet": "Variable vanes and forward vane ring stages that interface with the Mid Compressor Casing are not affected."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "During planned annual borescope inspections, it is recommended to: Vane and Ring platform - forward side: Inspect 100% of the affected stage Vane and ring platforms... • Vane Tips: Inspect Vane tips on the first two segments from the upper half right horizontal joint and the first two segments from the lower half left horizontal joint (forward looking aft)..."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "During planned major inspections: • It is recommended to replace unloaded segments of S11 to S13 during a Major Inspection. Lead time for these parts is generally high (in some cases longer than 1 year)..."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "During any planned/unplanned outages when the compressor stages under CDC are exposed, it is recommended to inspect the areas highlighted in Figure 2:"
+    },
+    {
+      "field": "severity_signals",
+      "snippet": "Wear on tabs can progress to zero-tab thickness."
+    },
+    {
+      "field": "severity_signals",
+      "snippet": "Rubs on vane tips can progress to zero squealer tip height."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "Any segments with tab thickness loss > 40% and/or Airfoil TE tip wear or notch"
+    },
+    {
+      "field": "parts_referenced",
+      "snippet": "GE Vernova has developed a new vane kit, consisting of four \"unloaded segments\"... All the segments in these kits are \"fully coated\" part"
+    },
+    {
+      "field": "parts_referenced",
+      "snippet": "It is recommended to order stator keys in advance because uninstalling stator segments may require key replacement."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "With the replacement of new vane kit of unloaded segments for S11 to S13, this TIL can be considered compliant, however affected users should continue inspecting the remaining affected segments as per Table 1 during planned annual BI and other planned or unplanned outages when CDC is exposed."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

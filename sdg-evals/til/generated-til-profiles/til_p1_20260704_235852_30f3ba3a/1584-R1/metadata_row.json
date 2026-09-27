@@ -1,0 +1,331 @@
+{
+  "document_id": "til 1584-r1 - 7fa turbine shell inlet bleed heat (ibh) extraction pipe weld cracking",
+  "unique_key": "1584-R1__34e0358aaea5c99b551c99c541dc2a152ed97956e476d733884b0f88a850ebc8",
+  "source_path": "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 1584-R1 - 7FA TURBINE SHELL INLET BLEED HEAT (IBH) EXTRACTION PIPE WELD CRACKING.pdf",
+  "source_hash": "34e0358aaea5c99b551c99c541dc2a152ed97956e476d733884b0f88a850ebc8",
+  "source_system": "databricks_volume",
+  "requested_til_number": "1584-R1",
+  "matched_til_number": "1584-R1",
+  "match_type": "pdf_name_match",
+  "parser_method": "databricks_ai",
+  "parser_name": "databricks_ai",
+  "parser_version": "v1",
+  "profile_found": true,
+  "parsed_profile_json": {
+    "til_number": "TIL 1584",
+    "revision": "R1",
+    "title": "7FA TURBINE SHELL INLET BLEED HEAT (IBH) EXTRACTION PIPE WELD CRACKING",
+    "publish_date": "2011-03-08",
+    "reason_for_revision": "The purpose of revision is to provide recommended inspection intervals and update the affected unit list and application to include 7F, 7FA and 7FA+.",
+    "purpose": "To recommend inspection of 7FA turbine shell IBH extraction port cover flange pipes for potential weld cracking, and to specify corrective action if required.",
+    "compliance_category_code": "S",
+    "compliance_category_text": "Safety - Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "next shutdown",
+    "scope_of_work": [
+      "Dye penetrant inspection of the weld joint on 7FA turbine shell IBH extraction port cover flange pipes by a certified level II NDT inspector.",
+      "If cracks are found, perform repair (grind off cracked section and repair weld per GE weld specification P8A-AG3 or equivalent) or replacement (replace flange and install new flange gasket per MLI-0705 assembly drawing), then re-inspect per the recommended schedule."
+    ],
+    "service_recommendation_line_items": [
+      "Perform dye penetrant inspection of the pipe to cover flange weld joint by a certified level II NDT inspector: first inspection at the first Hot Gas Path inspection (HGPI); if beyond first HGPI, inspect at the next planned shutdown opportunity.",
+      "Re-inspect the IBH weld joint at every HGPI/Major inspection, or at a convenient planned outage.",
+      "If cracks are indicated on the pipe or on the weld: Option 1 Repair—grind off cracked section and perform repair welding using GE weld specification P8A-AG3 or equivalent; Option 2 Replacement—replace the flange with a new part and replace the flange gasket; install per MLI-0705 assembly drawing.",
+      "Re-inspect repaired, replaced, and original IBH weld joint per the schedule (first HGPI / next planned shutdown if beyond first HGPI; then every HGPI/Major or convenient planned outage)."
+    ],
+    "completion_criteria_text": null,
+    "maintenance_trigger_text": "First inspection at the first Hot Gas Path inspection (HGPI). If beyond first HGPI, then at the next planned shutdown opportunity. Re-inspection at every HGPI/Major inspection, or at a convenient planned outage.",
+    "recommended_interval_or_trigger": [
+      "First inspection at the first Hot Gas Path inspection (HGPI); if beyond first HGPI, then at the next planned shutdown opportunity.",
+      "Re-inspection at every HGPI/Major inspection, or at a convenient planned outage."
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All 7F, 7FA, 7FA+ and 7FA+e Gas Turbines.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Forward end of turbine shell equipped with compressor discharge air extraction ports for the inlet bleed heat (IBH) system; cracking initiates at the pipe to cover flange weld.",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": "Previous Modifications: TIL 1584",
+    "prerequisite_outage_or_inspection_context_text": "Estimated time to complete: 2 hours for NDT inspection, after unit is shut down and all safety requirements are implemented.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "MLI-0705 assembly drawing is referenced for installation; specific affected part number 213C1469G001 is identified.",
+    "mli_numbers": [
+      {
+        "mli_number": "MLI-0705",
+        "context": "Install replacement flange and new flange gasket per the MLI-0705 assembly drawing."
+      }
+    ],
+    "parts_referenced": [
+      {
+        "part_number": "213C1469G001",
+        "context": "Part affected (IBH extraction port cover flange pipe / flange area referenced by the TIL).",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts"
+      },
+      {
+        "part_number": null,
+        "context": "New flange gasket required when replacing the flange.",
+        "required_inspection_types": [],
+        "source_location": "RECOMMENDATIONS > Option 2: Replacement"
+      },
+      {
+        "part_number": null,
+        "context": "GE weld specification P8A-AG3 (or equivalent) required for repair welding.",
+        "required_inspection_types": [],
+        "source_location": "RECOMMENDATIONS > Option 1: Repair"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1584",
+        "document_type": "TIL",
+        "context": "Listed under Previous Modifications."
+      },
+      {
+        "document_number": "MLI-0705",
+        "document_type": "Other",
+        "context": "Assembly drawing referenced for installation when replacing the flange and gasket."
+      },
+      {
+        "document_number": "SNT-TC-1A",
+        "document_type": "Other",
+        "context": "Manpower skills: Certified NDT level II inspectors per SNT-TC-1A."
+      },
+      {
+        "document_number": "GE Operation and Maintenance manual",
+        "document_type": "Manual",
+        "context": "Personnel safety note regarding remaining outside the gas turbine compartment while fired and running."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Presence of IBH system compressor discharge air extraction ports and cover flange pipes on the turbine shell",
+      "Condition of pipe-to-cover flange weld joint (cracked vs not cracked; repaired/replaced/original)"
+    ],
+    "configuration_summary": "Applies to turbine shell IBH extraction port cover flange pipe weld joint; actions depend on inspection findings (cracks present) and whether the joint is original, repaired, or replaced.",
+    "severity_signals": [
+      "Substantial hot air leakage",
+      "Elevated turbine compartment temperatures"
+    ],
+    "failure_consequences": [
+      "Hot air leakage",
+      "Elevated turbine compartment temperatures that could lead to a forced outage condition",
+      "Safety concern"
+    ],
+    "risk_summary": "Cracking at the pipe to cover flange weld can result in substantial hot air leakage, causing elevated turbine compartment temperatures that could lead to a forced outage condition and presents a safety concern.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance category definitions table",
+        "table_description": "Defines O/M/C/A compliance categories and their meanings.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; no equipment-specific operational values."
+      },
+      {
+        "table_label": "Safety compliance definition table",
+        "table_description": "Defines S - Safety compliance category meaning.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; no equipment-specific operational values."
+      },
+      {
+        "table_label": "TIL COMPLIANCE RECORD form",
+        "table_description": "Blank compliance record form including fields for Part Number and MLI Number.",
+        "useful_for_downstream": false,
+        "reason": "Template form; does not provide equipment-specific parts/intervals beyond what is already in text."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part number provided for the replacement flange gasket (only referenced generically as 'new flange gasket').",
+      "No explicit inspection method acceptance/rejection criteria stated for dye penetrant inspection (e.g., allowable indications/limits)."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To recommend inspection of 7FA turbine shell IBH extraction port cover flange pipes for potential weld cracking, and to specify corrective action if required."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "GE recommends dye penetrant inspection of the weld joint by a certified level II NDT inspector at the following intervals: a. First inspection at the first Hot Gas Path inspection (HGPI). If beyond first HGPI, then at the next planned shutdown opportunity. b. Re-inspection at every HGPI/Major inspection, or at a convenient planned outage."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If inspections indicate cracks on the pipe or on the weld, corrective action is recommended per the following options: Option 1: Repair • Grind off the cracked section of the structure. Use GE weld specification P8A-AG3 or equivalent to perform repair welding. Option 2: Replacement • Replace the flange with a new part. A new flange gasket will also be required. Install per the MLI-0705 assembly drawing."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "The crack initiated at the pipe to cover flange weld as shown in Figure 2, and resulted in substantial hot air leakage. This type of leakage can cause elevated turbine compartment temperatures that could lead to a forced outage condition, and are also a safety concern."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Parts\nPart affected: 213C1469G001"
+      }
+    ],
+    "extraction_confidence": 0.86
+  },
+  "raw_profile_json": {
+    "til_number": "TIL 1584-R1",
+    "revision": "R1",
+    "title": "7FA TURBINE SHELL INLET BLEED HEAT (IBH) EXTRACTION PIPE WELD CRACKING",
+    "publish_date": "2011-03-08",
+    "reason_for_revision": "The purpose of revision is to provide recommended inspection intervals and update the affected unit list and application to include 7F, 7FA and 7FA+.",
+    "purpose": "To recommend inspection of 7FA turbine shell IBH extraction port cover flange pipes for potential weld cracking, and to specify corrective action if required.",
+    "compliance_category_code": "S",
+    "compliance_category_text": "S - Safety",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "next shutdown",
+    "scope_of_work": [
+      "Dye penetrant inspection of the weld joint on 7FA turbine shell IBH extraction port cover flange pipes by a certified level II NDT inspector.",
+      "If cracks are found, perform repair (grind off cracked section and repair weld per GE weld specification P8A-AG3 or equivalent) or replacement (replace flange and install new flange gasket per MLI-0705 assembly drawing), then re-inspect per the recommended schedule."
+    ],
+    "service_recommendation_line_items": [
+      "Perform dye penetrant inspection of the pipe to cover flange weld joint by a certified level II NDT inspector: first inspection at the first Hot Gas Path inspection (HGPI); if beyond first HGPI, inspect at the next planned shutdown opportunity.",
+      "Re-inspect the IBH weld joint at every HGPI/Major inspection, or at a convenient planned outage.",
+      "If cracks are indicated on the pipe or on the weld: Option 1 Repair—grind off cracked section and perform repair welding using GE weld specification P8A-AG3 or equivalent; Option 2 Replacement—replace the flange with a new part and replace the flange gasket; install per MLI-0705 assembly drawing.",
+      "Re-inspect repaired, replaced, and original IBH weld joint per the schedule (first HGPI / next planned shutdown if beyond first HGPI; then every HGPI/Major or convenient planned outage)."
+    ],
+    "completion_criteria_text": null,
+    "maintenance_trigger_text": "First inspection at the first Hot Gas Path inspection (HGPI). If beyond first HGPI, then at the next planned shutdown opportunity. Re-inspection at every HGPI/Major inspection, or at a convenient planned outage.",
+    "recommended_interval_or_trigger": [
+      "First inspection at the first Hot Gas Path inspection (HGPI); if beyond first HGPI, then at the next planned shutdown opportunity.",
+      "Re-inspection at every HGPI/Major inspection, or at a convenient planned outage."
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All 7F, 7FA, 7FA+ and 7FA+e Gas Turbines.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "Forward end of turbine shell equipped with compressor discharge air extraction ports for the inlet bleed heat (IBH) system; cracking initiates at the pipe to cover flange weld.",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": "Previous Modifications: TIL 1584",
+    "prerequisite_outage_or_inspection_context_text": "Estimated time to complete: 2 hours for NDT inspection, after unit is shut down and all safety requirements are implemented.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "MLI-0705 assembly drawing is referenced for installation; specific affected part number 213C1469G001 is identified.",
+    "mli_numbers": [
+      {
+        "mli_number": "MLI-0705",
+        "context": "Install replacement flange and new flange gasket per the MLI-0705 assembly drawing."
+      }
+    ],
+    "parts_referenced": [
+      {
+        "part_number": "213C1469G001",
+        "context": "Part affected (IBH extraction port cover flange pipe / flange area referenced by the TIL).",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts"
+      },
+      {
+        "part_number": null,
+        "context": "New flange gasket required when replacing the flange.",
+        "required_inspection_types": [],
+        "source_location": "RECOMMENDATIONS > Option 2: Replacement"
+      },
+      {
+        "part_number": null,
+        "context": "GE weld specification P8A-AG3 (or equivalent) required for repair welding.",
+        "required_inspection_types": [],
+        "source_location": "RECOMMENDATIONS > Option 1: Repair"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1584",
+        "document_type": "TIL",
+        "context": "Listed under Previous Modifications."
+      },
+      {
+        "document_number": "MLI-0705",
+        "document_type": "Other",
+        "context": "Assembly drawing referenced for installation when replacing the flange and gasket."
+      },
+      {
+        "document_number": "SNT-TC-1A",
+        "document_type": "Other",
+        "context": "Manpower skills: Certified NDT level II inspectors per SNT-TC-1A."
+      },
+      {
+        "document_number": "GE Operation and Maintenance manual",
+        "document_type": "Manual",
+        "context": "Personnel safety note regarding remaining outside the gas turbine compartment while fired and running."
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "Presence of IBH system compressor discharge air extraction ports and cover flange pipes on the turbine shell",
+      "Condition of pipe-to-cover flange weld joint (cracked vs not cracked; repaired/replaced/original)"
+    ],
+    "configuration_summary": "Applies to turbine shell IBH extraction port cover flange pipe weld joint; actions depend on inspection findings (cracks present) and whether the joint is original, repaired, or replaced.",
+    "severity_signals": [
+      "Substantial hot air leakage",
+      "Elevated turbine compartment temperatures"
+    ],
+    "failure_consequences": [
+      "Hot air leakage",
+      "Elevated turbine compartment temperatures that could lead to a forced outage condition",
+      "Safety concern"
+    ],
+    "risk_summary": "Cracking at the pipe to cover flange weld can result in substantial hot air leakage, causing elevated turbine compartment temperatures that could lead to a forced outage condition and presents a safety concern.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance category definitions table",
+        "table_description": "Defines O/M/C/A compliance categories and their meanings.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; no equipment-specific operational values."
+      },
+      {
+        "table_label": "Safety compliance definition table",
+        "table_description": "Defines S - Safety compliance category meaning.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; no equipment-specific operational values."
+      },
+      {
+        "table_label": "TIL COMPLIANCE RECORD form",
+        "table_description": "Blank compliance record form including fields for Part Number and MLI Number.",
+        "useful_for_downstream": false,
+        "reason": "Template form; does not provide equipment-specific parts/intervals beyond what is already in text."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part number provided for the replacement flange gasket (only referenced generically as 'new flange gasket').",
+      "No explicit inspection method acceptance/rejection criteria stated for dye penetrant inspection (e.g., allowable indications/limits)."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To recommend inspection of 7FA turbine shell IBH extraction port cover flange pipes for potential weld cracking, and to specify corrective action if required."
+      },
+      {
+        "field": "recommended_interval_or_trigger",
+        "snippet": "GE recommends dye penetrant inspection of the weld joint by a certified level II NDT inspector at the following intervals: a. First inspection at the first Hot Gas Path inspection (HGPI). If beyond first HGPI, then at the next planned shutdown opportunity. b. Re-inspection at every HGPI/Major inspection, or at a convenient planned outage."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If inspections indicate cracks on the pipe or on the weld, corrective action is recommended per the following options: Option 1: Repair • Grind off the cracked section of the structure. Use GE weld specification P8A-AG3 or equivalent to perform repair welding. Option 2: Replacement • Replace the flange with a new part. A new flange gasket will also be required. Install per the MLI-0705 assembly drawing."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "The crack initiated at the pipe to cover flange weld as shown in Figure 2, and resulted in substantial hot air leakage. This type of leakage can cause elevated turbine compartment temperatures that could lead to a forced outage condition, and are also a safety concern."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Parts\nPart affected: 213C1469G001"
+      }
+    ],
+    "extraction_confidence": 0.86
+  },
+  "extracted_document_method": "databricks_ai",
+  "extracted_text_char_count": 7215,
+  "extracted_table_count": 3,
+  "extraction_confidence": 0.86,
+  "llm_model": "azure-gpt-5-2",
+  "metadata_status": "completed",
+  "metadata_retry_count": 0,
+  "chunk_status": null,
+  "chunk_retry_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ingest_ts": "2026-07-05 00:17:55.485394",
+  "metadata_processed_ts": "2026-07-05 00:17:55.485987",
+  "chunk_processed_ts": null,
+  "run_id": "til_p1_20260704_235852_30f3ba3a"
+}

@@ -1,0 +1,11 @@
+{
+  "source": "workspace_sample_pdf",
+  "pdf_path": "C:\\Users\\560068861\\Code\\alexis_scoping\\context\\data\\workspace_notes\\samples\\TILs\\databricks_top25\\TIL 1850-R3 - F-CLASS COMPRESSOR MECHNICALLY-ATTACHED SHROUD S17 INSPECTION.pdf",
+  "file_name": "TIL 1850-R3 - F-CLASS COMPRESSOR MECHNICALLY-ATTACHED SHROUD S17 INSPECTION.pdf",
+  "til_number": "1850-R3",
+  "normalized_til_key": "1850-R3",
+  "base_til_num": "1850",
+  "revision_number": 3,
+  "match_type": "exact_til_number",
+  "requested_til_number": "1850-R3"
+}

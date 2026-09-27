@@ -1,0 +1,106 @@
+{
+  "til_number": "TIL 1615",
+  "revision": "R1",
+  "title": "R0 COMPRESSOR BLADE AXIAL RETENTION (STAKING) ALTERNATIVES",
+  "publish_date": "2016-05-17",
+  "reason_for_revision": "To update the 7F and 9F casing lifting and removal requirements.",
+  "purpose": "To inform operators of the limitations of traditional means of axial retention (peening/staking) for compressor stage 0 rotor blades (R0s) resulting from successive R0 change-outs, and to notify users of a recommended wheel modification to apply when the traditional means of retention is no longer available. This alternative method uses replacement inserts as a staking medium that has no limitation on the number of times it can be replaced.",
+  "compliance_category_code": "M",
+  "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": null,
+  "scope_of_work": [
+    "Install alternative R0 staking application using replacement staking inserts installed in the wheel slots when R0 removal is warranted; machine pockets in dovetail to retain replaceable staking inserts.",
+    "Unit access requirements for performing the modification during R0 change-out: for 6F units remove the UH inlet bellmouth; for 7F and 9F units jack the UH of the inlet bellmouth ~18\" off the horizontal joint or remove it."
+  ],
+  "service_recommendation_line_items": [
+    "For operators planning to change R0 blades for the third or greater time (if modification not previously applied), perform the R0 wheel modification using replaceable staking inserts in conjunction with the planned R0 change-out or at a suitable maintenance opportunity preceding this.",
+    "Perform machining of FSS R0 dovetail slots for staking inserts using controlled milling machinery and appropriate milling fixtures; use the dual-staking tool to ensure proper staking geometry and placement.",
+    "Staffing/skills: machining of FSS R0 dovetail slots and R0 removal/installation and staking should be conducted by GE Service Center personnel qualified specifically for this purpose; provide NDT technician per shift as planned.",
+    "If staking locations are exhausted from all 32 R0 blades and replacement of a single R0 blade is needed, consider removal of all 32 blades so the modification can be conducted on the entire wheel."
+  ],
+  "completion_criteria_text": "This TIL is considered complete when the biscuit modification has been installed.",
+  "maintenance_trigger_text": "This modification is usually needed on the third or greater replacement of the R0 blades.",
+  "recommended_interval_or_trigger": [
+    "Perform when planning to change R0 blades for the third or greater time (if modification has not previously been applied).",
+    "Timing Code 5: At Scheduled Component Part Repair or Replacement."
+  ],
+  "usage_counters_to_check_or_consider": [],
+  "usage_counter_requirements_text": null,
+  "frame_or_model_applicability_text": "All commissioned F-class gas turbines. Specific access requirements are provided for 6F, 7F, and 9F units.",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Applies to compressor stage 0 rotor blades (R0s) and Forward Stub Shaft (FSS) traditional axial retention (peening/staking) locations; recommended alternative uses replaceable staking inserts installed in wheel slots with pockets machined in the dovetail.",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": null,
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Modification should be performed in conjunction with the planned R0 change-out, or at a suitable maintenance opportunity preceding this.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "TIL recommends a specific hardware modification using replacement staking inserts and machining pockets in the dovetail; installed-configuration verification is required to determine whether the modification has previously been applied and whether traditional staking locations are exhausted.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "Replacement staking inserts (replaceable staking inserts installed in the wheel slots; \"biscuit modification\").",
+      "required_inspection_types": [],
+      "source_location": "RECOMMENDATIONS / PLANNING INFORMATION - Parts / completion statement"
+    },
+    {
+      "part_number": null,
+      "context": "Forward Stub Shaft (FSS) R0 dovetail slots / wheel dovetail pockets to be machined for insert retention.",
+      "required_inspection_types": [],
+      "source_location": "BACKGROUND DISCUSSION / RECOMMENDATIONS / PLANNING INFORMATION - Manpower Skills"
+    }
+  ],
+  "reference_documents": [],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "Number of prior R0 blade replacements (traditional staking locations exhausted after two successive R0 replacements; modification usually needed on third or greater replacement).",
+    "Unit frame/model (6F vs 7F/9F inlet bellmouth removal/jacking requirements).",
+    "Scope of work / unit conditions determining whether all blades in the stage must be removed for tooling access (potentially all 32 R0 blades)."
+  ],
+  "configuration_summary": "Traditional R0 axial retention uses peening/staking marks on the forward face of the FSS; after two successive R0 replacements there is typically no remaining space to appropriately stake. Recommended alternative is to machine pockets in the dovetail and install replaceable staking inserts with each blade change-out; access method depends on 6F vs 7F/9F configuration and scope may require removal of all blades for tooling access.",
+  "severity_signals": [
+    "Traditional staking locations can be exhausted after two successive R0 replacements, leaving no remaining space to appropriately stake the blade in place.",
+    "Alternative staking locations along the pressure faces of the dovetail or along the blade platform flow path surface are no longer recommended."
+  ],
+  "failure_consequences": [],
+  "risk_summary": null,
+  "safety_or_damage_language_found": false,
+  "tables_found_summary": [],
+  "missing_information_flags": [
+    "No specific part numbers provided for the replacement staking inserts (Parts section states to contact GE Service Representative).",
+    "No explicit NDT method/inspection type is specified despite stating an NDT technician is needed per shift.",
+    "No explicit acceptance criteria or dimensional requirements for the machined pockets/insert installation are provided in the extracted text."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "To inform operators of the limitations of traditional means of axial retention (peening/staking) for compressor stage 0 rotor blades (R0s) resulting from successive R0 change-outs, and to notify users of a recommended wheel modification to apply when the traditional means of retention is no longer available. This alternative method uses replacement inserts as a staking medium that has no limitation on the number of times it can be replaced."
+    },
+    {
+      "field": "severity_signals",
+      "snippet": "After two successive R0 replacements, typically there is no remaining space available to appropriately stake the blade in place (Figure 1)."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "GE recommends this modification to any operator planning to change R0 blades for the third or greater time, if the modification has not previously been applied."
+    },
+    {
+      "field": "recommended_interval_or_trigger",
+      "snippet": "This modification is usually needed on the third or greater replacement of the R0 blades."
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "For 7F and 9F units, the application can be completed with the inlet bellmouth removed or in a jacked condition. For 6F units, the application requires that the inlet bellmouth be removed from the unit."
+    },
+    {
+      "field": "completion_criteria_text",
+      "snippet": "This TIL is considered complete when the biscuit modification has been installed."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "Machining of FSS R0 dovetail slots (1x to 32x depending on scope) for the staking inserts should be conducted by GE Service Center personnel qualified specifically for this purpose."
+    }
+  ],
+  "extraction_confidence": 0.78
+}

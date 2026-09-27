@@ -1,0 +1,11 @@
+{
+  "source": "workspace_sample_pdf",
+  "pdf_path": "C:\\Users\\560068861\\Code\\alexis_scoping\\context\\data\\workspace_notes\\samples\\TILs\\databricks_top25\\TIL 2511 - F.05 & HA COMPRESSOR-SECTION RETENTION-KEY IMPROVEMENTS.pdf",
+  "file_name": "TIL 2511 - F.05 & HA COMPRESSOR-SECTION RETENTION-KEY IMPROVEMENTS.pdf",
+  "til_number": "2511",
+  "normalized_til_key": "2511",
+  "base_til_num": "2511",
+  "revision_number": -1,
+  "match_type": "exact_til_number",
+  "requested_til_number": "2511"
+}

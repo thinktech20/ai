@@ -1,0 +1,5 @@
+record_id,document_id,pdf_name,region_start_char,region_end_char,true_primary_esn,true_primary_equip_type,true_active_esns,label_status,notes,predicted_primary_esn,predicted_primary_equip_type
+G-0001,69dfe261-34b0-4740-ab89-498e7d0072df,Generator_GG10675_2023-08-06,0,822,GG10675,Generator,"GG10675",draft,"simple single-ESN seed; first metadata region",,
+G-0002,d9b6c08b-d098-4939-a549-d113964e3150,Generator_337X765_2024-03-25,0,900,337X765,Generator,"337X765",draft,"simple single-ESN seed; first metadata region",,
+G-0003,337x351 2024-03-01 borescope,Gas_Turbine_298340_2024-03-01,0,982,298340,Gas Turbine,"298340",draft,"simple single-ESN seed; first metadata region",,
+G-0004,337x510 2018-03-13 borescope,Gas_Turbine_297011_2018-03-13,0,349,297011,Gas Turbine,"297011",draft,"simple single-ESN seed; first metadata region",,

@@ -1,0 +1,289 @@
+{
+  "document_id": "til 2467 - ha compressor circumferential blades gap management",
+  "unique_key": "2467__c0ad9027d696dd9b5860da6fd7d173897508740a4dc76c126b449a00ce45c966",
+  "source_path": "/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/TILS_new/TIL 2467 - HA COMPRESSOR CIRCUMFERENTIAL BLADES GAP MANAGEMENT.pdf",
+  "source_hash": "c0ad9027d696dd9b5860da6fd7d173897508740a4dc76c126b449a00ce45c966",
+  "source_system": "databricks_volume",
+  "requested_til_number": "2467",
+  "matched_til_number": "2467",
+  "match_type": "pdf_name_match",
+  "parser_method": "databricks_ai",
+  "parser_name": "databricks_ai",
+  "parser_version": "v1",
+  "profile_found": true,
+  "parsed_profile_json": {
+    "til_number": "2467",
+    "revision": null,
+    "title": "HA COMPRESSOR CIRCUMFERENTIAL BLADES GAP MANAGEMENT",
+    "publish_date": "2023-10-26",
+    "reason_for_revision": null,
+    "purpose": "To inform users of the need to inspect the compressor circumferential blades platform gap and plan MI accordingly.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Major Inspection (MI)",
+    "scope_of_work": [
+      "Perform circumferential gap measurements as noted during annual BIs (approx. 2 additional hours added to standard BI).",
+      "Perform circumferential gap measurements as noted during outage planning BI (approx. 6 additional hours added to standard BI).",
+      "Perform gap measurement at casing open outage (approx. 4 additional hours during standard MI activities).",
+      "If needed, perform circumferential blade swap out (blade balance charting may be needed as part of this scope), depending upon scope, may take 1 to 5 shifts."
+    ],
+    "service_recommendation_line_items": [
+      "Generally at all annual BIs: for circumferential blade stages 4, 10, 13, and 14, perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gap in each sector; if gap is greater than 0.500 inches [12.7 mm] for any sector, contact GE representative for technical disposition; maintain a record of circumferential blade gap measurements.",
+      "At annual BI closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time: for all circumferential blade stages (4 through 14), perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gap in each sector for all stages; provide circumferential blade gaps and any trend records to GE representative for outage blade planning technical disposition (enable blade part procurement as needed in advance of outage timeframe).",
+      "At any special case (non-planned outage) upper half compressor casing opening situations: for circumferential blade stages exposed by casing removal, perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gap in each sector for all stages exposed; maintain a record; provide measurements and any trend records to GE representative for technical disposition; measurements taken in this manner can cover those specific stage values recorded to satisfy BI measurements for that year per the two BI recommendations above.",
+      "At Major Inspection outage with all compressor casing upper halves removed (compressor case and compressor discharge case): for all circumferential blade stages, perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gaps for all stages (4 through 14) in the as-found condition prior to any stage disassembly efforts; provide measurements and any trend records to GE representative for technical disposition; if any blade change out is performed on any particular stages, perform and document a post blade change out circumferential gap measurement; maintain a record of circumferential blade gap measurements.",
+      "Removal and replacement of compressor rotor blades shall be done in an appropriate manner to maintain rotor balance requirements and subsequent vibration capabilities; use a GE qualified blade technician for blade replacement activities."
+    ],
+    "completion_criteria_text": "Maintain a record of circumferential blade gap measurements; provide circumferential blade gap measurements and any trend records to your GE representative for a technical disposition; if any blade change out is performed on any particular stages, then GE recommends a post blade change out circumferential gap measurement be performed and documented.",
+    "maintenance_trigger_text": "Generally at all annual BIs; annual BI inspection closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time; any special case (non-planned outage) upper half compressor casing opening situations; Major Inspection outage with all compressor casing upper halves removed.",
+    "recommended_interval_or_trigger": [
+      "Generally at all annual BIs.",
+      "At annual BI inspection closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time.",
+      "At any special case (non-planned outage) upper half compressor casing opening situations (casing open measurements for stages exposed by casing removal).",
+      "At Major Inspection outage with all compressor casing upper halves removed (compressor case and compressor discharge case)."
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All 7FA.04-200, 7F.05, 7HA.0X, 9F.05-18, 9HA.0X",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "For 7F.04-200, 7F.05, 9F.05-18, and all HA class advanced compressors, the rotating blades for all stages are field replaceable. Stages 4 through 14 are circumferentially loaded compressor blades into the compressor wheel dovetail slots. Each circumferential blade stage has four lockers that separate the blades into typically four sectors identified as left, right, top dead center (TDC), and bottom dead center (BDC). Each of these sectors has a required gap.",
+    "serial_or_unit_applicability_text": "Some field units have observed increasing circumferential gaps at the blade platform in the various sectors as operation has occurred.",
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "GE recommends that the noted Borescope Inspections (BI) should be performed by GE's Life Extension Services (LES) group, and casing open measurements should be recorded by GE field technicians/field engineer.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Parts are referenced as configuration-dependent: 'Replacement circumferential compressor blades and blade lockers as needed for gap reduction' and 'Consult with your GE service representatives for correct part numbers for ordering based on unit configuration.'",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Replacement circumferential compressor blades as needed for gap reduction; correct part numbers depend on unit configuration.",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts"
+      },
+      {
+        "part_number": null,
+        "context": "Replacement blade lockers as needed for gap reduction; correct part numbers depend on unit configuration.",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts"
+      }
+    ],
+    "reference_documents": [],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "engine type/configuration",
+      "unit configuration",
+      "compressor casing opening location (compressor case for forward section stages vs compressor discharge case for aft section stages)",
+      "stages exposed by casing removal"
+    ],
+    "configuration_summary": "Inspection scope varies by opportunity (annual BI vs outage-planning BI vs casing-open situations vs Major Inspection with upper halves removed) and by which circumferential blade stages are accessible/exposed; parts ordering is dependent on unit configuration.",
+    "severity_signals": [
+      "Some field units have observed increasing circumferential gaps at the blade platform in the various sectors as operation has occurred.",
+      "If gap is greater than 0.500 inches [12.7 mm] for any of the sectors, please contact your GE representative for technical disposition."
+    ],
+    "failure_consequences": [
+      "May result in reduced equipment reliability or efficiency (Compliance Category: M definition table)."
+    ],
+    "risk_summary": "Observed measured gaps have not specifically affected the normal operation of the gas turbine to date; GE recommends monitoring circumferential gaps to enable planning actions as necessary to help ensure long term operational capability of the unit.",
+    "safety_or_damage_language_found": false,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance Category Definitions",
+        "table_description": "Defines M/C/A/S compliance categories.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; no equipment-specific values."
+      },
+      {
+        "table_label": "Timing Code Definitions",
+        "table_description": "Defines timing codes 1-6 (e.g., 'Next Scheduled Outage').",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; timing code value is already stated in text (Timing Code - 6)."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for replacement circumferential compressor blades or blade lockers (document instructs to consult GE for correct part numbers based on unit configuration).",
+      "No explicit completion threshold/action beyond 'contact GE representative' is provided for gaps > 0.500 inches [12.7 mm] (technical disposition criteria not included)."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To inform users of the need to inspect the compressor circumferential blades platform gap and plan MI accordingly."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If gap is greater than 0.500 inches [12.7 mm] for any of the sectors, please contact your GE representative for technical disposition."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Generally at all annual BIs, it is recommended to perform the following inspection steps: For circumferential blade stages 4, 10, 13, and 14:"
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "At annual BI inspection closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time, it is recommended to perform the following inspection steps: For all circumferential blade stages (4 through 14):"
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "At Major Inspection outage with all compressor casing upper halves removed (compressor case and compressor discharge case), it is recommended to perform the following inspection steps:"
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Replacement circumferential compressor blades and blade lockers as needed for gap reduction. Consult with your GE service representatives for correct part numbers for ordering based on unit configuration."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Perform circumferential gap measurements as noted during annual BIs (approx. 2 additional hours added to standard BI)."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "To date, the observed measured gaps have not specifically affected the normal operation of the gas turbine. However, GE is recommending monitoring of these circumferential gaps in order to provide detailed planning actions as necessary to help ensure long term operational capability of the unit."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "raw_profile_json": {
+    "til_number": "2467",
+    "revision": null,
+    "title": "HA COMPRESSOR CIRCUMFERENTIAL BLADES GAP MANAGEMENT",
+    "publish_date": "2023-10-26",
+    "reason_for_revision": null,
+    "purpose": "To inform users of the need to inspect the compressor circumferential blades platform gap and plan MI accordingly.",
+    "compliance_category_code": "M",
+    "compliance_category_text": "Maintenance",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Major Inspection (MI)",
+    "scope_of_work": [
+      "Perform circumferential gap measurements as noted during annual BIs (approx. 2 additional hours added to standard BI).",
+      "Perform circumferential gap measurements as noted during outage planning BI (approx. 6 additional hours added to standard BI).",
+      "Perform gap measurement at casing open outage (approx. 4 additional hours during standard MI activities).",
+      "If needed, perform circumferential blade swap out (blade balance charting may be needed as part of this scope), depending upon scope, may take 1 to 5 shifts."
+    ],
+    "service_recommendation_line_items": [
+      "Generally at all annual BIs: for circumferential blade stages 4, 10, 13, and 14, perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gap in each sector; if gap is greater than 0.500 inches [12.7 mm] for any sector, contact GE representative for technical disposition; maintain a record of circumferential blade gap measurements.",
+      "At annual BI closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time: for all circumferential blade stages (4 through 14), perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gap in each sector for all stages; provide circumferential blade gaps and any trend records to GE representative for outage blade planning technical disposition (enable blade part procurement as needed in advance of outage timeframe).",
+      "At any special case (non-planned outage) upper half compressor casing opening situations: for circumferential blade stages exposed by casing removal, perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gap in each sector for all stages exposed; maintain a record; provide measurements and any trend records to GE representative for technical disposition; measurements taken in this manner can cover those specific stage values recorded to satisfy BI measurements for that year per the two BI recommendations above.",
+      "At Major Inspection outage with all compressor casing upper halves removed (compressor case and compressor discharge case): for all circumferential blade stages, perform visual inspection of circumferential blade lockers; perform visual inspection of blade gaps in each sector and measure circumferential blade gaps for all stages (4 through 14) in the as-found condition prior to any stage disassembly efforts; provide measurements and any trend records to GE representative for technical disposition; if any blade change out is performed on any particular stages, perform and document a post blade change out circumferential gap measurement; maintain a record of circumferential blade gap measurements.",
+      "Removal and replacement of compressor rotor blades shall be done in an appropriate manner to maintain rotor balance requirements and subsequent vibration capabilities; use a GE qualified blade technician for blade replacement activities."
+    ],
+    "completion_criteria_text": "Maintain a record of circumferential blade gap measurements; provide circumferential blade gap measurements and any trend records to your GE representative for a technical disposition; if any blade change out is performed on any particular stages, then GE recommends a post blade change out circumferential gap measurement be performed and documented.",
+    "maintenance_trigger_text": "Generally at all annual BIs; annual BI inspection closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time; any special case (non-planned outage) upper half compressor casing opening situations; Major Inspection outage with all compressor casing upper halves removed.",
+    "recommended_interval_or_trigger": [
+      "Generally at all annual BIs.",
+      "At annual BI inspection closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time.",
+      "At any special case (non-planned outage) upper half compressor casing opening situations (casing open measurements for stages exposed by casing removal).",
+      "At Major Inspection outage with all compressor casing upper halves removed (compressor case and compressor discharge case)."
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "All 7FA.04-200, 7F.05, 7HA.0X, 9F.05-18, 9HA.0X",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "For 7F.04-200, 7F.05, 9F.05-18, and all HA class advanced compressors, the rotating blades for all stages are field replaceable. Stages 4 through 14 are circumferentially loaded compressor blades into the compressor wheel dovetail slots. Each circumferential blade stage has four lockers that separate the blades into typically four sectors identified as left, right, top dead center (TDC), and bottom dead center (BDC). Each of these sectors has a required gap.",
+    "serial_or_unit_applicability_text": "Some field units have observed increasing circumferential gaps at the blade platform in the various sectors as operation has occurred.",
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "GE recommends that the noted Borescope Inspections (BI) should be performed by GE's Life Extension Services (LES) group, and casing open measurements should be recorded by GE field technicians/field engineer.",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "Parts are referenced as configuration-dependent: 'Replacement circumferential compressor blades and blade lockers as needed for gap reduction' and 'Consult with your GE service representatives for correct part numbers for ordering based on unit configuration.'",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "Replacement circumferential compressor blades as needed for gap reduction; correct part numbers depend on unit configuration.",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts"
+      },
+      {
+        "part_number": null,
+        "context": "Replacement blade lockers as needed for gap reduction; correct part numbers depend on unit configuration.",
+        "required_inspection_types": [],
+        "source_location": "PLANNING INFORMATION > Parts"
+      }
+    ],
+    "reference_documents": [],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "engine type/configuration",
+      "unit configuration",
+      "compressor casing opening location (compressor case for forward section stages vs compressor discharge case for aft section stages)",
+      "stages exposed by casing removal"
+    ],
+    "configuration_summary": "Inspection scope varies by opportunity (annual BI vs outage-planning BI vs casing-open situations vs Major Inspection with upper halves removed) and by which circumferential blade stages are accessible/exposed; parts ordering is dependent on unit configuration.",
+    "severity_signals": [
+      "Some field units have observed increasing circumferential gaps at the blade platform in the various sectors as operation has occurred.",
+      "If gap is greater than 0.500 inches [12.7 mm] for any of the sectors, please contact your GE representative for technical disposition."
+    ],
+    "failure_consequences": [
+      "May result in reduced equipment reliability or efficiency (Compliance Category: M definition table)."
+    ],
+    "risk_summary": "Observed measured gaps have not specifically affected the normal operation of the gas turbine to date; GE recommends monitoring circumferential gaps to enable planning actions as necessary to help ensure long term operational capability of the unit.",
+    "safety_or_damage_language_found": false,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance Category Definitions",
+        "table_description": "Defines M/C/A/S compliance categories.",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; no equipment-specific values."
+      },
+      {
+        "table_label": "Timing Code Definitions",
+        "table_description": "Defines timing codes 1-6 (e.g., 'Next Scheduled Outage').",
+        "useful_for_downstream": false,
+        "reason": "Terminology/legend only; timing code value is already stated in text (Timing Code - 6)."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for replacement circumferential compressor blades or blade lockers (document instructs to consult GE for correct part numbers based on unit configuration).",
+      "No explicit completion threshold/action beyond 'contact GE representative' is provided for gaps > 0.500 inches [12.7 mm] (technical disposition criteria not included)."
+    ],
+    "source_snippets": [
+      {
+        "field": "purpose",
+        "snippet": "To inform users of the need to inspect the compressor circumferential blades platform gap and plan MI accordingly."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "If gap is greater than 0.500 inches [12.7 mm] for any of the sectors, please contact your GE representative for technical disposition."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "Generally at all annual BIs, it is recommended to perform the following inspection steps: For circumferential blade stages 4, 10, 13, and 14:"
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "At annual BI inspection closest to planned outages (i.e., Hot Gas Path outage or Major Inspection outage) with at least one year (12 months) of lead time, it is recommended to perform the following inspection steps: For all circumferential blade stages (4 through 14):"
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "At Major Inspection outage with all compressor casing upper halves removed (compressor case and compressor discharge case), it is recommended to perform the following inspection steps:"
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "Replacement circumferential compressor blades and blade lockers as needed for gap reduction. Consult with your GE service representatives for correct part numbers for ordering based on unit configuration."
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "Perform circumferential gap measurements as noted during annual BIs (approx. 2 additional hours added to standard BI)."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "To date, the observed measured gaps have not specifically affected the normal operation of the gas turbine. However, GE is recommending monitoring of these circumferential gaps in order to provide detailed planning actions as necessary to help ensure long term operational capability of the unit."
+      }
+    ],
+    "extraction_confidence": 0.78
+  },
+  "extracted_document_method": "databricks_ai",
+  "extracted_text_char_count": 15028,
+  "extracted_table_count": 2,
+  "extraction_confidence": 0.78,
+  "llm_model": "azure-gpt-5-2",
+  "metadata_status": "completed",
+  "metadata_retry_count": 0,
+  "chunk_status": null,
+  "chunk_retry_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ingest_ts": "2026-07-05 00:17:55.485394",
+  "metadata_processed_ts": "2026-07-05 00:17:55.485987",
+  "chunk_processed_ts": null,
+  "run_id": "til_p1_20260704_235852_30f3ba3a"
+}

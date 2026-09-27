@@ -1,0 +1,119 @@
+{
+  "status": "success",
+  "results": {
+    "1": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 1\nExtracted Text:\nGE\nGE VERNOVA\nTIL 2511\nPRODUCT SERVICE\nPublish Date: 06 JUNE 2024\nCompliance Category - S\nTiming Code - 6\nTECHNICAL INFORMATION LETTER\nF.05 & HA COMPRESSOR-SECTION RETENTION-KEY IMPROVEMENTS\nAPPLICATION\nThis TIL is applicable to all 7F.04-200, 7F.05, 7HA.01, 7HA.02, 7HA.03, 9F.05-18, 9HA.01, and 9HA.02 gas turbines.\nPURPOSE\nTo inform affected users about:\n1. The potential for keys retaining sub-assemblies such as stator vane segments, inducer, high pressure packing seal, aft-\ninducer seal, and/or casing treatment ring to overcome staked retention, which can result in object drops during casing\nlifts.\n2. The availability of an improved key retention method, and the recommendation to install the improved key retention\nmodification during a planned major inspection.\nCOMPLIANCE CATEGORY\nTIMING CODE\n\u00a9 2024 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with\nyour organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type,\ni.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is\nstrictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that\ncustomer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor\nshall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.\nDate Printed: 06 JUNE 2024\n\n----------------------------------------\nEnd of Page 1\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| M - Maintenance | Identifies maintenance guidelines or best practices for reliable equipment operation. |\n| c - Compliance Required A Alert | Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. |\n| S - Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |\n\n----------------------------------------\nTable 2:\n|  |  |\n| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |\n| 2 | At First Opportunity (next shutdown) |\n| 3 | Prior to Operation of Affected System |\n| 4 | At First Exposure of Component |\n| 5 | At Scheduled Component Part Repair or Replacement. |\n| 6 | Next Scheduled Outage |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      }
+    ],
+    "2": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 2\nExtracted Text:\nBACKGROUND DISCUSSION\nRetention keys are used in the upper-half (UH) compressor-section casings to retain stator vane segments, seals - such as high-\npressure packing seal (HPPS), and aft inducer seal (AIS)1, inducer\u00b2, and casing treatment (CT) ring\u00b3 during unit assembly. The\nretention keys are installed into a key slot machined on the casing horizontal joint (HJ) on both the left-hand-side (LHS) and right-\nhand-side (RHS), and the casing is staked at multiple places around the key slot to displace material over the key, thereby\nlocking it in place. Figure 1 shows compressor stator keys retained by staking, and Figure 2 shows HPPS key retained by\nstaking.\nFigure 1: Compressor stator keys retained by staking\nFigure 2: HPPS key retained by staking\nGE Vernova has used staking for retention of several gas turbine (GT) stationary parts, including stator vane, inducer, and seal\nkeys. While the experience with staked retention method has proven effective, there were two reported incidents where stator\nvane retention keys fell out during UH casing lifts. These incidents are described in PSSB 20210505A.\n\u00a9 2024 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with\nyour organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type,\ni.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is\nstrictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that\ncustomer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor\nshall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.\nDate Printed: 06 JUNE 2024\n\n----------------------------------------\nEnd of Page 2\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n|  |  |  |  |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "image",
+        "content": [
+          "ie ee ee Anes Cc a \u2122 f Fi | = nce may) oh * Si i:\nSe ee . cs | ie ao . Nees a can? eS eel ? 4 y Oe ie Pa f oe 4 Pe) ae"
+        ],
+        "source": "textract",
+        "page_number": 2
+      }
+    ],
+    "3": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 3\nExtracted Text:\nIn both instances, follow-up inspections of the key slot showed the stakes had not displaced adequate material over the key to\nretain it, which allowed the key and the vane segments to fall out as the casing was being lifted. Figure 3 shows the condition of\nthe stakes on one of the affected units. There were no injuries from either incident. The affected components in both cases were\nblended, and new stakes were placed to adequately retain the key prior to returning the unit to service.\nFigure 3: Staking condition on the affected unit\nIf the retention stakes are not adequately applied, there is potential for keys and the sub-assemblies, such as stator\nvane segments, inducer, and seals to drop during UH casing lifts, which can lead to personnel injury.\nRECOMMENDATIONS\nGE Vernova has engineered an alternate method to help improve key retention. The improvement consists of an upgraded key\nthat is primarily retained by flanged screws, and the key is additionally staked, which serves as secondary retention. The\nmodification requires one-time machining of threaded holes on the casing horizontal joint to accept the retention screws. Figure 4\nshows details of the improved key retention used on the stator-vane segments, and Figure 5 shows the improved key retention\nmethod used on HPPS, AIS, and the inducer.\nStaking\nRetention\nLocation\nScrew\nKey\nVane\nCasing\nFigure 4: Improved retention method used on stator vane keys\n\u00a9 2024 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with\nyour organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type,\ni.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is\nstrictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that\ncustomer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor\nshall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.\nDate Printed: 06 JUNE 2024\n\n----------------------------------------\nEnd of Page 3\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "image",
+        "content": [
+          "\na8 q i \u2014_ eo ES 8 &\u20142 Vireo \\ ner \u00b0 x. | ee: NENG <"
+        ],
+        "source": "textract",
+        "page_number": 3
+      }
+    ],
+    "4": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 4\nExtracted Text:\nInducer\nAIS\nHPPS\nFigure 5: Improved retention method used on HPPS, AIS, and inducer keys\nIt is recommended that the newly configured retention key modification be applied to the unit at the next major inspection (MI)\nwhen all the compressor section upper-half (UH) casings will be removed. The modification may optionally be applied at an\nearlier opportunity, if all the affected compressor section UH casings are removed prior to an MI. Once the modification is\ncompleted, any subsequent key/sub-assembly removal and/or installation does not require any machining tools or special tooling.\nContact your regional GE Vernova representative for additional information or assistance with implementing this improved key\nretention modification.\nNote: Prior to lifting any UH casing, GE Vernova recommends the site personnel to take additional precautions and, if possible, to\ninspect the retention keys for any potential abnormalities such as a displaced key. Once the UH casing is separated, telescoping\nmirrors may be used to perform this inspection.\nThe TIL can be considered as complete once the newly configured key retention modification is applied to retain the stator-vanes,\nHPPS, AIS1, inducer\u00b2, and CT ring\u00b3.\nNote that AIS1, inducer\u00b2, and CT ring\u00b3 are installed only on specific gas turbine models. Contact your GE Vernova representative\nto determine the specific components that are recommended to be modified on your gas turbine model.\n1 AIS is installed only on HA.0x units.\n2 Inducer is installed only on HA.Ox units with a double-wall compressor discharge casing.\n3 CT ring is installed only on 7HA.03 units.\nSCOPE OF WORK\n1. Machine threaded holes and counterbores on the UH compressor-section casings at the HJ to accept retention screws.\n2. Install new keys to retain stator-vanes, HPPS, AIS1, inducer\u00b2, and CT ring\u00b3; torque retention screws to specification.\n3. Stake around the keys at 4x places to serve as secondary retention.\nTIL COMPLETION CRITERIA\nThe TIL is considered as complete once the newly configured key retention modification is installed.\n\u00a9 2024 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with\nyour organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type,\ni.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is\nstrictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that\ncustomer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor\nshall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.\nDate Printed: 06 JUNE 2024\n\n----------------------------------------\nEnd of Page 4\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "image",
+        "content": [
+          "a des a i"
+        ],
+        "source": "textract",
+        "page_number": 4
+      }
+    ],
+    "5": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 5\nExtracted Text:\nTIL DISPOSITION\nDisposition of TILs should be entered in local records and also in GE Vernova ServiceNow. Follow the below instructions for entering the\ndisposition record;\nLog into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/ using your GE Vernova SSO number and password.\nSelect \"TIL Disposition\".\nClick on the TIL for the serial number you want to update.\nChoose the most appropriate \"Disposition Status\" and enter \"Disposition Notes\".\nClick \"Save\".\nContact your local GE Vernova Services representative for assistance or for additional information\n\u00a9 2024 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service relationship with\nyour organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is in your control and ultimate\nresponsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability based on claims for damage of any type,\ni.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information regardless of whether it is claimed that GE Vernova is\nstrictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for any alleged injury or damage sustained by your organization as a\nresult of applying this information. This Technical Information Letter contains proprietary information of GE Vernova and is furnished to its customer solely to assist that\ncustomer in the installation, testing, operation and/or maintenance of the equipment described. This document shall not be reproduced or distributed in whole or in part nor\nshall its contents be disclosed to any third party without the written approval of GE Vernova. All rights reserved.\nDate Printed: 06 JUNE 2024\n\n----------------------------------------\nEnd of Page 5\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      }
+    ]
+  }
+}

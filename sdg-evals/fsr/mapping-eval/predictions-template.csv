@@ -1,0 +1,5 @@
+record_id,predicted_primary_esn,predicted_primary_equip_type
+G-0001,GG10675,Generator
+G-0002,337X765,Gas Turbine
+G-0003,999999,Gas Turbine
+G-0004,297011,Gas Turbine

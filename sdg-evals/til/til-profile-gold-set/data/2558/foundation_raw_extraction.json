@@ -1,0 +1,137 @@
+{
+  "status": "success",
+  "results": {
+    "1": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 1\nExtracted Text:\nGE\nGE VERNOVA\nTIL 2558\nPRODUCT SERVICE\nPublish Date: 29 APRIL 2025\nCompliance Category - A\nTiming Code - 6\nTECHNICAL INFORMATION LETTER\n7F.05\n&\n7FA.04-200\nTURBINE\nWHEEL\nINSPECTION\nAND\nMAINTENANCE\nRECOMMENDATIONS\nAPPLICATION\n7F.05 and 7FA.04-200 gas turbine rotors.\nPURPOSE\nTo advise users to perform routine inspections at maintenance intervals\nCOMPLIANCE CATEGORY\n\u00a9 2025 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service\nrelationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is\nin your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability\nbased on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information\nregardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for\nany alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary\ninformation of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval\nof GE Vernova. All rights reserved.\nDate Printed: 29 APRIL 2025\n\n----------------------------------------\nEnd of Page 1\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n| M - Maintenance c - Compliance Required | Identifies maintenance guidelines or best practices for reliable equipment operation. Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time. |\n| A Alert | Failure to comply with the TIL could result in equipment damage or facility damage. Compliance is mandated within a specific operating time. |\n| S Safety | Failure to comply with this TIL could result in personal injury. Compliance is mandated within a specific operating time. |\n\n----------------------------------------\nTable 2:\n| TIMING CODE |  |\n| 1 | Prior to Unit Startup / Prior to Continued Operation (forced outage condition) |\n| 2 | At First Opportunity (next shutdown) |\n| 3 | Prior to Operation of Affected System |\n| 4 | At First Exposure of Component |\n| 5 | At Scheduled Component Part Repair or Replacement. |\n| 6 | Next Scheduled Outage |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 1
+      }
+    ],
+    "2": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 2\nExtracted Text:\nBACKGROUND DISCUSSION\nPrior to assembly of turbine wheels, the individual disks or wheels are balanced by the addition of weights installed in a\ngroove. Turbine wheels and spacers on 7F.05 and 7FA.04-200 units have a stakeless balance weight configuration (see\nFigure 1); the retention of the weight attained by a set screw and staking on the wheel is not recommended. The turbine\nblades are retained axially by a snap ring type lock wire located in a machined groove passing through the turbine blades\nand turbine wheel. The portion of the wheel retaining the lock wire is known as the lock wire tab. The F-class turbine\nblade cooling air supply is provided through cooling slots with the latest enhanced contour configuration in the bottom of\nthe stage 1 and 2 turbine wheel dovetails.\nC\nFigure 1: Stakeless Balance Weight\nThe disks in the turbine rotor are made of a high nickel alloy that is sensitive to surface imperfections where an\nintergranular crack may initiate and propagate due to high stresses and temperatures. 7F.05 and 7FA.04-200 wheels are\npeened from birth, which counteracts the effects resulting from surface imperfections. Depending on the initiation\nlocation, an undetected crack may continue to propagate due to exposure to stress and temperature until either:\n1- The crack is detected and either repaired or the rotor is removed from service, or\n2- The crack propagates to a critical length, releasing a wheel section and/or adjacent turbine blades into the turbine hot\ngas path section, potentially resulting in significant damage.\nRecommended inspections and inspection intervals to help mitigate crack propagation are provided in Table 1 below.\nThis TIL is being issued for the 7F.05 and 7FA.04-200 turbine rotors to provide specific recommendations for this\nconfiguration.\nLock wire Tabs\nLock wire tab (LWT) cracks have been detected on previous configurations of F-class turbine rotor wheels due to the\nhigh stress in this region. These types of cracks can typically be repaired on site, to repair limits, without the need for\nrotor disassembly or wheel replacement.\n\u00a9 2025 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service\nrelationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is\nin your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability\nbased on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information\nregardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for\nany alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary\ninformation of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval\nof GE Vernova. All rights reserved.\nDate Printed: 29 APRIL 2025\n\n----------------------------------------\nEnd of Page 2\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 2
+      },
+      {
+        "type": "image",
+        "content": [
+          "\u2014\u2014$\u2014\u2014 = oe"
+        ],
+        "source": "textract",
+        "page_number": 2
+      }
+    ],
+    "3": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 3\nExtracted Text:\nLockwire\nStage 1\nTab Cracks\nWheel\nFigure 2: Potential LWT Crack Orientation\nLock wire tab cracks may form in the upper corner of the lock wire tab groove, as shown in Figure 2. Cracks in this\ncorner maybe caused by either:\nDamage sustained during turbine blade installation/removal\nStresses in the lock wire fillet\nGE Vernova has developed specialized procedures and tooling to help mitigate the risk of damage to the wheel lock wire\ntabs during turbine blade installation and removal. These operations should always be performed by GE Vernova turbine\nblade technicians to ensure the appropriate blade installation and removal tools and techniques are utilized.\nBack cut turbine blades reduce turbine blade loading into the tab. An example of the back cut bucket is shown in Figure\n3.\nMachined to Remove Contact\n(Back Cut)\nFigure 3: Back-cut Buckets and Modified Lock wire Tab\nRECOMMENDATIONS\nEvent prevention and rotor health are best maintained through regular maintenance and inspections. The table below\nprovides recommended inspections for 7F.05 and 7FA.04 turbine wheel configurations, which all utilize an enhanced\ncooling slot geometry, stakeless balance rail, and modified lock wire tab. All 7F.05 and 7FA.04-200 wheels are 3-step age\n\u00a9 2025 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service\nrelationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is\nin your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability\nbased on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information\nregardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for\nany alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary\ninformation of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval\nof GE Vernova. All rights reserved.\nDate Printed: 29 APRIL 2025\n\n----------------------------------------\nEnd of Page 3\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 3
+      },
+      {
+        "type": "image",
+        "content": [
+          "Stage 1 | Tob Cracks Wheel\nas rg P ay La Cam | = ~ a \\ catnntio tener"
+        ],
+        "source": "textract",
+        "page_number": 3
+      }
+    ],
+    "4": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 4\nExtracted Text:\nheat treated (3SA). The inspection interval recommended in this TIL aligns with the interval established for the latest 2SA\nwheels on the 7FA.04 fleet. While the 7F.05 and 7FA.04-200 turbine wheels benefit from improved material capability, the\nmachine also operates at a higher Compressor Discharge Temperature.\nTable 1: Applicable 7F.05 & 7FA.04-200 Stages 1 & 2 Turbine Wheel Configurations\nVisual (VT) and Borescope (BI)\nIt is a good practice for all users to evaluate the surface of their rotor, when available, by performing a visual inspection.\nIn order to complete a visual inspection, observe and borescope all of the accessible rotor surfaces. Specifically, look for\noverall surface conditions such as dents, dings, nicks, scratches, crack-like indications, raised material, etc.\nKey features to examine:\nBroach slot fillets, slot bottoms, tangs, and cooling slots (Visual)\nTurbine blade cooling slots in wheel broach slots (Visual/BI)\nSpacer rim seal tooth rubs/coating (Visual)\nBalance weights: looseness/migration, set screw staking quality, tight set screw (Visual/BI)\nNut damage or surface indications in flanges and webs (BI)\nCounterbore outside diameter ligaments on distance piece (UT)\nFluorescent Penetrant Inspection\nFluorescent penetrant inspection (FPI) is recommended to detect cracks on lock wire tabs. However, it is not\nrecommended for the wheel posts, as cracks under the dovetail tangs are typically closed.\nRecommended features to inspect:\nLock wire tab fillets: When turbine blades are removed during routine maintenance intervals.\nTAS and DP with staked balance weights\nTW1 Forward Web - see Figure 4\nIf crack-like indications are found, please contact your local GE Vernova service representative for disposition. In most\ncases, an in-situ repair procedure can be used to remove cracked lock wire tabs or balance weight stake marks. A few\nisolated instances have occurred where wheel replacement was necessary as the repair limits were exceeded.\n\u00a9 2025 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service\nrelationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is\nin your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability\nbased on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information\nregardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for\nany alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary\ninformation of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval\nof GE Vernova. All rights reserved.\nDate Printed: 29 APRIL 2025\n\n----------------------------------------\nEnd of Page 4\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\nTable 1:\n|  | Recommendations |  | Applicable Part Numbers |\n| Inspection | Interval | Stage | PN |\n| ECI | at 96k FFH or 3,600 FFS | 1 | 146E3626 |\n| FPI | LWT: every Major at 64k FFH |  |  |\n| ECI | at 96k FFH or 3,600 FFS |  | 146E3601 |\n| FPI | LWT: every Major at 64k FFH | 2 |  |\n\n----------------------------------------\n"
+        ],
+        "source": "textract",
+        "page_number": 4
+      }
+    ],
+    "5": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 5\nExtracted Text:\nFigure 4: TW1 Forward Web Region\nEddy Current Inspection\nGE Vernova has developed an ECI method with advanced detection devices and techniques for turbine dovetail\ninspection (Figure 5). This method is currently the most effective non-destructive test (NDT) for identifying indications in\nthe wheel dovetails.\nFigure 5: Dovetail Eddy Current Inspection\n\u00a9 2025 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service\nrelationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is\nin your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability\nbased on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information\nregardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for\nany alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary\ninformation of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval\nof GE Vernova. All rights reserved.\nDate Printed: 29 APRIL 2025\n\n----------------------------------------\nEnd of Page 5\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 5
+      },
+      {
+        "type": "image",
+        "content": [
+          "-\nees m \u2018ws ; . he . >) U :"
+        ],
+        "source": "textract",
+        "page_number": 5
+      }
+    ],
+    "6": [
+      {
+        "type": "text",
+        "content": [
+          "Page Number: 6\nExtracted Text:\nDovetail ECI should be performed until rotor retirement at the frequency defined in Table 1 and is available and\nrecommended for all wheel posts referenced. Third stage wheel posts and turbine wheels may also be inspected with the\nsame equipment, if elected. Prior to the ECI, the turbine rotor must be appropriately cleaned to facilitate proper\nfunctioning of the ECI equipment and accurate readings. A preferred method for cleaning is by dry ice (CO\u2082) blasting.\nThis cleaning typically requires a single 12-hour shift to clean the rotor after turbine blade removal and requires the\nsurfaces be free of oil beforehand. If CO\u2082 blast is not available, a more arduous and lengthy hand-cleaning process is\nacceptable (2-3 shifts). The rotor inspection then takes approximately three shifts (~32 hours) to complete Stages 1 and\n2. Both the rotor cleaning (performed by qualified vendor) and the turbine rotor inspection can be scheduled through your\nlocal GE Vernova representative.\nSCOPE OF WORK\nQualified vendor to perform CO\u2082 blast cleaning of turbine rotor.\nGE Vernova qualified personnel to perform rotor inspections.\nRotor inspection equipment is provided and applied by GE Vernova.\nTurbine blades should be removed prior to beginning these inspections per hot gas path outage scope.\nCO blast cleaning of turbine rotor can be completed in one shift (12 hours), including a prior hand wiping to remove oil\nfrom the dovetail surfaces if necessary. ECI of first and second stages can be completed in three shifts or all three stages\nin four shifts. Total time between turbine blade removal and installation should be four shifts (two days). These durations\nare estimates only.\nTIL COMPLETION CRITERIA\nThis TIL is considered completed when the turbine wheels reach end of life and are removed from service.\nTIL DISPOSITION\nDisposition of TILs should be entered in local records and also in GE Vernova ServiceNow. Follow the below instructions for entering\nthe disposition record;\nLog into the Power ServiceNow at https://gepowerpac.service-now.com/til_new/ using your GE Vernova SSO number and\npassword.\nSelect \"TIL Disposition\".\nClick on the TIL for the serial number you want to update.\nChoose the most appropriate \"Disposition Status\" and enter \"Disposition Notes\".\nClick \"Save\".\nContact your local GE Vernova Services representative for assistance or for additional information\n\u00a9 2025 GE Vernova\nThe proprietary information published in this Technical Information Letter is offered to you by GE Vernova in consideration of its ongoing sales and service\nrelationship with your organization. However, since the operation of your plant involves many factors not within our knowledge, and since operation of the plant is\nin your control and ultimate responsibility for its continuing successful operation rests with you, GE Vernova specifically disclaims any responsibility for liability\nbased on claims for damage of any type, i.e. direct, consequential or special that may be alleged to have been incurred as result of applying this information\nregardless of whether it is claimed that GE Vernova is strictly liable, in breach of contract, in breach of warranty, negligent, or is in other respects responsible for\nany alleged injury or damage sustained by your organization as a result of applying this information. This Technical Information Letter contains proprietary\ninformation of GE Vernova and is furnished to its customer solely to assist that customer in the installation, testing, operation and/or maintenance of the equipment\ndescribed. This document shall not be reproduced or distributed in whole or in part nor shall its contents be disclosed to any third party without the written approval\nof GE Vernova. All rights reserved.\nDate Printed: 29 APRIL 2025\n\n----------------------------------------\nEnd of Page 6\n========================================\n\n"
+        ],
+        "source": "textract",
+        "page_number": 6
+      },
+      {
+        "type": "table",
+        "content": [
+          "Extracted Tables:\n"
+        ],
+        "source": "textract",
+        "page_number": 6
+      }
+    ]
+  }
+}

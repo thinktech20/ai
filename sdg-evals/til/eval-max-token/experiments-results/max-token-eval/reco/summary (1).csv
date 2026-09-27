@@ -1,0 +1,3 @@
+avg_quality_score,completed,completed_rate,content_filtered,gold_compared,gold_coverage_rate,missing,parse_failed,quality_pass,quality_pass_rate,run_label,total_tils
+3.0,4,1.0,0,4,1.0,0,0,4,1.0,32000,4
+3.0,4,1.0,0,4,1.0,0,0,4,1.0,gateway_default,4

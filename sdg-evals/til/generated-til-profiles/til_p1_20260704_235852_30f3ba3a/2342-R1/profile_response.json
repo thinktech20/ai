@@ -1,0 +1,115 @@
+{
+  "til_number": "2342-R1",
+  "revision": "R1",
+  "title": "EXHAUST FRAME FLEX SEALS",
+  "publish_date": "2022-09-01",
+  "reason_for_revision": "Add 9F units to the AUL",
+  "purpose": "To inform users of inspection recommendations for the flex seals installed",
+  "compliance_category_code": "M",
+  "compliance_category_text": "Maintenance - Identifies maintenance guidelines or best practices for reliable equipment operation.",
+  "recurring_indicator_if_found": null,
+  "coarse_outage_type": "Inspection",
+  "scope_of_work": [
+    "Inspect the flex seals during yearly planned borescope inspections"
+  ],
+  "service_recommendation_line_items": [
+    "Inspect units in operation that have installed the GEN0, GEN1, or GEN2 flex seal configuration during yearly planned borescope inspections.",
+    "If any indications are observed during planned borescope inspections (signs of wear at the exhaust frame pipe/ring or flange side; cracks, misalignment, bending, disengagement, and/or liberation), report findings to engineering for disposition.",
+    "Monitor the unit for 3AO elevated wheel space temperatures and exhaust frame blower alarms; report any unusual observations to engineering for disposition."
+  ],
+  "completion_criteria_text": null,
+  "maintenance_trigger_text": "Yearly planned borescope inspections",
+  "recommended_interval_or_trigger": [
+    "During yearly planned borescope inspections"
+  ],
+  "usage_counters_to_check_or_consider": [],
+  "usage_counter_requirements_text": null,
+  "frame_or_model_applicability_text": "7F and 9F units with GEN0, GEN1, or GEN2 flex seal configuration installed",
+  "combustion_or_fuel_configuration_text": null,
+  "hardware_or_part_configuration_text": "Applicable as long as GEN0, GEN1, or GEN2 flex seal configuration is installed",
+  "serial_or_unit_applicability_text": null,
+  "exclusions_or_non_applicable_conditions_text": null,
+  "required_prior_modifications_text": null,
+  "prerequisite_outage_or_inspection_context_text": "Planned borescope inspections; if inspected through the hot gas path section, limited areas of the lower section can be captured.",
+  "sbom_dependency_flag": true,
+  "sbom_trigger_reason": "Applicability depends on installed flex seal configuration (GEN0, GEN1, or GEN2), requiring installed-configuration verification.",
+  "mli_numbers": [],
+  "parts_referenced": [
+    {
+      "part_number": null,
+      "context": "Flex seals (GEN0, GEN1, GEN2 configurations); materials referenced: SS410 flex seal, SS347 flex seal, SS410 coated flex seal.",
+      "required_inspection_types": [],
+      "source_location": "Extracted TIL PDF text, Figure 2: Flex seal configurations"
+    }
+  ],
+  "reference_documents": [],
+  "configuration_dependent": true,
+  "configuration_variables": [
+    "GEN0 flex seal configuration",
+    "GEN1 flex seal configuration",
+    "GEN2 flex seal configuration"
+  ],
+  "configuration_summary": "TIL applies to 7F and 9F units when GEN0, GEN1, or GEN2 flex seal configuration is installed.",
+  "severity_signals": [
+    "3AO elevated wheel space temperatures",
+    "exhaust frame blower alarms",
+    "Signs of wear at the exhaust frame pipe/ring or flange side",
+    "Cracks, misalignment, bending, disengagement, and/or liberation"
+  ],
+  "failure_consequences": [],
+  "risk_summary": "Historically, flex seals have in some cases experienced wear, cracking, misalignment, bending, disengagement, and/or liberation.",
+  "safety_or_damage_language_found": false,
+  "tables_found_summary": [
+    {
+      "table_label": "Compliance category and timing code legend",
+      "table_description": "Defines compliance categories (M/C/A/S) and timing codes (1-6).",
+      "useful_for_downstream": false,
+      "reason": "Legend/definitions only; does not provide equipment-specific intervals, parts, or configuration values beyond what is already stated in text."
+    }
+  ],
+  "missing_information_flags": [
+    "No specific inspection method details (e.g., VT/BI/ECI) or acceptance criteria are provided beyond listing indications to report.",
+    "No part numbers or kit numbers are provided for flex seals (Parts listed as N/A).",
+    "No explicit failure consequences (damage modes/impacts) are stated beyond historical issues.",
+    "til_number still contains a hyphen-delimited revision suffix while revision is separately populated."
+  ],
+  "source_snippets": [
+    {
+      "field": "purpose",
+      "snippet": "To inform users of inspection recommendations for the flex seals installed"
+    },
+    {
+      "field": "scope_of_work",
+      "snippet": "Inspect the flex seals during yearly planned borescope inspections"
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "GE recommends inspecting the units in operation that have installed the GEN0, GEN1, or GEN2 flex seal configuration during yearly planned borescope inspections."
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "If any of the following indications are observed during planned borescope inspections, report findings to engineering for disposition:\n• Signs of wear at the exhaust frame pipe/ring or flange side\n• Cracks, misalignment, bending, disengagement, and/or liberation"
+    },
+    {
+      "field": "service_recommendation_line_items",
+      "snippet": "It is also recommended to monitor the unit for 3AO elevated wheel space temperatures and exhaust frame blower alarms; report any unusual observations to engineering for disposition."
+    },
+    {
+      "field": "risk_summary",
+      "snippet": "Historically, flex seals have in some cases experienced wear, cracking, misalignment, bending, disengagement, and/or liberation."
+    },
+    {
+      "field": "frame_or_model_applicability_text",
+      "snippet": "7F and 9F units with GEN0, GEN1, or GEN2 flex seal configuration installed"
+    },
+    {
+      "field": "hardware_or_part_configuration_text",
+      "snippet": "This TIL is applicable as long as GEN0, GEN1, or GEN2 flex seal configuration is installed."
+    },
+    {
+      "field": "parts_referenced",
+      "snippet": "GEN0\nSS410 Flex seal\nGEN1\nSS347 Flex seal\nGEN2\nSS410 coated Flex seal"
+    }
+  ],
+  "extraction_confidence": 0.86
+}

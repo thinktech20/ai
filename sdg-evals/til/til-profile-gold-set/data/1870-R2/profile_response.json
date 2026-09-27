@@ -1,0 +1,165 @@
+{
+  "requested_til": "1870-R2",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 1870",
+    "revision": "R2",
+    "title": "FIRST ROW COMPRESSOR BLADE STAKING INSPECTIONS",
+    "publish_date": "2015-02-10",
+    "reason_for_revision": "Expanded affected unit list and updated recommendations to reflect the more robust field installation procedural changes.",
+    "purpose": "To inform sites that there is a potential for first row blade migration caused by insufficient interference between the stake marks and the blade. During annual borescope inspections, it is recommended to confirm ROs have not migrated forward. The staking quality can be verified during a major inspection or when the bellmouth is scheduled to be removed.",
+    "compliance_category_code": "C",
+    "compliance_category_text": "Compliance Required - Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.",
+    "recurring_indicator_if_found": null,
+    "coarse_outage_type": "Major Inspection / Bellmouth Removal",
+    "scope_of_work": [
+      "Visually inspect R0s for axial migration during annual borescope inspection",
+      "Inspect for staking insert (biscuit) rotation during annual borescope, if applicable",
+      "Verify staking measurements and radial gaps during planned bellmouth removal (major inspection)",
+      "Re-stake any blades that have migrated or are at risk of migrating",
+      "Blade inspection can be completed in one-half shift; re-staking requires four 12-hour shifts"
+    ],
+    "service_recommendation_line_items": [
+      "During annual borescope inspection, confirm no R0 blades have migrated forward",
+      "During annual borescope, confirm staking inserts (if applicable) have not significantly rotated; use mirror if necessary",
+      "If mild rotation is observed and stake marks cannot be confirmed as forward of the blade, contact GE representative",
+      "During major inspection or bellmouth removal, ensure both stake marks on R0 biscuits are forward of or in contact with blade dovetail",
+      "Measure each R0 blade stake mark geometry and radial gap: stake height h must be greater than 0.030in [0.762mm], radial gap r should be less than 0.005in [0.127mm]",
+      "Any stake marks not meeting minimum height should be re-staked",
+      "Exception: if R0 blade is exactly flush against face of forward stub shaft with biscuits in place, stake height slightly less than 0.030in may be acceptable due to geometrical considerations - contact GE representative",
+      "If radial gap is above limits, contact GE representative for final engineering disposition",
+      "Any blades that move axially forward will need to be re-staked to ensure the staking ligament is actively engaged with the blade",
+      "Replacement staking inserts should be available on sites with existing insert modifications",
+      "Spare R0s should be available if R0 rub damage has occurred",
+      "Staking equipment or biscuit modification installation equipment should be available to complete any necessary re-staking"
+    ],
+    "completion_criteria_text": "This TIL is considered complete once recommendations outlined in step 3 (verify staking measurements and radial gaps during planned bellmouth removal) have been executed. Units that have not installed ROs since 2008 may mark this TIL as complete without performing the recommended inspections.",
+    "maintenance_trigger_text": "F-class units that received an R0 re-installation from January 2008 to November 2014",
+    "recommended_interval_or_trigger": [
+      "Annual borescope inspection for visual migration check and insert rotation check",
+      "Major inspection or scheduled bellmouth removal for staking measurement verification (Timing Code 5 - At Scheduled Component Part Repair or Replacement)"
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "F-class units that received an R0 re-installation from January 2008 to November 2014",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "R0 migration has occurred in units with and without enhanced blades, and with and without a staking insert modification. Units with staking insert (biscuit) modification require additional insert rotation inspection.",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": "Units that have not installed ROs since 2008 may mark this TIL as complete without performing the recommended inspections.",
+    "required_prior_modifications_text": "NA",
+    "prerequisite_outage_or_inspection_context_text": "Steps 1 and 2 can be performed during annual borescope inspection. Step 3 requires bellmouth removal (major inspection or scheduled bellmouth removal).",
+    "sbom_dependency_flag": true,
+    "sbom_trigger_reason": "TIL applicability depends on whether R0 blades were re-installed between January 2008 and November 2014, and whether staking insert (biscuit) modification is present - requires installed-configuration verification.",
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "R0 staking replaceable insert (biscuit) - inserted into slot bottom to perform staking function when original slot bottom edge no longer has room for staking",
+        "required_inspection_types": [
+          "VT"
+        ],
+        "source_location": "Page 2 Background Discussion and Page 3-4 Recommendations"
+      },
+      {
+        "part_number": null,
+        "context": "First row compressor blades (R0 blades) - subject of migration inspection",
+        "required_inspection_types": [
+          "VT",
+          "BI"
+        ],
+        "source_location": "Page 1 Application, Page 3 Recommendations"
+      },
+      {
+        "part_number": null,
+        "context": "Replacement staking inserts should be available on sites with existing insert modifications in case any stake marks do not meet inspection requirements",
+        "required_inspection_types": [],
+        "source_location": "Page 5 Parts section"
+      },
+      {
+        "part_number": null,
+        "context": "Spare R0s should be available if R0 rub damage has occurred",
+        "required_inspection_types": [],
+        "source_location": "Page 5 Parts section"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 1796",
+        "document_type": "TIL",
+        "context": "Provides recommendations for the specific team population of R0 re-installations in North America with migration events"
+      },
+      {
+        "document_number": "GE Operation and Maintenance Manual",
+        "document_type": "Manual",
+        "context": "Customers should refer to for any additional recommendations or safety warnings specific to this equipment"
+      }
+    ],
+    "configuration_dependent": true,
+    "configuration_variables": [
+      "R0 re-installation date (January 2008 to November 2014)",
+      "Presence of staking insert (biscuit) modification",
+      "Enhanced blades vs standard blades",
+      "Frame type (F-class)"
+    ],
+    "configuration_summary": "Applicable to all F-class units with R0 re-installations between January 2008 and November 2014, regardless of whether enhanced blades or staking insert modification are present. Additional insert rotation inspection applies only to units with biscuit modification.",
+    "severity_signals": [
+      "Compliance Required",
+      "Potential for first row blade migration",
+      "Blade rubbing against casing bellmouth causing damage",
+      "Reduced equipment reliability"
+    ],
+    "failure_consequences": [
+      "First row compressor blade axial migration forward",
+      "Compressor blades rubbing against the casing bellmouth causing damage to the blade and rub ring",
+      "Staking insert rotation potentially allowing blade migration"
+    ],
+    "risk_summary": "Insufficient interference between stake marks and blade dovetail can allow R0 blade axial migration during operation at slower speeds, eventually leading to blade-to-bellmouth rub ring contact causing damage to both blade and rub ring. Migration events have occurred in units installed between 2008 and 2014.",
+    "safety_or_damage_language_found": true,
+    "tables_found_summary": [
+      {
+        "table_label": "TIL Compliance Record - Installed Equipment",
+        "table_description": "Table on page 6 with columns for Unit Numbers, Part Description, Part Number, and MLI Number - blank form for compliance recording",
+        "useful_for_downstream": false,
+        "reason": "Blank compliance form template with no pre-populated data"
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for R0 blades or staking inserts",
+      "No MLI numbers provided",
+      "No specific serial numbers or unit list provided in extracted text",
+      "No specific GE frame sub-model identified beyond F-class"
+    ],
+    "source_snippets": [
+      {
+        "field": "frame_or_model_applicability_text",
+        "snippet": "The recommended inspection should be completed on F-class units that received an RO re-installation from January 2008 to November 2014."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL is considered complete once recommendations outlined in step 3 have been executed."
+      },
+      {
+        "field": "failure_consequences",
+        "snippet": "The axial movement could eventually lead to compressor blades rubbing against the casing bellmouth, causing damage to the blade and rub ring."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "The stake height, h, must be greater than 0.030in [0.762mm], and the radial gap between dovetail bottom and slot bottom/top of biscuit, r, should be less than 0.005in [0.127mm]"
+      },
+      {
+        "field": "scope_of_work",
+        "snippet": "The blade inspection be completed in one-half shift. Any potential re-staking for blades that have migrated or at risk of migrating will require four 12-hour shifts."
+      },
+      {
+        "field": "exclusions_or_non_applicable_conditions_text",
+        "snippet": "Units that have not installed ROs since 2008 may mark this TIL as complete without performing the recommended inspections."
+      },
+      {
+        "field": "hardware_or_part_configuration_text",
+        "snippet": "RO migration has occurred in units with and without enhanced blades, and with and without a staking insert modification."
+      }
+    ],
+    "extraction_confidence": 0.92
+  },
+  "raw_profile": "```json\n{\n  \"til_number\": \"TIL 1870\",\n  \"revision\": \"R2\",\n  \"title\": \"FIRST ROW COMPRESSOR BLADE STAKING INSPECTIONS\",\n  \"publish_date\": \"2015-02-10\",\n  \"reason_for_revision\": \"Expanded affected unit list and updated recommendations to reflect the more robust field installation procedural changes.\",\n  \"purpose\": \"To inform sites that there is a potential for first row blade migration caused by insufficient interference between the stake marks and the blade. During annual borescope inspections, it is recommended to confirm ROs have not migrated forward. The staking quality can be verified during a major inspection or when the bellmouth is scheduled to be removed.\",\n  \"compliance_category_code\": \"C\",\n  \"compliance_category_text\": \"Compliance Required - Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.\",\n  \"recurring_indicator_if_found\": null,\n  \"coarse_outage_type\": \"Major Inspection / Bellmouth Removal\",\n  \"scope_of_work\": [\n    \"Visually inspect R0s for axial migration during annual borescope inspection\",\n    \"Inspect for staking insert (biscuit) rotation during annual borescope, if applicable\",\n    \"Verify staking measurements and radial gaps during planned bellmouth removal (major inspection)\",\n    \"Re-stake any blades that have migrated or are at risk of migrating\",\n    \"Blade inspection can be completed in one-half shift; re-staking requires four 12-hour shifts\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"During annual borescope inspection, confirm no R0 blades have migrated forward\",\n    \"During annual borescope, confirm staking inserts (if applicable) have not significantly rotated; use mirror if necessary\",\n    \"If mild rotation is observed and stake marks cannot be confirmed as forward of the blade, contact GE representative\",\n    \"During major inspection or bellmouth removal, ensure both stake marks on R0 biscuits are forward of or in contact with blade dovetail\",\n    \"Measure each R0 blade stake mark geometry and radial gap: stake height h must be greater than 0.030in [0.762mm], radial gap r should be less than 0.005in [0.127mm]\",\n    \"Any stake marks not meeting minimum height should be re-staked\",\n    \"Exception: if R0 blade is exactly flush against face of forward stub shaft with biscuits in place, stake height slightly less than 0.030in may be acceptable due to geometrical considerations - contact GE representative\",\n    \"If radial gap is above limits, contact GE representative for final engineering disposition\",\n    \"Any blades that move axially forward will need to be re-staked to ensure the staking ligament is actively engaged with the blade\",\n    \"Replacement staking inserts should be available on sites with existing insert modifications\",\n    \"Spare R0s should be available if R0 rub damage has occurred\",\n    \"Staking equipment or biscuit modification installation equipment should be available to complete any necessary re-staking\"\n  ],\n  \"completion_criteria_text\": \"This TIL is considered complete once recommendations outlined in step 3 (verify staking measurements and radial gaps during planned bellmouth removal) have been executed. Units that have not installed ROs since 2008 may mark this TIL as complete without performing the recommended inspections.\",\n  \"maintenance_trigger_text\": \"F-class units that received an R0 re-installation from January 2008 to November 2014\",\n  \"recommended_interval_or_trigger\": [\n    \"Annual borescope inspection for visual migration check and insert rotation check\",\n    \"Major inspection or scheduled bellmouth removal for staking measurement verification (Timing Code 5 - At Scheduled Component Part Repair or Replacement)\"\n  ],\n  \"usage_counters_to_check_or_consider\": [],\n  \"usage_counter_requirements_text\": null,\n  \"frame_or_model_applicability_text\": \"F-class units that received an R0 re-installation from January 2008 to November 2014\",\n  \"combustion_or_fuel_configuration_text\": null,\n  \"hardware_or_part_configuration_text\": \"R0 migration has occurred in units with and without enhanced blades, and with and without a staking insert modification. Units with staking insert (biscuit) modification require additional insert rotation inspection.\",\n  \"serial_or_unit_applicability_text\": null,\n  \"exclusions_or_non_applicable_conditions_text\": \"Units that have not installed ROs since 2008 may mark this TIL as complete without performing the recommended inspections.\",\n  \"required_prior_modifications_text\": \"NA\",\n  \"prerequisite_outage_or_inspection_context_text\": \"Steps 1 and 2 can be performed during annual borescope inspection. Step 3 requires bellmouth removal (major inspection or scheduled bellmouth removal).\",\n  \"sbom_dependency_flag\": true,\n  \"sbom_trigger_reason\": \"TIL applicability depends on whether R0 blades were re-installed between January 2008 and November 2014, and whether staking insert (biscuit) modification is present - requires installed-configuration verification.\",\n  \"mli_numbers\": [],\n  \"parts_referenced\": [\n    {\n      \"part_number\": null,\n      \"context\": \"R0 staking replaceable insert (biscuit) - inserted into slot bottom to perform staking function when original slot bottom edge no longer has room for staking\",\n      \"required_inspection_types\": [\"VT\"],\n      \"source_location\": \"Page 2 Background Discussion and Page 3-4 Recommendations\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"First row compressor blades (R0 blades) - subject of migration inspection\",\n      \"required_inspection_types\": [\"VT\", \"BI\"],\n      \"source_location\": \"Page 1 Application, Page 3 Recommendations\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Replacement staking inserts should be available on sites with existing insert modifications in case any stake marks do not meet inspection requirements\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Page 5 Parts section\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"Spare R0s should be available if R0 rub damage has occurred\",\n      \"required_inspection_types\": [],\n      \"source_location\": \"Page 5 Parts section\"\n    }\n  ],\n  \"reference_documents\": [\n    {\n      \"document_number\": \"TIL 1796\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Provides recommendations for the specific team population of R0 re-installations in North America with migration events\"\n    },\n    {\n      \"document_number\": \"GE Operation and Maintenance Manual\",\n      \"document_type\": \"Manual\",\n      \"context\": \"Customers should refer to for any additional recommendations or safety warnings specific to this equipment\"\n    }\n  ],\n  \"configuration_dependent\": true,\n  \"configuration_variables\": [\n    \"R0 re-installation date (January 2008 to November 2014)\",\n    \"Presence of staking insert (biscuit) modification\",\n    \"Enhanced blades vs standard blades\",\n    \"Frame type (F-class)\"\n  ],\n  \"configuration_summary\": \"Applicable to all F-class units with R0 re-installations between January 2008 and November 2014, regardless of whether enhanced blades or staking insert modification are present. Additional insert rotation inspection applies only to units with biscuit modification.\",\n  \"severity_signals\": [\n    \"Compliance Required\",\n    \"Potential for first row blade migration\",\n    \"Blade rubbing against casing bellmouth causing damage\",\n    \"Reduced equipment reliability\"\n  ],\n  \"failure_consequences\": [\n    \"First row compressor blade axial migration forward\",\n    \"Compressor blades rubbing against the casing bellmouth causing damage to the blade and rub ring\",\n    \"Staking insert rotation potentially allowing blade migration\"\n  ],\n  \"risk_summary\": \"Insufficient interference between stake marks and blade dovetail can allow R0 blade axial migration during operation at slower speeds, eventually leading to blade-to-bellmouth rub ring contact causing damage to both blade and rub ring. Migration events have occurred in units installed between 2008 and 2014.\",\n  \"safety_or_damage_language_found\": true,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"TIL Compliance Record - Installed Equipment\",\n      \"table_description\": \"Table on page 6 with columns for Unit Numbers, Part Description, Part Number, and MLI Number - blank form for compliance recording\",\n      \"useful_for_downstream\": false,\n      \"reason\": \"Blank compliance form template with no pre-populated data\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific part numbers provided for R0 blades or staking inserts\",\n    \"No MLI numbers provided\",\n    \"No specific serial numbers or unit list provided in extracted text\",\n    \"No specific GE frame sub-model identified beyond F-class\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"frame_or_model_applicability_text\",\n      \"snippet\": \"The recommended inspection should be completed on F-class units that received an RO re-installation from January 2008 to November 2014.\"\n    },\n    {\n      \"field\": \"completion_criteria_text\",\n      \"snippet\": \"This TIL is considered complete once recommendations outlined in step 3 have been executed.\"\n    },\n    {\n      \"field\": \"failure_consequences\",\n      \"snippet\": \"The axial movement could eventually lead to compressor blades rubbing against the casing bellmouth, causing damage to the blade and rub ring.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"The stake height, h, must be greater than 0.030in [0.762mm], and the radial gap between dovetail bottom and slot bottom/top of biscuit, r, should be less than 0.005in [0.127mm]\"\n    },\n    {\n      \"field\": \"scope_of_work\",\n      \"snippet\": \"The blade inspection be completed in one-half shift. Any potential re-staking for blades that have migrated or at risk of migrating will require four 12-hour shifts.\"\n    },\n    {\n      \"field\": \"exclusions_or_non_applicable_conditions_text\",\n      \"snippet\": \"Units that have not installed ROs since 2008 may mark this TIL as complete without performing the recommended inspections.\"\n    },\n    {\n      \"field\": \"hardware_or_part_configuration_text\",\n      \"snippet\": \"RO migration has occurred in units with and without enhanced blades, and with and without a staking insert modification.\"\n    }\n  ],\n  \"extraction_confidence\": 0.92\n}\n```"
+}

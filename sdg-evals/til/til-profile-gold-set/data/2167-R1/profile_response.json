@@ -1,0 +1,142 @@
+{
+  "requested_til": "2167-R1",
+  "model": null,
+  "parsed_profile": {
+    "til_number": "TIL 2167-R1",
+    "revision": "R1",
+    "title": "7F.05 VSV2 COMPRESSOR INSPECTIONS",
+    "publish_date": "2020-06-04",
+    "reason_for_revision": "To improve TIL language and clarity.",
+    "purpose": "To inform 7F.05 users of front end compressor inspections to improve unit availability and reliability.",
+    "compliance_category_code": "C",
+    "compliance_category_text": "Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.",
+    "recurring_indicator_if_found": "The above borescope inspections are recurring until the below actions are completed.",
+    "coarse_outage_type": "Next Scheduled Outage",
+    "scope_of_work": [
+      "During planned BIs: Inspect 100% of the VSV2s for signs of tip loss or tip indications",
+      "During planned BIs: Inspect 100% of the 2-3 T-Fairings for signs of severe rubs. Document the conditions of each T-Fairing so that rubs can be monitored over time.",
+      "During planned major inspections or planned outages when the compressor is exposed: Inspect the condition of VSV2 tips and document any rubs or tip curl with photographs. Following this, it is recommended to tip the VSV2s to increase the radial clearance.",
+      "During planned major inspections or planned outages when the compressor is exposed: Inspect the 2-3 T-Fairing flow path surface and edges for signs of high metal, burrs, or rubs. If high metal, burrs, or rubs are noted, document the condition of the T-Fairing's with pictures."
+    ],
+    "service_recommendation_line_items": [
+      "During planned borescope inspections, inspect 100% of VSV2s for evidence of tip loss or tip indications.",
+      "During planned borescope inspections, inspect 100% of the 2-3 T-Fairings for rubs and document conditions so rubs can be monitored over time.",
+      "Contact GE representative with inspection results for evaluation and disposition by GE engineering.",
+      "During planned major inspections or outages when compressor is exposed, inspect VSV2 tips and document rubs or tip curl with photographs.",
+      "Tip the VSV2s to increase radial clearance during major inspections (contact GE representative for guidance on tipping).",
+      "During major inspections, inspect 2-3 T-Fairing flow path surface and edges for high metal, burrs, or rubs; document with pictures if found.",
+      "Post-tipping NDT required: FPI recommended; red dye penetrant acceptable if FPI not available."
+    ],
+    "completion_criteria_text": "This TIL can be deemed complete if the vanes are tipped to increase the clearance or replaced with the VSV2s that have an increased tip clearance.",
+    "maintenance_trigger_text": "During planned borescope inspections (recurring) and during planned major inspections or planned outages when the compressor is exposed.",
+    "recommended_interval_or_trigger": [
+      "Borescope inspections: recurring at each planned BI until corrective action is completed",
+      "Major inspections or planned outages when compressor is exposed: tip VSV2s or replace with increased tip clearance VSV2s",
+      "Annual inspections of VSV2 and 2-3 TF can be performed during the recommended inspection in TIL 2212"
+    ],
+    "usage_counters_to_check_or_consider": [],
+    "usage_counter_requirements_text": null,
+    "frame_or_model_applicability_text": "Gas turbines with 7F.05 compressors.",
+    "combustion_or_fuel_configuration_text": null,
+    "hardware_or_part_configuration_text": "7F.05 compressor with 14 stage compressor, IGVs, three stages of variable stator vanes (VSVs), and two stages of T-Fairings (1-2 T-Fairing and 2-3 T-Fairing).",
+    "serial_or_unit_applicability_text": null,
+    "exclusions_or_non_applicable_conditions_text": null,
+    "required_prior_modifications_text": null,
+    "prerequisite_outage_or_inspection_context_text": "The corrective actions (tipping or replacing the VSV2s) in this TIL are independent of the corrective actions recommended in TIL 2212.",
+    "sbom_dependency_flag": false,
+    "sbom_trigger_reason": null,
+    "mli_numbers": [],
+    "parts_referenced": [
+      {
+        "part_number": null,
+        "context": "VSV2 (Stage 2 Variable Stator Vane) - subject of inspection for tip loss and tipping to increase radial clearance",
+        "required_inspection_types": [
+          "VT",
+          "FPI"
+        ],
+        "source_location": "Recommendations and Scope of Work sections"
+      },
+      {
+        "part_number": null,
+        "context": "2-3 T-Fairing - removable hardware forming rotor flowpath between stage 2 and stage 3 compressor blades, inspected for rubs, high metal, and burrs",
+        "required_inspection_types": [
+          "VT"
+        ],
+        "source_location": "Recommendations and Scope of Work sections"
+      }
+    ],
+    "reference_documents": [
+      {
+        "document_number": "TIL 2212",
+        "document_type": "TIL",
+        "context": "Annual inspections of VSV2 and 2-3 TF can be performed during the recommended inspection in TIL 2212. Corrective actions in TIL 2167 are independent of TIL 2212."
+      }
+    ],
+    "configuration_dependent": false,
+    "configuration_variables": [],
+    "configuration_summary": null,
+    "severity_signals": [
+      "Compliance Category C - condition that if left uncorrected may result in reduced equipment reliability or efficiency",
+      "VSV2 tip loss observed during planned borescope inspection",
+      "Minor object damage noted on downstream compressor airfoils"
+    ],
+    "failure_consequences": [
+      "VSV2 tip loss",
+      "Minor object damage on downstream compressor airfoils",
+      "Reduced unit availability and reliability"
+    ],
+    "risk_summary": "VSV2 tip rubs can lead to tip loss and downstream foreign object damage to compressor airfoils, reducing unit availability and reliability. Increasing VSV2 radial clearance through tipping or replacement mitigates the risk with negligible impact on compressor flow, efficiency, and stall margin.",
+    "safety_or_damage_language_found": false,
+    "tables_found_summary": [
+      {
+        "table_label": "Compliance Category Definitions",
+        "table_description": "Defines compliance categories C, A, and S with their associated risk descriptions.",
+        "useful_for_downstream": false,
+        "reason": "Standard legend table, does not contain unit-specific operational data."
+      },
+      {
+        "table_label": "Timing Code Definitions",
+        "table_description": "Defines timing codes 1 through 6 with their associated action timing.",
+        "useful_for_downstream": false,
+        "reason": "Standard legend table; Timing Code 6 = Next Scheduled Outage is the only relevant item and is captured elsewhere."
+      }
+    ],
+    "missing_information_flags": [
+      "No specific part numbers provided for VSV2 or 2-3 T-Fairing",
+      "No specific operating hour or start interval defined for borescope inspections",
+      "No serial number applicability list provided"
+    ],
+    "source_snippets": [
+      {
+        "field": "recurring_indicator_if_found",
+        "snippet": "The above borescope inspections are recurring until the below actions are completed."
+      },
+      {
+        "field": "completion_criteria_text",
+        "snippet": "This TIL can be deemed complete if the vanes are tipped to increase the clearance or replaced with the VSV2s that have an increased tip clearance."
+      },
+      {
+        "field": "purpose",
+        "snippet": "To inform 7F.05 users of front end compressor inspections to improve unit availability and reliability."
+      },
+      {
+        "field": "service_recommendation_line_items",
+        "snippet": "it is recommended to tip the VSV2s to increase the radial clearance. Please contact your GE representative for further guidance on this tipping."
+      },
+      {
+        "field": "risk_summary",
+        "snippet": "This clearance increase is expected to have a negligible impact on compressor flow, efficiency, and stall margin."
+      },
+      {
+        "field": "reference_documents",
+        "snippet": "The annual inspections of VSV2 and 2-3 TF can be performed during the recommended inspection in TIL 2212."
+      },
+      {
+        "field": "parts_referenced",
+        "snippet": "A competent and qualified non-destructive testing NDT) inspector for post tipping NDT. For this work, NDT is considered a penetrant inspection. Flourescent penetrant inspection (FPI) is recommended."
+      }
+    ],
+    "extraction_confidence": 0.92
+  },
+  "raw_profile": "```json\n{\n  \"til_number\": \"TIL 2167-R1\",\n  \"revision\": \"R1\",\n  \"title\": \"7F.05 VSV2 COMPRESSOR INSPECTIONS\",\n  \"publish_date\": \"2020-06-04\",\n  \"reason_for_revision\": \"To improve TIL language and clarity.\",\n  \"purpose\": \"To inform 7F.05 users of front end compressor inspections to improve unit availability and reliability.\",\n  \"compliance_category_code\": \"C\",\n  \"compliance_category_text\": \"Identifies the need for action to correct a condition that, if left uncorrected, may result in reduced equipment reliability or efficiency. Compliance may be required within a specific operating time.\",\n  \"recurring_indicator_if_found\": \"The above borescope inspections are recurring until the below actions are completed.\",\n  \"coarse_outage_type\": \"Next Scheduled Outage\",\n  \"scope_of_work\": [\n    \"During planned BIs: Inspect 100% of the VSV2s for signs of tip loss or tip indications\",\n    \"During planned BIs: Inspect 100% of the 2-3 T-Fairings for signs of severe rubs. Document the conditions of each T-Fairing so that rubs can be monitored over time.\",\n    \"During planned major inspections or planned outages when the compressor is exposed: Inspect the condition of VSV2 tips and document any rubs or tip curl with photographs. Following this, it is recommended to tip the VSV2s to increase the radial clearance.\",\n    \"During planned major inspections or planned outages when the compressor is exposed: Inspect the 2-3 T-Fairing flow path surface and edges for signs of high metal, burrs, or rubs. If high metal, burrs, or rubs are noted, document the condition of the T-Fairing's with pictures.\"\n  ],\n  \"service_recommendation_line_items\": [\n    \"During planned borescope inspections, inspect 100% of VSV2s for evidence of tip loss or tip indications.\",\n    \"During planned borescope inspections, inspect 100% of the 2-3 T-Fairings for rubs and document conditions so rubs can be monitored over time.\",\n    \"Contact GE representative with inspection results for evaluation and disposition by GE engineering.\",\n    \"During planned major inspections or outages when compressor is exposed, inspect VSV2 tips and document rubs or tip curl with photographs.\",\n    \"Tip the VSV2s to increase radial clearance during major inspections (contact GE representative for guidance on tipping).\",\n    \"During major inspections, inspect 2-3 T-Fairing flow path surface and edges for high metal, burrs, or rubs; document with pictures if found.\",\n    \"Post-tipping NDT required: FPI recommended; red dye penetrant acceptable if FPI not available.\"\n  ],\n  \"completion_criteria_text\": \"This TIL can be deemed complete if the vanes are tipped to increase the clearance or replaced with the VSV2s that have an increased tip clearance.\",\n  \"maintenance_trigger_text\": \"During planned borescope inspections (recurring) and during planned major inspections or planned outages when the compressor is exposed.\",\n  \"recommended_interval_or_trigger\": [\n    \"Borescope inspections: recurring at each planned BI until corrective action is completed\",\n    \"Major inspections or planned outages when compressor is exposed: tip VSV2s or replace with increased tip clearance VSV2s\",\n    \"Annual inspections of VSV2 and 2-3 TF can be performed during the recommended inspection in TIL 2212\"\n  ],\n  \"usage_counters_to_check_or_consider\": [],\n  \"usage_counter_requirements_text\": null,\n  \"frame_or_model_applicability_text\": \"Gas turbines with 7F.05 compressors.\",\n  \"combustion_or_fuel_configuration_text\": null,\n  \"hardware_or_part_configuration_text\": \"7F.05 compressor with 14 stage compressor, IGVs, three stages of variable stator vanes (VSVs), and two stages of T-Fairings (1-2 T-Fairing and 2-3 T-Fairing).\",\n  \"serial_or_unit_applicability_text\": null,\n  \"exclusions_or_non_applicable_conditions_text\": null,\n  \"required_prior_modifications_text\": null,\n  \"prerequisite_outage_or_inspection_context_text\": \"The corrective actions (tipping or replacing the VSV2s) in this TIL are independent of the corrective actions recommended in TIL 2212.\",\n  \"sbom_dependency_flag\": false,\n  \"sbom_trigger_reason\": null,\n  \"mli_numbers\": [],\n  \"parts_referenced\": [\n    {\n      \"part_number\": null,\n      \"context\": \"VSV2 (Stage 2 Variable Stator Vane) - subject of inspection for tip loss and tipping to increase radial clearance\",\n      \"required_inspection_types\": [\"VT\", \"FPI\"],\n      \"source_location\": \"Recommendations and Scope of Work sections\"\n    },\n    {\n      \"part_number\": null,\n      \"context\": \"2-3 T-Fairing - removable hardware forming rotor flowpath between stage 2 and stage 3 compressor blades, inspected for rubs, high metal, and burrs\",\n      \"required_inspection_types\": [\"VT\"],\n      \"source_location\": \"Recommendations and Scope of Work sections\"\n    }\n  ],\n  \"reference_documents\": [\n    {\n      \"document_number\": \"TIL 2212\",\n      \"document_type\": \"TIL\",\n      \"context\": \"Annual inspections of VSV2 and 2-3 TF can be performed during the recommended inspection in TIL 2212. Corrective actions in TIL 2167 are independent of TIL 2212.\"\n    }\n  ],\n  \"configuration_dependent\": false,\n  \"configuration_variables\": [],\n  \"configuration_summary\": null,\n  \"severity_signals\": [\n    \"Compliance Category C - condition that if left uncorrected may result in reduced equipment reliability or efficiency\",\n    \"VSV2 tip loss observed during planned borescope inspection\",\n    \"Minor object damage noted on downstream compressor airfoils\"\n  ],\n  \"failure_consequences\": [\n    \"VSV2 tip loss\",\n    \"Minor object damage on downstream compressor airfoils\",\n    \"Reduced unit availability and reliability\"\n  ],\n  \"risk_summary\": \"VSV2 tip rubs can lead to tip loss and downstream foreign object damage to compressor airfoils, reducing unit availability and reliability. Increasing VSV2 radial clearance through tipping or replacement mitigates the risk with negligible impact on compressor flow, efficiency, and stall margin.\",\n  \"safety_or_damage_language_found\": false,\n  \"tables_found_summary\": [\n    {\n      \"table_label\": \"Compliance Category Definitions\",\n      \"table_description\": \"Defines compliance categories C, A, and S with their associated risk descriptions.\",\n      \"useful_for_downstream\": false,\n      \"reason\": \"Standard legend table, does not contain unit-specific operational data.\"\n    },\n    {\n      \"table_label\": \"Timing Code Definitions\",\n      \"table_description\": \"Defines timing codes 1 through 6 with their associated action timing.\",\n      \"useful_for_downstream\": false,\n      \"reason\": \"Standard legend table; Timing Code 6 = Next Scheduled Outage is the only relevant item and is captured elsewhere.\"\n    }\n  ],\n  \"missing_information_flags\": [\n    \"No specific part numbers provided for VSV2 or 2-3 T-Fairing\",\n    \"No specific operating hour or start interval defined for borescope inspections\",\n    \"No serial number applicability list provided\"\n  ],\n  \"source_snippets\": [\n    {\n      \"field\": \"recurring_indicator_if_found\",\n      \"snippet\": \"The above borescope inspections are recurring until the below actions are completed.\"\n    },\n    {\n      \"field\": \"completion_criteria_text\",\n      \"snippet\": \"This TIL can be deemed complete if the vanes are tipped to increase the clearance or replaced with the VSV2s that have an increased tip clearance.\"\n    },\n    {\n      \"field\": \"purpose\",\n      \"snippet\": \"To inform 7F.05 users of front end compressor inspections to improve unit availability and reliability.\"\n    },\n    {\n      \"field\": \"service_recommendation_line_items\",\n      \"snippet\": \"it is recommended to tip the VSV2s to increase the radial clearance. Please contact your GE representative for further guidance on this tipping.\"\n    },\n    {\n      \"field\": \"risk_summary\",\n      \"snippet\": \"This clearance increase is expected to have a negligible impact on compressor flow, efficiency, and stall margin.\"\n    },\n    {\n      \"field\": \"reference_documents\",\n      \"snippet\": \"The annual inspections of VSV2 and 2-3 TF can be performed during the recommended inspection in TIL 2212.\"\n    },\n    {\n      \"field\": \"parts_referenced\",\n      \"snippet\": \"A competent and qualified non-destructive testing NDT) inspector for post tipping NDT. For this work, NDT is considered a penetrant inspection. Flourescent penetrant inspection (FPI) is recommended.\"\n    }\n  ],\n  \"extraction_confidence\": 0.92\n}\n```"
+}

@@ -1,0 +1,9 @@
+error_message,failure_type,has_recommendations,has_til_number,has_title,llm_model,quality_mode,quality_score,run_id,run_label,status,til,timestamp
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_091213_e4003ff0,32000,completed,1502-2R1,2026-07-04 09:19:00.046133
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_091213_e4003ff0,32000,completed,1937-R2,2026-07-04 09:19:00.046133
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_091213_e4003ff0,32000,completed,1945-R2,2026-07-04 09:19:00.046133
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_091213_e4003ff0,32000,completed,2284,2026-07-04 09:19:00.046133
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_154439_992cd191,gateway_default,completed,1502-2R1,2026-07-04 15:51:35.730853
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_154439_992cd191,gateway_default,completed,1937-R2,2026-07-04 15:51:35.730853
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_154439_992cd191,gateway_default,completed,1945-R2,2026-07-04 15:51:35.730853
+,none,False,True,True,azure-gpt-5-2,gold_compare,2,til_p1_20260704_154439_992cd191,gateway_default,completed,2284,2026-07-04 15:51:35.730853

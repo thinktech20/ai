@@ -1,0 +1,11 @@
+{
+  "source": "workspace_sample_pdf",
+  "pdf_path": "C:\\Users\\560068861\\Code\\alexis_scoping\\context\\data\\workspace_notes\\samples\\TILs\\databricks_top25\\TIL 2322-R2 - HA AND .05 COMPRESSOR STATOR VANE RING DISTRESS.pdf",
+  "file_name": "TIL 2322-R2 - HA AND .05 COMPRESSOR STATOR VANE RING DISTRESS.pdf",
+  "til_number": "2322-R2",
+  "normalized_til_key": "2322-R2",
+  "base_til_num": "2322",
+  "revision_number": 2,
+  "match_type": "exact_til_number",
+  "requested_til_number": "2322-R2"
+}
