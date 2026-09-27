@@ -19,7 +19,6 @@ fsr-prod-ops
 implementation
 local-scratch
 poc
-pw_sdg_ai_ser_repo
 reference
 *.zip
 *.pdf

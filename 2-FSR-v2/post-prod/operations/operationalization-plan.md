@@ -1,6 +1,6 @@
 # Operationalization Plan
 
-Updated: 2026-09-22
+Updated: 2026-09-25
 Issue: Section path / UUID chunking
 
 ## Goal
@@ -291,11 +291,16 @@ A dedicated audit table is recommended later if operators need long-term reporti
 
 ### Post-merge dev verification corpus
 
-After the repair code is merged and deployed to the dev bundle, use a new
-candidate table and new `run_id` for this exact ten-document verification
-scope. Do not reuse the smoke-test run ID.
+Before merge, run this exact 12-document corpus from the branch commit against
+isolated `ms_test` tables. After merge and dev deployment, use the same corpus
+with a new candidate table and new `run_id` against the dev repair tables. Do
+not reuse either the prior smoke-test run ID or the pre-deployment test run ID.
 
-### Dev deployment verified 2026-09-24
+Expected routing is nine `final_master_report` documents and three `shared`
+documents. Leave `EXPECTED_PREPROCESSOR_PROFILE` blank for this mixed-profile
+scope and validate `actual_preprocessor_profile` per document after P1.
+
+### Repair workflow deployment verified 2026-09-24
 
 ICD created both expected jobs in the dev workspace using
 `dev-dbr-profile`:
@@ -310,18 +315,114 @@ canonical `FSR_V2_REPAIR_*` parameters. The completed Xujin run is recorded
 below.
 
 ```text
-42944a96-6210-4f8a-ba54-fa1d5cd2a29b_605015096-47162-152296-Final_Master_Report
-768c7c3f-b8f2-4603-8f4a-f5c5a4e0976f_605001793-17435-297129-Final_Master_Report
-00f23784-d121-4595-b61d-49d223253a05_605011513-188120-198090-Final_Master_Report
-153595df-646d-410b-8ee5-371fa057c1f4_212369717-36105-SY0048243-Final_Master_Report
-d72f404c-7d35-49e9-a341-40266e687652_605010863-54129-875064-Final_Master_Report
-93c2180b-f866-4521-b090-b88442c6dcf1_204006084-2510-297422-Final_Master_Report
-9ecb1354-1f3a-4634-8a74-12943aff45a9_605003354-23849-298081-Final_Master_Report.pdf
-8ff5a231-c213-4441-b4ed-e39ed1988c8d_605030072-50465-298364-Final_Master_Report.pdf
+00f23784-d121-4595-b61d-49d223253a05
+153595df-646d-410b-8ee5-371fa057c1f4
+42944a96-6210-4f8a-ba54-fa1d5cd2a29b
+768c7c3f-b8f2-4603-8f4a-f5c5a4e0976f
+8ff5a231-c213-4441-b4ed-e39ed1988c8d
+93c2180b-f866-4521-b090-b88442c6dcf1
+9ecb1354-1f3a-4634-8a74-12943aff45a9
+d72f404c-7d35-49e9-a341-40266e687652
 af693a98-1e5c-499d-aa10-cccc54885c64
 796f4d53-a8ad-42e1-af4d-53a8add2e1a4
 017bd409-e1e7-4080-bbd4-09e1e7e08008
+338X382 2019-03-06 Rotor Out
 ```
+
+Special routing checks:
+
+- `017bd409-e1e7-4080-bbd4-09e1e7e08008` contains `3.1.6 GENERATOR` but must
+	remain on the shared/36-UUID route.
+- `338X382 2019-03-06 Rotor Out` comes from
+	`/Volumes/viud/ing_ud_fsr_manual/manual_field_service_report/FSR_manual/338X382 2019-03-06 Rotor Out.pdf`.
+	Its filename does not contain `final_master_report`, but behavioral detection
+	must route it to `final_master_report`.
+
+### Pre-deployment test-table gate
+
+Use branch commit `72021c0` or later and isolate every write from the regular
+dev targets:
+
+- metadata: `vaid.ai_sot_field_service_report.ms_test_fsr_metadata_v2`
+- chunks: `vaid.ai_std_con_field_service_report.ms_test_fsr_chunks_v2`
+- equipment map: `vaid.ai_sot_field_service_report.ms_test_fsr_document_equipment_map_v2`
+- run log: `vaid.ai_sot_field_service_report.ms_test_fsr_run_log_v2`
+- DQ log: `vaid.ai_sot_field_service_report.ms_test_fsr_data_quality_log_v2`
+- candidate, repair-scope, and rollback tables: new run-specific `ms_test_*`
+	tables; do not reuse the 2026-09-24 smoke objects
+
+Execution and promotion sequence:
+
+1. Synchronize the branch notebooks to a temporary user workspace path; do not
+	 overwrite the deployed bundle path.
+2. Create the 12-row candidate table, including `volume_path` for Rotor Out.
+3. Run scope preparation in dry-run mode, then apply mode with a unique test
+	 `run_id`; review resolved, missing-target, missing-source, and duplicate
+	 counts before repair writes.
+4. Run P1 and P2 in repair mode against only the `ms_test` tables. Keep P3 in
+	 dry-run mode unless an isolated `ms_test` Vector Search index is available.
+5. Compare source coverage, offsets, section paths, equipment/ESNs, profile
+	 routing, stale-chunk replacement, audit rows, and orphan metadata/chunk rows.
+6. Stop and notify the code owner that the pre-deployment gate is complete.
+	 The code owner merges and deploys to dev; no assistant-run deployment is
+	 authorized at this gate.
+7. After the code owner confirms dev deployment, create a new dev candidate
+	 table and run ID, then repeat preparation, repair, and persisted-result
+	 checks on the same 12 documents.
+
+Promotion gates for this corpus:
+
+- all 12 candidates resolve or have an explained `missing_target` insertion
+- actual profiles are nine `final_master_report` and three `shared`
+- the `3.1.6 GENERATOR` UUID remains `shared`
+- Rotor Out selects `final_master_report` through behavioral evidence
+- every successful P1 row has successful P2 output and no orphan chunks
+- non-whitespace source coverage does not regress; offsets remain monotonic and
+	in range after deterministic duplicate-heading cleanup
+- unique non-`SY` Generator ESNs resolve only where structurally supported;
+	ambiguous and `SY` candidates remain unresolved
+- section hierarchy survives final-master equipment attribution
+- no regular dev metadata, chunk, DQ, equipment-map, or index object is changed
+	during the pre-deployment gate
+
+### Pre-deployment test-table result 2026-09-25
+
+The gate passed against the isolated `ms_test` tables and personal workspace
+mirror. The tested code was commit `72021c0` plus the pending shared-hierarchy
+correction.
+
+Primary 12-document run:
+
+- candidate setup `950747781884611`; scope dry/apply `657943965987106` /
+	`979578301043932`
+- P1 dry/apply `810219169913340` / `87387012486909`
+- P2 dry/apply `188576931940635` / `276455169792481`
+- 12/12 P1 and P2 rows completed; routing was nine
+	`final_master_report` and three `shared`
+- 719 chunks, zero bad offsets, zero orphan chunks, and 12 initial overwrite
+	audit rows; all 12 scope rows reported rollback status `available`
+- Rotor Out selected `final_master_report`; `017bd409-e1e7-4080-bbd4-09e1e7e08008`
+	remained `shared`
+- document `153595df-646d-410b-8ee5-371fa057c1f4` retained section `4.14` in
+	chunk 17 at page 659 and character offset 6181
+
+The first persisted check exposed `Generator -> 2 Turbine` leakage in
+`796f4d53-a8ad-42e1-af4d-53a8add2e1a4`. A numbered level-0 equipment root now
+detaches only from an incompatible unnumbered equipment parent. The focused
+unit regression and full module pass (`93 passed, 5 subtests passed`). The
+isolated rerun then completed P1 `213025349708837`, P2 dry
+`406490852521590`, and P2 apply `978748755796841`; its 160 replacement chunks
+have zero `Generator -> 2 Turbine` paths and zero bad offsets.
+
+Failure correlation was also exercised with a synthetic ID whose resolved ID
+used different casing and a `.PDF` suffix. Scope setup `1098264453851015` and
+P1 `839884981292306` produced `p1_status=failed`, `attempt_count=1`, and the
+expected missing-file error on the correct scope row.
+
+P3 apply was intentionally not run because no isolated `ms_test` Vector Search
+index is available. The next action is owner review, commit/merge, and
+owner-operated dev deployment. Do not start the dev repair run until deployment
+is confirmed.
 
 Run sequence after deployment:
 
