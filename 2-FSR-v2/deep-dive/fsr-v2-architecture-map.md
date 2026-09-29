@@ -137,12 +137,78 @@ flowchart LR
 
 **How to read it:** most of the gain came from turning *wrong* answers into either *right* or *unknown*. For an engineer that difference matters a lot — a missing chunk is a gap you can see; a wrong-unit chunk is a finding you might act on.
 
-**How evals are used (not a one-off report):**
-1. **Promotion gate** — a preprocessor or chunking change ships only if attribution ≥ 90%, core sections ≥ 95%, misattribution ≤ 2%, and no slice drops by more than 2 pts vs baseline.
-2. **Fast gate on every PR** — 2–5% stratified subset, minutes to run.
-3. **Rotating regression** — daily 15–30% sample + fixed anchor docs; weekly full gold set.
-4. **Bug → gold row** — every field-reported misattribution becomes a new labeled region, so the same bug can't come back quietly.
-5. **Evals also said "no"** — the shared-region change was held back because Track B showed no recall gain and lower fidelity.
+### How scoring works (technical detail)
+
+**Track A — attribution scorer**
+- **Join key:** gold rows are keyed by `document_id + span_start_char + span_end_char` on the *persisted parsed text*, so labels stay valid across re-runs. Without the saved parse, offsets would drift and every label would need redoing.
+- **Match rule:** a predicted chunk or region is scored against the gold region it overlaps most (`char_offset_max_overlap`, the same rule P2 uses). Overlap under 50% counts as *unscored* and is reported on its own, not hidden.
+- **Normalization:** ESNs are upper-cased and trimmed, and the `SY…` system IDs are mapped to the unit ESN through IBAT before comparing, so format noise isn't counted as an error.
+- **Three outcomes per region:** `correct` (ESN and type match), `wrong` (non-empty and different), `unresolved` (empty or shared). These give:
+  - accuracy = correct / scored
+  - misattribution = wrong / scored
+  - unresolved rate = unresolved / scored
+- **Slices:** accuracy is reported per equipment type, per doc profile (single, GT+Gen, same-type multi-unit, CC train) and per region source (`HEADER`, `SECTION_HDR`, `UNNUMBERED`, fallback). A GT ↔ Gen ↔ ST confusion matrix is saved as an artifact.
+
+**Track B — retrieval scorer**
+- Calls the **same code path as the app**: SQL eligibility gate → HYBRID query with the `region_primary_esn` + `document_id` filter. The eval tests what users actually get, not a simplified copy.
+- Metrics:
+  - `doc_recall@k` = expected docs found / expected docs
+  - `cited_page_hit` = expected `(doc, page)` pairs found
+  - `page_f1`
+  - `filter_match` = returned chunks whose ESN equals the requested ESN / returned chunks
+  - p50 and p95 latency
+- Sweeps K over 5, 10, 20, 40, and compares HYBRID vs vector and the current filter vs the filter with shared regions.
+
+**Harness and run lineage**
+- One Databricks notebook job per track (`nb_fsr_v2_topk_eval`, mapping scorer) using the shared `harness.run_eval_detailed()`.
+- Each run is an **MLflow run** that logs:
+  - params: gold/probe set version, parser, preprocessor and prompt versions, chunk strategy, embedding model, K, query mode, git commit;
+  - metrics: overall and per slice;
+  - artifacts: per-probe / per-region JSONL, confusion matrix, summary table.
+- Gold and probe sets are versioned CSVs in `sdg-evals`, loaded into Delta. Updating the gold set bumps its version, so an old and a new run are only compared when they use the same set.
+
+### Promotion gate
+
+A change to the parser, preprocessor, chunking, embedding or retrieval filter reaches prod only after passing the gate. Thresholds live in `gating-thresholds.json`, next to the harness, so changing a threshold is itself a reviewed change.
+
+```mermaid
+flowchart LR
+  PR[PR: preprocessor / chunking /<br/>retrieval change] --> FG{Fast gate<br/>2-5% stratified subset<br/>+ anchor docs}
+  FG -- fail --> X[Block + per-region diff<br/>in MLflow]
+  FG -- pass --> FULL{Full gate<br/>whole gold set + probe set<br/>candidate vs baseline}
+  FULL -- fail --> X
+  FULL -- pass --> QA[QA backfill sample<br/>DQ checks green]
+  QA --> FLAG[Enable in prod behind flag<br/>legacy index as fallback]
+  FLAG --> MON[Daily rotating regression<br/>weekly full run]
+  MON -- drift --> X
+```
+
+| Gate check | Threshold | Why this check |
+|---|---|---|
+| Attribution accuracy (all) | ≥ 90% and not below baseline minus 1 pt | Overall quality floor |
+| Core equipment sections | ≥ 95% | These sections drive risk findings |
+| **Misattribution** | **≤ 2% (hard block)** | Wrong-unit evidence is the costliest error. It is gated separately so a gain in accuracy can't hide it. |
+| Any slice vs baseline | No drop > 2 pts | Stops "better on average, worse on Generators" |
+| Retrieval `filter_match` | ≥ 0.98 | Only the requested unit's evidence is returned |
+| Retrieval `doc_recall@10` | ≥ baseline | No loss of coverage |
+| p95 retrieval latency | ≤ 5 s | Agent UX budget |
+| Anchor docs (known past bugs) | 100% pass | Old bugs can't come back |
+
+**Regression cadence:** fast gate on every PR (minutes) · daily 15–30% rotating sample + anchors · weekly full gold set · **bug → gold row**: every field-reported misattribution is labeled and added to the anchors.
+
+### What value the evals added
+
+| Without evals | With evals | Business effect |
+|---|---|---|
+| "The new preprocessor looks better on the PDFs I tried" | 79% → 92% on a stratified set, with the error type split into wrong vs unknown | A number stakeholders could sign off on. v2 was approved for prod on evidence. |
+| Accuracy and misattribution mixed into one score | Misattribution tracked and gated on its own | The design became **precision-first**: we chose "unknown" over "wrong", which protects customer-facing recommendations. |
+| Fixes for one layout quietly break another | Per-slice checks + anchor docs | Fixes for unnumbered headings and same-type multi-unit docs shipped without breaking single-equipment docs. |
+| Retrieval knobs set by guesswork | K sweep showed no gain beyond K=10 with the current filter | K fixed at 10: no extra tokens or latency for zero recall gain. |
+| "Add shared regions, more context is better" | No doc-recall gain, and fidelity dropped to 0.85–0.98 | Change **held back**. We avoided adding noise to every risk assessment. |
+| "Retrieval finds the right document, so it's fine" | Cited-page hit ≈ 0.04, and several misses were one page off | Pointed at the real next fix (page attribution at chunk boundaries + re-ranking) instead of swapping the embedding model. |
+| Post-prod report: "section missing from chunks" | Replay against the saved parse + scorer | Showed the content was present and the check itself was wrong. No hotfix, no re-backfill. |
+
+**In one line:** the evals turned quality from an opinion into a release gate. That let us ship faster with less risk, and showed us which change to make next.
 
 ### Soundbite: accuracy, adoption, reuse
 
