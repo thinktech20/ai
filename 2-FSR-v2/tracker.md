@@ -1,6 +1,6 @@
 # FSR V2 Pipeline — Implementation Tracker
 
-Last updated: 2026-08-31
+Last updated: 2026-09-27
 
 ---
 
@@ -265,3 +265,15 @@ Working dir: /home/u560060992/dbx/pw_sdg_ai_ser_repo
 - Build the job for the affected UUID documents.
 - Ingest the affected UUID documents in QA and production.
 - Validate the QA and production results after the targeted ingestion.
+
+## 2026-09-27 WSR Update
+
+### Completed
+
+- **Final Master Report processing improvements:** Enhanced FSR v2 preprocessing to preserve short valid content and section hierarchy, select the body Components section instead of repeated TOC entries, improve equipment and Generator ESN attribution, support approved Generator labels, remove deterministic duplicate boundary headings, and retain final sections such as `4.14`. The representative dev run completed P1, P2, and vector-index synchronization for all scoped documents with zero bad offsets, orphan chunks, or `Generator -> 2 Turbine` hierarchy leakage.
+- **Selective FSR metadata and chunk update job:** Built a controlled repair workflow that uses a governed candidate table and run-specific scope to selectively rebuild metadata, replace stale chunks, regenerate embeddings, and synchronize Vector Search without reprocessing the full dataset. The workflow supports dry-run validation, per-stage status tracking, normalized document-ID correlation, failure write-back, audit records, and rollback snapshots. The dev repair completed successfully for 11 existing documents and inserted the source-backed Rotor Out report as the twelfth scoped document.
+
+### Next Steps
+
+- Review the updated representative documents with the SME and capture any remaining content, attribution, or retrieval findings.
+- Promote the validated changes and selective repair workflow to QA, run the approved representative document scope, and validate the QA results. Production promotion is out of scope for this cycle.

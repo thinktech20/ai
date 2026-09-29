@@ -1,0 +1,58 @@
+Zhou, Xujin (GE Vernova)
+(1) MIssing context: in 00f23784-d121-4595-b61d-49d223253a05: 📷 Page 4, this 1.3 Work Scope is missing in body text 📷 This Page 6 is also missing in body text. Other pages in this document are miss…
+This missing text issue seems to be fixed. However, on the chunking strategies side:
+(1) A paragraph is cut into two chunks but without overlapping
+<image>
+(2) there are very short tables cut into two chunks (because of section header wrongly detected), and also, this affect the section 1 information for the following chunks ( they all have section 1 = generator because of this generator Mechanical in the table)
+ <image 1>
+Zhou, Xujin (GE Vernova)
+(2) Section-based/recursive chunking question: in 00f23784-d121-4595-b61d-49d223253a05, the section 1-5 are null, but the chunks do not have overlap. Wondering if it is doing section based chunking o…
+<image 2>
+42944a96-6210-4f8a-ba54-fa1d5cd2a29b, the issue where the section header appears at the end of chunk, not the beginning of chunk still exist.
+ 
+Zhou, Xujin (GE Vernova)
+(3) Generator ESN not added: In 00f23784-d121-4595-b61d-49d223253a05, there are only one Turbine ESN, but actually this document does not contain labels in Components section, so should go to page fa…
+This issue is still there, and there are still no records in fsr_metadata_v2
+ 
+Zhou, Xujin (GE Vernova)
+(4) For 153595df-646d-410b-8ee5-371fa057c1f4, there are no record in metadata_v2 (similar for 42944a96-6210-4f8a-ba54-fa1d5cd2a29b), but there are records in chunk_v2, also, 4.14 is missing, but page…
+fixed
+ 
+Zhou, Xujin (GE Vernova)
+(5) In 42944a96-6210-4f8a-ba54-fa1d5cd2a29b, the all the STEAM TURBINE - sections in body text did not assign to steam turbine, but assigned to shared, also, part of the ToC was assigned to Steam Tur…
+Still there
+ 
+Zhou, Xujin (GE Vernova)
+This missing text issue seems to be fixed. However, on the chunking strategies side: (1) A paragraph is cut into two chunks but without overlapping 📷 (2) there are very short tables cut into two ch…
+Similarly in 42944a96-6210-4f8a-ba54-fa1d5cd2a29b, after this  ## 3.15 TURBINE BUCKET(S) chunk, all the chunks' section 1 is 3.15 TURBINE BUCKET(S). For final master reports, I am fine with null section 1 - 5 actually. But the section based chunking is unacceptable now, as one paragraph cut into two chunks but no overlap
+ <image 3>
+Zhou, Xujin (GE Vernova)
+Similarly In 93c2180b-f866-4521-b090-b88442c6dcf1 📷 📷 And the weird thing is there are a 2.43 generator chunk assigned to page 558
+Still there, the 2.43 section is at wrong page number (in page 558)
+ 
+Also is this as expected that primary esn for Gas turbine is missing?
+<image 4>
+This should be fine during retrieval or data readiness as the tagging and active esns are both correct?
+ 
+Zhou, Xujin (GE Vernova)
+(6) In 9ecb1354-1f3a-4634-8a74-12943aff45a9, here is an expected mistake caused by bad example: 📷 this GENERATOR  label do not have that "GENERATOR -" I think we can either ignore this unless we obs…
+fixed
+ 
+Zhou, Xujin (GE Vernova)
+============================ Separately, for 36UUID twos: (1) Most of the vertical words issue are fixed except: The FROMs, which I think should be fine. Also,  there are some chunks that the front s…
+in 36 UUID version: use 796f4d53-a8ad-42e1-af4d-53a8add2e1a4, 
+(1) I saw every short level q, level 2 section headers in a separate chunk: 
+<image 5>
+The worries is these short chunks will be retrieved in one of the 10 retrievals, and then other actually useful chunks might be out of the top 10 due to these short chunks
+(2): For the "Generator" information in "section 1", they are removed from "2 Turbine" section, 
+however, in the summary section, the section 1-5 are still incorrect, still affected by some ToC section headers. Also under "3 Generator" section, they are now:""section_1": "Generator", "section_2": "3 Generator", "section_3": "3.1 Generator Tests and Inspections", "section_4": "3.1.5 Inside/Outside Space Blocks", "section_5": null", although the section 2-5 are correct, this section 1 makes me feel the current fixing logic were just something like "if section 2 is Turbine, then set section_1 to be null". Also, start from page 196 in PDF and page 200 in chunk table (page 196 there is a sub report), the section headers in sub report affect the section 1 - 5, which is as expected and okay in the sub report, but after the subreport ends, for section 3.4.2 (page 238 in chunk table): "section_1": "Generator", "section_2": "3 Generator", "section_3": "3.4.2 Hydrogen Coolers", "section_4": null, "section_5": null, the section path parent information is wrong, only got section 3 and section 3.4.2, we did not got section 3.4. And if you check page 269, the section headers are: "section_1": "3.4.7 Generator Field", "section_2": "3.4.7 Generator Field", "section_3": null, "section_4": null, "section_5": null, which is weird.
+ 
+ 
+Hi Madhurima Saxena, Madhurima (GE Vernova, consultant), Jonathan sent me an FSR
+ 
+895613a2-8568-4d17-bd45-b53c935645e9
+Attached pdf - ai-arch/2-FSR-v2/post-prod/issues/01-04-date-09-28-issues/895613a2-8568-4d17-bd45-b53c935645e9 1.pdf
+
+ <image 6>
+This is a page of sub-reports in appendix, are we able to get 336X860 because of this "Unite Serical #:" pattern in all_esn or some fields? I remember with some version of the preprocessor, we are detecting this?
+ 
