@@ -1,6 +1,6 @@
 # FSR V2 Pipeline — Implementation Tracker
 
-Last updated: 2026-09-27
+Last updated: 2026-10-06
 
 ---
 
@@ -15,6 +15,8 @@ Working dir: /home/u560060992/dbx/pw_sdg_ai_ser_repo
 
 | Hash | Description |
 |------|-------------|
+| d24b62a | Add parsed document read validation notebook |
+| 75daefa | Fix FSR v2 preprocessing and chunk defaults |
 | 7e08f6a | feat(fsr-v2): split standalone jobs workflow and move to workflows/fsr_v2 |
 | a4bbfa5 | feat(fsr-v2): implement P3 index stage and retrieval validation |
 | 8e42c71 | feat(fsr-v2): wire P1 metadata orchestrator stages 1-4 |
@@ -277,3 +279,29 @@ Working dir: /home/u560060992/dbx/pw_sdg_ai_ser_repo
 
 - Review the updated representative documents with the SME and capture any remaining content, attribution, or retrieval findings.
 - Promote the validated changes and selective repair workflow to QA, run the approved representative document scope, and validate the QA results. Production promotion is out of scope for this cycle.
+
+## 2026-10-05 WSR Update (In Progress)
+
+### October 6 Dev Reprocessing
+
+- Deployment confirmed by the user; deployed workspace files checked for the October fixes and `5700`/`225` job parameters.
+- Approved all 12 previous candidates, including Rotor Out. Serverless read-only preflight confirmed the exact scope, 12 existing targets, and zero active overlapping repair scopes.
+- Preparation dry run `268071164082953`, scope apply `14598897910055`, and document-repair dry run `64791126878626` succeeded.
+- P1/P2/P3 apply run `846453865297727` completed successfully under scope `oct-fsr-75daefa-20261006`: all 12 documents completed all three stages, rollback snapshots available for all 12, and 558 replacement chunks with zero empty text or invalid embedding dimensions. No SQL warehouse was used.
+- Persisted verification confirmed `d72...` Generator ESN `337X662`, `93c...` Components mapping to page index 16, and corrected Turbine Control System paths with no standalone `###` chunks in `796...`.
+- Remaining checks: one different `93c...` chunk has an unmapped page; `017...` retains one `###`-only chunk; review `d72...` Generator span ownership through subsequent PIPO content. Scope commit/tuning provenance fields remain blank; hybrid retrieval validation is pending.
+
+### Completed so far
+
+- Reviewed Xujin's post-ingestion findings against the earlier RCAs and verified the cited documents in the configured dev tables. Confirmed that `153595df-646d-410b-8ee5-371fa057c1f4` exists in the dev metadata table; the earlier missing-row report came from querying the bundle-default schema instead of the dev override.
+- Implemented and pushed FSR v2 fixes for numbered `GENERATOR SCOPE` attribution, page mapping at empty-page separators, duplicate ToC/body heading candidates that created `###`-only chunks, and numbered `Controls System` turbine attribution.
+- Applied the agreed 1.5x chunk size and overlap globally (`5700` / `225`; minimum size remains `450`). Local comparisons on two final-master PDFs and one 36-UUID PDF reduced chunk counts from 14 to 10, 98 to 90, and 157 to 135 respectively; retained short semantic-section counts were unchanged in this sample.
+- Added and pushed a parsed-document read validation notebook for dev troubleshooting.
+- Validation: FSR v2 suite `116 passed, 5 subtests passed`; modified Python modules compile; bundle validation passes with one existing workspace-folder permission warning.
+- Commits pushed to `fsr_v2`: `75daefa` (preprocessing and chunk defaults) and `d24b62a` (parsed-document validation notebook).
+
+### Next steps
+
+- Dev deployment and 12-document reprocessing completed on October 6. Review the residual output observations above and validate retrieval before marking all issues closed.
+- Validate retrieval for short sections that discuss different issues by querying each issue separately with hybrid search. Xujin expects current hybrid search to work; this is deferred until after the higher-priority fixes.
+- Resume legacy-format detection and ESN work when Xujin uploads representative samples.

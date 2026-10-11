@@ -1,6 +1,6 @@
 # Dev Verification Follow-up Root Cause Analysis
 
-Updated: 2026-09-28  
+Updated: 2026-09-29
 Scope: Xujin's dev verification comments after the September 25 postfix changes
 
 ## Executive conclusion
@@ -22,7 +22,7 @@ The main reason tests passed while Xujin still sees problems is that the tests p
 |---|---|---|
 | Missing body text | **Fixed and verified** | Xujin confirms the missing text is now present. |
 | Paragraph split with no overlap | **Not fixed; acceptance gap** | Recursive overlap does not cross preprocessor region boundaries. |
-| Very short table/header chunks | **Confirmed false-boundary defect** | Valid short sections may remain separate. The defect is a table line being misdetected as a new section and splitting the real section. |
+| Very short table/header chunks | **Confirmed false-boundary defect; decision resolved** | Prevent table lines from becoming section boundaries. Optionally merge a very short heading-only chunk forward when the next chunk has compatible section/equipment metadata; preserve genuine short sections with useful content. |
 | Section path polluted by `Generator Mechanical` | **Not covered** | A table/ToC line is being accepted as a heading and remains active as hierarchy context. |
 | Header at end / `3.15 TURBINE BUCKET(S)` ToC chunk | **Not fixed by duplicate cleanup** | The cleanup only removes an exact next heading across a recognized section transition. This screenshot is a standalone ToC entry, not the exact duplicate case tested. |
 | Generator ESN absent for `00f...` | **Confirmed residual defect** | The row exists and ran the postfix pipeline. Generator evidence is counted per page and peaks at 1, so the `>7` fallback never activates despite document-wide Generator evidence. |
@@ -33,7 +33,7 @@ The main reason tests passed while Xujin still sees problems is that the tests p
 | Short level-1/level-2 header chunks in `796...` | **Not fixed; acceptance gap** | Short semantic regions are deliberately retained to prevent source loss. Retrieval quality now requires a merge policy, not dropping them. |
 | `Generator -> 2 Turbine` removed | **Fixed** | Xujin confirms Generator was removed from the Turbine section. |
 | Summary section paths still affected by ToC | **Not covered** | The hierarchy fix only detached an incompatible unnumbered equipment parent from a numbered level-0 root. It did not suppress all ToC-seeded headings. |
-| `Generator -> 3 Generator -> ...` | **Confirmed defect; decision resolved** | Keep numbered `3 Generator`; remove only the extra unnumbered parent leaked from the ToC or previous section. |
+| `Generator -> 3 Generator -> ...` | **Confirmed defect; decision resolved** | Keep numbered `3 Generator`; remove only the extra unnumbered parent leaked from the ToC, a previous section, or an embedded subreport. |
 | Missing `3.4` after embedded sub-report | **New hierarchy defect** | Embedded report headings reset the stack; the outer report hierarchy is not restored when the embedded report ends. |
 | `3.4.7 Generator Field` duplicated in section 1 and 2 | **New hierarchy defect** | Conflict/re-anchoring can produce a duplicate self-parent path; no regression test covers this state. |
 | `Unit Serial #: 336X860` | **New ESN extraction issue** | Generic `Unit Serial` is not recognized by deterministic v2 patterns. |
@@ -72,13 +72,14 @@ The screenshot showing isolated `2 Turbine SECTION`, `2.2 Inlet Section CATEGORY
 
 **Root cause:** the no-drop solution correctly retains valid short semantic regions, but heading detection lacks sufficient table/ToC rejection. A table line can be promoted to a section heading, split the real section, and create a misleading short chunk.
 
-**Decision:** keep the current behavior for genuine short sections. Do not add a general rule that merges all short or heading-only chunks forward.
+**Decision:** keep the current behavior for genuine short sections with useful content. Forward merging may be added as a guardrail only for a very short heading-only chunk when the next chunk has compatible section and equipment metadata. It is not the primary fix and must not replace table-heading rejection.
 
 **Recommended correction:**
 
 - require stronger evidence for headings inside table-like text
 - reject table-derived false headings before regions are built
 - keep the content within the actual parent section when a false candidate is rejected
+- optionally merge a very short heading-only chunk into the next metadata-compatible chunk
 - add retrieval checks ensuring header-only chunks do not consume top-k results
 
 ### 3. ToC entries and trailing headings
@@ -125,12 +126,12 @@ The September 25 hierarchy fix had one narrow contract: when a numbered level-0 
 
 The remaining observations are different:
 
-- `3 Generator` is the valid numbered parent for content under section 3. Remove only an extra unnumbered `Generator` parent leaked from the ToC or a previous section.
+- `3 Generator` is the valid numbered parent for content under section 3. Remove only an extra unnumbered `Generator` parent leaked from the ToC, a previous section, or an embedded subreport.
 - ToC headings in the summary remain because the fix did not remove ToC candidates generally.
 - after an embedded sub-report, the outer `3.4` hierarchy is not restored before `3.4.2 Hydrogen Coolers`
 - `3.4.7 Generator Field` appears as both section 1 and section 2, indicating a duplicate/self-parent hierarchy path
 
-The expected path is `3 Generator -> 3.4 Generator Inspections & Clearances -> 3.4.2 Hydrogen Coolers`, not `Generator -> 3 Generator -> 3.4.2 Hydrogen Coolers`. The hierarchy fix must distinguish the valid numbered root from leaked unnumbered context. The remaining defects require an embedded-report boundary model or a stack snapshot/restore rule, plus a path invariant that the same normalized heading cannot occur twice consecutively.
+The expected path is `3 Generator -> 3.4 Generator Inspections & Clearances -> 3.4.2 Hydrogen Coolers`, not `Generator -> 3 Generator -> 3.4.2 Hydrogen Coolers`. The hierarchy fix must distinguish the valid numbered root from unnumbered context leaked by the ToC, a previous section, or an embedded subreport. The remaining defects require an embedded-report boundary model or a stack snapshot/restore rule, plus a path invariant that the same normalized heading cannot occur twice consecutively.
 
 The dev table quantifies the impact for `796...`: 44 of 160 chunks are below 450 characters, 18 are 50 characters or shorter, 53 retain the unnumbered `Generator` root, 22 have duplicate adjacent section levels, and 9 have a `3.4.x` child directly under `3 Generator` with the `3.4` parent missing.
 
@@ -209,10 +210,66 @@ It did not prove:
 
 1. Require `deployed_code_commit` and `chunking_parameters` in repair-scope records; both are null in the verified postfix run.
 2. Add diagnostics for each persisted chunk: region boundaries, heading source/confidence/reason codes, ToC classification, and profile version.
-3. Preserve genuine short sections, but prevent table lines from creating false section boundaries and separate chunks.
+3. Prevent table lines from creating false section boundaries. Preserve genuine short sections, with optional forward merging only for very short heading-only chunks followed by metadata-compatible content.
 4. Do not add overlap across valid section boundaries; fix false boundaries that split paragraphs.
 5. Add real extracted fixtures for `429...`, `796...`, `93c...`, and the new `895...` PDF cases.
 6. Treat embedded sub-report hierarchy restoration as a new issue; hold `Unit Serial` extraction pending feedback.
+
+## Implementation status
+
+Implemented in the current working tree:
+
+- document-level Generator presence detection and guarded Generator ESN resolution
+- explicit Gas Turbine/Steam Turbine region ESN enrichment from unique metadata candidates
+- rejection of leader-filled ToC/table rows in specialized and generic subsection detection
+- recovery of exact numbered parents after hierarchy-stack disruption
+- removal of adjacent duplicate headings from emitted section paths
+- optional forward merging of a very short heading-only chunk when the following chunk has identical section/equipment metadata
+- suppression of page-hinted ToC candidates when the resolved occurrence is on a structural ToC page
+- recognition of inline hash headings such as `... ## 2.43 ...` when PDF extraction joins a heading to preceding prose
+- restoration of an exact numbered parent in emitted paths after embedded-report stack disruption
+- case-insensitive final-master `Components` detection so mixed-case body headings override dotted ToC headings
+
+Deferred by decision:
+
+- `Unit Serial #: 336X860` extraction pending Jon's feedback
+- broader embedded-subreport stack restoration beyond the exact numbered-parent recovery covered by the new regression
+
+Validation: `110 passed, 5 subtests passed` in `tests` on 2026-09-29. No git commit was created.
+
+## Post-repair dev verification: 2026-09-29
+
+The owner-operated repair run used run ID `postfix-dev-cce00fc-20260929` and
+the approved 12-document candidate table. The preparation dry-run, preparation
+apply, document-repair dry-run, and document-repair apply all completed
+successfully. The final scope state was:
+
+- 12/12 `resolution_status=resolved`
+- 12/12 `p1_status=completed`
+- 12/12 `p2_status=completed`
+- 12/12 `p3_status=completed`
+- zero scope errors
+- metadata and chunks rewritten at approximately `2026-09-29 20:05:59Z`
+
+The persisted output confirms these fixes:
+
+- `00f...` now has `gen_esn=316X825`
+- explicit GT/Generator regions have no blank region ESNs where a unique candidate exists
+- `Generator -> 2 Turbine` leakage is zero
+- adjacent duplicate section paths are zero
+
+The persisted output was produced by the deployed build before the latest
+residual-fix patch. It still contains these defects, which are addressed in
+the current working tree and require a new deployment/reprocess to verify:
+
+- `429...` still carries the ToC `3.15 TURBINE BUCKET(S)` heading into body paths and does not consistently assign body Steam Turbine content
+- `93c...` still contains `2.43` inside a chunk whose section metadata is `2.42`
+- `796...` still has nine `3.4.x` chunks directly under `3 Generator` after the embedded subreport
+
+The latest code adds regression coverage for each residual shape. The next
+operational step is commit/push, deploy the updated bundle, and rerun the same
+12-document scope under a new run ID. The current successful run should remain
+the before/after baseline and must not be reused for the reprocess.
 
 ## Evidence reviewed
 

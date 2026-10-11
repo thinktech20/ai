@@ -1,0 +1,1157 @@
+{
+  "checked_at": "2026-10-06 22:09:44.487837",
+  "metadata_table": "vaid.ai_std_con_field_service_report.fsr_metadata_v2",
+  "chunk_table": "vaid.ai_std_con_field_service_report.fsr_chunks_v2",
+  "uuid_document_id_provisional": "796f4d53-a8ad-42e1-af4d-53a8add2e1a4",
+  "metadata": [
+    {
+      "requested_id": "00f23784-d121-4595-b61d-49d223253a05",
+      "document_id": "00f23784-d121-4595-b61d-49d223253a05",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "198090",
+      "gen_esn": "316X825",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "017bd409-e1e7-4080-bbd4-09e1e7e08008",
+      "document_id": "017bd409-e1e7-4080-bbd4-09e1e7e08008",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "298101",
+      "gen_esn": "",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "153595df-646d-410b-8ee5-371fa057c1f4",
+      "document_id": "153595df-646d-410b-8ee5-371fa057c1f4",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "",
+      "gen_esn": "",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "338x382 2019-03-06 rotor out",
+      "document_id": "338x382 2019-03-06 rotor out",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "298667",
+      "gen_esn": "338X382",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "42944a96-6210-4f8a-ba54-fa1d5cd2a29b",
+      "document_id": "42944a96-6210-4f8a-ba54-fa1d5cd2a29b",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "152296",
+      "gen_esn": "",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "768c7c3f-b8f2-4603-8f4a-f5c5a4e0976f",
+      "document_id": "768c7c3f-b8f2-4603-8f4a-f5c5a4e0976f",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "297129",
+      "gen_esn": "",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "796f4d53-a8ad-42e1-af4d-53a8add2e1a4",
+      "document_id": "796f4d53-a8ad-42e1-af4d-53a8add2e1a4",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "297627",
+      "gen_esn": "337X755",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "8ff5a231-c213-4441-b4ed-e39ed1988c8d",
+      "document_id": "8ff5a231-c213-4441-b4ed-e39ed1988c8d",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "298364",
+      "gen_esn": "",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "93c2180b-f866-4521-b090-b88442c6dcf1",
+      "document_id": "93c2180b-f866-4521-b090-b88442c6dcf1",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "297422",
+      "gen_esn": "338X309",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "9ecb1354-1f3a-4634-8a74-12943aff45a9",
+      "document_id": "9ecb1354-1f3a-4634-8a74-12943aff45a9",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "298081",
+      "gen_esn": "337X543",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "af693a98-1e5c-499d-aa10-cccc54885c64",
+      "document_id": "af693a98-1e5c-499d-aa10-cccc54885c64",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "297652",
+      "gen_esn": "337X766",
+      "st_esn": ""
+    },
+    {
+      "requested_id": "d72f404c-7d35-49e9-a341-40266e687652",
+      "document_id": "d72f404c-7d35-49e9-a341-40266e687652",
+      "metadata_status": "completed",
+      "chunk_status": "completed",
+      "updated_at": "2026-10-06 18:51:18.026625",
+      "chunked_at": "2026-10-06 18:51:18.026625",
+      "gt_esn": "875064",
+      "gen_esn": "337X662",
+      "st_esn": ""
+    }
+  ],
+  "counts": {
+    "00f23784-d121-4595-b61d-49d223253a05": 36,
+    "93c2180b-f866-4521-b090-b88442c6dcf1": 90,
+    "796f4d53-a8ad-42e1-af4d-53a8add2e1a4": 135
+  },
+  "hood_sprays": [
+    {
+      "chunk_index": 0,
+      "page_number": 0,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "shared",
+      "region_esn": "",
+      "section_path": null,
+      "section_fields": {
+        "section_1": null,
+        "section_2": null,
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 0,
+        "page_mapping_miss": false
+      },
+      "text": "Generator Alignment\nUnit 4 Serial number 198090\nRICHMOND\nJob Start Date: 04/19/2019\nEquipment Serial #: 198090\nOracle Project ID: FSP-272812 | C-10335404\nApproved Date: 11/15/2019\nPrepared By\nApproved By\nJohnny Forsythe\nWilliam Mitchell\nField Engineer\nField Engineer\nContents\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n## 1. SUMMARY\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n## 1.1 SITE PERSONNEL\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n## 1.2 EXECUTIVE SUMMARY\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n2\n## 1.3 WORK SCOPE\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n3\n## 2. TECHNICAL\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n3\n## 2.1 RECOMMENDATIONS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n## 3. COMPONENTS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.1 HOOD SPRAYS\n4\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.2 BALANCE SHOT\n5\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.3 ALIGNMENT\n6\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.4 BEARING INSPECTION\n12\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.5 OIL DEFLECTOR\n18\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.6 UNIT VIBRATION\n23\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24",
+      "text_truncated": false
+    },
+    {
+      "chunk_index": 8,
+      "page_number": 5,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "shared",
+      "region_esn": "",
+      "section_path": [
+        "Generator",
+        "2.1 Recommendations"
+      ],
+      "section_fields": {
+        "section_1": "Generator",
+        "section_2": "2.1 Recommendations",
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 5928,
+        "page_mapping_miss": false
+      },
+      "text": "## 3. Components\nPart Condition Description\nHood sprays were inspected with operations . Hood spray pressure was set 40 PSI and also\n120 PSI to the nozzles and Photos were sent to GE engineering for evaluation and\nrecommendations. GE Engineering recommended that upper half hood sprays be installed.\nCustomer utilized a third party vendor to fabricate and install upper half hood sprays.\nLS 40 psi\nLS 120psi\n",
+      "text_truncated": false
+    },
+    {
+      "chunk_index": 9,
+      "page_number": 5,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "shared",
+      "region_esn": "",
+      "section_path": [
+        "Generator",
+        "3.1 HOOD SPRAYS"
+      ],
+      "section_fields": {
+        "section_1": "Generator",
+        "section_2": "3.1 HOOD SPRAYS",
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 6336,
+        "page_mapping_miss": false
+      },
+      "text": "## 3.1 HOOD SPRAYS",
+      "text_truncated": false
+    }
+  ],
+  "executive_summary_split": [
+    {
+      "first": {
+        "chunk_index": 2,
+        "page_number": 2,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": null,
+        "section_fields": {
+          "section_1": null,
+          "section_2": null,
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 3336,
+          "page_mapping_miss": false
+        },
+        "text": "## 1. Summary\n## 1.1 Site Personnel\nName\nCategory\nRole\nJohnny Forsythe\nTFA - STEAM TURBINE\nGE\nMatthew Johnson\nSUPERVISOR\nGE\nCody Bujalski\nTURBINE MECHANIC\nGE\nGeorge Hebert\nTURBINE MECHANIC\nGE\nRobert Stuart\nTURBINE MECHANIC\nGE\nJoshua Stuart\nTURBINE MECHANIC\nGE\nDalis Reece\nTurbine Mechanic\nGE\nBrad Stone\nTurbine Mechanic\nGE\nChris Thomas\nTurbine Mechanic\nGE\n## 1.2 Executive Summary\nThe purpose of the outage was to address the sub synchronous  vibration that was being\nobserved at T3 T4 generator bearings. GE engineering recommendations were to raise the\ngenerator to try and minimize  the vibration. After making 3 vertical moves GE engineering\nrecommendations were to inspect T3 T4 bearings. Engineering also provided a new",
+        "text_truncated": false
+      },
+      "second": {
+        "chunk_index": 3,
+        "page_number": 2,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "alignment criteria for the unit.The new alignment specification is fot the generator to be"
+        ],
+        "section_fields": {
+          "section_1": "alignment criteria for the unit.The new alignment specification is fot the generator to be",
+          "section_2": null,
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 4062,
+          "page_mapping_miss": false
+        },
+        "text": "alignment criteria for the unit.The new alignment specification is fot the generator to be 7\nmills high and open 4 mills at the top. Engineering also recommended that upper half hood\nsprays be installed to reduce exhaust  hood temperatures.",
+        "text_truncated": false
+      },
+      "exact_shared_suffix_prefix_characters": 0
+    }
+  ],
+  "work_scope": [
+    {
+      "chunk_index": 0,
+      "page_number": 0,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "shared",
+      "region_esn": "",
+      "section_path": null,
+      "section_fields": {
+        "section_1": null,
+        "section_2": null,
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 0,
+        "page_mapping_miss": false
+      },
+      "text": "Generator Alignment\nUnit 4 Serial number 198090\nRICHMOND\nJob Start Date: 04/19/2019\nEquipment Serial #: 198090\nOracle Project ID: FSP-272812 | C-10335404\nApproved Date: 11/15/2019\nPrepared By\nApproved By\nJohnny Forsythe\nWilliam Mitchell\nField Engineer\nField Engineer\nContents\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n## 1. SUMMARY\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n## 1.1 SITE PERSONNEL\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n## 1.2 EXECUTIVE SUMMARY\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n2\n## 1.3 WORK SCOPE\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n3\n## 2. TECHNICAL\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n3\n## 2.1 RECOMMENDATIONS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n## 3. COMPONENTS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.1 HOOD SPRAYS\n4\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.2 BALANCE SHOT\n5\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.3 ALIGNMENT\n6\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.4 BEARING INSPECTION\n12\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.5 OIL DEFLECTOR\n18\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n## 3.6 UNIT VIBRATION\n23\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24",
+      "text_truncated": false
+    },
+    {
+      "chunk_index": 4,
+      "page_number": 3,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "shared",
+      "region_esn": "",
+      "section_path": [
+        "alignment criteria for the unit.The new alignment specification is fot the generator to be",
+        "1.3 Work Scope"
+      ],
+      "section_fields": {
+        "section_1": "alignment criteria for the unit.The new alignment specification is fot the generator to be",
+        "section_2": "1.3 Work Scope",
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 4303,
+        "page_mapping_miss": false
+      },
+      "text": "## 1.3 Work Scope\nGas Turbine\nSteam Turbine\n",
+      "text_truncated": false
+    },
+    {
+      "chunk_index": 5,
+      "page_number": 3,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "shared",
+      "region_esn": "",
+      "section_path": [
+        "Generator"
+      ],
+      "section_fields": {
+        "section_1": "Generator",
+        "section_2": null,
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 4347,
+        "page_mapping_miss": false
+      },
+      "text": "Generator\nMechanical\nSupport Systems",
+      "text_truncated": false
+    }
+  ],
+  "shifted_section_bodies": [
+    {
+      "chunk_index": 0,
+      "page_number": 0,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "shared",
+      "region_esn": "",
+      "section_path": null,
+      "section_fields": {
+        "section_1": null,
+        "section_2": null,
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 0,
+        "page_mapping_miss": false
+      },
+      "text": "Gas Turbine and Generator Major Inspection\nTenaska Gateway unit 3 Serial # 297422 and\ngenerator Serial # 338X309 Major inspection\nTENASKA GATEWAY PARTNERS, LTD.\nJob Start Date: 02/26/2018\nEquipment Serial #: 297422\nOracle Project ID: A-1337316 | FSP-173006 | C-10269119\nApproved Date: 12/19/2018\nPrepared By\nApproved By\nGlenn Williams\nDusty Brown\nLead Field Engineer\nCSL\nContents\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n\n## 1. SUMMARY\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n\n## 1.1 TIMERS AND COUNTERS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n\n## 1.2 SITE PERSONNEL\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n2\n\n## 1.3 EXECUTIVE SUMMARY\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n7\n\n## 1.4 WORK SCOPE\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n9\n\n## 2. COMPONENTS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n9\nUNCATEGORIZED\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.1 DALLAS SHOP QC REPORT\n9\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12\n\n## GAS TURBINE - BEARINGS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12\n\n## JOURNAL BEARING\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.2 T1 AND T2 ASSEMBLY\n12\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.3 FLOATING SEAL INSPECTION\n26\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.4 INSPECT OIL DEFLECTORS T1 AND T2\n29\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29\n\n## THRUST BEARING\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.5 THRUST BEARING ASSEMBLY\n29\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35\n\n## GAS TURBINE - CLEARANCES\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35\n\n## BEARING CLEARANCES\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.6 GAS TURBINE LIFT OIL CHECKS\n36\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.7 THRUST CHECK\n36\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36\n\n## GAS TURBINE - COMBUSTION SECTION\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36\n\n## FLAME DETECTORS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.8 REMOVE FLAME DETECTORS\n36\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37\nGAS TURBINE - PIPING\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37\n\n## FUEL GAS\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n## 2.9 INSPECT PIGTAIL PIPING\n37\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .183\n\n## GAS TURBINE - COMBUSTION SECTION\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .183\n\n## FUEL NOZZLES\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "text_truncated": false
+    },
+    {
+      "chunk_index": 22,
+      "page_number": 33,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "Gas Turbine",
+      "region_esn": "297422",
+      "section_path": [
+        "2.3 FLOATING SEAL INSPECTION"
+      ],
+      "section_fields": {
+        "section_1": "2.3 FLOATING SEAL INSPECTION",
+        "section_2": null,
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 44126,
+        "page_mapping_miss": false
+      },
+      "text": "## 2.3 FLOATING SEAL INSPECTION\nUNIT 3 T1 T2 FLOATING SEALS FINAL REPORT.PDF\n\nPart Condition: Good\nPart Condition Description\nThe T1 and T2 oil deflector's labyrinth teeth were in good condition.  The oil deflector to-\nrotor clearance was within specification and re-used.\nCBM: NA\n",
+      "text_truncated": false
+    },
+    {
+      "chunk_index": 23,
+      "page_number": 36,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "Gas Turbine",
+      "region_esn": "297422",
+      "section_path": [
+        "2.4 INSPECT OIL DEFLECTORS T1 AND T2"
+      ],
+      "section_fields": {
+        "section_1": "2.4 INSPECT OIL DEFLECTORS T1 AND T2",
+        "section_2": null,
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 44407,
+        "page_mapping_miss": false
+      },
+      "text": "## 2.4 INSPECT OIL DEFLECTORS T1 AND T2\nTHRUST BEARING\nPart Condition: Good\nPart Condition Description\nThe thrust bearing was disassembled, inspected, and cleaned.  The inactive thrust pads\nwere in good condition with no signs of overheating or unbonded babbitt.  The active side\nwas in good condition as well.  The Thrust bearings were sent to the service shop for a stack\ncheck via customer request.\nThe opening bump check (rotor float) was .017\".\nCBM: NA",
+      "text_truncated": false
+    },
+    {
+      "chunk_index": 24,
+      "page_number": 36,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "Gas Turbine",
+      "region_esn": "297422",
+      "section_path": [
+        "2.5 THRUST BEARING ASSEMBLY"
+      ],
+      "section_fields": {
+        "section_1": "2.5 THRUST BEARING ASSEMBLY",
+        "section_2": null,
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 44865,
+        "page_mapping_miss": false
+      },
+      "text": "## 2.5 THRUST BEARING ASSEMBLY\nUNIT 3 T1 T2 THRUST FINAL REPORTS.PDF\n\n\n\n\nGAS TURBINE - CLEARANCES\nBEARING CLEARANCES\nPart Condition: Good\nPart Condition Description\nAs part of the work scope FieldCore was tasked with gathering lift oil checks prior to\nunit disassembly. As such dial indicators were placed on the T1 and T2 bearing areas,\nhydraulics and lift oil turned on and a measurement taken at each bearing. The lift on T1\nwas .0035\" and the lift on T2 bearing was found to be .003\". Thrust bearing bump check was\nrecorded at .017\" and in limits.\nCBM: NA",
+      "text_truncated": false
+    }
+  ],
+  "heading_only_chunks": {
+    "00f23784-d121-4595-b61d-49d223253a05": [
+      {
+        "chunk_index": 6,
+        "page_number": 4,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": null,
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 4384,
+          "page_mapping_miss": false
+        },
+        "text": "## 2. Technical\n",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 9,
+        "page_number": 5,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "3.1 HOOD SPRAYS"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3.1 HOOD SPRAYS",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 6336,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.1 HOOD SPRAYS",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 11,
+        "page_number": 6,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "3.2 BALANCE SHOT"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3.2 BALANCE SHOT",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 7002,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.2 BALANCE SHOT",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 13,
+        "page_number": 7,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "3.3 ALIGNMENT"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3.3 ALIGNMENT",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 7737,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.3 ALIGNMENT",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 20,
+        "page_number": 13,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "3.4 BEARING INSPECTION"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3.4 BEARING INSPECTION",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 8683,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.4 BEARING INSPECTION",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 27,
+        "page_number": 19,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "3.5 OIL DEFLECTOR"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3.5 OIL DEFLECTOR",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 9333,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.5 OIL DEFLECTOR",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 33,
+        "page_number": 24,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "3.6 UNIT VIBRATION"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3.6 UNIT VIBRATION",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 9642,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.6 UNIT VIBRATION",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 34,
+        "page_number": 25,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "3.6 UNIT VIBRATION"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3.6 UNIT VIBRATION",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 9664,
+          "page_mapping_miss": false
+        },
+        "text": "## 4. Appendix\n",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 35,
+        "page_number": 25,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "shared",
+        "region_esn": "",
+        "section_path": [
+          "Generator",
+          "4.1 Vibration Report.pdf"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "4.1 Vibration Report.pdf",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 9679,
+          "page_mapping_miss": false
+        },
+        "text": "## 4.1 Vibration Report.pdf",
+        "text_truncated": false
+      }
+    ],
+    "796f4d53-a8ad-42e1-af4d-53a8add2e1a4": [
+      {
+        "chunk_index": 4,
+        "page_number": 10,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": null,
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 8233,
+          "page_mapping_miss": false
+        },
+        "text": "2 Turbine\nS\nE\nC\nT\nI\nO\nN\n",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 5,
+        "page_number": 10,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.1 Auxiliaries"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.1 Auxiliaries",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 8257,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.1 Auxiliaries\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 7,
+        "page_number": 15,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.2 Inlet Section"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.2 Inlet Section",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 10764,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.2 Inlet Section\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 9,
+        "page_number": 17,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.3 Compressor Section"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.3 Compressor Section",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 13314,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.3 Compressor Section\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 15,
+        "page_number": 47,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.4 Combustion Section"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.4 Combustion Section",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 25523,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.4 Combustion Section\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 24,
+        "page_number": 79,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.5 Turbine Section"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.5 Turbine Section",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 35626,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.5 Turbine Section\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 29,
+        "page_number": 96,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.6 Exhaust Section"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.6 Exhaust Section",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 42545,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.6 Exhaust Section\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 31,
+        "page_number": 97,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.7 Unit Rotor"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.7 Unit Rotor",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 43436,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.7 Unit Rotor\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 35,
+        "page_number": 120,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.8 PIPO"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.8 PIPO",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 52914,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.8 PIPO\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 40,
+        "page_number": 136,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.9 Piping Systems"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.9 Piping Systems",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 72672,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.9 Piping Systems\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 50,
+        "page_number": 138,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "2 Turbine",
+          "2.10 NDE Reports"
+        ],
+        "section_fields": {
+          "section_1": "2 Turbine",
+          "section_2": "2.10 NDE Reports",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 77694,
+          "page_mapping_miss": false
+        },
+        "text": "## 2.10 NDE Reports\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 59,
+        "page_number": 161,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Generator",
+        "region_esn": "337X755",
+        "section_path": [
+          "Generator",
+          "3 Generator"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3 Generator",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 113916,
+          "page_mapping_miss": false
+        },
+        "text": "3 Generator\nS\nE\nC\nT\nI\nO\nN\n",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 73,
+        "page_number": 169,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Generator",
+        "region_esn": "337X755",
+        "section_path": [
+          "Generator",
+          "3 Generator",
+          "3.2 Stator Tests"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3 Generator",
+          "section_3": "3.2 Stator Tests",
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 128132,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.2 Stator Tests\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 81,
+        "page_number": 190,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Generator",
+        "region_esn": "337X755",
+        "section_path": [
+          "Generator",
+          "3 Generator",
+          "3.4 Generator Inspections & Clearances"
+        ],
+        "section_fields": {
+          "section_1": "Generator",
+          "section_2": "3 Generator",
+          "section_3": "3.4 Generator Inspections & Clearances",
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 144193,
+          "page_mapping_miss": false
+        },
+        "text": "## 3.4 Generator Inspections & Clearances\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 120,
+        "page_number": 354,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "4 Controls System"
+        ],
+        "section_fields": {
+          "section_1": "4 Controls System",
+          "section_2": null,
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 276142,
+          "page_mapping_miss": false
+        },
+        "text": "4 Controls System\nS\nE\nC\nT\nI\nO\nN\n",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 121,
+        "page_number": 354,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "4 Controls System",
+          "4.1 Control System"
+        ],
+        "section_fields": {
+          "section_1": "4 Controls System",
+          "section_2": "4.1 Control System",
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 276174,
+          "page_mapping_miss": false
+        },
+        "text": "## 4.1 Control System\nC\nA\nT\nE\nG\nO\nR\nY",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 124,
+        "page_number": 362,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "5 Quality Checkpoint (QCP)"
+        ],
+        "section_fields": {
+          "section_1": "5 Quality Checkpoint (QCP)",
+          "section_2": null,
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 282274,
+          "page_mapping_miss": false
+        },
+        "text": "5 Quality Checkpoint (QCP)\nS\nE\nC\nT\nI\nO\nN",
+        "text_truncated": false
+      },
+      {
+        "chunk_index": 126,
+        "page_number": 372,
+        "created_at": "2026-10-06 18:51:08.227097",
+        "equipment_type": "Gas Turbine",
+        "region_esn": "297627",
+        "section_path": [
+          "6 Appendix"
+        ],
+        "section_fields": {
+          "section_1": "6 Appendix",
+          "section_2": null,
+          "section_3": null,
+          "section_4": null,
+          "section_5": null
+        },
+        "chunk_context": {
+          "chunk_start_char": 282536,
+          "page_mapping_miss": false
+        },
+        "text": "6 Appendix\nS\nE\nC\nT\nI\nO\nN",
+        "text_truncated": false
+      }
+    ]
+  },
+  "vertical_heading_examples": [
+    {
+      "chunk_index": 74,
+      "page_number": 169,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "Generator",
+      "region_esn": "337X755",
+      "section_path": [
+        "Generator",
+        "3 Generator",
+        "3.2 Stator Tests",
+        "3.2.1 Winding Copper Resistance"
+      ],
+      "section_fields": {
+        "section_1": "Generator",
+        "section_2": "3 Generator",
+        "section_3": "3.2 Stator Tests",
+        "section_4": "3.2.1 Winding Copper Resistance",
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 128224,
+        "page_mapping_miss": false
+      },
+      "tail": "\n0.001289\n4/7/2015\nRule\nA\nB\nC\nSerial No. of Equipment\n1\nCalibration date\n2\nPass\nPass\nPass\n3\nPass\nPass\nPass\n4\nNA\nNA\nNA\nComments\nPass\n7FH2\nAbdulkadir Mohamed\nI01-027983\nPrior Test Correct to 25ºC\nDate (mm/dd/yy)\nTerminal Position In Figure\nTemp ºC\nResistance Corrected to 25ºC\nFactory Resistance at 25ºC\nLine Terminals\nNeutral Terminals\nLine or Neutral Terminals\nSingle Terminal\n537150116\nTerminal Labels\nSelect Figure Above\nSelect Figure Above\nResistance\nFact. Or Calc. Selection\nCustomer Designation\nCalibration Due Date\nAug-19\nAug-20\nTest Equipment Information\nRules:\n1. The spread of copper resistance readings between the phases should be within 1%. \n## 2.  When comparing to historical test results each phase should be within +/- 1% of the previous\nreading for that phase.\n3.  When comparing to factory test results, each phase should be within +/- 2% of the original factory\nmeasurement for that phase.\n## 4.  When comparing to calculated values, each phase should be within +/- 5% of the calculated\nD3162041 Sheet: (a)   Rev 2.0 - 01/22/2020\nwinding resistance _337X755\n3\n.\n2\n.\n2\nA\nr\nm\na\nt\nu\nr\ne\nI\nn\ns\nu\nl\na\nt\ni\no\nn\nR\ne\ns\ni\ns\nt\na\nn\nc\ne\nw\ni\nt\nh\nP\no\nl\na\nr\ni\nz\na\nt\ni\no\nn\nI\nn\nd\ne\nx\n(\nP\nI\n)\nT\ne\ns\nt",
+      "next_chunk_head": "### 3.2.2 Armature Insulation Resistance with Polarization\nIndex (PI) Test\nF\nO\nR\nM\nPart Description: \nThe amount of increase in apparent insulation resistance, during continuously applied \nvoltage, is useful in determining the relative dryness and cleanliness of the windings. An \nappreciable increase in the apparent insulation resistance, during the application of a \ncontinuously applied voltage, is an indication that the windings are clean and dry \nA ten-minute megger and polarization index (PI) test was performed on each of the three \narmature phases. An attached form (Armature Insulation Re"
+    },
+    {
+      "chunk_index": 79,
+      "page_number": 179,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "Generator",
+      "region_esn": "337X755",
+      "section_path": [
+        "Generator",
+        "3 Generator",
+        "3.3 Generator Inspection Appendix"
+      ],
+      "section_fields": {
+        "section_1": "Generator",
+        "section_2": "3 Generator",
+        "section_3": "3.3 Generator Inspection Appendix",
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 142714,
+        "page_mapping_miss": false
+      },
+      "tail": "## 3.3 Generator Inspection Appendix\nC\nA\nT\nE\nG\nO\nR\nY\n3\n.\n3\n.\n1\nI\nn\ns\np\ne\nc\nt\ni\no\nn\nP\nh\no\nt\no\ns\na\nn\nd\nW\ne\nd\ng\ne\nT\ni\ng\nh\nt\nn\ne\ns\ns\nT\ne\ns\nt\nR\ne\ns\nu\nl\nt\ns\n",
+      "next_chunk_head": "### 3.3.1 Inspection Photos and Wedge Tightness Test\nResults\nF\nO\nR\nM\nGE Power   Power Services\nGEGEGE\n297627, 297627\nGENERATOR INSPECTION PHOTOS \nTypical view of connection ring \nTypical view of end winding basket  \nin satisfactory condition (TE) \nGENERATOR INSPECTION PHOTOS\nTypical view of connection ring \nassembly in satisfactory condition \nTypical view of bar ties assembly \nwith visible minor greasing \nGENERATOR INSPECTION PHOTOS\nView showing minor greasing \nbetween end wedges and step iron \nView showing step iron/end wedges \nafter it was cleaned \nGENERATOR INSPECTION PHOTOS\nView showing bi"
+    }
+  ],
+  "subreport_path": [
+    {
+      "chunk_index": 91,
+      "page_number": 213,
+      "created_at": "2026-10-06 18:51:08.227097",
+      "equipment_type": "Generator",
+      "region_esn": "337X755",
+      "section_path": [
+        "Generator",
+        "4.7 1A BFP"
+      ],
+      "section_fields": {
+        "section_1": "Generator",
+        "section_2": "4.7 1A BFP",
+        "section_3": null,
+        "section_4": null,
+        "section_5": null
+      },
+      "chunk_context": {
+        "chunk_start_char": 170711,
+        "page_mapping_miss": false
+      },
+      "text": "## 4.7 1A BFP\nTECO-Westinghouse \nFigure 17. EMI Signature for 1A BFP \nThis was the first (1st) EMI evaluation for this TECO-Westinghouse, 3500 HP, 3579 RPM, 4 kV, 3 PH, 60 Hz, \n420 A motor, SN: DM D14203-1. The EMI data was collected from an RFCT placed around the frame ground. \nA photograph of this location can be found at the end of the report. \nThe motor was loaded to 91% of the rated load. \nThe EMI signature showed process noise, data, and radio signals in the LF, MF, and HF ranges. Minor PD and \ncorona were detected in the MF to HF range. Current levels are low and do not indicate immediate concern.  \nA scan for radiated EMI did not show any significant activity. \nRecommend retesting in 1-2 years to trend changes. \nQ-15166_TA_Smith_Energy_Facility_F…\nEMI Test Report \nP.O.: 49853 \nRev: 1.0 \nService Electric Company, Oglethorpe Power \nDoble Engineering Company \n123 Felton Street, Marlborough, MA 01752 USA \nTel +1 617 926 4900  www.doble.com \nConfidential \n24\nFigure 18. 1A BFP EMI patterns in the spectrum \nFigure 218 shows examples for data and corona signals. Refer to the above analysis for recommendations. \nQ-15166_TA_Smith_Energy_Facility_F…\nEMI Test Report \nP.O.: 49853 \nRev: 1.0 \nService Electric Company, Oglethorpe Power \nDoble Engineering Company \n123 Felton Street, Marlborough, MA 01752 USA \nTel +1 617 926 4900  www.doble.com \nConfidential \n25",
+      "text_truncated": false
+    }
+  ]
+}

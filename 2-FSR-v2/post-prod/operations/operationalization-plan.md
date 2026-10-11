@@ -300,6 +300,18 @@ Expected routing is nine `final_master_report` documents and three `shared`
 documents. Leave `EXPECTED_PREPROCESSOR_PROFILE` blank for this mixed-profile
 scope and validate `actual_preprocessor_profile` per document after P1.
 
+Supplemental diagnostic sample: add document
+`895613a2-8568-4d17-bd45-b53c935645e9` as the 13th document, uploaded to the
+FSR v2 test volume, and process it as a separate diagnostic candidate. It is not
+part of the completed 12-document baseline above; do not change that run's
+routing expectations or results. First
+verify that the uploaded source is available and that normal ingestion has
+created its metadata and chunks in the approved test environment. The repair
+workflow only operates on already-ingested documents. Then run this sample in an
+isolated test scope, record the observed profile and parsing/chunking results,
+and use those results to guide the investigation. Do not assume its profile in
+advance.
+
 ### Repair workflow deployment verified 2026-09-24
 
 ICD created both expected jobs in the dev workspace using

@@ -1,0 +1,48 @@
+Zhou, Xujin (GE Vernova)
+These issues are still there. And by the way, there are chunks with just the section header itself, But for example, 3. Components and 3.1 HOOD SPRAYS and the section 3.1 body text should be in a ch…<refer to complete earlier message1 below>
+This issue seems to be still here: look at 00f23784-d121-4595-b61d-49d223253a05:
+<refer to attached image1>
+The 3.1 Hood sprays should appear between 3 Components and the later Part Condition Description right?
+ 
+And under the same document id, there is no overlap between this two chunks:
+<refer to attached image2>
+ 
+Zhou, Xujin (GE Vernova)
+This missing text issue seems to be fixed. However, on the chunking strategies side: (1) A paragraph is cut into two chunks but without overlapping 📷 (2) there are very short tables cut into two ch…<refer to complete earlier message2 below>
+Refer to this message from previous, (1) and (2) both still here
+ 
+Zhou, Xujin (GE Vernova)
+This issue is still there, and there are still no records in fsr_metadata_v2
+Still no records in fsr_metadata_v2. is that because we have a different table name for this?
+ 
+And that above section header wrong location issue also causing: in 93c2180b-f866-4521-b090-b88442c6dcf1, 2.3 header is group with 2.4 text, while 2.4 section header is grouped with actual 2.5 section text
+<refer to attached image3>
+ 
+The metadata tagging looks good
+ 
+=============
+
+The issue for 36UUID document:
+
+(1) section headers as stand alone chunks;
+
+(2) A few chunk got a repeated section header in vertical format at the end of the chunk (most does not): chunk_index 74.79
+
+(3) this run the sub report's section header under 3.4.1 also got detected, the esn and equipment type are correct, but the section path are wrong, it is generator --> "section_2": "4.7 1A BFP", losing section 3, section 3.4, section 3.4.1 ; A possible solution can be we keep those sub report section header we detected, and follow the existing chunking strategies, but at section path or section 1-5 metadata part, we check against the primary ToC, if it does not exist in Primary ToC, we will keep the previous section path, so detecting 4.7 1A BFP is fine, it’s not in Primary ToC and it won’t affect section path, until we detect 3.4.2, we know that section header got a match in primary ToC, so we change section path to 3–>3.4–>3.4.2. (But if we can not make it, I would prefer keep the section path correct, at the cost of not detecting the section header under a sub report.)
+ ======================================
+
+ message1:
+
+ This missing text issue seems to be fixed. However, on the chunking strategies side:
+(1) A paragraph is cut into two chunks but without overlapping
+ These issues are still there. And by the way, there are chunks with just the section header itself, But for example, 3. Components and 3.1 HOOD SPRAYS and the section 3.1 body text should be in a chunk together. ( by the way, 3.1 HOOD SPRAYS exists after section 3 Components because of the issue in (2))
+ <refer to attached image4>
+
+ ---
+ message2:
+
+ This missing text issue seems to be fixed. However, on the chunking strategies side:
+(1) A paragraph is cut into two chunks but without overlapping
+ <refer to attached image5>
+(2) there are very short tables cut into two chunks (because of section header wrongly detected), and also, this affect the section 1 information for the following chunks ( they all have section 1 = generator because of this generator Mechanical in the table)
+ <refer to attached image6>

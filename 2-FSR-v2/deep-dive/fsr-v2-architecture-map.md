@@ -106,6 +106,71 @@ flowchart LR
 
 ---
 
+## Preprocessor v2 — the heart of the redesign
+
+**One line:** a deterministic, sub-second, zero-token engine. It reads the structure of an FSR and decides which part of the report belongs to which machine, and every decision comes with a reason.
+
+### Interview-ready highlights
+
+| Highlight | What it does | Why it matters |
+|---|---|---|
+| **Multi-signal heading detection** | Finds headings from equipment headers, numbered sections, unnumbered all-caps headings (`GENERATOR`) and the TOC | v1 only saw numbered headings, so whole Generator sections were missed |
+| **Hierarchical section spans** | Builds a tree: equipment block → section → subsection, each with an explicit start and end | Gives **flip-back** from the structure alone: when a Generator subsection ends, the Turbine context comes back with no special-case code |
+| **Local-first ESN chain** | header → parent → single ESN of that type → IBAT train → neighbor → doc primary → unresolved | The nearest evidence wins. The document-level ESN is the last resort, not the default |
+| **Provenance on every region** | `esn_source`, `esn_confidence`, `fallback_chain`, `section_path` | Any label can be explained in a review. Low-confidence regions can be filtered or sent for review |
+| **Full coverage + char offsets** | Contiguous regions over the whole text, aligned to the saved parse | Chunking attributes every chunk with no gaps. Gold labels stay valid |
+| **Hints to the LLM** | Passes "known facts — do not contradict" to the admin-field LLM | The LLM fills in admin fields only and can't overwrite serials |
+| **Sandboxed + versioned** | Runs isolated (no I/O), version is a runtime knob (`FSR_V2_METADATA_PROCESSOR_VERSION`) | Safe to swap versions and A/B them through the eval gate |
+
+### Why deterministic (and not an LLM)
+
+| Criterion | Deterministic preprocessor | LLM per section/page |
+|---|---|---|
+| **Correctness of serials** | Copies ESNs from the document and IBAT; can't make one up | Can produce a plausible but wrong serial, the costliest error here |
+| **Repeatability** | Same input, same output | Varies across runs and model versions, so evals and audits drift |
+| **Explainability** | Rule + source recorded per region | "The model said so" |
+| **Cost & speed** | < 1 s/doc, zero tokens, 22K+ docs in bulk | Cost grows with page count (reports run to 600+ pages), plus throttling |
+| **Testability** | Each bug becomes a unit test + gold row | Prompt changes have side effects that are hard to predict |
+| **Where it's weaker** | Unusual layouts, embedded sub-reports, mid-document TOCs | Better at reading messy prose |
+
+**The rule we followed:** *use deterministic code where a mistake is expensive (who does this belong to?), and use the LLM where a mistake is cheap and text is messy (customer name, event type).* When the rules can't decide, the region stays **unresolved** instead of guessing. That is what drove misattribution below 1.5%.
+
+### Business value
+
+- **Trustworthy evidence:** attribution 79% → 92% (96% in core sections), wrong-unit noise under 1.5%. Engineers see findings for the unit they asked about.
+- **Unlocks hidden evidence:** Generator work inside GT reports is now tagged to the Generator ESN. That covers about 1 in 6 affected units that previously had nothing.
+- **Cost:** no LLM tokens for structure or attribution across the whole corpus. The LLM call is limited to page 1.
+- **Speed of change:** a bug fix is a code change + regression test + eval gate. It ships in days, without prompt tuning.
+- **Audit-ready:** provenance fields answer "why is this chunk tagged to this unit?" in customer and internal reviews.
+- **Reusable output:** regions, section paths and the document summary feed chunking, the equipment map, report listing and evals, not just one step.
+
+### What was planned next — deterministic first, LLM only where rules can't decide
+
+```mermaid
+flowchart LR
+  A[Saved parsed text<br/>one canonical source] --> B[Deterministic segmentation<br/>canonical region_ids]
+  B --> C[Deterministic attribution<br/>+ rule-based ambiguity tags]
+  C --> D[IBAT pre-enrichment<br/>train / sibling ESN candidates]
+  D --> E{Ambiguous<br/>regions?}
+  E -- no, most docs --> G[Merged region list<br/>+ provenance]
+  E -- yes, small share --> F[LLM resolves attribution<br/>keyed by region_id<br/>cannot create boundaries]
+  F --> G
+  G --> H[Eval gate: misattribution<br/>must not rise]
+```
+
+| Next step | Why |
+|---|---|
+| **LLM fallback only for ambiguous regions** | Keeps what deterministic does well (cost, repeatability) and uses the LLM for the long tail: sub-reports, appendix-heavy docs, unusual layouts. |
+| **LLM returns decisions against existing `region_id`s; it never re-segments** | Avoids the hardest merge problem: two engines disagreeing on boundaries. Deterministic code owns segmentation, the LLM only resolves ambiguity. |
+| **Provenance stays per region** (`base_source`, `attribution_source`, status) | An LLM-resolved region is still traceable and can be filtered or reviewed separately. |
+| **IBAT check on detected equipment type** | Cross-check "is this ESN really a Generator?" against the install base before trusting it. |
+| **Shared/ambiguous section handling + TOC verification** | Turn today's "unresolved" regions into either attributed or explicitly shared, but only once evals show recall improves without hurting fidelity. |
+| **Parser bake-off** (Textract / Databricks AI Parser vs current) | Better layout and table extraction on the same hard documents, compared on the same gold set. |
+
+**Soundbite:** "We didn't choose deterministic because LLMs are bad. We chose it because *who does this evidence belong to* has to be right, repeatable and explainable. The plan was never 'rules forever'. It was rules first, then an LLM only on the small ambiguous share, behind the same eval gate, so accuracy could keep improving without bringing back wrong-unit errors."
+
+---
+
 ## Evals — how we proved it
 
 > Illustrative framing for the interview. Sample sizes and slice numbers are placeholders — align them with the real MLflow runs before presenting.
